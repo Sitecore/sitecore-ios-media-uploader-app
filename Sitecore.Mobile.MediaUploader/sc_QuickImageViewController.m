@@ -102,11 +102,11 @@
             [ discardedItems addObject: item ];
             _selectedImage--;
         }
-        else
-        {
-            //Folders always come first in the array, so no need to keep testing 
-            break;
-        }
+//        else
+//        {
+//            //Folders always come first in the array, so no need to keep testing 
+//            break;
+//        }
     }
 
     [ _items removeObjectsInArray: discardedItems ];
