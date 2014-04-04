@@ -11,7 +11,7 @@
 #import <Foundation/Foundation.h>
 
 @class SCItem;
-@class SCExtendedApiContext;
+@class SCExtendedApiSession;
 @class SCParams;
 @protocol SCItemSource;
 
@@ -21,15 +21,15 @@
 
  It provides getters for the field's properties and asynchronous loader for the field's value.
 
- Now you can load fields using SCApiContext or SCItem object.
+ Now you can load fields using SCApiSession or SCItem object.
  */
 @interface SCField : NSObject
 
 /**
- The SCApiContext object this field was created/loaded from.
+ The SCApiSession object this field was created/loaded from.
  Can be used to load the necessary data.
  */
-@property(nonatomic,readonly) SCExtendedApiContext *apiContext;
+@property(nonatomic,readonly) SCExtendedApiSession *apiSession;
 /**
  The system field's id.
  */
@@ -67,9 +67,9 @@
  Used for the loading field value.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is [SCField rawValue] by default but can be different for other fields types.
 
- See SCField inheritor class: [SCImageField fieldValueReader] for details.
+ See SCField inheritor class: [SCImageField readFieldValueOperation] for details.
  */
-- (SCAsyncOp)fieldValueReader;
-- (SCExtendedAsyncOp)extendedFieldValueReader;
+- (SCAsyncOp)readFieldValueOperation;
+- (SCExtendedAsyncOp)readFieldValueExtendedOperation;
 
 @end

@@ -9,7 +9,6 @@
 #import "sc_SitesSelectionViewController.h"
 #import "sc_GlobalDataObject.h"
 #import "sc_AppDelegateProtocol.h"
-#import "sc_BrowseViewController.h"
 #import "sc_UploadViewController.h"
 #import "sc_Site.h"
 #import "sc_Constants.h"
@@ -27,7 +26,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [ _appDataObject countOfList ];
+    return [ _appDataObject.sitesManager sitesCount ];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -50,7 +49,7 @@
     }
 
     _selectedIndex = indexPath;
-    _selectedSite = [ _appDataObject objectInListAtIndex: indexPath.row ];
+    _selectedSite = [ _appDataObject.sitesManager siteAtIndex: indexPath.row ];
     
     [self closeView];
 }
@@ -60,7 +59,7 @@
     static NSString *cellIdentifier = @"cellSiteUrl";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    sc_Site *currentSite = [_appDataObject objectInListAtIndex:indexPath.row];
+    sc_Site *currentSite = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
     [ [cell textLabel] setText: currentSite.siteUrl ];
     
     [ _sitesTableView setAllowsSelection: YES ];
@@ -108,16 +107,8 @@
 }
 
 -(IBAction)closeView
-{
-    NSInteger rowsCount = [ _sitesTableView numberOfRowsInSection: 0 ];
-    
-    for (NSInteger i = 0; i < rowsCount; ++i)
-    {
-        sc_Site *currentSite = [_appDataObject objectInListAtIndex:i];
-        currentSite.selectedForBrowse =  (_selectedSite == currentSite);
-    }
-    
-    [_appDataObject saveSites];
+{    
+    [ _appDataObject.sitesManager setSiteForBrowse: _selectedSite ];
     
     [ sc_ViewsHelper reloadParentController: self.navigationController
                                      levels: 2 ];

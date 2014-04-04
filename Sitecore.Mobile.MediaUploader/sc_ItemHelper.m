@@ -14,19 +14,19 @@
 
 +(NSString *)getDefaultDatabase
 {
-    return @"web";
-   // return @"master";
+   //return @"web";
+   return @"master";
 }
 
-+(SCApiContext *)getContext:(sc_Site *) site
++(SCApiSession *)getContext:(sc_Site *) site
 {
-    SCApiContext * context = [SCApiContext contextWithHost: site.siteUrl
+    SCApiSession * session = [SCApiSession sessionWithHost: site.siteUrl
                                                      login: site.username
                                                   password: site.password];
-    context.defaultSite = site.site;
+    session.defaultSite = site.site;
     
-    context.defaultDatabase = [self getDefaultDatabase];
-    return context;
+    session.defaultDatabase = [self getDefaultDatabase];
+    return session;
 }
 
 +(NSString *)formatUploadFolder:(sc_Site *) site
@@ -57,9 +57,7 @@
 
 +(NSString *) itemType: (SCItem *) item
 {
-    
-    NSLog(@"---==== item template: %@", item.itemTemplate);
-    
+        
     if ([ item.itemTemplate isEqualToString: MEDIA_FOLDER_PATH ] || [ item.itemTemplate isEqualToString: ITEM_TEMPLATE_PATH ])
     {
         return @"folder";

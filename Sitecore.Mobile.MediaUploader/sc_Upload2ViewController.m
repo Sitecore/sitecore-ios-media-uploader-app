@@ -46,7 +46,6 @@ typedef NS_ENUM(NSInteger, ItemsFilterMode)
 {
     SCCancelAsyncOperation _currentCancelOp;
     NSInteger _uploadItemIndex;
-    NSInteger _sitesCount;
     sc_UploadItemManager *_statusManager;
     BOOL _uploadingInterrupted;
     
@@ -146,7 +145,6 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
     
     self->_statusManager = [ sc_UploadItemManager new ];
     self->_uploadImageSize = [sc_ImageHelper loadUploadImageSize];
-    self->_sitesCount = [ _appDataObject.selectedForUploadsites count];
     
     //Localize UI
     self.navigationItem.title = NSLocalizedString(self.navigationItem.title, nil);
@@ -253,7 +251,6 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
         [ sc_ErrorHelper showError: description ];
     }
     
-    NSLog(@"----===== row %d touched", indexPath.row);
 }
 
 -(void)uploadNextItem
@@ -352,8 +349,8 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
 
 -(void)sendUploadRequest:(sc_UploadItem *) uploadItem
 {
-    SCApiContext *context = [ sc_ItemHelper getContext: uploadItem.mediaItem.siteForUploading ];
-    SCCreateMediaItemRequest *request = [SCCreateMediaItemRequest new];
+    SCApiSession *session = [ sc_ItemHelper getContext: uploadItem.mediaItem.siteForUploading ];
+    SCUploadMediaItemRequest *request = [SCUploadMediaItemRequest new];
     request.itemName =  uploadItem.mediaItem.name;
 
     if ( !uploadItem.isImage && !uploadItem.isVideo )
@@ -385,7 +382,7 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
         else
         {
             [ self setFields: item
-                     Context: context
+                     Context: session
                   uploadItem: uploadItem ];
             
             uploadItem.mediaItem.status = MEDIASTATUS_UPLOADED;
@@ -400,18 +397,17 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
         
     });
     
-    SCExtendedAsyncOp loader = [context.extendedApiContext mediaItemCreatorWithRequest:request];
+    SCExtendedAsyncOp loader = [session.extendedApiSession uploadMediaOperationWithRequest:request];
     
     if ( !_uploadingInterrupted )
     {
-        NSLog(@"----==== UPLOAD REQUEST SENT!!!!!");
         self->_currentCancelOp = loader( nil, nil, doneHandler );
     }
     
 }
 
 -(void)setFields:(SCItem *) item
-         Context:(SCApiContext *) context
+         Context:(SCApiSession *) session
       uploadItem:(sc_UploadItem *) uploadItem
 {
     NSSet * fieldNames = [NSSet setWithObjects:
@@ -429,8 +425,8 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
                           @"ZipCode",
                           nil];
     
-    SCItemsReaderRequest * request = [SCItemsReaderRequest requestWithItemId:item.itemId fieldsNames:fieldNames];
-    [context itemsReaderWithRequest:request](^(NSArray *items, NSError * fieldsError)
+    SCReadItemsRequest * request = [SCReadItemsRequest requestWithItemId:item.itemId fieldsNames:fieldNames];
+    [session readItemsOperationWithRequest:request](^(NSArray *items, NSError * fieldsError)
      {
          if (fieldsError)
          {
@@ -441,36 +437,36 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
          
          if (fieldItem)
          {
-             SCField *fieldDateTime = [fieldItem.readFieldsByName objectForKey: @"DateTime"];
+             SCField *fieldDateTime = [fieldItem fieldWithName: @"DateTime"];
              fieldDateTime.rawValue = [self getUTCFormatDate: uploadItem.mediaItem.dateTime];
              
-             SCField *fieldMake = [fieldItem.readFieldsByName objectForKey: @"Make"];
+             SCField *fieldMake = [fieldItem fieldWithName: @"Make"];
              fieldMake.rawValue = @"Apple";
              
-             SCField *fieldModel = [fieldItem.readFieldsByName objectForKey: @"Model"];
+             SCField *fieldModel = [fieldItem fieldWithName: @"Model"];
              fieldModel.rawValue = [sc_DeviceHelper getDeviceType];
              
-             SCField *fieldSoftware = [fieldItem.readFieldsByName objectForKey: @"Software"];
+             SCField *fieldSoftware = [fieldItem fieldWithName: @"Software"];
              fieldSoftware.rawValue = @"Sitecore Up";
              
-             SCField *fieldLatitude = [fieldItem.readFieldsByName objectForKey: @"Latitude"];
+             SCField *fieldLatitude = [fieldItem fieldWithName: @"Latitude"];
              fieldLatitude.rawValue = [uploadItem.mediaItem.latitude stringValue];
              
-             SCField *fieldLongitude = [fieldItem.readFieldsByName objectForKey: @"Longitude"];
+             SCField *fieldLongitude = [fieldItem fieldWithName: @"Longitude"];
              fieldLongitude.rawValue = [uploadItem.mediaItem.longitude stringValue];
              
-             SCField *fieldLocationDescription = [fieldItem.readFieldsByName objectForKey: @"LocationDescription"];
+             SCField *fieldLocationDescription = [fieldItem fieldWithName: @"LocationDescription"];
              fieldLocationDescription.rawValue = uploadItem.mediaItem.locationDescription;
              
-             SCField *fieldCountryCode = [fieldItem.readFieldsByName objectForKey: @"CountryCode"];
+             SCField *fieldCountryCode = [fieldItem fieldWithName: @"CountryCode"];
              fieldCountryCode.rawValue = uploadItem.mediaItem.countryCode;
              
-             SCField *fieldCityCode = [fieldItem.readFieldsByName objectForKey: @"ZipCode"];
+             SCField *fieldCityCode = [fieldItem fieldWithName: @"ZipCode"];
              fieldCityCode.rawValue = uploadItem.mediaItem.cityCode;
              
-             [fieldItem saveItem] (^(SCItem * editedItem, NSError * fieldSaveError)
+             [fieldItem saveItemOperation] (^(SCItem * editedItem, NSError * fieldSaveError)
                {
-                   NSLog(@"readFieldsByName: %@", editedItem.readFieldsByName);
+                   NSLog(@"readFieldsByName: %@", editedItem.allFields);
                });
          }
      });
@@ -509,7 +505,7 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
 
 -(int)uploadingFilesCount
 {
-    return self->_sitesCount * _mediaItems.count;
+    return _mediaItems.count;
 }
 
 -(IBAction)abortButtonPressed:(id)sender

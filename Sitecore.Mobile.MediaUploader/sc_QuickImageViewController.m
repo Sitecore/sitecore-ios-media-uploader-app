@@ -40,10 +40,8 @@
 
 -(void)viewDidLayoutSubviews
 {
-    //Give default navbar title
     [ self setNavBarTitleForIndex: _selectedImage ];
     
-    //Scroll to the selected image
     [ super viewDidLayoutSubviews ];
     
     NSIndexPath *indexPath = [ NSIndexPath indexPathForRow: _selectedImage inSection: 0 ];
@@ -61,19 +59,19 @@
     UICollectionViewCell *cell = [ collectionView dequeueReusableCellWithReuseIdentifier: identifier
                                                                             forIndexPath: indexPath ];
     SCImageView *imageView = (SCImageView *)[ cell viewWithTag: 100 ];
-    UIActivityIndicatorView * cellActivityView = ( UIActivityIndicatorView * ) [ cell viewWithTag: 33 ];
+    UIActivityIndicatorView * cellActivityView = ( UIActivityIndicatorView * )[ cell viewWithTag: 33 ];
     cellActivityView.hidden = NO;
     [ imageView setImage: NULL ];
     
-    SCFieldImageParams *params = [ SCFieldImageParams new ];
+    SCDownloadMediaOptions *params = [ SCDownloadMediaOptions new ];
     params.width = cell.frame.size.width;
     params.height = cell.frame.size.height;
     params.database = [ sc_ItemHelper getDefaultDatabase ];
     
     NSString *itemPath = [ sc_ItemHelper getPath: cellObject.itemId ];
     
-    SCAsyncOp imageReader = [ self.context imageLoaderForSCMediaPath: itemPath
-                                                         imageParams: params ];
+    SCAsyncOp imageReader = [ self.session downloadResourceOperationForMediaPath: itemPath
+                                                                     imageParams: params ];
     
     imageReader(^( id result, NSError *error )
                 {
@@ -91,9 +89,8 @@
     return cell;
 }
 
--(void)pruneItems
+-(void)excludeFoldersFromItemsList
 {
-    //Remove anything that is not an image from the array
     NSMutableArray *discardedItems = [ NSMutableArray array ];
   
     SCItem *item;
@@ -103,7 +100,6 @@
         if ( [ itemType isEqualToString: @"folder" ] )
         {
             [ discardedItems addObject: item ];
-            //Lower the index of the selected picture to compensate for any removed folder at start of array
             _selectedImage--;
         }
         else
@@ -124,7 +120,7 @@
 -(void)viewDidLoad
 {
     [ super viewDidLoad ];
-    [ self pruneItems ];
+    [ self excludeFoldersFromItemsList ];
 }
 
 @end

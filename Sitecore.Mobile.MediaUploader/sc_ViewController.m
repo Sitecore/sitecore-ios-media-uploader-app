@@ -42,7 +42,7 @@
         _settingsButton.enabled = NO;
         _messageLabel.text = NSLocalizedString(@"Please check your internet connection.", nil);
         
-        if ( _appDataObject.sites.count == 0 )
+        if ( ![ _appDataObject.sitesManager atLeastOneSiteExists ] )
         {
             _uploadButton.enabled = NO;
         }
@@ -52,7 +52,7 @@
     _uploadButton.enabled = YES;
     _settingsButton.enabled = YES;
     
-    if ( _appDataObject.sites.count == 0 )
+    if ( ![ _appDataObject.sitesManager atLeastOneSiteExists ] )
     {
         _browseButton.enabled = NO;
         _uploadButton.enabled = NO;

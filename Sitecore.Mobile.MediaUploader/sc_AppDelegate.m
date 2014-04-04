@@ -17,8 +17,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     _appDataObject = [[sc_GlobalDataObject alloc] init];
-    [_appDataObject initializeSites];
-    [_appDataObject initializeMediaUpload];
+    
     [self getIOS];
     [self initializeStoryBoardBasedOnScreenSize];
     return YES;

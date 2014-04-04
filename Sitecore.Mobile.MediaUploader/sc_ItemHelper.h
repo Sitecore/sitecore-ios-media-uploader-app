@@ -17,7 +17,7 @@ typedef NS_ENUM(NSInteger, sc_CellType) {
 };
 
 @interface sc_ItemHelper : NSObject
-+ (SCApiContext *)getContext:(sc_Site *) site;
++ (SCApiSession *)getContext:(sc_Site *) site;
 + (NSString *)getDefaultDatabase;
 + (NSString *)formatUploadFolder:(sc_Site *) site;
 + (NSString *) getPath: (NSString *) itemId;

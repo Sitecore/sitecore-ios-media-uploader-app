@@ -11,6 +11,7 @@
 @class sc_Site;
 
 @interface sc_Media : NSObject
+
 @property  NSString *index;
 @property  UIImage *thumbnail;
 @property  NSString *name;

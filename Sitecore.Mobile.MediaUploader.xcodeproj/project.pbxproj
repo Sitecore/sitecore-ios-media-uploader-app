@@ -74,7 +74,6 @@
 		65359FD817CC087B003B6442 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 65359FD717CC087B003B6442 /* settings.png */; };
 		653D5B2B17A85A5300754C9C /* sc_UploadItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 653D5B2A17A85A5300754C9C /* sc_UploadItem.m */; };
 		653D5B3217A9A50000754C9C /* empty_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 653D5B3117A9A50000754C9C /* empty_small.png */; };
-		654ECE48175E719C00509490 /* sc_BrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654ECE47175E719C00509490 /* sc_BrowseViewController.m */; };
 		654ECE4B175E71B300509490 /* sc_SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654ECE4A175E71B300509490 /* sc_SettingsViewController.m */; };
 		65569B1B176256C900A16A0A /* browse.png in Resources */ = {isa = PBXBuildFile; fileRef = 65569B1A176256C900A16A0A /* browse.png */; };
 		65569B28176293B600A16A0A /* sc_Site.m in Sources */ = {isa = PBXBuildFile; fileRef = 65569B2417627B9900A16A0A /* sc_Site.m */; };
@@ -161,7 +160,6 @@
 		78108127189021E300E8EFD7 /* sc_BaseTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B01F59187EF261006D48C9 /* sc_BaseTheme.m */; };
 		78108128189021E300E8EFD7 /* sc_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655829C8175B408900768197 /* sc_ViewController.m */; };
 		78108129189021E300E8EFD7 /* sc_UploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6599A552175B9B410095775D /* sc_UploadViewController.m */; };
-		7810812A189021E300E8EFD7 /* sc_BrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654ECE47175E719C00509490 /* sc_BrowseViewController.m */; };
 		7810812B189021E300E8EFD7 /* sc_SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654ECE4A175E71B300509490 /* sc_SettingsViewController.m */; };
 		7810812C189021E300E8EFD7 /* sc_ImageScaling.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D4A9AD1886A99D00CC44B4 /* sc_ImageScaling.m */; };
 		7810812D189021E300E8EFD7 /* sc_ResourseCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D37099188563B5005A7470 /* sc_ResourseCleaner.m */; };
@@ -215,7 +213,6 @@
 		7810815E189021E300E8EFD7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F5E85F178C98C000059518 /* AVFoundation.framework */; };
 		7810815F189021E300E8EFD7 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC27C7F177EF37E008C578D /* ImageIO.framework */; };
 		78108160189021E300E8EFD7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651B1A28177CBA0C006FF573 /* MapKit.framework */; };
-		78108161189021E300E8EFD7 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E72456184E03CA00E9C1FC /* SitecoreMobileSDK.framework */; };
 		78108162189021E300E8EFD7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3903DD177B3F9400E8F508 /* QuartzCore.framework */; };
 		78108163189021E300E8EFD7 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F24F36E1777AC6300C21E8F /* AssetsLibrary.framework */; };
 		78108164189021E300E8EFD7 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FBC24B1775C378002437A5 /* MediaPlayer.framework */; };
@@ -323,11 +320,23 @@
 		781081CB189021E300E8EFD7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCC21785943800730EC8 /* Default-568h@2x.png */; };
 		781081D21890224100E8EFD7 /* Sitecore.Mobile.MediaUploader-Info_AppStore.plist in Resources */ = {isa = PBXBuildFile; fileRef = 781081D11890224100E8EFD7 /* Sitecore.Mobile.MediaUploader-Info_AppStore.plist */; };
 		7836AF801871BBF500190D85 /* sc_UploadItemStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 7836AF7F1871BBF500190D85 /* sc_UploadItemStatus.m */; };
+		7872A6F718EC049600581E03 /* sc_LevelUpGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872A6F618EC049600581E03 /* sc_LevelUpGridCell.m */; };
+		7872A6F818EC049600581E03 /* sc_LevelUpGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872A6F618EC049600581E03 /* sc_LevelUpGridCell.m */; };
+		7872A6FB18EC100700581E03 /* sc_SitesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872A6FA18EC100700581E03 /* sc_SitesManager.m */; };
+		7872A6FC18EC100700581E03 /* sc_SitesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872A6FA18EC100700581E03 /* sc_SitesManager.m */; };
+		7872A86F18EC3E5300581E03 /* sc_Site+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872A86E18EC3E5300581E03 /* sc_Site+Private.m */; };
+		7872A87018EC3E5300581E03 /* sc_Site+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872A86E18EC3E5300581E03 /* sc_Site+Private.m */; };
 		78B01F56187EECC7006D48C9 /* sc_Constans.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B01F55187EECC7006D48C9 /* sc_Constans.m */; };
 		78B01F57187EECDD006D48C9 /* sc_Constans.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B01F55187EECC7006D48C9 /* sc_Constans.m */; };
 		78B01F5A187EF261006D48C9 /* sc_BaseTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B01F59187EF261006D48C9 /* sc_BaseTheme.m */; };
 		78B01F5B187EF261006D48C9 /* sc_BaseTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B01F59187EF261006D48C9 /* sc_BaseTheme.m */; };
 		78C60A711889370500CB22E5 /* empty_upload_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C60A701889370500CB22E5 /* empty_upload_small.png */; };
+		78C9E27118E5A059004C7A88 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C9E26D18E5A059004C7A88 /* SitecoreMobileSDK.framework */; };
+		78C9E27218E5A059004C7A88 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C9E26D18E5A059004C7A88 /* SitecoreMobileSDK.framework */; };
+		78C9E27318E5A059004C7A88 /* SitecoreMobileUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C9E26E18E5A059004C7A88 /* SitecoreMobileUI.framework */; };
+		78C9E27418E5A059004C7A88 /* SitecoreMobileUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C9E26E18E5A059004C7A88 /* SitecoreMobileUI.framework */; };
+		78C9E27718E5CF6F004C7A88 /* SitecoreItemsBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C9E27618E5CF6F004C7A88 /* SitecoreItemsBrowser.framework */; };
+		78C9E27818E5CF6F004C7A88 /* SitecoreItemsBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C9E27618E5CF6F004C7A88 /* SitecoreItemsBrowser.framework */; };
 		78CA658318C8B8C800C27192 /* accessoryArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA658118C8B8C800C27192 /* accessoryArrow@2x.png */; };
 		78CA658418C8B8C800C27192 /* accessoryArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA658118C8B8C800C27192 /* accessoryArrow@2x.png */; };
 		78CA658518C8B8C800C27192 /* accessoryArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA658118C8B8C800C27192 /* accessoryArrow@2x.png */; };
@@ -335,11 +344,20 @@
 		78CA658718C8B8C800C27192 /* accessoryArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA658218C8B8C800C27192 /* accessoryArrow.png */; };
 		78CA658818C8B8C800C27192 /* accessoryArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA658218C8B8C800C27192 /* accessoryArrow.png */; };
 		78CA819C185B00420001896D /* sc_UploadItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CA819B185B00420001896D /* sc_UploadItemCell.m */; };
+		78CC1EF818EAA2E6003608CD /* sc_BrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CC1EF718EAA2E6003608CD /* sc_BrowseViewController.m */; };
+		78CC1EF918EAA2EB003608CD /* sc_BrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CC1EF718EAA2E6003608CD /* sc_BrowseViewController.m */; };
+		78CC1EFC18EAF57F003608CD /* sc_BrowseViewAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CC1EFB18EAF57F003608CD /* sc_BrowseViewAppearance.m */; };
+		78CC1EFD18EAF57F003608CD /* sc_BrowseViewAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CC1EFB18EAF57F003608CD /* sc_BrowseViewAppearance.m */; };
+		78CC1F0018EAF6FC003608CD /* sc_BrowseViewCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CC1EFF18EAF6FC003608CD /* sc_BrowseViewCellFactory.m */; };
+		78CC1F0118EAF6FC003608CD /* sc_BrowseViewCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CC1EFF18EAF6FC003608CD /* sc_BrowseViewCellFactory.m */; };
+		78CC1F0518EAFEDF003608CD /* sc_FolderGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CC1F0418EAFEDF003608CD /* sc_FolderGridCell.m */; };
+		78CC1F0618EAFEDF003608CD /* sc_FolderGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CC1F0418EAFEDF003608CD /* sc_FolderGridCell.m */; };
+		78CE93C018ED626400B68327 /* sc_ListBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CE93BF18ED626400B68327 /* sc_ListBrowserViewController.m */; };
+		78CE93C118ED626400B68327 /* sc_ListBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CE93BF18ED626400B68327 /* sc_ListBrowserViewController.m */; };
 		78D3709A188563B5005A7470 /* sc_ResourseCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D37099188563B5005A7470 /* sc_ResourseCleaner.m */; };
 		78D4A9AE1886A99D00CC44B4 /* sc_ImageScaling.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D4A9AD1886A99D00CC44B4 /* sc_ImageScaling.m */; };
 		78D4A9AF1886BAE800CC44B4 /* sc_ImageScaling.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D4A9AD1886A99D00CC44B4 /* sc_ImageScaling.m */; };
 		78D4A9B61886BE6D00CC44B4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D4A9B51886BE6D00CC44B4 /* XCTest.framework */; };
-		78D4A9B71886BF5E00CC44B4 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E72456184E03CA00E9C1FC /* SitecoreMobileSDK.framework */; };
 		78D4A9B81886BF6B00CC44B4 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E72458184E040700E9C1FC /* EventKit.framework */; };
 		78D4A9B91886BF6D00CC44B4 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E72459184E040700E9C1FC /* EventKitUI.framework */; };
 		78D4A9BA1886BF8200CC44B4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E7245E184E0B7100E9C1FC /* Reachability.m */; };
@@ -353,7 +371,8 @@
 		78D4AA0E1886D13900CC44B4 /* sc_ScaleTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D4AA0D1886D13900CC44B4 /* sc_ScaleTest.m */; };
 		78D4AA151886D15500CC44B4 /* sc_ImageScaling.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D4A9AD1886A99D00CC44B4 /* sc_ImageScaling.m */; };
 		78D62BBB185F367C00FF7ADC /* sc_UploadItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D62BBA185F367C00FF7ADC /* sc_UploadItemManager.m */; };
-		78E72457184E03CA00E9C1FC /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E72456184E03CA00E9C1FC /* SitecoreMobileSDK.framework */; };
+		78DFD76318E4451600E0E4CD /* sc_LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DFD76218E4451600E0E4CD /* sc_LocationManager.m */; };
+		78DFD76418E4459E00E0E4CD /* sc_LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DFD76218E4451600E0E4CD /* sc_LocationManager.m */; };
 		78E7245A184E040700E9C1FC /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E72458184E040700E9C1FC /* EventKit.framework */; };
 		78E7245B184E040700E9C1FC /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E72459184E040700E9C1FC /* EventKitUI.framework */; };
 		78E7245F184E0B7100E9C1FC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E7245E184E0B7100E9C1FC /* Reachability.m */; };
@@ -364,7 +383,6 @@
 		7E81AE3F17D9C93600E53330 /* sc_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 655829B9175B408900768197 /* sc_AppDelegate.m */; };
 		7E81AE4017D9C93600E53330 /* sc_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655829C8175B408900768197 /* sc_ViewController.m */; };
 		7E81AE4117D9C93600E53330 /* sc_UploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6599A552175B9B410095775D /* sc_UploadViewController.m */; };
-		7E81AE4217D9C93600E53330 /* sc_BrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654ECE47175E719C00509490 /* sc_BrowseViewController.m */; };
 		7E81AE4317D9C93600E53330 /* sc_SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654ECE4A175E71B300509490 /* sc_SettingsViewController.m */; };
 		7E81AE4417D9C93600E53330 /* sc_AppDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 65569B2F1763B8A000A16A0A /* sc_AppDataObject.m */; };
 		7E81AE4517D9C93600E53330 /* sc_GlobalDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 65569B321763B8B400A16A0A /* sc_GlobalDataObject.m */; };
@@ -620,8 +638,6 @@
 		653D5B2917A85A5300754C9C /* sc_UploadItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_UploadItem.h; sourceTree = "<group>"; };
 		653D5B2A17A85A5300754C9C /* sc_UploadItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_UploadItem.m; sourceTree = "<group>"; };
 		653D5B3117A9A50000754C9C /* empty_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = empty_small.png; path = Images/empty_small.png; sourceTree = "<group>"; };
-		654ECE46175E719C00509490 /* sc_BrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_BrowseViewController.h; sourceTree = "<group>"; };
-		654ECE47175E719C00509490 /* sc_BrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_BrowseViewController.m; sourceTree = "<group>"; };
 		654ECE49175E71B300509490 /* sc_SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_SettingsViewController.h; sourceTree = "<group>"; };
 		654ECE4A175E71B300509490 /* sc_SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_SettingsViewController.m; sourceTree = "<group>"; };
 		65569B1A176256C900A16A0A /* browse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = browse.png; path = Images/browse.png; sourceTree = "<group>"; };
@@ -725,14 +741,33 @@
 		781081D11890224100E8EFD7 /* Sitecore.Mobile.MediaUploader-Info_AppStore.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sitecore.Mobile.MediaUploader-Info_AppStore.plist"; sourceTree = "<group>"; };
 		7836AF7E1871BBF500190D85 /* sc_UploadItemStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_UploadItemStatus.h; sourceTree = "<group>"; };
 		7836AF7F1871BBF500190D85 /* sc_UploadItemStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_UploadItemStatus.m; sourceTree = "<group>"; };
+		7872A6F518EC049600581E03 /* sc_LevelUpGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_LevelUpGridCell.h; sourceTree = "<group>"; };
+		7872A6F618EC049600581E03 /* sc_LevelUpGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_LevelUpGridCell.m; sourceTree = "<group>"; };
+		7872A6F918EC100700581E03 /* sc_SitesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_SitesManager.h; sourceTree = "<group>"; };
+		7872A6FA18EC100700581E03 /* sc_SitesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_SitesManager.m; sourceTree = "<group>"; };
+		7872A86D18EC3E5300581E03 /* sc_Site+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "sc_Site+Private.h"; sourceTree = "<group>"; };
+		7872A86E18EC3E5300581E03 /* sc_Site+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "sc_Site+Private.m"; sourceTree = "<group>"; };
 		78B01F55187EECC7006D48C9 /* sc_Constans.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_Constans.m; sourceTree = "<group>"; };
 		78B01F58187EF261006D48C9 /* sc_BaseTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_BaseTheme.h; sourceTree = "<group>"; };
 		78B01F59187EF261006D48C9 /* sc_BaseTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_BaseTheme.m; sourceTree = "<group>"; };
 		78C60A701889370500CB22E5 /* empty_upload_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty_upload_small.png; sourceTree = "<group>"; };
+		78C9E26D18E5A059004C7A88 /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SitecoreMobileSDK.framework; sourceTree = "<group>"; };
+		78C9E26E18E5A059004C7A88 /* SitecoreMobileUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SitecoreMobileUI.framework; sourceTree = "<group>"; };
+		78C9E27618E5CF6F004C7A88 /* SitecoreItemsBrowser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SitecoreItemsBrowser.framework; sourceTree = "<group>"; };
 		78CA658118C8B8C800C27192 /* accessoryArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "accessoryArrow@2x.png"; sourceTree = "<group>"; };
 		78CA658218C8B8C800C27192 /* accessoryArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accessoryArrow.png; sourceTree = "<group>"; };
 		78CA819A185B00420001896D /* sc_UploadItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_UploadItemCell.h; sourceTree = "<group>"; };
 		78CA819B185B00420001896D /* sc_UploadItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_UploadItemCell.m; sourceTree = "<group>"; };
+		78CC1EF618EAA2E6003608CD /* sc_BrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_BrowseViewController.h; sourceTree = "<group>"; };
+		78CC1EF718EAA2E6003608CD /* sc_BrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_BrowseViewController.m; sourceTree = "<group>"; };
+		78CC1EFA18EAF57F003608CD /* sc_BrowseViewAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_BrowseViewAppearance.h; sourceTree = "<group>"; };
+		78CC1EFB18EAF57F003608CD /* sc_BrowseViewAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_BrowseViewAppearance.m; sourceTree = "<group>"; };
+		78CC1EFE18EAF6FC003608CD /* sc_BrowseViewCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_BrowseViewCellFactory.h; sourceTree = "<group>"; };
+		78CC1EFF18EAF6FC003608CD /* sc_BrowseViewCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_BrowseViewCellFactory.m; sourceTree = "<group>"; };
+		78CC1F0318EAFEDF003608CD /* sc_FolderGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_FolderGridCell.h; sourceTree = "<group>"; };
+		78CC1F0418EAFEDF003608CD /* sc_FolderGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_FolderGridCell.m; sourceTree = "<group>"; };
+		78CE93BE18ED626400B68327 /* sc_ListBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_ListBrowserViewController.h; sourceTree = "<group>"; };
+		78CE93BF18ED626400B68327 /* sc_ListBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_ListBrowserViewController.m; sourceTree = "<group>"; };
 		78D37098188563B5005A7470 /* sc_ResourseCleaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_ResourseCleaner.h; sourceTree = "<group>"; };
 		78D37099188563B5005A7470 /* sc_ResourseCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_ResourseCleaner.m; sourceTree = "<group>"; };
 		78D3709B18856478005A7470 /* sc_CleaningProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_CleaningProtocol.h; sourceTree = "<group>"; };
@@ -746,7 +781,8 @@
 		78D4AA0F1886D13900CC44B4 /* Sitecore.Mobile.MediaUploaderTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sitecore.Mobile.MediaUploaderTests-Prefix.pch"; sourceTree = "<group>"; };
 		78D62BB9185F367C00FF7ADC /* sc_UploadItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_UploadItemManager.h; sourceTree = "<group>"; };
 		78D62BBA185F367C00FF7ADC /* sc_UploadItemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_UploadItemManager.m; sourceTree = "<group>"; };
-		78E72456184E03CA00E9C1FC /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SitecoreMobileSDK.framework; sourceTree = "<group>"; };
+		78DFD76118E4451600E0E4CD /* sc_LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_LocationManager.h; sourceTree = "<group>"; };
+		78DFD76218E4451600E0E4CD /* sc_LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_LocationManager.m; sourceTree = "<group>"; };
 		78E72458184E040700E9C1FC /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		78E72459184E040700E9C1FC /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		78E7245D184E0B7100E9C1FC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -774,6 +810,7 @@
 			files = (
 				4F7A466617BA39C20030BBDB /* SystemConfiguration.framework in Frameworks */,
 				78E7245A184E040700E9C1FC /* EventKit.framework in Frameworks */,
+				78C9E27318E5A059004C7A88 /* SitecoreMobileUI.framework in Frameworks */,
 				78E7245B184E040700E9C1FC /* EventKitUI.framework in Frameworks */,
 				7ED3E385178E9C8F00E02EA5 /* CoreMotion.framework in Frameworks */,
 				7ED3E383178E9C7A00E02EA5 /* CoreVideo.framework in Frameworks */,
@@ -789,13 +826,14 @@
 				655967CD178E1584009C96CD /* libc++.dylib in Frameworks */,
 				655967CB178E1577009C96CD /* libiconv.dylib in Frameworks */,
 				655967C9178E1567009C96CD /* libstdc++.dylib in Frameworks */,
+				78C9E27718E5CF6F004C7A88 /* SitecoreItemsBrowser.framework in Frameworks */,
 				655967C7178E1554009C96CD /* libsqlite3.dylib in Frameworks */,
 				655967C5178E1544009C96CD /* libz.dylib in Frameworks */,
 				655967C3178E152E009C96CD /* libxml2.2.dylib in Frameworks */,
 				65F5E860178C98C100059518 /* AVFoundation.framework in Frameworks */,
+				78C9E27118E5A059004C7A88 /* SitecoreMobileSDK.framework in Frameworks */,
 				4FC27C80177EF37E008C578D /* ImageIO.framework in Frameworks */,
 				651B1A29177CBA0C006FF573 /* MapKit.framework in Frameworks */,
-				78E72457184E03CA00E9C1FC /* SitecoreMobileSDK.framework in Frameworks */,
 				4F3903DE177B3F9400E8F508 /* QuartzCore.framework in Frameworks */,
 				4F24F36F1777AC6300C21E8F /* AssetsLibrary.framework in Frameworks */,
 				65FBC24C1775C378002437A5 /* MediaPlayer.framework in Frameworks */,
@@ -813,6 +851,7 @@
 			files = (
 				7810814A189021E300E8EFD7 /* SystemConfiguration.framework in Frameworks */,
 				7810814B189021E300E8EFD7 /* EventKit.framework in Frameworks */,
+				78C9E27418E5A059004C7A88 /* SitecoreMobileUI.framework in Frameworks */,
 				7810814C189021E300E8EFD7 /* EventKitUI.framework in Frameworks */,
 				7810814D189021E300E8EFD7 /* CoreMotion.framework in Frameworks */,
 				7810814E189021E300E8EFD7 /* CoreVideo.framework in Frameworks */,
@@ -828,13 +867,14 @@
 				78108158189021E300E8EFD7 /* libc++.dylib in Frameworks */,
 				78108159189021E300E8EFD7 /* libiconv.dylib in Frameworks */,
 				7810815A189021E300E8EFD7 /* libstdc++.dylib in Frameworks */,
+				78C9E27818E5CF6F004C7A88 /* SitecoreItemsBrowser.framework in Frameworks */,
 				7810815B189021E300E8EFD7 /* libsqlite3.dylib in Frameworks */,
 				7810815C189021E300E8EFD7 /* libz.dylib in Frameworks */,
 				7810815D189021E300E8EFD7 /* libxml2.2.dylib in Frameworks */,
 				7810815E189021E300E8EFD7 /* AVFoundation.framework in Frameworks */,
+				78C9E27218E5A059004C7A88 /* SitecoreMobileSDK.framework in Frameworks */,
 				7810815F189021E300E8EFD7 /* ImageIO.framework in Frameworks */,
 				78108160189021E300E8EFD7 /* MapKit.framework in Frameworks */,
-				78108161189021E300E8EFD7 /* SitecoreMobileSDK.framework in Frameworks */,
 				78108162189021E300E8EFD7 /* QuartzCore.framework in Frameworks */,
 				78108163189021E300E8EFD7 /* AssetsLibrary.framework in Frameworks */,
 				78108164189021E300E8EFD7 /* MediaPlayer.framework in Frameworks */,
@@ -882,7 +922,6 @@
 				7E81AE7917D9C93600E53330 /* libsqlite3.dylib in Frameworks */,
 				7E81AE7A17D9C93600E53330 /* libz.dylib in Frameworks */,
 				7E81AE7B17D9C93600E53330 /* libxml2.2.dylib in Frameworks */,
-				78D4A9B71886BF5E00CC44B4 /* SitecoreMobileSDK.framework in Frameworks */,
 				7E81AE7C17D9C93600E53330 /* AVFoundation.framework in Frameworks */,
 				7E81AE7D17D9C93600E53330 /* ImageIO.framework in Frameworks */,
 				7E81AE7E17D9C93600E53330 /* MapKit.framework in Frameworks */,
@@ -904,12 +943,12 @@
 		4F30E6CA179C66CF00F7FC6D /* Browsing */ = {
 			isa = PBXGroup;
 			children = (
+				78CE93BD18ED623900B68327 /* ListBrowser */,
+				78CC1F0218EAF997003608CD /* GridBrowser */,
 				4FD25889179C1EBB005B4B4F /* sc_FolderHierarchy.h */,
 				4FD2588A179C1EBB005B4B4F /* sc_FolderHierarchy.m */,
 				78E72460184E2BDE00E9C1FC /* sc_BrowseCell.h */,
 				78E72461184E2BDE00E9C1FC /* sc_BrowseCell.m */,
-				654ECE46175E719C00509490 /* sc_BrowseViewController.h */,
-				654ECE47175E719C00509490 /* sc_BrowseViewController.m */,
 				65D6BDC0179F3E76002336C5 /* sc_UploadFolderViewController.h */,
 				65D6BDC1179F3E77002336C5 /* sc_UploadFolderViewController.m */,
 				4F6B71A21763E20800CE3094 /* sc_QuickImageViewController.h */,
@@ -973,8 +1012,7 @@
 		65569B2217627B6600A16A0A /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				65569B2317627B9900A16A0A /* sc_Site.h */,
-				65569B2417627B9900A16A0A /* sc_Site.m */,
+				7872A7A818EC33F600581E03 /* Site */,
 				65569B2E1763B8A000A16A0A /* sc_AppDataObject.h */,
 				65569B2F1763B8A000A16A0A /* sc_AppDataObject.m */,
 				65569B311763B8B400A16A0A /* sc_GlobalDataObject.h */,
@@ -1015,8 +1053,10 @@
 		655829A8175B408900768197 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				78C9E27618E5CF6F004C7A88 /* SitecoreItemsBrowser.framework */,
+				78C9E26D18E5A059004C7A88 /* SitecoreMobileSDK.framework */,
+				78C9E26E18E5A059004C7A88 /* SitecoreMobileUI.framework */,
 				78D4A9B51886BE6D00CC44B4 /* XCTest.framework */,
-				78E72456184E03CA00E9C1FC /* SitecoreMobileSDK.framework */,
 				78E72458184E040700E9C1FC /* EventKit.framework */,
 				78E72459184E040700E9C1FC /* EventKitUI.framework */,
 				7E81AEF117D9C9B900E53330 /* Reveal.framework */,
@@ -1065,8 +1105,8 @@
 				65D6BDF317A19FFC002336C5 /* SiteSettings */,
 				65D6BDF217A19FEE002336C5 /* Map */,
 				65D6BDF117A19FDF002336C5 /* Upload */,
-				4FC97F9917A01B40008DAE4C /* Localization */,
 				4F30E6CA179C66CF00F7FC6D /* Browsing */,
+				4FC97F9917A01B40008DAE4C /* Localization */,
 				655829B0175B408900768197 /* Supporting Files */,
 			);
 			path = Sitecore.Mobile.MediaUploader;
@@ -1126,6 +1166,8 @@
 		65D6BDF117A19FDF002336C5 /* Upload */ = {
 			isa = PBXGroup;
 			children = (
+				78DFD76118E4451600E0E4CD /* sc_LocationManager.h */,
+				78DFD76218E4451600E0E4CD /* sc_LocationManager.m */,
 				6599A551175B9B410095775D /* sc_UploadViewController.h */,
 				6599A552175B9B410095775D /* sc_UploadViewController.m */,
 				65FBC23A17739841002437A5 /* sc_Upload2ViewController.h */,
@@ -1234,6 +1276,45 @@
 			);
 			name = buttons;
 			path = Images/buttons;
+			sourceTree = "<group>";
+		};
+		7872A7A818EC33F600581E03 /* Site */ = {
+			isa = PBXGroup;
+			children = (
+				65569B2317627B9900A16A0A /* sc_Site.h */,
+				65569B2417627B9900A16A0A /* sc_Site.m */,
+				7872A86D18EC3E5300581E03 /* sc_Site+Private.h */,
+				7872A86E18EC3E5300581E03 /* sc_Site+Private.m */,
+				7872A6F918EC100700581E03 /* sc_SitesManager.h */,
+				7872A6FA18EC100700581E03 /* sc_SitesManager.m */,
+			);
+			name = Site;
+			sourceTree = "<group>";
+		};
+		78CC1F0218EAF997003608CD /* GridBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				78CC1EF618EAA2E6003608CD /* sc_BrowseViewController.h */,
+				78CC1EF718EAA2E6003608CD /* sc_BrowseViewController.m */,
+				78CC1EFA18EAF57F003608CD /* sc_BrowseViewAppearance.h */,
+				78CC1EFB18EAF57F003608CD /* sc_BrowseViewAppearance.m */,
+				78CC1EFE18EAF6FC003608CD /* sc_BrowseViewCellFactory.h */,
+				78CC1EFF18EAF6FC003608CD /* sc_BrowseViewCellFactory.m */,
+				78CC1F0318EAFEDF003608CD /* sc_FolderGridCell.h */,
+				78CC1F0418EAFEDF003608CD /* sc_FolderGridCell.m */,
+				7872A6F518EC049600581E03 /* sc_LevelUpGridCell.h */,
+				7872A6F618EC049600581E03 /* sc_LevelUpGridCell.m */,
+			);
+			name = GridBrowser;
+			sourceTree = "<group>";
+		};
+		78CE93BD18ED623900B68327 /* ListBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				78CE93BE18ED626400B68327 /* sc_ListBrowserViewController.h */,
+				78CE93BF18ED626400B68327 /* sc_ListBrowserViewController.m */,
+			);
+			name = ListBrowser;
 			sourceTree = "<group>";
 		};
 		78D4AA071886D13900CC44B4 /* Sitecore.Mobile.MediaUploaderTests */ = {
@@ -1758,12 +1839,12 @@
 				4F30E6C9179C252100F7FC6D /* sc_FolderHierarchy.m in Sources */,
 				65569B28176293B600A16A0A /* sc_Site.m in Sources */,
 				78B01F56187EECC7006D48C9 /* sc_Constans.m in Sources */,
+				7872A6F718EC049600581E03 /* sc_LevelUpGridCell.m in Sources */,
 				655829B6175B408900768197 /* main.m in Sources */,
 				655829BA175B408900768197 /* sc_AppDelegate.m in Sources */,
 				78B01F5A187EF261006D48C9 /* sc_BaseTheme.m in Sources */,
 				655829C9175B408900768197 /* sc_ViewController.m in Sources */,
 				6599A553175B9B410095775D /* sc_UploadViewController.m in Sources */,
-				654ECE48175E719C00509490 /* sc_BrowseViewController.m in Sources */,
 				654ECE4B175E71B300509490 /* sc_SettingsViewController.m in Sources */,
 				78D4A9AE1886A99D00CC44B4 /* sc_ImageScaling.m in Sources */,
 				78D3709A188563B5005A7470 /* sc_ResourseCleaner.m in Sources */,
@@ -1771,6 +1852,7 @@
 				65569B331763B8B400A16A0A /* sc_GlobalDataObject.m in Sources */,
 				4F6B71A41763E20800CE3094 /* sc_QuickImageViewController.m in Sources */,
 				65FBC2231770D4EF002437A5 /* sc_SitesSelectionViewController.m in Sources */,
+				78CC1F0518EAFEDF003608CD /* sc_FolderGridCell.m in Sources */,
 				65359FD217C8600B003B6442 /* sc_NavigationController.m in Sources */,
 				65FBC23C17739842002437A5 /* sc_Upload2ViewController.m in Sources */,
 				651B1A24177CB850006FF573 /* sc_MapViewController.m in Sources */,
@@ -1779,8 +1861,12 @@
 				65F5E850178A9D0F00059518 /* sc_GradientButton.m in Sources */,
 				65D6BDC2179F3E77002336C5 /* sc_UploadFolderViewController.m in Sources */,
 				4FE40C39179FE7D600F9DDB9 /* sc_ActivityIndicator.m in Sources */,
+				78DFD76318E4451600E0E4CD /* sc_LocationManager.m in Sources */,
 				65D6BE0517A283C1002336C5 /* sc_SiteEditViewController.m in Sources */,
+				78CC1F0018EAF6FC003608CD /* sc_BrowseViewCellFactory.m in Sources */,
 				65D6BE0B17A2AA0D002336C5 /* sc_SiteAddViewController.m in Sources */,
+				78CC1EF818EAA2E6003608CD /* sc_BrowseViewController.m in Sources */,
+				7872A6FB18EC100700581E03 /* sc_SitesManager.m in Sources */,
 				653D5B2B17A85A5300754C9C /* sc_UploadItem.m in Sources */,
 				7836AF801871BBF500190D85 /* sc_UploadItemStatus.m in Sources */,
 				78D62BBB185F367C00FF7ADC /* sc_UploadItemManager.m in Sources */,
@@ -1790,7 +1876,10 @@
 				6504584D17AE440200A04E25 /* sc_ViewsHelper.m in Sources */,
 				6504585017AF7E3700A04E25 /* sc_ItemHelper.m in Sources */,
 				78CA819C185B00420001896D /* sc_UploadItemCell.m in Sources */,
+				7872A86F18EC3E5300581E03 /* sc_Site+Private.m in Sources */,
 				4F7A466B17BE6BC90030BBDB /* sc_DeviceHelper.m in Sources */,
+				78CE93C018ED626400B68327 /* sc_ListBrowserViewController.m in Sources */,
+				78CC1EFC18EAF57F003608CD /* sc_BrowseViewAppearance.m in Sources */,
 				655F69ED17C5D78D00C4AFF4 /* sc_Validator.m in Sources */,
 				78E7245F184E0B7100E9C1FC /* Reachability.m in Sources */,
 				78E72462184E2BDE00E9C1FC /* sc_BrowseCell.m in Sources */,
@@ -1804,12 +1893,12 @@
 				78108122189021E300E8EFD7 /* sc_FolderHierarchy.m in Sources */,
 				78108123189021E300E8EFD7 /* sc_Site.m in Sources */,
 				78108124189021E300E8EFD7 /* sc_Constans.m in Sources */,
+				7872A6F818EC049600581E03 /* sc_LevelUpGridCell.m in Sources */,
 				78108125189021E300E8EFD7 /* main.m in Sources */,
 				78108126189021E300E8EFD7 /* sc_AppDelegate.m in Sources */,
 				78108127189021E300E8EFD7 /* sc_BaseTheme.m in Sources */,
 				78108128189021E300E8EFD7 /* sc_ViewController.m in Sources */,
 				78108129189021E300E8EFD7 /* sc_UploadViewController.m in Sources */,
-				7810812A189021E300E8EFD7 /* sc_BrowseViewController.m in Sources */,
 				7810812B189021E300E8EFD7 /* sc_SettingsViewController.m in Sources */,
 				7810812C189021E300E8EFD7 /* sc_ImageScaling.m in Sources */,
 				7810812D189021E300E8EFD7 /* sc_ResourseCleaner.m in Sources */,
@@ -1817,6 +1906,7 @@
 				7810812F189021E300E8EFD7 /* sc_GlobalDataObject.m in Sources */,
 				78108130189021E300E8EFD7 /* sc_QuickImageViewController.m in Sources */,
 				78108131189021E300E8EFD7 /* sc_SitesSelectionViewController.m in Sources */,
+				78CC1F0618EAFEDF003608CD /* sc_FolderGridCell.m in Sources */,
 				78108132189021E300E8EFD7 /* sc_NavigationController.m in Sources */,
 				78108133189021E300E8EFD7 /* sc_Upload2ViewController.m in Sources */,
 				78108134189021E300E8EFD7 /* sc_MapViewController.m in Sources */,
@@ -1825,8 +1915,12 @@
 				78108137189021E300E8EFD7 /* sc_GradientButton.m in Sources */,
 				78108138189021E300E8EFD7 /* sc_UploadFolderViewController.m in Sources */,
 				78108139189021E300E8EFD7 /* sc_ActivityIndicator.m in Sources */,
+				78DFD76418E4459E00E0E4CD /* sc_LocationManager.m in Sources */,
 				7810813A189021E300E8EFD7 /* sc_SiteEditViewController.m in Sources */,
+				78CC1F0118EAF6FC003608CD /* sc_BrowseViewCellFactory.m in Sources */,
 				7810813B189021E300E8EFD7 /* sc_SiteAddViewController.m in Sources */,
+				78CC1EF918EAA2EB003608CD /* sc_BrowseViewController.m in Sources */,
+				7872A6FC18EC100700581E03 /* sc_SitesManager.m in Sources */,
 				7810813C189021E300E8EFD7 /* sc_UploadItem.m in Sources */,
 				7810813D189021E300E8EFD7 /* sc_UploadItemStatus.m in Sources */,
 				7810813E189021E300E8EFD7 /* sc_UploadItemManager.m in Sources */,
@@ -1836,7 +1930,10 @@
 				78108142189021E300E8EFD7 /* sc_ViewsHelper.m in Sources */,
 				78108143189021E300E8EFD7 /* sc_ItemHelper.m in Sources */,
 				78108144189021E300E8EFD7 /* sc_UploadItemCell.m in Sources */,
+				7872A87018EC3E5300581E03 /* sc_Site+Private.m in Sources */,
 				78108145189021E300E8EFD7 /* sc_DeviceHelper.m in Sources */,
+				78CE93C118ED626400B68327 /* sc_ListBrowserViewController.m in Sources */,
+				78CC1EFD18EAF57F003608CD /* sc_BrowseViewAppearance.m in Sources */,
 				78108146189021E300E8EFD7 /* sc_Validator.m in Sources */,
 				78108147189021E300E8EFD7 /* Reachability.m in Sources */,
 				78108148189021E300E8EFD7 /* sc_BrowseCell.m in Sources */,
@@ -1864,7 +1961,6 @@
 				7E81AE3F17D9C93600E53330 /* sc_AppDelegate.m in Sources */,
 				7E81AE4017D9C93600E53330 /* sc_ViewController.m in Sources */,
 				7E81AE4117D9C93600E53330 /* sc_UploadViewController.m in Sources */,
-				7E81AE4217D9C93600E53330 /* sc_BrowseViewController.m in Sources */,
 				78D4A9BD1886BFA300CC44B4 /* sc_ResourseCleaner.m in Sources */,
 				7E81AE4317D9C93600E53330 /* sc_SettingsViewController.m in Sources */,
 				7E81AE4417D9C93600E53330 /* sc_AppDataObject.m in Sources */,
@@ -2025,10 +2121,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)",
-					"\\\\\\\"$(SRCROOT)/../../deployment\\\\\\\"",
-					/Volumes/Sitecore/Sources/SVNMobileSDK/app/MediaUploader,
-					/Volumes/Sitecore/Sources/src/app/MediaUploader,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
@@ -2047,10 +2140,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)",
-					"\\\\\\\"$(SRCROOT)/../../deployment\\\\\\\"",
-					/Volumes/Sitecore/Sources/SVNMobileSDK/app/MediaUploader,
-					/Volumes/Sitecore/Sources/src/app/MediaUploader,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
@@ -2069,10 +2159,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Sitecore Corporation A/S (AJ2XRRY985)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)",
-					"\\\\\\\"$(SRCROOT)/../../deployment\\\\\\\"",
-					/Volumes/Sitecore/Sources/SVNMobileSDK/app/MediaUploader,
-					/Volumes/Sitecore/Sources/src/app/MediaUploader,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
@@ -2091,10 +2178,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Sitecore Corporation A/S (AJ2XRRY985)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)",
-					"\\\\\\\"$(SRCROOT)/../../deployment\\\\\\\"",
-					/Volumes/Sitecore/Sources/SVNMobileSDK/app/MediaUploader,
-					/Volumes/Sitecore/Sources/src/app/MediaUploader,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";

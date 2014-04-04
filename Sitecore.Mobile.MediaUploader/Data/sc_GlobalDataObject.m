@@ -20,68 +20,20 @@
     return (sc_GlobalDataObject*) delegate.appDataObject;
 }
 
--(void)initializeSites
+-(instancetype)init
 {
-    [ self loadSites ];
-}
-
--(void)initializeMediaUpload
-{
-    [ self loadMediaUpload ];
-}
-
--(void)addSite:(sc_Site*) site
-{
-    if ( [ _sites count ] == 0 )
+    if ( self = [super init] )
     {
-        site.selectedForUpdate = YES;
-    }
-    else
-    {
-        site.selectedForUpdate = NO;
+        self->_sitesManager = [ sc_SitesManager new ];
+        [ self loadMediaUpload ];
     }
     
-    [ _sites addObject: site ];
-}
-
--(NSUInteger)sameSitesCount:(sc_Site*)site
-{
-    NSUInteger result = 0;
-    
-    for ( sc_Site *elem in self->_sites )
-    {
-        if ( [ elem isEqual: site ] )
-        {
-            ++result;
-        }
-    }
-    
-    return result;
-}
-
--(BOOL)isSameSiteExist:(sc_Site*)site
-{
-    if ( [ self sameSitesCount: site ] == 0)
-    {
-        return NO;
-    }
-        
-    return YES;
+    return self;
 }
 
 -(void)addMediaUpload:(sc_Media*) media
 {
     [_mediaUpload addObject:media];
-}
-
--(void)deleteSite:(sc_Site*) site
-{
-    [_sites removeObject:site];
-}
-
--(NSString *)getSettingFile
-{
-    return [self getFile:@"sites.txt"];
 }
 
 -(NSString *)getMediaUploadFile
@@ -97,20 +49,6 @@
     return appFile;
 }
 
--(void)loadSites
-{
-    
-    NSString *appFile = [ self getSettingFile ];
-    
-    _sites = [ NSKeyedUnarchiver unarchiveObjectWithFile:appFile ];
-    if ( !_sites )
-    {
-        _sites = [ [ NSMutableArray alloc ] init ];
-    }
-    
-    [ self setSelecteForUploadSites ];
-}
-
 -(void)loadMediaUpload
 {
     NSString *appFile = [ self getMediaUploadFile ];
@@ -120,79 +58,6 @@
     {
         _mediaUpload = [ [ NSMutableArray alloc ] init ];
     }
-}
-
--(void)setSelecteForUploadSites
-{
-    _selectedForUploadsites = [ [ NSMutableArray alloc ] init ];
-    
-    for ( NSInteger i = 0; i < [ _sites count ]; ++i )
-    {
-        sc_Site *site = [ _sites objectAtIndex: i ];
-        if ( site.selectedForUpdate )
-        {
-            [ _selectedForUploadsites addObject: site ];
-        }
-    }
-}
-
--(sc_Site *)siteForBrowse
-{
-    for ( NSInteger i = 0; i < [ _sites count ]; ++i )
-    {
-        sc_Site *site = [ _sites objectAtIndex: i ];
-        if (site.selectedForBrowse)
-        {
-            return site;
-        }
-    }
-
-    return nil;
-}
-
--(void)setSiteForUpload:(sc_Site *)siteForUpload
-{
-    for ( sc_Site *site in self.sites )
-    {
-        if ( [ site isEqual:siteForUpload ] )
-        {
-            site.selectedForUpdate = YES;
-        }
-        else
-        {
-            site.selectedForUpdate = NO;
-        }
-    }
-
-    [ self saveSites ];
-}
-
--(sc_Site *)siteForUpload
-{
-    for ( sc_Site *site in self.sites )
-    {
-        if ( site.selectedForUpdate )
-        {
-            return site;
-        }
-    }
-
-    if ( [ self.sites count ] > 0 )
-    {
-        sc_Site *site = self.sites[0];
-        site.selectedForUpdate = YES;
-        return site;
-    }
-    
-    NSLog(@"No sites");
-    return nil;
-}
-
--(void)saveSites
-{
-    [self setSelecteForUploadSites];
-    NSString *appFile = [self getSettingFile];
-    [NSKeyedArchiver archiveRootObject:_sites toFile:appFile];
 }
 
 -(void)saveMediaUpload
@@ -226,38 +91,6 @@
         [ fileManager removeItemAtURL: videoUrl
                                 error: &error ];
     }
-}
-
--(NSUInteger)countOfList
-{
-    if(_sites == NULL)
-    {
-        return 0;
-    }
-    return [_sites count];
-}
-
--(sc_Site *)objectInListAtIndex:(NSUInteger)theIndex
-{
-    if(_sites == NULL)
-    {
-        return NULL;
-    }
-    return [_sites objectAtIndex:theIndex];
-}
-
--(NSUInteger)countOfSites
-{
-    return [ self->_sites count ] > 0;
-}
-
--(sc_Site *)objectInSelectedForUploadListAtIndex:(NSUInteger)theIndex
-{
-    if(_selectedForUploadsites == NULL)
-    {
-        return NULL;
-    }
-    return [_selectedForUploadsites objectAtIndex:theIndex];
 }
 
 -(BOOL)isOnline

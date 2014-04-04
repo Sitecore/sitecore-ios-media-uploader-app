@@ -15,6 +15,7 @@
 #import "sc_GlobalDataObject.h"
 #import "sc_AppDelegateProtocol.h"
 #import "sc_ImageHelper.h"
+#import "sc_LocationManager.h"
 
 typedef NS_ENUM(NSInteger, MapViewMode)
 {
@@ -104,7 +105,7 @@ static CGFloat beautifulRegionCoef = 112.f;
         
         if (placemarks && placemarks.count > 0) {
             CLPlacemark *placemark = [placemarks objectAtIndex:0];
-            annotation.title = [sc_ImageHelper formatLocation:placemark];
+            annotation.title = [ sc_LocationManager getLocationDescriptionForPlacemark: placemark ];
             
             [self setSelectedPlaceMark:placemark];
         }
@@ -116,7 +117,7 @@ static CGFloat beautifulRegionCoef = 112.f;
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
     annotation.coordinate = placemark.location.coordinate;
     [self.mapView addAnnotation:annotation];
-    annotation.title = [sc_ImageHelper formatLocation:placemark];
+    annotation.title = [ sc_LocationManager getLocationDescriptionForPlacemark: placemark ];
     
     _foundPlacemarks = [[NSMutableArray alloc] initWithObjects:placemark, nil];
     [self setSelectedPlaceMark:placemark];
@@ -146,7 +147,7 @@ static CGFloat beautifulRegionCoef = 112.f;
 
 - (void)setSelectedPlaceMark:(CLPlacemark *)placemark
 {
-    self.navigationItem.title = [sc_ImageHelper formatLocation:placemark];
+    self.navigationItem.title = [ sc_LocationManager getLocationDescriptionForPlacemark: placemark ];
     _currentPlacemark = placemark;
 }
 

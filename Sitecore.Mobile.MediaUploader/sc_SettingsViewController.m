@@ -18,6 +18,7 @@
 #import "sc_ImageHelper.h"
 #import "sc_ItemHelper.h"
 #import "sc_BaseTheme.h"
+#import "sc_SiteAddViewController.h"
 
 @interface sc_SettingsViewController ()
 @end
@@ -40,11 +41,6 @@
     
     self.navigationItem.title = NSLocalizedString(self.navigationItem.title, nil);
     _appDataObject = [sc_GlobalDataObject getAppDataObject];
-    
-    if(_appDataObject.sites.count == 0)
-    {
-        [sc_ImageHelper saveUploadImageSize:UPLODIMAGESIZE_MEDIUM];
-    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -73,8 +69,9 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        [_appDataObject deleteSite:[_appDataObject.sites objectAtIndex:indexPath.row]];
-        [self reload];
+        sc_Site *siteToDelete = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
+        [ _appDataObject.sitesManager removeSite: siteToDelete ];
+        [ self reload ];
     }
 }
 
@@ -92,7 +89,7 @@
 {
     if (section == 1)
     {
-        return [_appDataObject countOfList] + 1;
+        return [_appDataObject.sitesManager sitesCount] + 1;
     }
     
     return 1;
@@ -125,7 +122,7 @@
     if (indexPath.section == 1)
     {
         
-        if (indexPath.row == [_appDataObject countOfList])
+        if (indexPath.row == [_appDataObject.sitesManager sitesCount])
         {
             UITableViewCell *  cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"AddNewSite"];
             cell.imageView.image = [UIImage imageNamed:@"empty_small.png"];
@@ -136,7 +133,7 @@
         
         UITableViewCell *  cell =  [tableView dequeueReusableCellWithIdentifier:@"cellSiteUrl" forIndexPath:indexPath];
         
-        sc_Site *siteAtIndex = [_appDataObject objectInListAtIndex:indexPath.row];
+        sc_Site *siteAtIndex = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
 
         cell.textLabel.lineBreakMode = NSLineBreakByTruncatingHead;
         cell.detailTextLabel.lineBreakMode = NSLineBreakByTruncatingHead ;
@@ -148,7 +145,7 @@
         //refactor
         cell.imageView.tag = indexPath.row;
         
-        if (siteAtIndex.selectedForUpdate)
+        if ( siteAtIndex.selectedForUpload )
         {
             cell.imageView.image = [UIImage imageNamed:@"upload_small.png"];
             [ cell setBackgroundColor: [ self->_theme disableSiteBackgroundColor ] ];
@@ -185,7 +182,7 @@
 {
     if ( indexPath.section == 1 )
     {
-        if ( indexPath.row == [ _appDataObject countOfList ] )
+        if ( indexPath.row == [ _appDataObject.sitesManager sitesCount ] )
         {
             sc_SiteAddViewController *siteAddViewController = (sc_SiteAddViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"AddSite"];
             [self.navigationController pushViewController:siteAddViewController animated:YES];
@@ -194,8 +191,8 @@
         }
         else
         {
-            sc_Site *siteAtIndex = [ _appDataObject objectInListAtIndex: indexPath.row ];
-            [ _appDataObject setSiteForUpload: siteAtIndex ];
+            sc_Site *siteAtIndex = [ _appDataObject.sitesManager siteAtIndex: indexPath.row ];
+            [ _appDataObject.sitesManager setSiteForUpload: siteAtIndex ];
             [ self.sitesTableView reloadData ];
         }
     }
@@ -209,9 +206,11 @@
 
 -(void)accessoryTapped:(UIButton *)sender
 {
-    sc_Site *siteAtIndex = [ _appDataObject objectInListAtIndex: sender.tag ];
-    sc_SiteEditViewController *siteEditViewController = (sc_SiteEditViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SiteEdit"];
-    [siteEditViewController setSite:siteAtIndex isNew:false];
+    sc_Site *siteAtIndex = [ _appDataObject.sitesManager siteAtIndex: sender.tag ];
+//    sc_SiteEditViewController *siteEditViewController = (sc_SiteEditViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SiteEdit"];
+//    [siteEditViewController setSite:siteAtIndex isNew:false];
+    sc_SiteAddViewController *siteEditViewController = (sc_SiteAddViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"AddSite"];
+    [ siteEditViewController setSiteForEdit: siteAtIndex ];
     [self.navigationController pushViewController:siteEditViewController animated:YES];
     //[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

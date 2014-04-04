@@ -14,6 +14,6 @@
 @property (nonatomic, retain) NSMutableArray * items;
 @property (nonatomic) int selectedImage;
 @property (nonatomic) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, strong) SCApiContext *context;
+@property (nonatomic, strong) SCApiSession *session;
 
 @end

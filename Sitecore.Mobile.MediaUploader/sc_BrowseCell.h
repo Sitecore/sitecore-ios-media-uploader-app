@@ -15,6 +15,6 @@
 @property( nonatomic ) IBOutlet UILabel *label;
 @property( nonatomic ) IBOutlet UIActivityIndicatorView *cellActivityView;
 
--(void)setCellType:(sc_CellType)cellType item:(SCItem *)item context:(SCApiContext *)context;
+-(void)setCellType:(sc_CellType)cellType item:(SCItem *)item session:(SCApiSession *)session;
 
 @end

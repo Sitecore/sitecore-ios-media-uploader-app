@@ -13,7 +13,7 @@
     SCCancelAsyncOperation _cancelOp;
 }
 
--(void)setCellType:(sc_CellType)cellType item:(SCItem *)item context:(SCApiContext *)context
+-(void)setCellType:(sc_CellType)cellType item:(SCItem *)item session:(SCApiSession *)session
 {
     if ( self->_cancelOp )
         self->_cancelOp(YES);
@@ -37,7 +37,7 @@
             
         case ImageCellType:
             [ self setupImageWithItem: item
-                              context: context ];
+                              session: session ];
             break;
             
         default:
@@ -46,21 +46,21 @@
 
 }
 
--(void)setupImageWithItem:(SCItem *)item context:(SCApiContext *)context
+-(void)setupImageWithItem:(SCItem *)item session:(SCApiSession *)session
 {
     self.cellImageView.contentMode = UIViewContentModeScaleAspectFill;
     
     self.cellActivityView.hidden = NO;
     
-    SCFieldImageParams *params = [ SCFieldImageParams new ];
+    SCDownloadMediaOptions *params = [ SCDownloadMediaOptions new ];
     params.width = self.bounds.size.width;
     params.height = self.bounds.size.height;
     params.database = [sc_ItemHelper getDefaultDatabase];
     
     NSString *itemPath = [ sc_ItemHelper getPath: item.itemId ];
     
-    SCExtendedAsyncOp imageReader = [ context.extendedApiContext imageLoaderForSCMediaPath: itemPath
-                                                                               imageParams: params ];
+    SCExtendedAsyncOp imageReader = [ session.extendedApiSession downloadResourceOperationForMediaPath: itemPath
+                                                                                           imageParams: params ];
     
     SCDidFinishAsyncOperationHandler doneHandler = (^(id result, NSError *error)
     {

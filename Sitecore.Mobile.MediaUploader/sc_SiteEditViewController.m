@@ -14,11 +14,11 @@
 #import "sc_ViewsHelper.h"
 #import "sc_GradientButton.h"
 #import "sc_Constants.h"
-#import "sc_UploadFolderViewController.h"
 #import "sc_SitesSelectionViewController.h"
 #import "sc_ReloadableViewProtocol.h"
 #import "sc_GradientButton.h"
 #import "sc_ItemHelper.h"
+#import "sc_ListBrowserViewController.h"
 
 @interface sc_SiteEditViewController ()
 @property bool isNewSite;
@@ -75,7 +75,7 @@
 {
     if ( _selectedForUploadSwitch.isOn )
     {
-        _appDataObject.siteForUpload = self.site;
+        _appDataObject.sitesManager.siteForUpload = self.site;
     }
 }
 
@@ -88,20 +88,19 @@
 {
     if (self->_site)
     {
-        [ self setUploadMediaFolder: self->_site.uploadFolderPathInsideMediaLibrary
-                             withId: self->_site.uploadFolderId ];
+        [ self setUploadMediaFolder: self->_site.uploadFolderPathInsideMediaLibrary ];
         
         self->_urlLabel.text = self->_site.siteUrl;
         self->_siteLabel.text = self->_site.site;
         
-        self->_selectedForUploadSwitch.on = self->_site.selectedForUpdate;
+        self->_selectedForUploadSwitch.on = self->_site.selectedForUpload;
     }
 }
 
 
 -(void)goBack:(id)sender
 {
-    if ( [ _appDataObject sameSitesCount: self->_site ] > 1 )
+    if ( [ _appDataObject.sitesManager sameSitesCount: self->_site ] > 1 )
     {
         [ sc_ErrorHelper showError: NSLocalizedString( @"SITE_EXISTS_ERROR", nil ) ];
         return;
@@ -125,7 +124,7 @@
 
 -(void)save:(id)sender
 {
-    [ _appDataObject saveSites ];
+    [ _appDataObject.sitesManager saveSites ];
     
     [ self goBack: nil ];
 }
@@ -136,10 +135,9 @@
     return YES;
 }
 
--(void)setUploadMediaFolder:(NSString*)folder withId:(NSString*)folderId
+-(void)setUploadMediaFolder:(NSString*)folder
 {
     _site.uploadFolderPathInsideMediaLibrary = folder;
-    _site.uploadFolderId = folderId;
     
     folder = [sc_ItemHelper formatUploadFolder:_site];
     _choosenFolderLabel.text = folder;
@@ -149,8 +147,8 @@
 {
     if ( [ segue.identifier isEqualToString:@"UploadFolder" ] )
     {
-        sc_UploadFolderViewController* destinationController = ( sc_UploadFolderViewController * ) segue.destinationViewController;
-        [ destinationController setCurrentSite: _site ];
+        sc_ListBrowserViewController* destinationController = ( sc_ListBrowserViewController * ) segue.destinationViewController;
+        [ destinationController setSiteForBrowse: _site ];
     }
 }
 
@@ -207,8 +205,7 @@
 
 -(IBAction)delete:(id)sender
 {
-    [ _appDataObject deleteSite: _site ];
-    [ _appDataObject saveSites ];
+    [ _appDataObject.sitesManager removeSite: _site ];
     
     [ sc_ViewsHelper reloadParentController: self.navigationController
                                      levels: 2 ];

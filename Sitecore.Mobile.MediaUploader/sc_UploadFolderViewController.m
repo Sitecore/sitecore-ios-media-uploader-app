@@ -28,17 +28,17 @@
 
 -(void) setStartingFolder
 {
-     NSString *rootFolderId = [ sc_Site mediaLibraryDefaultID ];
-    
-    if ( [ _startingFolderId isEqualToString: @"" ] )
-    {
-        self.itemId = rootFolderId;
-    }
-    else
-    {
-        self.itemId = _startingFolderId;
-        self.currentPathInsideMediaLibrary = _startingUploadFolder;
-    }
+//     NSString *rootFolderId = [ sc_Site mediaLibraryDefaultID ];
+//    
+//    if ( [ _startingFolderId isEqualToString: @"" ] )
+//    {
+//        self.itemId = rootFolderId;
+//    }
+//    else
+//    {
+//        self.itemId = _startingFolderId;
+//        self.currentPathInsideMediaLibrary = _startingUploadFolder;
+//    }
 }
 
 -(void)setCurrentSite:(sc_Site*) site
@@ -46,7 +46,6 @@
     [ super setCurrentSite:site ];
    
     _startingUploadFolder = site.uploadFolderPathInsideMediaLibrary;
-    _startingFolderId = site.uploadFolderId;
 }
 
 -(NSMutableArray*) returnRequired: (NSMutableArray *) folderArray with: (NSMutableArray *) imageArray
@@ -80,17 +79,17 @@
     {
         label.text = [ cellObject.displayName lowercaseString ];
         
-         NSString *rootFolderId = [ sc_Site mediaLibraryDefaultID ];
+         //NSString *rootFolderId = [ sc_Site mediaLibraryDefaultID ];
         
-        if ( indexPath.row == 0 && ![ self.itemId isEqualToString: rootFolderId ] )
-        {
-            [ cellImageView setImage: [ UIImage imageNamed: @"up_small.png" ] ];
-        }
-        else
-        {
-            [ cellImageView setImage: [ UIImage imageNamed: @"folder_small.png" ] ];
-        }
-    } 
+//        if ( indexPath.row == 0 && ![ self.itemId isEqualToString: rootFolderId ] )
+//        {
+//            [ cellImageView setImage: [ UIImage imageNamed: @"up_small.png" ] ];
+//        }
+//        else
+//        {
+//            [ cellImageView setImage: [ UIImage imageNamed: @"folder_small.png" ] ];
+//        }
+    }
     
     return cell;
 }
@@ -110,7 +109,6 @@
     self.navigationItem.title = self.currentFolder;
     
     self.currentSite.uploadFolderPathInsideMediaLibrary = self.currentPathInsideMediaLibrary;
-    self.currentSite.uploadFolderId = self.itemId;
 }
 
 -(NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView
@@ -140,7 +138,7 @@
 -(IBAction)useButtonPushed:(id)sender
 {
     sc_GlobalDataObject *globalDataObject = [ sc_GlobalDataObject getAppDataObject ];
-    BOOL siteDouplicatesExists = [ globalDataObject sameSitesCount: self.currentSite ] > 1;
+    BOOL siteDouplicatesExists = [ globalDataObject.sitesManager sameSitesCount: self.currentSite ] > 1;
     
     if ( siteDouplicatesExists )
     {
@@ -163,7 +161,6 @@
 -(void)cancelNewSettings
 {
     self.currentSite.uploadFolderPathInsideMediaLibrary = _startingUploadFolder;
-    self.currentSite.uploadFolderId = _startingFolderId;
     [ self.navigationController popViewControllerAnimated: YES ];
 }
 

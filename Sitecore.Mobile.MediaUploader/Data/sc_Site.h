@@ -10,26 +10,30 @@
 
 @interface sc_Site : NSObject
 
-@property ( nonatomic ) NSString *index;
 @property ( nonatomic ) NSString *siteUrl;
 @property ( nonatomic ) NSString *site;
-@property ( nonatomic ) NSString *uploadFolderPathInsideMediaLibrary;
-@property ( nonatomic ) NSString *uploadFolderId;
+
 @property ( nonatomic ) NSString *username;
 @property ( nonatomic ) NSString *password;
-@property ( nonatomic ) BOOL selectedForBrowse;
-@property ( nonatomic ) BOOL selectedForUpdate;
+@property ( nonatomic, readonly ) BOOL selectedForBrowse;
+@property ( nonatomic, readonly ) BOOL selectedForUpload;
 
 -(id)initWithSiteUrl: (NSString *)siteUrl
                 site: (NSString *)site
 uploadFolderPathInsideMediaLibrary: (NSString *)uploadFolderPathInsideMediaLibrary
-      uploadFolderId: (NSString *)uploadFolderId
             username: (NSString *)username
             password: (NSString *)password
    selectedForBrowse: (BOOL)selectedForBrowse
-   selectedForUpdate: (BOOL)selectedForUpdate;
+   selectedForUpload: (BOOL)selectedForUpload;
 
+-(NSString *)getFolderPathForUpload;
+
++(instancetype)emptySite;
 +(NSString *)siteDefaultValue;
-+(NSString *)mediaLibraryDefaultID;
++(NSString *)mediaLibraryDefaultPath;
 +(NSString *)mediaLibraryDefaultNameWithSlash:(BOOL)withSlash;
+
+-(NSString *)uploadFolderPathInsideMediaLibrary;
+-(void)setUploadFolderPathInsideMediaLibrary:(NSString *)uploadFolderPathInsideMediaLibrary;
+
 @end

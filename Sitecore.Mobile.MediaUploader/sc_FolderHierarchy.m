@@ -72,10 +72,9 @@
     [ self setCurrentPaths: path
                displayName: displayName ];
     
-    self.navigationItem.title = self.currentFolder;
-    
+    self.navigationItem.title = displayName;
+ 
     self.currentSite.uploadFolderPathInsideMediaLibrary = self.currentPathInsideMediaLibrary;
-    self.currentSite.uploadFolderId = self.itemId;
     
     [self readContents];
 }
@@ -85,7 +84,7 @@
     sc_QuickImageViewController *quickImageViewController = (sc_QuickImageViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"sc_QuickImageViewController"];
     quickImageViewController.items = [self.items mutableCopy];
     quickImageViewController.selectedImage = indexPath.row;
-    quickImageViewController.context = self.context;
+    quickImageViewController.session = self.session;
     [self.navigationController pushViewController:quickImageViewController animated:YES];
 }
 
@@ -116,18 +115,19 @@
 -(void)setCurrentPaths:(NSString *)path displayName:(NSString *)displayName
 {
     _currentFolder = [ displayName lowercaseString ];
+    
     _currentPathInsideSitecore = [ self getPathInsideSitecore: path ];
     _currentPathInsideMediaLibrary =  [ self getPathInsideMediaLibrary: _currentPathInsideSitecore ];
 }
 
 -(void)setContext
 {
-    _context = [sc_ItemHelper getContext: _currentSite];
+    _session = [sc_ItemHelper getContext: _currentSite];
 }
 
 -(void)setStartingFolder
 {
-    _itemId = [ sc_Site mediaLibraryDefaultID ];
+   // _itemId = [ sc_Site mediaLibraryDefaultID ];
 }
 
 -(NSString *)getCurrentItemId
@@ -167,21 +167,21 @@
 
 -(void)readContents
 {
-    SCItemsReaderRequest *request = [SCItemsReaderRequest new];
-    request.requestType = SCItemReaderRequestItemId;
-    request.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
+    SCReadItemsRequest *request = [SCReadItemsRequest new];
+    request.requestType = SCReadItemRequestItemId;
+    request.flags = SCReadItemRequestIngnoreCache | SCReadItemRequestReadFieldsValues;
     request.fieldNames = [NSSet setWithObjects: @"__Created", nil];
     request.request = self.itemId;
     
-     NSString *rootFolderId = [ sc_Site mediaLibraryDefaultID ];
+    // NSString *rootFolderId = [ sc_Site mediaLibraryDefaultID ];
     
-    request.scope = ([ self.itemId isEqualToString: rootFolderId ]) ? SCItemReaderChildrenScope : SCItemReaderParentScope | SCItemReaderChildrenScope ;
+//    request.scope = ([ self.itemId isEqualToString: rootFolderId ]) ? SCReadItemChildrenScope : SCReadItemParentScope | SCReadItemChildrenScope ;
     
     [_activityIndicator showWithLabel:NSLocalizedString(@"Loading...", nil) afterDelay:0.5];
     
     __weak sc_FolderHierarchy *weakSelf = self;
     
-    [self.context itemsReaderWithRequest: request](^(NSArray* result, NSError *error)
+    [self.session readItemsOperationWithRequest: request](^(NSArray* result, NSError *error)
     {
          [_activityIndicator hide];
         
@@ -189,16 +189,16 @@
         
         if ( folderNotExists )
         {
-             NSString *rootFolderId = [ sc_Site mediaLibraryDefaultID ];
+            // NSString *rootFolderId = [ sc_Site mediaLibraryDefaultID ];
             
-            if ( [ self.itemId isEqualToString: rootFolderId ] )
-            {
-                [sc_ErrorHelper showError: NSLocalizedString(@"Server connection error", nil)];
-            }
-            else
-            {
-                [ weakSelf navigateToMediaFolderRoot ];
-            }
+//            if ( [ self.itemId isEqualToString: rootFolderId ] )
+//            {
+//                [sc_ErrorHelper showError: NSLocalizedString(@"Server connection error", nil)];
+//            }
+//            else
+//            {
+//                [ weakSelf navigateToMediaFolderRoot ];
+//            }
             
             return;
         }
@@ -216,13 +216,13 @@
 
 -(void)navigateToMediaFolderRoot
 {
-    NSString *rootFolderId = [ sc_Site mediaLibraryDefaultID ];
+   // NSString *rootFolderId = [ sc_Site mediaLibraryDefaultID ];
     NSString *mediafolderPath = [ sc_Site mediaLibraryDefaultNameWithSlash:NO ];
     
     self.currentPathInsideSitecore = mediafolderPath;
     [ self setCurrentPathLabelText ];
     
-    self.itemId = rootFolderId;
+    //self.itemId = rootFolderId;
     [ self folderChoosenWithPath: nil
                      displayName: mediafolderPath ];
 }
@@ -271,7 +271,7 @@
 
 -(NSMutableArray*)returnRequired:(NSMutableArray *)folderArray with:(NSMutableArray *)imageArray
 {
-    [folderArray addObjectsFromArray: [[self getOrderedArray:imageArray] copy]];
+    [folderArray addObjectsFromArray: [ [ self getOrderedArray:imageArray ] copy ] ];
     return folderArray;
 }
 

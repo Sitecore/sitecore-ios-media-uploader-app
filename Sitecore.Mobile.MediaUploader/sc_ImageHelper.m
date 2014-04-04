@@ -65,53 +65,6 @@
     return [defaults integerForKey: @"UploadImageSize"];
 }
 
-+(NSString *)formatLocation:(CLPlacemark *)placemark
-{
-    
-    if(placemark == nil)
-    {
-        return NSLocalizedString(@"Location undefined", nil);
-    }
-    
-    NSString * ISOcountryCode = placemark.ISOcountryCode;
-    if (ISOcountryCode == nil)
-    {
-        ISOcountryCode = @"";
-    }
-    
-    NSString *locality = placemark.locality;
-    if (locality == nil)
-    {
-        locality = @"";
-    }
-    
-    NSString *subLocality = placemark.subLocality;
-    if (subLocality == nil)
-    {
-        subLocality = @"";
-    }
-    
-    NSString *thoroughfare = placemark.thoroughfare;
-    if (thoroughfare == nil)
-    {
-        thoroughfare = @"";
-    }
-    
-    NSString *subThoroughfare = placemark.subThoroughfare;
-    if (subThoroughfare == nil)
-    {
-        subThoroughfare = @"";
-    }
-    
-    
-    if(ISOcountryCode.length == 0 && locality.length == 0 && subLocality.length == 0 && thoroughfare.length == 0 && subThoroughfare.length == 0)
-    {
-        return NSLocalizedString(@"Location undefined", nil);
-    }
-    
-    return [NSString stringWithFormat:@"%@, %@, %@, %@ %@", ISOcountryCode, locality, subLocality, thoroughfare, subThoroughfare];
-}
-
 +(UIImage *)getVideoThumbnail:(NSURL *) videoUrl
 {
     AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:videoUrl options:nil];

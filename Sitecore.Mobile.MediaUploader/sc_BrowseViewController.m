@@ -1,229 +1,178 @@
-//
-//  sc_BrosweViewController.m
-//  Sitecore.Mobile.MediaUploader
-//
-//  Created by andrea bellagamba on 6/4/13.
-//  Copyright (c) 2013 Sitecore. All rights reserved.
-//
-
-#import "sc_GlobalDataObject.h"
-#import "sc_AppDelegateProtocol.h"
 #import "sc_BrowseViewController.h"
-#import "sc_QuickImageViewController.h"
-#import "sc_SitesSelectionViewController.h"
 #import "sc_Site.h"
-#import "sc_Constants.h"
-#import "sc_ViewsHelper.h"
-#import "sc_GradientButton.h"
+#import "sc_GlobalDataObject.h"
 #import "sc_ItemHelper.h"
-#import "sc_BrowseCell.h"
-#import "sc_BaseTheme.h"
-#import "sc_SitesSelectionViewController.h"
+#import "sc_GradientButton.h"
+#import "sc_BrowseViewCellFactory.h"
+#import "sc_LevelUpGridCell.h"
 
-@interface sc_BrowseViewController ()
+@interface sc_BrowseViewController ()<SCItemsBrowserDelegate>
+
+@property (nonatomic, strong) IBOutlet sc_BrowseViewCellFactory *cellFactory;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingProgress;
+@property (weak, nonatomic) IBOutlet UITextView *itemPathTextView;
+@property (strong, nonatomic) IBOutlet UICollectionViewFlowLayout *itemsBrowserGridLayout;
+
+@property (nonatomic) IBOutlet UILabel *singleSiteLabel;
+@property (nonatomic) IBOutlet sc_GradientButton *siteButton;
+@property (nonatomic) IBOutlet UILabel *siteLabel;
+@property (nonatomic) IBOutlet UIView *singleSiteBgView;
+
 @end
 
 @implementation sc_BrowseViewController
 {
-    sc_BaseTheme *_theme;
-}
-
--(void)setStartingFolder
-{
-    self.itemId = [ self.currentSite.uploadFolderId isEqualToString: @"" ] ? [ sc_Site mediaLibraryDefaultID ] : self.currentSite.uploadFolderId;
-    [ self initializeCurrentPaths: self.currentSite ];
-}
-
--(void)reload
-{
-    [ self.items removeAllObjects ];
-    [ self.collectionView reloadData ];
-    [ self reloadState ];
-}
-
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    [ self itemTapped:indexPath ];
-}
- 
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *identifier = @"Cell";
-    sc_BrowseCell *cell = [ collectionView dequeueReusableCellWithReuseIdentifier: identifier
-                                                                     forIndexPath: indexPath ];
-
-    SCItem * cellObject=[ self.items objectAtIndex: indexPath.row ];
+    SCApiSession* _legacyApiSession;
+    SCExtendedApiSession* _apiSession;
+    sc_Site *_siteForBrowse;
     
-    sc_CellType itemType = [ sc_ItemHelper scItemType: cellObject ];
+    sc_GlobalDataObject *_appDataObject;
+    SIBWhiteListTemplateRequestBuilder *_requestBuilder;
     
-    NSString *rootFolderId = [ sc_Site mediaLibraryDefaultID ];
-    
-    if ( itemType == FolderCellType && indexPath.row == 0 && ![ self.itemId isEqualToString: rootFolderId ] )
-    {
-        itemType = ArrowCellType;
-    }
-    
-    [ cell setCellType: itemType
-                  item: cellObject
-               context: self.context ];
-    
-    return cell;
-}
-
--(NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section
-{
-    return [ self.items count ];
-}
-
--(void)setDefaultSite
-{
-    if ( !_appDataObject.sites || _appDataObject.sites.count == 0 )
-    {
-        _siteButton.hidden = YES;
-        _singleSiteLabel.hidden = NO;
-        _siteLabel.hidden = YES;
-        _singleSiteLabel.text = NSLocalizedString(@"No sites defined", nil);
-        return;
-    }
-    
-    if ( _appDataObject.sites.count == 1 )
-    {
-        _siteButton.hidden = YES;
-        _singleSiteLabel.hidden = NO;
-        _siteLabel.hidden = YES;
-        return;
-    }
-    
-    _siteButton.hidden = NO;
-    _singleSiteLabel.hidden = YES;
-    _siteLabel.hidden = NO;
-
-}
-
--(void)setContext
-{
-    sc_Site *site = [ _appDataObject siteForBrowse ];
-    self.currentSite = site;
-    
-    [ super setContext ];
-}
-
--(void)setCurrentSite:(sc_Site *)site
-{
-    [ super setCurrentSite: site ];
-    
-    if ( site )
-    {
-        [ self setSiteLabelWithSite: site ];
-    }
-    else
-    {
-        sc_Site* firstSite = ( (sc_Site *) [ _appDataObject.sites objectAtIndex: 0 ] );
-        firstSite.selectedForBrowse = YES;
-        [ super setCurrentSite: firstSite ];
-        [ self setSiteLabelWithSite: firstSite ];
-    }
-}
-
--(void)setSiteLabelWithSite:(sc_Site *)site
-{
-    [ self setSiteLabelWithName: site.siteUrl ];
-}
-
--(void)setSiteLabelWithName:(NSString *) siteName
-{
-    _siteLabel.text = siteName;
-}
-
--(void)didSelectRow:(sc_Site*)selectedSite
-{
-    for ( sc_Site *site in _appDataObject.sites )
-    {
-        site.selectedForBrowse = NO;
-    }
-    
-    selectedSite.selectedForBrowse = YES;
-    
-    [ self setSiteLabelWithSite: selectedSite ];
-}
-
--(void)reloadCollection
-{
-    [ self.collectionView performBatchUpdates:
-     ^{
-        [ self.collectionView reloadSections: [ NSIndexSet indexSetWithIndex: 0 ] ];
-      } completion: nil ];
-  
-}
-
--(void)folderChoosenWithPath:(NSString *)path displayName:(NSString *)displayName
-{
-    [ super folderChoosenWithPath: path displayName: displayName ];
-    self.currentPathLabel.text = self.currentPathInsideSitecore;
-}
-
--(void)setCurrentPathLabelText
-{
-    _currentPathLabel.text = self.currentPathInsideSitecore;
-}
-
-- (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView
-{
-    return 1;
-}
-
--(void)refreshCurrentState
-{
-    [ self readContents ];
 }
 
 -(void)viewDidLoad
 {
-    //legacy, order matters
-    _appDataObject = [ sc_GlobalDataObject getAppDataObject ];
-    [ self initializeActivityIndicator ];
-    [ self setDefaultSite ];
-    
     [ super viewDidLoad ];
+    self->_appDataObject = [ sc_GlobalDataObject getAppDataObject ];
+    [ self setupLayout  ];
     
-    self->_theme = [ sc_BaseTheme new ];
-    
-    //Localize UI
-    self.navigationItem.title = NSLocalizedString(self.navigationItem.title, nil);
-    
-    UIBarButtonItem *backButton =
-    [ [UIBarButtonItem alloc] initWithTitle: NSLocalizedString(@"Home", nil)
-                                      style: UIBarButtonItemStylePlain
-                                     target: nil
-                                     action: nil ];
-    
-    self.navigationController.navigationItem.backBarButtonItem = backButton;
-    [ _singleSiteBgView setBackgroundColor: [ self->_theme labelBackgroundColor ] ];
-    [ _siteButton setButtonWithStyle: CUSTOMBUTTONTYPE_NORMAL ];
-    
-    UIBarButtonItem *refreshButton =
-    [ [ UIBarButtonItem alloc ] initWithBarButtonSystemItem: UIBarButtonSystemItemRefresh
-                                                     target: self
-                                                     action: @selector(refreshCurrentState) ];
-
-    self.navigationItem.rightBarButtonItem = refreshButton;
+    NSArray *templatesList = @[@"Image", @"Jpeg", @"Media folder"];
+    self->_requestBuilder = [ [SIBWhiteListTemplateRequestBuilder alloc] initWithTemplateNames: templatesList ];
+    self.cellFactory.itemsBrowserController.nextLevelRequestBuilder = self->_requestBuilder;
 }
 
-- (void)viewWillDisappear:(BOOL)animated
+-(void)viewDidAppear:(BOOL)animated
 {
-    [ super viewWillDisappear: animated ];
+    [ super viewDidAppear: animated ];
+    self->_siteForBrowse = self->_appDataObject.sitesManager.siteForBrowse;
     
-    if ( self.isMovingFromParentViewController )
-    {
-        [ sc_ViewsHelper reloadParentController: self.navigationController
-                                         levels: 1 ];
-    }
+    self->_legacyApiSession = [ sc_ItemHelper getContext:self->_siteForBrowse ];
+    self->_apiSession = self->_legacyApiSession.extendedApiSession;
+    
+    self.cellFactory.itemsBrowserController.apiSession = self->_apiSession;
+    
+    NSString *rootFolderPath = [ sc_Site mediaLibraryDefaultPath ];
+    
+    SCExtendedAsyncOp rootItemLoader =
+    [ self->_apiSession readItemOperationForItemPath: rootFolderPath
+                                          itemSource: nil ];
+    
+    [ self startLoading ];
+    __weak sc_BrowseViewController* weakSelf = self;
+    rootItemLoader( nil, nil, ^( SCItem* rootItem, NSError* blockError )
+                   {
+                       [ weakSelf endLoading ];
+                       
+                       if ( nil == rootItem )
+                       {
+                           [ weakSelf didFailLoadingRootItemWithError: blockError ];
+                       }
+                       else
+                       {
+                           [ weakSelf didLoadRootItem: rootItem ];
+                       }
+                   } );
 }
 
-- (BOOL) textFieldShouldReturn:(UITextField *)textField
+-(void)setupLayout
 {
-    return YES;
+    self.itemsBrowserGridLayout.itemSize = CGSizeMake( 100, 100 );
+}
+
+
+#pragma mark -
+#pragma mark Progress
+-(void)startLoading
+{
+    self.loadingProgress.hidden = NO;
+    [ self.loadingProgress startAnimating ];
+}
+
+-(void)endLoading
+{
+    [ self.loadingProgress stopAnimating ];
+    self.loadingProgress.hidden = YES;
+}
+
+-(void)didFailLoadingRootItemWithError:( NSError* )error
+{
+    //TODO: @igk add error processing
+    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: NSLocalizedString(@"ALERT_LOAD_ROOT_ITEM_ERROR_TITLE", nil )
+                                                       message: error.localizedDescription
+                                                      delegate: nil
+                                             cancelButtonTitle: NSLocalizedString(@"ALERT_LOAD_ROOT_ITEM_ERROR_CANCEL", nil )
+                                             otherButtonTitles: nil ];
+    
+    [ alert show ];
+    [ self endLoading ];
+}
+
+-(void)didLoadRootItem:( SCItem* )rootItem
+{
+    self.cellFactory.itemsBrowserController.rootItem = rootItem;
+    
+    [ self startLoading ];
+    [ self.cellFactory.itemsBrowserController reloadData ];
+}
+
+-(void)showCannotReloadMessage
+{
+    //TODO: @igk add error processing
+    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: NSLocalizedString( @"ALERT_RELOAD_LEVEL_ERROR_TITLE", nil )
+                                                       message: NSLocalizedString( @"ALERT_RELOAD_LEVEL_ERROR_MESSAGE", nil )
+                                                      delegate: nil
+                                             cancelButtonTitle: NSLocalizedString( @"ALERT_RELOAD_LEVEL_ERROR_CANCEL", nil )
+                                             otherButtonTitles: nil ];
+    [ alert show ];
+    [ self endLoading ];
+}
+
+#pragma mark -
+#pragma mark SCItemsBrowserDelegate
+-(void)itemsBrowser:( id )sender
+didReceiveLevelProgressNotification:( id )progressInfo
+{
+    [ self startLoading ];
+}
+
+-(void)itemsBrowser:( id )sender
+levelLoadingFailedWithError:( NSError* )error
+{
+    //TODO: @igk add error processing
+    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: NSLocalizedString( @"ALERT_LOAD_LEVEL_ERROR_TITLE", nil )
+                                                       message: error.localizedDescription
+                                                      delegate: nil
+                                             cancelButtonTitle: NSLocalizedString(@"ALERT_LOAD_LEVEL_ERROR_CANCEL", nil )
+                                             otherButtonTitles: nil ];
+    
+    [ alert show ];
+    [ self endLoading ];
+}
+
+-(void)itemsBrowser:( id )sender
+didLoadLevelForItem:( SCItem* )levelParentItem
+{
+    NSParameterAssert( nil != levelParentItem );
+    
+    [ self endLoading ];
+    self.itemPathTextView.text = levelParentItem.path;
+    
+    
+    // leaving this on the user's behalf
+    NSIndexPath* top = [ NSIndexPath indexPathForRow: 0
+                                           inSection: 0 ];
+    
+    UICollectionView* collectionView = self.cellFactory.itemsBrowserController.collectionView;
+    [ collectionView scrollToItemAtIndexPath: top
+                            atScrollPosition: UICollectionViewScrollPositionTop
+                                    animated: NO ];
+}
+
+-(BOOL)itemsBrowser:( id )sender
+shouldLoadLevelForItem:( SCItem* )levelParentItem
+{
+    return levelParentItem.isFolder || levelParentItem.hasChildren;
 }
 
 @end
-

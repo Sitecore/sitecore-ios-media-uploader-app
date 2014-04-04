@@ -19,22 +19,44 @@
 #import "sc_ErrorHelper.h"
 #import "sc_ItemHelper.h"
 
-static const float slideDistance = 40.f;
-static const float slideDuration = 0.3f;
-
 @interface sc_SiteAddViewController ()
-@property bool isRaised;
-@property bool loggedIn;
+
+@property BOOL loggedIn;
 @property UIView* loginFooterView;
 @property sc_ActivityIndicator * activityIndicator;
 @property UIView* footerView;
+
 @end
 
 @implementation sc_SiteAddViewController
+{
+    sc_GlobalDataObject *_appDataObject;
+    UIBarButtonItem *_saveButton;
+    
+    sc_Site *_siteForEdit;
+    BOOL editModeEnabled;
+}
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{   
-    return NSLocalizedString(@"New site", nil);
+-(void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    self->_siteForEdit = [ sc_Site emptySite ];
+    editModeEnabled = NO;
+    
+    [ self localizeUI ];
+    [ self initializeActivityIndicator ];
+    
+    _appDataObject = [sc_GlobalDataObject getAppDataObject];
+    
+    self.navigationItem.hidesBackButton = YES;
+    
+    _cancelButton.target = self;
+    _cancelButton.action = @selector(cancel:);
+    
+    _loggedIn = NO;
+    
+    [ self configureView ];
 }
 
 - (void)initializeActivityIndicator
@@ -43,127 +65,69 @@ static const float slideDuration = 0.3f;
     [self.view addSubview:_activityIndicator];
 }
 
--(IBAction)slideFrameUp
+-(void)setSiteForEdit:(sc_Site *)site
 {
-    if (_isRaised)
-    {
-        return;
-    }
-    [self slideFrame:YES];
-    _isRaised = YES;
-}
-
--(IBAction) slideFrameDown
-{
-    if (!_isRaised)
-    {
-        return;
-    }
-    
-    [self slideFrame:NO];
-    _isRaised = NO;
-}
-
--(void)slideFrame:(BOOL)up
-{
-    [UIView beginAnimations: @"anim" context: nil];
-    [UIView setAnimationBeginsFromCurrentState: YES];
-    [UIView setAnimationDuration: slideDuration];
-    self.view.frame = CGRectOffset(self.view.frame, 0.f, (up ? -slideDistance : slideDistance));
-    [UIView commitAnimations];
-}
-
--(void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    //Localize UI
-    self.navigationItem.title       = NSLocalizedString(self.navigationItem.title, nil);
-    _passwordTextField.placeholder  = NSLocalizedString(_passwordTextField.placeholder, nil);
-    _usernameTextField.placeholder  = NSLocalizedString(_usernameTextField.placeholder, nil);
-    _urlTextField.placeholder       = NSLocalizedString(_urlTextField.placeholder, nil);
-    _siteTextField.placeholder      = NSLocalizedString(_siteTextField.placeholder, nil);
-    _cancelButton.title             = NSLocalizedString(_cancelButton.title, nil);
-    
-    [self initializeActivityIndicator];
-    
-    _appDataObject = [sc_GlobalDataObject getAppDataObject];
-    
-    _usernameTextField.delegate = self;
-    _passwordTextField.delegate = self;
-    _urlTextField.delegate = self;
-    
-    self.navigationItem.hidesBackButton = YES;
-    _saveButton.target = self;
-    _saveButton.action = @selector(save:);
-    _cancelButton.target = self;
-    _cancelButton.action = @selector(cancel:);
-    
-    
-    if (!_appDataObject.isOnline)
-    {
-        _saveButton.enabled = NO;
-    }
-    
-    _loggedIn = NO;
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
-    [ super viewWillAppear: animated ];
-    
+    self->_siteForEdit = site;
+    editModeEnabled = YES;
     [ self configureView ];
+}
+
+-(void)localizeUI
+{
+    self.navigationItem.title      = NSLocalizedString(self.navigationItem.title, nil);
+    _passwordTextField.placeholder = NSLocalizedString(_passwordTextField.placeholder, nil);
+    _usernameTextField.placeholder = NSLocalizedString(_usernameTextField.placeholder, nil);
+    _urlTextField.placeholder      = NSLocalizedString(_urlTextField.placeholder, nil);
+    _siteTextField.placeholder     = NSLocalizedString(_siteTextField.placeholder, nil);
+    _cancelButton.title            = NSLocalizedString(_cancelButton.title, nil);
 }
 
 -(void)configureView
 {
-    _urlTextField.text  = @"";
-    _siteTextField.text = [ sc_Site siteDefaultValue ];
-    _usernameTextField.text = @"";
-    _passwordTextField.text = @"";
-    
-#if DEBUG
-    _urlTextField.text  = @"https://scmobileteam.sitecoretest.net";
-    _siteTextField.text = @"sitecore/shell";
-    _usernameTextField.text = @"admin";
-    _passwordTextField.text = @"b";
-#endif
+    _urlTextField.text      = self->_siteForEdit.siteUrl;
+    _siteTextField.text     = self->_siteForEdit.site;
+    _usernameTextField.text = self->_siteForEdit.username;
+    _passwordTextField.text = self->_siteForEdit.password;
 }
 
 -(void)authenticateAndSaveSite:(sc_Site *)site
 {
     __block sc_Site *tmpSite = site;
+    __block BOOL editMode = editModeEnabled;
     
-    SCApiContext *context = [ sc_ItemHelper getContext: tmpSite ];
+    SCApiSession *session = [ sc_ItemHelper getContext: tmpSite ];
     
-    SCAsyncOp asyncOp = [ context credentialsCheckerForSite: site.site ];
+    SCAsyncOp asyncOp = [ session checkCredentialsOperationForSite: site.site ];
     
-    [_activityIndicator showWithLabel:NSLocalizedString(@"Authenticating", nil)];
+    [ _activityIndicator showWithLabel: NSLocalizedString(@"Authenticating", nil) ];
     
-    asyncOp(^(id result, NSError *error)
+    asyncOp(^( id result, NSError *error )
     {
-        [_activityIndicator hide];
+        [ _activityIndicator hide ];
         if ( !error )
         {
-            //@igk removed according to Gabe request
-//            if ( [ _appDataObject isSameSiteExist: tmpSite ] )
-//            {
-//                [ sc_ErrorHelper showError: NSLocalizedString( @"SITE_EXISTS_ERROR", nil ) ];
-//            }
-//            else
             {
-                self->_site = [ tmpSite copy ];
 
-                [_appDataObject addSite:self->_site];
-                [_appDataObject saveSites];
+                NSError *error;
+                
+                if ( editMode )
+                {
+                    [ _appDataObject.sitesManager saveSites ];
+                }
+                else
+                {
+                    [ _appDataObject.sitesManager addSite: tmpSite
+                                                    error: &error ];
+                }
                 
                 _loggedIn = YES;
                                     
                 sc_SiteEditViewController * siteEditViewController = (sc_SiteEditViewController *)[self.storyboard instantiateViewControllerWithIdentifier: @"SiteEdit" ];
-                [ siteEditViewController setSite:_site isNew: YES ];
+                [ siteEditViewController setSite: tmpSite
+                                           isNew: YES ];
                 
                 [ self.navigationController pushViewController: siteEditViewController
-                                                      animated: YES];
+                                                      animated: YES ];
             }
         }
         else
@@ -181,7 +145,6 @@ static const float slideDuration = 0.3f;
 
 -(IBAction)save:(id)sender
 {
-    
     if(![self validateUrl:_urlTextField.text])
     {
         [ sc_ErrorHelper showError: NSLocalizedString(@"Please enter a valid site url.", nil) ];
@@ -190,16 +153,12 @@ static const float slideDuration = 0.3f;
     
     if(_usernameTextField.text.length > 0 && _passwordTextField.text.length > 0)
     {
-        sc_Site *site = [[ sc_Site alloc ] initWithSiteUrl: self->_urlTextField.text
-                                                      site: self->_siteTextField.text
-                        uploadFolderPathInsideMediaLibrary: @""
-                                            uploadFolderId: @""
-                                                  username: self->_usernameTextField.text
-                                                  password: self->_passwordTextField.text
-                                         selectedForBrowse: NO
-                                         selectedForUpdate: YES ];
+        self->_siteForEdit.siteUrl = self->_urlTextField.text;
+        self->_siteForEdit.site = self->_siteTextField.text;
+        self->_siteForEdit.username = self->_usernameTextField.text;
+        self->_siteForEdit.password = self->_passwordTextField.text;
         
-        [ self authenticateAndSaveSite: site ];
+        [ self authenticateAndSaveSite: self->_siteForEdit ];
     }
     else
     {
@@ -261,7 +220,7 @@ static const float slideDuration = 0.3f;
             sc_GradientButton *button = [sc_GradientButton buttonWithType:UIButtonTypeCustom];
             [(sc_GradientButton*) button setButtonWithStyle:CUSTOMBUTTONTYPE_IMPORTANT];
             [button setFrame:CGRectMake(tableView.frame.size.width- padding - width, 20.f, width, 45.f)];
-            [button setTitle:NSLocalizedString(@"Save", nil) forState:UIControlStateNormal];
+            [button setTitle:NSLocalizedString(@"Next", nil) forState:UIControlStateNormal];
             [button.titleLabel setFont:[UIFont systemFontOfSize:fontSize]];
             
             [ button addTarget: self
@@ -275,6 +234,10 @@ static const float slideDuration = 0.3f;
     return _footerView;
 }
 
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return NSLocalizedString(@"New site", nil);
+}
 
 @end
 

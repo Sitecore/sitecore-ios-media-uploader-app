@@ -23,6 +23,7 @@
 #import "sc_ImageHelper.h"
 #import "sc_ItemHelper.h"
 #import "sc_BaseTheme.h"
+#import "sc_LocationManager.h"
 
 #import <AddressBook/AddressBook.h>
 
@@ -30,24 +31,20 @@ static const float slideDistance = 75;
 static const float slideDuration = 0.3f;
 
 @interface sc_UploadViewController ()
-@property CLLocation *currentLocation;
+
 @property UIImage *thumbnail;
 @property bool autoImagePickerLoadExecuted;
 @property sc_ActivityIndicator * activityIndicator;
 @property BOOL isRaised;
-
-@property float latitude;
-@property float longitude;
 @property NSDate * timeStamp;
-@property NSString * countryCode;
-@property NSString * cityCode;
+
 @end
 
 @implementation sc_UploadViewController
 {
     UIImageView *imageView;
     BOOL newMedia;
-    CLLocationManager *locationManager;
+    sc_LocationManager *_locationManager;
     
     BOOL isFirstAppear;
     sc_BaseTheme *_theme;
@@ -142,13 +139,16 @@ static const float slideDuration = 0.3f;
     }
     
     _uploadButton.enabled = (imageView.image != NULL);
+    
+    _locationManager = [ sc_LocationManager new ];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [ super viewWillAppear: animated ];
     
-    _locationDescription.text = [sc_ImageHelper formatLocation:_appDataObject.selectedPlaceMark];
+    _locationDescription.text = [ _locationManager getCurrentLocationDescription ];
 
     [ self checkAndShowUploadButton ];
     
@@ -170,22 +170,6 @@ static const float slideDuration = 0.3f;
         [ self showCameraRoll ];
         _autoImagePickerLoadExecuted = YES;
     }
-}
-
--(void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    [locationManager stopUpdatingLocation];
-}
-
--(void)getCurrentLocation
-{
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-    locationManager.distanceFilter = kCLDistanceFilterNone;
-    [locationManager startUpdatingLocation];
-    _currentLocation = [locationManager location];
-    
 }
 
 -(IBAction)useCameraRoll: (id)sender
@@ -211,37 +195,7 @@ static const float slideDuration = 0.3f;
     newMedia = NO;
 }
 
--(void)getReadableLocation:(CLLocation *)location
-{
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
-    [geocoder reverseGeocodeLocation:location
-                   completionHandler:^(NSArray *placemarks, NSError *error)
-    {
-       NSLog(@"reverseGeocodeLocation:completionHandler: Completion Handler called!");
-       
-       if (error)
-       {
-           _appDataObject.selectedPlaceMark = nil;
-           NSLog(@"Geocode failed with error: %@", error);
-           return;
-       }
-       
-       if (placemarks.count > 0)
-       {
-           CLPlacemark *placemark = [placemarks objectAtIndex:0];
-           _appDataObject.selectedPlaceMark = placemark;
-       }
-       else
-       {
-           _appDataObject.selectedPlaceMark = nil;
-       }
-       
-       _locationDescription.text = [sc_ImageHelper formatLocation:_appDataObject.selectedPlaceMark];
-       _countryCode = _appDataObject.selectedPlaceMark.ISOcountryCode;
-       _cityCode = _appDataObject.selectedPlaceMark.postalCode;
-        
-    }];
-}
+
 
 -(IBAction)dismissKeyboardOnTap:(id)sender
 {
@@ -268,16 +222,6 @@ static const float slideDuration = 0.3f;
         
         if (newMedia)
         {
-            if (_appDataObject.isOnline)
-            {
-                [self getReadableLocation:_currentLocation];
-            }
-            else
-            {
-                // TODO: Deal with situation where we have no readableLocation
-            }
-            
-            [self getLatLong:_currentLocation];
             _timeStamp = [NSDate date];
             
             NSString *mediaType = [info objectForKey: UIImagePickerControllerMediaType];
@@ -294,7 +238,9 @@ static const float slideDuration = 0.3f;
                 {
                     NSMutableDictionary *imageMetadata = [info objectForKey: UIImagePickerControllerMediaMetadata];
                     
-                    [imageMetadata setObject:[self gpsDictionaryForLocation:_currentLocation] forKey:(NSString*)kCGImagePropertyGPSDictionary];
+                    NSDictionary *imageInfo = [_locationManager gpsDictionaryForCurrentLocation];
+                    [ imageMetadata setObject: imageInfo
+                                       forKey: (NSString*)kCGImagePropertyGPSDictionary ];
                     
                     ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
                     ALAssetsLibraryWriteImageCompletionBlock imageWriteCompletionBlock;
@@ -357,9 +303,8 @@ static const float slideDuration = 0.3f;
                     _timeStamp = [myasset valueForProperty:ALAssetPropertyDate];
                     
                     //Get location data from asset
-                    CLLocation *location = [myasset valueForProperty:ALAssetPropertyLocation];
-                    [self getReadableLocation:location];
-                    [self getLatLong:location];
+//                    CLLocation *location = [myasset valueForProperty:ALAssetPropertyLocation];
+//                    [ _locationManager setCurrentLocation: location ];
                     
                     CGImageRef iref = [myasset thumbnail];
                     if (iref)
@@ -392,13 +337,11 @@ static const float slideDuration = 0.3f;
         {
             if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum (moviePath))
             {
-                UISaveVideoAtPathToSavedPhotosAlbum (moviePath, self, @selector(image:finishedSavingWithError:contextInfo:), nil);
+                UISaveVideoAtPathToSavedPhotosAlbum (moviePath, self, @selector(image:finishedSavingWithError:sessionInfo:), nil);
             }
             
             if(_appDataObject.isOnline)
             {
-                [self getReadableLocation:_currentLocation];
-                [self getLatLong:_currentLocation];
                 _timeStamp = [NSDate date];
             }
         }
@@ -412,18 +355,14 @@ static const float slideDuration = 0.3f;
     }
 }
 
-- (void)getLatLong: (CLLocation *)loc
-{
-    _latitude = loc.coordinate.latitude;
-    _longitude = loc.coordinate.longitude;
-}
+
 
 - (void)moviePlayBackDidFinish:(NSNotification *)notification
 {
     NSLog(@"Playback finished");
 }
 
--(void)image:(UIImage *)image finishedSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+-(void)image:(UIImage *)image finishedSavingWithError:(NSError *)error sessionInfo:(void *)sessionInfo
 {
     if (error)
     {
@@ -459,20 +398,24 @@ static const float slideDuration = 0.3f;
 
 - (sc_Media *)getMedia
 {
+    NSNumber *latitude = [ NSNumber numberWithFloat: [ _locationManager getLatitude ] ];
+    NSNumber *longitude = [ NSNumber numberWithFloat: [ _locationManager getLongitude ] ];
+    NSString *countryCode = [ _locationManager getCountryCode ];
+    NSString *cityCode = [ _locationManager getCityCode ];
     
     sc_Media *media = [ [sc_Media alloc] initWithObjectData: _name.text
                                                    dateTime: _timeStamp
-                                                   latitude: [NSNumber numberWithFloat:_latitude]
-                                                  longitude: [NSNumber numberWithFloat:_longitude]
+                                                   latitude: latitude
+                                                  longitude: longitude
                                         locationDescription: _locationDescription.text
-                                                countryCode: _countryCode
-                                                   cityCode: _cityCode
+                                                countryCode: countryCode
+                                                   cityCode: cityCode
                                                    videoUrl: _videoUrl
                                                    imageUrl: _imageUrl
                                                      status: MEDIASTATUS_PENDING
                                                   thumbnail: _thumbnail ];
     
-    media.siteForUploading = self.appDataObject.siteForUpload;
+    media.siteForUploading = [self.appDataObject.sitesManager siteForUpload];
     
     return media;
 }
@@ -556,51 +499,6 @@ static const float slideDuration = 0.3f;
     return YES;
 }
 
--(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-    [locationManager stopUpdatingLocation];
-}
-
-- (NSDictionary *) gpsDictionaryForLocation:(CLLocation *)location
-{
-    //Helper to create a dictionary of geodata to be incorporate into photo metadata
-    CLLocationDegrees exifLatitude  = location.coordinate.latitude;
-    CLLocationDegrees exifLongitude = location.coordinate.longitude;
-    
-    NSString * latRef;
-    NSString * longRef;
-    if (exifLatitude < 0.0)
-    {
-        exifLatitude = exifLatitude * -1.0f;
-        latRef = @"S";
-    }
-    else
-    {
-        latRef = @"N";
-    }
-    
-    if (exifLongitude < 0.0)
-    {
-        exifLongitude = exifLongitude * -1.0f;
-        longRef = @"W";
-    }
-    else
-    {
-        longRef = @"E";
-    }
-    
-    NSMutableDictionary *locDict = [[NSMutableDictionary alloc] init];
-    
-    [locDict setObject:[NSDate date] forKey:(NSString*)kCGImagePropertyGPSTimeStamp];
-    [locDict setObject:latRef forKey:(NSString*)kCGImagePropertyGPSLatitudeRef];
-    [locDict setObject:[NSNumber numberWithFloat:exifLatitude] forKey:(NSString *)kCGImagePropertyGPSLatitude];
-    [locDict setObject:longRef forKey:(NSString*)kCGImagePropertyGPSLongitudeRef];
-    [locDict setObject:[NSNumber numberWithFloat:exifLongitude] forKey:(NSString *)kCGImagePropertyGPSLongitude];
-    [locDict setObject:[NSNumber numberWithFloat:location.horizontalAccuracy] forKey:(NSString*)kCGImagePropertyGPSDOP];
-    [locDict setObject:[NSNumber numberWithFloat:location.altitude] forKey:(NSString*)kCGImagePropertyGPSAltitude];
-    
-    return locDict;
-}
 
 -(void)navigationController: (UINavigationController *) navigationController  willShowViewController: (UIViewController *) viewController animated: (BOOL) animated
 {
@@ -634,7 +532,6 @@ static const float slideDuration = 0.3f;
 {
     if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera])
     {
-        [self getCurrentLocation];
         self->_imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
         NSArray *mediaTypesAllowed = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
         [self->_imagePicker setMediaTypes:mediaTypesAllowed];
@@ -691,7 +588,7 @@ static const float slideDuration = 0.3f;
 
 -(void)checkAndShowUploadButton
 {
-    BOOL instanceAvailable = self->_appDataObject.countOfSites > 0;
+    BOOL instanceAvailable = [ _appDataObject.sitesManager atLeastOneSiteExists ];
     
     if ( self->_appDataObject.isOnline && instanceAvailable )
     {

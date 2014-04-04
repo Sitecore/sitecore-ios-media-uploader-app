@@ -24,7 +24,7 @@
 
 @property sc_GlobalDataObject *appDataObject;
 
-- (IBAction)setUploadMediaFolder:(NSString*) folder withId:(NSString*) folderId;
+- (IBAction)setUploadMediaFolder:(NSString*) folder;
 - (void)setSite:(sc_Site *) newSite isNew:(BOOL) isNew;
 - (IBAction)dismissKeyboardOnTap:(id)sender;
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" initialViewController="vP2-PT-1lx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" initialViewController="vP2-PT-1lx">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Sc View Controller-->
@@ -178,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jI2-xZ-fYV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1706" y="-960"/>
+            <point key="canvasLocation" x="910" y="-540"/>
         </scene>
         <!--Sc Quick Image View Controller-->
         <scene sceneID="Zhx-Fq-FVS">
@@ -240,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gL1-Ig-lNO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-306" y="-484"/>
+            <point key="canvasLocation" x="910" y="-1251"/>
         </scene>
         <!--Sc Navigation Controller-->
         <scene sceneID="O9C-fO-eeG">
@@ -395,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tfC-zi-hB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1617" y="267"/>
+            <point key="canvasLocation" x="1493" y="243"/>
         </scene>
         <!--Sc Pending Files Manager View Controller - Pending files-->
         <scene sceneID="VFJ-07-F05">
@@ -479,7 +479,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFh-KG-WRn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="956" y="1081"/>
+            <point key="canvasLocation" x="436" y="949"/>
         </scene>
         <!--Sc Map View Controller - Map-->
         <scene sceneID="9hp-Lc-CrH">
@@ -557,7 +557,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2415" y="259"/>
+            <point key="canvasLocation" x="955" y="949"/>
         </scene>
         <!--Sc Settings View Controller - Settings-->
         <scene sceneID="LMU-y9-E8G">
@@ -666,7 +666,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ee5-Qv-2Fm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2409" y="-504"/>
+            <point key="canvasLocation" x="1493" y="-540"/>
         </scene>
         <!--Sc Site Add View Controller - Add site-->
         <scene sceneID="Y9h-Gb-OGh">
@@ -773,7 +773,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ST-5H-mlf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="104" y="-484"/>
+            <point key="canvasLocation" x="1320" y="-1251"/>
         </scene>
         <!--Sc Upload2 View Controller - Uploading-->
         <scene sceneID="eLu-0L-A2L">
@@ -880,7 +880,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CU4-Hs-4ow" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2398" y="1081"/>
+            <point key="canvasLocation" x="1510" y="949"/>
         </scene>
         <!--Sc Browse View Controller - Media browser-->
         <scene sceneID="0c9-WQ-r4N">
@@ -1003,7 +1003,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Kb-8x-6q1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951" y="-960"/>
+            <point key="canvasLocation" x="423" y="-540"/>
         </scene>
         <!--Sc Upload Folder View Controller - Upload folder-->
         <scene sceneID="Dwd-2j-Blr">
@@ -1074,7 +1074,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1x2-eW-lSr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="124" y="-1171"/>
+            <point key="canvasLocation" x="2488" y="-779"/>
         </scene>
         <!--Sc Site Edit View Controller - Site settings-->
         <scene sceneID="CK2-rV-Cge">
@@ -1168,7 +1168,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOS-zc-jk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-321" y="-1171"/>
+            <point key="canvasLocation" x="2043" y="-779"/>
         </scene>
     </scenes>
     <resources>
@@ -1190,7 +1190,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="249-X8-hKU"/>
         <segue reference="oHe-IN-2uq"/>
+        <segue reference="mfI-fb-aAc"/>
     </inferredMetricsTieBreakers>
 </document>

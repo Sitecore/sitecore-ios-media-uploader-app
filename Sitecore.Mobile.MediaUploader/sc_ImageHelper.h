@@ -13,7 +13,6 @@
 + (UIImage *)resizeImageToSize:(UIImage*) image uploadImageSize:(int) uploadImageSize;
 + (void)saveUploadImageSize:(int) uplaodImageSize;
 + (int) loadUploadImageSize;
-+ (NSString *)formatLocation:(CLPlacemark *)placemark;
 + (UIImage *)getVideoThumbnail:(NSURL *) videoUrl;
 + (NSString *)getUUID;
 + (UIImage *)normalize: (UIImage *)image forOrientation:(UIImageOrientation)orientation;
