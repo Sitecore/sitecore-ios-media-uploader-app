@@ -939,17 +939,7 @@
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hXq-8V-W7B">
-                                                <rect key="frame" x="0.0" y="0.0" width="106" height="101"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="106" height="101"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                            </collectionViewCell>
-                                        </cells>
+                                        <cells/>
                                         <connections>
                                             <outlet property="dataSource" destination="BXS-lQ-vdF" id="cyD-JX-5aQ"/>
                                             <outlet property="delegate" destination="BXS-lQ-vdF" id="kH5-3y-Lkk"/>
@@ -1006,7 +996,7 @@
         <!--Sc List Browser View Controller - Upload folder-->
         <scene sceneID="Spu-Uf-8ck">
             <objects>
-                <viewController storyboardIdentifier="Folder Definition" id="v41-wF-oAf" customClass="sc_ListBrowserViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListItemsBrowser" id="v41-wF-oAf" customClass="sc_ListBrowserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vtf-2k-0U3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1063,101 +1053,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="2218" y="-1251"/>
-        </scene>
-        <!--Sc Site Edit View Controller - Site settings-->
-        <scene sceneID="XHN-VL-t2C">
-            <objects>
-                <tableViewController storyboardIdentifier="SiteEdit" id="REP-80-Bxi" customClass="sc_SiteEditViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="60" sectionHeaderHeight="10" sectionFooterHeight="10" id="nHP-sj-5Tn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <sections>
-                            <tableViewSection headerTitle="Site" id="vgM-j1-58D">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="k87-lC-WXo">
-                                        <rect key="frame" x="0.0" y="55" width="320" height="60"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k87-lC-WXo" id="Lin-u7-egt">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nz1-ot-TVt">
-                                                    <rect key="frame" x="10" y="15" width="280" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Tjv-yN-fg4">
-                                        <rect key="frame" x="0.0" y="115" width="320" height="60"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tjv-yN-fg4" id="6AW-ih-hJn">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="96X-qT-PCC">
-                                                    <rect key="frame" x="10" y="15" width="280" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Upload" id="u6D-Pr-d57">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="j9y-T2-1B8">
-                                        <rect key="frame" x="0.0" y="223" width="320" height="60"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j9y-T2-1B8" id="YPT-yA-ewS">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="59"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OvE-dh-sYX">
-                                                    <rect key="frame" x="10" y="16" width="260" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <segue destination="v41-wF-oAf" kind="push" identifier="UploadFolder" id="WgM-hn-gqA"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="REP-80-Bxi" id="L3Z-Ze-r1b"/>
-                            <outlet property="delegate" destination="REP-80-Bxi" id="H1F-CQ-utZ"/>
-                        </connections>
-                    </tableView>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="Site settings" id="AeT-Iq-kVg">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="7fX-Pc-BgY"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="choosenFolderLabel" destination="OvE-dh-sYX" id="vSr-LI-K7Q"/>
-                        <outlet property="doneButton" destination="7fX-Pc-BgY" id="Y95-wp-2h1"/>
-                        <outlet property="siteLabel" destination="96X-qT-PCC" id="WEe-8x-OBV"/>
-                        <outlet property="urlLabel" destination="Nz1-ot-TVt" id="wyP-zb-cRS"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4c2-Ae-frb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1745" y="-1251"/>
+            <point key="canvasLocation" x="1748" y="-1251"/>
         </scene>
     </scenes>
     <resources>
