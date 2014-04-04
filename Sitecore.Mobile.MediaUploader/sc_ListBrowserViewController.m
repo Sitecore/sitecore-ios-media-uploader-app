@@ -128,7 +128,17 @@ SIBListModeCellFactory
 
 -(void)goToRootViewController
 {
-    [ self.navigationController popToRootViewControllerAnimated: YES ];
+    NSUInteger vcCount = [ self.navigationController.viewControllers count ];
+    NSUInteger stepsToSttingsRoot = 4;
+    if ( vcCount < stepsToSttingsRoot )
+    {
+        [ self.navigationController popToRootViewControllerAnimated: YES ];
+        return;
+    }
+    
+    UIViewController *vcToPop = self.navigationController.viewControllers[ vcCount - stepsToSttingsRoot ];
+    
+    [ self.navigationController popToViewController:vcToPop animated:YES ];
 }
 
 -(void)showCannotGoToRootMessage

@@ -10,7 +10,9 @@
 
 #ifdef __OBJC__
     #import "sc_ErrorHelper.h"
+    #import <SitecoreItemsBrowser/SCItemsBrowser.h>
     #import <SitecoreMobileSDK/SitecoreMobileSDK.h>
+    #import <SitecoreMobileUI/SitecoreMobileUI.h>
 
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
