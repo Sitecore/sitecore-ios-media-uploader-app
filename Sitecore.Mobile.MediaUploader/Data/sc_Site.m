@@ -24,6 +24,14 @@
     NSString *_uploadFolderPathInsideMediaLibrary;
 }
 
+-(id)copy
+{
+    //FIXME: @igk legacy
+    NSLog(@"!!!!! SITE MUST NOT BE COPIED, LEGACY MANAGEMENT BUG");
+    [ self doesNotRecognizeSelector: _cmd ];
+    return nil;
+}
+
 +(NSString *)siteDefaultValue
 {
     return @"/sitecore/shell";
@@ -206,6 +214,13 @@ uploadFolderPathInsideMediaLibrary: (NSString *)uploadFolderPathInsideMediaLibra
     if ( [ uploadFolderPathInsideMediaLibrary hasPrefix: mediaLibraryPath ] )
     {
         NSUInteger symbolsCountToTruncate = [ mediaLibraryPath length ] + 1;
+        
+        if ( symbolsCountToTruncate >= [ uploadFolderPathInsideMediaLibrary length ] )
+        {
+            self->_uploadFolderPathInsideMediaLibrary = @"";
+            return;
+        }
+        
         self->_uploadFolderPathInsideMediaLibrary = [ uploadFolderPathInsideMediaLibrary substringFromIndex: symbolsCountToTruncate ];
         return;
     }
