@@ -1,8 +1,8 @@
 #import "sc_ListBrowserViewController.h"
 #import "sc_GlobalDataObject.h"
 #import "sc_ItemHelper.h"
-
-static NSString* const ROOT_ITEM_PATH = @"/sitecore";
+#import "sc_LevelUpTableCell.h"
+#import "sc_FolderTableCell.h"
 
 @interface sc_ListBrowserViewController ()
 <
@@ -80,20 +80,13 @@ SIBListModeCellFactory
     NSArray *templatesList = @[@"Media folder"];
     self->_requestBuilder = [ [SIBWhiteListTemplateRequestBuilder alloc] initWithTemplateNames: templatesList ];
     self.itemsBrowserController.nextLevelRequestBuilder = self->_requestBuilder;
-//    self->_requestBuilder = [SIBAllChildrenRequestBuilder new];
-//    self.itemsBrowserController.nextLevelRequestBuilder =  self->_requestBuilder;
+
     NSParameterAssert( nil != self.itemsBrowserController );
 }
 
 -(void)didFailLoadingRootItemWithError:( NSError* )error
 {
-    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: NSLocalizedString(@"ALERT_LOAD_ROOT_ITEM_ERROR_TITLE", nil )
-                                                       message: error.localizedDescription
-                                                      delegate: nil
-                                             cancelButtonTitle: NSLocalizedString(@"ALERT_LOAD_ROOT_ITEM_ERROR_CANCEL", nil )
-                                             otherButtonTitles: nil ];
-    
-    [ alert show ];
+    [ sc_ErrorHelper showError: error.localizedDescription ];
     [ self endLoading ];
 }
 
@@ -129,7 +122,7 @@ SIBListModeCellFactory
 -(void)goToRootViewController
 {
     NSUInteger vcCount = [ self.navigationController.viewControllers count ];
-    NSUInteger stepsToSttingsRoot = 4;
+    NSUInteger stepsToSttingsRoot = 3;
     if ( vcCount < stepsToSttingsRoot )
     {
         [ self.navigationController popToRootViewControllerAnimated: YES ];
@@ -141,25 +134,9 @@ SIBListModeCellFactory
     [ self.navigationController popToViewController:vcToPop animated:YES ];
 }
 
--(void)showCannotGoToRootMessage
-{
-    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: NSLocalizedString( @"ALERT_GO_TO_ROOT_ITEM_ERROR_TITLE", nil )
-                                                       message: NSLocalizedString( @"ALERT_GO_TO_ROOT_ITEM_ERROR_MESSAGE", nil )
-                                                      delegate: nil
-                                             cancelButtonTitle: NSLocalizedString( @"ALERT_GO_TO_ROOT_ITEM_ERROR_CANCEL", nil )
-                                             otherButtonTitles: nil ];
-    [ alert show ];
-    [ self endLoading ];
-}
-
 -(void)showCannotReloadMessage
 {
-    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: NSLocalizedString( @"ALERT_RELOAD_LEVEL_ERROR_TITLE", nil )
-                                                       message: NSLocalizedString( @"ALERT_RELOAD_LEVEL_ERROR_MESSAGE", nil )
-                                                      delegate: nil
-                                             cancelButtonTitle: NSLocalizedString( @"ALERT_RELOAD_LEVEL_ERROR_CANCEL", nil )
-                                             otherButtonTitles: nil ];
-    [ alert show ];
+    [ sc_ErrorHelper showError: NSLocalizedString( @"ALERT_RELOAD_LEVEL_ERROR_MESSAGE", nil ) ];
     [ self endLoading ];
 }
 
@@ -174,13 +151,7 @@ didReceiveLevelProgressNotification:( id )progressInfo
 -(void)itemsBrowser:( id )sender
 levelLoadingFailedWithError:( NSError* )error
 {
-    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: NSLocalizedString( @"ALERT_LOAD_LEVEL_ERROR_TITLE", nil )
-                                                       message: error.localizedDescription
-                                                      delegate: nil
-                                             cancelButtonTitle: NSLocalizedString(@"ALERT_LOAD_LEVEL_ERROR_CANCEL", nil )
-                                             otherButtonTitles: nil ];
-    
-    [ alert show ];
+    [ sc_ErrorHelper showError:error.localizedDescription ];
     [ self endLoading ];
 }
 
@@ -196,57 +167,35 @@ levelLoadingFailedWithError:( NSError* )error
 #pragma mark -
 #pragma mark SIBListModeCellFactory
 static NSString* const LEVEL_UP_CELL_ID = @"net.sitecore.MobileSdk.ItemsBrowser.list.LevelUpCell";
-static NSString* const ITEM_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser.list.ItemCell"   ;
-static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser.list.ItemCell.image";
+static NSString* const FOLDER_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser.list.FolderCell"   ;
 
+
+-(NSString*)itemsBrowser:( id )sender
+itemCellReuseIdentifierForItem:( SCItem* )item
+{
+    return FOLDER_CELL_ID;
+}
 
 -(NSString*)reuseIdentifierForLevelUpCellOfItemsBrowser:( id )sender
 {
     return LEVEL_UP_CELL_ID;
 }
 
--(NSString*)itemsBrowser:( id )sender
-itemCellReuseIdentifierForItem:( SCItem* )item
-{
-    if ( [ item isMediaImage ] )
-    {
-        return IMAGE_CELL_ID;
-    }
-    else
-    {
-        return ITEM_CELL_ID;
-    }
-}
-
 -(UITableViewCell*)createLevelUpCellForListModeOfItemsBrowser:( id )sender
 {
-    UITableViewCell* cell = [ [ UITableViewCell alloc ] initWithStyle: UITableViewCellStyleDefault
-                                                      reuseIdentifier: LEVEL_UP_CELL_ID ];
-    cell.textLabel.text = NSLocalizedString( @"CELL_LEVEL_UP_TEXT", @".." );
-    
+    sc_LevelUpTableCell* cell = [ [ sc_LevelUpTableCell alloc ] initWithStyle: UITableViewCellStyleDefault
+                                                              reuseIdentifier: LEVEL_UP_CELL_ID ];
     return cell;
 }
 
 -(UITableViewCell<SCItemCell>*)itemsBrowser:( id )sender
                   createListModeCellForItem:( SCItem* )item
 {
-    SCItemListCell* cell = nil;
     NSString* cellId = [ self itemsBrowser: self->_itemsBrowserController
             itemCellReuseIdentifierForItem: item ];
     
-    if ( [ item isMediaImage ] )
-    {
-        cell =
-        [ [ SCMediaItemListCell alloc ] initWithStyle: UITableViewCellStyleDefault
-                                      reuseIdentifier: cellId
-                                          imageParams: nil ];
-    }
-    else
-    {
-        cell = [ [ SCItemListTextCell alloc ] initWithStyle: UITableViewCellStyleDefault
-                                            reuseIdentifier: cellId ];
-    }
-    
+    sc_FolderTableCell* cell = [ [ sc_FolderTableCell alloc ] initWithStyle: UITableViewCellStyleDefault
+                                                            reuseIdentifier: cellId ];
     return cell;
 }
 
