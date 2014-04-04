@@ -5,6 +5,7 @@
 #import "sc_GradientButton.h"
 #import "sc_BrowseViewCellFactory.h"
 #import "sc_LevelUpGridCell.h"
+#import "sc_QuickImageViewController.h"
 
 @interface sc_BrowseViewController ()<SCItemsBrowserDelegate>
 
@@ -97,14 +98,7 @@
 
 -(void)didFailLoadingRootItemWithError:( NSError* )error
 {
-    //TODO: @igk add error processing
-    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: NSLocalizedString(@"ALERT_LOAD_ROOT_ITEM_ERROR_TITLE", nil )
-                                                       message: error.localizedDescription
-                                                      delegate: nil
-                                             cancelButtonTitle: NSLocalizedString(@"ALERT_LOAD_ROOT_ITEM_ERROR_CANCEL", nil )
-                                             otherButtonTitles: nil ];
-    
-    [ alert show ];
+    [ sc_ErrorHelper showError: error.localizedDescription ];
     [ self endLoading ];
 }
 
@@ -118,13 +112,7 @@
 
 -(void)showCannotReloadMessage
 {
-    //TODO: @igk add error processing
-    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: NSLocalizedString( @"ALERT_RELOAD_LEVEL_ERROR_TITLE", nil )
-                                                       message: NSLocalizedString( @"ALERT_RELOAD_LEVEL_ERROR_MESSAGE", nil )
-                                                      delegate: nil
-                                             cancelButtonTitle: NSLocalizedString( @"ALERT_RELOAD_LEVEL_ERROR_CANCEL", nil )
-                                             otherButtonTitles: nil ];
-    [ alert show ];
+    [ sc_ErrorHelper showError: NSLocalizedString( @"ALERT_RELOAD_LEVEL_ERROR_MESSAGE", nil ) ];
     [ self endLoading ];
 }
 
@@ -139,14 +127,7 @@ didReceiveLevelProgressNotification:( id )progressInfo
 -(void)itemsBrowser:( id )sender
 levelLoadingFailedWithError:( NSError* )error
 {
-    //TODO: @igk add error processing
-    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: NSLocalizedString( @"ALERT_LOAD_LEVEL_ERROR_TITLE", nil )
-                                                       message: error.localizedDescription
-                                                      delegate: nil
-                                             cancelButtonTitle: NSLocalizedString(@"ALERT_LOAD_LEVEL_ERROR_CANCEL", nil )
-                                             otherButtonTitles: nil ];
-    
-    [ alert show ];
+    [ sc_ErrorHelper showError: error.localizedDescription ];
     [ self endLoading ];
 }
 
@@ -172,7 +153,21 @@ didLoadLevelForItem:( SCItem* )levelParentItem
 -(BOOL)itemsBrowser:( id )sender
 shouldLoadLevelForItem:( SCItem* )levelParentItem
 {
-    return levelParentItem.isFolder || levelParentItem.hasChildren;
+    if ( levelParentItem.isFolder || levelParentItem.hasChildren )
+    {
+        return YES;
+    }
+    else
+    {
+        sc_QuickImageViewController *quickImageViewController = (sc_QuickImageViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"sc_QuickImageViewController"];
+        quickImageViewController.items = [levelParentItem.parent.readChildren mutableCopy];
+        quickImageViewController.selectedImage = [levelParentItem.parent.readChildren indexOfObject:levelParentItem];
+        quickImageViewController.session = self->_legacyApiSession;
+        [self.navigationController pushViewController:quickImageViewController animated:YES];
+
+    }
+    
+    return NO;
 }
 
 @end
