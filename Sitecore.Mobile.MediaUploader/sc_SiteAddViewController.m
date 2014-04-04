@@ -7,17 +7,17 @@
 //
 
 #import "sc_SiteAddViewController.h"
-#import "sc_SiteEditViewController.h"
+#import "sc_ListBrowserViewController.h"
 #import "sc_GlobalDataObject.h"
 #import "sc_AppDelegateProtocol.h"
 #import "sc_SettingsViewController.h"
 #import "sc_Site.h"
 #import "sc_GradientButton.h"
 #import "sc_Constants.h"
-#import "sc_UploadFolderViewController.h"
 #import "sc_ActivityIndicator.h"
 #import "sc_ErrorHelper.h"
 #import "sc_ItemHelper.h"
+#import "sc_ButtonsBuilder.h"
 
 @interface sc_SiteAddViewController ()
 
@@ -35,11 +35,15 @@
     
     sc_Site *_siteForEdit;
     BOOL editModeEnabled;
+    
+    sc_ButtonsBuilder *buttonsBuilder;
 }
 
 -(void)awakeFromNib
 {
     [super awakeFromNib];
+    
+    buttonsBuilder = [ sc_ButtonsBuilder new ];
     
     self->_siteForEdit = [ sc_Site emptySite ];
     editModeEnabled = NO;
@@ -122,9 +126,8 @@
                 
                 _loggedIn = YES;
                                     
-                sc_SiteEditViewController * siteEditViewController = (sc_SiteEditViewController *)[self.storyboard instantiateViewControllerWithIdentifier: @"SiteEdit" ];
-                [ siteEditViewController setSite: tmpSite
-                                           isNew: YES ];
+                sc_ListBrowserViewController * siteEditViewController = (sc_ListBrowserViewController *)[self.storyboard instantiateViewControllerWithIdentifier: @"ListItemsBrowser" ];
+                [ siteEditViewController setSiteForBrowse: tmpSite ];
                 
                 [ self.navigationController pushViewController: siteEditViewController
                                                       animated: YES ];
@@ -143,7 +146,7 @@
 }
 
 
--(IBAction)save:(id)sender
+-(void)save:(id)sender
 {
     if(![self validateUrl:_urlTextField.text])
     {
@@ -164,7 +167,12 @@
     {
         [ sc_ErrorHelper showError: NSLocalizedString(@"Please enter username and password.", nil) ];
     }
-    
+}
+
+-(void)remove:(id)sender
+{
+    [ self->_appDataObject.sitesManager removeSite: self->_siteForEdit ];
+    [ self.navigationController popViewControllerAnimated: YES ];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -206,28 +214,26 @@
         {
             _footerView  = [[UIView alloc] init];
             
-            CGFloat padding = 10.f;
-            CGFloat fontSize = 18.f;
-            CGFloat width = 136.f;
+            CGFloat padding = 20.f;
+            CGFloat buttonWidth = (tableView.frame.size.width - 3*padding)/2.f;
+            CGFloat buttonHeight = 45.f;
             
-            if (_appDataObject.isIpad)
-            {
-                padding = 45.f;
-                fontSize = 24.f;
-                width = 260.f;
-            }
-   
-            sc_GradientButton *button = [sc_GradientButton buttonWithType:UIButtonTypeCustom];
-            [(sc_GradientButton*) button setButtonWithStyle:CUSTOMBUTTONTYPE_IMPORTANT];
-            [button setFrame:CGRectMake(tableView.frame.size.width- padding - width, 20.f, width, 45.f)];
-            [button setTitle:NSLocalizedString(@"Next", nil) forState:UIControlStateNormal];
-            [button.titleLabel setFont:[UIFont systemFontOfSize:fontSize]];
+            CGRect firstButtonFrame = CGRectMake(padding, padding, buttonWidth, buttonHeight);
+            CGRect secondButtonFrame = CGRectMake(2*padding + buttonWidth, padding, buttonWidth, buttonHeight);
             
-            [ button addTarget: self
-                        action: @selector(save:)
-              forControlEvents: UIControlEventTouchUpInside ];
+            sc_GradientButton *secondButton = [ buttonsBuilder getButtonWithTitle: @"Next"
+                                                                            style:CUSTOMBUTTONTYPE_IMPORTANT
+                                                                           target: self
+                                                                         selector: @selector(save:) ];
+            [ secondButton setFrame: secondButtonFrame ];
+            [ _footerView addSubview:secondButton ];
             
-            [_footerView addSubview:button];
+            sc_GradientButton *firstButton = [ buttonsBuilder getButtonWithTitle: @"Delete"
+                                                                           style: CUSTOMBUTTONTYPE_DANGEROUS
+                                                                          target: self
+                                                                        selector: @selector(remove:) ];
+            [ firstButton setFrame: firstButtonFrame ];
+            [ _footerView addSubview:firstButton ];
         }
     }
     

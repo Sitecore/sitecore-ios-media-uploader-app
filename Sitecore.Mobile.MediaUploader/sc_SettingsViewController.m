@@ -9,7 +9,6 @@
 #import "sc_GlobalDataObject.h"
 #import "sc_AppDelegateProtocol.h"
 #import "sc_SettingsViewController.h"
-#import "sc_SiteEditViewController.h"
 #import "sc_SiteAddViewController.h"
 #import "sc_UploadViewController.h"
 #import "sc_Site.h"
@@ -62,7 +61,7 @@
 {
     [super viewWillAppear:animated];
     
-   // [self.sitesTableView reloadData];
+    [self.sitesTableView reloadData];
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -207,12 +206,10 @@
 -(void)accessoryTapped:(UIButton *)sender
 {
     sc_Site *siteAtIndex = [ _appDataObject.sitesManager siteAtIndex: sender.tag ];
-//    sc_SiteEditViewController *siteEditViewController = (sc_SiteEditViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SiteEdit"];
-//    [siteEditViewController setSite:siteAtIndex isNew:false];
+
     sc_SiteAddViewController *siteEditViewController = (sc_SiteAddViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"AddSite"];
     [ siteEditViewController setSiteForEdit: siteAtIndex ];
     [self.navigationController pushViewController:siteEditViewController animated:YES];
-    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
