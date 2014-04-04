@@ -1,0 +1,108 @@
+/*
+ Localizable.strings
+ Sitecore.Mobile.MediaUploader
+ 
+ Created by Steve Jennings on 7/24/13.
+ Copyright (c) 2013 Sitecore. All rights reserved.
+ */
+
+//sc_ViewController
+"Upload" = "Upload";
+"Browse" = "Browse";
+"Pending" = "Pending";
+"Please check your internet connection." = "Please check your internet connection.";
+"Please set up at least one upload site." = "Please set up at least one upload site.";
+
+//sc_UploadViewController
+"Location undefined" = "Location undefined";
+"Save failed" = "Save failed";
+"Failed to save media item" = "Failed to save media item";
+"OK" = "OK";
+"Please enter a valid name" = "Please enter a valid name";
+"Upload later" = "Upload later";
+"Name" = "Name";
+
+//sc_SettingsViewController
+"Settings" = "Settings";
+"Sites" = "Sites";
+"Upload image size" = "Upload image size";
+"Add new site..." = "Add new site...";
+"Small" = "Small";
+"Medium" = "Medium";
+"Actual" = "Actual";
+
+//sc_SiteEditViewController
+"Site settings" = "Site settings";
+"Enabled" = "Enabled";
+
+//sc_SiteDefinitionViewController
+"Please enter a valid site." = "Please enter a valid site.";
+"Authentication failure." = "Authentication failure.";
+"Please enter username and password." = "Please enter username and password.";
+"Please enter valid username and password." = "Please enter valid username and password.";
+"Please enter a valid site url." = "Please enter a valid site url.";
+"Sites settings" = "Sites settings";
+"Site" = "Site";
+"Upload folder" = "Upload folder";
+"Enabled for upload" = "Enabled for upload";
+"Delete" = "Delete";
+"Save" = "Save";
+"Site url" = "Site url";
+"Domain\\Username" = "Domain\\Username";
+"Password" = "Password";
+"Login" = "Login";
+"Authenticating" = "Authenticating";
+"Url" = "Url";
+"Site" = "Site";
+
+//sc_SitesSelectionViewController
+"Select the site you wish to browse." = "Select the site you wish to browse.";
+"Browsing site" = "Browsing site";
+
+//sc_Upload2ViewController
+"Aborted" = "Aborted";
+"Uploading  %d of %lu" = "Uploading  %d of %lu";
+"Uploading" = "Uploading";
+"Uploaded" = "Uploaded";
+"Cancelled" = "Cancelled";
+"Cancel" = "Cancel";
+"Done" = "Done";
+"Preparing media" = "Preparing media";
+
+//sc_PendingFilesManagerViewController
+"Pe0nding files" = "Pending files";
+
+//sc_MapViewController
+"Permission Denied" = "Permission Denied";
+"Please enable Map Services" = "Please enable Map Services";
+"Error retrieving location" = "Error retrieving location";
+"Map" = "Map";
+
+//sc_FolderHierarchy
+"Loading..." = "Loading...";
+"Server connection error" = "Server connection error";
+
+//sc_BrowseViewController
+"No sites defined" = "No sites defined";
+"Media browser" = "Media browser";
+
+//sc_UploadFolderViewController
+"Use" = "Use";
+
+//sc_SiteAddViewController
+"New site" = "New site";
+"Add site" = "Add site";
+
+"CANT_CREATE_ERROR_TEXT" = "Can't create item, please try later";
+"ERROR_ALERT_TITLE" = "Error";
+"SITE_EXISTS_ERROR" = "The chosen Upload Folder for this Site already exists";
+"CAMERA_NOT_AVAILABLE" = "Camera is not available on this device";
+"%d items was removed from library" = "%d items was removed from library";
+
+//ERRORS
+"The specified location not found." = "The specified location not found";
+
+//FILTERS
+"ALL_ITEMS_FILTER_TITLE" = "All";
+"COMPLETED_ITEMS_FILTER_TITLE" = "Completed";
+"NOT_COMPLETED_ITEMS_FILTER_TITLE" = "Not Completed";

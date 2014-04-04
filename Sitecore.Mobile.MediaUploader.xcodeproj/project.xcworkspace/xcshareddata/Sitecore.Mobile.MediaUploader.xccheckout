@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>922068B6-A52D-427F-AFB2-5A867CDEF9C2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Sitecore.Mobile.MediaUploader</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>72DCA0BB-D573-40FF-A58E-77EB71611CCA</key>
+		<string>https://svn2dk1.dk.sitecore.net/svn/cms/Mobile/Mobile%20SDK</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>app/MediaUploader/Sitecore.Mobile.MediaUploader.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>72DCA0BB-D573-40FF-A58E-77EB71611CCA</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>72DCA0BB-D573-40FF-A58E-77EB71611CCA</key>
+		<string>https://svn2dk1.dk.sitecore.net/svn/cms</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://svn2dk1.dk.sitecore.net/svn/cms/Mobile/Mobile%20SDK/app/MediaUploader/Sitecore.Mobile.MediaUploader.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>72DCA0BB-D573-40FF-A58E-77EB71611CCA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>72DCA0BB-D573-40FF-A58E-77EB71611CCA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>projects</string>
+		</dict>
+	</array>
+</dict>
+</plist>

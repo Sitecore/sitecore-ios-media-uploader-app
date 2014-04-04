@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>x86_64</key>
+        <string>Simulator</string>
+        <key>i386</key>
+        <string>Simulator</string>
+        <key>iPod1,1</key>
+        <string>iPod Touch 1st Gen</string>
+        <key>iPod2,1</key>
+        <string>iPod Touch 2nd Gen</string>
+        <key>iPod3,1</key>
+        <string>iPod Touch 3rd Gen</string>
+        <key>iPod4,1</key>
+        <string>iPod Touch 4th Gen</string>
+        <key>iPhone1,1</key>
+        <string>iPhone</string>
+        <key>iPhone1,2</key>
+        <string>iPhone 3G</string>
+        <key>iPhone2,1</key>
+        <string>iPhone 3GS</string>
+        <key>iPad1,1</key>
+        <string>iPad</string>
+        <key>iPad2,1</key>
+        <string>iPad 2</string>
+        <key>iPad3,1</key>
+        <string>iPad 3rd Gen</string>
+        <key>iPhone3,1</key>
+        <string>iPhone 4</string>
+        <key>iPhone4,1</key>
+        <string>iPhone 4S</string>
+        <key>iPhone5,1</key>
+        <string>iPhone 5 model A1428</string>
+        <key>iPhone5,2</key>
+        <string>iPhone 5 model A1429</string>
+        <key>iPad3,4</key>
+        <string>iPad 4th Gen</string>
+        <key>iPad2,5</key>
+        <string>iPad Mini</string>
+    </dict>
+</plist>

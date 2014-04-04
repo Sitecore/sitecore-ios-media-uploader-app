@@ -1,0 +1,20 @@
+//
+// Prefix header for all source files of the 'Sitecore.Mobile.MediaUploader' target in the 'Sitecore.Mobile.MediaUploader' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import "sc_ErrorHelper.h"
+    #import <SitecoreMobileSDK/SitecoreMobileSDK.h>
+
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <MapKit/MapKit.h>
+    #import <MobileCoreServices/MobileCoreServices.h>
+    #import <QuartzCore/QuartzCore.h>
+#endif

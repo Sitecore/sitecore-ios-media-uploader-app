@@ -1,0 +1,22 @@
+//
+//  sc_UploadItemCell.h
+//  Sitecore.Mobile.MediaUploader
+//
+//  Created by Igor on 13/12/13.
+//  Copyright (c) 2013 Sitecore. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "sc_UploadItemManager.h"
+@class sc_BaseTheme;
+
+@interface sc_UploadItemCell : UITableViewCell
+
+@property( nonatomic ) IBOutlet UIImageView *cellImageView;
+@property( nonatomic ) IBOutlet UILabel *siteLabel;
+@property( nonatomic ) IBOutlet UILabel *folderLabel;
+@property( nonatomic ) IBOutlet UIActivityIndicatorView *activityView;
+
+-(void)setCellStyleForUploadStatus:(sc_UploadItemStatus *)status withTheme:(sc_BaseTheme *)theme;
+
+@end
