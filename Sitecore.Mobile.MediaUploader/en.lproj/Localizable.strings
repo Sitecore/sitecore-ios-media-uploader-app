@@ -107,3 +107,6 @@
 "ALL_ITEMS_FILTER_TITLE" = "All";
 "COMPLETED_ITEMS_FILTER_TITLE" = "Completed";
 "NOT_COMPLETED_ITEMS_FILTER_TITLE" = "Not Completed";
+
+//list items browser
+"ALERT_RELOAD_LEVEL_ERROR_MESSAGE" = "Item is not available";
