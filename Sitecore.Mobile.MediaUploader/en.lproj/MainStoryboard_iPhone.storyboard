@@ -1038,16 +1038,21 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cellFactory" destination="LSN-S9-eNu" id="UF5-sM-p5w"/>
                         <outlet property="itemPathTextView" destination="WTa-0G-GFF" id="RGi-Yv-wjh"/>
-                        <outlet property="itemsBrowserController" destination="abH-cC-1cI" id="26A-P6-ajP"/>
                         <outlet property="loadingProgress" destination="J6K-MW-7s1" id="QfD-rM-QSc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q70-1Q-IZ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="LSN-S9-eNu" customClass="sc_ListBrowserCellFactory">
+                    <connections>
+                        <outlet property="itemsBrowserController" destination="abH-cC-1cI" id="K2t-l2-l5K"/>
+                    </connections>
+                </customObject>
                 <customObject id="abH-cC-1cI" customClass="SCItemListBrowser">
                     <connections>
                         <outlet property="delegate" destination="v41-wF-oAf" id="Yfm-a5-jGD"/>
-                        <outlet property="listModeCellBuilder" destination="v41-wF-oAf" id="tMB-qS-rnc"/>
+                        <outlet property="listModeCellBuilder" destination="LSN-S9-eNu" id="YQn-1a-sDt"/>
                         <outlet property="listModeTheme" destination="v41-wF-oAf" id="5Ae-Nk-aPh"/>
                         <outlet property="tableView" destination="eMf-gs-xnQ" id="vQ2-Mj-7Wd"/>
                     </connections>
@@ -1075,7 +1080,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="kAA-QS-bIp"/>
-        <segue reference="Ojs-cY-NTx"/>
+        <segue reference="gNM-kL-FeG"/>
+        <segue reference="dwe-Ci-vSw"/>
     </inferredMetricsTieBreakers>
 </document>
