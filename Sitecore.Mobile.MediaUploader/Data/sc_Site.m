@@ -179,8 +179,8 @@ uploadFolderPathInsideMediaLibrary: (NSString *)uploadFolderPathInsideMediaLibra
     }
     
     return (
-               [self.siteUrl isEqualToString: object.siteUrl]
-            && [self.site isEqualToString: object.site]
+               [self.siteUrl                            isEqualToString: object.siteUrl]
+            && [self.site                               isEqualToString: object.site]
             && [self.uploadFolderPathInsideMediaLibrary isEqualToString: object.uploadFolderPathInsideMediaLibrary]
             );
 
