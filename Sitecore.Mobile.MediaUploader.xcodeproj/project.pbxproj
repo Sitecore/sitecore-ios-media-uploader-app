@@ -368,6 +368,8 @@
 		78D4AA0C1886D13900CC44B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78D4AA0A1886D13900CC44B4 /* InfoPlist.strings */; };
 		78D4AA0E1886D13900CC44B4 /* sc_ScaleTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D4AA0D1886D13900CC44B4 /* sc_ScaleTest.m */; };
 		78D4AA151886D15500CC44B4 /* sc_ImageScaling.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D4A9AD1886A99D00CC44B4 /* sc_ImageScaling.m */; };
+		78D5E14718F28F9D009F647C /* sc_ListBrowserCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D5E14618F28F9D009F647C /* sc_ListBrowserCellFactory.m */; };
+		78D5E14818F28F9D009F647C /* sc_ListBrowserCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D5E14618F28F9D009F647C /* sc_ListBrowserCellFactory.m */; };
 		78D62BBB185F367C00FF7ADC /* sc_UploadItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D62BBA185F367C00FF7ADC /* sc_UploadItemManager.m */; };
 		78DFD76318E4451600E0E4CD /* sc_LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DFD76218E4451600E0E4CD /* sc_LocationManager.m */; };
 		78DFD76418E4459E00E0E4CD /* sc_LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DFD76218E4451600E0E4CD /* sc_LocationManager.m */; };
@@ -773,6 +775,8 @@
 		78D4AA0B1886D13900CC44B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		78D4AA0D1886D13900CC44B4 /* sc_ScaleTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sc_ScaleTest.m; sourceTree = "<group>"; };
 		78D4AA0F1886D13900CC44B4 /* Sitecore.Mobile.MediaUploaderTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sitecore.Mobile.MediaUploaderTests-Prefix.pch"; sourceTree = "<group>"; };
+		78D5E14518F28F9D009F647C /* sc_ListBrowserCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_ListBrowserCellFactory.h; sourceTree = "<group>"; };
+		78D5E14618F28F9D009F647C /* sc_ListBrowserCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_ListBrowserCellFactory.m; sourceTree = "<group>"; };
 		78D62BB9185F367C00FF7ADC /* sc_UploadItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_UploadItemManager.h; sourceTree = "<group>"; };
 		78D62BBA185F367C00FF7ADC /* sc_UploadItemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_UploadItemManager.m; sourceTree = "<group>"; };
 		78DFD76118E4451600E0E4CD /* sc_LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_LocationManager.h; sourceTree = "<group>"; };
@@ -1307,6 +1311,8 @@
 			children = (
 				78CE93BE18ED626400B68327 /* sc_ListBrowserViewController.h */,
 				78CE93BF18ED626400B68327 /* sc_ListBrowserViewController.m */,
+				78D5E14518F28F9D009F647C /* sc_ListBrowserCellFactory.h */,
+				78D5E14618F28F9D009F647C /* sc_ListBrowserCellFactory.m */,
 				78C5969F18EED3B4006A7FA3 /* sc_LevelUpTableCell.h */,
 				78C596A018EED3B4006A7FA3 /* sc_LevelUpTableCell.m */,
 				78C596A318EEDBDB006A7FA3 /* sc_FolderTableCell.h */,
@@ -1868,6 +1874,7 @@
 				78D62BBB185F367C00FF7ADC /* sc_UploadItemManager.m in Sources */,
 				6504584417AE3B0400A04E25 /* sc_ConnectivityHelper.m in Sources */,
 				6504584717AE3B1600A04E25 /* sc_ImageHelper.m in Sources */,
+				78D5E14718F28F9D009F647C /* sc_ListBrowserCellFactory.m in Sources */,
 				6504584A17AE3B8200A04E25 /* sc_ErrorHelper.m in Sources */,
 				6504584D17AE440200A04E25 /* sc_ViewsHelper.m in Sources */,
 				6504585017AF7E3700A04E25 /* sc_ItemHelper.m in Sources */,
@@ -1921,6 +1928,7 @@
 				7810813E189021E300E8EFD7 /* sc_UploadItemManager.m in Sources */,
 				7810813F189021E300E8EFD7 /* sc_ConnectivityHelper.m in Sources */,
 				78108140189021E300E8EFD7 /* sc_ImageHelper.m in Sources */,
+				78D5E14818F28F9D009F647C /* sc_ListBrowserCellFactory.m in Sources */,
 				78108141189021E300E8EFD7 /* sc_ErrorHelper.m in Sources */,
 				78108142189021E300E8EFD7 /* sc_ViewsHelper.m in Sources */,
 				78108143189021E300E8EFD7 /* sc_ItemHelper.m in Sources */,
