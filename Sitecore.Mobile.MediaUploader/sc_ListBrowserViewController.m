@@ -3,15 +3,11 @@
 #import "sc_ItemHelper.h"
 #import "sc_LevelUpTableCell.h"
 #import "sc_FolderTableCell.h"
+#import "sc_ListBrowserCellFactory.h"
 
-@interface sc_ListBrowserViewController ()
-<
-SCItemsBrowserDelegate,
-SIBListModeAppearance ,
-SIBListModeCellFactory
->
+@interface sc_ListBrowserViewController ()<SCItemsBrowserDelegate>
 
-@property (strong, nonatomic) IBOutlet SCItemListBrowser *itemsBrowserController;
+@property (nonatomic, strong) IBOutlet sc_ListBrowserCellFactory *cellFactory;
 
 @property (weak, nonatomic) IBOutlet UITextView *itemPathTextView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingProgress;
@@ -39,15 +35,13 @@ SIBListModeCellFactory
     self->_legacyApiSession = [ sc_ItemHelper getContext:self->_siteForBrowse ];
     self->_apiSession = self->_legacyApiSession.extendedApiSession;
     
-   // self.cellFactory.itemsBrowserController.apiSession = self->_apiSession;
-
+    self.cellFactory.itemsBrowserController.apiSession = self->_apiSession;
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [ super viewDidAppear: animated ];
-    self.itemsBrowserController.apiSession = self->_apiSession;
-    
+    self.cellFactory.itemsBrowserController.apiSession = self->_apiSession;
     
     NSString *rootFolderPath = [ sc_Site mediaLibraryDefaultPath ];
     
@@ -79,9 +73,10 @@ SIBListModeCellFactory
     
     NSArray *templatesList = @[@"Media folder"];
     self->_requestBuilder = [ [SIBWhiteListTemplateRequestBuilder alloc] initWithTemplateNames: templatesList ];
-    self.itemsBrowserController.nextLevelRequestBuilder = self->_requestBuilder;
-
-    NSParameterAssert( nil != self.itemsBrowserController );
+    self.cellFactory.itemsBrowserController.nextLevelRequestBuilder = self->_requestBuilder;
+    self.cellFactory.itemsBrowserController.nextLevelRequestBuilder = self->_requestBuilder;
+    
+    NSParameterAssert( nil != self.cellFactory.itemsBrowserController );
 }
 
 -(void)didFailLoadingRootItemWithError:( NSError* )error
@@ -92,8 +87,8 @@ SIBListModeCellFactory
 
 -(void)didLoadRootItem:( SCItem* )rootItem
 {
-    self.itemsBrowserController.rootItem = rootItem;
-    [ self.itemsBrowserController reloadData ];
+    self.cellFactory.itemsBrowserController.rootItem = rootItem;
+    [ self.cellFactory.itemsBrowserController reloadData ];
 }
 
 -(void)startLoading
@@ -164,43 +159,7 @@ levelLoadingFailedWithError:( NSError* )error
     self->_currentPath = levelParentItem.path;
 }
 
-#pragma mark -
-#pragma mark SIBListModeCellFactory
-static NSString* const LEVEL_UP_CELL_ID = @"net.sitecore.MobileSdk.ItemsBrowser.list.LevelUpCell";
-static NSString* const FOLDER_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser.list.FolderCell"   ;
-
-
--(NSString*)itemsBrowser:( id )sender
-itemCellReuseIdentifierForItem:( SCItem* )item
-{
-    return FOLDER_CELL_ID;
-}
-
--(NSString*)reuseIdentifierForLevelUpCellOfItemsBrowser:( id )sender
-{
-    return LEVEL_UP_CELL_ID;
-}
-
--(UITableViewCell*)createLevelUpCellForListModeOfItemsBrowser:( id )sender
-{
-    sc_LevelUpTableCell* cell = [ [ sc_LevelUpTableCell alloc ] initWithStyle: UITableViewCellStyleDefault
-                                                              reuseIdentifier: LEVEL_UP_CELL_ID ];
-    return cell;
-}
-
--(UITableViewCell<SCItemCell>*)itemsBrowser:( id )sender
-                  createListModeCellForItem:( SCItem* )item
-{
-    NSString* cellId = [ self itemsBrowser: self->_itemsBrowserController
-            itemCellReuseIdentifierForItem: item ];
-    
-    sc_FolderTableCell* cell = [ [ sc_FolderTableCell alloc ] initWithStyle: UITableViewCellStyleDefault
-                                                            reuseIdentifier: cellId ];
-    return cell;
-}
-
--(BOOL)itemsBrowser:( id )sender
-shouldLoadLevelForItem:( SCItem* )levelParentItem
+-(BOOL)itemsBrowser:( id )sender shouldLoadLevelForItem:( SCItem* )levelParentItem
 {
     return levelParentItem.isFolder || levelParentItem.hasChildren;
 }
