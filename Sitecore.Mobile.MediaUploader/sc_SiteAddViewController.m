@@ -37,6 +37,7 @@
     BOOL editModeEnabled;
     
     sc_ButtonsBuilder *buttonsBuilder;
+    sc_GradientButton *nextButton;
 }
 
 -(void)awakeFromNib
@@ -49,7 +50,6 @@
     editModeEnabled = NO;
     
     [ self localizeUI ];
-    [ self initializeActivityIndicator ];
     
     _appDataObject = [sc_GlobalDataObject getAppDataObject];
     
@@ -59,12 +59,14 @@
     _cancelButton.action = @selector(cancel:);
     
     [ self configureView ];
+    
+    [ self initializeActivityIndicator ];
 }
 
 - (void)initializeActivityIndicator
 {
     _activityIndicator = [[sc_ActivityIndicator alloc] initWithFrame:self.view.frame];
-    [self.view.superview addSubview:_activityIndicator];
+    [self.view addSubview:_activityIndicator];
 }
 
 -(void)setSiteForEdit:(sc_Site *)site
@@ -76,12 +78,12 @@
 
 -(void)localizeUI
 {
-    self.navigationItem.title      = NSLocalizedString(self.navigationItem.title, nil);
+    self.navigationItem.title      = NSLocalizedString(self.navigationItem.title     , nil);
     _passwordTextField.placeholder = NSLocalizedString(_passwordTextField.placeholder, nil);
     _usernameTextField.placeholder = NSLocalizedString(_usernameTextField.placeholder, nil);
-    _urlTextField.placeholder      = NSLocalizedString(_urlTextField.placeholder, nil);
-    _siteTextField.placeholder     = NSLocalizedString(_siteTextField.placeholder, nil);
-    _cancelButton.title            = NSLocalizedString(_cancelButton.title, nil);
+    _urlTextField.placeholder      = NSLocalizedString(_urlTextField.placeholder     , nil);
+    _siteTextField.placeholder     = NSLocalizedString(_siteTextField.placeholder    , nil);
+    _cancelButton.title            = NSLocalizedString(_cancelButton.title           , nil);
 }
 
 -(void)configureView
@@ -92,16 +94,44 @@
     _passwordTextField.text = self->_siteForEdit.password;
 }
 
+-(void)saveSiteWithUploadFolder:(NSString *)uploadFolder
+{
+    [ self fillSiteWithData: self->_siteForEdit ];
+    self->_siteForEdit.uploadFolderPathInsideMediaLibrary = uploadFolder;
+    
+    NSError *error;
+    if ( editModeEnabled )
+    {
+        [ self->_appDataObject.sitesManager saveSites ];
+    }
+    else
+    {
+        [ self->_appDataObject.sitesManager addSite: self->_siteForEdit
+                                              error: &error ];
+    }
+
+    if ( error )
+    {
+        [sc_ErrorHelper showError:NSLocalizedString(error.localizedDescription, nil)];
+    }
+    else
+    {
+        [ self.navigationController popToRootViewControllerAnimated: YES ];
+    }
+
+}
+
 -(void)authenticateAndSaveSite:(sc_Site *)site
 {
     __block sc_Site *tmpSite = site;
-    __block BOOL editMode = editModeEnabled;
     
     SCApiSession *session = [ sc_ItemHelper getContext: tmpSite ];
     
     SCAsyncOp asyncOp = [ session checkCredentialsOperationForSite: site.site ];
     
     [ _activityIndicator showWithLabel: NSLocalizedString(@"Authenticating", nil) ];
+    
+    self->nextButton.enabled = NO;
     
     asyncOp(^( id result, NSError *error )
     {
@@ -110,8 +140,11 @@
         {
             {                                    
                 sc_ListBrowserViewController * siteEditViewController = (sc_ListBrowserViewController *)[self.storyboard instantiateViewControllerWithIdentifier: @"ListItemsBrowser" ];
-                [ siteEditViewController setSiteForBrowse: tmpSite
-                                                 editMode: editMode ];
+                [ siteEditViewController chooseUploaderFolderForSite:tmpSite
+                                                         witCallback:^(NSString *folder)
+                {
+                    [ self saveSiteWithUploadFolder: folder ];
+                } ];
                 
                 [ self.navigationController pushViewController: siteEditViewController
                                                       animated: YES ];
@@ -121,6 +154,8 @@
         {
             [ sc_ErrorHelper showError: NSLocalizedString(@"Authentication failure.", nil) ];
         }
+        
+        self->nextButton.enabled = YES;
     });
 }
 
@@ -132,7 +167,23 @@
 
 -(void)save:(id)sender
 {
-    NSString *protocol;
+    sc_Site *fakeSite = [ sc_Site emptySite ];
+    
+    if(_usernameTextField.text.length > 0 && _passwordTextField.text.length > 0)
+    {
+        [ self fillSiteWithData: fakeSite ];
+    }
+    else
+    {
+        [ sc_ErrorHelper showError: NSLocalizedString(@"Please enter username and password.", nil) ];
+    }
+    
+    [ self authenticateAndSaveSite: fakeSite ];
+}
+
+-(void)fillSiteWithData:(sc_Site *)siteToFill
+{
+     NSString *protocol;
     
     if ( self.protocolSelector.selectedSegmentIndex == 0 )
     {
@@ -142,21 +193,13 @@
     {
         protocol = @"https://";
     }
-    
-    if(_usernameTextField.text.length > 0 && _passwordTextField.text.length > 0)
-    {
-        self->_siteForEdit.siteProtocol = protocol;
-        self->_siteForEdit.siteUrl = self->_urlTextField.text;
-        self->_siteForEdit.site = self->_siteTextField.text;
-        self->_siteForEdit.username = self->_usernameTextField.text;
-        self->_siteForEdit.password = self->_passwordTextField.text;
-        
-        [ self authenticateAndSaveSite: self->_siteForEdit ];
-    }
-    else
-    {
-        [ sc_ErrorHelper showError: NSLocalizedString(@"Please enter username and password.", nil) ];
-    }
+
+   siteToFill.siteProtocol = protocol;
+   siteToFill.siteUrl = self->_urlTextField.text;
+   siteToFill.site = self->_siteTextField.text;
+   siteToFill.username = self->_usernameTextField.text;
+   siteToFill.password = self->_passwordTextField.text;
+
 }
 
 -(void)remove:(id)sender
@@ -201,6 +244,7 @@
                                                                          selector: @selector(save:) ];
             [ secondButton setFrame: secondButtonFrame ];
             [ _footerView addSubview:secondButton ];
+            self->nextButton = secondButton;
             
             sc_GradientButton *firstButton = [ buttonsBuilder getButtonWithTitle: @"Delete"
                                                                            style: CUSTOMBUTTONTYPE_DANGEROUS

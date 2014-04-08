@@ -1,5 +1,4 @@
 #import "sc_ListBrowserViewController.h"
-#import "sc_GlobalDataObject.h"
 #import "sc_ItemHelper.h"
 #import "sc_LevelUpTableCell.h"
 #import "sc_FolderTableCell.h"
@@ -22,17 +21,15 @@
     SCApiSession* _legacyApiSession;
     SCExtendedApiSession* _apiSession;
     
-    sc_GlobalDataObject *_appDataObject;
     SIBWhiteListTemplateRequestBuilder *_requestBuilder;
     sc_Site *_siteForBrowse;
     NSString *_currentPath;
-    BOOL _editMode;
+    SCUPloadFolderReceived _callback;
 }
 
--(void)setSiteForBrowse:(sc_Site *)site editMode:(BOOL)editMode
+-(void)chooseUploaderFolderForSite:(sc_Site *)site witCallback:(SCUPloadFolderReceived)callback
 {
-    self->_editMode = editMode;
-    
+    self->_callback = callback;
     self->_siteForBrowse = site;
     
     self->_legacyApiSession = [ sc_ItemHelper getContext:self->_siteForBrowse ];
@@ -74,8 +71,6 @@
 {
     [ super viewDidLoad ];
     
-    _appDataObject = [ sc_GlobalDataObject getAppDataObject ];
-    
     NSArray *templatesList = @[@"Media folder"];
     self->_requestBuilder = [ [SIBWhiteListTemplateRequestBuilder alloc] initWithTemplateNames: templatesList ];
     self.cellFactory.itemsBrowserController.nextLevelRequestBuilder = self->_requestBuilder;
@@ -111,48 +106,13 @@
 
 -(IBAction)cancelTouched:(id)sender
 {
-    [ self goToRootViewController ];
+    [ self.navigationController popViewControllerAnimated: YES ];
 }
 
 -(IBAction)useTouched:(id)sender
 {
-    self->_siteForBrowse.uploadFolderPathInsideMediaLibrary = self->_currentPath;
-    
-    NSError *error;
-    
-    if ( self->_editMode )
-    {
-        [ _appDataObject.sitesManager saveSites ];
-    }
-    else
-    {
-        [ _appDataObject.sitesManager addSite: self->_siteForBrowse
-                                        error: &error ];
-    }
-    
-    if ( error )
-    {
-        [sc_ErrorHelper showError:NSLocalizedString(error.localizedDescription, nil)];
-    }
-    else
-    {
-        [ self goToRootViewController ];
-    }
-}
-
--(void)goToRootViewController
-{
-    NSUInteger vcCount = [ self.navigationController.viewControllers count ];
-    NSUInteger stepsToSttingsRoot = 3;
-    if ( vcCount < stepsToSttingsRoot )
-    {
-        [ self.navigationController popToRootViewControllerAnimated: YES ];
-        return;
-    }
-    
-    UIViewController *vcToPop = self.navigationController.viewControllers[ vcCount - stepsToSttingsRoot ];
-    
-    [ self.navigationController popToViewController:vcToPop animated:YES ];
+    self->_callback( self->_currentPath );
+    [ self.navigationController popViewControllerAnimated: YES ];
 }
 
 -(void)showCannotReloadMessage

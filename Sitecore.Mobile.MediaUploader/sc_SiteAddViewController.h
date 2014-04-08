@@ -22,4 +22,6 @@
 
 -(void)setSiteForEdit:(sc_Site *)site;
 
+//TODO: @igk refactor this
+-(void)saveSiteWithUploadFolder:(NSString *)uploadFolder;
 @end

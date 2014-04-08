@@ -931,7 +931,6 @@
 		4F30E6CA179C66CF00F7FC6D /* Browsing */ = {
 			isa = PBXGroup;
 			children = (
-				78CE93BD18ED623900B68327 /* ListBrowser */,
 				78CC1F0218EAF997003608CD /* GridBrowser */,
 				4F6B71A21763E20800CE3094 /* sc_QuickImageViewController.h */,
 				4F6B71A31763E20800CE3094 /* sc_QuickImageViewController.m */,
@@ -1271,6 +1270,7 @@
 		78C596A818EEFE52006A7FA3 /* AddEditViewController */ = {
 			isa = PBXGroup;
 			children = (
+				78CE93BD18ED623900B68327 /* ListBrowser */,
 				65D6BE0917A2AA0B002336C5 /* sc_SiteAddViewController.h */,
 				65D6BE0A17A2AA0B002336C5 /* sc_SiteAddViewController.m */,
 				78C596A918EEFE75006A7FA3 /* sc_ButtonsBuilder.h */,
