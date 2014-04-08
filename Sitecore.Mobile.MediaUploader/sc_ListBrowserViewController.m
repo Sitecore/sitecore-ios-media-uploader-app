@@ -3,6 +3,7 @@
 #import "sc_LevelUpTableCell.h"
 #import "sc_FolderTableCell.h"
 #import "sc_ListBrowserCellFactory.h"
+#import "sc_GridBrowserRequestBuilder.h"
 
 @interface sc_ListBrowserViewController ()<SCItemsBrowserDelegate>
 
@@ -21,7 +22,7 @@
     SCApiSession* _legacyApiSession;
     SCExtendedApiSession* _apiSession;
     
-    SIBWhiteListTemplateRequestBuilder *_requestBuilder;
+    sc_GridBrowserRequestBuilder *_requestBuilder;
     sc_Site *_siteForBrowse;
     NSString *_currentPath;
     SCUPloadFolderReceived _callback;
@@ -72,7 +73,7 @@
     [ super viewDidLoad ];
     
     NSArray *templatesList = @[@"Media folder"];
-    self->_requestBuilder = [ [SIBWhiteListTemplateRequestBuilder alloc] initWithTemplateNames: templatesList ];
+    self->_requestBuilder = [ [sc_GridBrowserRequestBuilder alloc] initWithTemplateNames: templatesList ];
     self.cellFactory.itemsBrowserController.nextLevelRequestBuilder = self->_requestBuilder;
     self.cellFactory.itemsBrowserController.nextLevelRequestBuilder = self->_requestBuilder;
     

@@ -338,6 +338,8 @@
 		78CA658718C8B8C800C27192 /* accessoryArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA658218C8B8C800C27192 /* accessoryArrow.png */; };
 		78CA658818C8B8C800C27192 /* accessoryArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA658218C8B8C800C27192 /* accessoryArrow.png */; };
 		78CA819C185B00420001896D /* sc_UploadItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CA819B185B00420001896D /* sc_UploadItemCell.m */; };
+		78CB2A9218F43DB500BDA6B0 /* sc_GridBrowserRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CB2A9118F43DB500BDA6B0 /* sc_GridBrowserRequestBuilder.m */; };
+		78CB2A9318F43DB500BDA6B0 /* sc_GridBrowserRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CB2A9118F43DB500BDA6B0 /* sc_GridBrowserRequestBuilder.m */; };
 		78CC1EF818EAA2E6003608CD /* sc_BrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CC1EF718EAA2E6003608CD /* sc_BrowseViewController.m */; };
 		78CC1EF918EAA2EB003608CD /* sc_BrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CC1EF718EAA2E6003608CD /* sc_BrowseViewController.m */; };
 		78CC1EFC18EAF57F003608CD /* sc_BrowseViewAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CC1EFB18EAF57F003608CD /* sc_BrowseViewAppearance.m */; };
@@ -746,6 +748,8 @@
 		78CA658218C8B8C800C27192 /* accessoryArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accessoryArrow.png; sourceTree = "<group>"; };
 		78CA819A185B00420001896D /* sc_UploadItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_UploadItemCell.h; sourceTree = "<group>"; };
 		78CA819B185B00420001896D /* sc_UploadItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_UploadItemCell.m; sourceTree = "<group>"; };
+		78CB2A9018F43DB500BDA6B0 /* sc_GridBrowserRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_GridBrowserRequestBuilder.h; sourceTree = "<group>"; };
+		78CB2A9118F43DB500BDA6B0 /* sc_GridBrowserRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_GridBrowserRequestBuilder.m; sourceTree = "<group>"; };
 		78CC1EF618EAA2E6003608CD /* sc_BrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_BrowseViewController.h; sourceTree = "<group>"; };
 		78CC1EF718EAA2E6003608CD /* sc_BrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_BrowseViewController.m; sourceTree = "<group>"; };
 		78CC1EFA18EAF57F003608CD /* sc_BrowseViewAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_BrowseViewAppearance.h; sourceTree = "<group>"; };
@@ -1292,6 +1296,8 @@
 				78CC1F0418EAFEDF003608CD /* sc_FolderGridCell.m */,
 				7872A6F518EC049600581E03 /* sc_LevelUpGridCell.h */,
 				7872A6F618EC049600581E03 /* sc_LevelUpGridCell.m */,
+				78CB2A9018F43DB500BDA6B0 /* sc_GridBrowserRequestBuilder.h */,
+				78CB2A9118F43DB500BDA6B0 /* sc_GridBrowserRequestBuilder.m */,
 			);
 			name = GridBrowser;
 			sourceTree = "<group>";
@@ -1831,6 +1837,7 @@
 				78B01F5A187EF261006D48C9 /* sc_BaseTheme.m in Sources */,
 				655829C9175B408900768197 /* sc_ViewController.m in Sources */,
 				78C596AB18EEFE75006A7FA3 /* sc_ButtonsBuilder.m in Sources */,
+				78CB2A9218F43DB500BDA6B0 /* sc_GridBrowserRequestBuilder.m in Sources */,
 				6599A553175B9B410095775D /* sc_UploadViewController.m in Sources */,
 				654ECE4B175E71B300509490 /* sc_SettingsViewController.m in Sources */,
 				78D4A9AE1886A99D00CC44B4 /* sc_ImageScaling.m in Sources */,
@@ -1885,6 +1892,7 @@
 				78108127189021E300E8EFD7 /* sc_BaseTheme.m in Sources */,
 				78108128189021E300E8EFD7 /* sc_ViewController.m in Sources */,
 				78C596AC18EEFE75006A7FA3 /* sc_ButtonsBuilder.m in Sources */,
+				78CB2A9318F43DB500BDA6B0 /* sc_GridBrowserRequestBuilder.m in Sources */,
 				78108129189021E300E8EFD7 /* sc_UploadViewController.m in Sources */,
 				7810812B189021E300E8EFD7 /* sc_SettingsViewController.m in Sources */,
 				7810812C189021E300E8EFD7 /* sc_ImageScaling.m in Sources */,

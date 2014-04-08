@@ -28,6 +28,9 @@
 @property (nonatomic) IBOutlet UISegmentedControl *protocolSelector;
 @end
 
+static NSString *HTTPS_PROTOCOL_STRING = @"https://";
+static NSString *HTTP_PROTOCOL_STRING = @"http://";
+
 @implementation sc_SiteAddViewController
 {
     sc_GlobalDataObject *_appDataObject;
@@ -38,6 +41,13 @@
     
     sc_ButtonsBuilder *buttonsBuilder;
     sc_GradientButton *nextButton;
+}
+
+-(void)viewDidLoad
+{
+    [ super viewDidLoad ];
+    
+    [ self configureView ];
 }
 
 -(void)awakeFromNib
@@ -58,8 +68,6 @@
     _cancelButton.target = self;
     _cancelButton.action = @selector(cancel:);
     
-    [ self configureView ];
-    
     [ self initializeActivityIndicator ];
 }
 
@@ -72,7 +80,19 @@
 -(void)setSiteForEdit:(sc_Site *)site
 {
     self->_siteForEdit = site;
+    
+    //TODO: @igk refactor this
+    if ([ site.siteProtocol isEqualToString:HTTPS_PROTOCOL_STRING ])
+    {
+        [ self.protocolSelector setSelectedSegmentIndex: 1 ];
+    }
+    else
+    {
+        [ self.protocolSelector setSelectedSegmentIndex: 0 ];
+    }
+    
     editModeEnabled = YES;
+    
     [ self configureView ];
 }
 
@@ -187,11 +207,11 @@
     
     if ( self.protocolSelector.selectedSegmentIndex == 0 )
     {
-        protocol = @"http://";
+        protocol = HTTP_PROTOCOL_STRING;
     }
     else
     {
-        protocol = @"https://";
+        protocol = HTTPS_PROTOCOL_STRING;
     }
 
    siteToFill.siteProtocol = protocol;
@@ -199,7 +219,6 @@
    siteToFill.site = self->_siteTextField.text;
    siteToFill.username = self->_usernameTextField.text;
    siteToFill.password = self->_passwordTextField.text;
-
 }
 
 -(void)remove:(id)sender
