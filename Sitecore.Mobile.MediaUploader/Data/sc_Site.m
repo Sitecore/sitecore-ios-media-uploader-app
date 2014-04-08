@@ -131,6 +131,7 @@ uploadFolderPathInsideMediaLibrary: (NSString *)uploadFolderPathInsideMediaLibra
 
 -(void)encodeWithCoder:(NSCoder *)encoder
 {
+    [encoder encodeObject:self.siteProtocol forKey:@"siteProtocol"];
     [encoder encodeObject:self.siteUrl forKey:@"siteUrl"];
     [encoder encodeObject:self.site forKey:@"site"];
     [encoder encodeObject:self.uploadFolderPathInsideMediaLibrary forKey:@"uploadFolderPathInsideMediaLibrary"];
@@ -145,6 +146,7 @@ uploadFolderPathInsideMediaLibrary: (NSString *)uploadFolderPathInsideMediaLibra
     self = [super init];
     if (self)
     {
+        self.siteProtocol                       = [decoder decodeObjectForKey:@"siteProtocol"];
         self.siteUrl                            = [decoder decodeObjectForKey:@"siteUrl"];
         self.site                               = [decoder decodeObjectForKey:@"site"];
         self.uploadFolderPathInsideMediaLibrary = [decoder decodeObjectForKey:@"uploadFolderPathInsideMediaLibrary"];
