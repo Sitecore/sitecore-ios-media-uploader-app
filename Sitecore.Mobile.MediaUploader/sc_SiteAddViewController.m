@@ -66,7 +66,7 @@
 - (void)initializeActivityIndicator
 {
     _activityIndicator = [[sc_ActivityIndicator alloc] initWithFrame:self.view.frame];
-    [self.view addSubview:_activityIndicator];
+    [self.view.superview addSubview:_activityIndicator];
 }
 
 -(void)setSiteForEdit:(sc_Site *)site
@@ -148,26 +148,21 @@
 
 -(void)save:(id)sender
 {
-    NSString *protocolUrl;
+    NSString *protocol;
     
     if ( self.protocolSelector.selectedSegmentIndex == 0 )
     {
-        protocolUrl = [ NSString stringWithFormat:@"http://%@", _urlTextField.text ];
+        protocol = @"http://";
     }
     else
     {
-        protocolUrl = [ NSString stringWithFormat:@"https://%@", _urlTextField.text ];
-    }
-    
-    if( ![ self validateUrl: protocolUrl ] )
-    {
-        [ sc_ErrorHelper showError: NSLocalizedString(@"Please enter a valid site url.", nil) ];
-        return;
+        protocol = @"https://";
     }
     
     if(_usernameTextField.text.length > 0 && _passwordTextField.text.length > 0)
     {
-        self->_siteForEdit.siteUrl = protocolUrl;
+        self->_siteForEdit.siteProtocol = protocol;
+        self->_siteForEdit.siteUrl = self->_urlTextField.text;
         self->_siteForEdit.site = self->_siteTextField.text;
         self->_siteForEdit.username = self->_usernameTextField.text;
         self->_siteForEdit.password = self->_passwordTextField.text;
@@ -195,17 +190,6 @@
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
     return _loggedIn;
-}
-
--(BOOL)validateUrl: (NSString *)url
-{
-    if (url.length == 0)
-    {
-        return NO;
-    }
-    
-    NSURL* tmpUrl = [NSURL URLWithString:url];
-    return !(tmpUrl == NULL);
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
