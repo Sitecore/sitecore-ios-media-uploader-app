@@ -33,6 +33,7 @@
     sc_GlobalDataObject *_appDataObject;
     sc_GridBrowserRequestBuilder *_requestBuilder;
     
+    BOOL browserMustBeReloaded;
 }
 
 -(void)viewDidLoad
@@ -44,8 +45,19 @@
     NSArray *templatesList = @[@"Image", @"Jpeg", @"Media folder"];
     self->_requestBuilder = [ [ sc_GridBrowserRequestBuilder alloc ] initWithTemplateNames: templatesList ];
     self.cellFactory.itemsBrowserController.nextLevelRequestBuilder = self->_requestBuilder;
+    browserMustBeReloaded = YES;
     
-    [ self reloadBrowserWithNewSite ];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [ super viewWillAppear: animated ];
+    
+    if ( browserMustBeReloaded )
+    {
+        browserMustBeReloaded = NO;
+        [ self reloadBrowserWithNewSite ];
+    }
 }
 
 -(void)reloadBrowserWithNewSite
@@ -86,6 +98,13 @@
     self.itemsBrowserGridLayout.itemSize = CGSizeMake( 100, 100 );
 }
 
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"selectBrowse"])
+    {
+       browserMustBeReloaded = YES;
+    }
+}
 
 #pragma mark -
 #pragma mark Progress
