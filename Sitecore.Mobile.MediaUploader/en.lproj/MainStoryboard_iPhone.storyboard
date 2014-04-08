@@ -596,24 +596,24 @@
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </tableViewCell>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cellSiteUrl" textLabel="cFA-6O-hAN" detailTextLabel="sHT-Ey-Iem" rowHeight="60" style="IBUITableViewCellStyleValue1" id="WIq-hI-rrc">
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cellSiteUrl" textLabel="cFA-6O-hAN" detailTextLabel="sHT-Ey-Iem" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="WIq-hI-rrc">
                                                 <rect key="frame" x="0.0" y="99" width="320" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WIq-hI-rrc" id="nak-D6-BWW">
                                                     <rect key="frame" x="0.0" y="0.0" width="287" height="59"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cFA-6O-hAN">
-                                                            <rect key="frame" x="15" y="19" width="34" height="21"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cFA-6O-hAN">
+                                                            <rect key="frame" x="15" y="11" width="34" height="22"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sHT-Ey-Iem">
-                                                            <rect key="frame" x="241" y="19" width="44" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sHT-Ey-Iem">
+                                                            <rect key="frame" x="15" y="33" width="43" height="15"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </tableViewCellContentView>
@@ -771,6 +771,7 @@
                     <connections>
                         <outlet property="cancelButton" destination="ue9-8m-Pzm" id="vGP-lM-Id3"/>
                         <outlet property="passwordTextField" destination="kvy-DK-srB" id="vDn-KK-Mew"/>
+                        <outlet property="protocolSelector" destination="Rst-l2-j1e" id="XrM-E4-640"/>
                         <outlet property="siteTableView" destination="ayH-N9-vCz" id="eh4-JR-kcY"/>
                         <outlet property="siteTextField" destination="ypz-gR-l3a" id="ElS-Tj-lTj"/>
                         <outlet property="urlTextField" destination="mf1-OZ-3AB" id="noW-fJ-mYn"/>
