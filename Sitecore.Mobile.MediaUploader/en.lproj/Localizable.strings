@@ -110,3 +110,4 @@
 
 //list items browser
 "ALERT_RELOAD_LEVEL_ERROR_MESSAGE" = "Item is not available";
+"JNETWORK_GENERIC_ERROR" = "Connection error, please check network settings";
