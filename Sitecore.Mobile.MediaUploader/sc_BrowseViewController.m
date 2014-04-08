@@ -107,7 +107,7 @@
     self.cellFactory.itemsBrowserController.rootItem = rootItem;
     
     [ self startLoading ];
-    [ self.cellFactory.itemsBrowserController reloadData ];
+    [ self.cellFactory.itemsBrowserController navigateToRootItem ];
 }
 
 -(void)showCannotReloadMessage
