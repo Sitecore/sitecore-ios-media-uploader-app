@@ -6,6 +6,7 @@
 #import "sc_BrowseViewCellFactory.h"
 #import "sc_LevelUpGridCell.h"
 #import "sc_QuickImageViewController.h"
+#import "sc_GridBrowserRequestBuilder.h"
 
 @interface sc_BrowseViewController ()<SCItemsBrowserDelegate>
 
@@ -19,6 +20,8 @@
 @property (nonatomic) IBOutlet UILabel *siteLabel;
 @property (nonatomic) IBOutlet UIView *singleSiteBgView;
 
+-(IBAction)forceRefresh:(id)selector;
+
 @end
 
 @implementation sc_BrowseViewController
@@ -28,7 +31,7 @@
     sc_Site *_siteForBrowse;
     
     sc_GlobalDataObject *_appDataObject;
-    SIBWhiteListTemplateRequestBuilder *_requestBuilder;
+    sc_GridBrowserRequestBuilder *_requestBuilder;
     
 }
 
@@ -39,16 +42,18 @@
     [ self setupLayout  ];
     
     NSArray *templatesList = @[@"Image", @"Jpeg", @"Media folder"];
-    self->_requestBuilder = [ [SIBWhiteListTemplateRequestBuilder alloc] initWithTemplateNames: templatesList ];
+    self->_requestBuilder = [ [ sc_GridBrowserRequestBuilder alloc ] initWithTemplateNames: templatesList ];
     self.cellFactory.itemsBrowserController.nextLevelRequestBuilder = self->_requestBuilder;
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [ super viewDidAppear: animated ];
+    
     self->_siteForBrowse = self->_appDataObject.sitesManager.siteForBrowse;
     
     self->_legacyApiSession = [ sc_ItemHelper getContext:self->_siteForBrowse ];
+    
     self->_apiSession = self->_legacyApiSession.extendedApiSession;
     
     self.cellFactory.itemsBrowserController.apiSession = self->_apiSession;
@@ -94,6 +99,11 @@
 {
     [ self.loadingProgress stopAnimating ];
     self.loadingProgress.hidden = YES;
+}
+
+-(IBAction)forceRefresh:(id)selector
+{
+    [ self.cellFactory.itemsBrowserController forceRefreshData ];
 }
 
 -(void)didFailLoadingRootItemWithError:( NSError* )error
