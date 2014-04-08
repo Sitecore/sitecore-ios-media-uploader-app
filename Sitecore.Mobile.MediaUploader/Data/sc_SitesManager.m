@@ -34,7 +34,6 @@
     
     if ( [ self isSameSiteExist: site ] )
     {
-        //TODO: @igk move to custom error type
         NSDictionary *errorInfo = @{ NSLocalizedDescriptionKey: NSLocalizedString(@"SITE_DUPLICATE", nil) };
         *error = [[ NSError alloc ] initWithDomain: @"MU"
                                               code: 1
@@ -47,7 +46,6 @@
     
     if ( !sitesWasSaved )
     {
-        //TODO: @igk move to custom error type
         NSDictionary *errorInfo = @{ NSLocalizedDescriptionKey: NSLocalizedString(@"SITE_SAVE_ERROR", nil) };
         *error = [[ NSError alloc ] initWithDomain: @"MU"
                                               code: 1

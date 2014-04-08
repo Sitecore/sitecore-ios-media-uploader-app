@@ -10,6 +10,7 @@
 
 @interface sc_Site : NSObject
 
+@property ( nonatomic ) NSString *siteProtocol;
 @property ( nonatomic ) NSString *siteUrl;
 @property ( nonatomic ) NSString *site;
 

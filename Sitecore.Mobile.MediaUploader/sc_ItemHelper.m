@@ -20,7 +20,9 @@
 
 +(SCApiSession *)getContext:(sc_Site *) site
 {
-    SCApiSession * session = [SCApiSession sessionWithHost: site.siteUrl
+    NSString *fullUrl = [NSString stringWithFormat:@"%@%@", site.siteProtocol, site.siteUrl ];
+    
+    SCApiSession * session = [SCApiSession sessionWithHost: fullUrl
                                                      login: site.username
                                                   password: site.password];
     session.defaultSite = site.site;

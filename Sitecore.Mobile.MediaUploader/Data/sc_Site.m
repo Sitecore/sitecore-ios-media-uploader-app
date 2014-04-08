@@ -231,7 +231,7 @@ uploadFolderPathInsideMediaLibrary: (NSString *)uploadFolderPathInsideMediaLibra
 +(instancetype)emptySite
 {
 #if DEBUG
-    
+    //scmobileteam.sitecoretest.net
     return [ [self alloc] initWithSiteUrl: @"mobiledev1ua1.dk.sitecore.net:722/"
                                      site: @"sitecore/shell"
        uploadFolderPathInsideMediaLibrary: @""
