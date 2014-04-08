@@ -113,7 +113,6 @@
 -(IBAction)useTouched:(id)sender
 {
     self->_callback( self->_currentPath );
-    [ self.navigationController popViewControllerAnimated: YES ];
 }
 
 -(void)showCannotReloadMessage

@@ -44,12 +44,12 @@
     NSArray *templatesList = @[@"Image", @"Jpeg", @"Media folder"];
     self->_requestBuilder = [ [ sc_GridBrowserRequestBuilder alloc ] initWithTemplateNames: templatesList ];
     self.cellFactory.itemsBrowserController.nextLevelRequestBuilder = self->_requestBuilder;
+    
+    [ self reloadBrowserWithNewSite ];
 }
 
--(void)viewDidAppear:(BOOL)animated
+-(void)reloadBrowserWithNewSite
 {
-    [ super viewDidAppear: animated ];
-    
     self->_siteForBrowse = self->_appDataObject.sitesManager.siteForBrowse;
     
     self->_legacyApiSession = [ sc_ItemHelper getContext:self->_siteForBrowse ];

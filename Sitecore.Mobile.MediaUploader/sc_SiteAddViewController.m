@@ -136,9 +136,25 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
     }
     else
     {
-        [ self.navigationController popToRootViewControllerAnimated: YES ];
+        [ self popToSettingsVC ];
     }
 
+}
+
+-(void)popToSettingsVC
+{
+    NSUInteger upStepsCount = 3;
+    NSUInteger vcCount = [ self.navigationController.viewControllers count ];
+    
+    if ( upStepsCount > vcCount )
+    {
+        [ self.navigationController popToRootViewControllerAnimated: YES ];
+        return;
+    }
+    
+    UIViewController *vcToPop = self.navigationController.viewControllers[ vcCount-upStepsCount ];
+    [ self.navigationController popToViewController: vcToPop
+                                           animated: YES ];
 }
 
 -(void)authenticateAndSaveSite:(sc_Site *)site
