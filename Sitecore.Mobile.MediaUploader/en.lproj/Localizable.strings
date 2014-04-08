@@ -96,7 +96,7 @@
 
 "CANT_CREATE_ERROR_TEXT" = "Can't create item, please try later";
 "ERROR_ALERT_TITLE" = "Error";
-"SITE_EXISTS_ERROR" = "The chosen Upload Folder for this Site already exists";
+"SITE_DUPLICATE" = "The chosen Upload Folder for this Site already exists";
 "CAMERA_NOT_AVAILABLE" = "Camera is not available on this device";
 "%d items was removed from library" = "%d items was removed from library";
 

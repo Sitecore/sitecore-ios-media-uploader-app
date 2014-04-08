@@ -58,8 +58,6 @@
     _cancelButton.target = self;
     _cancelButton.action = @selector(cancel:);
     
-    _loggedIn = NO;
-    
     [ self configureView ];
 }
 
@@ -110,24 +108,10 @@
         [ _activityIndicator hide ];
         if ( !error )
         {
-            {
-
-                NSError *error;
-                
-                if ( editMode )
-                {
-                    [ _appDataObject.sitesManager saveSites ];
-                }
-                else
-                {
-                    [ _appDataObject.sitesManager addSite: tmpSite
-                                                    error: &error ];
-                }
-                
-                _loggedIn = YES;
-                                    
+            {                                    
                 sc_ListBrowserViewController * siteEditViewController = (sc_ListBrowserViewController *)[self.storyboard instantiateViewControllerWithIdentifier: @"ListItemsBrowser" ];
-                [ siteEditViewController setSiteForBrowse: tmpSite ];
+                [ siteEditViewController setSiteForBrowse: tmpSite
+                                                 editMode: editMode ];
                 
                 [ self.navigationController pushViewController: siteEditViewController
                                                       animated: YES ];
@@ -185,11 +169,6 @@
 {
     [textField resignFirstResponder];
     return YES;
-}
-
--(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
-{
-    return _loggedIn;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section

@@ -26,10 +26,13 @@
     SIBWhiteListTemplateRequestBuilder *_requestBuilder;
     sc_Site *_siteForBrowse;
     NSString *_currentPath;
+    BOOL _editMode;
 }
 
--(void)setSiteForBrowse:(sc_Site *)site
+-(void)setSiteForBrowse:(sc_Site *)site editMode:(BOOL)editMode
 {
+    self->_editMode = editMode;
+    
     self->_siteForBrowse = site;
     
     self->_legacyApiSession = [ sc_ItemHelper getContext:self->_siteForBrowse ];
@@ -71,6 +74,8 @@
 {
     [ super viewDidLoad ];
     
+    _appDataObject = [ sc_GlobalDataObject getAppDataObject ];
+    
     NSArray *templatesList = @[@"Media folder"];
     self->_requestBuilder = [ [SIBWhiteListTemplateRequestBuilder alloc] initWithTemplateNames: templatesList ];
     self.cellFactory.itemsBrowserController.nextLevelRequestBuilder = self->_requestBuilder;
@@ -82,6 +87,7 @@
 -(void)didFailLoadingRootItemWithError:( NSError* )error
 {
     [ sc_ErrorHelper showError: error.localizedDescription ];
+    [ self.navigationController popViewControllerAnimated: YES ];
     [ self endLoading ];
 }
 
@@ -111,7 +117,27 @@
 -(IBAction)useTouched:(id)sender
 {
     self->_siteForBrowse.uploadFolderPathInsideMediaLibrary = self->_currentPath;
-    [ self goToRootViewController ];
+    
+    NSError *error;
+    
+    if ( self->_editMode )
+    {
+        [ _appDataObject.sitesManager saveSites ];
+    }
+    else
+    {
+        [ _appDataObject.sitesManager addSite: self->_siteForBrowse
+                                        error: &error ];
+    }
+    
+    if ( error )
+    {
+        [sc_ErrorHelper showError:NSLocalizedString(error.localizedDescription, nil)];
+    }
+    else
+    {
+        [ self goToRootViewController ];
+    }
 }
 
 -(void)goToRootViewController
