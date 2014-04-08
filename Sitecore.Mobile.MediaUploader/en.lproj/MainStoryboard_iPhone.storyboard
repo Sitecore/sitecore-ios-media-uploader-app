@@ -964,7 +964,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="Media browser" id="Urj-EC-tTZ"/>
+                    <navigationItem key="navigationItem" title="Media browser" id="Urj-EC-tTZ">
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="refresh" id="Xj3-ei-D6d">
+                            <connections>
+                                <action selector="forceRefresh:" destination="Ved-5B-ULu" id="PWw-4y-uRo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cellFactory" destination="nOi-TX-s0f" id="RO9-wN-vSG"/>
                         <outlet property="itemPathTextView" destination="32l-Up-a4A" id="LDw-GR-iMF"/>
