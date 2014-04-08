@@ -25,7 +25,7 @@
 @property UIView* loginFooterView;
 @property sc_ActivityIndicator * activityIndicator;
 @property UIView* footerView;
-
+@property (nonatomic) IBOutlet UISegmentedControl *protocolSelector;
 @end
 
 @implementation sc_SiteAddViewController
@@ -148,7 +148,18 @@
 
 -(void)save:(id)sender
 {
-    if(![self validateUrl:_urlTextField.text])
+    NSString *protocolUrl;
+    
+    if ( self.protocolSelector.selectedSegmentIndex == 0 )
+    {
+        protocolUrl = [ NSString stringWithFormat:@"http://%@", _urlTextField.text ];
+    }
+    else
+    {
+        protocolUrl = [ NSString stringWithFormat:@"https://%@", _urlTextField.text ];
+    }
+    
+    if( ![ self validateUrl: protocolUrl ] )
     {
         [ sc_ErrorHelper showError: NSLocalizedString(@"Please enter a valid site url.", nil) ];
         return;
@@ -156,7 +167,7 @@
     
     if(_usernameTextField.text.length > 0 && _passwordTextField.text.length > 0)
     {
-        self->_siteForEdit.siteUrl = self->_urlTextField.text;
+        self->_siteForEdit.siteUrl = protocolUrl;
         self->_siteForEdit.site = self->_siteTextField.text;
         self->_siteForEdit.username = self->_usernameTextField.text;
         self->_siteForEdit.password = self->_passwordTextField.text;

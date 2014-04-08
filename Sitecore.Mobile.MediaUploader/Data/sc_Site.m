@@ -232,7 +232,7 @@ uploadFolderPathInsideMediaLibrary: (NSString *)uploadFolderPathInsideMediaLibra
 {
 #if DEBUG
     
-    return [ [self alloc] initWithSiteUrl: @"http://mobiledev1ua1.dk.sitecore.net:722/"
+    return [ [self alloc] initWithSiteUrl: @"mobiledev1ua1.dk.sitecore.net:722/"
                                      site: @"sitecore/shell"
        uploadFolderPathInsideMediaLibrary: @""
                                  username: @"admin"
