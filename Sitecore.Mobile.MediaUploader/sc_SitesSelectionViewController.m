@@ -14,6 +14,7 @@
 #import "sc_Constants.h"
 #import "sc_ReloadableViewProtocol.h"
 #import "sc_ViewsHelper.h"
+#import "sc_ItemHelper.h"
 
 @interface sc_SitesSelectionViewController ()
 @property NSIndexPath *selectedIndex;
@@ -61,6 +62,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     sc_Site *currentSite = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
     [ [cell textLabel] setText: currentSite.siteUrl ];
+    cell.detailTextLabel.text = [sc_ItemHelper formatUploadFolder: currentSite];
     
     [ _sitesTableView setAllowsSelection: YES ];
     
