@@ -308,6 +308,8 @@
 		781081CA189021E300E8EFD7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCCE178594AD00730EC8 /* Default@2x.png */; };
 		781081CB189021E300E8EFD7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCC21785943800730EC8 /* Default-568h@2x.png */; };
 		7836AF801871BBF500190D85 /* sc_UploadItemStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 7836AF7F1871BBF500190D85 /* sc_UploadItemStatus.m */; };
+		78716C3A18F6BA0A0092AA98 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78716C3918F6BA0A0092AA98 /* bg@2x.png */; };
+		78716C3B18F6BA0A0092AA98 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78716C3918F6BA0A0092AA98 /* bg@2x.png */; };
 		7872A6F718EC049600581E03 /* sc_LevelUpGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872A6F618EC049600581E03 /* sc_LevelUpGridCell.m */; };
 		7872A6F818EC049600581E03 /* sc_LevelUpGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872A6F618EC049600581E03 /* sc_LevelUpGridCell.m */; };
 		7872A6FB18EC100700581E03 /* sc_SitesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872A6FA18EC100700581E03 /* sc_SitesManager.m */; };
@@ -725,6 +727,7 @@
 		781081D11890224100E8EFD7 /* Sitecore.Mobile.MediaUploader-Info_AppStore.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sitecore.Mobile.MediaUploader-Info_AppStore.plist"; sourceTree = "<group>"; };
 		7836AF7E1871BBF500190D85 /* sc_UploadItemStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_UploadItemStatus.h; sourceTree = "<group>"; };
 		7836AF7F1871BBF500190D85 /* sc_UploadItemStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_UploadItemStatus.m; sourceTree = "<group>"; };
+		78716C3918F6BA0A0092AA98 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg@2x.png"; path = "Images/bg@2x.png"; sourceTree = "<group>"; };
 		7872A6F518EC049600581E03 /* sc_LevelUpGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_LevelUpGridCell.h; sourceTree = "<group>"; };
 		7872A6F618EC049600581E03 /* sc_LevelUpGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_LevelUpGridCell.m; sourceTree = "<group>"; };
 		7872A6F918EC100700581E03 /* sc_SitesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_SitesManager.h; sourceTree = "<group>"; };
@@ -1117,6 +1120,7 @@
 				65359FD317C868B0003B6442 /* navigationBarBg.png */,
 				65D6BE0E17A332C8002336C5 /* buttons */,
 				65D6BDB81799BAF7002336C5 /* bg.png */,
+				78716C3918F6BA0A0092AA98 /* bg@2x.png */,
 				65D6BDD517A085FE002336C5 /* internet_small.png */,
 				65D6BDCF17A077E1002336C5 /* internet.png */,
 				65D6BDBA179A7677002336C5 /* sitecore.png */,
@@ -1552,6 +1556,7 @@
 				65359FAE17C7FA91003B6442 /* logo152.png in Resources */,
 				65F5E848178976C700059518 /* counterBg.png in Resources */,
 				65F5E862178CE20000059518 /* delete.png in Resources */,
+				78716C3A18F6BA0A0092AA98 /* bg@2x.png in Resources */,
 				65596737178DF239009C96CD /* Default-Portrait@2x~ipad.png in Resources */,
 				659CE73217947B6700331B4B /* error.png in Resources */,
 				65359FC317C7FDB0003B6442 /* blueButtonHighlight_7@2x.png in Resources */,
@@ -1656,6 +1661,7 @@
 				78108196189021E300E8EFD7 /* logo152.png in Resources */,
 				78108197189021E300E8EFD7 /* counterBg.png in Resources */,
 				78108198189021E300E8EFD7 /* delete.png in Resources */,
+				78716C3B18F6BA0A0092AA98 /* bg@2x.png in Resources */,
 				78108199189021E300E8EFD7 /* Default-Portrait@2x~ipad.png in Resources */,
 				7810819A189021E300E8EFD7 /* error.png in Resources */,
 				7810819B189021E300E8EFD7 /* blueButtonHighlight_7@2x.png in Resources */,
@@ -2102,10 +2108,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
 				INFOPLIST_FILE = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2122,10 +2129,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
 				INFOPLIST_FILE = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
