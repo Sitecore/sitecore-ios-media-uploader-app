@@ -189,8 +189,8 @@ shouldLoadLevelForItem:( SCItem* )levelParentItem
     else
     {
         sc_QuickImageViewController *quickImageViewController = (sc_QuickImageViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"sc_QuickImageViewController"];
-        quickImageViewController.items = [levelParentItem.parent.readChildren mutableCopy];
-        quickImageViewController.selectedImage = [levelParentItem.parent.readChildren indexOfObject:levelParentItem];
+        quickImageViewController.items = [ self itemsForQuickViewControllerForLevelItem:levelParentItem ];
+        quickImageViewController.selectedImage = [ quickImageViewController.items indexOfObject:levelParentItem ];
         quickImageViewController.session = self->_legacyApiSession;
         [self.navigationController pushViewController:quickImageViewController animated:YES];
 
@@ -198,5 +198,42 @@ shouldLoadLevelForItem:( SCItem* )levelParentItem
     
     return NO;
 }
+
+-(NSMutableArray *)itemsForQuickViewControllerForLevelItem:(SCItem *)levelItem
+{
+    NSArray * items = [ levelItem.parent.readChildren mutableCopy ];
+    items = [ items sortedArrayUsingComparator: [ self sortResultComparatorForItemsBrowser:nil ] ];
+    return [ items mutableCopy ];
+}
+
+-(NSComparator)sortResultComparatorForItemsBrowser:( id )sender
+{
+    return ^NSComparisonResult(SCItem *obj1, SCItem *obj2) {
+        
+        if ( ![obj1 isMemberOfClass:[SCItem class]] )
+        {
+            return NSOrderedAscending;
+        }
+        
+        if ( ![obj2 isMemberOfClass:[SCItem class]] )
+        {
+            return NSOrderedDescending;
+        }
+        
+        if ( obj1.isFolder && !obj2.isFolder)
+        {
+            return NSOrderedAscending;
+        }
+        
+        if ( obj2.isFolder && !obj1.isFolder)
+        {
+            return NSOrderedDescending;
+        }
+        
+        return [ obj1.displayName compare: obj2.displayName ];
+        
+    };
+}
+
 
 @end
