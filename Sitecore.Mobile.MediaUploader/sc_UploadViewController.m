@@ -27,9 +27,6 @@
 
 #import <AddressBook/AddressBook.h>
 
-static const float slideDistance = 75;
-static const float slideDuration = 0.3f;
-
 @interface sc_UploadViewController ()
 
 @property UIImage *thumbnail;
@@ -52,36 +49,6 @@ static const float slideDuration = 0.3f;
     UIImagePickerController *_imagePicker;
 }
 @synthesize imageView;
-
--(IBAction)slideFrameUp;
-{
-    if (_isRaised)
-    {
-        return;
-    }
-    [self slideFrame:YES];
-    _isRaised = YES;
-}
-
--(IBAction)slideFrameDown;
-{
-    if (!_isRaised)
-    {
-        return;
-    }
-    [self slideFrame:NO];
-    _isRaised = NO;
-}
-
--(void)slideFrame:(BOOL)up
-{
-    [UIView beginAnimations: @"anim" context: nil];
-    [UIView setAnimationBeginsFromCurrentState: YES];
-    [UIView setAnimationDuration: slideDuration];
-    self.view.frame = CGRectOffset(self.view.frame, 0, (up ? -slideDistance : slideDistance));
-    [UIView commitAnimations];
-}
-
 
 -(void)reload
 {
@@ -116,13 +83,12 @@ static const float slideDuration = 0.3f;
     [self reload];
     self->_uploadButton.hidden = YES;
     
-    [_imageButton addTarget:self action:@selector(useCameraRoll:) forControlEvents:UIControlEventTouchUpInside];
-    [_backButton addTarget:self action:@selector(goBack:) forControlEvents:UIControlEventTouchUpInside];
+
+
     [_saveButton addTarget:self action:@selector(save:) forControlEvents:UIControlEventTouchUpInside];
     _name.delegate = self;
     
     [(sc_GradientButton*) _saveButton setButtonWithStyle:CUSTOMBUTTONTYPE_NORMAL];
-    [(sc_GradientButton*) _imageButton setButtonWithStyle:CUSTOMBUTTONTYPE_TRANSPARENT];
     [(sc_GradientButton*) _uploadButton setButtonWithStyle:CUSTOMBUTTONTYPE_IMPORTANT];
     [(sc_GradientButton*) _locationButton setButtonWithStyle:CUSTOMBUTTONTYPE_NORMAL];
     

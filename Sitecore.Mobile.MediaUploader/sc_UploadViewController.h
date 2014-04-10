@@ -17,15 +17,13 @@
 
 @property (nonatomic) IBOutlet UIButton *dismissKeyboardButton;
 @property (nonatomic) IBOutlet UIButton *locationButton;
-@property (nonatomic) IBOutlet UIButton *imageButton;
-@property (nonatomic) IBOutlet UIButton *backButton;
 @property (nonatomic) IBOutlet UIButton *uploadButton;
 @property (nonatomic) IBOutlet UIButton *saveButton;
 @property (nonatomic) IBOutlet UIImageView *imageView;
 @property (nonatomic) IBOutlet UITextField *name;
 @property (nonatomic) IBOutlet UILabel *locationDescription;
-@property (nonatomic) IBOutlet NSURL *videoUrl;
-@property (nonatomic) IBOutlet NSURL *imageUrl;
+@property (nonatomic) NSURL *videoUrl;
+@property (nonatomic) NSURL *imageUrl;
 @property (nonatomic) IBOutlet UIView *locationView;
 @property (nonatomic) IBOutlet UIBarButtonItem *settingsButton;
 
