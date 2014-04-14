@@ -376,6 +376,9 @@
 		78E7245A184E040700E9C1FC /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E72458184E040700E9C1FC /* EventKit.framework */; };
 		78E7245B184E040700E9C1FC /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E72459184E040700E9C1FC /* EventKitUI.framework */; };
 		78E7245F184E0B7100E9C1FC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E7245E184E0B7100E9C1FC /* Reachability.m */; };
+		7E01A1AD18FC1B770070D4EE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */; };
+		7E01A1AE18FC1B770070D4EE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */; };
+		7E01A1AF18FC1B770070D4EE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */; };
 		7E81AE3D17D9C93600E53330 /* sc_Site.m in Sources */ = {isa = PBXBuildFile; fileRef = 65569B2417627B9900A16A0A /* sc_Site.m */; };
 		7E81AE3E17D9C93600E53330 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 655829B5175B408900768197 /* main.m */; };
 		7E81AE3F17D9C93600E53330 /* sc_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 655829B9175B408900768197 /* sc_AppDelegate.m */; };
@@ -784,6 +787,7 @@
 		78E72459184E040700E9C1FC /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		78E7245D184E0B7100E9C1FC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		78E7245E184E0B7100E9C1FC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		7E81AEED17D9C93600E53330 /* Sitecore.Mobile.MediaUploader-AutoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sitecore.Mobile.MediaUploader-AutoTest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E81AEEE17D9C93800E53330 /* Sitecore.Mobile.MediaUploader copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Sitecore.Mobile.MediaUploader copy-Info.plist"; path = "/Volumes/NO NAME/Mobile/Mobile SDK/app/MediaUploader/Sitecore.Mobile.MediaUploader copy-Info.plist"; sourceTree = "<absolute>"; };
 		7E81AEEF17D9C96D00E53330 /* calabash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = calabash.framework; sourceTree = "<group>"; };
@@ -809,6 +813,7 @@
 				78E7245B184E040700E9C1FC /* EventKitUI.framework in Frameworks */,
 				7ED3E385178E9C8F00E02EA5 /* CoreMotion.framework in Frameworks */,
 				7ED3E383178E9C7A00E02EA5 /* CoreVideo.framework in Frameworks */,
+				7E01A1AD18FC1B770070D4EE /* Crashlytics.framework in Frameworks */,
 				655967C1178E13F0009C96CD /* Social.framework in Frameworks */,
 				7ED3E381178E9C5700E02EA5 /* Twitter.framework in Frameworks */,
 				7ED3E37F178E9C4900E02EA5 /* AudioToolbox.framework in Frameworks */,
@@ -850,6 +855,7 @@
 				7810814C189021E300E8EFD7 /* EventKitUI.framework in Frameworks */,
 				7810814D189021E300E8EFD7 /* CoreMotion.framework in Frameworks */,
 				7810814E189021E300E8EFD7 /* CoreVideo.framework in Frameworks */,
+				7E01A1AF18FC1B770070D4EE /* Crashlytics.framework in Frameworks */,
 				7810814F189021E300E8EFD7 /* Social.framework in Frameworks */,
 				78108150189021E300E8EFD7 /* Twitter.framework in Frameworks */,
 				78108151189021E300E8EFD7 /* AudioToolbox.framework in Frameworks */,
@@ -901,6 +907,7 @@
 				7E81AE6B17D9C93600E53330 /* CoreMotion.framework in Frameworks */,
 				7E81AE6C17D9C93600E53330 /* CoreVideo.framework in Frameworks */,
 				7E81AE6D17D9C93600E53330 /* Social.framework in Frameworks */,
+				7E01A1AE18FC1B770070D4EE /* Crashlytics.framework in Frameworks */,
 				7E81AE6E17D9C93600E53330 /* Twitter.framework in Frameworks */,
 				7E81AE6F17D9C93600E53330 /* AudioToolbox.framework in Frameworks */,
 				7E81AE7017D9C93600E53330 /* MessageUI.framework in Frameworks */,
@@ -1041,6 +1048,7 @@
 		655829A8175B408900768197 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */,
 				78C9E27618E5CF6F004C7A88 /* SitecoreItemsBrowser.framework */,
 				78C9E26D18E5A059004C7A88 /* SitecoreMobileSDK.framework */,
 				78C9E26E18E5A059004C7A88 /* SitecoreMobileUI.framework */,
@@ -1399,6 +1407,7 @@
 				655829A2175B408800768197 /* Sources */,
 				655829A3175B408800768197 /* Frameworks */,
 				655829A4175B408800768197 /* Resources */,
+				7E01A1A918FC1ACC0070D4EE /* Crashlytics Setup */,
 			);
 			buildRules = (
 			);
@@ -1416,6 +1425,7 @@
 				78108121189021E300E8EFD7 /* Sources */,
 				78108149189021E300E8EFD7 /* Frameworks */,
 				7810816A189021E300E8EFD7 /* Resources */,
+				7E01A1AB18FC1AF80070D4EE /* Crashlytics Setup */,
 			);
 			buildRules = (
 			);
@@ -1451,6 +1461,7 @@
 				7E81AE3B17D9C93600E53330 /* Sources */,
 				7E81AE6917D9C93600E53330 /* Frameworks */,
 				7E81AE8817D9C93600E53330 /* Resources */,
+				7E01A1AA18FC1AE10070D4EE /* Crashlytics Setup */,
 			);
 			buildRules = (
 			);
@@ -1830,6 +1841,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7E01A1A918FC1ACC0070D4EE /* Crashlytics Setup */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Crashlytics Setup";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 4c24cc2513a38654d20f77a8fcd8b67e09e0bbfa 655d9c49d4b093effc20b840ab6fa216a1a6de34326839a0bf439341e134a4cd";
+		};
+		7E01A1AA18FC1AE10070D4EE /* Crashlytics Setup */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Crashlytics Setup";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 4c24cc2513a38654d20f77a8fcd8b67e09e0bbfa 655d9c49d4b093effc20b840ab6fa216a1a6de34326839a0bf439341e134a4cd";
+		};
+		7E01A1AB18FC1AF80070D4EE /* Crashlytics Setup */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Crashlytics Setup";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 4c24cc2513a38654d20f77a8fcd8b67e09e0bbfa 655d9c49d4b093effc20b840ab6fa216a1a6de34326839a0bf439341e134a4cd";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		655829A2175B408800768197 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -2104,6 +2160,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Volumes/untitled/tfs/iOS_Media_Uploader,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
@@ -2125,6 +2182,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Volumes/untitled/tfs/iOS_Media_Uploader,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
@@ -2146,6 +2204,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Volumes/untitled/tfs/iOS_Media_Uploader,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
@@ -2165,6 +2224,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Volumes/untitled/tfs/iOS_Media_Uploader,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
@@ -2243,11 +2303,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/../../deployment\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../deployment\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
 					/Volumes/Sitecore/Sources/SVNMobileSDK/app/MediaUploader,
 					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/app/MediaUploader",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					/Volumes/Sitecore/Sources/src/app/MediaUploader,
+					/Volumes/untitled/tfs/iOS_Media_Uploader,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
@@ -2271,11 +2332,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/../../deployment\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../deployment\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
 					/Volumes/Sitecore/Sources/SVNMobileSDK/app/MediaUploader,
 					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/app/MediaUploader",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					/Volumes/Sitecore/Sources/src/app/MediaUploader,
+					/Volumes/untitled/tfs/iOS_Media_Uploader,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";

@@ -18,6 +18,8 @@
 {
     _appDataObject = [[sc_GlobalDataObject alloc] init];
     
+    [Crashlytics startWithAPIKey:@"4c24cc2513a38654d20f77a8fcd8b67e09e0bbfa"];
+    
     [self getIOS];
     [self initializeStoryBoardBasedOnScreenSize];
     return YES;
