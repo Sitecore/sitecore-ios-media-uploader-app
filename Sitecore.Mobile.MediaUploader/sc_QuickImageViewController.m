@@ -51,6 +51,10 @@
                                          animated: NO ];
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return self.view.frame.size;
+}
+
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     SCItem * cellObject = [ _items objectAtIndex: indexPath.row ];
@@ -102,11 +106,6 @@
             [ discardedItems addObject: item ];
             _selectedImage--;
         }
-//        else
-//        {
-//            //Folders always come first in the array, so no need to keep testing 
-//            break;
-//        }
     }
 
     [ _items removeObjectsInArray: discardedItems ];
