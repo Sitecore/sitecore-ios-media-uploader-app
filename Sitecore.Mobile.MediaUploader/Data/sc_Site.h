@@ -19,13 +19,13 @@
 @property ( nonatomic, readonly ) BOOL selectedForBrowse;
 @property ( nonatomic, readonly ) BOOL selectedForUpload;
 
--(id)initWithSiteUrl: (NSString *)siteUrl
-                site: (NSString *)site
+-(instancetype)initWithSiteUrl: (NSString *)siteUrl
+                          site: (NSString *)site
 uploadFolderPathInsideMediaLibrary: (NSString *)uploadFolderPathInsideMediaLibrary
-            username: (NSString *)username
-            password: (NSString *)password
-   selectedForBrowse: (BOOL)selectedForBrowse
-   selectedForUpload: (BOOL)selectedForUpload;
+                      username: (NSString *)username
+                      password: (NSString *)password
+             selectedForBrowse: (BOOL)selectedForBrowse
+             selectedForUpload: (BOOL)selectedForUpload;
 
 -(NSString *)getFolderPathForUpload;
 

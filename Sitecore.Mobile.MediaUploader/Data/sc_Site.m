@@ -24,7 +24,7 @@
     NSString *_uploadFolderPathInsideMediaLibrary;
 }
 
--(id)copy
+-(instancetype)copy
 {
     //FIXME: @igk legacy
     NSLog(@"!!!!! SITE MUST NOT BE COPIED, LEGACY MANAGEMENT BUG");
@@ -52,13 +52,13 @@
     return result;
 }
 
--(id)init
+-(instancetype)init
 {
     [ self doesNotRecognizeSelector: _cmd ];
     return nil;
 }
 
--(id)initWithSiteUrl: (NSString *)siteUrl
+-(instancetype)initWithSiteUrl: (NSString *)siteUrl
                 site: (NSString *)site
 uploadFolderPathInsideMediaLibrary: (NSString *)uploadFolderPathInsideMediaLibrary
             username: (NSString *)username
@@ -67,7 +67,7 @@ uploadFolderPathInsideMediaLibrary: (NSString *)uploadFolderPathInsideMediaLibra
    selectedForUpload: (BOOL)selectedForUpload
 {
     self = [super init];
-    if (self)
+    if (nil != self)
     {
         NSAssert(siteUrl, @"siteUrl must exist");
         NSAssert(site, @"site must exist");
@@ -159,7 +159,23 @@ uploadFolderPathInsideMediaLibrary: (NSString *)uploadFolderPathInsideMediaLibra
     return self;
 }
 
--(id)copyWithZone:(NSZone *)zone
+-(NSString*)description
+{
+    NSString* parentDescription = [ super description ];
+    
+    static NSString* SITE_FORMAT =
+        @"Instance      : %@ \n"
+        @"Site          : %@ \n"
+        @"Login         : %@ \n"
+        @"Upload Folder : %@ \n";
+    
+    NSString* result = [ NSString stringWithFormat: SITE_FORMAT, self.siteUrl, self.site, self.username, self.uploadFolderPathInsideMediaLibrary ];
+    
+    
+    return [ NSString stringWithFormat: @"%@ \n %@", parentDescription, result ];
+}
+
+-(instancetype)copyWithZone:(NSZone *)zone
 {
     sc_Site *copy = [[[self class] allocWithZone:zone] initWithSiteUrl: self.siteUrl
                                                                   site: self.site
