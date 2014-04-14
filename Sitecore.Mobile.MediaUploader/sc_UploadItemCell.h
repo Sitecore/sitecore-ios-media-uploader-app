@@ -1,11 +1,3 @@
-//
-//  sc_UploadItemCell.h
-//  Sitecore.Mobile.MediaUploader
-//
-//  Created by Igor on 13/12/13.
-//  Copyright (c) 2013 Sitecore. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 #import "sc_UploadItemManager.h"
 @class sc_BaseTheme;
