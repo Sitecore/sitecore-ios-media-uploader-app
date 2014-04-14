@@ -87,6 +87,15 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     UICollectionViewCell<SCItemCell>* result =
     [ collectionView dequeueReusableCellWithReuseIdentifier: reuseId
                                                forIndexPath: indexPath ];
+    
+    if ([result respondsToSelector:@selector(setImageResizingOptions:)])
+    {
+        SCDownloadMediaOptions* imageResizingOptions = [ SCDownloadMediaOptions new ];
+        imageResizingOptions.displayAsThumbnail = YES;
+        [ result performSelector: @selector(setImageResizingOptions:)
+                      withObject: imageResizingOptions ];
+    }
+    
     [ self setColorsForCell: result ];
     
     return result;
