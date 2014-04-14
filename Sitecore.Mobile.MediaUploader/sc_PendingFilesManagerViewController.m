@@ -69,7 +69,6 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    int index=indexPath.item;
     
     static NSString *identifier = @"Cell";
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
@@ -78,11 +77,13 @@
     cellImageView.contentMode = UIViewContentModeScaleAspectFill;
 
     sc_GradientButton * removeButton = (sc_GradientButton *)[cell viewWithTag:2000] ;
-    [removeButton setButtonWithStyle:CUSTOMBUTTONTYPE_DANGEROUS];
-    [removeButton addTarget:self action:@selector(removeButtonClickEvent:event:) forControlEvents:UIControlEventTouchUpInside];
+    [ removeButton setButtonWithStyle: CUSTOMBUTTONTYPE_DANGEROUS ];
+    [ removeButton addTarget: self
+                      action: @selector(removeButtonClickEvent:event:)
+            forControlEvents: UIControlEventTouchUpInside ];
 
     //Get image thumbnails
-    sc_Media * media= (sc_Media *)[_appDataObject.mediaUpload objectAtIndex:index];
+    sc_Media * media= (sc_Media *)[_appDataObject.mediaUpload objectAtIndex: indexPath.item ];
     
     [cellImageView setImage:media.thumbnail];
       
@@ -97,7 +98,7 @@
         sc_Upload2ViewController * destinationController = (sc_Upload2ViewController * ) segue.destinationViewController;
         [ destinationController initWithMediaItems: _appDataObject.mediaUpload
                                              image: nil
-                            isPendingIemsUploading: true ];
+                            isPendingIemsUploading: YES ];
     }
 }
 
@@ -107,7 +108,8 @@
     
     //Localize UI
     self.navigationItem.title = NSLocalizedString(self.navigationItem.title, nil);
-    [_uploadButton setTitle:NSLocalizedString(_uploadButton.titleLabel.text, nil) forState:UIControlStateNormal];
+    [_uploadButton setTitle: NSLocalizedString(_uploadButton.titleLabel.text, nil)
+                   forState: UIControlStateNormal];
 
     _appDataObject = [sc_GlobalDataObject getAppDataObject];
     [_uploadButton setButtonWithStyle:CUSTOMBUTTONTYPE_IMPORTANT];
