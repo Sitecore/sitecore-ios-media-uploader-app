@@ -218,6 +218,7 @@
                                                         <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" id="p6Y-1E-10W" customClass="SCImageView">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="503"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </imageView>
                                                         <activityIndicatorView opaque="NO" tag="33" contentMode="scaleToFill" animating="YES" style="whiteLarge" id="844-7w-ty2">
                                                             <rect key="frame" x="142" y="233" width="37" height="37"/>
@@ -565,7 +566,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1531" y="1089"/>
+            <point key="canvasLocation" x="2016" y="285"/>
         </scene>
         <!--Sc Settings View Controller - Settings-->
         <scene sceneID="7iT-mG-Dbh">
@@ -673,7 +674,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BR-Rd-jMf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1844" y="-390"/>
+            <point key="canvasLocation" x="1972" y="-540"/>
         </scene>
         <!--Sc Site Add View Controller - Add site-->
         <scene sceneID="Ba7-dZ-OJd">
@@ -900,7 +901,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0vw-pf-MdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2090" y="1089"/>
+            <point key="canvasLocation" x="1748" y="1089"/>
         </scene>
         <!--Sc Browse View Controller - Media browser-->
         <scene sceneID="EvL-L2-ffi">
@@ -1099,6 +1100,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="kAA-QS-bIp"/>
-        <segue reference="Yln-qg-wE4"/>
+        <segue reference="gNM-kL-FeG"/>
     </inferredMetricsTieBreakers>
 </document>
