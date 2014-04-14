@@ -188,6 +188,15 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
         }
         else
         {
+            CLSLog( @"[Auth Error] Login info : \n"
+                    @"%@ \n"
+                    @"                  error : %@ \n", site, error );
+            
+            
+            CLSNSLog( @"[Auth Error] Login info : \n"
+                      @"%@ \n"
+                      @"                  error : %@ \n", site, error );
+            
             [ sc_ErrorHelper showError: NSLocalizedString(@"Authentication failure.", nil) ];
         }
         
