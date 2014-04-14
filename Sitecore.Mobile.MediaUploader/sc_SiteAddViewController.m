@@ -203,18 +203,20 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
 
 -(void)save:(id)sender
 {
-    sc_Site *fakeSite = [ sc_Site emptySite ];
+    BOOL requiredFieldsFilled =     _usernameTextField.text.length > 0
+    &&  _passwordTextField.text.length > 0
+    &&  _urlTextField.text.length > 0;
     
-    if(_usernameTextField.text.length > 0 && _passwordTextField.text.length > 0)
+    if ( requiredFieldsFilled )
     {
+        sc_Site *fakeSite = [ sc_Site emptySite ];
         [ self fillSiteWithData: fakeSite ];
+        [ self authenticateAndSaveSite: fakeSite ];
     }
     else
     {
         [ sc_ErrorHelper showError: NSLocalizedString(@"Please enter username and password.", nil) ];
     }
-    
-    [ self authenticateAndSaveSite: fakeSite ];
 }
 
 -(void)fillSiteWithData:(sc_Site *)siteToFill

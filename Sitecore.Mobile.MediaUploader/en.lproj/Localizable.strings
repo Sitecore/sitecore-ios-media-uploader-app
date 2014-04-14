@@ -38,7 +38,7 @@
 //sc_SiteDefinitionViewController
 "Please enter a valid site." = "Please enter a valid site.";
 "Authentication failure." = "Authentication failure.";
-"Please enter username and password." = "Please enter username and password.";
+"Please enter username and password." = "Please enter site url, username and password.";
 "Please enter valid username and password." = "Please enter valid username and password.";
 "Please enter a valid site url." = "Please enter a valid site url.";
 "Sites settings" = "Sites settings";
