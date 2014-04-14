@@ -171,27 +171,38 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
     
     asyncOp(^( id result, NSError *error )
     {
+        id<MUSessionTracker> sessionTracker =
+        [ MUEventsTrackerFactory sessionTrackerForMediaUploader ];
+
         [ _activityIndicator hide ];
         if ( !error )
         {
-            {                                    
-                sc_ListBrowserViewController * siteEditViewController = (sc_ListBrowserViewController *)[self.storyboard instantiateViewControllerWithIdentifier: @"ListItemsBrowser" ];
-                [ siteEditViewController chooseUploaderFolderForSite:tmpSite
-                                                         witCallback:^(NSString *folder)
-                {
-                    [ self saveSiteWithUploadFolder: folder ];
-                } ];
-                
-                [ self.navigationController pushViewController: siteEditViewController
-                                                      animated: YES ];
-            }
+            [ sessionTracker didLoginWithSite: site ];
+            
+
+
+            id rawSiteEditViewController = [self.storyboard instantiateViewControllerWithIdentifier: @"ListItemsBrowser" ];
+            sc_ListBrowserViewController * siteEditViewController = (sc_ListBrowserViewController *)rawSiteEditViewController;
+            
+            SCUPloadFolderReceived didSelectUploadFolderCallback = ^void(NSString *folder)
+            {
+                [ self saveSiteWithUploadFolder: folder ];
+            };
+            
+            
+            [ siteEditViewController chooseUploaderFolderForSite: tmpSite
+                                                     witCallback: didSelectUploadFolderCallback ];
+            
+            [ self.navigationController pushViewController: siteEditViewController
+                                                  animated: YES ];
+
         }
         else
         {
-            CLS_LOG( @"[Auth Error] Login info : \n"
-                     @"%@ \n"
-                     @"                  error : %@ \n", site, error );
-                        
+            
+            [ sessionTracker didLoginFailedForSite: site
+                                         withError: error ];
+            
             [ sc_ErrorHelper showError: NSLocalizedString(@"Authentication failure.", nil) ];
         }
         
@@ -245,6 +256,11 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
 
 -(void)remove:(id)sender
 {
+    id<MUSessionTracker> sessionTracker =
+    [ MUEventsTrackerFactory sessionTrackerForMediaUploader ];
+    [ sessionTracker didLogoutFromSite: self->_siteForEdit ];
+    
+    
     [ self->_appDataObject.sitesManager removeSite: self->_siteForEdit ];
     [ self.navigationController popViewControllerAnimated: YES ];
 }
