@@ -71,6 +71,8 @@
     params.width = cell.frame.size.width;
     params.height = cell.frame.size.height;
     params.database = [ sc_ItemHelper getDefaultDatabase ];
+    //TODO: @igk fix hardcode
+    params.backgroundColor = @"white";
     
     NSString *itemPath = [ sc_ItemHelper getPath: cellObject.itemId ];
     
