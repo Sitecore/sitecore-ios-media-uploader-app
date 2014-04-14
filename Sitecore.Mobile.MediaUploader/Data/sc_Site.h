@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface sc_Site : NSObject
+#import <Sitecore.Mobile.MediaUploader/Tracking/MUTrackable.h>
+
+@interface sc_Site : NSObject<MUTrackableObject>
 
 @property ( nonatomic ) NSString *siteProtocol;
 @property ( nonatomic ) NSString *siteUrl;
