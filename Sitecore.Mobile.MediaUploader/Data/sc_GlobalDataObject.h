@@ -16,7 +16,7 @@
 @interface sc_GlobalDataObject : sc_AppDataObject
 
 
-@property CLPlacemark *selectedPlaceMark;
+@property ( nonatomic ) CLPlacemark *selectedPlaceMark;
 
 @property ( nonatomic ) bool isIpad;
 @property ( nonatomic, readonly ) BOOL isOnline;
