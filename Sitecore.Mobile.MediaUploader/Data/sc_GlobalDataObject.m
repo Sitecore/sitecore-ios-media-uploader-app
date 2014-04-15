@@ -25,73 +25,12 @@
     if ( self = [super init] )
     {
         self->_sitesManager = [ sc_SitesManager new ];
-        [ self loadMediaUpload ];
+        self->_uploadItemsManager = [ sc_ItemsForUploadManager new ];
     }
     
     return self;
 }
 
--(void)addMediaUpload:(sc_Media*) media
-{
-    [_mediaUpload addObject:media];
-}
-
--(NSString *)getMediaUploadFile
-{
-    return [self getFile:@"mediaUpload.txt"];
-}
-
-- (NSString *)getFile:(NSString*) fileName
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
-    NSString *documentsDirectory = [ paths objectAtIndex: 0 ];
-    NSString *appFile = [ documentsDirectory stringByAppendingPathComponent: fileName ];
-    return appFile;
-}
-
--(void)loadMediaUpload
-{
-    NSString *appFile = [ self getMediaUploadFile ];
-    
-    _mediaUpload = [ NSKeyedUnarchiver unarchiveObjectWithFile: appFile ];
-    if ( !_mediaUpload )
-    {
-        _mediaUpload = [ [ NSMutableArray alloc ] init ];
-    }
-}
-
--(void)saveMediaUpload
-{
-    NSMutableArray *mediaItemstoRemove = [ NSMutableArray arrayWithCapacity: _mediaUpload.count ];
-    for( sc_Media *media in _mediaUpload )
-    {
-
-        if ( media.status == MEDIASTATUS_UPLOADED || media.status == MEDIASTATUS_REMOVED )
-        {
-            [ mediaItemstoRemove addObject: media ];
-            
-            [ self removeTmpVideoFileFromMediaItem: media ];
-        }
-    }
-    [ _mediaUpload removeObjectsInArray: mediaItemstoRemove ];
-    
-    NSString *appFile = [ self getMediaUploadFile ];
-    
-    [ NSKeyedArchiver archiveRootObject: _mediaUpload
-                                 toFile: appFile ];
-}
-
--(void)removeTmpVideoFileFromMediaItem:(sc_Media *)media
-{
-    NSURL *videoUrl = [ media videoUrl ];
-    if ( videoUrl != nil )
-    {
-        NSError *error;
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        [ fileManager removeItemAtURL: videoUrl
-                                error: &error ];
-    }
-}
 
 -(BOOL)isOnline
 {
