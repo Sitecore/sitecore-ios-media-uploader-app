@@ -27,9 +27,8 @@
 @property  (nonatomic) NSInteger status;
 @property  (nonatomic) sc_Site *siteForUploading;
 
-
 -(id)initWithObjectData:(NSString *)name
-               dateTime:(NSDate *) dateTime
+               dateTime:(NSDate   *) dateTime
                latitude:(NSNumber *) latitude
               longitude:(NSNumber *) longitude
     locationDescription:(NSString *) locationDescription
@@ -38,7 +37,7 @@
                videoUrl:(NSURL *) videoUrl
                imageUrl:(NSURL *) imageUrl
                  status:(NSInteger)status
-              thumbnail:(UIImage*) thumbnail;
+              thumbnail:(UIImage *) thumbnail;
 
 -(BOOL)isImage;
 -(BOOL)isVideo;
