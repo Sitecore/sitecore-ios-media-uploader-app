@@ -14,11 +14,43 @@
 @implementation sc_AppDelegate
 @synthesize window = _window;
 
+-(void)enableCrashlytics
+{
+    static NSString* const CRASHLYTICS_API_KEY = @"4c24cc2513a38654d20f77a8fcd8b67e09e0bbfa";
+    [ Crashlytics startWithAPIKey: CRASHLYTICS_API_KEY ];
+}
+
+-(void)enableFlurryUsingLaunchOptions:(NSDictionary *)launchOptions
+{
+    static NSString* const FLURRY_API_KEY = @"K457XY59FHYQCT76JCX3";
+    
+    [ Flurry setSessionReportsOnCloseEnabled: YES ];
+    [ Flurry setSessionReportsOnPauseEnabled: YES ];
+    [ Flurry setCrashReportingEnabled       : YES ];
+    [ Flurry setShowErrorInLogEnabled       : YES ];
+    
+    NSString* userId = [ [ [ UIDevice currentDevice ] identifierForVendor ] UUIDString ];
+    [ Flurry setUserID: userId ];
+    
+
+    
+#if DEBUG
+    {
+        [ Flurry setDebugLogEnabled: YES ];
+    }
+#endif
+    
+    [ Flurry startSession: FLURRY_API_KEY
+              withOptions: launchOptions ];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     _appDataObject = [[sc_GlobalDataObject alloc] init];
     
-    [Crashlytics startWithAPIKey:@"4c24cc2513a38654d20f77a8fcd8b67e09e0bbfa"];
+    [ self enableCrashlytics ];
+    [ self enableFlurryUsingLaunchOptions: launchOptions ];
+
     
     [self getIOS];
     [self initializeStoryBoardBasedOnScreenSize];

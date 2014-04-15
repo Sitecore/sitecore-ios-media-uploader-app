@@ -379,18 +379,24 @@
 		7E01A1AD18FC1B770070D4EE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */; };
 		7E01A1AE18FC1B770070D4EE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */; };
 		7E01A1AF18FC1B770070D4EE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */; };
-		7E01A1B718FC30E90070D4EE /* MUCrashlyticsSessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E01A1B618FC30E90070D4EE /* MUCrashlyticsSessionTracker.m */; };
-		7E01A1B818FC30E90070D4EE /* MUCrashlyticsSessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E01A1B618FC30E90070D4EE /* MUCrashlyticsSessionTracker.m */; };
-		7E01A1B918FC30E90070D4EE /* MUCrashlyticsSessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E01A1B618FC30E90070D4EE /* MUCrashlyticsSessionTracker.m */; };
 		7E01A1BC18FC30FF0070D4EE /* MUEventsTrackerPOD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E01A1BB18FC30FF0070D4EE /* MUEventsTrackerPOD.m */; };
 		7E01A1BD18FC30FF0070D4EE /* MUEventsTrackerPOD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E01A1BB18FC30FF0070D4EE /* MUEventsTrackerPOD.m */; };
 		7E01A1BE18FC30FF0070D4EE /* MUEventsTrackerPOD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E01A1BB18FC30FF0070D4EE /* MUEventsTrackerPOD.m */; };
 		7E01A1C118FC325D0070D4EE /* MUEventsTrackerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E01A1C018FC325D0070D4EE /* MUEventsTrackerFactory.m */; };
 		7E01A1C218FC325D0070D4EE /* MUEventsTrackerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E01A1C018FC325D0070D4EE /* MUEventsTrackerFactory.m */; };
 		7E01A1C318FC325D0070D4EE /* MUEventsTrackerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E01A1C018FC325D0070D4EE /* MUEventsTrackerFactory.m */; };
+		7E69479B18FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E69479818FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m */; };
+		7E69479C18FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E69479818FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m */; };
+		7E69479D18FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E69479818FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m */; };
+		7E69479E18FD5B9200923AB6 /* MUFlurrySessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E69479A18FD5B9200923AB6 /* MUFlurrySessionTracker.m */; };
+		7E69479F18FD5B9200923AB6 /* MUFlurrySessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E69479A18FD5B9200923AB6 /* MUFlurrySessionTracker.m */; };
+		7E6947A018FD5B9200923AB6 /* MUFlurrySessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E69479A18FD5B9200923AB6 /* MUFlurrySessionTracker.m */; };
 		7E6CE9C118FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CE9C018FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m */; };
 		7E6CE9C218FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CE9C018FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m */; };
 		7E6CE9C318FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CE9C018FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m */; };
+		7E6CE9C618FD3FB000C86ABA /* Flurry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6CE9C518FD3FB000C86ABA /* Flurry.framework */; };
+		7E6CE9C718FD3FB000C86ABA /* Flurry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6CE9C518FD3FB000C86ABA /* Flurry.framework */; };
+		7E6CE9C818FD3FB000C86ABA /* Flurry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6CE9C518FD3FB000C86ABA /* Flurry.framework */; };
 		7E81AE3D17D9C93600E53330 /* sc_Site.m in Sources */ = {isa = PBXBuildFile; fileRef = 65569B2417627B9900A16A0A /* sc_Site.m */; };
 		7E81AE3E17D9C93600E53330 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 655829B5175B408900768197 /* main.m */; };
 		7E81AE3F17D9C93600E53330 /* sc_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 655829B9175B408900768197 /* sc_AppDelegate.m */; };
@@ -803,12 +809,14 @@
 		7E01A1B118FC2E500070D4EE /* MUEventsTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUEventsTracker.h; sourceTree = "<group>"; };
 		7E01A1B218FC2EA10070D4EE /* MUTrackable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUTrackable.h; sourceTree = "<group>"; };
 		7E01A1B318FC2F780070D4EE /* MUSessionTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUSessionTracker.h; sourceTree = "<group>"; };
-		7E01A1B518FC30E90070D4EE /* MUCrashlyticsSessionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUCrashlyticsSessionTracker.h; sourceTree = "<group>"; };
-		7E01A1B618FC30E90070D4EE /* MUCrashlyticsSessionTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUCrashlyticsSessionTracker.m; sourceTree = "<group>"; };
 		7E01A1BA18FC30FF0070D4EE /* MUEventsTrackerPOD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUEventsTrackerPOD.h; sourceTree = "<group>"; };
 		7E01A1BB18FC30FF0070D4EE /* MUEventsTrackerPOD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUEventsTrackerPOD.m; sourceTree = "<group>"; };
 		7E01A1BF18FC325D0070D4EE /* MUEventsTrackerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUEventsTrackerFactory.h; sourceTree = "<group>"; };
 		7E01A1C018FC325D0070D4EE /* MUEventsTrackerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUEventsTrackerFactory.m; sourceTree = "<group>"; };
+		7E69479718FD5B9200923AB6 /* MUCrashlyticsSessionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUCrashlyticsSessionTracker.h; sourceTree = "<group>"; };
+		7E69479818FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUCrashlyticsSessionTracker.m; sourceTree = "<group>"; };
+		7E69479918FD5B9200923AB6 /* MUFlurrySessionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUFlurrySessionTracker.h; sourceTree = "<group>"; };
+		7E69479A18FD5B9200923AB6 /* MUFlurrySessionTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUFlurrySessionTracker.m; sourceTree = "<group>"; };
 		7E6CE9B718FD0D4800C86ABA /* MUActivityTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUActivityTracker.h; sourceTree = "<group>"; };
 		7E6CE9BC18FD141200C86ABA /* MUUploadSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettings.h; sourceTree = "<group>"; };
 		7E6CE9BD18FD141200C86ABA /* MUUploadSettings_Legacy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettings_Legacy.h; sourceTree = "<group>"; };
@@ -816,6 +824,7 @@
 		7E6CE9BF18FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettingsStringFormatter.h; sourceTree = "<group>"; };
 		7E6CE9C018FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUUploadSettingsStringFormatter.m; sourceTree = "<group>"; };
 		7E6CE9C418FD1BC200C86ABA /* MUUploadSettingsFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUUploadSettingsFormatter.h; sourceTree = "<group>"; };
+		7E6CE9C518FD3FB000C86ABA /* Flurry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Flurry.framework; sourceTree = "<group>"; };
 		7E81AEED17D9C93600E53330 /* Sitecore.Mobile.MediaUploader-AutoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sitecore.Mobile.MediaUploader-AutoTest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E81AEEE17D9C93800E53330 /* Sitecore.Mobile.MediaUploader copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Sitecore.Mobile.MediaUploader copy-Info.plist"; path = "/Volumes/NO NAME/Mobile/Mobile SDK/app/MediaUploader/Sitecore.Mobile.MediaUploader copy-Info.plist"; sourceTree = "<absolute>"; };
 		7E81AEEF17D9C96D00E53330 /* calabash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = calabash.framework; sourceTree = "<group>"; };
@@ -859,6 +868,7 @@
 				655967C5178E1544009C96CD /* libz.dylib in Frameworks */,
 				655967C3178E152E009C96CD /* libxml2.2.dylib in Frameworks */,
 				65F5E860178C98C100059518 /* AVFoundation.framework in Frameworks */,
+				7E6CE9C618FD3FB000C86ABA /* Flurry.framework in Frameworks */,
 				78C9E27118E5A059004C7A88 /* SitecoreMobileSDK.framework in Frameworks */,
 				4FC27C80177EF37E008C578D /* ImageIO.framework in Frameworks */,
 				651B1A29177CBA0C006FF573 /* MapKit.framework in Frameworks */,
@@ -901,6 +911,7 @@
 				7810815C189021E300E8EFD7 /* libz.dylib in Frameworks */,
 				7810815D189021E300E8EFD7 /* libxml2.2.dylib in Frameworks */,
 				7810815E189021E300E8EFD7 /* AVFoundation.framework in Frameworks */,
+				7E6CE9C818FD3FB000C86ABA /* Flurry.framework in Frameworks */,
 				78C9E27218E5A059004C7A88 /* SitecoreMobileSDK.framework in Frameworks */,
 				7810815F189021E300E8EFD7 /* ImageIO.framework in Frameworks */,
 				78108160189021E300E8EFD7 /* MapKit.framework in Frameworks */,
@@ -953,6 +964,7 @@
 				7E81AE7A17D9C93600E53330 /* libz.dylib in Frameworks */,
 				7E81AE7B17D9C93600E53330 /* libxml2.2.dylib in Frameworks */,
 				7E81AE7C17D9C93600E53330 /* AVFoundation.framework in Frameworks */,
+				7E6CE9C718FD3FB000C86ABA /* Flurry.framework in Frameworks */,
 				7E81AE7D17D9C93600E53330 /* ImageIO.framework in Frameworks */,
 				7E81AE7E17D9C93600E53330 /* MapKit.framework in Frameworks */,
 				7E81AE8017D9C93600E53330 /* QuartzCore.framework in Frameworks */,
@@ -1077,6 +1089,7 @@
 		655829A8175B408900768197 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E6CE9C518FD3FB000C86ABA /* Flurry.framework */,
 				7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */,
 				78C9E27618E5CF6F004C7A88 /* SitecoreItemsBrowser.framework */,
 				78C9E26D18E5A059004C7A88 /* SitecoreMobileSDK.framework */,
@@ -1431,7 +1444,7 @@
 			isa = PBXGroup;
 			children = (
 				7E6CE9B718FD0D4800C86ABA /* MUActivityTracker.h */,
-				7E01A1B418FC30CD0070D4EE /* Crashlytics */,
+				7E69479618FD5B9200923AB6 /* SessionTrackers */,
 				7E01A1B318FC2F780070D4EE /* MUSessionTracker.h */,
 				7E01A1B118FC2E500070D4EE /* MUEventsTracker.h */,
 				7E01A1B218FC2EA10070D4EE /* MUTrackable.h */,
@@ -1443,13 +1456,15 @@
 			path = Tracking;
 			sourceTree = "<group>";
 		};
-		7E01A1B418FC30CD0070D4EE /* Crashlytics */ = {
+		7E69479618FD5B9200923AB6 /* SessionTrackers */ = {
 			isa = PBXGroup;
 			children = (
-				7E01A1B518FC30E90070D4EE /* MUCrashlyticsSessionTracker.h */,
-				7E01A1B618FC30E90070D4EE /* MUCrashlyticsSessionTracker.m */,
+				7E69479718FD5B9200923AB6 /* MUCrashlyticsSessionTracker.h */,
+				7E69479818FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m */,
+				7E69479918FD5B9200923AB6 /* MUFlurrySessionTracker.h */,
+				7E69479A18FD5B9200923AB6 /* MUFlurrySessionTracker.m */,
 			);
-			path = Crashlytics;
+			path = SessionTrackers;
 			sourceTree = "<group>";
 		};
 		7E6CE9BB18FD141200C86ABA /* Site */ = {
@@ -1976,6 +1991,7 @@
 				78D3709A188563B5005A7470 /* sc_ResourseCleaner.m in Sources */,
 				65569B301763B8A000A16A0A /* sc_AppDataObject.m in Sources */,
 				65569B331763B8B400A16A0A /* sc_GlobalDataObject.m in Sources */,
+				7E69479B18FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m in Sources */,
 				4F6B71A41763E20800CE3094 /* sc_QuickImageViewController.m in Sources */,
 				65FBC2231770D4EF002437A5 /* sc_SitesSelectionViewController.m in Sources */,
 				78CC1F0518EAFEDF003608CD /* sc_FolderGridCell.m in Sources */,
@@ -1994,6 +2010,7 @@
 				78CC1EF818EAA2E6003608CD /* sc_BrowseViewController.m in Sources */,
 				7872A6FB18EC100700581E03 /* sc_SitesManager.m in Sources */,
 				653D5B2B17A85A5300754C9C /* sc_UploadItem.m in Sources */,
+				7E69479E18FD5B9200923AB6 /* MUFlurrySessionTracker.m in Sources */,
 				7836AF801871BBF500190D85 /* sc_UploadItemStatus.m in Sources */,
 				78D62BBB185F367C00FF7ADC /* sc_UploadItemManager.m in Sources */,
 				6504584417AE3B0400A04E25 /* sc_ConnectivityHelper.m in Sources */,
@@ -2002,7 +2019,6 @@
 				6504584A17AE3B8200A04E25 /* sc_ErrorHelper.m in Sources */,
 				6504584D17AE440200A04E25 /* sc_ViewsHelper.m in Sources */,
 				6504585017AF7E3700A04E25 /* sc_ItemHelper.m in Sources */,
-				7E01A1B718FC30E90070D4EE /* MUCrashlyticsSessionTracker.m in Sources */,
 				78CA819C185B00420001896D /* sc_UploadItemCell.m in Sources */,
 				7872A86F18EC3E5300581E03 /* sc_Site+Private.m in Sources */,
 				4F7A466B17BE6BC90030BBDB /* sc_DeviceHelper.m in Sources */,
@@ -2035,6 +2051,7 @@
 				7810812D189021E300E8EFD7 /* sc_ResourseCleaner.m in Sources */,
 				7810812E189021E300E8EFD7 /* sc_AppDataObject.m in Sources */,
 				7810812F189021E300E8EFD7 /* sc_GlobalDataObject.m in Sources */,
+				7E69479D18FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m in Sources */,
 				78108130189021E300E8EFD7 /* sc_QuickImageViewController.m in Sources */,
 				78108131189021E300E8EFD7 /* sc_SitesSelectionViewController.m in Sources */,
 				78CC1F0618EAFEDF003608CD /* sc_FolderGridCell.m in Sources */,
@@ -2053,6 +2070,7 @@
 				78CC1EF918EAA2EB003608CD /* sc_BrowseViewController.m in Sources */,
 				7872A6FC18EC100700581E03 /* sc_SitesManager.m in Sources */,
 				7810813C189021E300E8EFD7 /* sc_UploadItem.m in Sources */,
+				7E6947A018FD5B9200923AB6 /* MUFlurrySessionTracker.m in Sources */,
 				7810813D189021E300E8EFD7 /* sc_UploadItemStatus.m in Sources */,
 				7810813E189021E300E8EFD7 /* sc_UploadItemManager.m in Sources */,
 				7810813F189021E300E8EFD7 /* sc_ConnectivityHelper.m in Sources */,
@@ -2061,7 +2079,6 @@
 				78108141189021E300E8EFD7 /* sc_ErrorHelper.m in Sources */,
 				78108142189021E300E8EFD7 /* sc_ViewsHelper.m in Sources */,
 				78108143189021E300E8EFD7 /* sc_ItemHelper.m in Sources */,
-				7E01A1B918FC30E90070D4EE /* MUCrashlyticsSessionTracker.m in Sources */,
 				78108144189021E300E8EFD7 /* sc_UploadItemCell.m in Sources */,
 				7872A87018EC3E5300581E03 /* sc_Site+Private.m in Sources */,
 				78108145189021E300E8EFD7 /* sc_DeviceHelper.m in Sources */,
@@ -2087,6 +2104,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78B01F57187EECDD006D48C9 /* sc_Constans.m in Sources */,
+				7E69479F18FD5B9200923AB6 /* MUFlurrySessionTracker.m in Sources */,
 				7E81AE3D17D9C93600E53330 /* sc_Site.m in Sources */,
 				7E81AE3E17D9C93600E53330 /* main.m in Sources */,
 				78D4A9AF1886BAE800CC44B4 /* sc_ImageScaling.m in Sources */,
@@ -2106,6 +2124,7 @@
 				7E81AE4817D9C93600E53330 /* sc_NavigationController.m in Sources */,
 				7E81AE4917D9C93600E53330 /* sc_Upload2ViewController.m in Sources */,
 				7E01A1C218FC325D0070D4EE /* MUEventsTrackerFactory.m in Sources */,
+				7E69479C18FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m in Sources */,
 				7E81AE4A17D9C93600E53330 /* sc_MapViewController.m in Sources */,
 				7E81AE4B17D9C93600E53330 /* sc_Media.m in Sources */,
 				7E81AE4C17D9C93600E53330 /* sc_PendingFilesManagerViewController.m in Sources */,
@@ -2122,7 +2141,6 @@
 				7E81AE5817D9C93600E53330 /* sc_ItemHelper.m in Sources */,
 				7E81AE5917D9C93600E53330 /* sc_DeviceHelper.m in Sources */,
 				7E81AE5A17D9C93600E53330 /* sc_Validator.m in Sources */,
-				7E01A1B818FC30E90070D4EE /* MUCrashlyticsSessionTracker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

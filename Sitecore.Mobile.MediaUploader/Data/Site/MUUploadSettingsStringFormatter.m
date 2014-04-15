@@ -33,10 +33,10 @@
 -(NSString*)formatSettings:( id<MUUploadSettings, MUUploadSettings_Legacy> )uploadSettings
 {
     static NSString* SITE_FORMAT =
-    @"Instance      : %@ \n"
-    @"Site          : %@ \n"
-    @"Login         : %@ \n"
-    @"Upload Folder : %@ \n";
+        @"Instance      : %@ \n"
+        @"Site          : %@ \n"
+        @"Login         : %@ \n"
+        @"Upload Folder : %@ \n";
     
     
     NSString* host = [ uploadSettings siteUrl ];
