@@ -78,7 +78,7 @@
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="HNM-Wa-BrT" kind="push" id="h9d-Y8-RDM"/>
+                                                    <segue destination="fUX-Dp-Kh2" kind="push" identifier="uploadPendingMedia" id="Yl5-Uf-9td"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" id="K8F-kF-ydE">
@@ -401,92 +401,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1220" y="285"/>
-        </scene>
-        <!--Sc Pending Files Manager View Controller - Pending files-->
-        <scene sceneID="KbI-3U-djM">
-            <objects>
-                <viewController id="HNM-Wa-BrT" customClass="sc_PendingFilesManagerViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9ds-9q-QZi">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" id="48s-6t-9II">
-                                <rect key="frame" x="0.0" y="1" width="320" height="503"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="wMK-0U-fhD">
-                                        <rect key="frame" x="10" y="10" width="300" height="427"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="yV7-ua-Whg">
-                                            <size key="itemSize" width="145" height="145"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="vcK-ha-oOt">
-                                                <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" id="9mF-t3-nNn">
-                                                            <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
-                                                        </imageView>
-                                                        <button opaque="NO" tag="2000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="b7g-SF-GDt" customClass="sc_GradientButton">
-                                                            <rect key="frame" x="113" y="113" width="32" height="32"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                            <state key="normal" image="delete.png">
-                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                            </state>
-                                                            <state key="highlighted">
-                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            </state>
-                                                        </button>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                            </collectionViewCell>
-                                        </cells>
-                                        <connections>
-                                            <outlet property="dataSource" destination="HNM-Wa-BrT" id="Q65-lX-Bmm"/>
-                                            <outlet property="delegate" destination="HNM-Wa-BrT" id="Nnc-aw-L5S"/>
-                                        </connections>
-                                    </collectionView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GDE-2i-tAX" userLabel="UploadButton" customClass="sc_GradientButton">
-                                        <rect key="frame" x="174" y="449" width="136" height="45"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="tintColor" red="0.86350047829999999" green="0.86350047829999999" blue="0.86350047829999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <inset key="contentEdgeInsets" minX="1" minY="1" maxX="1" maxY="1"/>
-                                        <state key="normal" title="Upload">
-                                            <color key="titleColor" red="0.1116868622" green="0.055020097810000002" blue="0.026567346669999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="fUX-Dp-Kh2" kind="push" identifier="uploadPendingMedia" id="gNM-kL-FeG"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="Pending files" id="U8U-s1-lru"/>
-                    <connections>
-                        <outlet property="collectionView" destination="wMK-0U-fhD" id="Bbh-0O-as0"/>
-                        <outlet property="uploadButton" destination="GDE-2i-tAX" id="qbE-MT-EyR"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ef1-XC-h19" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="984" y="1089"/>
         </scene>
         <!--Sc Map View Controller - Map-->
         <scene sceneID="Xgz-X8-Fbs">
@@ -977,7 +891,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Media browser" id="Urj-EC-tTZ">
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="refresh" id="Xj3-ei-D6d">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Xj3-ei-D6d">
                             <connections>
                                 <action selector="forceRefresh:" destination="Ved-5B-ULu" id="PWw-4y-uRo"/>
                             </connections>
@@ -1085,7 +999,6 @@
         <image name="browse.png" width="60" height="48"/>
         <image name="counterBg.png" width="50" height="50"/>
         <image name="currentLocation.png" width="48" height="48"/>
-        <image name="delete.png" width="32" height="32"/>
         <image name="geolocation_small.png" width="30" height="30"/>
         <image name="internet_small.png" width="25" height="25"/>
         <image name="pending.png" width="60" height="50"/>
@@ -1100,6 +1013,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="kAA-QS-bIp"/>
-        <segue reference="gNM-kL-FeG"/>
+        <segue reference="Yl5-Uf-9td"/>
     </inferredMetricsTieBreakers>
 </document>
