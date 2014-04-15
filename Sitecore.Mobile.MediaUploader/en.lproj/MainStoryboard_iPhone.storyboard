@@ -127,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lej-ph-SYu" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="316" y="251"/>
+            <point key="canvasLocation" x="160" y="-540"/>
         </scene>
         <!--Sc Sites Selection View Controller - Browsing site-->
         <scene sceneID="Mri-Ev-bkt">
@@ -183,7 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EiI-x2-cno" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080" y="-540"/>
+            <point key="canvasLocation" x="1116" y="-1032"/>
         </scene>
         <!--Sc Quick Image View Controller-->
         <scene sceneID="r7C-E0-qv8">
@@ -247,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7gA-rA-deZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="888" y="-1251"/>
+            <point key="canvasLocation" x="1889" y="-1275"/>
         </scene>
         <!--Sc Navigation Controller-->
         <scene sceneID="pJw-8I-dHr">
@@ -268,7 +268,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K83-2i-opb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-111" y="251"/>
+            <point key="canvasLocation" x="-267" y="-540"/>
         </scene>
         <!--Sc Upload View Controller - Upload-->
         <scene sceneID="d2R-bD-mWL">
@@ -400,7 +400,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1220" y="285"/>
+            <point key="canvasLocation" x="1392" y="-183"/>
         </scene>
         <!--Sc Map View Controller - Map-->
         <scene sceneID="Xgz-X8-Fbs">
@@ -480,7 +480,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2016" y="285"/>
+            <point key="canvasLocation" x="1972" y="117"/>
         </scene>
         <!--Sc Settings View Controller - Settings-->
         <scene sceneID="7iT-mG-Dbh">
@@ -708,7 +708,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pnS-9r-qEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1320" y="-1251"/>
+            <point key="canvasLocation" x="2321" y="-1275"/>
         </scene>
         <!--Sc Upload2 View Controller - Uploading-->
         <scene sceneID="SsO-rO-4cj">
@@ -815,7 +815,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0vw-pf-MdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1748" y="1089"/>
+            <point key="canvasLocation" x="1972" y="781"/>
         </scene>
         <!--Sc Browse View Controller - Media browser-->
         <scene sceneID="EvL-L2-ffi">
@@ -924,7 +924,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="655" y="-540"/>
+            <point key="canvasLocation" x="695" y="-1032"/>
         </scene>
         <!--Sc List Browser View Controller - Upload folder-->
         <scene sceneID="Spu-Uf-8ck">
@@ -991,7 +991,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="1748" y="-1251"/>
+            <point key="canvasLocation" x="2749" y="-1275"/>
         </scene>
     </scenes>
     <resources>
@@ -1012,7 +1012,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="kAA-QS-bIp"/>
         <segue reference="Yl5-Uf-9td"/>
+        <segue reference="kAA-QS-bIp"/>
     </inferredMetricsTieBreakers>
 </document>
