@@ -2,9 +2,31 @@
 
 #import "MUEventsTracker.h"
 #import "MUEventsTrackerPOD.h"
+
+
+#import "MUCompositeSessionTracker.h"
+#import "MUFlurrySessionTracker.h"
 #import "MUCrashlyticsSessionTracker.h"
 
+
 @implementation MUEventsTrackerFactory
+
++(id<MUSessionTracker>)createNewSessionTrackerForMediaUploader
+{
+    MUCrashlyticsSessionTracker* crashlyticSessionLogger = [ MUCrashlyticsSessionTracker new ];
+    MUFlurrySessionTracker* flurryLogger = [ MUFlurrySessionTracker new ];
+    
+    NSArray* sessionTrackers =
+    @[
+      crashlyticSessionLogger,
+      flurryLogger
+      ];
+    
+    MUCompositeSessionTracker* compositeTracker =
+    [ [ MUCompositeSessionTracker alloc ] initWithTrackers:sessionTrackers ];
+    
+    return compositeTracker;
+}
 
 +(id<MUEventsTracker>)trackerForMediaUploader
 {
@@ -13,10 +35,8 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^void()
     {
-        MUCrashlyticsSessionTracker* crashlyticSessionLogger = [ MUCrashlyticsSessionTracker new ];
-        
-        result = [ [ MUEventsTrackerPOD alloc ] initWithSessionTracker: crashlyticSessionLogger ];
-
+        id<MUSessionTracker> loginTracker = [ self createNewSessionTrackerForMediaUploader ];
+        result = [ [ MUEventsTrackerPOD alloc ] initWithSessionTracker: loginTracker ];
     });
 
     return result;

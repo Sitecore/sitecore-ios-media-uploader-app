@@ -17,7 +17,7 @@
     // TODO : use specific properties of sc_Site instead
     NSDictionary* result =
     @{
-      @"Session Info" : [ self messageForNewSession: site ]
+        @"Session Info" : [ self messageForNewSession: site ]
     };
     
     return result;

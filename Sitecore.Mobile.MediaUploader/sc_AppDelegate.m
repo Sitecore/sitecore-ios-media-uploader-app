@@ -28,6 +28,7 @@
     [ Flurry setSessionReportsOnPauseEnabled: YES ];
     [ Flurry setCrashReportingEnabled       : YES ];
     [ Flurry setShowErrorInLogEnabled       : YES ];
+    [ Flurry setSecureTransportEnabled      : YES ];
     
     NSString* userId = [ [ [ UIDevice currentDevice ] identifierForVendor ] UUIDString ];
     [ Flurry setUserID: userId ];

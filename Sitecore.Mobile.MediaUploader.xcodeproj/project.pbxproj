@@ -391,6 +391,9 @@
 		7E69479E18FD5B9200923AB6 /* MUFlurrySessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E69479A18FD5B9200923AB6 /* MUFlurrySessionTracker.m */; };
 		7E69479F18FD5B9200923AB6 /* MUFlurrySessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E69479A18FD5B9200923AB6 /* MUFlurrySessionTracker.m */; };
 		7E6947A018FD5B9200923AB6 /* MUFlurrySessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E69479A18FD5B9200923AB6 /* MUFlurrySessionTracker.m */; };
+		7E6947A318FD5C8700923AB6 /* MUCompositeSessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6947A218FD5C8700923AB6 /* MUCompositeSessionTracker.m */; };
+		7E6947A418FD5C8700923AB6 /* MUCompositeSessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6947A218FD5C8700923AB6 /* MUCompositeSessionTracker.m */; };
+		7E6947A518FD5C8700923AB6 /* MUCompositeSessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6947A218FD5C8700923AB6 /* MUCompositeSessionTracker.m */; };
 		7E6CE9C118FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CE9C018FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m */; };
 		7E6CE9C218FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CE9C018FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m */; };
 		7E6CE9C318FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CE9C018FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m */; };
@@ -817,6 +820,8 @@
 		7E69479818FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUCrashlyticsSessionTracker.m; sourceTree = "<group>"; };
 		7E69479918FD5B9200923AB6 /* MUFlurrySessionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUFlurrySessionTracker.h; sourceTree = "<group>"; };
 		7E69479A18FD5B9200923AB6 /* MUFlurrySessionTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUFlurrySessionTracker.m; sourceTree = "<group>"; };
+		7E6947A118FD5C8700923AB6 /* MUCompositeSessionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUCompositeSessionTracker.h; sourceTree = "<group>"; };
+		7E6947A218FD5C8700923AB6 /* MUCompositeSessionTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUCompositeSessionTracker.m; sourceTree = "<group>"; };
 		7E6CE9B718FD0D4800C86ABA /* MUActivityTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUActivityTracker.h; sourceTree = "<group>"; };
 		7E6CE9BC18FD141200C86ABA /* MUUploadSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettings.h; sourceTree = "<group>"; };
 		7E6CE9BD18FD141200C86ABA /* MUUploadSettings_Legacy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettings_Legacy.h; sourceTree = "<group>"; };
@@ -1459,6 +1464,8 @@
 		7E69479618FD5B9200923AB6 /* SessionTrackers */ = {
 			isa = PBXGroup;
 			children = (
+				7E6947A118FD5C8700923AB6 /* MUCompositeSessionTracker.h */,
+				7E6947A218FD5C8700923AB6 /* MUCompositeSessionTracker.m */,
 				7E69479718FD5B9200923AB6 /* MUCrashlyticsSessionTracker.h */,
 				7E69479818FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m */,
 				7E69479918FD5B9200923AB6 /* MUFlurrySessionTracker.h */,
@@ -1975,6 +1982,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65569B28176293B600A16A0A /* sc_Site.m in Sources */,
+				7E6947A318FD5C8700923AB6 /* MUCompositeSessionTracker.m in Sources */,
 				78B01F56187EECC7006D48C9 /* sc_Constans.m in Sources */,
 				7872A6F718EC049600581E03 /* sc_LevelUpGridCell.m in Sources */,
 				7E01A1C118FC325D0070D4EE /* MUEventsTrackerFactory.m in Sources */,
@@ -2035,6 +2043,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78108123189021E300E8EFD7 /* sc_Site.m in Sources */,
+				7E6947A518FD5C8700923AB6 /* MUCompositeSessionTracker.m in Sources */,
 				78108124189021E300E8EFD7 /* sc_Constans.m in Sources */,
 				7872A6F818EC049600581E03 /* sc_LevelUpGridCell.m in Sources */,
 				7E01A1C318FC325D0070D4EE /* MUEventsTrackerFactory.m in Sources */,
@@ -2122,6 +2131,7 @@
 				78B01F5B187EF261006D48C9 /* sc_BaseTheme.m in Sources */,
 				7E81AE4717D9C93600E53330 /* sc_SitesSelectionViewController.m in Sources */,
 				7E81AE4817D9C93600E53330 /* sc_NavigationController.m in Sources */,
+				7E6947A418FD5C8700923AB6 /* MUCompositeSessionTracker.m in Sources */,
 				7E81AE4917D9C93600E53330 /* sc_Upload2ViewController.m in Sources */,
 				7E01A1C218FC325D0070D4EE /* MUEventsTrackerFactory.m in Sources */,
 				7E69479C18FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m in Sources */,
