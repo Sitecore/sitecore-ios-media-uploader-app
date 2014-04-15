@@ -47,7 +47,7 @@
 
 -(void)checkVideoAvailability
 {
-    for ( sc_Media *item in _appDataObject.mediaUpload )
+    for ( sc_Media *item in _appDataObject.uploadItemsManager.mediaUpload )
     {
         if ( item.isVideo )
         {
@@ -69,7 +69,7 @@
 {
     __weak sc_ResourseCleaner *weakSelf = self;
     self->_imagesRequestsCount = 0;
-    for ( sc_Media *item in _appDataObject.mediaUpload )
+    for ( sc_Media *item in _appDataObject.uploadItemsManager.mediaUpload )
     {
         if ( item.isImage )
         {
@@ -107,7 +107,7 @@
 {
     if ( self->_imagesIsChecked && self->_videoIsChecked )
     {
-        [_appDataObject saveMediaUpload];
+        [_appDataObject.uploadItemsManager saveMediaUpload];
         NSInteger removedCount = self->_removedImagesCount + self->_removedVideosCount;
         [ self.delegate cleaningComplete: removedCount ];
     }

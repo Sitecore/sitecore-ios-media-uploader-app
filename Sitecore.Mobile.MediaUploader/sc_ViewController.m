@@ -65,12 +65,12 @@
         _browseButton.enabled = YES;
         _uploadButton.enabled = YES;
         
-        if ( _appDataObject.mediaUpload.count > 0 && _appDataObject.isOnline )
+        if ( _appDataObject.uploadItemsManager.uploadCount > 0 && _appDataObject.isOnline )
         {
             //_pendingView.hidden = NO;
             _pendingButton.enabled = YES;
             _pendingView.hidden = NO;
-            _pendingCounterLabel.text = [ NSString stringWithFormat: @"%d", _appDataObject.mediaUpload.count ];
+            _pendingCounterLabel.text = [ NSString stringWithFormat: @"%d", _appDataObject.uploadItemsManager.uploadCount ];
         }
     }
 }
@@ -98,6 +98,18 @@
     if ( _appDataObject.IOS >= 7 )
     {
         [ _settingsButton setImage: [UIImage imageNamed:@"settings.png"] ];
+    }
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"uploadPendingMedia"])
+    {
+        // Obtain handles on the current and destination controllers
+        sc_Upload2ViewController * destinationController = (sc_Upload2ViewController * ) segue.destinationViewController;
+        [ destinationController initWithMediaItems: _appDataObject.uploadItemsManager.mediaUpload
+                                             image: nil
+                            isPendingIemsUploading: YES ];
     }
 }
 

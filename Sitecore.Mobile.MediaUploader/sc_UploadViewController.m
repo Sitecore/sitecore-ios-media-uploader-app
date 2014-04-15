@@ -429,8 +429,7 @@
     }
     
     [self setMediaItemValidName:media];
-    [_appDataObject addMediaUpload:media];
-    [_appDataObject saveMediaUpload];
+    [_appDataObject.uploadItemsManager addMediaUpload:media];
     
     [self.navigationController popViewControllerAnimated:YES ];
 }

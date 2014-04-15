@@ -387,7 +387,7 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
             
             uploadItem.mediaItem.status = MEDIASTATUS_UPLOADED;
             
-            [ [ sc_GlobalDataObject getAppDataObject ] removeTmpVideoFileFromMediaItem: uploadItem.mediaItem ];
+            [ [ sc_GlobalDataObject getAppDataObject ].uploadItemsManager removeTmpVideoFileFromMediaItem: uploadItem.mediaItem ];
             
             status.statusId = doneStatus;
         }
@@ -411,10 +411,7 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
       uploadItem:(sc_UploadItem *) uploadItem
 {
     NSSet * fieldNames = [NSSet setWithObjects:
-                          //@"Artist",
-                          //@"Copyright",
                           @"DateTime",
-                          //@"ImageDescription",
                           @"Make",
                           @"Model",
                           @"Software",
@@ -497,7 +494,7 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
 
 -(void)uploadTerminated
 {
-    [ _appDataObject saveMediaUpload ];
+    [ _appDataObject.uploadItemsManager saveMediaUpload ];
 
     _doneButton.enabled = YES;
     _abortButton.hidden = YES;
