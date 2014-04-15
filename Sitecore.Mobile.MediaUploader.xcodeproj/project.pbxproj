@@ -397,6 +397,9 @@
 		7E6947A718FD700900923AB6 /* GoogleAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947A618FD700900923AB6 /* GoogleAnalytics.framework */; };
 		7E6947A818FD700900923AB6 /* GoogleAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947A618FD700900923AB6 /* GoogleAnalytics.framework */; };
 		7E6947A918FD700900923AB6 /* GoogleAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947A618FD700900923AB6 /* GoogleAnalytics.framework */; };
+		7E6947AB18FD751000923AB6 /* GoogleTagManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947AA18FD751000923AB6 /* GoogleTagManager.framework */; };
+		7E6947AC18FD751000923AB6 /* GoogleTagManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947AA18FD751000923AB6 /* GoogleTagManager.framework */; };
+		7E6947AD18FD751000923AB6 /* GoogleTagManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947AA18FD751000923AB6 /* GoogleTagManager.framework */; };
 		7E6CE9C118FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CE9C018FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m */; };
 		7E6CE9C218FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CE9C018FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m */; };
 		7E6CE9C318FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CE9C018FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m */; };
@@ -826,6 +829,7 @@
 		7E6947A118FD5C8700923AB6 /* MUCompositeSessionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUCompositeSessionTracker.h; sourceTree = "<group>"; };
 		7E6947A218FD5C8700923AB6 /* MUCompositeSessionTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUCompositeSessionTracker.m; sourceTree = "<group>"; };
 		7E6947A618FD700900923AB6 /* GoogleAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAnalytics.framework; sourceTree = "<group>"; };
+		7E6947AA18FD751000923AB6 /* GoogleTagManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleTagManager.framework; sourceTree = "<group>"; };
 		7E6CE9B718FD0D4800C86ABA /* MUActivityTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUActivityTracker.h; sourceTree = "<group>"; };
 		7E6CE9BC18FD141200C86ABA /* MUUploadSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettings.h; sourceTree = "<group>"; };
 		7E6CE9BD18FD141200C86ABA /* MUUploadSettings_Legacy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettings_Legacy.h; sourceTree = "<group>"; };
@@ -871,6 +875,7 @@
 				7ED3E376178E9BAE00E02EA5 /* CFNetwork.framework in Frameworks */,
 				655967CD178E1584009C96CD /* libc++.dylib in Frameworks */,
 				655967CB178E1577009C96CD /* libiconv.dylib in Frameworks */,
+				7E6947AB18FD751000923AB6 /* GoogleTagManager.framework in Frameworks */,
 				655967C9178E1567009C96CD /* libstdc++.dylib in Frameworks */,
 				78C9E27718E5CF6F004C7A88 /* SitecoreItemsBrowser.framework in Frameworks */,
 				655967C7178E1554009C96CD /* libsqlite3.dylib in Frameworks */,
@@ -915,6 +920,7 @@
 				78108157189021E300E8EFD7 /* CFNetwork.framework in Frameworks */,
 				78108158189021E300E8EFD7 /* libc++.dylib in Frameworks */,
 				78108159189021E300E8EFD7 /* libiconv.dylib in Frameworks */,
+				7E6947AD18FD751000923AB6 /* GoogleTagManager.framework in Frameworks */,
 				7810815A189021E300E8EFD7 /* libstdc++.dylib in Frameworks */,
 				78C9E27818E5CF6F004C7A88 /* SitecoreItemsBrowser.framework in Frameworks */,
 				7810815B189021E300E8EFD7 /* libsqlite3.dylib in Frameworks */,
@@ -969,6 +975,7 @@
 				78D4A9B91886BF6D00CC44B4 /* EventKitUI.framework in Frameworks */,
 				7E81AE7617D9C93600E53330 /* libc++.dylib in Frameworks */,
 				7E81AEF017D9C96D00E53330 /* calabash.framework in Frameworks */,
+				7E6947AC18FD751000923AB6 /* GoogleTagManager.framework in Frameworks */,
 				7E81AE7717D9C93600E53330 /* libiconv.dylib in Frameworks */,
 				7E81AE7817D9C93600E53330 /* libstdc++.dylib in Frameworks */,
 				7E81AE7917D9C93600E53330 /* libsqlite3.dylib in Frameworks */,
@@ -1101,6 +1108,7 @@
 		655829A8175B408900768197 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E6947AA18FD751000923AB6 /* GoogleTagManager.framework */,
 				7E6947A618FD700900923AB6 /* GoogleAnalytics.framework */,
 				7E6CE9C518FD3FB000C86ABA /* Flurry.framework */,
 				7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */,
