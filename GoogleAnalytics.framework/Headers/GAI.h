@@ -5,22 +5,24 @@
  @copyright Copyright 2013 Google Inc. All rights reserved.
  */
 
+#import <runtime/objc-api.h>
 #import <Foundation/Foundation.h>
-#import "GAILogger.h"
-#import "GAITracker.h"
-#import "GAITrackedViewController.h"
+
+@protocol GAILogger;
+@protocol GAITracker;
+
 
 /*! Google Analytics product string.  */
-extern NSString *const kGAIProduct;
+OBJC_EXTERN NSString *const kGAIProduct;
 
 /*! Google Analytics version string.  */
-extern NSString *const kGAIVersion;
+OBJC_EXTERN NSString *const kGAIVersion;
 
 /*!
  NSError objects returned by the Google Analytics SDK may have this error domain
  to indicate that the error originated in the Google Analytics SDK.
  */
-extern NSString *const kGAIErrorDomain;
+OBJC_EXTERN NSString *const kGAIErrorDomain;
 
 /*! Google Analytics error codes.  */
 typedef enum {
