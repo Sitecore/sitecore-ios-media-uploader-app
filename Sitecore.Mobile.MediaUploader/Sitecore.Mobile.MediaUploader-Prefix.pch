@@ -21,6 +21,7 @@
 
     #import <Flurry/Flurry.h>
     #import <Crashlytics/Crashlytics.h>
+    #import <GoogleAnalytics/GoogleAnalytics.h>
 
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
