@@ -23,10 +23,10 @@
     
     if (uploadImageSize == UPLODIMAGESIZE_MEDIUM)
     {
-        return 0.8;
+        return 0.8f;
     }
     
-    return 0.6;
+    return 0.6f;
 }
 
 +(UIImage *)resizeImageToSize:(UIImage *)image uploadImageSize:(int)uploadImageSize

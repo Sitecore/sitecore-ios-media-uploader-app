@@ -29,15 +29,15 @@ typedef NS_ENUM(NSInteger, MapViewMode)
 @property (nonatomic, strong) MKLocalSearch *localSearch;
 @property (nonatomic, strong) MKLocalSearchRequest *localSearchRequest;
 @property (nonatomic) MapViewMode mapViewMode;
-@property CLLocationCoordinate2D coords;
-@property NSMutableArray *foundPlacemarks;
-@property CLPlacemark *currentPlacemark;
+@property (nonatomic) CLLocationCoordinate2D coords;
+@property (nonatomic) NSMutableArray *foundPlacemarks;
+@property (nonatomic) CLPlacemark *currentPlacemark;
 @end
 
 @implementation sc_MapViewController
 
-static CGFloat userPosZoomLat = 0.2;
-static CGFloat userPosZoomLon = 0.2;
+static CGFloat userPosZoomLat = 0.2f;
+static CGFloat userPosZoomLon = 0.2f;
 static CGFloat metersToKilimetersCoef = 1000.f;
 static CGFloat beautifulRegionCoef = 112.f;
 
@@ -67,7 +67,7 @@ static CGFloat beautifulRegionCoef = 112.f;
     
     UILongPressGestureRecognizer *gestureRecognizer = [[UILongPressGestureRecognizer alloc]
                                                        initWithTarget:self action:@selector(handleGesture:)];
-    gestureRecognizer.minimumPressDuration = 0.2;  //user must press for 1 second
+    gestureRecognizer.minimumPressDuration = 0.2f;  //user must press for 1 second
     [_mapView addGestureRecognizer:gestureRecognizer];
 }
 

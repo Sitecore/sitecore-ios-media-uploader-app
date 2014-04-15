@@ -12,12 +12,12 @@
 
 -(UIColor *)naviagtionBarBackgroundColor
 {
-    return [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0];
+    return [UIColor colorWithRed:0.97f green:0.97f blue:0.97f alpha:1.0f];
 }
 
 -(UIColor *)naviagtionBarTintColor
 {
-    return [UIColor colorWithRed:0.0 green:0.47 blue:1 alpha:1.0];
+    return [UIColor colorWithRed:0.0f green:0.47f blue:1.0f alpha:1.0f];
 }
 
 -(UIColor *)normalRowBackgroundColor
@@ -27,27 +27,27 @@
 
 -(UIColor *)uploadedRowBackgroundColor
 {
-    return [UIColor colorWithRed:0.0 green:0.5 blue:0.0 alpha:1.0];
+    return [UIColor colorWithRed:0.0f green:0.5f blue:0.0f alpha:1.0f];
 }
 
 -(UIColor *)errorRowBackgroundColor
 {
-    return [UIColor colorWithRed:0.8 green:0.225 blue:0.225 alpha:1.0];
+    return [UIColor colorWithRed:0.8f green:0.225f blue:0.225f alpha:1.0f];
 }
 
 -(UIColor *)errorLabelColor
 {
-    return [UIColor colorWithRed:0.8 green:0.225 blue:0.225 alpha:1.0];
+    return [UIColor colorWithRed:0.8f green:0.225f blue:0.225f alpha:1.0f];
 }
 
 -(UIColor *)labelBackgroundColor
 {
-    return [UIColor colorWithRed:1.0 green:1.0  blue:1.0  alpha:1.0];
+    return [UIColor colorWithRed:1.0f green:1.0f  blue:1.0f  alpha:1.0f];
 }
 
 -(UIColor *)transparentLabelBackgroundColor
 {
-    return [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.0];
+    return [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:0.0f];
 }
 
 -(UIColor *)disableSiteBackgroundColor
