@@ -26,7 +26,7 @@
 -(void)setCellStyleForUploadStatus:(sc_UploadItemStatus *)status withTheme:(sc_BaseTheme *)theme
 {
     UIColor *backgroundColor;
-    
+    UIImage *image;
     switch ( status.statusId )
     {
         case inProgressStatus:
@@ -36,12 +36,12 @@
             self.folderLabel.textColor = [ UIColor blackColor ];
             break;
         case doneStatus:
-            self.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"whiteCheckmark.png"]];
+            image = [UIImage imageNamed:@"Green-Tick"];
             [ self.activityView stopAnimating ];
             backgroundColor = [ theme uploadedRowBackgroundColor ];
             break;
         case errorStatus:
-            self.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"error.png"]];
+            image = [UIImage imageNamed:@"Red-Warning"];
             [ self.activityView stopAnimating ];
             backgroundColor = [ theme errorRowBackgroundColor ];
             break;
@@ -49,14 +49,15 @@
             self.siteLabel.textColor = [ UIColor whiteColor ];
             self.folderLabel.textColor = [ UIColor whiteColor ];
             self.folderLabel.text = NSLocalizedString(@"Cancelled", nil);
-            self.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"error.png"]];
+            image = [UIImage imageNamed:@"Red-Warning"];
             [ self.activityView stopAnimating ];
             backgroundColor = [ theme errorRowBackgroundColor ];
             break;
         default:
             break;
     }
-    
+    self.accessoryView = [ [UIImageView alloc] initWithImage: image ];
+    self.accessoryView.contentMode = UIViewContentModeCenter;
     self.backgroundView.backgroundColor = backgroundColor;
 }
 
