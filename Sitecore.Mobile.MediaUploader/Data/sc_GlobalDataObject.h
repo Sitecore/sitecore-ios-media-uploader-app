@@ -14,11 +14,11 @@
 
 @interface sc_GlobalDataObject : sc_AppDataObject
 
-@property CLPlacemark *selectedPlaceMark;
-@property NSMutableArray *mediaUpload;
-@property bool isIpad;
+@property ( nonatomic ) CLPlacemark *selectedPlaceMark;
+@property ( nonatomic ) NSMutableArray *mediaUpload;
+@property ( nonatomic ) BOOL isIpad;
 @property ( nonatomic, readonly ) BOOL isOnline;
-@property int IOS;
+@property ( nonatomic ) int IOS;
 @property (nonatomic, readonly) sc_SitesManager *sitesManager;
 
 - (void) loadMediaUpload;

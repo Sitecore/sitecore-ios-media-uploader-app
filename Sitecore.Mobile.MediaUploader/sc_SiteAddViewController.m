@@ -21,10 +21,10 @@
 
 @interface sc_SiteAddViewController ()
 
-@property BOOL loggedIn;
-@property UIView* loginFooterView;
-@property sc_ActivityIndicator * activityIndicator;
-@property UIView* footerView;
+@property (nonatomic) BOOL loggedIn;
+@property (nonatomic) UIView* loginFooterView;
+@property (nonatomic) sc_ActivityIndicator * activityIndicator;
+@property (nonatomic) UIView* footerView;
 @property (nonatomic) IBOutlet UISegmentedControl *protocolSelector;
 @end
 

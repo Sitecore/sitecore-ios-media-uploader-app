@@ -18,7 +18,7 @@
 @property (nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic) IBOutlet UIButton *removeButton;
 @property (nonatomic) IBOutlet UIImageView *imageView;
-@property sc_GlobalDataObject *appDataObject;
+@property (nonatomic) sc_GlobalDataObject *appDataObject;
 
 @end
 

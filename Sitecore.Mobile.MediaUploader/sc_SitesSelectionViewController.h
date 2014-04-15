@@ -15,7 +15,7 @@
 
 @property (nonatomic) IBOutlet UITableView *sitesTableView;
 @property (nonatomic) IBOutlet UILabel *headerLabel;
-@property sc_GlobalDataObject *appDataObject;
-@property  NSString *selectionType;
+@property ( nonatomic ) sc_GlobalDataObject *appDataObject;
+@property ( nonatomic ) NSString *selectionType;
 
 @end

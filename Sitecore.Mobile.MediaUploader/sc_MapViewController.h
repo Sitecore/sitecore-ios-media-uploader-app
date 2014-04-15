@@ -15,5 +15,5 @@
 @property (nonatomic) IBOutlet UIBarButtonItem *useButton;
 @property (nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic) IBOutlet UISearchBar *searchBar;
-@property sc_GlobalDataObject *appDataObject;
+@property (nonatomic) sc_GlobalDataObject *appDataObject;
 @end

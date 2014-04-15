@@ -12,9 +12,9 @@
 
 @interface sc_UploadItem : NSObject
 
-@property  sc_Media *mediaItem;
+@property  (nonatomic) sc_Media *mediaItem;
 
-@property  NSData *data;
+@property  (nonatomic) NSData *data;
 
 -(id)initWithObjectData:(sc_Media *)mediaItem
                    data:(NSData *) data;

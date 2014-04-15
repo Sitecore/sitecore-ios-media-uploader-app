@@ -12,20 +12,20 @@
 
 @interface sc_Media : NSObject
 
-@property  NSString *index;
-@property  UIImage *thumbnail;
-@property  NSString *name;
-@property  NSString *description;
-@property  NSDate *dateTime;
-@property  NSNumber *latitude;
-@property  NSNumber *longitude;
-@property  NSString *locationDescription;
-@property  NSString *countryCode;
-@property  NSString *cityCode;
-@property  NSURL *videoUrl;
-@property  NSURL *imageUrl;
-@property  NSInteger status;
-@property  sc_Site *siteForUploading;
+@property  (nonatomic) NSString *index;
+@property  (nonatomic) UIImage *thumbnail;
+@property  (nonatomic) NSString *name;
+@property  (nonatomic) NSString *description;
+@property  (nonatomic) NSDate *dateTime;
+@property  (nonatomic) NSNumber *latitude;
+@property  (nonatomic) NSNumber *longitude;
+@property  (nonatomic) NSString *locationDescription;
+@property  (nonatomic) NSString *countryCode;
+@property  (nonatomic) NSString *cityCode;
+@property  (nonatomic) NSURL *videoUrl;
+@property  (nonatomic) NSURL *imageUrl;
+@property  (nonatomic) NSInteger status;
+@property  (nonatomic) sc_Site *siteForUploading;
 
 
 -(id)initWithObjectData:(NSString *)name

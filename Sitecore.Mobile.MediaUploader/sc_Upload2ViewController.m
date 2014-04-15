@@ -29,9 +29,9 @@
 
 @interface sc_Upload2ViewController ()
 @property (nonatomic)  NSArray *mediaItems;
-@property BOOL isPendingIemsUploading;
-@property UIImage *image;
-@property int uploadImageSize;
+@property (nonatomic) BOOL isPendingIemsUploading;
+@property (nonatomic) UIImage *image;
+@property (nonatomic) int uploadImageSize;
 
 @end
 

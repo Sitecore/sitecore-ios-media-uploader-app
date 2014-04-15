@@ -13,7 +13,9 @@
 #import "sc_GradientButton.h"
 
 @interface sc_ViewController ()
-@property sc_GlobalDataObject *appDataObject;
+
+@property ( nonatomic ) sc_GlobalDataObject *appDataObject;
+
 @end
 
 @implementation sc_ViewController

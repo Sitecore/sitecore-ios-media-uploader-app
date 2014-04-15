@@ -17,11 +17,12 @@
 #import "sc_ItemHelper.h"
 
 @interface sc_SitesSelectionViewController ()
-@property NSIndexPath *selectedIndex;
-@property sc_Site *selectedSite;
+@property ( nonatomic ) NSIndexPath *selectedIndex;
+@property ( nonatomic ) sc_Site *selectedSite;
 @end
 
 @implementation sc_SitesSelectionViewController
+
 @synthesize sitesTableView = _sitesTableView;
 @synthesize appDataObject = _appDataObject;
 
