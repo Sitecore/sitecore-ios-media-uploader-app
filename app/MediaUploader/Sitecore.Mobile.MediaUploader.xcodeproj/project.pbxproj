@@ -384,6 +384,9 @@
 		78E7245A184E040700E9C1FC /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E72458184E040700E9C1FC /* EventKit.framework */; };
 		78E7245B184E040700E9C1FC /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E72459184E040700E9C1FC /* EventKitUI.framework */; };
 		78E7245F184E0B7100E9C1FC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E7245E184E0B7100E9C1FC /* Reachability.m */; };
+		78ED5C9518FD807D00171C37 /* libSCInstanceStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78ED5C9018FD806800171C37 /* libSCInstanceStorage.a */; };
+		78ED5C9818FD80A100171C37 /* libSCInstanceStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78ED5C9018FD806800171C37 /* libSCInstanceStorage.a */; };
+		78ED5C9B18FD80AC00171C37 /* libSCInstanceStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78ED5C9018FD806800171C37 /* libSCInstanceStorage.a */; };
 		7E01A1AD18FC1B770070D4EE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */; };
 		7E01A1AE18FC1B770070D4EE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */; };
 		7E01A1AF18FC1B770070D4EE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */; };
@@ -580,6 +583,41 @@
 			proxyType = 1;
 			remoteGlobalIDString = 655829A5175B408800768197;
 			remoteInfo = Sitecore.Mobile.MediaUploader;
+		};
+		78ED5C8F18FD806800171C37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78ED5C8A18FD806800171C37 /* SCInstanceStorage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78716C4518F6E8130092AA98;
+			remoteInfo = SCInstanceStorage;
+		};
+		78ED5C9118FD806800171C37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78ED5C8A18FD806800171C37 /* SCInstanceStorage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78716C5518F6E8140092AA98;
+			remoteInfo = SCInstanceStorageTests;
+		};
+		78ED5C9318FD807600171C37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78ED5C8A18FD806800171C37 /* SCInstanceStorage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 78716C4418F6E8130092AA98;
+			remoteInfo = SCInstanceStorage;
+		};
+		78ED5C9618FD809900171C37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78ED5C8A18FD806800171C37 /* SCInstanceStorage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 78716C4418F6E8130092AA98;
+			remoteInfo = SCInstanceStorage;
+		};
+		78ED5C9918FD80A700171C37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78ED5C8A18FD806800171C37 /* SCInstanceStorage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 78716C4418F6E8130092AA98;
+			remoteInfo = SCInstanceStorage;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -823,6 +861,7 @@
 		78E72459184E040700E9C1FC /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		78E7245D184E0B7100E9C1FC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		78E7245E184E0B7100E9C1FC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		78ED5C8A18FD806800171C37 /* SCInstanceStorage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCInstanceStorage.xcodeproj; path = ../../lib/SCInstanceStorage/SCInstanceStorage.xcodeproj; sourceTree = "<group>"; };
 		7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		7E01A1B118FC2E500070D4EE /* MUEventsTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUEventsTracker.h; sourceTree = "<group>"; };
 		7E01A1B218FC2EA10070D4EE /* MUTrackable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUTrackable.h; sourceTree = "<group>"; };
@@ -866,6 +905,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78ED5C9518FD807D00171C37 /* libSCInstanceStorage.a in Frameworks */,
 				4F7A466617BA39C20030BBDB /* SystemConfiguration.framework in Frameworks */,
 				78E7245A184E040700E9C1FC /* EventKit.framework in Frameworks */,
 				78C9E27318E5A059004C7A88 /* SitecoreMobileUI.framework in Frameworks */,
@@ -909,6 +949,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78ED5C9B18FD80AC00171C37 /* libSCInstanceStorage.a in Frameworks */,
 				7810814A189021E300E8EFD7 /* SystemConfiguration.framework in Frameworks */,
 				7810814B189021E300E8EFD7 /* EventKit.framework in Frameworks */,
 				78C9E27418E5A059004C7A88 /* SitecoreMobileUI.framework in Frameworks */,
@@ -964,6 +1005,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78ED5C9818FD80A100171C37 /* libSCInstanceStorage.a in Frameworks */,
 				78D4A9B61886BE6D00CC44B4 /* XCTest.framework in Frameworks */,
 				7E81AE7517D9C93600E53330 /* CFNetwork.framework in Frameworks */,
 				7E81AE6A17D9C93600E53330 /* SystemConfiguration.framework in Frameworks */,
@@ -1090,6 +1132,7 @@
 		6558299D175B408800768197 = {
 			isa = PBXGroup;
 			children = (
+				78ED5C8918FD805400171C37 /* lib */,
 				655829AF175B408900768197 /* Sitecore.Mobile.MediaUploader */,
 				78E72455184DE33900E9C1FC /* images */,
 				78D4AA071886D13900CC44B4 /* Sitecore.Mobile.MediaUploaderTests */,
@@ -1488,6 +1531,23 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
+		78ED5C8918FD805400171C37 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				78ED5C8A18FD806800171C37 /* SCInstanceStorage.xcodeproj */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		78ED5C8B18FD806800171C37 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78ED5C9018FD806800171C37 /* libSCInstanceStorage.a */,
+				78ED5C9218FD806800171C37 /* SCInstanceStorageTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7E01A1B018FC2E2F0070D4EE /* Tracking */ = {
 			isa = PBXGroup;
 			children = (
@@ -1545,6 +1605,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				78ED5C9418FD807600171C37 /* PBXTargetDependency */,
 			);
 			name = Sitecore.Mobile.MediaUploader;
 			productName = Sitecore.Mobile.MediaUploader;
@@ -1563,6 +1624,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				78ED5C9A18FD80A700171C37 /* PBXTargetDependency */,
 			);
 			name = Sitecore.Mobile.MediaUploader_AppStore;
 			productName = Sitecore.Mobile.MediaUploader;
@@ -1599,6 +1661,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				78ED5C9718FD809900171C37 /* PBXTargetDependency */,
 			);
 			name = "Sitecore.Mobile.MediaUploader-AutoTest";
 			productName = Sitecore.Mobile.MediaUploader;
@@ -1640,6 +1703,12 @@
 			mainGroup = 6558299D175B408800768197;
 			productRefGroup = 655829A7175B408900768197 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 78ED5C8B18FD806800171C37 /* Products */;
+					ProjectRef = 78ED5C8A18FD806800171C37 /* SCInstanceStorage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				655829A5175B408800768197 /* Sitecore.Mobile.MediaUploader */,
@@ -1649,6 +1718,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		78ED5C9018FD806800171C37 /* libSCInstanceStorage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSCInstanceStorage.a;
+			remoteRef = 78ED5C8F18FD806800171C37 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		78ED5C9218FD806800171C37 /* SCInstanceStorageTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SCInstanceStorageTests.xctest;
+			remoteRef = 78ED5C9118FD806800171C37 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		655829A4175B408800768197 /* Resources */ = {
@@ -2212,6 +2298,21 @@
 			target = 655829A5175B408800768197 /* Sitecore.Mobile.MediaUploader */;
 			targetProxy = 78D4AA101886D13A00CC44B4 /* PBXContainerItemProxy */;
 		};
+		78ED5C9418FD807600171C37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCInstanceStorage;
+			targetProxy = 78ED5C9318FD807600171C37 /* PBXContainerItemProxy */;
+		};
+		78ED5C9718FD809900171C37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCInstanceStorage;
+			targetProxy = 78ED5C9618FD809900171C37 /* PBXContainerItemProxy */;
+		};
+		78ED5C9A18FD80A700171C37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCInstanceStorage;
+			targetProxy = 78ED5C9918FD80A700171C37 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -2290,6 +2391,8 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					.,
+					../../lib/SCInstanceStorage,
+					../../lib,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2332,6 +2435,8 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					.,
+					../../lib/SCInstanceStorage,
+					../../lib,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
