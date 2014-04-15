@@ -11,10 +11,7 @@
 #ifdef __OBJC__
 
     #import "MUEventsTrackerFactory.h"
-    #import <Sitecore.Mobile.MediaUploader/Tracking/MUTrackable.h>
-    #import <Sitecore.Mobile.MediaUploader/Tracking/MUSessionTracker.h>
-    #import <Sitecore.Mobile.MediaUploader/Tracking/MUEventsTracker.h>
-
+    #import <Sitecore.Mobile.MediaUploader/Tracking/MUActivityTracker.h>
 
 
     #import "sc_ErrorHelper.h"

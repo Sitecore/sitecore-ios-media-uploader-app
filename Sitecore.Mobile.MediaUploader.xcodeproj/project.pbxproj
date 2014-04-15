@@ -806,6 +806,7 @@
 		7E01A1BB18FC30FF0070D4EE /* MUEventsTrackerPOD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUEventsTrackerPOD.m; sourceTree = "<group>"; };
 		7E01A1BF18FC325D0070D4EE /* MUEventsTrackerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUEventsTrackerFactory.h; sourceTree = "<group>"; };
 		7E01A1C018FC325D0070D4EE /* MUEventsTrackerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUEventsTrackerFactory.m; sourceTree = "<group>"; };
+		7E6CE9B718FD0D4800C86ABA /* MUActivityTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUActivityTracker.h; sourceTree = "<group>"; };
 		7E81AEED17D9C93600E53330 /* Sitecore.Mobile.MediaUploader-AutoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sitecore.Mobile.MediaUploader-AutoTest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E81AEEE17D9C93800E53330 /* Sitecore.Mobile.MediaUploader copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Sitecore.Mobile.MediaUploader copy-Info.plist"; path = "/Volumes/NO NAME/Mobile/Mobile SDK/app/MediaUploader/Sitecore.Mobile.MediaUploader copy-Info.plist"; sourceTree = "<absolute>"; };
 		7E81AEEF17D9C96D00E53330 /* calabash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = calabash.framework; sourceTree = "<group>"; };
@@ -1419,6 +1420,7 @@
 		7E01A1B018FC2E2F0070D4EE /* Tracking */ = {
 			isa = PBXGroup;
 			children = (
+				7E6CE9B718FD0D4800C86ABA /* MUActivityTracker.h */,
 				7E01A1B418FC30CD0070D4EE /* Crashlytics */,
 				7E01A1B318FC2F780070D4EE /* MUSessionTracker.h */,
 				7E01A1B118FC2E500070D4EE /* MUEventsTracker.h */,
