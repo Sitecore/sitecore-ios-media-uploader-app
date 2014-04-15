@@ -26,6 +26,11 @@
  */
 -(instancetype)initWithSessionTracker:( id<MUSessionTracker> )sessionTracker;
 
+
+/**
+ An interface for tracking login and logout events.
+ */
 @property ( nonatomic, readonly ) id<MUSessionTracker> sessionTracker;
+
 
 @end
