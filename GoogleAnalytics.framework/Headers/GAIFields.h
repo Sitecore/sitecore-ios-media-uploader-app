@@ -4,6 +4,7 @@
  @copyright Copyright 2013 Google Inc. All rights reserved.
  */
 
+#import <runtime/objc-api.h>
 #import <Foundation/Foundation.h>
 
 /*!
@@ -11,83 +12,83 @@
  the |GAITracker| get, set and send methods as well as the set methods in the
  |GAIDictionaryBuilder| class.
  */
-extern NSString *const kGAIUseSecure;
+OBJC_EXTERN NSString *const kGAIUseSecure;
 
-extern NSString *const kGAIHitType;
-extern NSString *const kGAITrackingId;
-extern NSString *const kGAIClientId;
-extern NSString *const kGAIAnonymizeIp;
-extern NSString *const kGAISessionControl;
-extern NSString *const kGAIScreenResolution;
-extern NSString *const kGAIViewportSize;
-extern NSString *const kGAIEncoding;
-extern NSString *const kGAIScreenColors;
-extern NSString *const kGAILanguage;
-extern NSString *const kGAIJavaEnabled;
-extern NSString *const kGAIFlashVersion;
-extern NSString *const kGAINonInteraction;
-extern NSString *const kGAIReferrer;
-extern NSString *const kGAILocation;
-extern NSString *const kGAIHostname;
-extern NSString *const kGAIPage;
-extern NSString *const kGAIDescription;  // synonym for kGAIScreenName
-extern NSString *const kGAIScreenName;   // synonym for kGAIDescription
-extern NSString *const kGAITitle;
-extern NSString *const kGAIAppName;
-extern NSString *const kGAIAppVersion;
-extern NSString *const kGAIAppId;
-extern NSString *const kGAIAppInstallerId;
+OBJC_EXTERN NSString *const kGAIHitType;
+OBJC_EXTERN NSString *const kGAITrackingId;
+OBJC_EXTERN NSString *const kGAIClientId;
+OBJC_EXTERN NSString *const kGAIAnonymizeIp;
+OBJC_EXTERN NSString *const kGAISessionControl;
+OBJC_EXTERN NSString *const kGAIScreenResolution;
+OBJC_EXTERN NSString *const kGAIViewportSize;
+OBJC_EXTERN NSString *const kGAIEncoding;
+OBJC_EXTERN NSString *const kGAIScreenColors;
+OBJC_EXTERN NSString *const kGAILanguage;
+OBJC_EXTERN NSString *const kGAIJavaEnabled;
+OBJC_EXTERN NSString *const kGAIFlashVersion;
+OBJC_EXTERN NSString *const kGAINonInteraction;
+OBJC_EXTERN NSString *const kGAIReferrer;
+OBJC_EXTERN NSString *const kGAILocation;
+OBJC_EXTERN NSString *const kGAIHostname;
+OBJC_EXTERN NSString *const kGAIPage;
+OBJC_EXTERN NSString *const kGAIDescription;  // synonym for kGAIScreenName
+OBJC_EXTERN NSString *const kGAIScreenName;   // synonym for kGAIDescription
+OBJC_EXTERN NSString *const kGAITitle;
+OBJC_EXTERN NSString *const kGAIAppName;
+OBJC_EXTERN NSString *const kGAIAppVersion;
+OBJC_EXTERN NSString *const kGAIAppId;
+OBJC_EXTERN NSString *const kGAIAppInstallerId;
 
-extern NSString *const kGAIEventCategory;
-extern NSString *const kGAIEventAction;
-extern NSString *const kGAIEventLabel;
-extern NSString *const kGAIEventValue;
+OBJC_EXTERN NSString *const kGAIEventCategory;
+OBJC_EXTERN NSString *const kGAIEventAction;
+OBJC_EXTERN NSString *const kGAIEventLabel;
+OBJC_EXTERN NSString *const kGAIEventValue;
 
-extern NSString *const kGAISocialNetwork;
-extern NSString *const kGAISocialAction;
-extern NSString *const kGAISocialTarget;
+OBJC_EXTERN NSString *const kGAISocialNetwork;
+OBJC_EXTERN NSString *const kGAISocialAction;
+OBJC_EXTERN NSString *const kGAISocialTarget;
 
-extern NSString *const kGAITransactionId;
-extern NSString *const kGAITransactionAffiliation;
-extern NSString *const kGAITransactionRevenue;
-extern NSString *const kGAITransactionShipping;
-extern NSString *const kGAITransactionTax;
-extern NSString *const kGAICurrencyCode;
+OBJC_EXTERN NSString *const kGAITransactionId;
+OBJC_EXTERN NSString *const kGAITransactionAffiliation;
+OBJC_EXTERN NSString *const kGAITransactionRevenue;
+OBJC_EXTERN NSString *const kGAITransactionShipping;
+OBJC_EXTERN NSString *const kGAITransactionTax;
+OBJC_EXTERN NSString *const kGAICurrencyCode;
 
-extern NSString *const kGAIItemPrice;
-extern NSString *const kGAIItemQuantity;
-extern NSString *const kGAIItemSku;
-extern NSString *const kGAIItemName;
-extern NSString *const kGAIItemCategory;
+OBJC_EXTERN NSString *const kGAIItemPrice;
+OBJC_EXTERN NSString *const kGAIItemQuantity;
+OBJC_EXTERN NSString *const kGAIItemSku;
+OBJC_EXTERN NSString *const kGAIItemName;
+OBJC_EXTERN NSString *const kGAIItemCategory;
 
-extern NSString *const kGAICampaignSource;
-extern NSString *const kGAICampaignMedium;
-extern NSString *const kGAICampaignName;
-extern NSString *const kGAICampaignKeyword;
-extern NSString *const kGAICampaignContent;
-extern NSString *const kGAICampaignId;
+OBJC_EXTERN NSString *const kGAICampaignSource;
+OBJC_EXTERN NSString *const kGAICampaignMedium;
+OBJC_EXTERN NSString *const kGAICampaignName;
+OBJC_EXTERN NSString *const kGAICampaignKeyword;
+OBJC_EXTERN NSString *const kGAICampaignContent;
+OBJC_EXTERN NSString *const kGAICampaignId;
 
-extern NSString *const kGAITimingCategory;
-extern NSString *const kGAITimingVar;
-extern NSString *const kGAITimingValue;
-extern NSString *const kGAITimingLabel;
+OBJC_EXTERN NSString *const kGAITimingCategory;
+OBJC_EXTERN NSString *const kGAITimingVar;
+OBJC_EXTERN NSString *const kGAITimingValue;
+OBJC_EXTERN NSString *const kGAITimingLabel;
 
-extern NSString *const kGAIExDescription;
-extern NSString *const kGAIExFatal;
+OBJC_EXTERN NSString *const kGAIExDescription;
+OBJC_EXTERN NSString *const kGAIExFatal;
 
-extern NSString *const kGAISampleRate;
+OBJC_EXTERN NSString *const kGAISampleRate;
 
-extern NSString *const kGAIIdfa;
-extern NSString *const kGAIAdTargetingEnabled;
+OBJC_EXTERN NSString *const kGAIIdfa;
+OBJC_EXTERN NSString *const kGAIAdTargetingEnabled;
 
 // hit types
-extern NSString *const kGAIAppView;
-extern NSString *const kGAIEvent;
-extern NSString *const kGAISocial;
-extern NSString *const kGAITransaction;
-extern NSString *const kGAIItem;
-extern NSString *const kGAIException;
-extern NSString *const kGAITiming;
+OBJC_EXTERN NSString *const kGAIAppView;
+OBJC_EXTERN NSString *const kGAIEvent;
+OBJC_EXTERN NSString *const kGAISocial;
+OBJC_EXTERN NSString *const kGAITransaction;
+OBJC_EXTERN NSString *const kGAIItem;
+OBJC_EXTERN NSString *const kGAIException;
+OBJC_EXTERN NSString *const kGAITiming;
 
 /*!
  This class provides several fields and methods useful as wire format parameter
