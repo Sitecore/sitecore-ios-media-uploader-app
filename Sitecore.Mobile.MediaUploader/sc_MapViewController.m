@@ -101,7 +101,7 @@ static CGFloat beautifulRegionCoef = 112.f;
             NSLog(@"Geocode failed with error");
         }
         
-        _foundPlacemarks = [[NSMutableArray alloc] initWithArray:placemarks];
+        self->_foundPlacemarks = [[NSMutableArray alloc] initWithArray:placemarks];
         
         if (placemarks && placemarks.count > 0) {
             CLPlacemark *placemark = [placemarks objectAtIndex:0];
@@ -159,7 +159,7 @@ static CGFloat beautifulRegionCoef = 112.f;
     CLGeocoder* reverseGeocoder = [[CLGeocoder alloc] init];
     [reverseGeocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error)
     {
-        _foundPlacemarks = [[NSMutableArray alloc] initWithArray:placemarks];
+        self->_foundPlacemarks = [[NSMutableArray alloc] initWithArray:placemarks];
         if (placemarks.count > 0 )
         {
             [self setSelectedPlaceMark:[placemarks objectAtIndex:0]];
@@ -260,7 +260,7 @@ static CGFloat beautifulRegionCoef = 112.f;
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder geocodeAddressString:_searchBar.text completionHandler:^(NSArray *placemarks, NSError *error)
     {
-        _foundPlacemarks = [[NSMutableArray alloc] initWithArray:placemarks];
+        self->_foundPlacemarks = [[NSMutableArray alloc] initWithArray:placemarks];
         
         if (placemarks.count > 0)
         {

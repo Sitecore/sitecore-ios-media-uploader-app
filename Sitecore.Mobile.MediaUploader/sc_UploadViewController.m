@@ -186,7 +186,7 @@
         
         _videoUrl = nil;
         
-        if (newMedia)
+        if (self->newMedia)
         {
             _timeStamp = [NSDate date];
             
@@ -222,7 +222,7 @@
                         else
                         {
                             NSLog( @"Wrote image with metadata to Photo Library");
-                            _imageUrl = newURL;
+                            self->_imageUrl = newURL;
                         }
                         
                         ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *myasset)
@@ -230,7 +230,7 @@
                             CGImageRef iref = [myasset thumbnail];
                             if (iref)
                             {
-                                _thumbnail = [UIImage imageWithCGImage:iref];
+                                self->_thumbnail = [UIImage imageWithCGImage:iref];
                             }
                         };
                         ALAssetsLibraryAccessFailureBlock failureblock = ^(NSError *myerror)
@@ -239,7 +239,7 @@
                         };
                         
                         
-                        [library assetForURL:_imageUrl resultBlock:resultblock failureBlock:failureblock];
+                        [library assetForURL:self->_imageUrl resultBlock:resultblock failureBlock:failureblock];
                         
                         [self dismissViewControllerAnimated:YES completion:nil];
                     };
@@ -266,7 +266,7 @@
                 ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *myasset) {
                     
                     //Get timestamp from asset
-                    _timeStamp = [myasset valueForProperty:ALAssetPropertyDate];
+                    self->_timeStamp = [myasset valueForProperty:ALAssetPropertyDate];
                     
                     //Get location data from asset
 //                    CLLocation *location = [myasset valueForProperty:ALAssetPropertyLocation];
@@ -275,7 +275,7 @@
                     CGImageRef iref = [myasset thumbnail];
                     if (iref)
                     {
-                        _thumbnail = [UIImage imageWithCGImage:iref];
+                        self->_thumbnail = [UIImage imageWithCGImage:iref];
                     }
                 };
                 ALAssetsLibraryAccessFailureBlock failureblock = ^(NSError *myerror)

@@ -46,7 +46,7 @@
          
          if (error)
          {
-             _appDataObject.selectedPlaceMark = nil;
+             self->_appDataObject.selectedPlaceMark = nil;
              NSLog(@"Geocode failed with error: %@", error);
              return;
          }
@@ -54,11 +54,11 @@
          if (placemarks.count > 0)
          {
              CLPlacemark *placemark = [placemarks objectAtIndex:0];
-             _appDataObject.selectedPlaceMark = placemark;
+             self->_appDataObject.selectedPlaceMark = placemark;
          }
          else
          {
-             _appDataObject.selectedPlaceMark = nil;
+             self->_appDataObject.selectedPlaceMark = nil;
          }
          
      }];

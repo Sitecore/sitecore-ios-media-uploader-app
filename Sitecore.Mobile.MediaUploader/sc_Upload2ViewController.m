@@ -326,9 +326,9 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
                                          forOrientation: orientation ];
             
             UIImage *resizedImage = [ sc_ImageHelper resizeImageToSize: image
-                                                       uploadImageSize: _uploadImageSize ];
+                                                       uploadImageSize: self->_uploadImageSize ];
             
-            data = UIImageJPEGRepresentation(resizedImage,[sc_ImageHelper getCompressionFactor:_uploadImageSize]);
+            data = UIImageJPEGRepresentation(resizedImage,[sc_ImageHelper getCompressionFactor:self->_uploadImageSize]);
         });
         sc_UploadItem * uploadItem = [ [sc_UploadItem alloc] initWithObjectData: media
                                                                            data: data ];

@@ -174,7 +174,7 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
         id<MUSessionTracker> sessionTracker =
         [ MUEventsTrackerFactory sessionTrackerForMediaUploader ];
 
-        [ _activityIndicator hide ];
+        [ self->_activityIndicator hide ];
         if ( !error )
         {
             [ sessionTracker didLoginWithSite: site ];
