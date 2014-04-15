@@ -164,8 +164,9 @@ uploadFolderPathInsideMediaLibrary: (NSString *)uploadFolderPathInsideMediaLibra
 -(NSString*)description
 {
     NSString* parentDescription = [ super description ];
+    NSString* rootMediaPath = [ [ self class ] mediaLibraryDefaultPath ];
     
-    MUUploadSettingsStringFormatter* formatter = [ MUUploadSettingsStringFormatter new ];
+    MUUploadSettingsStringFormatter* formatter = [[ MUUploadSettingsStringFormatter alloc ] initWithRootMediaPath: rootMediaPath ];
     NSString* result = [ formatter formatSettings: self ];
 
     return [ NSString stringWithFormat: @"%@ \n %@", parentDescription, result ];
