@@ -27,12 +27,12 @@
 
 -(UIColor *)uploadedRowBackgroundColor
 {
-    return [UIColor colorWithRed:0.0f green:0.5f blue:0.0f alpha:1.0f];
+    return [UIColor whiteColor];
 }
 
 -(UIColor *)errorRowBackgroundColor
 {
-    return [UIColor colorWithRed:0.8f green:0.225f blue:0.225f alpha:1.0f];
+    return [UIColor whiteColor];
 }
 
 -(UIColor *)errorLabelColor
