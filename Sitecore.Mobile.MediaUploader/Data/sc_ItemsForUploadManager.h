@@ -1,13 +1,26 @@
-//
-//  sc_UploadItemManager.h
-//  Sitecore.Mobile.MediaUploader
-//
-//  Created by Igor on 14/04/14.
-//  Copyright (c) 2014 Sitecore. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+#import "sc_Media.h"
 
-@interface sc_UploadItemManager : NSObject
+enum {
+    MEDIASTATUS_UNDEFINED = 0,
+    MEDIASTATUS_PENDING,
+    MEDIASTATUS_UPLOADED,
+    MEDIASTATUS_REMOVED,
+    MEDIASTATUS_ERROR
+};
+
+@interface sc_ItemsForUploadManager : NSObject
+
+@property (nonatomic, readonly) NSUInteger uploadCount;
+
+//TODO: @igk remove from public, refactor sc_ResourseCleaner
+@property (nonatomic)  NSMutableArray *mediaUpload;
+
+- (void)loadMediaUpload;
+- (void)saveMediaUpload;
+- (void)addMediaUpload:(sc_Media*) media;
+- (void)removeTmpVideoFileFromMediaItem:(sc_Media *)media;
+- (void)removeMediaUpload:(sc_Media *)media;
+- (void)removeMediaUploadAtIndex:(NSInteger)index;
 
 @end
