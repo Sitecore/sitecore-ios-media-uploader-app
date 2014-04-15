@@ -9,6 +9,8 @@
 #import "sc_Site.h"
 #import "sc_ImageHelper.h"
 
+#import "MUUploadSettingsStringFormatter.h"
+
 @interface sc_Site ()
 
 @property ( nonatomic, readwrite ) BOOL selectedForBrowse;
@@ -163,15 +165,9 @@ uploadFolderPathInsideMediaLibrary: (NSString *)uploadFolderPathInsideMediaLibra
 {
     NSString* parentDescription = [ super description ];
     
-    static NSString* SITE_FORMAT =
-        @"Instance      : %@ \n"
-        @"Site          : %@ \n"
-        @"Login         : %@ \n"
-        @"Upload Folder : %@ \n";
-    
-    NSString* result = [ NSString stringWithFormat: SITE_FORMAT, self.siteUrl, self.site, self.username, self.uploadFolderPathInsideMediaLibrary ];
-    
-    
+    MUUploadSettingsStringFormatter* formatter = [ MUUploadSettingsStringFormatter new ];
+    NSString* result = [ formatter formatSettings: self ];
+
     return [ NSString stringWithFormat: @"%@ \n %@", parentDescription, result ];
 }
 

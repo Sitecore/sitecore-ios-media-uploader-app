@@ -388,6 +388,9 @@
 		7E01A1C118FC325D0070D4EE /* MUEventsTrackerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E01A1C018FC325D0070D4EE /* MUEventsTrackerFactory.m */; };
 		7E01A1C218FC325D0070D4EE /* MUEventsTrackerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E01A1C018FC325D0070D4EE /* MUEventsTrackerFactory.m */; };
 		7E01A1C318FC325D0070D4EE /* MUEventsTrackerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E01A1C018FC325D0070D4EE /* MUEventsTrackerFactory.m */; };
+		7E6CE9C118FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CE9C018FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m */; };
+		7E6CE9C218FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CE9C018FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m */; };
+		7E6CE9C318FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CE9C018FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m */; };
 		7E81AE3D17D9C93600E53330 /* sc_Site.m in Sources */ = {isa = PBXBuildFile; fileRef = 65569B2417627B9900A16A0A /* sc_Site.m */; };
 		7E81AE3E17D9C93600E53330 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 655829B5175B408900768197 /* main.m */; };
 		7E81AE3F17D9C93600E53330 /* sc_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 655829B9175B408900768197 /* sc_AppDelegate.m */; };
@@ -807,6 +810,12 @@
 		7E01A1BF18FC325D0070D4EE /* MUEventsTrackerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUEventsTrackerFactory.h; sourceTree = "<group>"; };
 		7E01A1C018FC325D0070D4EE /* MUEventsTrackerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUEventsTrackerFactory.m; sourceTree = "<group>"; };
 		7E6CE9B718FD0D4800C86ABA /* MUActivityTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUActivityTracker.h; sourceTree = "<group>"; };
+		7E6CE9BC18FD141200C86ABA /* MUUploadSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettings.h; sourceTree = "<group>"; };
+		7E6CE9BD18FD141200C86ABA /* MUUploadSettings_Legacy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettings_Legacy.h; sourceTree = "<group>"; };
+		7E6CE9BE18FD141200C86ABA /* MUUploadSettingsRecordState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettingsRecordState.h; sourceTree = "<group>"; };
+		7E6CE9BF18FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettingsStringFormatter.h; sourceTree = "<group>"; };
+		7E6CE9C018FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUUploadSettingsStringFormatter.m; sourceTree = "<group>"; };
+		7E6CE9C418FD1BC200C86ABA /* MUUploadSettingsFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUUploadSettingsFormatter.h; sourceTree = "<group>"; };
 		7E81AEED17D9C93600E53330 /* Sitecore.Mobile.MediaUploader-AutoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sitecore.Mobile.MediaUploader-AutoTest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E81AEEE17D9C93800E53330 /* Sitecore.Mobile.MediaUploader copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Sitecore.Mobile.MediaUploader copy-Info.plist"; path = "/Volumes/NO NAME/Mobile/Mobile SDK/app/MediaUploader/Sitecore.Mobile.MediaUploader copy-Info.plist"; sourceTree = "<absolute>"; };
 		7E81AEEF17D9C96D00E53330 /* calabash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = calabash.framework; sourceTree = "<group>"; };
@@ -1026,7 +1035,8 @@
 		65569B2217627B6600A16A0A /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				7872A7A818EC33F600581E03 /* Site */,
+				7E6CE9BB18FD141200C86ABA /* Site */,
+				7872A7A818EC33F600581E03 /* Site_legacy */,
 				65569B2E1763B8A000A16A0A /* sc_AppDataObject.h */,
 				65569B2F1763B8A000A16A0A /* sc_AppDataObject.m */,
 				65569B311763B8B400A16A0A /* sc_GlobalDataObject.h */,
@@ -1290,7 +1300,7 @@
 			path = Images/buttons;
 			sourceTree = "<group>";
 		};
-		7872A7A818EC33F600581E03 /* Site */ = {
+		7872A7A818EC33F600581E03 /* Site_legacy */ = {
 			isa = PBXGroup;
 			children = (
 				65569B2317627B9900A16A0A /* sc_Site.h */,
@@ -1300,7 +1310,7 @@
 				7872A6F918EC100700581E03 /* sc_SitesManager.h */,
 				7872A6FA18EC100700581E03 /* sc_SitesManager.m */,
 			);
-			name = Site;
+			name = Site_legacy;
 			sourceTree = "<group>";
 		};
 		78C596A818EEFE52006A7FA3 /* AddEditViewController */ = {
@@ -1440,6 +1450,19 @@
 				7E01A1B618FC30E90070D4EE /* MUCrashlyticsSessionTracker.m */,
 			);
 			path = Crashlytics;
+			sourceTree = "<group>";
+		};
+		7E6CE9BB18FD141200C86ABA /* Site */ = {
+			isa = PBXGroup;
+			children = (
+				7E6CE9C418FD1BC200C86ABA /* MUUploadSettingsFormatter.h */,
+				7E6CE9BC18FD141200C86ABA /* MUUploadSettings.h */,
+				7E6CE9BD18FD141200C86ABA /* MUUploadSettings_Legacy.h */,
+				7E6CE9BE18FD141200C86ABA /* MUUploadSettingsRecordState.h */,
+				7E6CE9BF18FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.h */,
+				7E6CE9C018FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m */,
+			);
+			path = Site;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1961,6 +1984,7 @@
 				78C596A118EED3B4006A7FA3 /* sc_LevelUpTableCell.m in Sources */,
 				651B1A24177CB850006FF573 /* sc_MapViewController.m in Sources */,
 				651353F7177F294800108071 /* sc_Media.m in Sources */,
+				7E6CE9C118FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m in Sources */,
 				65F5E84B178987B400059518 /* sc_PendingFilesManagerViewController.m in Sources */,
 				65F5E850178A9D0F00059518 /* sc_GradientButton.m in Sources */,
 				4FE40C39179FE7D600F9DDB9 /* sc_ActivityIndicator.m in Sources */,
@@ -2019,6 +2043,7 @@
 				78C596A218EED3B4006A7FA3 /* sc_LevelUpTableCell.m in Sources */,
 				78108134189021E300E8EFD7 /* sc_MapViewController.m in Sources */,
 				78108135189021E300E8EFD7 /* sc_Media.m in Sources */,
+				7E6CE9C318FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m in Sources */,
 				78108136189021E300E8EFD7 /* sc_PendingFilesManagerViewController.m in Sources */,
 				78108137189021E300E8EFD7 /* sc_GradientButton.m in Sources */,
 				78108139189021E300E8EFD7 /* sc_ActivityIndicator.m in Sources */,
@@ -2069,6 +2094,7 @@
 				7E81AE4017D9C93600E53330 /* sc_ViewController.m in Sources */,
 				7E81AE4117D9C93600E53330 /* sc_UploadViewController.m in Sources */,
 				78D4A9BD1886BFA300CC44B4 /* sc_ResourseCleaner.m in Sources */,
+				7E6CE9C218FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m in Sources */,
 				7E81AE4317D9C93600E53330 /* sc_SettingsViewController.m in Sources */,
 				7E81AE4417D9C93600E53330 /* sc_AppDataObject.m in Sources */,
 				7E81AE4517D9C93600E53330 /* sc_GlobalDataObject.m in Sources */,
@@ -2150,6 +2176,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -2157,6 +2186,7 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -2189,6 +2219,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -2196,6 +2229,7 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;

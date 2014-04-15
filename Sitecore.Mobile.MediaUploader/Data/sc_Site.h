@@ -8,9 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+#import <Sitecore.Mobile.MediaUploader/Data/Site/MUUploadSettings.h>
+#import <Sitecore.Mobile.MediaUploader/Data/Site/MUUploadSettings_Legacy.h>
+#import <Sitecore.Mobile.MediaUploader/Data/Site/MUUploadSettingsRecordState.h>
+
+
 #import <Sitecore.Mobile.MediaUploader/Tracking/MUTrackable.h>
 
-@interface sc_Site : NSObject<MUTrackableObject>
+@interface sc_Site : NSObject
+<
+    MUTrackableObject,
+
+    MUUploadSettings,
+    MUUploadSettingsRecordState,
+    MUUploadSettings_Legacy
+>
 
 @property ( nonatomic ) NSString *siteProtocol;
 @property ( nonatomic ) NSString *siteUrl;
