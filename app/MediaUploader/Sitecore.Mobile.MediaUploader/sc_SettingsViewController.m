@@ -9,17 +9,18 @@
 #import "sc_GlobalDataObject.h"
 #import "sc_AppDelegateProtocol.h"
 #import "sc_SettingsViewController.h"
-#import "SCSiteAddViewController.h"
+#import "sc_SiteAddViewController.h"
 #import "sc_UploadViewController.h"
 #import "sc_ViewsHelper.h"
 #import "sc_Constants.h"
 #import "sc_ImageHelper.h"
 #import "sc_ItemHelper.h"
 #import "sc_BaseTheme.h"
-#import "SCSiteAddViewController.h"
+
 
 @interface sc_SettingsViewController ()
 @end
+
 
 @implementation sc_SettingsViewController
 {
@@ -186,7 +187,7 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
     {
         if ( indexPath.row == [ _appDataObject.sitesManager sitesCount ] )
         {
-            SCSiteAddViewController *siteAddViewController = (SCSiteAddViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"AddSite"];
+            sc_SiteAddViewController *siteAddViewController = (sc_SiteAddViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"AddSite"];
             [self.navigationController pushViewController:siteAddViewController animated:YES];
             [tableView deselectRowAtIndexPath:indexPath animated:YES];
             return;
@@ -210,7 +211,7 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
 {
     SCSite* siteAtIndex = [ _appDataObject.sitesManager siteAtIndex: sender.tag ];
 
-    SCSiteAddViewController *siteEditViewController = (SCSiteAddViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"AddSite"];
+    sc_SiteAddViewController *siteEditViewController = (sc_SiteAddViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"AddSite"];
     [ siteEditViewController setSiteForEdit: siteAtIndex ];
     [self.navigationController pushViewController:siteEditViewController animated:YES];
 }

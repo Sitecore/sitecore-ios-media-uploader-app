@@ -1,5 +1,5 @@
 //
-//  SCSiteAddViewController.h
+//  sc_SiteAddViewController.h
 //  Sitecore.Mobile.MediaUploader
 //
 //  Created by andrea bellagamba on 7/26/13.

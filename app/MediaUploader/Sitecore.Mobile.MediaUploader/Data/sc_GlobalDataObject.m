@@ -12,6 +12,10 @@
 #import "sc_ConnectivityHelper.h"
 #import "sc_AppDelegateProtocol.h"
 
+#import "sc_media.h"
+#import "sc_ItemsForUploadManager.h"
+
+
 @implementation sc_GlobalDataObject
 
 +(sc_GlobalDataObject*)getAppDataObject

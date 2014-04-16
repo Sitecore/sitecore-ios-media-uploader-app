@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Sitecore. All rights reserved.
 //
 
-#import "SCTrackableSiteAddViewController.h"
+#import "sc_SiteAddViewController.h"
 #import "sc_ListBrowserViewController.h"
 #import "sc_GlobalDataObject.h"
 #import "sc_AppDelegateProtocol.h"
@@ -20,7 +20,7 @@
 #import "SCSite+Trackable.h"
 
 
-@interface SCTrackableSiteAddViewController ()
+@interface sc_SiteAddViewController ()
 
 @property (nonatomic) BOOL loggedIn;
 @property (nonatomic) UIView* loginFooterView;
@@ -35,7 +35,7 @@ static NSString* HTTPS_PROTOCOL_STRING = @"https://";
 static NSString* HTTP_PROTOCOL_STRING = @"http://";
 
 
-@implementation SCTrackableSiteAddViewController
+@implementation sc_SiteAddViewController
 {
     sc_GlobalDataObject* _appDataObject;
     UIBarButtonItem* _saveButton;
@@ -82,12 +82,8 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     [self.view addSubview:_activityIndicator];
 }
 
-<<<<<<< HEAD
--(void)setSiteForEdit:(SCSite *)site
-=======
 
--(void)setSiteForEdit:(SCTrackableSite*)site
->>>>>>> 5fd1a77cf543f87528a2be11984197976d8db056
+-(void)setSiteForEdit:(SCSite*)site
 {
     self->_siteForEdit = site;
     
@@ -167,14 +163,10 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
                                            animated: YES ];
 }
 
-<<<<<<< HEAD
--(void)authenticateAndSaveSite:(SCSite *)site
-=======
 
--(void)authenticateAndSaveSite:(SCTrackableSite*)site
->>>>>>> 5fd1a77cf543f87528a2be11984197976d8db056
+-(void)authenticateAndSaveSite:(SCSite*)site
 {
-    __block SCTrackableSite* tmpSite = site;
+    __block SCSite* tmpSite = site;
     
     SCApiSession *session = [ sc_ItemHelper getContext: tmpSite ];
     
@@ -184,7 +176,7 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     
     self->nextButton.enabled = NO;
     
-    asyncOp(^( id result, NSError* error )
+    asyncOp( ^void( id result, NSError* error )
     {
         id<MUSessionTracker> sessionTracker =
         [ MUEventsTrackerFactory sessionTrackerForMediaUploader ];
@@ -239,11 +231,8 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     
     if ( requiredFieldsFilled )
     {
-<<<<<<< HEAD
-        SCSite *fakeSite = [ SCSite emptySite ];
-=======
-        SCTrackableSite* fakeSite = [ SCTrackableSite emptySite ];
->>>>>>> 5fd1a77cf543f87528a2be11984197976d8db056
+
+        SCSite* fakeSite = [ SCSite emptySite ];
         [ self fillSiteWithData: fakeSite ];
         [ self authenticateAndSaveSite: fakeSite ];
     }

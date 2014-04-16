@@ -12,10 +12,11 @@
 
 // this app
     #import "sc_ErrorHelper.h"
+    #import "sc_GlobalDataObject.h"
+    #import "sc_ItemsForUploadManager.h"
 
 // own libs
-
-//    #import <SCInstanceStorage/SCInstanceStorage.h>
+    #import <SCInstanceStorage/SCInstanceStorage.h>
 
 // Sitecore
     #import <SitecoreItemsBrowser/SCItemsBrowser.h>
