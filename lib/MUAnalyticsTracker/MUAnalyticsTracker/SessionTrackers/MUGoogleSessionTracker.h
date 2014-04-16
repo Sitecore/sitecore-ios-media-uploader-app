@@ -1,10 +1,12 @@
 #import <MUAnalyticsTracker/MUSessionTracker.h>
 #import <Foundation/Foundation.h>
 
+@class GAI;
 @protocol GAITracker;
 
 @interface MUGoogleSessionTracker : NSObject<MUSessionTracker>
 
--(instancetype)initWithGoogleTracker:( id<GAITracker> )googleTracker;
+-(instancetype)initWithGoogleAnalytics:( GAI* )analytics
+                               tracker:( id<GAITracker> )googleTracker;
 
 @end

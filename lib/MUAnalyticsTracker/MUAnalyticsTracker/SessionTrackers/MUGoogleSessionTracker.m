@@ -5,6 +5,7 @@
 @implementation MUGoogleSessionTracker
 {
     id<GAITracker> _googleTracker;
+    GAI*           _analytics    ;
 }
 
 
@@ -14,7 +15,8 @@
     return nil;
 }
 
--(instancetype)initWithGoogleTracker:( id<GAITracker> )googleTracker
+-(instancetype)initWithGoogleAnalytics:( GAI* )analytics
+                               tracker:( id<GAITracker> )googleTracker
 {
     self = [ super init ];
     if ( nil == self )
@@ -23,6 +25,7 @@
     }
     
     self->_googleTracker = googleTracker;
+    self->_analytics     = analytics    ;
     
     return self;
 }
@@ -35,6 +38,7 @@
                                                                            value: [ site description ] ];
 
     [ self->_googleTracker send: [ event build ] ];
+    [ self->_analytics dispatch ];
 }
 
 
@@ -50,6 +54,7 @@
     
     
     [ self->_googleTracker send: [ event build ] ];
+    [ self->_analytics dispatch ];
 }
 
 
@@ -61,7 +66,7 @@
                                                                            value: [ site description ] ];
     
     [ self->_googleTracker send: [ event build ] ];
-    
+    [ self->_analytics dispatch ];
 }
 
 @end

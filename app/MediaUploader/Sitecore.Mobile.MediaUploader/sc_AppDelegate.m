@@ -11,8 +11,29 @@
 #import "sc_GlobalDataObject.h"
 #import "sc_ConnectivityHelper.h"
 
+
 @implementation sc_AppDelegate
+{
+    id<GAITracker> _sessionEventsTracker;
+}
+
+
 @synthesize window = _window;
+
+
+// @adk
+// TODO : extract analytics setup to a separate class
+-(void)enableGoogleAnalytics
+{
+    GAI* analytics = [ GAI sharedInstance ];
+    analytics.trackUncaughtExceptions = YES;
+    analytics.dispatchInterval = -1;
+    
+    self->_sessionEventsTracker =  [ analytics trackerWithName: @"net.sitecore.medua-uploader.session-events"
+                                                    trackingId: @"UA-50047147-1" ];
+    
+    
+}
 
 -(void)enableCrashlytics
 {
@@ -50,6 +71,7 @@ didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     _appDataObject = [[sc_GlobalDataObject alloc] init];
     
+    [ self enableGoogleAnalytics ];
     [ self enableCrashlytics ];
     [ self enableFlurryUsingLaunchOptions: launchOptions ];
 
@@ -71,7 +93,7 @@ didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
     _appDataObject.isIpad = false;
     
     UIViewController* initialViewController = [storyboard instantiateInitialViewController];
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
     self.window.rootViewController  = initialViewController;
     
     [self.window makeKeyAndVisible];

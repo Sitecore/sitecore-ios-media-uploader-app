@@ -9,8 +9,10 @@
     MUFlurrySessionTracker* flurryLogger = [ MUFlurrySessionTracker new ];
     
     
-    id<GAITracker> googleTracker = [ [ GAI sharedInstance ] defaultTracker ];
-    MUGoogleSessionTracker* googleLogger = [ [ MUGoogleSessionTracker alloc ] initWithGoogleTracker: googleTracker ];
+    GAI* googleAnalytics = [ GAI sharedInstance ];
+    id<GAITracker> googleTracker = [ googleAnalytics defaultTracker ];
+    MUGoogleSessionTracker* googleLogger = [ [ MUGoogleSessionTracker alloc ] initWithGoogleAnalytics: googleAnalytics
+                                                                                              tracker: googleTracker ];
     
     NSArray* sessionTrackers =
     @[
