@@ -1,4 +1,5 @@
 #import "SCSite.h"
+#import "MUUploadSettingsStringFormatter.h"
 
 @interface SCSite ()
 

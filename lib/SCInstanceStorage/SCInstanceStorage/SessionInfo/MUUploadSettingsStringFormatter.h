@@ -1,5 +1,5 @@
 
-#import <Sitecore.Mobile.MediaUploader/Data/Site/MUUploadSettingsFormatter.h>
+#import <SCInstanceStorage/SessionInfo/MUUploadSettingsFormatter.h>
 #import <Foundation/Foundation.h>
 
 @protocol MUUploadSettings;

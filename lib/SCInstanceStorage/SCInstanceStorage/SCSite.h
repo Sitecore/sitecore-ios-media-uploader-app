@@ -1,7 +1,10 @@
 #import <Foundation/Foundation.h>
 
-@interface SCSite : NSObject
+#import <SCInstanceStorage/SessionInfo/MUUploadSettings.h>
+#import <SCInstanceStorage/SessionInfo/MUUploadSettings_Legacy.h>
+#import <SCInstanceStorage/SessionInfo/MUUploadSettingsRecordState.h>
 
+@interface SCSite : NSObject
 @property ( nonatomic ) NSString *siteProtocol;
 @property ( nonatomic ) NSString *siteUrl;
 @property ( nonatomic ) NSString *site;
