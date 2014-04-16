@@ -797,6 +797,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = ../../frameworks;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -817,7 +818,6 @@
 					.,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -841,6 +841,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = ../../frameworks;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -931,6 +932,7 @@
 				7E26865918FE99EF00033905 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E26865A18FE99EF00033905 /* Build configuration list for PBXNativeTarget "MUCrashlyticsWrapperTests" */ = {
 			isa = XCConfigurationList;
@@ -939,6 +941,7 @@
 				7E26865C18FE99EF00033905 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E26867E18FE9A8300033905 /* Build configuration list for PBXNativeTarget "MUFlurryWrapper" */ = {
 			isa = XCConfigurationList;
@@ -947,6 +950,7 @@
 				7E26868018FE9A8300033905 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E26868118FE9A8300033905 /* Build configuration list for PBXNativeTarget "MUFlurryWrapperTests" */ = {
 			isa = XCConfigurationList;
@@ -955,6 +959,7 @@
 				7E26868318FE9A8300033905 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E41A0A518FE97B900D601EF /* Build configuration list for PBXProject "MUAnalyticsTracker" */ = {
 			isa = XCConfigurationList;
