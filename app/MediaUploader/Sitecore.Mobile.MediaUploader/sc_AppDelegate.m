@@ -12,6 +12,7 @@
 #import "sc_ConnectivityHelper.h"
 
 #define TEST_ANALYTICS 1
+#define ANALYTICS_ENABLED 0
 
 
 @implementation sc_AppDelegate
@@ -82,9 +83,13 @@ didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     _appDataObject = [[sc_GlobalDataObject alloc] init];
     
-    [ self enableGoogleAnalytics ];
-    [ self enableCrashlytics ];
-    [ self enableFlurryUsingLaunchOptions: launchOptions ];
+#if ANALYTICS_ENABLED
+    {
+        [ self enableGoogleAnalytics ];
+        [ self enableCrashlytics ];
+        [ self enableFlurryUsingLaunchOptions: launchOptions ];
+    }
+#endif
 
     
     [self getIOS];
