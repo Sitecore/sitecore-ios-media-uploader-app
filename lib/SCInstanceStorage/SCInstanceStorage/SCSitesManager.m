@@ -3,7 +3,7 @@
 
 @implementation SCSitesManager
 {
-    NSMutableArray *_sitesList;
+    NSMutableArray* _sitesList;
 }
 
 -(instancetype)init
@@ -21,7 +21,7 @@
     return [ self->_sitesList count ];
 }
 
--(void)addSite:(SCSite *)site error:( NSError** )error
+-(void)addSite:(SCSite*)site error:(NSError**)error
 {
     if ( [ self sitesCount ] == 0 )
     {
@@ -34,7 +34,7 @@
     
     if ( [ self isSameSiteExist: site ] )
     {
-        NSDictionary *errorInfo = @{ NSLocalizedDescriptionKey: NSLocalizedString(@"SITE_DUPLICATE", nil) };
+        NSDictionary* errorInfo = @{ NSLocalizedDescriptionKey: NSLocalizedString(@"SITE_DUPLICATE", nil) };
         *error = [[ NSError alloc ] initWithDomain: @"MU"
                                               code: 1
                                           userInfo: errorInfo ];
@@ -46,7 +46,7 @@
     
     if ( !sitesWasSaved )
     {
-        NSDictionary *errorInfo = @{ NSLocalizedDescriptionKey: NSLocalizedString(@"SITE_SAVE_ERROR", nil) };
+        NSDictionary* errorInfo = @{ NSLocalizedDescriptionKey: NSLocalizedString(@"SITE_SAVE_ERROR", nil) };
         *error = [[ NSError alloc ] initWithDomain: @"MU"
                                               code: 1
                                           userInfo: errorInfo ];
@@ -79,7 +79,7 @@
     return result;
 }
 
--(void)removeSite:(SCSite *)site
+-(void)removeSite:(SCSite*)site
 {
     [ self->_sitesList removeObject: site ];
     [ self saveSites ];
@@ -91,12 +91,12 @@
     [ self saveSites ];
 }
 
--(NSUInteger)indexOfSite:(SCSite *)site
+-(NSUInteger)indexOfSite:(SCSite*)site
 {
     return [ self->_sitesList indexOfObject: site ];
 }
 
--(SCSite *)siteAtIndex:(NSUInteger)index
+-(SCSite*)siteAtIndex:(NSUInteger)index
 {
     if ( index < [ self->_sitesList count ] )
     {
@@ -144,7 +144,7 @@
 
 #pragma mark additional functions
 
--(SCSite *)siteForBrowse
+-(SCSite*)siteForBrowse
 {
     NSAssert([ self sitesCount ] > 0, @"at least one site must exists");
     
@@ -160,7 +160,7 @@
     return [ self siteAtIndex: 0 ];
 }
 
--(SCSite *)siteForUpload
+-(SCSite*)siteForUpload
 {
     for ( SCSite *site in self->_sitesList )
     {
@@ -181,7 +181,7 @@
     return nil;
 }
 
--(void)setSiteForBrowse:(SCSite *)siteForBrowse
+-(void)setSiteForBrowse:(SCSite*)siteForBrowse
 {
     for ( SCSite *site in self->_sitesList )
     {
@@ -198,7 +198,7 @@
     [ self saveSites ];
 }
 
--(void)setSiteForUpload:(SCSite *)siteForUpload
+-(void)setSiteForUpload:(SCSite*)siteForUpload
 {
     for ( SCSite *site in self->_sitesList )
     {

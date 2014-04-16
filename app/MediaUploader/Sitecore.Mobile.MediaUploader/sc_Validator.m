@@ -47,7 +47,7 @@
     return defaultValue;
 }
 
-+ (BOOL) isItemNameValid:(NSString*) name {
++(BOOL) isItemNameValid:(NSString*) name {
     
     return ([self getItemNameError:name].length == 0);
 }

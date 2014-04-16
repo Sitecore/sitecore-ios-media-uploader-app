@@ -12,7 +12,7 @@
         if ( !self.backgroundView )
         {
             // hack to use .backgroundView property for iOS6 plain table cells
-            UIView * backView = [ UIView new ];
+            UIView*  backView = [ UIView new ];
             backView.frame = self.frame;
             [ self insertSubview: backView atIndex: 0 ];
             self.backgroundView = backView;
@@ -23,7 +23,7 @@
 }
 
 
--(void)setCellStyleForUploadStatus:(sc_UploadItemStatus *)status withTheme:(sc_BaseTheme *)theme
+-(void)setCellStyleForUploadStatus:(sc_UploadItemStatus*)status withTheme:(sc_BaseTheme*)theme
 {
     UIColor *backgroundColor;
     UIImage* image;

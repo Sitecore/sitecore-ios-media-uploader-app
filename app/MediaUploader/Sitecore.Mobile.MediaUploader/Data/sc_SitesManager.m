@@ -3,7 +3,7 @@
 
 @implementation sc_SitesManager
 {
-    NSMutableArray *_sitesList;
+    NSMutableArray* _sitesList;
 }
 
 -(instancetype)init
@@ -21,7 +21,7 @@
     return [ self->_sitesList count ];
 }
 
--(void)addSite:(sc_Site*)site error:( NSError** )error
+-(void)addSite:(sc_Site*)site error:(NSError**)error
 {
     if ( [ self sitesCount ] == 0 )
     {
@@ -34,7 +34,7 @@
     
     if ( [ self isSameSiteExist: site ] )
     {
-        NSDictionary *errorInfo = @{ NSLocalizedDescriptionKey: NSLocalizedString(@"SITE_DUPLICATE", nil) };
+        NSDictionary* errorInfo = @{ NSLocalizedDescriptionKey: NSLocalizedString(@"SITE_DUPLICATE", nil) };
         *error = [[ NSError alloc ] initWithDomain: @"MU"
                                               code: 1
                                           userInfo: errorInfo ];
@@ -46,7 +46,7 @@
     
     if ( !sitesWasSaved )
     {
-        NSDictionary *errorInfo = @{ NSLocalizedDescriptionKey: NSLocalizedString(@"SITE_SAVE_ERROR", nil) };
+        NSDictionary* errorInfo = @{ NSLocalizedDescriptionKey: NSLocalizedString(@"SITE_SAVE_ERROR", nil) };
         *error = [[ NSError alloc ] initWithDomain: @"MU"
                                               code: 1
                                           userInfo: errorInfo ];
@@ -96,7 +96,7 @@
     return [ self->_sitesList indexOfObject: site ];
 }
 
--(sc_Site* )siteAtIndex:(NSUInteger)index
+-(sc_Site*)siteAtIndex:(NSUInteger)index
 {
     if ( index < [ self->_sitesList count ] )
     {
@@ -109,6 +109,7 @@
 -(BOOL)saveSites
 {
     NSString* appFile = [ self getSitesFilePath ];
+    
     return [ NSKeyedArchiver archiveRootObject: self->_sitesList
                                         toFile: appFile ];
 }
@@ -134,6 +135,7 @@
     NSArray* paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
     NSString* documentsDirectory = [ paths objectAtIndex: 0 ];
     NSString* appFile = [ documentsDirectory stringByAppendingPathComponent: fileName ];
+    
     return appFile;
 }
 
@@ -142,9 +144,9 @@
     return [ self sitesCount ] > 0;
 }
 
+#pragma mark -
 #pragma mark additional functions
-
--(sc_Site* )siteForBrowse
+-(sc_Site*)siteForBrowse
 {
     NSAssert([ self sitesCount ] > 0, @"at least one site must exists");
     
@@ -160,7 +162,7 @@
     return [ self siteAtIndex: 0 ];
 }
 
--(sc_Site* )siteForUpload
+-(sc_Site*)siteForUpload
 {
     for ( sc_Site* site in self->_sitesList )
     {
@@ -174,10 +176,10 @@
     {
         sc_Site* site = [ self siteAtIndex: 0 ];
         site.selectedForUpload = YES;
+        
         return site;
     }
     
-    NSLog(@"No sites");
     return nil;
 }
 

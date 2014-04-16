@@ -58,8 +58,6 @@
 <false/>
 <key>kRequireSpaceAfterReturnType</key>
 <false/>
-<key>kRequireEmptyLineAboveReturnStatement</key>
-<true/>
 <key>kRequireSpaceAfterPropertyTypeDeclaration</key>
 <true/>
 <key>kAsteriskSpacingRule</key>

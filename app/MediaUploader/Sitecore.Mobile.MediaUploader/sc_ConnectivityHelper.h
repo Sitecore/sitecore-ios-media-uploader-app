@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface sc_ConnectivityHelper : NSObject
-+ (BOOL)connectedToInternet;
++(BOOL)connectedToInternet;
 @end

@@ -16,8 +16,8 @@
 uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
             username:(NSString*)username
             password:(NSString*)password
-   selectedForBrowse: (BOOL)selectedForBrowse
-   selectedForUpload: (BOOL)selectedForUpload;
+   selectedForBrowse:(BOOL)selectedForBrowse
+   selectedForUpload:(BOOL)selectedForUpload;
 
 -(NSString*)getFolderPathForUpload;
 

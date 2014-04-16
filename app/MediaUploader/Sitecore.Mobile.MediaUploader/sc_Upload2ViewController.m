@@ -52,26 +52,26 @@ typedef NS_ENUM(NSInteger, ItemsFilterMode)
     sc_BaseTheme *_theme;
     ItemsFilterMode _currentFilterValue;
     
-    NSMutableArray *_filteredItems;
+    NSMutableArray* _filteredItems;
 }
 static NSString*  const CellIdentifier = @"cellSiteUrl";
 
--(void)setMediaItems:(NSArray* )mediaItems
+-(void)setMediaItems:(NSArray*)mediaItems
 {
     self->_mediaItems = mediaItems;
     self->_filteredItems = [ NSMutableArray arrayWithArray: mediaItems ];
 }
 
--(void) initWithMediaItems: (NSArray* )mediaItems
-                      image: (UIImage* )image
-     isPendingIemsUploading: (BOOL)isPendingIemsUploading
+-(void) initWithMediaItems:(NSArray*)mediaItems
+                      image:(UIImage*)image
+     isPendingIemsUploading:(BOOL)isPendingIemsUploading
 {
     self.mediaItems = [ mediaItems copy ];
     _isPendingIemsUploading = isPendingIemsUploading;
     _image = image;
 }
 
--(IBAction)changeFilter:(UISegmentedControl *)sender
+-(IBAction)changeFilter:(UISegmentedControl*)sender
 {
     [ self filterTableWithFilterValue: sender.selectedSegmentIndex ];
 }
@@ -103,7 +103,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     [ self filterTableWithFilterValue: self->_currentFilterValue ];
 }
 
--(BOOL)isStatus:(sc_UploadItemStatus *)status matchesToFilter:(ItemsFilterMode)filter
+-(BOOL)isStatus:(sc_UploadItemStatus*)status matchesToFilter:(ItemsFilterMode)filter
 {
     switch ( filter ) {
         case ShowAllFilter:
@@ -199,32 +199,32 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     }
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+-(NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
 {
     return 1;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+-(NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
     return  self->_filteredItems.count;
 }
 
--(sc_UploadItemStatus *)statusForItemForCurrentIndexPath:(NSIndexPath *)indexPath
+-(sc_UploadItemStatus*)statusForItemForCurrentIndexPath:(NSIndexPath*)indexPath
 {
-    sc_Media *media = self->_filteredItems[ indexPath.row ];
+    sc_Media* media = self->_filteredItems[ indexPath.row ];
     
     NSNumber* itemNumber = @([ self->_mediaItems indexOfObject: media ]);
     
     return [ self->_statusManager statusForItemAtNumber: itemNumber ];
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
     sc_UploadItemCell *cell = [ _sitesTableView dequeueReusableCellWithIdentifier: CellIdentifier ];
     
     sc_UploadItemStatus *status = [ self statusForItemForCurrentIndexPath: indexPath ];
     
-    sc_Media *media = self->_filteredItems[ indexPath.row ];
+    sc_Media* media = self->_filteredItems[ indexPath.row ];
     
     if ( status.statusId == inProgressStatus && self->_uploadingInterrupted  )
     {
@@ -241,7 +241,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
     sc_UploadItemStatus *status = [ self statusForItemForCurrentIndexPath: indexPath ];
 
@@ -267,7 +267,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     
     if ( !_uploadingInterrupted )
     {
-        sc_Media *media = _mediaItems[self->_uploadItemIndex];
+        sc_Media* media = _mediaItems[self->_uploadItemIndex];
         ++self->_uploadItemIndex;
         media.status = MEDIASTATUS_PENDING;
         
@@ -290,7 +290,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 
 -(void)uploadVideoWithMediaItem:(sc_Media*)media
 {
-    __block NSData *data;
+    __block NSData*data;
     
     dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         data = [ NSData dataWithContentsOfURL: media.videoUrl ];
@@ -317,7 +317,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
             orientation = [orientationValue intValue];
         }
         
-        __block NSData *data;
+        __block NSData*data;
         dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
             UIImage* imageSource = [UIImage imageWithCGImage:[rep fullResolutionImage]];
@@ -328,7 +328,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
             UIImage* resizedImage = [ sc_ImageHelper resizeImageToSize: image
                                                        uploadImageSize: self->_uploadImageSize ];
             
-            data = UIImageJPEGRepresentation(resizedImage,[sc_ImageHelper getCompressionFactor:self->_uploadImageSize]);
+            data = UIImageJPEGRepresentation(resizedImage,[sc_ImageHelper getCompressionFactor: self->_uploadImageSize]);
         });
         sc_UploadItem * uploadItem = [ [sc_UploadItem alloc] initWithObjectData: media
                                                                            data: data ];
@@ -347,7 +347,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
                    failureBlock: failureblock ];
 }
 
--(void)sendUploadRequest:(sc_UploadItem *) uploadItem
+-(void)sendUploadRequest:(sc_UploadItem*) uploadItem
 {
     SCApiSession *session = [ sc_ItemHelper getContext: uploadItem.mediaItem.siteForUploading ];
     SCUploadMediaItemRequest *request = [SCUploadMediaItemRequest new];
@@ -366,7 +366,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     request.contentType = uploadItem.contentType;
     request.folder = uploadItem.mediaItem.siteForUploading.uploadFolderPathInsideMediaLibrary;
     
-    SCDidFinishAsyncOperationHandler doneHandler = (^( SCItem *item, NSError* error )
+    SCDidFinishAsyncOperationHandler doneHandler = (^( SCItem* item, NSError* error )
     {
         NSNumber* itemNumber = @(self->_uploadItemIndex - 1);
         
@@ -406,9 +406,9 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     
 }
 
--(void)setFields:(SCItem *) item
-         Context:(SCApiSession *) session
-      uploadItem:(sc_UploadItem *) uploadItem
+-(void)setFields:(SCItem*) item
+         Context:(SCApiSession*) session
+      uploadItem:(sc_UploadItem*) uploadItem
 {
     NSSet * fieldNames = [NSSet setWithObjects:
                           @"DateTime",
@@ -430,7 +430,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
              NSLog(@"Fields error %@",[fieldsError localizedDescription]);
          }
          
-         SCItem * fieldItem = [items count] == 0 ? nil : [items lastObject];
+         SCItem*  fieldItem = [items count] == 0 ? nil : [items lastObject];
          
          if (fieldItem)
          {
@@ -461,7 +461,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
              SCField *fieldCityCode = [fieldItem fieldWithName: @"ZipCode"];
              fieldCityCode.rawValue = uploadItem.mediaItem.cityCode;
              
-             [fieldItem saveItemOperation] (^(SCItem * editedItem, NSError*  fieldSaveError)
+             [fieldItem saveItemOperation] (^(SCItem*  editedItem, NSError*  fieldSaveError)
                {
                    NSLog(@"readFieldsByName: %@", editedItem.allFields);
                });
@@ -470,7 +470,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     
 }
 
--(NSString*)getUTCFormatDate:(NSDate* )localDate
+-(NSString*)getUTCFormatDate:(NSDate*)localDate
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];

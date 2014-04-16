@@ -26,12 +26,12 @@
 @synthesize sitesTableView = _sitesTableView;
 @synthesize appDataObject = _appDataObject;
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+-(NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [ _appDataObject.sitesManager sitesCount ];
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
     UITableViewCell *newCell = [tableView cellForRowAtIndexPath:indexPath];
     if (newCell.accessoryType == UITableViewCellAccessoryNone)
@@ -56,7 +56,7 @@
     [self closeView];
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
     static NSString* cellIdentifier = @"cellSiteUrl";
     
@@ -70,7 +70,7 @@
     _headerLabel.text = NSLocalizedString(@"Select the site you wish to browse.", nil);
     [ _sitesTableView setAllowsMultipleSelection: NO ];
     
-    if(currentSite.selectedForBrowse)
+    if (currentSite.selectedForBrowse)
     {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         cell.selected = YES;
@@ -91,7 +91,7 @@
     return cell;
 }
 
--(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+-(BOOL)tableView:(UITableView*)tableView canEditRowAtIndexPath:(NSIndexPath*)indexPath
 {
     return NO;
 }

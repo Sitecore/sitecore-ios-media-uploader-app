@@ -11,7 +11,7 @@
 
 @implementation sc_UploadItem
 
--(id)initWithObjectData:(sc_Media*)mediaItem data:(NSData *) data
+-(instancetype)initWithObjectData:(sc_Media*)mediaItem data:(NSData*)data
 {
     self = [super init];
     if (self)
@@ -81,7 +81,7 @@
     return @"multipart/form-data";
 }
 
--(NSURL* )assetURL
+-(NSURL*)assetURL
 {
     if ( self.isVideo )
     {

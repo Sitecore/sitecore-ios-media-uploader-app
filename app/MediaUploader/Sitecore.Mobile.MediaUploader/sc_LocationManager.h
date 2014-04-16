@@ -6,9 +6,9 @@
 @property (nonatomic, readonly) CGFloat longitude;
 
 -(NSString*)getCurrentLocationDescription;
-+(NSString*)getLocationDescriptionForPlacemark:(CLPlacemark *)placemark;
--(NSDictionary *)gpsDictionaryForCurrentLocation;
--(void)setCurrentLocation:(CLLocation *)location;
++(NSString*)getLocationDescriptionForPlacemark:(CLPlacemark*)placemark;
+-(NSDictionary*)gpsDictionaryForCurrentLocation;
+-(void)setCurrentLocation:(CLLocation*)location;
 
 -(NSString*)getCountryCode;
 -(NSString*)getCityCode;

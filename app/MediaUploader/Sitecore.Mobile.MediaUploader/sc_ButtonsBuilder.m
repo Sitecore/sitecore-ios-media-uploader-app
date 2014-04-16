@@ -3,7 +3,7 @@
 
 @implementation sc_ButtonsBuilder
 {
-    sc_GlobalDataObject *_appDataObject;
+    sc_GlobalDataObject* _appDataObject;
 }
 
 -(instancetype)init
@@ -18,7 +18,7 @@
 
 -(CGFloat)fontSize
 {
-    if( _appDataObject.isIpad )
+    if ( _appDataObject.isIpad )
     {
         return 24.f;
     }
@@ -26,12 +26,12 @@
     return 18.f;
 }
 
--(sc_GradientButton *)getButtonWithTitle:(NSString*)title
+-(sc_GradientButton* )getButtonWithTitle:(NSString*)title
                                    style:(CustomButtonType)customButtonType
                                   target:(id)target
                                 selector:(SEL)selector
 {
-    sc_GradientButton *button = [sc_GradientButton buttonWithType:UIButtonTypeCustom];
+    sc_GradientButton* button = [sc_GradientButton buttonWithType:UIButtonTypeCustom];
     [(sc_GradientButton*) button setButtonWithStyle: customButtonType];
     
     [button setTitle:NSLocalizedString(title, nil) forState:UIControlStateNormal];

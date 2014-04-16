@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface sc_ActivityIndicator : UIView
 
--(id) initWithFrame:(CGRect)frame;
--(void) showWithLabel:(NSString*)label afterDelay: (float) wait;
--(void) showWithLabel:(NSString*)label;
--(void) hide;
+-(id)initWithFrame:(CGRect)frame;
+-(void)showWithLabel:(NSString*)label afterDelay:(float)wait;
+-(void)showWithLabel:(NSString*)label;
+-(void)hide;
 
 @end

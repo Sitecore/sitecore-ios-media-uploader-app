@@ -5,7 +5,7 @@
 
 @implementation sc_GradientButton
 
--(void)setButtonWithStyle: (CustomButtonType) customButtonType
+-(void)setButtonWithStyle:(CustomButtonType) customButtonType
 {
     NSString* normalImageName;
     NSString* highlightedlImageName;
@@ -61,7 +61,7 @@
     [self setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
 }
 
--(NSString*)formatImageName:(NSString*)imageName iosVersion: (NSString*) iosVersionPostfix
+-(NSString*)formatImageName:(NSString*)imageName iosVersion:(NSString*) iosVersionPostfix
 {
     return [NSString stringWithFormat:@"%@%@.png", imageName,iosVersionPostfix];
 }

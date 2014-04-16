@@ -15,7 +15,7 @@
     return nil;
 }
 
--(instancetype)initWithRootMediaPath:( NSString* )rootMediaPath
+-(instancetype)initWithRootMediaPath:(NSString*)rootMediaPath
 {
     NSParameterAssert( nil != rootMediaPath );
     
@@ -30,7 +30,7 @@
     return self;
 }
 
--(NSString*)formatSettings:( id<MUUploadSettings, MUUploadSettings_Legacy> )uploadSettings
+-(NSString*)formatSettings:(id<MUUploadSettings, MUUploadSettings_Legacy> )uploadSettings
 {
     static NSString* SITE_FORMAT =
         @"Instance      : %@ \n"

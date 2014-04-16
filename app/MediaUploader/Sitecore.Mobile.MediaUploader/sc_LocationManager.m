@@ -6,7 +6,7 @@
 {
     CLLocationManager *_locationManager;
     CLLocation *_currentLocation;
-    sc_GlobalDataObject *_appDataObject;
+    sc_GlobalDataObject* _appDataObject;
 }
 
 
@@ -30,13 +30,13 @@
     [ self setCurrentLocation: [_locationManager location] ];
 }
 
--(void)setCurrentLocation:(CLLocation *)location
+-(void)setCurrentLocation:(CLLocation*)location
 {
     self->_currentLocation = location;
     [ self getReadableLocation: _currentLocation ];
 }
 
--(void)getReadableLocation:(CLLocation *)location
+-(void)getReadableLocation:(CLLocation*)location
 {
     CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
     [geocoder reverseGeocodeLocation:location
@@ -79,7 +79,7 @@
     return _appDataObject.selectedPlaceMark.postalCode;
 }
 
--(void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError* )error
+-(void) locationManager:(CLLocationManager*)manager didFailWithError:(NSError*)error
 {
     [_locationManager stopUpdatingLocation];
 }
@@ -94,12 +94,12 @@
     return _currentLocation.coordinate.longitude;
 }
 
--(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+-(void)locationManager:(CLLocationManager*)manager didUpdateToLocation:(CLLocation*)newLocation fromLocation:(CLLocation*)oldLocation
 {
     [ self setCurrentLocation: newLocation ];
 }
 
-- (NSDictionary *)gpsDictionaryForCurrentLocation
+-(NSDictionary*)gpsDictionaryForCurrentLocation
 {
     //Helper to create a dictionary of geodata to be incorporate into photo metadata
     CLLocationDegrees exifLatitude  = _currentLocation.coordinate.latitude;
@@ -140,10 +140,10 @@
     return locDict;
 }
 
-+(NSString*)getLocationDescriptionForPlacemark:(CLPlacemark *)placemark
++(NSString*)getLocationDescriptionForPlacemark:(CLPlacemark*)placemark
 {
     
-    if(placemark == nil)
+    if (placemark == nil)
     {
         return NSLocalizedString(@"Location undefined", nil);
     }
@@ -179,7 +179,7 @@
     }
     
     
-    if(ISOcountryCode.length == 0 && locality.length == 0 && subLocality.length == 0 && thoroughfare.length == 0 && subThoroughfare.length == 0)
+    if (ISOcountryCode.length == 0 && locality.length == 0 && subLocality.length == 0 && thoroughfare.length == 0 && subThoroughfare.length == 0)
     {
         return NSLocalizedString(@"Location undefined", nil);
     }

@@ -24,7 +24,7 @@
  
  @return An initialized instance of "self"
  */
--(instancetype)initWithSessionTracker:( id<MUSessionTracker> )sessionTracker;
+-(instancetype)initWithSessionTracker:(id<MUSessionTracker> )sessionTracker;
 
 
 /**

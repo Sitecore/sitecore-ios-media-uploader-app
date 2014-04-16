@@ -12,7 +12,7 @@
 
 -(NSString*)description
 {
-    if( self.statusId == errorStatus )
+    if ( self.statusId == errorStatus )
         return self->_description;
     
     return nil;

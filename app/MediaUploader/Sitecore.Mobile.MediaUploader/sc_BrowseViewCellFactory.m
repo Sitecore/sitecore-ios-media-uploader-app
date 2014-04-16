@@ -16,7 +16,7 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     return LEVEL_UP_CELL_ID;
 }
 
--(NSString*)reuseIdentifierForItem:( SCItem* )item
+-(NSString*)reuseIdentifierForItem:(SCItem*)item
 {
     if ( [ item isMediaImage ] )
     {
@@ -33,7 +33,7 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     return [ sc_LevelUpGridCell class ];
 }
 
--(Class)cellClassForItem:( SCItem* )item
+-(Class)cellClassForItem:(SCItem*)item
 {
     if ( [ item isMediaImage ] )
     {
@@ -45,8 +45,8 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     }
 }
 
--(UICollectionViewCell*)itemsBrowser:( SCItemGridBrowser* )sender
-        createLevelUpCellAtIndexPath:( NSIndexPath* )indexPath
+-(UICollectionViewCell*)itemsBrowser:(SCItemGridBrowser*)sender
+        createLevelUpCellAtIndexPath:(NSIndexPath*)indexPath
 {
     NSString* reuseId = [ self levelUpCellReuseId ];
     Class levelUpCellClass = [ self levelUpCellClass ];
@@ -73,9 +73,9 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     [ gridCell setBackgroundColorForHighlightedState: [ UIColor grayColor ] ];
 }
 
--(UICollectionViewCell<SCItemCell>*)itemsBrowser:( SCItemGridBrowser* )sender
-                       createGridModeCellForItem:( SCItem* )item
-                                     atIndexPath:( NSIndexPath* )indexPath
+-(UICollectionViewCell<SCItemCell>*)itemsBrowser:(SCItemGridBrowser*)sender
+                       createGridModeCellForItem:(SCItem*)item
+                                     atIndexPath:(NSIndexPath*)indexPath
 {
     NSString* reuseId = [ self reuseIdentifierForItem: item ];
     Class levelUpCellClass = [ self cellClassForItem: item ];

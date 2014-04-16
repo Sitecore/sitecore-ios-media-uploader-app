@@ -7,7 +7,7 @@
 
 @implementation sc_ScaleTest
 
-- (void)testScale
+-(void)testScale
 {
     float accuracy = 0.001;
     

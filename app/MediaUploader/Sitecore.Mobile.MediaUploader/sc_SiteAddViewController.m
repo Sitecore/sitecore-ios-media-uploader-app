@@ -33,14 +33,14 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
 
 @implementation sc_SiteAddViewController
 {
-    sc_GlobalDataObject *_appDataObject;
+    sc_GlobalDataObject* _appDataObject;
     UIBarButtonItem *_saveButton;
     
     sc_Site* _siteForEdit;
     BOOL editModeEnabled;
     
     sc_ButtonsBuilder *buttonsBuilder;
-    sc_GradientButton *nextButton;
+    sc_GradientButton* nextButton;
 }
 
 -(void)viewDidLoad
@@ -71,9 +71,9 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     [ self initializeActivityIndicator ];
 }
 
-- (void)initializeActivityIndicator
+-(void)initializeActivityIndicator
 {
-    _activityIndicator = [[sc_ActivityIndicator alloc] initWithFrame:self.view.frame];
+    _activityIndicator = [[sc_ActivityIndicator alloc] initWithFrame: self.view.frame];
     [self.view addSubview:_activityIndicator];
 }
 
@@ -152,7 +152,7 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
         return;
     }
     
-    UIViewController *vcToPop = self.navigationController.viewControllers[ vcCount-upStepsCount ];
+    UIViewController* vcToPop = self.navigationController.viewControllers[ vcCount-upStepsCount ];
     [ self.navigationController popToViewController: vcToPop
                                            animated: YES ];
 }
@@ -182,7 +182,7 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
 
 
             id rawSiteEditViewController = [self.storyboard instantiateViewControllerWithIdentifier: @"ListItemsBrowser" ];
-            sc_ListBrowserViewController * siteEditViewController = (sc_ListBrowserViewController *)rawSiteEditViewController;
+            sc_ListBrowserViewController * siteEditViewController = (sc_ListBrowserViewController*)rawSiteEditViewController;
             
             SCUPloadFolderReceived didSelectUploadFolderCallback = ^void(NSString* folder)
             {
@@ -265,13 +265,13 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     [ self.navigationController popViewControllerAnimated: YES ];
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField
+-(BOOL)textFieldShouldReturn:(UITextField*)textField
 {
     [textField resignFirstResponder];
     return YES;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+-(CGFloat)tableView:(UITableView*)tableView heightForFooterInSection:(NSInteger)section
 {
     if (section == 0)
     {
@@ -280,11 +280,11 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     return 0.f;
 }
 
--(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+-(UIView* )tableView:(UITableView*)tableView viewForFooterInSection:(NSInteger)section
 {
     if (section == 0)
     {
-        if(_footerView == nil)
+        if (_footerView == nil)
         {
             _footerView  = [[UIView alloc] init];
             
@@ -295,7 +295,7 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
             CGRect firstButtonFrame = CGRectMake(padding, padding, buttonWidth, buttonHeight);
             CGRect secondButtonFrame = CGRectMake(2*padding + buttonWidth, padding, buttonWidth, buttonHeight);
             
-            sc_GradientButton *secondButton = [ buttonsBuilder getButtonWithTitle: @"Next"
+            sc_GradientButton* secondButton = [ buttonsBuilder getButtonWithTitle: @"Next"
                                                                             style:CUSTOMBUTTONTYPE_IMPORTANT
                                                                            target: self
                                                                          selector: @selector(save:) ];
@@ -303,7 +303,7 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
             [ _footerView addSubview:secondButton ];
             self->nextButton = secondButton;
             
-            sc_GradientButton *firstButton = [ buttonsBuilder getButtonWithTitle: @"Delete"
+            sc_GradientButton* firstButton = [ buttonsBuilder getButtonWithTitle: @"Delete"
                                                                            style: CUSTOMBUTTONTYPE_DANGEROUS
                                                                           target: self
                                                                         selector: @selector(remove:) ];
@@ -315,7 +315,7 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     return _footerView;
 }
 
--(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+-(NSString*)tableView:(UITableView*)tableView titleForHeaderInSection:(NSInteger)section
 {
     return NSLocalizedString(@"New site", nil);
 }

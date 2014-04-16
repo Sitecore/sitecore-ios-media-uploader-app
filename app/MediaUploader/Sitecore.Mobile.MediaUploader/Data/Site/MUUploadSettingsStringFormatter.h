@@ -16,8 +16,8 @@
  */
 -(instancetype)init;
 
--(instancetype)initWithRootMediaPath:( NSString* )rootMediaPath;
+-(instancetype)initWithRootMediaPath:(NSString*)rootMediaPath;
 
--(NSString*)formatSettings:( id<MUUploadSettings, MUUploadSettings_Legacy> )uploadSettings;
+-(NSString*)formatSettings:(id<MUUploadSettings, MUUploadSettings_Legacy> )uploadSettings;
 
 @end

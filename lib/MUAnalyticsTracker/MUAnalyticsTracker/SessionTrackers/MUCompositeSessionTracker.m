@@ -12,7 +12,7 @@
     return nil;
 }
 
--(instancetype)initWithTrackers:( NSArray* )primitiveTrackers
+-(instancetype)initWithTrackers:(NSArray*)primitiveTrackers
 {
     self = [ super init ];
     if ( nil == self )
@@ -26,7 +26,7 @@
 }
 
 
--(void)didLoginWithSite:( id<MUTrackable> )site
+-(void)didLoginWithSite:(id<MUTrackable> )site
 {
     for ( id<MUSessionTracker> tracker in self->_primitiveTrackers )
     {
@@ -35,8 +35,8 @@
 }
 
 
--(void)didLoginFailedForSite:( id<MUTrackable> )site
-                   withError:( NSError* )error
+-(void)didLoginFailedForSite:(id<MUTrackable> )site
+                   withError:(NSError*)error
 {
     for ( id<MUSessionTracker> tracker in self->_primitiveTrackers )
     {
@@ -46,7 +46,7 @@
 }
 
 
--(void)didLogoutFromSite:( id<MUTrackable> )site
+-(void)didLogoutFromSite:(id<MUTrackable> )site
 {
     for ( id<MUSessionTracker> tracker in self->_primitiveTrackers )
     {

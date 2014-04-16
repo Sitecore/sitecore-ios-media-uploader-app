@@ -9,7 +9,7 @@
     return nil;
 }
 
--(instancetype)initWithSessionTracker:( id<MUSessionTracker> )sessionTracker
+-(instancetype)initWithSessionTracker:(id<MUSessionTracker> )sessionTracker
 {
     self = [ super init ];
     if ( nil == self )

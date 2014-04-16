@@ -18,9 +18,9 @@
 @implementation sc_Media
 
 -(id)initWithObjectData:(NSString*) name
-               dateTime:(NSDate* ) dateTime
-               latitude:(NSNumber* ) latitude
-              longitude:(NSNumber* ) longitude
+               dateTime:(NSDate*) dateTime
+               latitude:(NSNumber*) latitude
+              longitude:(NSNumber*) longitude
     locationDescription:(NSString*)locationDescription
             countryCode:(NSString*) countryCode
                cityCode:(NSString*) cityCode

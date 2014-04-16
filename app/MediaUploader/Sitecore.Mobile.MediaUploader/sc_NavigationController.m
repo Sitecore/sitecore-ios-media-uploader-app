@@ -18,7 +18,7 @@
 {
     sc_BaseTheme *_theme;
 }
-- (void)viewDidLoad
+-(void)viewDidLoad
 {
     [ super viewDidLoad ];
 

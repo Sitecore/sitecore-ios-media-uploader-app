@@ -9,6 +9,6 @@ typedef enum _CustomButtonType {
 
 @interface sc_GradientButton : UIButton
 
--(void)setButtonWithStyle: (CustomButtonType) customButtonType;
+-(void)setButtonWithStyle:(CustomButtonType) customButtonType;
 
 @end

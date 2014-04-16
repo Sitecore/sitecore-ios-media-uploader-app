@@ -14,8 +14,8 @@
 @interface sc_SitesSelectionViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic) IBOutlet UITableView *sitesTableView;
-@property (nonatomic) IBOutlet UILabel *headerLabel;
-@property ( nonatomic ) sc_GlobalDataObject *appDataObject;
+@property (nonatomic) IBOutlet UILabel* headerLabel;
+@property ( nonatomic ) sc_GlobalDataObject* appDataObject;
 @property ( nonatomic ) NSString* selectionType;
 
 @end

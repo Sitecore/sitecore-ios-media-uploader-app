@@ -29,7 +29,7 @@
     return 0.6f;
 }
 
-+(UIImage* )resizeImageToSize:(UIImage* )image uploadImageSize:(int)uploadImageSize
++(UIImage*)resizeImageToSize:(UIImage*)image uploadImageSize:(int)uploadImageSize
 {
     if (uploadImageSize == UPLODIMAGESIZE_ACTUAL)
     {
@@ -65,7 +65,7 @@
     return [defaults integerForKey: @"UploadImageSize"];
 }
 
-+(UIImage* )getVideoThumbnail:(NSURL* ) videoUrl
++(UIImage*)getVideoThumbnail:(NSURL*) videoUrl
 {
     AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:videoUrl options:nil];
     AVAssetImageGenerator *generate = [[AVAssetImageGenerator alloc] initWithAsset:asset];
@@ -86,7 +86,7 @@
     return uuidString;
 }
 
-+(UIImage* )normalize: (UIImage* )image forOrientation:(UIImageOrientation)orientation
++(UIImage*)normalize:(UIImage*)image forOrientation:(UIImageOrientation)orientation
 {
     if (orientation == UIImageOrientationUp || orientation == UIImageOrientationUpMirrored) return image;
     

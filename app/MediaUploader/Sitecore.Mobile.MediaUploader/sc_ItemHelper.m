@@ -18,7 +18,7 @@
    return @"master";
 }
 
-+(SCApiSession *)getContext:(sc_Site*) site
++(SCApiSession*)getContext:(sc_Site*) site
 {
     NSString* fullUrl = [NSString stringWithFormat:@"%@%@", site.siteProtocol, site.siteUrl ];
     
@@ -41,7 +41,7 @@
     return [NSString stringWithFormat: @"%@%@", [ sc_Site mediaLibraryDefaultNameWithSlash: YES ], site.uploadFolderPathInsideMediaLibrary];
 }
 
-+(sc_CellType) scItemType: (SCItem *) item
++(sc_CellType) scItemType:(SCItem*) item
 {
     
     if ([ item.itemTemplate isEqualToString: MEDIA_FOLDER_PATH ] || [ item.itemTemplate isEqualToString: ITEM_TEMPLATE_PATH ])
@@ -57,7 +57,7 @@
     return UnknownCellType;
 }
 
-+(NSString*) itemType: (SCItem *) item
++(NSString*) itemType:(SCItem*) item
 {
         
     if ([ item.itemTemplate isEqualToString: MEDIA_FOLDER_PATH ] || [ item.itemTemplate isEqualToString: ITEM_TEMPLATE_PATH ])

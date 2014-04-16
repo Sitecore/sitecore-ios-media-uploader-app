@@ -14,7 +14,7 @@
 @property (nonatomic) IBOutlet UIButton *backButton;
 @property (nonatomic) IBOutlet UIBarButtonItem *addSiteButton;
 @property (nonatomic) IBOutlet UITableView *sitesTableView;
-@property (nonatomic) sc_GlobalDataObject *appDataObject;
+@property (nonatomic) sc_GlobalDataObject* appDataObject;
 
 -(void)reload;
 @end

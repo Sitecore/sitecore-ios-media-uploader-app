@@ -21,16 +21,16 @@
 @property (nonatomic) IBOutlet UIButton *saveButton;
 @property (nonatomic) IBOutlet UIImageView *imageView;
 @property (nonatomic) IBOutlet UITextField *name;
-@property (nonatomic) IBOutlet UILabel *locationDescription;
+@property (nonatomic) IBOutlet UILabel* locationDescription;
 @property (nonatomic) NSURL* videoUrl;
 @property (nonatomic) NSURL* imageUrl;
-@property (nonatomic) IBOutlet UIView *locationView;
+@property (nonatomic) IBOutlet UIView* locationView;
 @property (nonatomic) IBOutlet UIBarButtonItem *settingsButton;
 
-@property ( nonatomic ) sc_GlobalDataObject *appDataObject;
+@property ( nonatomic ) sc_GlobalDataObject* appDataObject;
 
-- (IBAction)useCameraRoll: (id)sender;
-- (IBAction)dismissKeyboardOnTap:(id)sender;
+-(IBAction)useCameraRoll:(id)sender;
+-(IBAction)dismissKeyboardOnTap:(id)sender;
 
 -(void) reload;
 @end

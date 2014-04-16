@@ -4,7 +4,7 @@
 
 @implementation MUFlurrySessionTracker
 
--(NSString*)messageForNewSession:( id<MUTrackable> )site
+-(NSString*)messageForNewSession:(id<MUTrackable> )site
 {
     NSString* sessionInfo =
     [ NSString stringWithFormat:
@@ -14,7 +14,7 @@
     return sessionInfo;
 }
 
--(NSDictionary*)dictionaryFromSession:( id<MUTrackable> )site
+-(NSDictionary*)dictionaryFromSession:(id<MUTrackable> )site
 {
     // TODO : use specific properties of sc_Site instead
     NSDictionary* result =
@@ -25,7 +25,7 @@
     return result;
 }
 
--(void)didLoginWithSite:( id<MUTrackable> )site
+-(void)didLoginWithSite:(id<MUTrackable> )site
 {
     NSDictionary* sessionParams = [ self dictionaryFromSession: site ];
     
@@ -34,8 +34,8 @@
 }
 
 
--(void)didLoginFailedForSite:( id<MUTrackable> )site
-                   withError:( NSError* )error
+-(void)didLoginFailedForSite:(id<MUTrackable> )site
+                   withError:(NSError*)error
 {
     NSString* sessionInfo = [ self messageForNewSession: site ];
     
@@ -44,7 +44,7 @@
                 error: error ];
 }
 
--(void)didLogoutFromSite:( id<MUTrackable> )site
+-(void)didLogoutFromSite:(id<MUTrackable> )site
 {
     NSDictionary* sessionParams = [ self dictionaryFromSession: site ];
     

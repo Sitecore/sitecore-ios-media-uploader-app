@@ -13,7 +13,7 @@
  
  @param site An object that holds the infomation about current session.
  */
--(void)didLoginWithSite:( id<MUTrackable> )site;
+-(void)didLoginWithSite:(id<MUTrackable> )site;
 
 
 
@@ -23,8 +23,8 @@
  @param site An object that holds the infomation about new session.
  @param error An authentication error.
  */
--(void)didLoginFailedForSite:( id<MUTrackable> )site
-                   withError:( NSError* )error;
+-(void)didLoginFailedForSite:(id<MUTrackable> )site
+                   withError:(NSError*)error;
 
 
 /**
@@ -32,6 +32,6 @@
  
  @param site An object that holds the infomation about new session.
  */
--(void)didLogoutFromSite:( id<MUTrackable> )site;
+-(void)didLogoutFromSite:(id<MUTrackable> )site;
 
 @end

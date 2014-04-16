@@ -3,7 +3,7 @@
 @implementation sc_ImageScaling
 
 
-+(UIImage* )scaleImage:(UIImage* )image toSize:(CGSize)size
++(UIImage*)scaleImage:(UIImage*)image toSize:(CGSize)size
 {
     CGFloat scale = [ self scaleCoefficientToResizeImageWithSize: image.size
                                                           toSize: size ];

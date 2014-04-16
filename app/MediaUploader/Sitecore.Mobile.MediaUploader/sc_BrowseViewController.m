@@ -8,17 +8,18 @@
 #import "sc_QuickImageViewController.h"
 #import "sc_GridBrowserRequestBuilder.h"
 
+
 @interface sc_BrowseViewController ()<SCItemsBrowserDelegate>
 
-@property (nonatomic, strong) IBOutlet sc_BrowseViewCellFactory *cellFactory;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingProgress;
-@property (weak, nonatomic) IBOutlet UITextView *itemPathTextView;
-@property (strong, nonatomic) IBOutlet UICollectionViewFlowLayout *itemsBrowserGridLayout;
+@property (nonatomic, strong) IBOutlet sc_BrowseViewCellFactory* cellFactory;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView* loadingProgress;
+@property (weak, nonatomic) IBOutlet UITextView* itemPathTextView;
+@property (strong, nonatomic) IBOutlet UICollectionViewFlowLayout* itemsBrowserGridLayout;
 
-@property (nonatomic) IBOutlet UILabel *singleSiteLabel;
-@property (nonatomic) IBOutlet sc_GradientButton *siteButton;
-@property (nonatomic) IBOutlet UILabel *siteLabel;
-@property (nonatomic) IBOutlet UIView *singleSiteBgView;
+@property (nonatomic) IBOutlet UILabel* singleSiteLabel;
+@property (nonatomic) IBOutlet sc_GradientButton* siteButton;
+@property (nonatomic) IBOutlet UILabel* siteLabel;
+@property (nonatomic) IBOutlet UIView* singleSiteBgView;
 
 -(IBAction)forceRefresh:(id)selector;
 
@@ -30,8 +31,8 @@
     SCExtendedApiSession* _apiSession;
     sc_Site* _siteForBrowse;
     
-    sc_GlobalDataObject *_appDataObject;
-    sc_GridBrowserRequestBuilder *_requestBuilder;
+    sc_GlobalDataObject* _appDataObject;
+    sc_GridBrowserRequestBuilder* _requestBuilder;
     
     BOOL browserMustBeReloaded;
 }
@@ -64,7 +65,7 @@
 {
     self->_siteForBrowse = self->_appDataObject.sitesManager.siteForBrowse;
     
-    self->_legacyApiSession = [ sc_ItemHelper getContext:self->_siteForBrowse ];
+    self->_legacyApiSession = [ sc_ItemHelper getContext: self->_siteForBrowse ];
     
     self->_apiSession = self->_legacyApiSession.extendedApiSession;
     
@@ -98,7 +99,7 @@
     self.itemsBrowserGridLayout.itemSize = CGSizeMake( 100, 100 );
 }
 
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+-(void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"selectBrowse"])
     {
@@ -125,13 +126,13 @@
     [ self.cellFactory.itemsBrowserController forceRefreshData ];
 }
 
--(void)didFailLoadingRootItemWithError:( NSError* )error
+-(void)didFailLoadingRootItemWithError:(NSError*)error
 {
     [ sc_ErrorHelper showError: error.localizedDescription ];
     [ self endLoading ];
 }
 
--(void)didLoadRootItem:( SCItem* )rootItem
+-(void)didLoadRootItem:(SCItem*)rootItem
 {
     self.cellFactory.itemsBrowserController.rootItem = rootItem;
     
@@ -147,21 +148,21 @@
 
 #pragma mark -
 #pragma mark SCItemsBrowserDelegate
--(void)itemsBrowser:( id )sender
-didReceiveLevelProgressNotification:( id )progressInfo
+-(void)itemsBrowser:(id)sender
+didReceiveLevelProgressNotification:(id)progressInfo
 {
     [ self startLoading ];
 }
 
--(void)itemsBrowser:( id )sender
-levelLoadingFailedWithError:( NSError* )error
+-(void)itemsBrowser:(id)sender
+levelLoadingFailedWithError:(NSError*)error
 {
     [ sc_ErrorHelper showError: error.localizedDescription ];
     [ self endLoading ];
 }
 
--(void)itemsBrowser:( id )sender
-didLoadLevelForItem:( SCItem* )levelParentItem
+-(void)itemsBrowser:(id)sender
+didLoadLevelForItem:(SCItem*)levelParentItem
 {
     NSParameterAssert( nil != levelParentItem );
     
@@ -179,8 +180,8 @@ didLoadLevelForItem:( SCItem* )levelParentItem
                                     animated: NO ];
 }
 
--(BOOL)itemsBrowser:( id )sender
-shouldLoadLevelForItem:( SCItem* )levelParentItem
+-(BOOL)itemsBrowser:(id)sender
+shouldLoadLevelForItem:(SCItem*)levelParentItem
 {
     if ( levelParentItem.isFolder || levelParentItem.hasChildren )
     {
@@ -188,27 +189,28 @@ shouldLoadLevelForItem:( SCItem* )levelParentItem
     }
     else
     {
-        sc_QuickImageViewController *quickImageViewController = (sc_QuickImageViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"sc_QuickImageViewController"];
-        quickImageViewController.items = [ self itemsForQuickViewControllerForLevelItem:levelParentItem ];
-        quickImageViewController.selectedImage = [ quickImageViewController.items indexOfObject:levelParentItem ];
+        sc_QuickImageViewController* quickImageViewController = (sc_QuickImageViewController*)[self.storyboard instantiateViewControllerWithIdentifier: @"sc_QuickImageViewController"];
+        quickImageViewController.items = [ self itemsForQuickViewControllerForLevelItem: levelParentItem ];
+        quickImageViewController.selectedImage = [ quickImageViewController.items indexOfObject: levelParentItem ];
         quickImageViewController.session = self->_legacyApiSession;
-        [self.navigationController pushViewController:quickImageViewController animated:YES];
+        [self.navigationController pushViewController: quickImageViewController animated: YES];
 
     }
     
     return NO;
 }
 
--(NSMutableArray *)itemsForQuickViewControllerForLevelItem:(SCItem *)levelItem
+-(NSMutableArray*)itemsForQuickViewControllerForLevelItem:(SCItem*)levelItem
 {
     NSArray*  items = [ levelItem.parent.readChildren mutableCopy ];
     items = [ items sortedArrayUsingComparator: [ self sortResultComparatorForItemsBrowser:nil ] ];
     return [ items mutableCopy ];
 }
 
--(NSComparator)sortResultComparatorForItemsBrowser:( id )sender
+-(NSComparator)sortResultComparatorForItemsBrowser:(id)sender
 {
-    return ^NSComparisonResult(SCItem *obj1, SCItem *obj2) {
+    NSComparator result = ^NSComparisonResult(SCItem* obj1, SCItem* obj2)
+    {
         
         if ( ![obj1 isMemberOfClass:[SCItem class]] )
         {
@@ -233,7 +235,8 @@ shouldLoadLevelForItem:( SCItem* )levelParentItem
         return [ obj1.displayName compare: obj2.displayName ];
         
     };
+    
+    return result;
 }
-
 
 @end

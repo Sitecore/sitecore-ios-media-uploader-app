@@ -18,10 +18,10 @@
 @property (nonatomic) IBOutlet UIButton *abortButton;
 @property (nonatomic) IBOutlet UISegmentedControl *filterControl;
 
-@property (nonatomic) sc_GlobalDataObject *appDataObject;
+@property (nonatomic) sc_GlobalDataObject* appDataObject;
 
-- (void) initWithMediaItems: (NSArray*) mediaItems
+-(void) initWithMediaItems:(NSArray*) mediaItems
                       image:(UIImage*) image
-     isPendingIemsUploading: (BOOL) isPendingIemsUploading;
--(IBAction)changeFilter:(UISegmentedControl *)sender;
+     isPendingIemsUploading:(BOOL) isPendingIemsUploading;
+-(IBAction)changeFilter:(UISegmentedControl*)sender;
 @end

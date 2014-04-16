@@ -173,7 +173,6 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 
 
 #pragma mark - Start and stop notifier
-
 - (BOOL)startNotifier
 {
 	BOOL returnValue = NO;

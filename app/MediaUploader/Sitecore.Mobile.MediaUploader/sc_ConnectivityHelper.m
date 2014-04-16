@@ -11,7 +11,7 @@
 
 @implementation sc_ConnectivityHelper
 
-+ (BOOL)connectedToInternet
++(BOOL)connectedToInternet
 {
     Reachability *curReach = [Reachability reachabilityForInternetConnection];
 

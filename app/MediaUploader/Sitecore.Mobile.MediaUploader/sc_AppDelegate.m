@@ -20,7 +20,7 @@
     [ Crashlytics startWithAPIKey: CRASHLYTICS_API_KEY ];
 }
 
--(void)enableFlurryUsingLaunchOptions:(NSDictionary *)launchOptions
+-(void)enableFlurryUsingLaunchOptions:(NSDictionary*)launchOptions
 {
     static NSString* const FLURRY_API_KEY = @"K457XY59FHYQCT76JCX3";
     
@@ -45,7 +45,8 @@
               withOptions: launchOptions ];
 }
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+-(BOOL)application:(UIApplication*)application
+didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     _appDataObject = [[sc_GlobalDataObject alloc] init];
     
@@ -65,10 +66,11 @@
 
 -(void)initializeStoryBoardBasedOnScreenSize
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName: @"MainStoryboard_iPhone"
+                                                         bundle: nil];
     _appDataObject.isIpad = false;
     
-    UIViewController *initialViewController = [storyboard instantiateInitialViewController];
+    UIViewController* initialViewController = [storyboard instantiateInitialViewController];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController  = initialViewController;
     

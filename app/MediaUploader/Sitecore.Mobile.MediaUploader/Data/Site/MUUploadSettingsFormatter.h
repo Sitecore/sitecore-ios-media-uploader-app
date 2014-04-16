@@ -16,6 +16,6 @@
  
  @return Serialized data. Usually it is NSString or NSData.
  */
--(id)formatSettings:( id<MUUploadSettings> )uploadSettings;
+-(id)formatSettings:(id<MUUploadSettings> )uploadSettings;
 
 @end

@@ -27,7 +27,7 @@
  
  
  */
--(instancetype)initWithTrackers:( NSArray* )primitiveTrackers;
+-(instancetype)initWithTrackers:(NSArray*)primitiveTrackers;
 
 
 

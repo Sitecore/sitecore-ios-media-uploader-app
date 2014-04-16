@@ -5,7 +5,7 @@
     UIImageView *_iconView;
 }
 
--(instancetype)initWithFrame:( CGRect )frame
+-(instancetype)initWithFrame:(CGRect )frame
 {
     self = [ super initWithFrame: frame ];
     if ( nil == self )
@@ -18,7 +18,7 @@
     return self;
 }
 
--(UIImage* )iconImage
+-(UIImage*)iconImage
 {
     return [UIImage imageNamed:@"up"];
 }
