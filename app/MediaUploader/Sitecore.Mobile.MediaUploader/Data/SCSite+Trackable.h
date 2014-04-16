@@ -1,10 +1,4 @@
-@interface SCSite (Trackable)<
-MUTrackableObject,
-
-MUUploadSettings,
-MUUploadSettingsRecordState,
-MUUploadSettings_Legacy
->
+@interface SCSite (Trackable)<MUTrackableObject>
 
 @property ( nonatomic, readonly ) NSString* description;
 

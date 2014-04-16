@@ -5,6 +5,11 @@
 #import <SCInstanceStorage/SessionInfo/MUUploadSettingsRecordState.h>
 
 @interface SCSite : NSObject
+<
+    MUUploadSettings,
+    MUUploadSettingsRecordState,
+    MUUploadSettings_Legacy
+>
 
 @property ( nonatomic ) NSString* siteProtocol;
 @property ( nonatomic ) NSString* siteUrl;
