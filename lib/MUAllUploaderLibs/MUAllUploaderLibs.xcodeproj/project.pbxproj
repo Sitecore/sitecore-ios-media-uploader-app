@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E26869818FE9B7800033905 /* libMUFlurryWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E26869118FE9B7100033905 /* libMUFlurryWrapper.a */; };
 		7E46305218FE768D009E0F7F /* libiOSReachabilityFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC347218FE74BE007D540D /* libiOSReachabilityFramework.a */; };
+		7E62FBE718FEA06100D88F70 /* libMUCrashlyticsWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E26868F18FE9B7100033905 /* libMUCrashlyticsWrapper.a */; };
 		7EAC343418FE748B007D540D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC343318FE748B007D540D /* Foundation.framework */; };
 		7EAC343918FE748B007D540D /* MUAllUploaderLibs.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EAC343818FE748B007D540D /* MUAllUploaderLibs.h */; };
 		7EAC343B18FE748B007D540D /* MUAllUploaderLibs.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC343A18FE748B007D540D /* MUAllUploaderLibs.m */; };
@@ -17,9 +19,66 @@
 		7EAC344818FE748B007D540D /* libMUAllUploaderLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC343018FE748B007D540D /* libMUAllUploaderLibs.a */; };
 		7EAC344E18FE748B007D540D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EAC344C18FE748B007D540D /* InfoPlist.strings */; };
 		7EAC345018FE748B007D540D /* MUAllUploaderLibsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC344F18FE748B007D540D /* MUAllUploaderLibsTests.m */; };
+		7EE3AAEE18FE989500C68E85 /* libMUAnalyticsTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E41A0D918FE986000D601EF /* libMUAnalyticsTracker.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7E26868518FE9B7100033905 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E26863A18FE99EF00033905;
+			remoteInfo = MUCrashlyticsWrapper;
+		};
+		7E26868718FE9B7100033905 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E26866118FE9A8300033905;
+			remoteInfo = MUFlurryWrapper;
+		};
+		7E26868E18FE9B7100033905 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E26863B18FE99EF00033905;
+			remoteInfo = MUCrashlyticsWrapper;
+		};
+		7E26869018FE9B7100033905 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E26866218FE9A8300033905;
+			remoteInfo = MUFlurryWrapper;
+		};
+		7E26869218FE9B7100033905 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E26864818FE99EF00033905;
+			remoteInfo = MUCrashlyticsWrapperTests;
+		};
+		7E26869418FE9B7100033905 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E26866F18FE9A8300033905;
+			remoteInfo = MUFlurryWrapperTests;
+		};
+		7E41A0D818FE986000D601EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E41A0AA18FE97B900D601EF;
+			remoteInfo = MUAnalyticsTracker;
+		};
+		7E41A0DA18FE986000D601EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E41A0BA18FE97B900D601EF;
+			remoteInfo = MUAnalyticsTrackerTests;
+		};
 		7E46304D18FE75F9009E0F7F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7EAC346D18FE74BE007D540D /* iOSReachabilityFramework.xcodeproj */;
@@ -55,6 +114,13 @@
 			remoteGlobalIDString = B4E7DA7E1679301500C01DFA;
 			remoteInfo = iOSReachabilityFramework;
 		};
+		7EE3AAE818FE989200C68E85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E41A0A918FE97B900D601EF;
+			remoteInfo = MUAnalyticsTracker;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,6 +137,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MUAnalyticsTracker.xcodeproj; path = ../MUAnalyticsTracker/MUAnalyticsTracker.xcodeproj; sourceTree = "<group>"; };
 		7EAC343018FE748B007D540D /* libMUAllUploaderLibs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMUAllUploaderLibs.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EAC343318FE748B007D540D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7EAC343718FE748B007D540D /* MUAllUploaderLibs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MUAllUploaderLibs-Prefix.pch"; sourceTree = "<group>"; };
@@ -91,6 +158,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E62FBE718FEA06100D88F70 /* libMUCrashlyticsWrapper.a in Frameworks */,
+				7E26869818FE9B7800033905 /* libMUFlurryWrapper.a in Frameworks */,
+				7EE3AAEE18FE989500C68E85 /* libMUAnalyticsTracker.a in Frameworks */,
 				7E46305218FE768D009E0F7F /* libiOSReachabilityFramework.a in Frameworks */,
 				7EAC343418FE748B007D540D /* Foundation.framework in Frameworks */,
 			);
@@ -110,6 +180,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E41A0D418FE986000D601EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E41A0D918FE986000D601EF /* libMUAnalyticsTracker.a */,
+				7E26868F18FE9B7100033905 /* libMUCrashlyticsWrapper.a */,
+				7E26869118FE9B7100033905 /* libMUFlurryWrapper.a */,
+				7E41A0DB18FE986000D601EF /* MUAnalyticsTrackerTests.xctest */,
+				7E26869318FE9B7100033905 /* MUCrashlyticsWrapperTests.xctest */,
+				7E26869518FE9B7100033905 /* MUFlurryWrapperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7EAC342718FE748B007D540D = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +263,7 @@
 		7EAC346218FE749C007D540D /* lib  */ = {
 			isa = PBXGroup;
 			children = (
+				7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */,
 				7EAC346418FE74B9007D540D /* SCInstanceStorage.xcodeproj */,
 			);
 			name = "lib ";
@@ -224,6 +308,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				7E26868618FE9B7100033905 /* PBXTargetDependency */,
+				7E26868818FE9B7100033905 /* PBXTargetDependency */,
+				7EE3AAE918FE989200C68E85 /* PBXTargetDependency */,
 				7E46304E18FE75F9009E0F7F /* PBXTargetDependency */,
 			);
 			name = MUAllUploaderLibs;
@@ -274,6 +361,10 @@
 					ProjectRef = 7EAC346D18FE74BE007D540D /* iOSReachabilityFramework.xcodeproj */;
 				},
 				{
+					ProductGroup = 7E41A0D418FE986000D601EF /* Products */;
+					ProjectRef = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
+				},
+				{
 					ProductGroup = 7EAC346518FE74B9007D540D /* Products */;
 					ProjectRef = 7EAC346418FE74B9007D540D /* SCInstanceStorage.xcodeproj */;
 				},
@@ -287,6 +378,48 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		7E26868F18FE9B7100033905 /* libMUCrashlyticsWrapper.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMUCrashlyticsWrapper.a;
+			remoteRef = 7E26868E18FE9B7100033905 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E26869118FE9B7100033905 /* libMUFlurryWrapper.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMUFlurryWrapper.a;
+			remoteRef = 7E26869018FE9B7100033905 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E26869318FE9B7100033905 /* MUCrashlyticsWrapperTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MUCrashlyticsWrapperTests.xctest;
+			remoteRef = 7E26869218FE9B7100033905 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E26869518FE9B7100033905 /* MUFlurryWrapperTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MUFlurryWrapperTests.xctest;
+			remoteRef = 7E26869418FE9B7100033905 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E41A0D918FE986000D601EF /* libMUAnalyticsTracker.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMUAnalyticsTracker.a;
+			remoteRef = 7E41A0D818FE986000D601EF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E41A0DB18FE986000D601EF /* MUAnalyticsTrackerTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MUAnalyticsTrackerTests.xctest;
+			remoteRef = 7E41A0DA18FE986000D601EF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		7EAC346A18FE74B9007D540D /* libSCInstanceStorage.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -341,6 +474,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7E26868618FE9B7100033905 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MUCrashlyticsWrapper;
+			targetProxy = 7E26868518FE9B7100033905 /* PBXContainerItemProxy */;
+		};
+		7E26868818FE9B7100033905 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MUFlurryWrapper;
+			targetProxy = 7E26868718FE9B7100033905 /* PBXContainerItemProxy */;
+		};
 		7E46304E18FE75F9009E0F7F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = iOSReachabilityFramework;
@@ -350,6 +493,11 @@
 			isa = PBXTargetDependency;
 			target = 7EAC342F18FE748B007D540D /* MUAllUploaderLibs */;
 			targetProxy = 7EAC344618FE748B007D540D /* PBXContainerItemProxy */;
+		};
+		7EE3AAE918FE989200C68E85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MUAnalyticsTracker;
+			targetProxy = 7EE3AAE818FE989200C68E85 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -358,9 +358,6 @@
 		7E01A1AD18FC1B770070D4EE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */; };
 		7E01A1AE18FC1B770070D4EE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */; };
 		7E01A1AF18FC1B770070D4EE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */; };
-		7E01A1BC18FC30FF0070D4EE /* MUEventsTrackerPOD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E01A1BB18FC30FF0070D4EE /* MUEventsTrackerPOD.m */; };
-		7E01A1BD18FC30FF0070D4EE /* MUEventsTrackerPOD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E01A1BB18FC30FF0070D4EE /* MUEventsTrackerPOD.m */; };
-		7E01A1BE18FC30FF0070D4EE /* MUEventsTrackerPOD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E01A1BB18FC30FF0070D4EE /* MUEventsTrackerPOD.m */; };
 		7E01A1C118FC325D0070D4EE /* MUEventsTrackerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E01A1C018FC325D0070D4EE /* MUEventsTrackerFactory.m */; };
 		7E01A1C218FC325D0070D4EE /* MUEventsTrackerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E01A1C018FC325D0070D4EE /* MUEventsTrackerFactory.m */; };
 		7E01A1C318FC325D0070D4EE /* MUEventsTrackerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E01A1C018FC325D0070D4EE /* MUEventsTrackerFactory.m */; };
@@ -370,15 +367,6 @@
 		7E41A0A018FE7B1900D601EF /* SitecoreItemsBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C9E27618E5CF6F004C7A88 /* SitecoreItemsBrowser.framework */; };
 		7E46305918FE76A3009E0F7F /* libMUAllUploaderLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC345F18FE7495007D540D /* libMUAllUploaderLibs.a */; };
 		7E46305C18FE76CB009E0F7F /* libMUAllUploaderLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC345F18FE7495007D540D /* libMUAllUploaderLibs.a */; };
-		7E69479B18FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E69479818FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m */; };
-		7E69479C18FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E69479818FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m */; };
-		7E69479D18FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E69479818FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m */; };
-		7E69479E18FD5B9200923AB6 /* MUFlurrySessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E69479A18FD5B9200923AB6 /* MUFlurrySessionTracker.m */; };
-		7E69479F18FD5B9200923AB6 /* MUFlurrySessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E69479A18FD5B9200923AB6 /* MUFlurrySessionTracker.m */; };
-		7E6947A018FD5B9200923AB6 /* MUFlurrySessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E69479A18FD5B9200923AB6 /* MUFlurrySessionTracker.m */; };
-		7E6947A318FD5C8700923AB6 /* MUCompositeSessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6947A218FD5C8700923AB6 /* MUCompositeSessionTracker.m */; };
-		7E6947A418FD5C8700923AB6 /* MUCompositeSessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6947A218FD5C8700923AB6 /* MUCompositeSessionTracker.m */; };
-		7E6947A518FD5C8700923AB6 /* MUCompositeSessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6947A218FD5C8700923AB6 /* MUCompositeSessionTracker.m */; };
 		7E6CE9C618FD3FB000C86ABA /* Flurry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6CE9C518FD3FB000C86ABA /* Flurry.framework */; };
 		7E6CE9C718FD3FB000C86ABA /* Flurry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6CE9C518FD3FB000C86ABA /* Flurry.framework */; };
 		7E6CE9C818FD3FB000C86ABA /* Flurry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6CE9C518FD3FB000C86ABA /* Flurry.framework */; };
@@ -810,22 +798,10 @@
 		78E72458184E040700E9C1FC /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		78E72459184E040700E9C1FC /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		7E01A1B118FC2E500070D4EE /* MUEventsTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUEventsTracker.h; sourceTree = "<group>"; };
-		7E01A1B218FC2EA10070D4EE /* MUTrackable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUTrackable.h; sourceTree = "<group>"; };
-		7E01A1B318FC2F780070D4EE /* MUSessionTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUSessionTracker.h; sourceTree = "<group>"; };
-		7E01A1BA18FC30FF0070D4EE /* MUEventsTrackerPOD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUEventsTrackerPOD.h; sourceTree = "<group>"; };
-		7E01A1BB18FC30FF0070D4EE /* MUEventsTrackerPOD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUEventsTrackerPOD.m; sourceTree = "<group>"; };
 		7E01A1BF18FC325D0070D4EE /* MUEventsTrackerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUEventsTrackerFactory.h; sourceTree = "<group>"; };
 		7E01A1C018FC325D0070D4EE /* MUEventsTrackerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUEventsTrackerFactory.m; sourceTree = "<group>"; };
-		7E69479718FD5B9200923AB6 /* MUCrashlyticsSessionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUCrashlyticsSessionTracker.h; sourceTree = "<group>"; };
-		7E69479818FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUCrashlyticsSessionTracker.m; sourceTree = "<group>"; };
-		7E69479918FD5B9200923AB6 /* MUFlurrySessionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUFlurrySessionTracker.h; sourceTree = "<group>"; };
-		7E69479A18FD5B9200923AB6 /* MUFlurrySessionTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUFlurrySessionTracker.m; sourceTree = "<group>"; };
-		7E6947A118FD5C8700923AB6 /* MUCompositeSessionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUCompositeSessionTracker.h; sourceTree = "<group>"; };
-		7E6947A218FD5C8700923AB6 /* MUCompositeSessionTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUCompositeSessionTracker.m; sourceTree = "<group>"; };
 		7E6947A618FD700900923AB6 /* GoogleAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAnalytics.framework; sourceTree = "<group>"; };
 		7E6947AA18FD751000923AB6 /* GoogleTagManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleTagManager.framework; sourceTree = "<group>"; };
-		7E6CE9B718FD0D4800C86ABA /* MUActivityTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUActivityTracker.h; sourceTree = "<group>"; };
 		7E6CE9BC18FD141200C86ABA /* MUUploadSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettings.h; sourceTree = "<group>"; };
 		7E6CE9BD18FD141200C86ABA /* MUUploadSettings_Legacy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettings_Legacy.h; sourceTree = "<group>"; };
 		7E6CE9BE18FD141200C86ABA /* MUUploadSettingsRecordState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettingsRecordState.h; sourceTree = "<group>"; };
@@ -1435,30 +1411,10 @@
 		7E01A1B018FC2E2F0070D4EE /* Tracking */ = {
 			isa = PBXGroup;
 			children = (
-				7E6CE9B718FD0D4800C86ABA /* MUActivityTracker.h */,
-				7E69479618FD5B9200923AB6 /* SessionTrackers */,
-				7E01A1B318FC2F780070D4EE /* MUSessionTracker.h */,
-				7E01A1B118FC2E500070D4EE /* MUEventsTracker.h */,
-				7E01A1B218FC2EA10070D4EE /* MUTrackable.h */,
-				7E01A1BA18FC30FF0070D4EE /* MUEventsTrackerPOD.h */,
-				7E01A1BB18FC30FF0070D4EE /* MUEventsTrackerPOD.m */,
 				7E01A1BF18FC325D0070D4EE /* MUEventsTrackerFactory.h */,
 				7E01A1C018FC325D0070D4EE /* MUEventsTrackerFactory.m */,
 			);
 			path = Tracking;
-			sourceTree = "<group>";
-		};
-		7E69479618FD5B9200923AB6 /* SessionTrackers */ = {
-			isa = PBXGroup;
-			children = (
-				7E6947A118FD5C8700923AB6 /* MUCompositeSessionTracker.h */,
-				7E6947A218FD5C8700923AB6 /* MUCompositeSessionTracker.m */,
-				7E69479718FD5B9200923AB6 /* MUCrashlyticsSessionTracker.h */,
-				7E69479818FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m */,
-				7E69479918FD5B9200923AB6 /* MUFlurrySessionTracker.h */,
-				7E69479A18FD5B9200923AB6 /* MUFlurrySessionTracker.m */,
-			);
-			path = SessionTrackers;
 			sourceTree = "<group>";
 		};
 		7E6CE9BB18FD141200C86ABA /* Site */ = {
@@ -2029,7 +1985,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				65569B28176293B600A16A0A /* sc_Site.m in Sources */,
-				7E6947A318FD5C8700923AB6 /* MUCompositeSessionTracker.m in Sources */,
 				78B01F56187EECC7006D48C9 /* sc_Constans.m in Sources */,
 				7872A6F718EC049600581E03 /* sc_LevelUpGridCell.m in Sources */,
 				7E01A1C118FC325D0070D4EE /* MUEventsTrackerFactory.m in Sources */,
@@ -2041,12 +1996,10 @@
 				78CB2A9218F43DB500BDA6B0 /* sc_GridBrowserRequestBuilder.m in Sources */,
 				6599A553175B9B410095775D /* sc_UploadViewController.m in Sources */,
 				654ECE4B175E71B300509490 /* sc_SettingsViewController.m in Sources */,
-				7E01A1BC18FC30FF0070D4EE /* MUEventsTrackerPOD.m in Sources */,
 				78D4A9AE1886A99D00CC44B4 /* sc_ImageScaling.m in Sources */,
 				78D3709A188563B5005A7470 /* sc_ResourseCleaner.m in Sources */,
 				65569B301763B8A000A16A0A /* sc_AppDataObject.m in Sources */,
 				65569B331763B8B400A16A0A /* sc_GlobalDataObject.m in Sources */,
-				7E69479B18FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m in Sources */,
 				4F6B71A41763E20800CE3094 /* sc_QuickImageViewController.m in Sources */,
 				78CC7C6818FC2C5000E9679A /* sc_ItemsForUploadManager.m in Sources */,
 				65FBC2231770D4EF002437A5 /* sc_SitesSelectionViewController.m in Sources */,
@@ -2064,7 +2017,6 @@
 				78CC1EF818EAA2E6003608CD /* sc_BrowseViewController.m in Sources */,
 				7872A6FB18EC100700581E03 /* sc_SitesManager.m in Sources */,
 				653D5B2B17A85A5300754C9C /* sc_UploadItem.m in Sources */,
-				7E69479E18FD5B9200923AB6 /* MUFlurrySessionTracker.m in Sources */,
 				7ED8FD5818FE612400AD2B33 /* MUUploadSettingsStringFormatter.m in Sources */,
 				7836AF801871BBF500190D85 /* sc_UploadItemStatus.m in Sources */,
 				78D62BBB185F367C00FF7ADC /* sc_UploadItemManager.m in Sources */,
@@ -2089,7 +2041,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				78108123189021E300E8EFD7 /* sc_Site.m in Sources */,
-				7E6947A518FD5C8700923AB6 /* MUCompositeSessionTracker.m in Sources */,
 				78108124189021E300E8EFD7 /* sc_Constans.m in Sources */,
 				7872A6F818EC049600581E03 /* sc_LevelUpGridCell.m in Sources */,
 				7E01A1C318FC325D0070D4EE /* MUEventsTrackerFactory.m in Sources */,
@@ -2101,12 +2052,10 @@
 				78CB2A9318F43DB500BDA6B0 /* sc_GridBrowserRequestBuilder.m in Sources */,
 				78108129189021E300E8EFD7 /* sc_UploadViewController.m in Sources */,
 				7810812B189021E300E8EFD7 /* sc_SettingsViewController.m in Sources */,
-				7E01A1BE18FC30FF0070D4EE /* MUEventsTrackerPOD.m in Sources */,
 				7810812C189021E300E8EFD7 /* sc_ImageScaling.m in Sources */,
 				7810812D189021E300E8EFD7 /* sc_ResourseCleaner.m in Sources */,
 				7810812E189021E300E8EFD7 /* sc_AppDataObject.m in Sources */,
 				7810812F189021E300E8EFD7 /* sc_GlobalDataObject.m in Sources */,
-				7E69479D18FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m in Sources */,
 				78108130189021E300E8EFD7 /* sc_QuickImageViewController.m in Sources */,
 				78CC7C6918FC2C5000E9679A /* sc_ItemsForUploadManager.m in Sources */,
 				78108131189021E300E8EFD7 /* sc_SitesSelectionViewController.m in Sources */,
@@ -2124,7 +2073,6 @@
 				78CC1EF918EAA2EB003608CD /* sc_BrowseViewController.m in Sources */,
 				7872A6FC18EC100700581E03 /* sc_SitesManager.m in Sources */,
 				7810813C189021E300E8EFD7 /* sc_UploadItem.m in Sources */,
-				7E6947A018FD5B9200923AB6 /* MUFlurrySessionTracker.m in Sources */,
 				7ED8FD5A18FE612400AD2B33 /* MUUploadSettingsStringFormatter.m in Sources */,
 				7810813D189021E300E8EFD7 /* sc_UploadItemStatus.m in Sources */,
 				7810813E189021E300E8EFD7 /* sc_UploadItemManager.m in Sources */,
@@ -2158,7 +2106,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				78B01F57187EECDD006D48C9 /* sc_Constans.m in Sources */,
-				7E69479F18FD5B9200923AB6 /* MUFlurrySessionTracker.m in Sources */,
 				7E81AE3D17D9C93600E53330 /* sc_Site.m in Sources */,
 				7E81AE3E17D9C93600E53330 /* main.m in Sources */,
 				78D4A9AF1886BAE800CC44B4 /* sc_ImageScaling.m in Sources */,
@@ -2170,16 +2117,13 @@
 				7E81AE4417D9C93600E53330 /* sc_AppDataObject.m in Sources */,
 				7ED8FD5918FE612400AD2B33 /* MUUploadSettingsStringFormatter.m in Sources */,
 				7E81AE4517D9C93600E53330 /* sc_GlobalDataObject.m in Sources */,
-				7E01A1BD18FC30FF0070D4EE /* MUEventsTrackerPOD.m in Sources */,
 				78D4A9BB1886BF9C00CC44B4 /* sc_UploadItemStatus.m in Sources */,
 				7E81AE4617D9C93600E53330 /* sc_QuickImageViewController.m in Sources */,
 				78B01F5B187EF261006D48C9 /* sc_BaseTheme.m in Sources */,
 				7E81AE4717D9C93600E53330 /* sc_SitesSelectionViewController.m in Sources */,
 				7E81AE4817D9C93600E53330 /* sc_NavigationController.m in Sources */,
-				7E6947A418FD5C8700923AB6 /* MUCompositeSessionTracker.m in Sources */,
 				7E81AE4917D9C93600E53330 /* sc_Upload2ViewController.m in Sources */,
 				7E01A1C218FC325D0070D4EE /* MUEventsTrackerFactory.m in Sources */,
-				7E69479C18FD5B9200923AB6 /* MUCrashlyticsSessionTracker.m in Sources */,
 				7E81AE4A17D9C93600E53330 /* sc_MapViewController.m in Sources */,
 				7E81AE4B17D9C93600E53330 /* sc_Media.m in Sources */,
 				7E81AE4D17D9C93600E53330 /* sc_GradientButton.m in Sources */,
@@ -2302,6 +2246,7 @@
 					../../lib/SCInstanceStorage,
 					../../lib,
 					"../../lib-third-party",
+					../../lib/MUAnalyticsTracker,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2348,6 +2293,7 @@
 					../../lib/SCInstanceStorage,
 					../../lib,
 					"../../lib-third-party",
+					../../lib/MUAnalyticsTracker,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
