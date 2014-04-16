@@ -15,7 +15,7 @@
 
 
     #import "sc_ErrorHelper.h"
-    #import <SCInstanceStorage/SCInstanceStorage.h>
+//    #import <SCInstanceStorage/SCInstanceStorage.h>
 
     #import <SitecoreItemsBrowser/SCItemsBrowser.h>
     #import <SitecoreMobileSDK/SitecoreMobileSDK.h>

@@ -178,7 +178,6 @@
 		78108144189021E300E8EFD7 /* sc_UploadItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CA819B185B00420001896D /* sc_UploadItemCell.m */; };
 		78108145189021E300E8EFD7 /* sc_DeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7A466A17BE6BC90030BBDB /* sc_DeviceHelper.m */; };
 		78108146189021E300E8EFD7 /* sc_Validator.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F69EC17C5D78D00C4AFF4 /* sc_Validator.m */; };
-		78108147189021E300E8EFD7 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E7245E184E0B7100E9C1FC /* Reachability.m */; };
 		7810814A189021E300E8EFD7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7A466517BA39C20030BBDB /* SystemConfiguration.framework */; };
 		7810814B189021E300E8EFD7 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E72458184E040700E9C1FC /* EventKit.framework */; };
 		7810814C189021E300E8EFD7 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E72459184E040700E9C1FC /* EventKitUI.framework */; };
@@ -358,7 +357,6 @@
 		78D4A9B61886BE6D00CC44B4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D4A9B51886BE6D00CC44B4 /* XCTest.framework */; };
 		78D4A9B81886BF6B00CC44B4 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E72458184E040700E9C1FC /* EventKit.framework */; };
 		78D4A9B91886BF6D00CC44B4 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E72459184E040700E9C1FC /* EventKitUI.framework */; };
-		78D4A9BA1886BF8200CC44B4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E7245E184E0B7100E9C1FC /* Reachability.m */; };
 		78D4A9BB1886BF9C00CC44B4 /* sc_UploadItemStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 7836AF7F1871BBF500190D85 /* sc_UploadItemStatus.m */; };
 		78D4A9BC1886BF9E00CC44B4 /* sc_UploadItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D62BBA185F367C00FF7ADC /* sc_UploadItemManager.m */; };
 		78D4A9BD1886BFA300CC44B4 /* sc_ResourseCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D37099188563B5005A7470 /* sc_ResourseCleaner.m */; };
@@ -383,8 +381,6 @@
 		78DFD76418E4459E00E0E4CD /* sc_LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DFD76218E4451600E0E4CD /* sc_LocationManager.m */; };
 		78E7245A184E040700E9C1FC /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E72458184E040700E9C1FC /* EventKit.framework */; };
 		78E7245B184E040700E9C1FC /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E72459184E040700E9C1FC /* EventKitUI.framework */; };
-		78E7245F184E0B7100E9C1FC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E7245E184E0B7100E9C1FC /* Reachability.m */; };
-		78ED5C9518FD807D00171C37 /* libSCInstanceStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78ED5C9018FD806800171C37 /* libSCInstanceStorage.a */; };
 		78ED5C9818FD80A100171C37 /* libSCInstanceStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78ED5C9018FD806800171C37 /* libSCInstanceStorage.a */; };
 		78ED5C9B18FD80AC00171C37 /* libSCInstanceStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78ED5C9018FD806800171C37 /* libSCInstanceStorage.a */; };
 		7E01A1AD18FC1B770070D4EE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */; };
@@ -409,9 +405,6 @@
 		7E6947A918FD700900923AB6 /* GoogleAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947A618FD700900923AB6 /* GoogleAnalytics.framework */; };
 		7E6947AC18FD751000923AB6 /* GoogleTagManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947AA18FD751000923AB6 /* GoogleTagManager.framework */; };
 		7E6947AD18FD751000923AB6 /* GoogleTagManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947AA18FD751000923AB6 /* GoogleTagManager.framework */; };
-		7E6CE9C118FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CE9C018FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m */; };
-		7E6CE9C218FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CE9C018FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m */; };
-		7E6CE9C318FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CE9C018FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m */; };
 		7E6CE9C618FD3FB000C86ABA /* Flurry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6CE9C518FD3FB000C86ABA /* Flurry.framework */; };
 		7E6CE9C718FD3FB000C86ABA /* Flurry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6CE9C518FD3FB000C86ABA /* Flurry.framework */; };
 		7E6CE9C818FD3FB000C86ABA /* Flurry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6CE9C518FD3FB000C86ABA /* Flurry.framework */; };
@@ -574,6 +567,9 @@
 		7ED3E381178E9C5700E02EA5 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E380178E9C5700E02EA5 /* Twitter.framework */; };
 		7ED3E383178E9C7A00E02EA5 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E382178E9C7A00E02EA5 /* CoreVideo.framework */; };
 		7ED3E385178E9C8F00E02EA5 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E384178E9C8F00E02EA5 /* CoreMotion.framework */; };
+		7ED8FD5818FE612400AD2B33 /* MUUploadSettingsStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED8FD5718FE612400AD2B33 /* MUUploadSettingsStringFormatter.m */; };
+		7ED8FD5918FE612400AD2B33 /* MUUploadSettingsStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED8FD5718FE612400AD2B33 /* MUUploadSettingsStringFormatter.m */; };
+		7ED8FD5A18FE612400AD2B33 /* MUUploadSettingsStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED8FD5718FE612400AD2B33 /* MUUploadSettingsStringFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -598,13 +594,6 @@
 			remoteGlobalIDString = 78716C5518F6E8140092AA98;
 			remoteInfo = SCInstanceStorageTests;
 		};
-		78ED5C9318FD807600171C37 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78ED5C8A18FD806800171C37 /* SCInstanceStorage.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 78716C4418F6E8130092AA98;
-			remoteInfo = SCInstanceStorage;
-		};
 		78ED5C9618FD809900171C37 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78ED5C8A18FD806800171C37 /* SCInstanceStorage.xcodeproj */;
@@ -618,6 +607,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 78716C4418F6E8130092AA98;
 			remoteInfo = SCInstanceStorage;
+		};
+		7EAC342518FE6EE6007D540D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EAC342118FE6EE6007D540D /* iOSReachabilityFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B4E7DA7E1679301500C01DFA;
+			remoteInfo = iOSReachabilityFramework;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -859,8 +855,6 @@
 		78DFD76218E4451600E0E4CD /* sc_LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_LocationManager.m; sourceTree = "<group>"; };
 		78E72458184E040700E9C1FC /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		78E72459184E040700E9C1FC /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
-		78E7245D184E0B7100E9C1FC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		78E7245E184E0B7100E9C1FC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		78ED5C8A18FD806800171C37 /* SCInstanceStorage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCInstanceStorage.xcodeproj; path = ../../lib/SCInstanceStorage/SCInstanceStorage.xcodeproj; sourceTree = "<group>"; };
 		7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		7E01A1B118FC2E500070D4EE /* MUEventsTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUEventsTracker.h; sourceTree = "<group>"; };
@@ -882,14 +876,14 @@
 		7E6CE9BC18FD141200C86ABA /* MUUploadSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettings.h; sourceTree = "<group>"; };
 		7E6CE9BD18FD141200C86ABA /* MUUploadSettings_Legacy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettings_Legacy.h; sourceTree = "<group>"; };
 		7E6CE9BE18FD141200C86ABA /* MUUploadSettingsRecordState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettingsRecordState.h; sourceTree = "<group>"; };
-		7E6CE9BF18FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettingsStringFormatter.h; sourceTree = "<group>"; };
-		7E6CE9C018FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUUploadSettingsStringFormatter.m; sourceTree = "<group>"; };
 		7E6CE9C418FD1BC200C86ABA /* MUUploadSettingsFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUUploadSettingsFormatter.h; sourceTree = "<group>"; };
 		7E6CE9C518FD3FB000C86ABA /* Flurry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Flurry.framework; sourceTree = "<group>"; };
 		7E81AEED17D9C93600E53330 /* Sitecore.Mobile.MediaUploader-AutoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sitecore.Mobile.MediaUploader-AutoTest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E81AEEE17D9C93800E53330 /* Sitecore.Mobile.MediaUploader copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Sitecore.Mobile.MediaUploader copy-Info.plist"; path = "/Volumes/NO NAME/Mobile/Mobile SDK/app/MediaUploader/Sitecore.Mobile.MediaUploader copy-Info.plist"; sourceTree = "<absolute>"; };
 		7E81AEEF17D9C96D00E53330 /* calabash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = calabash.framework; sourceTree = "<group>"; };
 		7E81AEF117D9C9B900E53330 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		7EA96BB118FE6ACD00F0CE3F /* StyleSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = StyleSettings.plist; sourceTree = "<group>"; };
+		7EAC342118FE6EE6007D540D /* iOSReachabilityFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSReachabilityFramework.xcodeproj; path = "../../lib-third-party/Reachability/iOSReachabilityFramework/iOSReachabilityFramework.xcodeproj"; sourceTree = "<group>"; };
 		7ED3E375178E9BAE00E02EA5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		7ED3E377178E9BD100E02EA5 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		7ED3E379178E9C0B00E02EA5 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
@@ -898,6 +892,8 @@
 		7ED3E380178E9C5700E02EA5 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		7ED3E382178E9C7A00E02EA5 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		7ED3E384178E9C8F00E02EA5 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		7ED8FD5618FE612400AD2B33 /* MUUploadSettingsStringFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettingsStringFormatter.h; sourceTree = "<group>"; };
+		7ED8FD5718FE612400AD2B33 /* MUUploadSettingsStringFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUUploadSettingsStringFormatter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -905,7 +901,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78ED5C9518FD807D00171C37 /* libSCInstanceStorage.a in Frameworks */,
 				4F7A466617BA39C20030BBDB /* SystemConfiguration.framework in Frameworks */,
 				78E7245A184E040700E9C1FC /* EventKit.framework in Frameworks */,
 				78C9E27318E5A059004C7A88 /* SitecoreMobileUI.framework in Frameworks */,
@@ -1133,6 +1128,8 @@
 			isa = PBXGroup;
 			children = (
 				78ED5C8918FD805400171C37 /* lib */,
+				7EA96BB518FE6C4000F0CE3F /* lib-third-party */,
+				7EA96BB118FE6ACD00F0CE3F /* StyleSettings.plist */,
 				655829AF175B408900768197 /* Sitecore.Mobile.MediaUploader */,
 				78E72455184DE33900E9C1FC /* images */,
 				78D4AA071886D13900CC44B4 /* Sitecore.Mobile.MediaUploaderTests */,
@@ -1206,7 +1203,6 @@
 			isa = PBXGroup;
 			children = (
 				7E01A1B018FC2E2F0070D4EE /* Tracking */,
-				78E7245C184E0B7100E9C1FC /* Reachability */,
 				65D6BDF617A1A074002336C5 /* MainView */,
 				65569B2217627B6600A16A0A /* Data */,
 				65D6BDF517A1A02A002336C5 /* Storyboards */,
@@ -1522,15 +1518,6 @@
 			name = images;
 			sourceTree = "<group>";
 		};
-		78E7245C184E0B7100E9C1FC /* Reachability */ = {
-			isa = PBXGroup;
-			children = (
-				78E7245D184E0B7100E9C1FC /* Reachability.h */,
-				78E7245E184E0B7100E9C1FC /* Reachability.m */,
-			);
-			path = Reachability;
-			sourceTree = "<group>";
-		};
 		78ED5C8918FD805400171C37 /* lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -1584,10 +1571,26 @@
 				7E6CE9BC18FD141200C86ABA /* MUUploadSettings.h */,
 				7E6CE9BD18FD141200C86ABA /* MUUploadSettings_Legacy.h */,
 				7E6CE9BE18FD141200C86ABA /* MUUploadSettingsRecordState.h */,
-				7E6CE9BF18FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.h */,
-				7E6CE9C018FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m */,
+				7ED8FD5618FE612400AD2B33 /* MUUploadSettingsStringFormatter.h */,
+				7ED8FD5718FE612400AD2B33 /* MUUploadSettingsStringFormatter.m */,
 			);
 			path = Site;
+			sourceTree = "<group>";
+		};
+		7EA96BB518FE6C4000F0CE3F /* lib-third-party */ = {
+			isa = PBXGroup;
+			children = (
+				7EAC342118FE6EE6007D540D /* iOSReachabilityFramework.xcodeproj */,
+			);
+			name = "lib-third-party";
+			sourceTree = "<group>";
+		};
+		7EAC342218FE6EE6007D540D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7EAC342618FE6EE6007D540D /* libiOSReachabilityFramework.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1601,11 +1604,11 @@
 				655829A3175B408800768197 /* Frameworks */,
 				655829A4175B408800768197 /* Resources */,
 				7E01A1A918FC1ACC0070D4EE /* Crashlytics Setup */,
+				OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				78ED5C9418FD807600171C37 /* PBXTargetDependency */,
 			);
 			name = Sitecore.Mobile.MediaUploader;
 			productName = Sitecore.Mobile.MediaUploader;
@@ -1620,6 +1623,7 @@
 				78108149189021E300E8EFD7 /* Frameworks */,
 				7810816A189021E300E8EFD7 /* Resources */,
 				7E01A1AB18FC1AF80070D4EE /* Crashlytics Setup */,
+				OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */,
 			);
 			buildRules = (
 			);
@@ -1657,6 +1661,7 @@
 				7E81AE6917D9C93600E53330 /* Frameworks */,
 				7E81AE8817D9C93600E53330 /* Resources */,
 				7E01A1AA18FC1AE10070D4EE /* Crashlytics Setup */,
+				OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */,
 			);
 			buildRules = (
 			);
@@ -1705,6 +1710,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 7EAC342218FE6EE6007D540D /* Products */;
+					ProjectRef = 7EAC342118FE6EE6007D540D /* iOSReachabilityFramework.xcodeproj */;
+				},
+				{
 					ProductGroup = 78ED5C8B18FD806800171C37 /* Products */;
 					ProjectRef = 78ED5C8A18FD806800171C37 /* SCInstanceStorage.xcodeproj */;
 				},
@@ -1732,6 +1741,13 @@
 			fileType = wrapper.cfbundle;
 			path = SCInstanceStorageTests.xctest;
 			remoteRef = 78ED5C9118FD806800171C37 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7EAC342618FE6EE6007D540D /* libiOSReachabilityFramework.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libiOSReachabilityFramework.a;
+			remoteRef = 7EAC342518FE6EE6007D540D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -2081,7 +2097,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run 4c24cc2513a38654d20f77a8fcd8b67e09e0bbfa 655d9c49d4b093effc20b840ab6fa216a1a6de34326839a0bf439341e134a4cd";
+			shellScript = "../../frameworks/Crashlytics.framework/run 4c24cc2513a38654d20f77a8fcd8b67e09e0bbfa 655d9c49d4b093effc20b840ab6fa216a1a6de34326839a0bf439341e134a4cd";
 		};
 		7E01A1AA18FC1AE10070D4EE /* Crashlytics Setup */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2095,7 +2111,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run 4c24cc2513a38654d20f77a8fcd8b67e09e0bbfa 655d9c49d4b093effc20b840ab6fa216a1a6de34326839a0bf439341e134a4cd";
+			shellScript = "../../frameworks/Crashlytics.framework/run 4c24cc2513a38654d20f77a8fcd8b67e09e0bbfa 655d9c49d4b093effc20b840ab6fa216a1a6de34326839a0bf439341e134a4cd";
 		};
 		7E01A1AB18FC1AF80070D4EE /* Crashlytics Setup */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2109,7 +2125,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run 4c24cc2513a38654d20f77a8fcd8b67e09e0bbfa 655d9c49d4b093effc20b840ab6fa216a1a6de34326839a0bf439341e134a4cd";
+			shellScript = "../../frameworks/Crashlytics.framework/run 4c24cc2513a38654d20f77a8fcd8b67e09e0bbfa 655d9c49d4b093effc20b840ab6fa216a1a6de34326839a0bf439341e134a4cd";
+		};
+		OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Objective-Clean Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "if [[ -z ${SKIP_OBJCLEAN} || ${SKIP_OBJCLEAN} != 1 ]]; then\nif [[ -d \"${LOCAL_APPS_DIR}/Objective-Clean.app\" ]]; then \n\"${LOCAL_APPS_DIR}\"/Objective-Clean.app/Contents/Resources/ObjClean.app/Contents/MacOS/ObjClean \"${SRCROOT}\" \nelse\necho \"warning: You have to install and set up Objective-Clean to use its features!\" \nfi\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2146,7 +2176,6 @@
 				78C596A118EED3B4006A7FA3 /* sc_LevelUpTableCell.m in Sources */,
 				651B1A24177CB850006FF573 /* sc_MapViewController.m in Sources */,
 				651353F7177F294800108071 /* sc_Media.m in Sources */,
-				7E6CE9C118FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m in Sources */,
 				65F5E850178A9D0F00059518 /* sc_GradientButton.m in Sources */,
 				4FE40C39179FE7D600F9DDB9 /* sc_ActivityIndicator.m in Sources */,
 				78DFD76318E4451600E0E4CD /* sc_LocationManager.m in Sources */,
@@ -2156,6 +2185,7 @@
 				7872A6FB18EC100700581E03 /* sc_SitesManager.m in Sources */,
 				653D5B2B17A85A5300754C9C /* sc_UploadItem.m in Sources */,
 				7E69479E18FD5B9200923AB6 /* MUFlurrySessionTracker.m in Sources */,
+				7ED8FD5818FE612400AD2B33 /* MUUploadSettingsStringFormatter.m in Sources */,
 				7836AF801871BBF500190D85 /* sc_UploadItemStatus.m in Sources */,
 				78D62BBB185F367C00FF7ADC /* sc_UploadItemManager.m in Sources */,
 				6504584417AE3B0400A04E25 /* sc_ConnectivityHelper.m in Sources */,
@@ -2171,7 +2201,6 @@
 				78CC1EFC18EAF57F003608CD /* sc_BrowseViewAppearance.m in Sources */,
 				78C596A518EEDBDB006A7FA3 /* sc_FolderTableCell.m in Sources */,
 				655F69ED17C5D78D00C4AFF4 /* sc_Validator.m in Sources */,
-				78E7245F184E0B7100E9C1FC /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2207,7 +2236,6 @@
 				78C596A218EED3B4006A7FA3 /* sc_LevelUpTableCell.m in Sources */,
 				78108134189021E300E8EFD7 /* sc_MapViewController.m in Sources */,
 				78108135189021E300E8EFD7 /* sc_Media.m in Sources */,
-				7E6CE9C318FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m in Sources */,
 				78108137189021E300E8EFD7 /* sc_GradientButton.m in Sources */,
 				78108139189021E300E8EFD7 /* sc_ActivityIndicator.m in Sources */,
 				78DFD76418E4459E00E0E4CD /* sc_LocationManager.m in Sources */,
@@ -2217,6 +2245,7 @@
 				7872A6FC18EC100700581E03 /* sc_SitesManager.m in Sources */,
 				7810813C189021E300E8EFD7 /* sc_UploadItem.m in Sources */,
 				7E6947A018FD5B9200923AB6 /* MUFlurrySessionTracker.m in Sources */,
+				7ED8FD5A18FE612400AD2B33 /* MUUploadSettingsStringFormatter.m in Sources */,
 				7810813D189021E300E8EFD7 /* sc_UploadItemStatus.m in Sources */,
 				7810813E189021E300E8EFD7 /* sc_UploadItemManager.m in Sources */,
 				7810813F189021E300E8EFD7 /* sc_ConnectivityHelper.m in Sources */,
@@ -2232,7 +2261,6 @@
 				78CC1EFD18EAF57F003608CD /* sc_BrowseViewAppearance.m in Sources */,
 				78C596A618EEDBDB006A7FA3 /* sc_FolderTableCell.m in Sources */,
 				78108146189021E300E8EFD7 /* sc_Validator.m in Sources */,
-				78108147189021E300E8EFD7 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2258,9 +2286,9 @@
 				7E81AE4017D9C93600E53330 /* sc_ViewController.m in Sources */,
 				7E81AE4117D9C93600E53330 /* sc_UploadViewController.m in Sources */,
 				78D4A9BD1886BFA300CC44B4 /* sc_ResourseCleaner.m in Sources */,
-				7E6CE9C218FD1B9D00C86ABA /* MUUploadSettingsStringFormatter.m in Sources */,
 				7E81AE4317D9C93600E53330 /* sc_SettingsViewController.m in Sources */,
 				7E81AE4417D9C93600E53330 /* sc_AppDataObject.m in Sources */,
+				7ED8FD5918FE612400AD2B33 /* MUUploadSettingsStringFormatter.m in Sources */,
 				7E81AE4517D9C93600E53330 /* sc_GlobalDataObject.m in Sources */,
 				7E01A1BD18FC30FF0070D4EE /* MUEventsTrackerPOD.m in Sources */,
 				78D4A9BB1886BF9C00CC44B4 /* sc_UploadItemStatus.m in Sources */,
@@ -2276,7 +2304,6 @@
 				7E81AE4B17D9C93600E53330 /* sc_Media.m in Sources */,
 				7E81AE4D17D9C93600E53330 /* sc_GradientButton.m in Sources */,
 				7E81AE4F17D9C93600E53330 /* sc_ActivityIndicator.m in Sources */,
-				78D4A9BA1886BF8200CC44B4 /* Reachability.m in Sources */,
 				7E81AE5117D9C93600E53330 /* sc_SiteAddViewController.m in Sources */,
 				7E81AE5217D9C93600E53330 /* sc_UploadItem.m in Sources */,
 				78D4A9BC1886BF9E00CC44B4 /* sc_UploadItemManager.m in Sources */,
@@ -2297,11 +2324,6 @@
 			isa = PBXTargetDependency;
 			target = 655829A5175B408800768197 /* Sitecore.Mobile.MediaUploader */;
 			targetProxy = 78D4AA101886D13A00CC44B4 /* PBXContainerItemProxy */;
-		};
-		78ED5C9418FD807600171C37 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SCInstanceStorage;
-			targetProxy = 78ED5C9318FD807600171C37 /* PBXContainerItemProxy */;
 		};
 		78ED5C9718FD809900171C37 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2373,6 +2395,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = ../../frameworks;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2424,6 +2447,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = ../../frameworks;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -2455,7 +2479,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Volumes/untitled/tfs/iOS_Media_Uploader,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
@@ -2477,7 +2500,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Volumes/untitled/tfs/iOS_Media_Uploader,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
@@ -2499,7 +2521,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Volumes/untitled/tfs/iOS_Media_Uploader,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
@@ -2519,7 +2540,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Volumes/untitled/tfs/iOS_Media_Uploader,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
@@ -2598,12 +2618,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../deployment\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					/Volumes/Sitecore/Sources/SVNMobileSDK/app/MediaUploader,
-					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/app/MediaUploader",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					/Volumes/Sitecore/Sources/src/app/MediaUploader,
-					/Volumes/untitled/tfs/iOS_Media_Uploader,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
@@ -2627,12 +2642,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../deployment\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					/Volumes/Sitecore/Sources/SVNMobileSDK/app/MediaUploader,
-					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/app/MediaUploader",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					/Volumes/Sitecore/Sources/src/app/MediaUploader,
-					/Volumes/untitled/tfs/iOS_Media_Uploader,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";

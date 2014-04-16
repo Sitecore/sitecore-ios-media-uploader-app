@@ -1,5 +1,8 @@
 #import "SCSite.h"
 
+#import <Sitecore.Mobile.MediaUploader/Data/Site/MUUploadSettingsStringFormatter.h>
+#import "MUUploadSettingsStringFormatter.h"
+
 @interface SCSite ()
 
 @property ( nonatomic, readwrite ) BOOL selectedForBrowse;
