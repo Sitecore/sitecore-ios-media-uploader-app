@@ -304,8 +304,6 @@
 		781081CA189021E300E8EFD7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCCE178594AD00730EC8 /* Default@2x.png */; };
 		781081CB189021E300E8EFD7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCC21785943800730EC8 /* Default-568h@2x.png */; };
 		7836AF801871BBF500190D85 /* sc_UploadItemStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 7836AF7F1871BBF500190D85 /* sc_UploadItemStatus.m */; };
-		78622E4218FE6B8900ADA6D1 /* SCTrackableSite.m in Sources */ = {isa = PBXBuildFile; fileRef = 78622E4118FE6B8900ADA6D1 /* SCTrackableSite.m */; };
-		78622E4318FE6B8900ADA6D1 /* SCTrackableSite.m in Sources */ = {isa = PBXBuildFile; fileRef = 78622E4118FE6B8900ADA6D1 /* SCTrackableSite.m */; };
 		78716C3A18F6BA0A0092AA98 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78716C3918F6BA0A0092AA98 /* bg@2x.png */; };
 		78716C3B18F6BA0A0092AA98 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78716C3918F6BA0A0092AA98 /* bg@2x.png */; };
 		7872A6F718EC049600581E03 /* sc_LevelUpGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872A6F618EC049600581E03 /* sc_LevelUpGridCell.m */; };
@@ -316,6 +314,8 @@
 		78B01F5B187EF261006D48C9 /* sc_BaseTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B01F59187EF261006D48C9 /* sc_BaseTheme.m */; };
 		78B4359A18FE9EFC0053BEFA /* SitecoreItemsBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B4359918FE9EFC0053BEFA /* SitecoreItemsBrowser.framework */; };
 		78B4359B18FE9EFC0053BEFA /* SitecoreItemsBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B4359918FE9EFC0053BEFA /* SitecoreItemsBrowser.framework */; };
+		78B435A318FEB5530053BEFA /* SCSite+Trackable.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B435A218FEB5530053BEFA /* SCSite+Trackable.m */; };
+		78B435A418FEB5530053BEFA /* SCSite+Trackable.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B435A218FEB5530053BEFA /* SCSite+Trackable.m */; };
 		78C596A118EED3B4006A7FA3 /* sc_LevelUpTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C596A018EED3B4006A7FA3 /* sc_LevelUpTableCell.m */; };
 		78C596A218EED3B4006A7FA3 /* sc_LevelUpTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C596A018EED3B4006A7FA3 /* sc_LevelUpTableCell.m */; };
 		78C596A518EEDBDB006A7FA3 /* sc_FolderTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C596A418EEDBDB006A7FA3 /* sc_FolderTableCell.m */; };
@@ -788,8 +788,6 @@
 		781081D11890224100E8EFD7 /* Sitecore.Mobile.MediaUploader-Info_AppStore.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sitecore.Mobile.MediaUploader-Info_AppStore.plist"; sourceTree = "<group>"; };
 		7836AF7E1871BBF500190D85 /* sc_UploadItemStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_UploadItemStatus.h; sourceTree = "<group>"; };
 		7836AF7F1871BBF500190D85 /* sc_UploadItemStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_UploadItemStatus.m; sourceTree = "<group>"; };
-		78622E4018FE6B8900ADA6D1 /* SCTrackableSite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCTrackableSite.h; sourceTree = "<group>"; };
-		78622E4118FE6B8900ADA6D1 /* SCTrackableSite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTrackableSite.m; sourceTree = "<group>"; };
 		78716C3918F6BA0A0092AA98 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg@2x.png"; path = "Images/bg@2x.png"; sourceTree = "<group>"; };
 		7872A6F518EC049600581E03 /* sc_LevelUpGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_LevelUpGridCell.h; sourceTree = "<group>"; };
 		7872A6F618EC049600581E03 /* sc_LevelUpGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_LevelUpGridCell.m; sourceTree = "<group>"; };
@@ -797,6 +795,8 @@
 		78B01F58187EF261006D48C9 /* sc_BaseTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_BaseTheme.h; sourceTree = "<group>"; };
 		78B01F59187EF261006D48C9 /* sc_BaseTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_BaseTheme.m; sourceTree = "<group>"; };
 		78B4359918FE9EFC0053BEFA /* SitecoreItemsBrowser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SitecoreItemsBrowser.framework; sourceTree = "<group>"; };
+		78B435A118FEB5530053BEFA /* SCSite+Trackable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCSite+Trackable.h"; sourceTree = "<group>"; };
+		78B435A218FEB5530053BEFA /* SCSite+Trackable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCSite+Trackable.m"; sourceTree = "<group>"; };
 		78C5969F18EED3B4006A7FA3 /* sc_LevelUpTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_LevelUpTableCell.h; sourceTree = "<group>"; };
 		78C596A018EED3B4006A7FA3 /* sc_LevelUpTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_LevelUpTableCell.m; sourceTree = "<group>"; };
 		78C596A318EEDBDB006A7FA3 /* sc_FolderTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_FolderTableCell.h; sourceTree = "<group>"; };
@@ -1105,8 +1105,8 @@
 				653D5B2917A85A5300754C9C /* sc_UploadItem.h */,
 				653D5B2A17A85A5300754C9C /* sc_UploadItem.m */,
 				78CC7C6518FC2C2600E9679A /* UploadItem */,
-				78622E4018FE6B8900ADA6D1 /* SCTrackableSite.h */,
-				78622E4118FE6B8900ADA6D1 /* SCTrackableSite.m */,
+				78B435A118FEB5530053BEFA /* SCSite+Trackable.h */,
+				78B435A218FEB5530053BEFA /* SCSite+Trackable.m */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -2074,7 +2074,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78622E4218FE6B8900ADA6D1 /* SCTrackableSite.m in Sources */,
 				7E6947A318FD5C8700923AB6 /* MUCompositeSessionTracker.m in Sources */,
 				78B01F56187EECC7006D48C9 /* sc_Constans.m in Sources */,
 				7872A6F718EC049600581E03 /* sc_LevelUpGridCell.m in Sources */,
@@ -2083,6 +2082,7 @@
 				655829BA175B408900768197 /* sc_AppDelegate.m in Sources */,
 				78B01F5A187EF261006D48C9 /* sc_BaseTheme.m in Sources */,
 				655829C9175B408900768197 /* sc_ViewController.m in Sources */,
+				78B435A318FEB5530053BEFA /* SCSite+Trackable.m in Sources */,
 				78C596AB18EEFE75006A7FA3 /* sc_ButtonsBuilder.m in Sources */,
 				78CB2A9218F43DB500BDA6B0 /* sc_GridBrowserRequestBuilder.m in Sources */,
 				6599A553175B9B410095775D /* sc_UploadViewController.m in Sources */,
@@ -2132,7 +2132,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78622E4318FE6B8900ADA6D1 /* SCTrackableSite.m in Sources */,
 				7E6947A518FD5C8700923AB6 /* MUCompositeSessionTracker.m in Sources */,
 				78108124189021E300E8EFD7 /* sc_Constans.m in Sources */,
 				7872A6F818EC049600581E03 /* sc_LevelUpGridCell.m in Sources */,
@@ -2141,6 +2140,7 @@
 				78108126189021E300E8EFD7 /* sc_AppDelegate.m in Sources */,
 				78108127189021E300E8EFD7 /* sc_BaseTheme.m in Sources */,
 				78108128189021E300E8EFD7 /* sc_ViewController.m in Sources */,
+				78B435A418FEB5530053BEFA /* SCSite+Trackable.m in Sources */,
 				78C596AC18EEFE75006A7FA3 /* sc_ButtonsBuilder.m in Sources */,
 				78CB2A9318F43DB500BDA6B0 /* sc_GridBrowserRequestBuilder.m in Sources */,
 				78108129189021E300E8EFD7 /* sc_UploadViewController.m in Sources */,

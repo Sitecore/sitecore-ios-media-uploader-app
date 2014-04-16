@@ -17,7 +17,7 @@
 #import "sc_ErrorHelper.h"
 #import "sc_ItemHelper.h"
 #import "sc_ButtonsBuilder.h"
-#import "SCTrackableSite.h"
+#import "SCSite+Trackable.h"
 
 @interface sc_SiteAddViewController ()
 
@@ -36,7 +36,7 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
     sc_GlobalDataObject *_appDataObject;
     UIBarButtonItem *_saveButton;
     
-    SCTrackableSite *_siteForEdit;
+    SCSite *_siteForEdit;
     BOOL editModeEnabled;
     
     sc_ButtonsBuilder *buttonsBuilder;
@@ -56,7 +56,7 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
     
     buttonsBuilder = [ sc_ButtonsBuilder new ];
     
-    self->_siteForEdit = [ SCTrackableSite emptySite ];
+    self->_siteForEdit = [ SCSite emptySite ];
     editModeEnabled = NO;
     
     [ self localizeUI ];
@@ -77,7 +77,7 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
     [self.view addSubview:_activityIndicator];
 }
 
--(void)setSiteForEdit:(SCTrackableSite *)site
+-(void)setSiteForEdit:(SCSite *)site
 {
     self->_siteForEdit = site;
     
@@ -157,7 +157,7 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
                                            animated: YES ];
 }
 
--(void)authenticateAndSaveSite:(SCTrackableSite *)site
+-(void)authenticateAndSaveSite:(SCSite *)site
 {
     __block SCSite *tmpSite = site;
     
@@ -224,7 +224,7 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
     
     if ( requiredFieldsFilled )
     {
-        SCTrackableSite *fakeSite = [ SCTrackableSite emptySite ];
+        SCSite *fakeSite = [ SCSite emptySite ];
         [ self fillSiteWithData: fakeSite ];
         [ self authenticateAndSaveSite: fakeSite ];
     }
