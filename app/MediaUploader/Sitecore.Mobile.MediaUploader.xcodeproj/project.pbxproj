@@ -333,12 +333,6 @@
 		78D4A9BB1886BF9C00CC44B4 /* sc_UploadItemStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 7836AF7F1871BBF500190D85 /* sc_UploadItemStatus.m */; };
 		78D4A9BC1886BF9E00CC44B4 /* sc_UploadItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D62BBA185F367C00FF7ADC /* sc_UploadItemManager.m */; };
 		78D4A9BD1886BFA300CC44B4 /* sc_ResourseCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D37099188563B5005A7470 /* sc_ResourseCleaner.m */; };
-		78D4AA041886D13900CC44B4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D4A9B51886BE6D00CC44B4 /* XCTest.framework */; };
-		78D4AA051886D13900CC44B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655829AB175B408900768197 /* Foundation.framework */; };
-		78D4AA061886D13900CC44B4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655829A9175B408900768197 /* UIKit.framework */; };
-		78D4AA0C1886D13900CC44B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78D4AA0A1886D13900CC44B4 /* InfoPlist.strings */; };
-		78D4AA0E1886D13900CC44B4 /* sc_ScaleTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D4AA0D1886D13900CC44B4 /* sc_ScaleTest.m */; };
-		78D4AA151886D15500CC44B4 /* sc_ImageScaling.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D4A9AD1886A99D00CC44B4 /* sc_ImageScaling.m */; };
 		78D5E14718F28F9D009F647C /* sc_ListBrowserCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D5E14618F28F9D009F647C /* sc_ListBrowserCellFactory.m */; };
 		78D5E14818F28F9D009F647C /* sc_ListBrowserCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D5E14618F28F9D009F647C /* sc_ListBrowserCellFactory.m */; };
 		78D62BBB185F367C00FF7ADC /* sc_UploadItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D62BBA185F367C00FF7ADC /* sc_UploadItemManager.m */; };
@@ -509,13 +503,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		78D4AA101886D13A00CC44B4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6558299E175B408800768197 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 655829A5175B408800768197;
-			remoteInfo = Sitecore.Mobile.MediaUploader;
-		};
 		7E41A09A18FE7A4900D601EF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7EAC345918FE7495007D540D /* MUAllUploaderLibs.xcodeproj */;
@@ -769,7 +756,6 @@
 		78D4A9AC1886A99D00CC44B4 /* sc_ImageScaling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_ImageScaling.h; sourceTree = "<group>"; };
 		78D4A9AD1886A99D00CC44B4 /* sc_ImageScaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_ImageScaling.m; sourceTree = "<group>"; };
 		78D4A9B51886BE6D00CC44B4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		78D4AA031886D13900CC44B4 /* Sitecore.Mobile.MediaUploaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sitecore.Mobile.MediaUploaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D4AA091886D13900CC44B4 /* Sitecore.Mobile.MediaUploaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sitecore.Mobile.MediaUploaderTests-Info.plist"; sourceTree = "<group>"; };
 		78D4AA0B1886D13900CC44B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		78D4AA0D1886D13900CC44B4 /* sc_ScaleTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sc_ScaleTest.m; sourceTree = "<group>"; };
@@ -864,16 +850,6 @@
 				78108167189021E300E8EFD7 /* UIKit.framework in Frameworks */,
 				78108168189021E300E8EFD7 /* Foundation.framework in Frameworks */,
 				78108169189021E300E8EFD7 /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		78D4AA001886D13900CC44B4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				78D4AA041886D13900CC44B4 /* XCTest.framework in Frameworks */,
-				78D4AA061886D13900CC44B4 /* UIKit.framework in Frameworks */,
-				78D4AA051886D13900CC44B4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1011,7 +987,6 @@
 			children = (
 				655829A6175B408900768197 /* Sitecore.Mobile.MediaUploader.app */,
 				7E81AEED17D9C93600E53330 /* Sitecore.Mobile.MediaUploader-AutoTest.app */,
-				78D4AA031886D13900CC44B4 /* Sitecore.Mobile.MediaUploaderTests.xctest */,
 				781081CF189021E300E8EFD7 /* Sitecore.Mobile.MediaUploader.app */,
 			);
 			name = Products;
@@ -1439,24 +1414,6 @@
 			productReference = 781081CF189021E300E8EFD7 /* Sitecore.Mobile.MediaUploader.app */;
 			productType = "com.apple.product-type.application";
 		};
-		78D4AA021886D13900CC44B4 /* Sitecore.Mobile.MediaUploaderTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 78D4AA121886D13A00CC44B4 /* Build configuration list for PBXNativeTarget "Sitecore.Mobile.MediaUploaderTests" */;
-			buildPhases = (
-				78D4A9FF1886D13900CC44B4 /* Sources */,
-				78D4AA001886D13900CC44B4 /* Frameworks */,
-				78D4AA011886D13900CC44B4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				78D4AA111886D13A00CC44B4 /* PBXTargetDependency */,
-			);
-			name = Sitecore.Mobile.MediaUploaderTests;
-			productName = Sitecore.Mobile.MediaUploaderTests;
-			productReference = 78D4AA031886D13900CC44B4 /* Sitecore.Mobile.MediaUploaderTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		7E81AE3A17D9C93600E53330 /* Sitecore.Mobile.MediaUploader-AutoTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E81AEEA17D9C93600E53330 /* Build configuration list for PBXNativeTarget "Sitecore.Mobile.MediaUploader-AutoTest" */;
@@ -1495,9 +1452,6 @@
 							};
 						};
 					};
-					78D4AA021886D13900CC44B4 = {
-						TestTargetID = 655829A5175B408800768197;
-					};
 				};
 			};
 			buildConfigurationList = 655829A1175B408800768197 /* Build configuration list for PBXProject "Sitecore.Mobile.MediaUploader" */;
@@ -1522,7 +1476,6 @@
 			targets = (
 				655829A5175B408800768197 /* Sitecore.Mobile.MediaUploader */,
 				7E81AE3A17D9C93600E53330 /* Sitecore.Mobile.MediaUploader-AutoTest */,
-				78D4AA021886D13900CC44B4 /* Sitecore.Mobile.MediaUploaderTests */,
 				78108120189021E300E8EFD7 /* Sitecore.Mobile.MediaUploader_AppStore */,
 			);
 		};
@@ -1761,14 +1714,6 @@
 				781081C9189021E300E8EFD7 /* Default.png in Resources */,
 				781081CA189021E300E8EFD7 /* Default@2x.png in Resources */,
 				781081CB189021E300E8EFD7 /* Default-568h@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		78D4AA011886D13900CC44B4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				78D4AA0C1886D13900CC44B4 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2043,15 +1988,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		78D4A9FF1886D13900CC44B4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				78D4AA0E1886D13900CC44B4 /* sc_ScaleTest.m in Sources */,
-				78D4AA151886D15500CC44B4 /* sc_ImageScaling.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7E81AE3B17D9C93600E53330 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2094,11 +2030,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		78D4AA111886D13A00CC44B4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 655829A5175B408800768197 /* Sitecore.Mobile.MediaUploader */;
-			targetProxy = 78D4AA101886D13A00CC44B4 /* PBXContainerItemProxy */;
-		};
 		7E41A09B18FE7A4900D601EF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MUAllUploaderLibs;
@@ -2338,65 +2269,6 @@
 			};
 			name = Release;
 		};
-		78D4AA131886D13A00CC44B4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sitecore.Mobile.MediaUploader.app/Sitecore.Mobile.MediaUploader";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploaderTests/Sitecore.Mobile.MediaUploaderTests-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "Sitecore.Mobile.MediaUploaderTests/Sitecore.Mobile.MediaUploaderTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		78D4AA141886D13A00CC44B4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sitecore.Mobile.MediaUploader.app/Sitecore.Mobile.MediaUploader";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploaderTests/Sitecore.Mobile.MediaUploaderTests-Prefix.pch";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "Sitecore.Mobile.MediaUploaderTests/Sitecore.Mobile.MediaUploaderTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 		7E81AEEB17D9C93600E53330 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2473,15 +2345,6 @@
 			buildConfigurations = (
 				781081CD189021E300E8EFD7 /* Debug */,
 				781081CE189021E300E8EFD7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		78D4AA121886D13A00CC44B4 /* Build configuration list for PBXNativeTarget "Sitecore.Mobile.MediaUploaderTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				78D4AA131886D13A00CC44B4 /* Debug */,
-				78D4AA141886D13A00CC44B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
