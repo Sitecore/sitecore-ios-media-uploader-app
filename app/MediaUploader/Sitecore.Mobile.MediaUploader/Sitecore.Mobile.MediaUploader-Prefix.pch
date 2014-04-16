@@ -10,21 +10,32 @@
 
 #ifdef __OBJC__
 
-    #import "MUEventsTrackerFactory.h"
-    #import <Sitecore.Mobile.MediaUploader/Tracking/MUActivityTracker.h>
-
-
+// this app
     #import "sc_ErrorHelper.h"
+
+// own libs
+
 //    #import <SCInstanceStorage/SCInstanceStorage.h>
 
+// Sitecore
     #import <SitecoreItemsBrowser/SCItemsBrowser.h>
     #import <SitecoreMobileSDK/SitecoreMobileSDK.h>
     #import <SitecoreMobileUI/SitecoreMobileUI.h>
+
+// analytics
+    #import "MUEventsTrackerFactory.h"
+    #import <Sitecore.Mobile.MediaUploader/Tracking/MUActivityTracker.h>
 
     #import <Flurry/Flurry.h>
     #import <Crashlytics/Crashlytics.h>
     #import <GoogleAnalytics/GoogleAnalytics.h>
 
+
+// third-party libs
+    #import <Reachability/Reachability.h>
+
+// apple
+    #import <SystemConfiguration/SystemConfiguration.h>
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <MapKit/MapKit.h>
