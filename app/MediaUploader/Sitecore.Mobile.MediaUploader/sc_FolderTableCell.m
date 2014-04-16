@@ -12,7 +12,7 @@
 
 -(void)setModel:(SCItem*)item
 {
-    [ self.imageView setImage:[ self iconImage ] ];
+    [ self.imageView setImage: [ self iconImage ] ];
     self->_itemName = item.displayName;
 }
 

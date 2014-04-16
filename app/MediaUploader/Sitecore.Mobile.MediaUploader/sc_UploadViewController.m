@@ -39,7 +39,7 @@
 
 @implementation sc_UploadViewController
 {
-    UIImageView *imageView;
+    UIImageView* imageView;
     BOOL newMedia;
     sc_LocationManager *_locationManager;
     
@@ -202,7 +202,7 @@
                 UIImagePickerControllerSourceType pickerType = picker.sourceType;
                 if (pickerType == UIImagePickerControllerSourceTypeCamera)
                 {
-                    NSMutableDictionary *imageMetadata = [info objectForKey: UIImagePickerControllerMediaMetadata];
+                    NSMutableDictionary* imageMetadata = [info objectForKey: UIImagePickerControllerMediaMetadata];
                     
                     NSDictionary* imageInfo = [_locationManager gpsDictionaryForCurrentLocation];
                     [ imageMetadata setObject: imageInfo
@@ -269,7 +269,7 @@
                     self->_timeStamp = [myasset valueForProperty:ALAssetPropertyDate];
                     
                     //Get location data from asset
-//                    CLLocation *location = [myasset valueForProperty:ALAssetPropertyLocation];
+//                    CLLocation* location = [myasset valueForProperty:ALAssetPropertyLocation];
 //                    [ _locationManager setCurrentLocation: location ];
                     
                     CGImageRef iref = [myasset thumbnail];
@@ -332,7 +332,7 @@
 {
     if (error)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: NSLocalizedString(@"Save failed", nil)
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle: NSLocalizedString(@"Save failed", nil)
                                                         message: NSLocalizedString(@"Failed to save media item", nil)
                                                        delegate: nil
                                               cancelButtonTitle: NSLocalizedString(@"OK", nil)
@@ -535,7 +535,7 @@
 
 -(void) showError:(NSString*)message
 {
-    UIAlertView *alert = [ [UIAlertView alloc] initWithTitle: @""
+    UIAlertView* alert = [ [UIAlertView alloc] initWithTitle: @""
                                                      message: message
                                                     delegate: nil
                                            cancelButtonTitle: @"OK"

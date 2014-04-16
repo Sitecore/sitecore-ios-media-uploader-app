@@ -25,7 +25,7 @@
 
 -(void)setCellStyleForUploadStatus:(sc_UploadItemStatus*)status withTheme:(sc_BaseTheme*)theme
 {
-    UIColor *backgroundColor;
+    UIColor* backgroundColor;
     UIImage* image;
     switch ( status.statusId )
     {

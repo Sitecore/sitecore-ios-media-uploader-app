@@ -13,9 +13,9 @@
 
 @interface sc_Upload2ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic) IBOutlet UIBarButtonItem *doneButton;
+@property (nonatomic) IBOutlet UIBarButtonItem* doneButton;
 @property (nonatomic) IBOutlet UITableView *sitesTableView;
-@property (nonatomic) IBOutlet UIButton *abortButton;
+@property (nonatomic) IBOutlet UIButton* abortButton;
 @property (nonatomic) IBOutlet UISegmentedControl *filterControl;
 
 @property (nonatomic) sc_GlobalDataObject* appDataObject;

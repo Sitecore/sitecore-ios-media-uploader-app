@@ -523,7 +523,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 
 -(void)showUploadError
 {
-    UIAlertView *alert = [[ UIAlertView alloc ] initWithTitle: NSLocalizedString(@"ERROR_ALERT_TITLE", nil)
+    UIAlertView* alert = [[ UIAlertView alloc ] initWithTitle: NSLocalizedString(@"ERROR_ALERT_TITLE", nil)
                                                       message: NSLocalizedString(@"CANT_CREATE_ERROR_TEXT", nil)
                                                      delegate: nil
                                             cancelButtonTitle: NSLocalizedString(@"OK", nil)

@@ -5,7 +5,7 @@
 {
     UILabel*  _label;
     NSString* _displayName;
-    UIImageView *_folderIconView;
+    UIImageView* _folderIconView;
 }
 
 -(instancetype)initWithFrame:(CGRect )frame

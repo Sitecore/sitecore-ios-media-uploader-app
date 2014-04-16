@@ -5,9 +5,10 @@
 #import "sc_ListBrowserCellFactory.h"
 #import "sc_GridBrowserRequestBuilder.h"
 
+
 @interface sc_ListBrowserViewController ()<SCItemsBrowserDelegate>
 
-@property (nonatomic, strong) IBOutlet sc_ListBrowserCellFactory *cellFactory;
+@property (nonatomic, strong) IBOutlet sc_ListBrowserCellFactory* cellFactory;
 
 @property (weak, nonatomic) IBOutlet UITextView* itemPathTextView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView* loadingProgress;
@@ -16,6 +17,7 @@
 -(IBAction)useTouched:(id)sender;
 
 @end
+
 
 @implementation sc_ListBrowserViewController
 {
@@ -53,19 +55,19 @@
     [ self startLoading ];
     __weak sc_ListBrowserViewController* weakSelf = self;
     rootItemLoader( nil, nil, ^( SCItem* rootItem, NSError* blockError )
-                   {
-                       [ weakSelf endLoading ];
-                       
-                       if ( nil == rootItem )
-                       {
-                           [ weakSelf didFailLoadingRootItemWithError: blockError ];
-                       }
-                       else
-                       {
-                           [ weakSelf didLoadRootItem: rootItem ];
-                           self->_currentPath = rootItem.path;
-                       }
-                   } );
+    {
+       [ weakSelf endLoading ];
+       
+       if ( nil == rootItem )
+       {
+           [ weakSelf didFailLoadingRootItemWithError: blockError ];
+       }
+       else
+       {
+           [ weakSelf didLoadRootItem: rootItem ];
+           self->_currentPath = rootItem.path;
+       }
+    } );
 }
 
 -(void)viewDidLoad
@@ -132,7 +134,7 @@ didReceiveLevelProgressNotification:(id)progressInfo
 -(void)itemsBrowser:(id)sender
 levelLoadingFailedWithError:(NSError*)error
 {
-    [ sc_ErrorHelper showError:error.localizedDescription ];
+    [ sc_ErrorHelper showError: error.localizedDescription ];
     [ self endLoading ];
 }
 

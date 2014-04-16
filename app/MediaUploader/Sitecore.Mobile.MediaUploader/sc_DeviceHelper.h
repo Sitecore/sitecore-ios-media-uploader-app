@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface sc_DeviceHelper : NSObject
-+(NSString*) getDeviceType;
+
++(NSString*)getDeviceType;
+
 @end

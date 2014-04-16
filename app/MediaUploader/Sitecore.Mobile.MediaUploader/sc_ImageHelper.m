@@ -88,12 +88,16 @@
 
 +(UIImage*)normalize:(UIImage*)image forOrientation:(UIImageOrientation)orientation
 {
-    if (orientation == UIImageOrientationUp || orientation == UIImageOrientationUpMirrored) return image;
+    if (orientation == UIImageOrientationUp || orientation == UIImageOrientationUpMirrored)
+    {
+        return image;
+    }
     
     //Translate and rotate
     CGAffineTransform transform = CGAffineTransformIdentity;
     
-    switch (orientation) {
+    switch (orientation)
+    {
         case UIImageOrientationDown: //1
         case UIImageOrientationDownMirrored:
             transform = CGAffineTransformTranslate(transform, image.size.width, image.size.height);
@@ -144,7 +148,7 @@
     
     // Create new image
     CGImageRef cgimg = CGBitmapContextCreateImage(ctx);
-    UIImage* img = [UIImage imageWithCGImage:cgimg];
+    UIImage* img = [UIImage imageWithCGImage: cgimg];
     CGContextRelease(ctx);
     CGImageRelease(cgimg);
     

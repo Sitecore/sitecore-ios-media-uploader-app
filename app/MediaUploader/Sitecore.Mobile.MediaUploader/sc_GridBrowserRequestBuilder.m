@@ -7,11 +7,10 @@
            levelDownRequestForItem:(SCItem*)item
 {
 
-    SCReadItemsRequest *request = [ super itemsBrowser: sender levelDownRequestForItem: item ];
+    SCReadItemsRequest* request = [ super itemsBrowser: sender levelDownRequestForItem: item ];
     request.flags = SCReadItemRequestIngnoreCache;
     
     return request;
 }
-
 
 @end

@@ -165,7 +165,7 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
 
 -(UIButton*)viewForAccessoryForIndexPath:(NSIndexPath*)indexPath
 {
-    UIButton *accButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton* accButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [accButton setFrame:CGRectMake(0, 0, 40, 40)];
     [accButton setImage:[ UIImage imageNamed:@"accessoryArrow" ] forState:UIControlStateNormal];
     [accButton addTarget: self action:@selector(accessoryTapped:) forControlEvents:UIControlEventTouchUpInside];

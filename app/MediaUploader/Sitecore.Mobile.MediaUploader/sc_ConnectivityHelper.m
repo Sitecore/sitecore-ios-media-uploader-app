@@ -13,7 +13,7 @@
 
 +(BOOL)connectedToInternet
 {
-    Reachability *curReach = [Reachability reachabilityForInternetConnection];
+    Reachability* curReach = [Reachability reachabilityForInternetConnection];
 
     return ( curReach.currentReachabilityStatus != NotReachable );
 }

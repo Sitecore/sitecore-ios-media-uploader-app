@@ -13,7 +13,7 @@
 
 @interface sc_SiteAddViewController : UITableViewController <UITextFieldDelegate, UIAlertViewDelegate>
 
-@property (nonatomic) IBOutlet UIBarButtonItem *cancelButton;
+@property (nonatomic) IBOutlet UIBarButtonItem* cancelButton;
 @property (nonatomic) IBOutlet UITextField *usernameTextField;
 @property (nonatomic) IBOutlet UITextField *passwordTextField;
 @property (nonatomic) IBOutlet UITextField *urlTextField;

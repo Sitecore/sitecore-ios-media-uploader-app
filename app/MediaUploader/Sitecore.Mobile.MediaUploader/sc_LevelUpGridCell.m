@@ -2,7 +2,7 @@
 
 @implementation sc_LevelUpGridCell
 {
-    UIImageView *_iconView;
+    UIImageView* _iconView;
 }
 
 -(instancetype)initWithFrame:(CGRect )frame
@@ -34,6 +34,5 @@
 
     [ self.contentView addSubview:  self->_iconView ];
 }
-
 
 @end

@@ -16,7 +16,7 @@
 @property (nonatomic) IBOutlet sc_GradientButton* browseButton;
 @property (nonatomic) IBOutlet sc_GradientButton* pendingButton;
 @property (nonatomic) IBOutlet sc_GradientButton* uploadButton;
-@property (nonatomic) IBOutlet UIBarButtonItem *settingsButton;
+@property (nonatomic) IBOutlet UIBarButtonItem* settingsButton;
 @property (nonatomic) IBOutlet UIView* pendingView;
 @property (nonatomic) IBOutlet UILabel* pendingCounterLabel;
 

@@ -34,7 +34,7 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
 @implementation sc_SiteAddViewController
 {
     sc_GlobalDataObject* _appDataObject;
-    UIBarButtonItem *_saveButton;
+    UIBarButtonItem* _saveButton;
     
     sc_Site* _siteForEdit;
     BOOL editModeEnabled;

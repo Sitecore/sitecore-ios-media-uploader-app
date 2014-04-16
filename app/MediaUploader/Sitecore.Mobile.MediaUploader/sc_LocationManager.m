@@ -4,8 +4,8 @@
 
 @implementation sc_LocationManager
 {
-    CLLocationManager *_locationManager;
-    CLLocation *_currentLocation;
+    CLLocationManager* _locationManager;
+    CLLocation* _currentLocation;
     sc_GlobalDataObject* _appDataObject;
 }
 
@@ -38,7 +38,7 @@
 
 -(void)getReadableLocation:(CLLocation*)location
 {
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
+    CLGeocoder* geocoder = [[CLGeocoder alloc] init] ;
     [geocoder reverseGeocodeLocation:location
                    completionHandler:^(NSArray* placemarks, NSError* error)
      {
@@ -53,7 +53,7 @@
          
          if (placemarks.count > 0)
          {
-             CLPlacemark *placemark = [placemarks objectAtIndex:0];
+             CLPlacemark* placemark = [placemarks objectAtIndex:0];
              self->_appDataObject.selectedPlaceMark = placemark;
          }
          else
@@ -79,7 +79,7 @@
     return _appDataObject.selectedPlaceMark.postalCode;
 }
 
--(void) locationManager:(CLLocationManager*)manager didFailWithError:(NSError*)error
+-(void)locationManager:(CLLocationManager*)manager didFailWithError:(NSError*)error
 {
     [_locationManager stopUpdatingLocation];
 }
@@ -127,7 +127,7 @@
         longRef = @"E";
     }
     
-    NSMutableDictionary *locDict = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary* locDict = [[NSMutableDictionary alloc] init];
     
     [locDict setObject:[NSDate date] forKey:(NSString*)kCGImagePropertyGPSTimeStamp];
     [locDict setObject:latRef forKey:(NSString*)kCGImagePropertyGPSLatitudeRef];

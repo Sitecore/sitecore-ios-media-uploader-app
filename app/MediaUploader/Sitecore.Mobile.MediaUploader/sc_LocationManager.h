@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 
+
 @interface sc_LocationManager : NSObject< CLLocationManagerDelegate >
 
 @property (nonatomic, readonly) CGFloat latitude;

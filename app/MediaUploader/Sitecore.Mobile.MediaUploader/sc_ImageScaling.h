@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 
+
 @interface sc_ImageScaling : NSObject
 
 +(UIImage*)scaleImage:(UIImage*)image toSize:(CGSize)size;

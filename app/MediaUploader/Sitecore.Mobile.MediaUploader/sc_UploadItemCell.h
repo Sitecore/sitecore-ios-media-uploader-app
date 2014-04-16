@@ -4,7 +4,7 @@
 
 @interface sc_UploadItemCell : UITableViewCell
 
-@property ( nonatomic ) IBOutlet UIImageView *cellImageView;
+@property ( nonatomic ) IBOutlet UIImageView* cellImageView;
 @property ( nonatomic ) IBOutlet UILabel* siteLabel;
 @property ( nonatomic ) IBOutlet UILabel* folderLabel;
 @property ( nonatomic ) IBOutlet UIActivityIndicatorView* activityView;

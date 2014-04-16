@@ -2,13 +2,14 @@
 
 @implementation sc_LevelUpTableCell
 {
-    UIImageView *_iconView;
+    UIImageView* _iconView;
 }
 
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString*)reuseIdentifier
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
+    self = [super initWithStyle: style reuseIdentifier: reuseIdentifier];
+    if ( nil != self )
+    {
         
         [ self setupUI ];
     }
@@ -18,7 +19,7 @@
     
 -(UIImage*)iconImage
 {
-    return [UIImage imageNamed:@"up"];
+    return [UIImage imageNamed: @"up"];
 }
 
 -(void)setupUI

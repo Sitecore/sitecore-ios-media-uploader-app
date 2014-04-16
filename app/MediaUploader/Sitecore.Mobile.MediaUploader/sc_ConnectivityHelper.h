@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface sc_ConnectivityHelper : NSObject
+
 +(BOOL)connectedToInternet;
+
 @end

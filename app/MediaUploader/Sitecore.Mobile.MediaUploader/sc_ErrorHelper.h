@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface sc_ErrorHelper : NSObject
-+(void) showError:(NSString*)message;
+
++(void)showError:(NSString*)message;
+
 @end

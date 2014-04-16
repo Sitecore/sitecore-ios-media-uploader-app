@@ -17,22 +17,33 @@
 #import "sc_ImageHelper.h"
 #import "sc_LocationManager.h"
 
+
 typedef NS_ENUM(NSInteger, MapViewMode)
 {
     MapViewModeNormal = 0,
     MapViewModeLoading,
 };
 
-@interface sc_MapViewController () <MKMapViewDelegate, CLLocationManagerDelegate, UIAlertViewDelegate,UISearchBarDelegate>
-@property (nonatomic, strong) CLLocationManager *locationManager;
+
+@interface sc_MapViewController ()
+<
+    MKMapViewDelegate,
+    CLLocationManagerDelegate,
+    UIAlertViewDelegate,
+    UISearchBarDelegate
+>
+
+@property (nonatomic, strong) CLLocationManager* locationManager;
 @property (nonatomic, strong) NSMutableArray* mapItems;
-@property (nonatomic, strong) MKLocalSearch *localSearch;
-@property (nonatomic, strong) MKLocalSearchRequest *localSearchRequest;
+@property (nonatomic, strong) MKLocalSearch* localSearch;
+@property (nonatomic, strong) MKLocalSearchRequest* localSearchRequest;
 @property (nonatomic) MapViewMode mapViewMode;
 @property (nonatomic) CLLocationCoordinate2D coords;
 @property (nonatomic) NSMutableArray* foundPlacemarks;
-@property (nonatomic) CLPlacemark *currentPlacemark;
+@property (nonatomic) CLPlacemark* currentPlacemark;
+
 @end
+
 
 @implementation sc_MapViewController
 
@@ -89,22 +100,24 @@ static CGFloat beautifulRegionCoef = 112.f;
 
 -(void)setAnnotationFromCoordinate:(CLLocationCoordinate2D)touchMapCoordinate
 {
-    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    MKPointAnnotation* annotation = [[MKPointAnnotation alloc] init];
     annotation.coordinate = touchMapCoordinate;
     [_mapView addAnnotation:annotation];
     
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    CLLocation *coord = [[CLLocation alloc] initWithLatitude:touchMapCoordinate.latitude longitude:touchMapCoordinate.longitude];
-    [geocoder reverseGeocodeLocation:coord completionHandler:^(NSArray* placemarks, NSError* error) {
+    CLGeocoder* geocoder = [[CLGeocoder alloc] init];
+    CLLocation* coord = [[CLLocation alloc] initWithLatitude:touchMapCoordinate.latitude longitude:touchMapCoordinate.longitude];
+    [geocoder reverseGeocodeLocation:coord completionHandler:^(NSArray* placemarks, NSError* error)
+    {
         
-        if (error) {
+        if (error)
+        {
             NSLog(@"Geocode failed with error");
         }
         
         self->_foundPlacemarks = [[NSMutableArray alloc] initWithArray:placemarks];
         
         if (placemarks && placemarks.count > 0) {
-            CLPlacemark *placemark = [placemarks objectAtIndex:0];
+            CLPlacemark* placemark = [placemarks objectAtIndex:0];
             annotation.title = [ sc_LocationManager getLocationDescriptionForPlacemark: placemark ];
             
             [self setSelectedPlaceMark:placemark];
@@ -114,7 +127,7 @@ static CGFloat beautifulRegionCoef = 112.f;
 
 -(void)setAnnotationFromPlacemark:(CLPlacemark*) placemark
 {
-    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    MKPointAnnotation* annotation = [[MKPointAnnotation alloc] init];
     annotation.coordinate = placemark.location.coordinate;
     [self.mapView addAnnotation:annotation];
     annotation.title = [ sc_LocationManager getLocationDescriptionForPlacemark: placemark ];
@@ -126,7 +139,9 @@ static CGFloat beautifulRegionCoef = 112.f;
 -(void)handleGesture:(UIGestureRecognizer*)gestureRecognizer
 {
     if (gestureRecognizer.state != UIGestureRecognizerStateEnded)
+    {
         return;
+    }
     
     [_mapView removeAnnotations:_mapView.annotations];
     
@@ -135,7 +150,8 @@ static CGFloat beautifulRegionCoef = 112.f;
     [self setAnnotationFromCoordinate:touchMapCoordinate];
 }
 
--(void)didReceiveMemoryWarning {
+-(void)didReceiveMemoryWarning
+{
     
     [super didReceiveMemoryWarning];
     
@@ -257,7 +273,7 @@ static CGFloat beautifulRegionCoef = 112.f;
     [_mapView removeAnnotations:_mapView.annotations];
     
     [_searchBar resignFirstResponder];
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    CLGeocoder* geocoder = [[CLGeocoder alloc] init];
     [geocoder geocodeAddressString:_searchBar.text completionHandler:^(NSArray* placemarks, NSError* error)
     {
         self->_foundPlacemarks = [[NSMutableArray alloc] initWithArray:placemarks];

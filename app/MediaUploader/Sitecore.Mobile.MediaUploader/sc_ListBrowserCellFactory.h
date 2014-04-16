@@ -2,6 +2,6 @@
 
 @interface sc_ListBrowserCellFactory : NSObject<SIBListModeCellFactory>
 
-@property (strong, nonatomic) IBOutlet SCItemListBrowser *itemsBrowserController;
+@property (strong, nonatomic) IBOutlet SCItemListBrowser* itemsBrowserController;
 
 @end

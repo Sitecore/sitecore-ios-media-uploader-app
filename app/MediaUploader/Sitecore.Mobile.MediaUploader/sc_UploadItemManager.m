@@ -11,7 +11,7 @@
 
 @implementation sc_UploadItemManager
 {
-    NSMutableDictionary *_statusStorage;
+    NSMutableDictionary* _statusStorage;
 }
 
 -(id)init
