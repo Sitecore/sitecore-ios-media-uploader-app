@@ -26,10 +26,10 @@
     return 18.f;
 }
 
--(sc_GradientButton* )getButtonWithTitle:(NSString*)title
-                                   style:(CustomButtonType)customButtonType
-                                  target:(id)target
-                                selector:(SEL)selector
+-(sc_GradientButton*)getButtonWithTitle:(NSString*)title
+                                  style:(CustomButtonType)customButtonType
+                                 target:(id)target
+                               selector:(SEL)selector
 {
     sc_GradientButton* button = [sc_GradientButton buttonWithType:UIButtonTypeCustom];
     [(sc_GradientButton*) button setButtonWithStyle: customButtonType];
@@ -44,7 +44,5 @@
     
     return button;
 }
-
-
 
 @end

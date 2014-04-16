@@ -17,17 +17,17 @@
 
 @implementation sc_Media
 
--(id)initWithObjectData:(NSString*) name
-               dateTime:(NSDate*) dateTime
-               latitude:(NSNumber*) latitude
-              longitude:(NSNumber*) longitude
+-(id)initWithObjectData:(NSString*)name
+               dateTime:(NSDate*)dateTime
+               latitude:(NSNumber*)latitude
+              longitude:(NSNumber*)longitude
     locationDescription:(NSString*)locationDescription
-            countryCode:(NSString*) countryCode
-               cityCode:(NSString*) cityCode
-               videoUrl:(NSURL*) videoUrl
-               imageUrl:(NSURL*) imageUrl
-                 status:(NSInteger) status
-              thumbnail:(UIImage*) thumbnail
+            countryCode:(NSString*)countryCode
+               cityCode:(NSString*)cityCode
+               videoUrl:(NSURL*)videoUrl
+               imageUrl:(NSURL*)imageUrl
+                 status:(NSInteger)status
+              thumbnail:(UIImage*)thumbnail
 {
     self = [super init];
     if (self)

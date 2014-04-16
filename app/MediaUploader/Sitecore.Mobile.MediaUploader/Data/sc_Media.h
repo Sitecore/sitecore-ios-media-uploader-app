@@ -37,7 +37,7 @@
                cityCode:(NSString*)cityCode
                videoUrl:(NSURL   *)videoUrl
                imageUrl:(NSURL   *)imageUrl
-                 status:(NSInteger  )status
+                 status:(NSInteger)status
               thumbnail:(UIImage *)thumbnail;
 
 -(BOOL)isImage;
