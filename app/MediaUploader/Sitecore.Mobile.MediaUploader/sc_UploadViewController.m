@@ -29,11 +29,11 @@
 
 @interface sc_UploadViewController ()
 
-@property ( nonatomic ) UIImage *thumbnail;
+@property ( nonatomic ) UIImage* thumbnail;
 @property ( nonatomic ) bool autoImagePickerLoadExecuted;
 @property ( nonatomic ) sc_ActivityIndicator * activityIndicator;
 @property ( nonatomic ) BOOL isRaised;
-@property ( nonatomic ) NSDate * timeStamp;
+@property ( nonatomic ) NSDate*  timeStamp;
 
 @end
 
@@ -151,7 +151,7 @@
         self->_imagePicker = [[UIImagePickerController alloc] init];
         self->_imagePicker.delegate = self;
         self->_imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        NSArray *mediaTypesAllowed = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        NSArray* mediaTypesAllowed = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
         [self->_imagePicker setMediaTypes:mediaTypesAllowed];
         
         self->_imagePicker.allowsEditing = NO;
@@ -171,15 +171,15 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
+    NSString* mediaType = [info objectForKey:UIImagePickerControllerMediaType];
     
     [self hideUploadForm: NO];
     _uploadButton.enabled = NO;
     
     // IMAGE
-    if ([mediaType isEqualToString:(NSString *)kUTTypeImage])
+    if ([mediaType isEqualToString:(NSString*)kUTTypeImage])
     {
-        UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        UIImage* image = [info objectForKey:UIImagePickerControllerOriginalImage];
         [imageView setImage: image];
         
         _uploadButton.enabled = YES;
@@ -190,13 +190,13 @@
         {
             _timeStamp = [NSDate date];
             
-            NSString *mediaType = [info objectForKey: UIImagePickerControllerMediaType];
+            NSString* mediaType = [info objectForKey: UIImagePickerControllerMediaType];
             
             // Handle a still image capture
             if (CFStringCompare ((CFStringRef) mediaType, kUTTypeImage, 0)== kCFCompareEqualTo)
             {
                 
-                UIImage *imageToSave = (UIImage *) [info objectForKey:UIImagePickerControllerOriginalImage];
+                UIImage* imageToSave = (UIImage* ) [info objectForKey:UIImagePickerControllerOriginalImage];
                 
                 // Set the image metadata
                 UIImagePickerControllerSourceType pickerType = picker.sourceType;
@@ -213,7 +213,7 @@
                     
                     // Get the assets library
                     imageWriteCompletionBlock =
-                    ^(NSURL *newURL, NSError *error)
+                    ^(NSURL* newURL, NSError* error)
                     {
                         if (error)
                         {
@@ -233,7 +233,7 @@
                                 self->_thumbnail = [UIImage imageWithCGImage:iref];
                             }
                         };
-                        ALAssetsLibraryAccessFailureBlock failureblock = ^(NSError *myerror)
+                        ALAssetsLibraryAccessFailureBlock failureblock = ^(NSError* myerror)
                         {
                             NSLog(@"cant get image - %@", [myerror localizedDescription]);
                         };
@@ -257,7 +257,7 @@
             // NOT NEW MEDIA
             
             //Extract metadata
-            NSURL *url = [info objectForKey:UIImagePickerControllerReferenceURL];
+            NSURL* url = [info objectForKey:UIImagePickerControllerReferenceURL];
             if (url)
             {
                 
@@ -278,7 +278,7 @@
                         self->_thumbnail = [UIImage imageWithCGImage:iref];
                     }
                 };
-                ALAssetsLibraryAccessFailureBlock failureblock = ^(NSError *myerror)
+                ALAssetsLibraryAccessFailureBlock failureblock = ^(NSError* myerror)
                 {
                     NSLog(@"cant get image - %@", [myerror localizedDescription]);
                 };
@@ -292,12 +292,12 @@
     }
     
     // VIDEO
-    if ([mediaType isEqualToString:(NSString *)kUTTypeMovie])
+    if ([mediaType isEqualToString:(NSString*)kUTTypeMovie])
     {
         
         _imageUrl = nil;
         _videoUrl = [info objectForKey:UIImagePickerControllerMediaURL];
-        NSString *moviePath = [_videoUrl path];
+        NSString* moviePath = [_videoUrl path];
         
         if (newMedia)
         {
@@ -328,7 +328,7 @@
     NSLog(@"Playback finished");
 }
 
--(void)image:(UIImage *)image finishedSavingWithError:(NSError *)error sessionInfo:(void *)sessionInfo
+-(void)image:(UIImage* )image finishedSavingWithError:(NSError* )error sessionInfo:(void *)sessionInfo
 {
     if (error)
     {
@@ -362,12 +362,12 @@
     [self saveFileAsPending];
 }
 
-- (sc_Media *)getMedia
+- (sc_Media*)getMedia
 {
-    NSNumber *latitude = [ NSNumber numberWithFloat: [ _locationManager getLatitude ] ];
-    NSNumber *longitude = [ NSNumber numberWithFloat: [ _locationManager getLongitude ] ];
-    NSString *countryCode = [ _locationManager getCountryCode ];
-    NSString *cityCode = [ _locationManager getCityCode ];
+    NSNumber* latitude = [ NSNumber numberWithFloat: [ _locationManager getLatitude ] ];
+    NSNumber* longitude = [ NSNumber numberWithFloat: [ _locationManager getLongitude ] ];
+    NSString* countryCode = [ _locationManager getCountryCode ];
+    NSString* cityCode = [ _locationManager getCityCode ];
     
     sc_Media *media = [ [sc_Media alloc] initWithObjectData: _name.text
                                                    dateTime: _timeStamp
@@ -409,7 +409,7 @@
         
         sc_Upload2ViewController * destinationController = ( sc_Upload2ViewController * ) segue.destinationViewController;
         
-        NSArray *mediaItems = @[ media ];
+        NSArray* mediaItems = @[ media ];
         [ destinationController initWithMediaItems: mediaItems
                                              image: imageView.image
                             isPendingIemsUploading: NO ];
@@ -434,9 +434,9 @@
     [self.navigationController popViewControllerAnimated:YES ];
 }
 
--(void)setMediaItemValidName: (sc_Media *) media
+-(void)setMediaItemValidName: (sc_Media*) media
 {
-    NSString *validName;
+    NSString* validName;
     
     if (media.videoUrl != nil)
     {
@@ -450,7 +450,7 @@
     media.name = [sc_Validator proposeValidItemName:media.name withDefault:[sc_ItemHelper generateItemName:validName]];
 }
 
--(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString*)identifier sender:(id)sender
 {
     if([identifier isEqualToString:@"upload2"])
     {
@@ -498,7 +498,7 @@
     if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera])
     {
         self->_imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        NSArray *mediaTypesAllowed = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        NSArray* mediaTypesAllowed = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
         [self->_imagePicker setMediaTypes:mediaTypesAllowed];
         self->_imagePicker.allowsEditing = NO;
         self->_imagePicker.showsCameraControls = YES;
@@ -533,7 +533,7 @@
     }
 }
 
--(void) showError:(NSString*) message
+-(void) showError:(NSString*)message
 {
     UIAlertView *alert = [ [UIAlertView alloc] initWithTitle: @""
                                                      message: message

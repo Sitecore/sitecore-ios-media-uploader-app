@@ -10,10 +10,10 @@
 
 @interface sc_ImageHelper : NSObject
 + (CGFloat)getCompressionFactor:(int) uploadImageSize;
-+ (UIImage *)resizeImageToSize:(UIImage*) image uploadImageSize:(int) uploadImageSize;
++ (UIImage* )resizeImageToSize:(UIImage*) image uploadImageSize:(int) uploadImageSize;
 + (void)saveUploadImageSize:(int) uplaodImageSize;
 + (int) loadUploadImageSize;
-+ (UIImage *)getVideoThumbnail:(NSURL *) videoUrl;
-+ (NSString *)getUUID;
-+ (UIImage *)normalize: (UIImage *)image forOrientation:(UIImageOrientation)orientation;
++ (UIImage* )getVideoThumbnail:(NSURL* ) videoUrl;
++(NSString*)getUUID;
++ (UIImage* )normalize: (UIImage* )image forOrientation:(UIImageOrientation)orientation;
 @end

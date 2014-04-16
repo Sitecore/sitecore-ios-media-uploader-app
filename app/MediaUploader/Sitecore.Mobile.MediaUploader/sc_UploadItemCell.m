@@ -5,7 +5,7 @@
 
 @implementation sc_UploadItemCell
 
--(id)initWithCoder:(NSCoder *)aDecoder
+-(id)initWithCoder:(NSCoder*)aDecoder
 {
     if (self = [super initWithCoder:aDecoder])
     {
@@ -26,7 +26,7 @@
 -(void)setCellStyleForUploadStatus:(sc_UploadItemStatus *)status withTheme:(sc_BaseTheme *)theme
 {
     UIColor *backgroundColor;
-    UIImage *image;
+    UIImage* image;
     switch ( status.statusId )
     {
         case inProgressStatus:

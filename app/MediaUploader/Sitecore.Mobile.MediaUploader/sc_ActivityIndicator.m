@@ -42,13 +42,13 @@
     return self;
 }
 
--(void) showWithLabel: (NSString *)label
+-(void) showWithLabel:(NSString*)label
 {
     [ self showWithLabel: label
               afterDelay: 0 ];
 }
 
--(void) showWithLabel: (NSString *)label afterDelay: (float) wait
+-(void) showWithLabel:(NSString*)label afterDelay: (float) wait
 {
     [self cancelAllRequests];
     self->_loadingLabel.text = label;

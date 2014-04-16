@@ -21,7 +21,7 @@
     return [ self->_sitesList count ];
 }
 
--(void)addSite:(sc_Site *)site error:( NSError** )error
+-(void)addSite:(sc_Site*)site error:( NSError** )error
 {
     if ( [ self sitesCount ] == 0 )
     {
@@ -68,7 +68,7 @@
 {
     NSUInteger result = 0;
     
-    for ( sc_Site *elem in self->_sitesList )
+    for ( sc_Site* elem in self->_sitesList )
     {
         if ( [ elem isEqual: site ] )
         {
@@ -79,7 +79,7 @@
     return result;
 }
 
--(void)removeSite:(sc_Site *)site
+-(void)removeSite:(sc_Site*)site
 {
     [ self->_sitesList removeObject: site ];
     [ self saveSites ];
@@ -91,12 +91,12 @@
     [ self saveSites ];
 }
 
--(NSUInteger)indexOfSite:(sc_Site *)site
+-(NSUInteger)indexOfSite:(sc_Site*)site
 {
     return [ self->_sitesList indexOfObject: site ];
 }
 
--(sc_Site *)siteAtIndex:(NSUInteger)index
+-(sc_Site* )siteAtIndex:(NSUInteger)index
 {
     if ( index < [ self->_sitesList count ] )
     {
@@ -108,14 +108,14 @@
 
 -(BOOL)saveSites
 {
-    NSString *appFile = [ self getSitesFilePath ];
+    NSString* appFile = [ self getSitesFilePath ];
     return [ NSKeyedArchiver archiveRootObject: self->_sitesList
                                         toFile: appFile ];
 }
 
 -(void)loadSites
 {
-    NSString *appFile = [ self getSitesFilePath ];
+    NSString* appFile = [ self getSitesFilePath ];
     
     self->_sitesList = [ NSKeyedUnarchiver unarchiveObjectWithFile: appFile ];
     if ( !self->_sitesList )
@@ -124,16 +124,16 @@
     }
 }
 
--(NSString *)getSitesFilePath
+-(NSString*)getSitesFilePath
 {
     return [self getFile:@"SCSitesStorage.dat"];
 }
 
-- (NSString *)getFile:(NSString*)fileName
+-(NSString*)getFile:(NSString*)fileName
 {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
-    NSString *documentsDirectory = [ paths objectAtIndex: 0 ];
-    NSString *appFile = [ documentsDirectory stringByAppendingPathComponent: fileName ];
+    NSArray* paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
+    NSString* documentsDirectory = [ paths objectAtIndex: 0 ];
+    NSString* appFile = [ documentsDirectory stringByAppendingPathComponent: fileName ];
     return appFile;
 }
 
@@ -144,13 +144,13 @@
 
 #pragma mark additional functions
 
--(sc_Site *)siteForBrowse
+-(sc_Site* )siteForBrowse
 {
     NSAssert([ self sitesCount ] > 0, @"at least one site must exists");
     
     for ( NSInteger i = 0; i < [ self sitesCount ]; ++i )
     {
-        sc_Site *site = [ self siteAtIndex: i ];
+        sc_Site* site = [ self siteAtIndex: i ];
         if (site.selectedForBrowse)
         {
             return site;
@@ -160,9 +160,9 @@
     return [ self siteAtIndex: 0 ];
 }
 
--(sc_Site *)siteForUpload
+-(sc_Site* )siteForUpload
 {
-    for ( sc_Site *site in self->_sitesList )
+    for ( sc_Site* site in self->_sitesList )
     {
         if ( site.selectedForUpload)
         {
@@ -172,7 +172,7 @@
     
     if ( [ self sitesCount ] > 0 )
     {
-        sc_Site *site = [ self siteAtIndex: 0 ];
+        sc_Site* site = [ self siteAtIndex: 0 ];
         site.selectedForUpload = YES;
         return site;
     }
@@ -181,9 +181,9 @@
     return nil;
 }
 
--(void)setSiteForBrowse:(sc_Site *)siteForBrowse
+-(void)setSiteForBrowse:(sc_Site*)siteForBrowse
 {
-    for ( sc_Site *site in self->_sitesList )
+    for ( sc_Site* site in self->_sitesList )
     {
         if ( [ site isEqual: siteForBrowse ] )
         {
@@ -198,9 +198,9 @@
     [ self saveSites ];
 }
 
--(void)setSiteForUpload:(sc_Site *)siteForUpload
+-(void)setSiteForUpload:(sc_Site*)siteForUpload
 {
-    for ( sc_Site *site in self->_sitesList )
+    for ( sc_Site* site in self->_sitesList )
     {
         if ( [ site isEqual: siteForUpload ] )
         {

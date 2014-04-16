@@ -8,6 +8,7 @@
 
 #import "sc_Site.h"
 
+
 @interface sc_Site (Private)
 
 @property ( nonatomic ) BOOL selectedForBrowse;

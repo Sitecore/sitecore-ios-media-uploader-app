@@ -18,7 +18,7 @@
 
 @interface sc_SitesSelectionViewController ()
 @property ( nonatomic ) NSIndexPath *selectedIndex;
-@property ( nonatomic ) sc_Site *selectedSite;
+@property ( nonatomic ) sc_Site* selectedSite;
 @end
 
 @implementation sc_SitesSelectionViewController
@@ -58,10 +58,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"cellSiteUrl";
+    static NSString* cellIdentifier = @"cellSiteUrl";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    sc_Site *currentSite = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
+    sc_Site* currentSite = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
     [ [cell textLabel] setText: currentSite.siteUrl ];
     cell.detailTextLabel.text = [sc_ItemHelper formatUploadFolder: currentSite];
     

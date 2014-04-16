@@ -23,12 +23,12 @@
     SCExtendedApiSession* _apiSession;
     
     sc_GridBrowserRequestBuilder *_requestBuilder;
-    sc_Site *_siteForBrowse;
-    NSString *_currentPath;
+    sc_Site* _siteForBrowse;
+    NSString* _currentPath;
     SCUPloadFolderReceived _callback;
 }
 
--(void)chooseUploaderFolderForSite:(sc_Site *)site witCallback:(SCUPloadFolderReceived)callback
+-(void)chooseUploaderFolderForSite:(sc_Site*)site witCallback:(SCUPloadFolderReceived)callback
 {
     self->_callback = callback;
     self->_siteForBrowse = site;
@@ -44,7 +44,7 @@
     [ super viewDidAppear: animated ];
     self.cellFactory.itemsBrowserController.apiSession = self->_apiSession;
     
-    NSString *rootFolderPath = [ sc_Site mediaLibraryDefaultPath ];
+    NSString* rootFolderPath = [ sc_Site mediaLibraryDefaultPath ];
     
     SCExtendedAsyncOp rootItemLoader =
     [ self->_apiSession readItemOperationForItemPath: rootFolderPath
@@ -72,7 +72,7 @@
 {
     [ super viewDidLoad ];
     
-    NSArray *templatesList = @[@"Media folder"];
+    NSArray* templatesList = @[@"Media folder"];
     self->_requestBuilder = [ [sc_GridBrowserRequestBuilder alloc] initWithTemplateNames: templatesList ];
     self.cellFactory.itemsBrowserController.nextLevelRequestBuilder = self->_requestBuilder;
     self.cellFactory.itemsBrowserController.nextLevelRequestBuilder = self->_requestBuilder;

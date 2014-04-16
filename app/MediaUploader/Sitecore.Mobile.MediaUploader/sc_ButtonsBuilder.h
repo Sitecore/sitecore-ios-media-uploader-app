@@ -3,7 +3,7 @@
 
 @interface sc_ButtonsBuilder : NSObject
 
--(sc_GradientButton *)getButtonWithTitle:(NSString *)title
+-(sc_GradientButton *)getButtonWithTitle:(NSString*)title
                                    style:(CustomButtonType) customButtonType
                                   target:(id)target
                                 selector:(SEL)selector;

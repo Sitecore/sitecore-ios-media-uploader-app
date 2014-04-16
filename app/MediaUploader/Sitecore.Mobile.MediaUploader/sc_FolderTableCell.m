@@ -5,7 +5,7 @@
     NSString* _itemName;
 }
 
--(UIImage *)iconImage
+-(UIImage* )iconImage
 {
     return [UIImage imageNamed:@"folder"];
 }

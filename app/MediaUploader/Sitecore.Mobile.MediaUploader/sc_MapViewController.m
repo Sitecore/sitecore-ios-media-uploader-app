@@ -95,7 +95,7 @@ static CGFloat beautifulRegionCoef = 112.f;
     
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     CLLocation *coord = [[CLLocation alloc] initWithLatitude:touchMapCoordinate.latitude longitude:touchMapCoordinate.longitude];
-    [geocoder reverseGeocodeLocation:coord completionHandler:^(NSArray *placemarks, NSError *error) {
+    [geocoder reverseGeocodeLocation:coord completionHandler:^(NSArray* placemarks, NSError* error) {
         
         if (error) {
             NSLog(@"Geocode failed with error");
@@ -157,7 +157,7 @@ static CGFloat beautifulRegionCoef = 112.f;
     
     [self centerOverUserLocation];
     CLGeocoder* reverseGeocoder = [[CLGeocoder alloc] init];
-    [reverseGeocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error)
+    [reverseGeocoder reverseGeocodeLocation:location completionHandler:^(NSArray* placemarks, NSError* error)
     {
         self->_foundPlacemarks = [[NSMutableArray alloc] initWithArray:placemarks];
         if (placemarks.count > 0 )
@@ -189,7 +189,7 @@ static CGFloat beautifulRegionCoef = 112.f;
     [_mapView setRegion:region animated:NO];
 }
 
--(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError* )error
 {
     if (error.code == kCLErrorDenied)
     {
@@ -258,7 +258,7 @@ static CGFloat beautifulRegionCoef = 112.f;
     
     [_searchBar resignFirstResponder];
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder geocodeAddressString:_searchBar.text completionHandler:^(NSArray *placemarks, NSError *error)
+    [geocoder geocodeAddressString:_searchBar.text completionHandler:^(NSArray* placemarks, NSError* error)
     {
         self->_foundPlacemarks = [[NSMutableArray alloc] initWithArray:placemarks];
         

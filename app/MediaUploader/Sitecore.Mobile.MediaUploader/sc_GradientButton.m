@@ -7,12 +7,12 @@
 
 -(void)setButtonWithStyle: (CustomButtonType) customButtonType
 {
-    NSString *normalImageName;
-    NSString *highlightedlImageName;
+    NSString* normalImageName;
+    NSString* highlightedlImageName;
     UIColor *nornalTitleColor;
     UIColor *highlightedTitleColor;
     
-    NSString *iosVersionPostfix = [[[UIDevice currentDevice] systemVersion] intValue] >= 7 ? @"_7" : @"";
+    NSString* iosVersionPostfix = [[[UIDevice currentDevice] systemVersion] intValue] >= 7 ? @"_7" : @"";
     
     switch (customButtonType)
     {
@@ -52,9 +52,9 @@
     [self setTitleColor:nornalTitleColor forState:UIControlStateNormal];
     [self setTitleColor:highlightedTitleColor forState:UIControlStateHighlighted];
     
-    UIImage *buttonImage = [[UIImage imageNamed:normalImageName]
+    UIImage* buttonImage = [[UIImage imageNamed:normalImageName]
                             resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
-    UIImage *buttonImageHighlight = [[UIImage imageNamed:highlightedlImageName]
+    UIImage* buttonImageHighlight = [[UIImage imageNamed:highlightedlImageName]
                                      resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
 
     [self setBackgroundImage:buttonImage forState:UIControlStateNormal];

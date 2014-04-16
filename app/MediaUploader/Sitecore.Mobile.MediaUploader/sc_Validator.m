@@ -13,12 +13,12 @@
 
 @implementation sc_Validator
 
-+ (NSString *) getInvalidItemItemNameChars {
++(NSString*) getInvalidItemItemNameChars {
 
     return @"\\/:?\"<>|[]";
 }
 
-+ (NSString *) proposeValidItemName: (NSString *) name withDefault: (NSString *) defaultValue {
++(NSString*) proposeValidItemName:(NSString*) name withDefault:(NSString*) defaultValue {
     
 	if (name.length == 0)
     {
@@ -26,7 +26,7 @@
     }
 
     //Trim
-    NSString * proposedName = [name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString*  proposedName = [name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     //Remove invalid characters
     NSCharacterSet * InvalidItemNameChars = [NSCharacterSet characterSetWithCharactersInString:[self getInvalidItemItemNameChars]];
@@ -47,12 +47,12 @@
     return defaultValue;
 }
 
-+ (BOOL) isItemNameValid:(NSString *) name {
++ (BOOL) isItemNameValid:(NSString*) name {
     
     return ([self getItemNameError:name].length == 0);
 }
 
-+ (NSString *) getItemNameError: (NSString *) name {
++(NSString*) getItemNameError:(NSString*) name {
     
     if (name.length == 0)
     {
@@ -74,7 +74,7 @@
     
     if (!range.location == NSNotFound)
     {
-        NSString * chars = [self getInvalidItemItemNameChars];
+        NSString*  chars = [self getInvalidItemItemNameChars];
         return [NSString stringWithFormat:@"AN_ITEM_NAME_MAY_NOT_CONTAIN_ANY_OF_THE_FOLLOWING_CHARACTERS_%@_CONTROLLED_BY_THE_SETTING_INVALIDITEMNAMECHARS", chars];
     }
     

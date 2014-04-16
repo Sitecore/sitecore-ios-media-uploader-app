@@ -24,7 +24,9 @@
 
 // analytics
     #import "MUEventsTrackerFactory.h"
-    #import <Sitecore.Mobile.MediaUploader/Tracking/MUActivityTracker.h>
+    #import <MUAnalyticsTracker/MUAnalyticsTracker.h>
+    #import <MUFlurryWrapper/MUFlurryWrapper.h>
+    #import <MUCrashlyticsWrapper/MUCrashlyticsWrapper.h>
 
     #import <Flurry/Flurry.h>
     #import <Crashlytics/Crashlytics.h>

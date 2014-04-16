@@ -13,7 +13,7 @@
 
 +(UIViewController *)reloadParentController:(UINavigationController*) navigationController levels:(int) levels
 {
-    NSArray *viewControllers = [navigationController viewControllers];
+    NSArray* viewControllers = [navigationController viewControllers];
     UIViewController * viewController = [viewControllers objectAtIndex:viewControllers.count - levels];
     if ([viewController conformsToProtocol:@protocol(sc_ReloadableViewProtocol)])
     {

@@ -108,14 +108,14 @@
 
 -(BOOL)saveSites
 {
-    NSString *appFile = [ self getSitesFilePath ];
+    NSString* appFile = [ self getSitesFilePath ];
     return [ NSKeyedArchiver archiveRootObject: self->_sitesList
                                         toFile: appFile ];
 }
 
 -(void)loadSites
 {
-    NSString *appFile = [ self getSitesFilePath ];
+    NSString* appFile = [ self getSitesFilePath ];
     
     self->_sitesList = [ NSKeyedUnarchiver unarchiveObjectWithFile: appFile ];
     if ( !self->_sitesList )
@@ -124,16 +124,16 @@
     }
 }
 
--(NSString *)getSitesFilePath
+-(NSString*)getSitesFilePath
 {
     return [self getFile:@"SCSitesStorage.dat"];
 }
 
-- (NSString *)getFile:(NSString*)fileName
+-(NSString*)getFile:(NSString*)fileName
 {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
-    NSString *documentsDirectory = [ paths objectAtIndex: 0 ];
-    NSString *appFile = [ documentsDirectory stringByAppendingPathComponent: fileName ];
+    NSArray* paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
+    NSString* documentsDirectory = [ paths objectAtIndex: 0 ];
+    NSString* appFile = [ documentsDirectory stringByAppendingPathComponent: fileName ];
     return appFile;
 }
 

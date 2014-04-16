@@ -51,7 +51,7 @@
     {
         if ( item.isVideo )
         {
-            NSError *err;
+            NSError* err;
             
             if ( [ item.videoUrl checkResourceIsReachableAndReturnError: &err ] == NO )
             {
@@ -85,7 +85,7 @@
                 
                 [ weakSelf imageChecked ];
                 
-            } failureBlock:^(NSError *error)
+            } failureBlock:^(NSError* error)
              {
                  [ weakSelf imageChecked ];
              } ];

@@ -17,11 +17,11 @@ typedef NS_ENUM(NSInteger, sc_CellType) {
 };
 
 @interface sc_ItemHelper : NSObject
-+ (SCApiSession *)getContext:(sc_Site *) site;
-+ (NSString *)getDefaultDatabase;
-+ (NSString *)formatUploadFolder:(sc_Site *) site;
-+ (NSString *) getPath: (NSString *) itemId;
-+ (NSString *) itemType: (SCItem *) item;
++ (SCApiSession *)getContext:(sc_Site*) site;
++(NSString*)getDefaultDatabase;
++(NSString*)formatUploadFolder:(sc_Site*) site;
++(NSString*) getPath:(NSString*) itemId;
++(NSString*) itemType: (SCItem *) item;
 + (sc_CellType) scItemType: (SCItem *) item;
-+ (NSString *)generateItemName:(NSString *) fileName;
++(NSString*)generateItemName:(NSString*) fileName;
 @end

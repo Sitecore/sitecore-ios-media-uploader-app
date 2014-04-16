@@ -3,7 +3,7 @@
 @implementation sc_ImageScaling
 
 
-+(UIImage *)scaleImage:(UIImage *)image toSize:(CGSize)size
++(UIImage* )scaleImage:(UIImage* )image toSize:(CGSize)size
 {
     CGFloat scale = [ self scaleCoefficientToResizeImageWithSize: image.size
                                                           toSize: size ];
@@ -17,7 +17,7 @@
     
     UIGraphicsBeginImageContext( bounds.size );
     [ image drawInRect: CGRectMake( 0.0, 0.0, bounds.size.width, bounds.size.height ) ];
-    UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
+    UIImage* result = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     return result;

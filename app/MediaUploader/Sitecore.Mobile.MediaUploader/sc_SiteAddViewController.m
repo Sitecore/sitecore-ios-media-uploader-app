@@ -28,15 +28,15 @@
 @property (nonatomic) IBOutlet UISegmentedControl *protocolSelector;
 @end
 
-static NSString *HTTPS_PROTOCOL_STRING = @"https://";
-static NSString *HTTP_PROTOCOL_STRING = @"http://";
+static NSString* HTTPS_PROTOCOL_STRING = @"https://";
+static NSString* HTTP_PROTOCOL_STRING = @"http://";
 
 @implementation sc_SiteAddViewController
 {
     sc_GlobalDataObject *_appDataObject;
     UIBarButtonItem *_saveButton;
     
-    sc_Site *_siteForEdit;
+    sc_Site* _siteForEdit;
     BOOL editModeEnabled;
     
     sc_ButtonsBuilder *buttonsBuilder;
@@ -77,7 +77,7 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
     [self.view addSubview:_activityIndicator];
 }
 
--(void)setSiteForEdit:(sc_Site *)site
+-(void)setSiteForEdit:(sc_Site*)site
 {
     self->_siteForEdit = site;
     
@@ -114,12 +114,12 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
     _passwordTextField.text = self->_siteForEdit.password;
 }
 
--(void)saveSiteWithUploadFolder:(NSString *)uploadFolder
+-(void)saveSiteWithUploadFolder:(NSString*)uploadFolder
 {
     [ self fillSiteWithData: self->_siteForEdit ];
     self->_siteForEdit.uploadFolderPathInsideMediaLibrary = uploadFolder;
     
-    NSError *error;
+    NSError* error;
     if ( editModeEnabled )
     {
         [ self->_appDataObject.sitesManager saveSites ];
@@ -157,9 +157,9 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
                                            animated: YES ];
 }
 
--(void)authenticateAndSaveSite:(sc_Site *)site
+-(void)authenticateAndSaveSite:(sc_Site*)site
 {
-    __block sc_Site *tmpSite = site;
+    __block sc_Site* tmpSite = site;
     
     SCApiSession *session = [ sc_ItemHelper getContext: tmpSite ];
     
@@ -169,7 +169,7 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
     
     self->nextButton.enabled = NO;
     
-    asyncOp(^( id result, NSError *error )
+    asyncOp(^( id result, NSError* error )
     {
         id<MUSessionTracker> sessionTracker =
         [ MUEventsTrackerFactory sessionTrackerForMediaUploader ];
@@ -184,7 +184,7 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
             id rawSiteEditViewController = [self.storyboard instantiateViewControllerWithIdentifier: @"ListItemsBrowser" ];
             sc_ListBrowserViewController * siteEditViewController = (sc_ListBrowserViewController *)rawSiteEditViewController;
             
-            SCUPloadFolderReceived didSelectUploadFolderCallback = ^void(NSString *folder)
+            SCUPloadFolderReceived didSelectUploadFolderCallback = ^void(NSString* folder)
             {
                 [ self saveSiteWithUploadFolder: folder ];
             };
@@ -224,7 +224,7 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
     
     if ( requiredFieldsFilled )
     {
-        sc_Site *fakeSite = [ sc_Site emptySite ];
+        sc_Site* fakeSite = [ sc_Site emptySite ];
         [ self fillSiteWithData: fakeSite ];
         [ self authenticateAndSaveSite: fakeSite ];
     }
@@ -234,9 +234,9 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
     }
 }
 
--(void)fillSiteWithData:(sc_Site *)siteToFill
+-(void)fillSiteWithData:(sc_Site*)siteToFill
 {
-     NSString *protocol;
+     NSString* protocol;
     
     if ( self.protocolSelector.selectedSegmentIndex == 0 )
     {
@@ -315,7 +315,7 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
     return _footerView;
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return NSLocalizedString(@"New site", nil);
 }

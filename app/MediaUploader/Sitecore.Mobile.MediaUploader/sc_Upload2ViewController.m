@@ -28,9 +28,9 @@
 #import "sc_BaseTheme.h"
 
 @interface sc_Upload2ViewController ()
-@property (nonatomic)  NSArray *mediaItems;
+@property (nonatomic)  NSArray* mediaItems;
 @property (nonatomic) BOOL isPendingIemsUploading;
-@property (nonatomic) UIImage *image;
+@property (nonatomic) UIImage* image;
 @property (nonatomic) int uploadImageSize;
 
 @end
@@ -54,16 +54,16 @@ typedef NS_ENUM(NSInteger, ItemsFilterMode)
     
     NSMutableArray *_filteredItems;
 }
-static NSString * const CellIdentifier = @"cellSiteUrl";
+static NSString*  const CellIdentifier = @"cellSiteUrl";
 
--(void)setMediaItems:(NSArray *)mediaItems
+-(void)setMediaItems:(NSArray* )mediaItems
 {
     self->_mediaItems = mediaItems;
     self->_filteredItems = [ NSMutableArray arrayWithArray: mediaItems ];
 }
 
--(void) initWithMediaItems: (NSArray *)mediaItems
-                      image: (UIImage *)image
+-(void) initWithMediaItems: (NSArray* )mediaItems
+                      image: (UIImage* )image
      isPendingIemsUploading: (BOOL)isPendingIemsUploading
 {
     self.mediaItems = [ mediaItems copy ];
@@ -82,7 +82,7 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
     
     [ self->_filteredItems removeAllObjects ];
     
-    NSNumber *currentNumber;
+    NSNumber* currentNumber;
     
     for ( NSInteger index = 0; index < [ self.mediaItems count ]; ++index )
     {
@@ -213,7 +213,7 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
 {
     sc_Media *media = self->_filteredItems[ indexPath.row ];
     
-    NSNumber *itemNumber = @([ self->_mediaItems indexOfObject: media ]);
+    NSNumber* itemNumber = @([ self->_mediaItems indexOfObject: media ]);
     
     return [ self->_statusManager statusForItemAtNumber: itemNumber ];
 }
@@ -247,7 +247,7 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
 
     if ( status.statusId == errorStatus )
     {
-        NSString *description = status.localizedDescription;
+        NSString* description = status.localizedDescription;
         [ sc_ErrorHelper showError: description ];
     }
     
@@ -288,7 +288,7 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
     }
 }
 
--(void)uploadVideoWithMediaItem:(sc_Media *)media
+-(void)uploadVideoWithMediaItem:(sc_Media*)media
 {
     __block NSData *data;
     
@@ -301,7 +301,7 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
     [ self sendUploadRequest: uploadItem ];
 }
 
--(void)uploadImageWithMediaItem:(sc_Media *)media
+-(void)uploadImageWithMediaItem:(sc_Media*)media
 {
     ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *myasset)
     {
@@ -320,12 +320,12 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
         __block NSData *data;
         dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
-            UIImage *imageSource = [UIImage imageWithCGImage:[rep fullResolutionImage]];
+            UIImage* imageSource = [UIImage imageWithCGImage:[rep fullResolutionImage]];
             
-            UIImage *image = [ sc_ImageHelper normalize: imageSource
+            UIImage* image = [ sc_ImageHelper normalize: imageSource
                                          forOrientation: orientation ];
             
-            UIImage *resizedImage = [ sc_ImageHelper resizeImageToSize: image
+            UIImage* resizedImage = [ sc_ImageHelper resizeImageToSize: image
                                                        uploadImageSize: self->_uploadImageSize ];
             
             data = UIImageJPEGRepresentation(resizedImage,[sc_ImageHelper getCompressionFactor:self->_uploadImageSize]);
@@ -336,7 +336,7 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
         
     };
     
-    ALAssetsLibraryAccessFailureBlock failureblock  = ^(NSError *myerror){
+    ALAssetsLibraryAccessFailureBlock failureblock  = ^(NSError* myerror){
         NSLog(@"Cannot get image - %@",[myerror localizedDescription]);
     };
     
@@ -366,9 +366,9 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
     request.contentType = uploadItem.contentType;
     request.folder = uploadItem.mediaItem.siteForUploading.uploadFolderPathInsideMediaLibrary;
     
-    SCDidFinishAsyncOperationHandler doneHandler = (^( SCItem *item, NSError *error )
+    SCDidFinishAsyncOperationHandler doneHandler = (^( SCItem *item, NSError* error )
     {
-        NSNumber *itemNumber = @(self->_uploadItemIndex - 1);
+        NSNumber* itemNumber = @(self->_uploadItemIndex - 1);
         
         sc_UploadItemStatus *status = [ self->_statusManager statusForItemAtNumber: itemNumber ];
         
@@ -423,7 +423,7 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
                           nil];
     
     SCReadItemsRequest * request = [SCReadItemsRequest requestWithItemId:item.itemId fieldsNames:fieldNames];
-    [session readItemsOperationWithRequest:request](^(NSArray *items, NSError * fieldsError)
+    [session readItemsOperationWithRequest:request](^(NSArray* items, NSError*  fieldsError)
      {
          if (fieldsError)
          {
@@ -461,7 +461,7 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
              SCField *fieldCityCode = [fieldItem fieldWithName: @"ZipCode"];
              fieldCityCode.rawValue = uploadItem.mediaItem.cityCode;
              
-             [fieldItem saveItemOperation] (^(SCItem * editedItem, NSError * fieldSaveError)
+             [fieldItem saveItemOperation] (^(SCItem * editedItem, NSError*  fieldSaveError)
                {
                    NSLog(@"readFieldsByName: %@", editedItem.allFields);
                });
@@ -470,13 +470,13 @@ static NSString * const CellIdentifier = @"cellSiteUrl";
     
 }
 
--(NSString *)getUTCFormatDate:(NSDate *)localDate
+-(NSString*)getUTCFormatDate:(NSDate* )localDate
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
     [dateFormatter setTimeZone:timeZone];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSString *dateString = [dateFormatter stringFromDate:localDate];
+    NSString* dateString = [dateFormatter stringFromDate:localDate];
     return dateString;
 }
 

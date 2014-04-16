@@ -11,6 +11,7 @@
 
 #import "MUUploadSettingsStringFormatter.h"
 
+
 @interface sc_Site ()
 
 @property ( nonatomic, readwrite ) BOOL selectedForBrowse;
@@ -20,10 +21,10 @@
 
 @implementation sc_Site
 {
-    NSString *_siteStorage;
-    NSString *_urlStrorage;
+    NSString* _siteStorage;
+    NSString* _urlStrorage;
     
-    NSString *_uploadFolderPathInsideMediaLibrary;
+    NSString* _uploadFolderPathInsideMediaLibrary;
 }
 
 -(instancetype)copy
@@ -31,25 +32,28 @@
     //FIXME: @igk legacy
     NSLog(@"!!!!! SITE MUST NOT BE COPIED, LEGACY MANAGEMENT BUG");
     [ self doesNotRecognizeSelector: _cmd ];
+    
     return nil;
 }
 
-+(NSString *)siteDefaultValue
++(NSString*)siteDefaultValue
 {
     return @"/sitecore/shell";
 }
 
-+(NSString *)mediaLibraryDefaultPath
++(NSString*)mediaLibraryDefaultPath
 {
     return @"/sitecore/media library";
 }
 
-+(NSString *)mediaLibraryDefaultNameWithSlash:(BOOL)withSlash
++(NSString*)mediaLibraryDefaultNameWithSlash:(BOOL)withSlash
 {
-    NSString *result = @"media library";
+    NSString* result = @"media library";
     
     if ( withSlash )
+    {
         result = [NSString stringWithFormat:@"%@/", result];
+    }
     
     return result;
 }
@@ -57,16 +61,17 @@
 -(instancetype)init
 {
     [ self doesNotRecognizeSelector: _cmd ];
+    
     return nil;
 }
 
--(instancetype)initWithSiteUrl: (NSString *)siteUrl
-                site: (NSString *)site
-uploadFolderPathInsideMediaLibrary: (NSString *)uploadFolderPathInsideMediaLibrary
-            username: (NSString *)username
-            password: (NSString *)password
-   selectedForBrowse: (BOOL)selectedForBrowse
-   selectedForUpload: (BOOL)selectedForUpload
+-(instancetype)initWithSiteUrl:(NSString*)siteUrl
+                          site:(NSString*)site
+uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
+                      username:(NSString*)username
+                      password:(NSString*)password
+             selectedForBrowse:(BOOL)selectedForBrowse
+             selectedForUpload:(BOOL)selectedForUpload
 {
     self = [super init];
     if (nil != self)
@@ -90,26 +95,26 @@ uploadFolderPathInsideMediaLibrary: (NSString *)uploadFolderPathInsideMediaLibra
     return self;
 }
 
--(NSString *)getFolderPathForUpload
+-(NSString*)getFolderPathForUpload
 {
-    NSString *startingFolderPath = self.uploadFolderPathInsideMediaLibrary;
+    NSString* startingFolderPath = self.uploadFolderPathInsideMediaLibrary;
     
-    NSString *rootFolderPath = [ [self class] mediaLibraryDefaultPath ];
+    NSString* rootFolderPath = [ [self class] mediaLibraryDefaultPath ];
     
     return [ NSString stringWithFormat:@"%@/%@", rootFolderPath, startingFolderPath];
 }
 
--(NSString *)site
+-(NSString*)site
 {
     return [ self->_siteStorage stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding ];
 }
 
--(NSString *)siteUrl
+-(NSString*)siteUrl
 {
     return [ self->_urlStrorage stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding ];
 }
 
--(void)setSite:(NSString *)site
+-(void)setSite:(NSString*)site
 {
     if ( site == nil || [ site isEqualToString:@"" ] )
     {
@@ -126,36 +131,36 @@ uploadFolderPathInsideMediaLibrary: (NSString *)uploadFolderPathInsideMediaLibra
     
 }
 
--(void)setSiteUrl:(NSString *)siteUrl
+-(void)setSiteUrl:(NSString*)siteUrl
 {
     self->_urlStrorage = siteUrl;
 }
 
--(void)encodeWithCoder:(NSCoder *)encoder
+-(void)encodeWithCoder:(NSCoder*)encoder
 {
-    [encoder encodeObject:self.siteProtocol forKey:@"siteProtocol"];
-    [encoder encodeObject:self.siteUrl forKey:@"siteUrl"];
-    [encoder encodeObject:self.site forKey:@"site"];
-    [encoder encodeObject:self.uploadFolderPathInsideMediaLibrary forKey:@"uploadFolderPathInsideMediaLibrary"];
-    [encoder encodeObject:self.username forKey:@"username"];
-    [encoder encodeObject:self.password forKey:@"password"];
-    [encoder encodeBool:self->_selectedForBrowse forKey:@"selectedForBrowse"];
-    [encoder encodeBool:self->_selectedForUpload forKey:@"selectedForUpdate"];
+    [encoder encodeObject: self.siteProtocol forKey: @"siteProtocol"];
+    [encoder encodeObject: self.siteUrl forKey: @"siteUrl"];
+    [encoder encodeObject: self.site forKey: @"site"];
+    [encoder encodeObject: self.uploadFolderPathInsideMediaLibrary forKey: @"uploadFolderPathInsideMediaLibrary"];
+    [encoder encodeObject: self.username forKey: @"username"];
+    [encoder encodeObject: self.password forKey: @"password"];
+    [encoder encodeBool: self->_selectedForBrowse forKey: @"selectedForBrowse"];
+    [encoder encodeBool: self->_selectedForUpload forKey: @"selectedForUpdate"];
 }
 
--(id)initWithCoder:(NSCoder *)decoder
+-(id)initWithCoder:(NSCoder*)decoder
 {
-    self = [super init];
-    if (self)
+    self = [ super init ];
+    if ( nil != self )
     {
-        self.siteProtocol                       = [decoder decodeObjectForKey:@"siteProtocol"];
-        self.siteUrl                            = [decoder decodeObjectForKey:@"siteUrl"];
-        self.site                               = [decoder decodeObjectForKey:@"site"];
-        self.uploadFolderPathInsideMediaLibrary = [decoder decodeObjectForKey:@"uploadFolderPathInsideMediaLibrary"];
-        self.username                           = [decoder decodeObjectForKey:@"username"];
-        self.password                           = [decoder decodeObjectForKey:@"password"];
-        self->_selectedForBrowse                = [decoder decodeBoolForKey:@"selectedForBrowse"];
-        self->_selectedForUpload                = [decoder decodeBoolForKey:@"selectedForUpdate"];
+        self.siteProtocol                       = [decoder decodeObjectForKey: @"siteProtocol"];
+        self.siteUrl                            = [decoder decodeObjectForKey: @"siteUrl"];
+        self.site                               = [decoder decodeObjectForKey: @"site"];
+        self.uploadFolderPathInsideMediaLibrary = [decoder decodeObjectForKey: @"uploadFolderPathInsideMediaLibrary"];
+        self.username                           = [decoder decodeObjectForKey: @"username"];
+        self.password                           = [decoder decodeObjectForKey: @"password"];
+        self->_selectedForBrowse                = [decoder decodeBoolForKey: @"selectedForBrowse"];
+        self->_selectedForUpload                = [decoder decodeBoolForKey: @"selectedForUpdate"];
     }
     
     return self;
@@ -172,9 +177,9 @@ uploadFolderPathInsideMediaLibrary: (NSString *)uploadFolderPathInsideMediaLibra
     return [ NSString stringWithFormat: @"%@ \n %@", parentDescription, result ];
 }
 
--(instancetype)copyWithZone:(NSZone *)zone
+-(instancetype)copyWithZone:(NSZone*)zone
 {
-    sc_Site *copy = [[[self class] allocWithZone:zone] initWithSiteUrl: self.siteUrl
+    sc_Site* copy = [[[self class] allocWithZone:zone] initWithSiteUrl: self.siteUrl
                                                                   site: self.site
                                     uploadFolderPathInsideMediaLibrary: self.uploadFolderPathInsideMediaLibrary
                                                               username: self.username
@@ -182,10 +187,11 @@ uploadFolderPathInsideMediaLibrary: (NSString *)uploadFolderPathInsideMediaLibra
                                                      selectedForBrowse: self.selectedForBrowse
                                                      selectedForUpload: self.selectedForUpload ];
     NSAssert( copy, @"bad copy");
+
     return copy;
 }
 
--(BOOL)isEqual:(sc_Site *)object
+-(BOOL)isEqual:(sc_Site*)object
 {
     //following fields must not be used for sites comparing: username, password, selectedForBrowse, selectedForUpdate
     if ( self == object )
@@ -212,7 +218,7 @@ uploadFolderPathInsideMediaLibrary: (NSString *)uploadFolderPathInsideMediaLibra
     return ( urlHash + siteHash + uploadFolderPathInsideMediaLibraryHash );
 }
 
--(NSString *)uploadFolderPathInsideMediaLibrary
+-(NSString*)uploadFolderPathInsideMediaLibrary
 {
     if ( self->_uploadFolderPathInsideMediaLibrary == nil )
     {
@@ -223,9 +229,9 @@ uploadFolderPathInsideMediaLibrary: (NSString *)uploadFolderPathInsideMediaLibra
     
 }
 
--(void)setUploadFolderPathInsideMediaLibrary:(NSString *)uploadFolderPathInsideMediaLibrary
+-(void)setUploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
 {
-    NSString *mediaLibraryPath = [ [ self class ] mediaLibraryDefaultPath ];
+    NSString* mediaLibraryPath = [ [ self class ] mediaLibraryDefaultPath ];
     if ( [ uploadFolderPathInsideMediaLibrary hasPrefix: mediaLibraryPath ] )
     {
         NSUInteger symbolsCountToTruncate = [ mediaLibraryPath length ] + 1;

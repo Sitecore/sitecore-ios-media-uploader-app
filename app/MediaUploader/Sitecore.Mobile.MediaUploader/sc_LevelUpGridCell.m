@@ -18,7 +18,7 @@
     return self;
 }
 
--(UIImage *)iconImage
+-(UIImage* )iconImage
 {
     return [UIImage imageNamed:@"up"];
 }

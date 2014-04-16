@@ -17,7 +17,9 @@
 +(sc_GlobalDataObject*)getAppDataObject
 {
     id<sc_AppDelegateProtocol> delegate = (id<sc_AppDelegateProtocol>) [UIApplication sharedApplication].delegate;
-    return (sc_GlobalDataObject*) delegate.appDataObject;
+    sc_GlobalDataObject* result = (sc_GlobalDataObject*)delegate.appDataObject;
+    
+    return result;
 }
 
 -(instancetype)init

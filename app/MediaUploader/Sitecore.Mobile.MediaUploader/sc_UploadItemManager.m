@@ -24,13 +24,13 @@
     return self;
 }
 
--(void)setStatus:(sc_UploadItemStatus *)status forItemAtNumber:(NSNumber *)number
+-(void)setStatus:(sc_UploadItemStatus *)status forItemAtNumber:(NSNumber* )number
 {
     [ self->_statusStorage setObject: status
                               forKey: number ];
 }
 
--(sc_UploadItemStatus *)statusForItemAtNumber:(NSNumber *)number
+-(sc_UploadItemStatus *)statusForItemAtNumber:(NSNumber* )number
 {
     sc_UploadItemStatus *status = [ self->_statusStorage objectForKey: number ];
     

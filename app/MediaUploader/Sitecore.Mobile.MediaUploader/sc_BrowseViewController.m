@@ -28,7 +28,7 @@
 {
     SCApiSession* _legacyApiSession;
     SCExtendedApiSession* _apiSession;
-    sc_Site *_siteForBrowse;
+    sc_Site* _siteForBrowse;
     
     sc_GlobalDataObject *_appDataObject;
     sc_GridBrowserRequestBuilder *_requestBuilder;
@@ -42,7 +42,7 @@
     self->_appDataObject = [ sc_GlobalDataObject getAppDataObject ];
     [ self setupLayout  ];
     
-    NSArray *templatesList = @[@"Image", @"Jpeg", @"Media folder"];
+    NSArray* templatesList = @[@"Image", @"Jpeg", @"Media folder"];
     self->_requestBuilder = [ [ sc_GridBrowserRequestBuilder alloc ] initWithTemplateNames: templatesList ];
     self.cellFactory.itemsBrowserController.nextLevelRequestBuilder = self->_requestBuilder;
     browserMustBeReloaded = YES;
@@ -70,7 +70,7 @@
     
     self.cellFactory.itemsBrowserController.apiSession = self->_apiSession;
     
-    NSString *rootFolderPath = [ sc_Site mediaLibraryDefaultPath ];
+    NSString* rootFolderPath = [ sc_Site mediaLibraryDefaultPath ];
     
     SCExtendedAsyncOp rootItemLoader =
     [ self->_apiSession readItemOperationForItemPath: rootFolderPath
@@ -201,7 +201,7 @@ shouldLoadLevelForItem:( SCItem* )levelParentItem
 
 -(NSMutableArray *)itemsForQuickViewControllerForLevelItem:(SCItem *)levelItem
 {
-    NSArray * items = [ levelItem.parent.readChildren mutableCopy ];
+    NSArray*  items = [ levelItem.parent.readChildren mutableCopy ];
     items = [ items sortedArrayUsingComparator: [ self sortResultComparatorForItemsBrowser:nil ] ];
     return [ items mutableCopy ];
 }

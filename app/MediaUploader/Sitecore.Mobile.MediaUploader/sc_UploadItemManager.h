@@ -12,8 +12,8 @@
 
 @interface sc_UploadItemManager : NSObject
 
--(void)setStatus:(sc_UploadItemStatus *)status forItemAtNumber:(NSNumber *)number;
--(sc_UploadItemStatus *)statusForItemAtNumber:(NSNumber *)number;
+-(void)setStatus:(sc_UploadItemStatus *)status forItemAtNumber:(NSNumber* )number;
+-(sc_UploadItemStatus *)statusForItemAtNumber:(NSNumber* )number;
 -(void)clearAllStatuses;
 
 @end

@@ -20,8 +20,8 @@
 @property (nonatomic) IBOutlet UITextField *siteTextField;
 @property (nonatomic) IBOutlet UITableView *siteTableView;
 
--(void)setSiteForEdit:(sc_Site *)site;
+-(void)setSiteForEdit:(sc_Site*)site;
 
 //TODO: @igk refactor this
--(void)saveSiteWithUploadFolder:(NSString *)uploadFolder;
+-(void)saveSiteWithUploadFolder:(NSString*)uploadFolder;
 @end

@@ -10,6 +10,6 @@
 
 @interface sc_Validator : NSObject
 
-+ (NSString *) proposeValidItemName: (NSString *) name withDefault: (NSString *) defaultValue;
++(NSString*) proposeValidItemName:(NSString*) name withDefault:(NSString*) defaultValue;
 
 @end

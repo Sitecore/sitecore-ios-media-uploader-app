@@ -40,7 +40,7 @@
 {
     CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
     [geocoder reverseGeocodeLocation:location
-                   completionHandler:^(NSArray *placemarks, NSError *error)
+                   completionHandler:^(NSArray* placemarks, NSError* error)
      {
          NSLog(@"reverseGeocodeLocation:completionHandler: Completion Handler called!");
          
@@ -64,22 +64,22 @@
      }];
 }
 
--(NSString *)getCurrentLocationDescription
+-(NSString*)getCurrentLocationDescription
 {
     return [ [self class] getLocationDescriptionForPlacemark: _appDataObject.selectedPlaceMark ];
 }
 
--(NSString *)getCountryCode
+-(NSString*)getCountryCode
 {
     return _appDataObject.selectedPlaceMark.ISOcountryCode;
 }
 
--(NSString *)getCityCode
+-(NSString*)getCityCode
 {
     return _appDataObject.selectedPlaceMark.postalCode;
 }
 
--(void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+-(void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError* )error
 {
     [_locationManager stopUpdatingLocation];
 }
@@ -105,8 +105,8 @@
     CLLocationDegrees exifLatitude  = _currentLocation.coordinate.latitude;
     CLLocationDegrees exifLongitude = _currentLocation.coordinate.longitude;
     
-    NSString * latRef;
-    NSString * longRef;
+    NSString*  latRef;
+    NSString*  longRef;
     if (exifLatitude < 0.0)
     {
         exifLatitude = exifLatitude * -1.0f;
@@ -131,16 +131,16 @@
     
     [locDict setObject:[NSDate date] forKey:(NSString*)kCGImagePropertyGPSTimeStamp];
     [locDict setObject:latRef forKey:(NSString*)kCGImagePropertyGPSLatitudeRef];
-    [locDict setObject:[NSNumber numberWithFloat:exifLatitude] forKey:(NSString *)kCGImagePropertyGPSLatitude];
+    [locDict setObject:[NSNumber numberWithFloat:exifLatitude] forKey:(NSString*)kCGImagePropertyGPSLatitude];
     [locDict setObject:longRef forKey:(NSString*)kCGImagePropertyGPSLongitudeRef];
-    [locDict setObject:[NSNumber numberWithFloat:exifLongitude] forKey:(NSString *)kCGImagePropertyGPSLongitude];
+    [locDict setObject:[NSNumber numberWithFloat:exifLongitude] forKey:(NSString*)kCGImagePropertyGPSLongitude];
     [locDict setObject:[NSNumber numberWithFloat:_currentLocation.horizontalAccuracy] forKey:(NSString*)kCGImagePropertyGPSDOP];
     [locDict setObject:[NSNumber numberWithFloat:_currentLocation.altitude] forKey:(NSString*)kCGImagePropertyGPSAltitude];
     
     return locDict;
 }
 
-+(NSString *)getLocationDescriptionForPlacemark:(CLPlacemark *)placemark
++(NSString*)getLocationDescriptionForPlacemark:(CLPlacemark *)placemark
 {
     
     if(placemark == nil)
@@ -148,31 +148,31 @@
         return NSLocalizedString(@"Location undefined", nil);
     }
     
-    NSString * ISOcountryCode = placemark.ISOcountryCode;
+    NSString*  ISOcountryCode = placemark.ISOcountryCode;
     if (ISOcountryCode == nil)
     {
         ISOcountryCode = @"";
     }
     
-    NSString *locality = placemark.locality;
+    NSString* locality = placemark.locality;
     if (locality == nil)
     {
         locality = @"";
     }
     
-    NSString *subLocality = placemark.subLocality;
+    NSString* subLocality = placemark.subLocality;
     if (subLocality == nil)
     {
         subLocality = @"";
     }
     
-    NSString *thoroughfare = placemark.thoroughfare;
+    NSString* thoroughfare = placemark.thoroughfare;
     if (thoroughfare == nil)
     {
         thoroughfare = @"";
     }
     
-    NSString *subThoroughfare = placemark.subThoroughfare;
+    NSString* subThoroughfare = placemark.subThoroughfare;
     if (subThoroughfare == nil)
     {
         subThoroughfare = @"";

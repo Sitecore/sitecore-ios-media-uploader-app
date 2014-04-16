@@ -48,7 +48,7 @@
     
     if (self.isMovingFromParentViewController)
     {
-        NSArray *viewControllers = [ self.navigationController viewControllers ];
+        NSArray* viewControllers = [ self.navigationController viewControllers ];
         UIViewController *previusController = [ viewControllers objectAtIndex: viewControllers.count - 1 ];
         if ( ![ previusController isKindOfClass: [ sc_UploadViewController class ] ] )
         {
@@ -70,13 +70,13 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        sc_Site *siteToDelete = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
+        sc_Site* siteToDelete = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
         [ _appDataObject.sitesManager removeSite: siteToDelete ];
         [ self reload ];
     }
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (section == 1)
     {
@@ -134,7 +134,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         
         UITableViewCell *  cell =  [tableView dequeueReusableCellWithIdentifier:@"cellSiteUrl" forIndexPath:indexPath];
         
-        sc_Site *siteAtIndex = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
+        sc_Site* siteAtIndex = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
 
         cell.textLabel.lineBreakMode = NSLineBreakByTruncatingHead;
         cell.detailTextLabel.lineBreakMode = NSLineBreakByTruncatingHead ;
@@ -192,7 +192,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         }
         else
         {
-            sc_Site *siteAtIndex = [ _appDataObject.sitesManager siteAtIndex: indexPath.row ];
+            sc_Site* siteAtIndex = [ _appDataObject.sitesManager siteAtIndex: indexPath.row ];
             [ _appDataObject.sitesManager setSiteForUpload: siteAtIndex ];
             [ self.sitesTableView reloadData ];
         }
@@ -207,7 +207,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 
 -(void)accessoryTapped:(UIButton *)sender
 {
-    sc_Site *siteAtIndex = [ _appDataObject.sitesManager siteAtIndex: sender.tag ];
+    sc_Site* siteAtIndex = [ _appDataObject.sitesManager siteAtIndex: sender.tag ];
 
     sc_SiteAddViewController *siteEditViewController = (sc_SiteAddViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"AddSite"];
     [ siteEditViewController setSiteForEdit: siteAtIndex ];

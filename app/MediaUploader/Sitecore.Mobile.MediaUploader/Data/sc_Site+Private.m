@@ -8,6 +8,7 @@
 
 #import "sc_Site+Private.h"
 
+
 @implementation sc_Site (Private)
 
 @dynamic selectedForBrowse;

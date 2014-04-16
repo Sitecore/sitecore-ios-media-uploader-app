@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface sc_AppDataObject : NSObject
 
+@interface sc_AppDataObject : NSObject
 
 @end

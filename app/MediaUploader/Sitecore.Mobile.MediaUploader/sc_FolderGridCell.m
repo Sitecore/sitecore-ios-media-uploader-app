@@ -21,7 +21,7 @@
     return self;
 }
 
--(UIImage *)folderIconImage
+-(UIImage* )folderIconImage
 {
     return [UIImage imageNamed:@"folder"];
 }

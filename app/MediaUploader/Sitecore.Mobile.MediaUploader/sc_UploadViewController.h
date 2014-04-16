@@ -22,8 +22,8 @@
 @property (nonatomic) IBOutlet UIImageView *imageView;
 @property (nonatomic) IBOutlet UITextField *name;
 @property (nonatomic) IBOutlet UILabel *locationDescription;
-@property (nonatomic) NSURL *videoUrl;
-@property (nonatomic) NSURL *imageUrl;
+@property (nonatomic) NSURL* videoUrl;
+@property (nonatomic) NSURL* imageUrl;
 @property (nonatomic) IBOutlet UIView *locationView;
 @property (nonatomic) IBOutlet UIBarButtonItem *settingsButton;
 

@@ -59,7 +59,7 @@
 {
     SCItem * cellObject = [ _items objectAtIndex: indexPath.row ];
     
-    static NSString *identifier = @"Cell";
+    static NSString* identifier = @"Cell";
     UICollectionViewCell *cell = [ collectionView dequeueReusableCellWithReuseIdentifier: identifier
                                                                             forIndexPath: indexPath ];
     SCImageView *imageView = (SCImageView *)[ cell viewWithTag: 100 ];
@@ -74,12 +74,12 @@
     //TODO: @igk fix hardcode
     params.backgroundColor = @"white";
     
-    NSString *itemPath = [ sc_ItemHelper getPath: cellObject.itemId ];
+    NSString* itemPath = [ sc_ItemHelper getPath: cellObject.itemId ];
     
     SCAsyncOp imageReader = [ self.session downloadResourceOperationForMediaPath: itemPath
                                                                      imageParams: params ];
     
-    imageReader(^( id result, NSError *error )
+    imageReader(^( id result, NSError* error )
                 {
                     if ( error == NULL )
                     {
@@ -102,7 +102,7 @@
     SCItem *item;
     for ( item in _items )
     {
-        NSString * itemType = [ sc_ItemHelper itemType: item ];
+        NSString*  itemType = [ sc_ItemHelper itemType: item ];
         if ( [ itemType isEqualToString: @"folder" ] )
         {
             [ discardedItems addObject: item ];
