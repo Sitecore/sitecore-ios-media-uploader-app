@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "sc_AppDataObject.h"
-#import "sc_media.h"
-#import "sc_ItemsForUploadManager.h"
+#import <CoreLocation/CoreLocation.h>
 
+#import "sc_AppDataObject.h"
+
+@class SCSitesManager;
+@class sc_ItemsForUploadManager;
 
 @interface sc_GlobalDataObject : sc_AppDataObject
 

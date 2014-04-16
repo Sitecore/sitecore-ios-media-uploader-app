@@ -19,6 +19,7 @@
 		7EAC344818FE748B007D540D /* libMUAllUploaderLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC343018FE748B007D540D /* libMUAllUploaderLibs.a */; };
 		7EAC344E18FE748B007D540D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EAC344C18FE748B007D540D /* InfoPlist.strings */; };
 		7EAC345018FE748B007D540D /* MUAllUploaderLibsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC344F18FE748B007D540D /* MUAllUploaderLibsTests.m */; };
+		7EDFEB1018FEBFD200055891 /* libSCInstanceStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC346A18FE74B9007D540D /* libSCInstanceStorage.a */; };
 		7EE3AAEE18FE989500C68E85 /* libMUAnalyticsTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E41A0D918FE986000D601EF /* libMUAnalyticsTracker.a */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +115,13 @@
 			remoteGlobalIDString = B4E7DA7E1679301500C01DFA;
 			remoteInfo = iOSReachabilityFramework;
 		};
+		7EDFEB0918FEBFCE00055891 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EAC346418FE74B9007D540D /* SCInstanceStorage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 78716C4418F6E8130092AA98;
+			remoteInfo = SCInstanceStorage;
+		};
 		7EE3AAE818FE989200C68E85 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
@@ -158,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EDFEB1018FEBFD200055891 /* libSCInstanceStorage.a in Frameworks */,
 				7E62FBE718FEA06100D88F70 /* libMUCrashlyticsWrapper.a in Frameworks */,
 				7E26869818FE9B7800033905 /* libMUFlurryWrapper.a in Frameworks */,
 				7EE3AAEE18FE989500C68E85 /* libMUAnalyticsTracker.a in Frameworks */,
@@ -308,6 +317,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7EDFEB0A18FEBFCE00055891 /* PBXTargetDependency */,
 				7E26868618FE9B7100033905 /* PBXTargetDependency */,
 				7E26868818FE9B7100033905 /* PBXTargetDependency */,
 				7EE3AAE918FE989200C68E85 /* PBXTargetDependency */,
@@ -493,6 +503,11 @@
 			isa = PBXTargetDependency;
 			target = 7EAC342F18FE748B007D540D /* MUAllUploaderLibs */;
 			targetProxy = 7EAC344618FE748B007D540D /* PBXContainerItemProxy */;
+		};
+		7EDFEB0A18FEBFCE00055891 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCInstanceStorage;
+			targetProxy = 7EDFEB0918FEBFCE00055891 /* PBXContainerItemProxy */;
 		};
 		7EE3AAE918FE989200C68E85 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

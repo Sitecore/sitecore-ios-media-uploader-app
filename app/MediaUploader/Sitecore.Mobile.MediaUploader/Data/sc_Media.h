@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+
 @class SCSite;
+@class UIImage;
 
 
 @interface sc_Media : NSObject

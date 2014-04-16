@@ -1,8 +1,6 @@
 #import "SCSite.h"
 #import "MUUploadSettingsStringFormatter.h"
 
-#import <Sitecore.Mobile.MediaUploader/Data/Site/MUUploadSettingsStringFormatter.h>
-#import "MUUploadSettingsStringFormatter.h"
 
 @interface SCSite ()
 
