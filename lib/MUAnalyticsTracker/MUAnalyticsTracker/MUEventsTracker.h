@@ -1,5 +1,5 @@
 
-#import <Sitecore.Mobile.MediaUploader/Tracking/MUTrackable.h>
+#import <MUAnalyticsTracker/MUTrackable.h>
 #import <Foundation/Foundation.h>
 
 

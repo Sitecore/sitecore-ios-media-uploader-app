@@ -1,5 +1,5 @@
 
-#import <Sitecore.Mobile.MediaUploader/Tracking/MUSessionTracker.h>
+#import <MUAnalyticsTracker/MUSessionTracker.h>
 #import <Foundation/Foundation.h>
 
 

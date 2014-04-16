@@ -1,4 +1,4 @@
-#import <Sitecore.Mobile.MediaUploader/Tracking/MUEventsTracker.h>
+#import <MUAnalyticsTracker/MUEventsTracker.h>
 #import <Foundation/Foundation.h>
 
 @protocol MUSessionTracker;

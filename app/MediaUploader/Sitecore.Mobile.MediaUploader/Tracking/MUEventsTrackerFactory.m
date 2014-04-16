@@ -1,13 +1,5 @@
 #import "MUEventsTrackerFactory.h"
 
-#import "MUEventsTracker.h"
-#import "MUEventsTrackerPOD.h"
-
-
-#import "MUCompositeSessionTracker.h"
-#import "MUFlurrySessionTracker.h"
-#import "MUCrashlyticsSessionTracker.h"
-
 
 @implementation MUEventsTrackerFactory
 

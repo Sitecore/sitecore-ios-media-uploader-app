@@ -1,5 +1,7 @@
 #import "MUFlurrySessionTracker.h"
 
+#import "MUTrackable.h"
+
 @implementation MUFlurrySessionTracker
 
 -(NSString*)messageForNewSession:( id<MUTrackable> )site
