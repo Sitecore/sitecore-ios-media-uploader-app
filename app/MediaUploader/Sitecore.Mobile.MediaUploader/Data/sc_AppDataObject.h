@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface sc_AppDataObject : NSObject
-{
-}
+
 
 @end
