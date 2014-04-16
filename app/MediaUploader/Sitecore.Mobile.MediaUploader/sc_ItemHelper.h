@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "sc_Site.h"
 
 typedef NS_ENUM(NSInteger, sc_CellType) {
     UnknownCellType = 0,
@@ -17,9 +16,9 @@ typedef NS_ENUM(NSInteger, sc_CellType) {
 };
 
 @interface sc_ItemHelper : NSObject
-+ (SCApiSession *)getContext:(sc_Site *) site;
++ (SCApiSession *)getContext:(SCSite *) site;
 + (NSString *)getDefaultDatabase;
-+ (NSString *)formatUploadFolder:(sc_Site *) site;
++ (NSString *)formatUploadFolder:(SCSite *) site;
 + (NSString *) getPath: (NSString *) itemId;
 + (NSString *) itemType: (SCItem *) item;
 + (sc_CellType) scItemType: (SCItem *) item;

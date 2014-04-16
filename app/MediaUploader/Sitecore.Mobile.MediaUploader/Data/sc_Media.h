@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class sc_Site;
+@class SCSite;
 
 @interface sc_Media : NSObject
 
@@ -25,7 +25,7 @@
 @property  (nonatomic) NSURL *videoUrl;
 @property  (nonatomic) NSURL *imageUrl;
 @property  (nonatomic) NSInteger status;
-@property  (nonatomic) sc_Site *siteForUploading;
+@property  (nonatomic) SCSite *siteForUploading;
 
 -(id)initWithObjectData:(NSString *)name
                dateTime:(NSDate   *) dateTime

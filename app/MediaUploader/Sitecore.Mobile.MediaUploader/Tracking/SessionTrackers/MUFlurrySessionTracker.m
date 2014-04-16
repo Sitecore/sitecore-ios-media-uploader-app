@@ -14,7 +14,7 @@
 
 -(NSDictionary*)dictionaryFromSession:( id<MUTrackable> )site
 {
-    // TODO : use specific properties of sc_Site instead
+    // TODO : use specific properties of SCSite instead
     NSDictionary* result =
     @{
         @"Session Info" : [ self messageForNewSession: site ]

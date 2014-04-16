@@ -7,7 +7,6 @@
 //
 
 #import "sc_ItemHelper.h"
-#import "sc_Site.h"
 #import "sc_Constants.h"
 
 @implementation sc_ItemHelper
@@ -18,7 +17,7 @@
    return @"master";
 }
 
-+(SCApiSession *)getContext:(sc_Site *) site
++(SCApiSession *)getContext:(SCSite *) site
 {
     NSString *fullUrl = [NSString stringWithFormat:@"%@%@", site.siteProtocol, site.siteUrl ];
     
@@ -31,14 +30,14 @@
     return session;
 }
 
-+(NSString *)formatUploadFolder:(sc_Site *) site
++(NSString *)formatUploadFolder:(SCSite *) site
 {
     if (site.uploadFolderPathInsideMediaLibrary.length == 0)
     {
-        return [ sc_Site mediaLibraryDefaultNameWithSlash: NO ];
+        return [ SCSite mediaLibraryDefaultNameWithSlash: NO ];
     }
     
-    return [NSString stringWithFormat: @"%@%@", [ sc_Site mediaLibraryDefaultNameWithSlash: YES ], site.uploadFolderPathInsideMediaLibrary];
+    return [NSString stringWithFormat: @"%@%@", [ SCSite mediaLibraryDefaultNameWithSlash: YES ], site.uploadFolderPathInsideMediaLibrary];
 }
 
 +(sc_CellType) scItemType: (SCItem *) item

@@ -11,7 +11,6 @@
 #import "sc_SettingsViewController.h"
 #import "sc_SiteAddViewController.h"
 #import "sc_UploadViewController.h"
-#import "sc_Site.h"
 #import "sc_ViewsHelper.h"
 #import "sc_Constants.h"
 #import "sc_ImageHelper.h"
@@ -70,7 +69,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        sc_Site *siteToDelete = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
+        SCSite *siteToDelete = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
         [ _appDataObject.sitesManager removeSite: siteToDelete ];
         [ self reload ];
     }
@@ -134,7 +133,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         
         UITableViewCell *  cell =  [tableView dequeueReusableCellWithIdentifier:@"cellSiteUrl" forIndexPath:indexPath];
         
-        sc_Site *siteAtIndex = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
+        SCSite *siteAtIndex = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
 
         cell.textLabel.lineBreakMode = NSLineBreakByTruncatingHead;
         cell.detailTextLabel.lineBreakMode = NSLineBreakByTruncatingHead ;
@@ -192,7 +191,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         }
         else
         {
-            sc_Site *siteAtIndex = [ _appDataObject.sitesManager siteAtIndex: indexPath.row ];
+            SCSite *siteAtIndex = [ _appDataObject.sitesManager siteAtIndex: indexPath.row ];
             [ _appDataObject.sitesManager setSiteForUpload: siteAtIndex ];
             [ self.sitesTableView reloadData ];
         }
@@ -207,7 +206,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 
 -(void)accessoryTapped:(UIButton *)sender
 {
-    sc_Site *siteAtIndex = [ _appDataObject.sitesManager siteAtIndex: sender.tag ];
+    SCSite *siteAtIndex = [ _appDataObject.sitesManager siteAtIndex: sender.tag ];
 
     sc_SiteAddViewController *siteEditViewController = (sc_SiteAddViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"AddSite"];
     [ siteEditViewController setSiteForEdit: siteAtIndex ];

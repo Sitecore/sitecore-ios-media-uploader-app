@@ -10,7 +10,6 @@
 #import "sc_GlobalDataObject.h"
 #import "sc_AppDelegateProtocol.h"
 #import "sc_UploadViewController.h"
-#import "sc_Site.h"
 #import "sc_Constants.h"
 #import "sc_ReloadableViewProtocol.h"
 #import "sc_ViewsHelper.h"
@@ -18,7 +17,7 @@
 
 @interface sc_SitesSelectionViewController ()
 @property ( nonatomic ) NSIndexPath *selectedIndex;
-@property ( nonatomic ) sc_Site *selectedSite;
+@property ( nonatomic ) SCSite *selectedSite;
 @end
 
 @implementation sc_SitesSelectionViewController
@@ -61,7 +60,7 @@
     static NSString *cellIdentifier = @"cellSiteUrl";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    sc_Site *currentSite = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
+    SCSite *currentSite = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
     [ [cell textLabel] setText: currentSite.siteUrl ];
     cell.detailTextLabel.text = [sc_ItemHelper formatUploadFolder: currentSite];
     

@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "sc_Site.h"
 #import "sc_Media.h"
 
 @interface sc_UploadItem : NSObject
