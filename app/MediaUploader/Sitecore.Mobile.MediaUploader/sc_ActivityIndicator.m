@@ -8,21 +8,27 @@
 
 #import "sc_ActivityIndicator.h"
 
+
 @interface sc_ActivityIndicator()
+
 @end
+
 
 @implementation sc_ActivityIndicator
 {
-    UIActivityIndicatorView *_activityView;
-    UILabel *_loadingLabel;
+    UIActivityIndicatorView* _activityView;
+    UILabel* _loadingLabel;
 }
 
--(id) initWithFrame:(CGRect)frame
+-(id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithFrame:CGRectMake((frame.size.width - 170) /2, (frame.size.height- 170) /2, 170, 170)];
-    if( !self ) return nil;
+    self = [super initWithFrame:CGRectMake((frame.size.width - 170) / 2, (frame.size.height- 170) / 2, 170, 170)];
+    if ( !self )
+    {
+        return nil;
+    }
     
-    self.hidden=YES;
+    self.hidden = YES;
     self.backgroundColor = [ UIColor colorWithRed:0 green:0 blue:0 alpha:0.5 ];
     self.clipsToBounds = YES;
     self.layer.cornerRadius = 10.0;
@@ -42,13 +48,13 @@
     return self;
 }
 
--(void) showWithLabel: (NSString *)label
+-(void)showWithLabel:(NSString*)label
 {
     [ self showWithLabel: label
               afterDelay: 0 ];
 }
 
--(void) showWithLabel: (NSString *)label afterDelay: (float) wait
+-(void)showWithLabel:(NSString*)label afterDelay:(float)wait
 {
     [self cancelAllRequests];
     self->_loadingLabel.text = label;
@@ -57,18 +63,18 @@
                 afterDelay: wait ];
 }
 
--(void) showActivityView
+-(void)showActivityView
 {
     self.hidden = NO;
 }
 
--(void) hide
+-(void)hide
 {
     [self cancelAllRequests];
     self.hidden = YES;
 }
 
--(void) cancelAllRequests
+-(void)cancelAllRequests
 {
     [ NSObject cancelPreviousPerformRequestsWithTarget: self ];
 }

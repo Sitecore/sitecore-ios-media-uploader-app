@@ -17,22 +17,33 @@
 #import "sc_ImageHelper.h"
 #import "sc_LocationManager.h"
 
+
 typedef NS_ENUM(NSInteger, MapViewMode)
 {
     MapViewModeNormal = 0,
     MapViewModeLoading,
 };
 
-@interface sc_MapViewController () <MKMapViewDelegate, CLLocationManagerDelegate, UIAlertViewDelegate,UISearchBarDelegate>
-@property (nonatomic, strong) CLLocationManager *locationManager;
-@property (nonatomic, strong) NSMutableArray *mapItems;
-@property (nonatomic, strong) MKLocalSearch *localSearch;
-@property (nonatomic, strong) MKLocalSearchRequest *localSearchRequest;
+
+@interface sc_MapViewController ()
+<
+    MKMapViewDelegate,
+    CLLocationManagerDelegate,
+    UIAlertViewDelegate,
+    UISearchBarDelegate
+>
+
+@property (nonatomic, strong) CLLocationManager* locationManager;
+@property (nonatomic, strong) NSMutableArray* mapItems;
+@property (nonatomic, strong) MKLocalSearch* localSearch;
+@property (nonatomic, strong) MKLocalSearchRequest* localSearchRequest;
 @property (nonatomic) MapViewMode mapViewMode;
 @property (nonatomic) CLLocationCoordinate2D coords;
-@property (nonatomic) NSMutableArray *foundPlacemarks;
-@property (nonatomic) CLPlacemark *currentPlacemark;
+@property (nonatomic) NSMutableArray* foundPlacemarks;
+@property (nonatomic) CLPlacemark* currentPlacemark;
+
 @end
+
 
 @implementation sc_MapViewController
 
@@ -63,15 +74,15 @@ static CGFloat beautifulRegionCoef = 112.f;
     _useButton.target = self;
     _useButton.action = @selector(useButtonPushed:);
 
-    [_currentLocationButton addTarget:self action:@selector(currentLocationButtonPushed:) forControlEvents:UIControlEventTouchUpInside];
+    [_currentLocationButton addTarget: self action:@selector(currentLocationButtonPushed:) forControlEvents:UIControlEventTouchUpInside];
     
     UILongPressGestureRecognizer *gestureRecognizer = [[UILongPressGestureRecognizer alloc]
-                                                       initWithTarget:self action:@selector(handleGesture:)];
+                                                       initWithTarget: self action:@selector(handleGesture:)];
     gestureRecognizer.minimumPressDuration = 0.2f;  //user must press for 1 second
     [_mapView addGestureRecognizer:gestureRecognizer];
 }
 
-- (void)initializeLocation
+-(void)initializeLocation
 {
     _locationManager = [[CLLocationManager alloc] init];
     _locationManager.delegate = self;
@@ -87,24 +98,26 @@ static CGFloat beautifulRegionCoef = 112.f;
     }
 }
 
-- (void)setAnnotationFromCoordinate:(CLLocationCoordinate2D)touchMapCoordinate
+-(void)setAnnotationFromCoordinate:(CLLocationCoordinate2D)touchMapCoordinate
 {
-    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    MKPointAnnotation* annotation = [[MKPointAnnotation alloc] init];
     annotation.coordinate = touchMapCoordinate;
     [_mapView addAnnotation:annotation];
     
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    CLLocation *coord = [[CLLocation alloc] initWithLatitude:touchMapCoordinate.latitude longitude:touchMapCoordinate.longitude];
-    [geocoder reverseGeocodeLocation:coord completionHandler:^(NSArray *placemarks, NSError *error) {
+    CLGeocoder* geocoder = [[CLGeocoder alloc] init];
+    CLLocation* coord = [[CLLocation alloc] initWithLatitude:touchMapCoordinate.latitude longitude:touchMapCoordinate.longitude];
+    [geocoder reverseGeocodeLocation:coord completionHandler:^(NSArray* placemarks, NSError* error)
+    {
         
-        if (error) {
+        if (error)
+        {
             NSLog(@"Geocode failed with error");
         }
         
         self->_foundPlacemarks = [[NSMutableArray alloc] initWithArray:placemarks];
         
         if (placemarks && placemarks.count > 0) {
-            CLPlacemark *placemark = [placemarks objectAtIndex:0];
+            CLPlacemark* placemark = [placemarks objectAtIndex:0];
             annotation.title = [ sc_LocationManager getLocationDescriptionForPlacemark: placemark ];
             
             [self setSelectedPlaceMark:placemark];
@@ -112,9 +125,9 @@ static CGFloat beautifulRegionCoef = 112.f;
     }];
 }
 
-- (void)setAnnotationFromPlacemark:(CLPlacemark*) placemark
+-(void)setAnnotationFromPlacemark:(CLPlacemark*) placemark
 {
-    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    MKPointAnnotation* annotation = [[MKPointAnnotation alloc] init];
     annotation.coordinate = placemark.location.coordinate;
     [self.mapView addAnnotation:annotation];
     annotation.title = [ sc_LocationManager getLocationDescriptionForPlacemark: placemark ];
@@ -123,10 +136,12 @@ static CGFloat beautifulRegionCoef = 112.f;
     [self setSelectedPlaceMark:placemark];
 }
 
-- (void)handleGesture:(UIGestureRecognizer *)gestureRecognizer
+-(void)handleGesture:(UIGestureRecognizer*)gestureRecognizer
 {
     if (gestureRecognizer.state != UIGestureRecognizerStateEnded)
+    {
         return;
+    }
     
     [_mapView removeAnnotations:_mapView.annotations];
     
@@ -135,7 +150,8 @@ static CGFloat beautifulRegionCoef = 112.f;
     [self setAnnotationFromCoordinate:touchMapCoordinate];
 }
 
--(void)didReceiveMemoryWarning {
+-(void)didReceiveMemoryWarning
+{
     
     [super didReceiveMemoryWarning];
     
@@ -145,19 +161,19 @@ static CGFloat beautifulRegionCoef = 112.f;
     _localSearchRequest = nil;
 }
 
-- (void)setSelectedPlaceMark:(CLPlacemark *)placemark
+-(void)setSelectedPlaceMark:(CLPlacemark*)placemark
 {
     self.navigationItem.title = [ sc_LocationManager getLocationDescriptionForPlacemark: placemark ];
     _currentPlacemark = placemark;
 }
 
-- (void)goToLocation:(CLLocation*) location
+-(void)goToLocation:(CLLocation*) location
 {
     _coords = location.coordinate;
     
     [self centerOverUserLocation];
     CLGeocoder* reverseGeocoder = [[CLGeocoder alloc] init];
-    [reverseGeocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error)
+    [reverseGeocoder reverseGeocodeLocation:location completionHandler:^(NSArray* placemarks, NSError* error)
     {
         self->_foundPlacemarks = [[NSMutableArray alloc] initWithArray:placemarks];
         if (placemarks.count > 0 )
@@ -169,7 +185,7 @@ static CGFloat beautifulRegionCoef = 112.f;
 }
 
 
--(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+-(void)locationManager:(CLLocationManager*)manager didUpdateToLocation:(CLLocation*)newLocation fromLocation:(CLLocation*)oldLocation
 {
     [_locationManager stopUpdatingLocation];
     [self goToLocation:newLocation];
@@ -189,7 +205,7 @@ static CGFloat beautifulRegionCoef = 112.f;
     [_mapView setRegion:region animated:NO];
 }
 
--(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+-(void)locationManager:(CLLocationManager*)manager didFailWithError:(NSError*)error
 {
     if (error.code == kCLErrorDenied)
     {
@@ -202,7 +218,7 @@ static CGFloat beautifulRegionCoef = 112.f;
                           otherButtonTitles:nil] show];
         
     }
-    else if(error.code == kCLErrorLocationUnknown)
+    else if (error.code == kCLErrorLocationUnknown)
     {
         return;
     }
@@ -221,14 +237,14 @@ static CGFloat beautifulRegionCoef = 112.f;
     _mapViewMode = mapViewMode;
 }
 
-- (void)setPlacemark:(CLPlacemark *)placemark
+-(void)setPlacemark:(CLPlacemark*)placemark
 {
     MKCoordinateRegion region;
     CLCircularRegion *placemarkRegion;
 
     if ( [ placemark.region isKindOfClass:[ CLCircularRegion class ] ] )
     {
-        placemarkRegion = (CLCircularRegion *)placemark.region;
+        placemarkRegion = (CLCircularRegion*)placemark.region;
     }
     else
     {
@@ -252,13 +268,13 @@ static CGFloat beautifulRegionCoef = 112.f;
     [_mapView setRegion:region animated:YES];
 }
 
--(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+-(void)searchBarSearchButtonClicked:(UISearchBar*)searchBar
 {
     [_mapView removeAnnotations:_mapView.annotations];
     
     [_searchBar resignFirstResponder];
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder geocodeAddressString:_searchBar.text completionHandler:^(NSArray *placemarks, NSError *error)
+    CLGeocoder* geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:_searchBar.text completionHandler:^(NSArray* placemarks, NSError* error)
     {
         self->_foundPlacemarks = [[NSMutableArray alloc] initWithArray:placemarks];
         
@@ -271,23 +287,23 @@ static CGFloat beautifulRegionCoef = 112.f;
     }];
 }
 
-- (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
+-(void)searchBarCancelButtonClicked:(UISearchBar*) searchBar
 {
     [searchBar resignFirstResponder];
 }
 
-- (IBAction) cancelButtonPushed:(id)sender
+-(IBAction) cancelButtonPushed:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction) useButtonPushed:(id)sender
+-(IBAction) useButtonPushed:(id)sender
 {
     _appDataObject.selectedPlaceMark = _currentPlacemark;
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction) currentLocationButtonPushed:(id)sender
+-(IBAction) currentLocationButtonPushed:(id)sender
 {
     [_mapView removeAnnotations:_mapView.annotations];
     [_locationManager startUpdatingLocation];

@@ -1,0 +1,681 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7E26869818FE9B7800033905 /* libMUFlurryWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E26869118FE9B7100033905 /* libMUFlurryWrapper.a */; };
+		7E46305218FE768D009E0F7F /* libiOSReachabilityFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC347218FE74BE007D540D /* libiOSReachabilityFramework.a */; };
+		7E62FBE718FEA06100D88F70 /* libMUCrashlyticsWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E26868F18FE9B7100033905 /* libMUCrashlyticsWrapper.a */; };
+		7EAC343418FE748B007D540D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC343318FE748B007D540D /* Foundation.framework */; };
+		7EAC343918FE748B007D540D /* MUAllUploaderLibs.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EAC343818FE748B007D540D /* MUAllUploaderLibs.h */; };
+		7EAC343B18FE748B007D540D /* MUAllUploaderLibs.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC343A18FE748B007D540D /* MUAllUploaderLibs.m */; };
+		7EAC344218FE748B007D540D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC344118FE748B007D540D /* XCTest.framework */; };
+		7EAC344318FE748B007D540D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC343318FE748B007D540D /* Foundation.framework */; };
+		7EAC344518FE748B007D540D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC344418FE748B007D540D /* UIKit.framework */; };
+		7EAC344818FE748B007D540D /* libMUAllUploaderLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC343018FE748B007D540D /* libMUAllUploaderLibs.a */; };
+		7EAC344E18FE748B007D540D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EAC344C18FE748B007D540D /* InfoPlist.strings */; };
+		7EAC345018FE748B007D540D /* MUAllUploaderLibsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC344F18FE748B007D540D /* MUAllUploaderLibsTests.m */; };
+		7EE3AAEE18FE989500C68E85 /* libMUAnalyticsTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E41A0D918FE986000D601EF /* libMUAnalyticsTracker.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7E26868518FE9B7100033905 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E26863A18FE99EF00033905;
+			remoteInfo = MUCrashlyticsWrapper;
+		};
+		7E26868718FE9B7100033905 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E26866118FE9A8300033905;
+			remoteInfo = MUFlurryWrapper;
+		};
+		7E26868E18FE9B7100033905 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E26863B18FE99EF00033905;
+			remoteInfo = MUCrashlyticsWrapper;
+		};
+		7E26869018FE9B7100033905 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E26866218FE9A8300033905;
+			remoteInfo = MUFlurryWrapper;
+		};
+		7E26869218FE9B7100033905 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E26864818FE99EF00033905;
+			remoteInfo = MUCrashlyticsWrapperTests;
+		};
+		7E26869418FE9B7100033905 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E26866F18FE9A8300033905;
+			remoteInfo = MUFlurryWrapperTests;
+		};
+		7E41A0D818FE986000D601EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E41A0AA18FE97B900D601EF;
+			remoteInfo = MUAnalyticsTracker;
+		};
+		7E41A0DA18FE986000D601EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E41A0BA18FE97B900D601EF;
+			remoteInfo = MUAnalyticsTrackerTests;
+		};
+		7E46304D18FE75F9009E0F7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EAC346D18FE74BE007D540D /* iOSReachabilityFramework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B4E7DA7D1679301500C01DFA;
+			remoteInfo = iOSReachabilityFramework;
+		};
+		7EAC344618FE748B007D540D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EAC342818FE748B007D540D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7EAC342F18FE748B007D540D;
+			remoteInfo = MUAllUploaderLibs;
+		};
+		7EAC346918FE74B9007D540D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EAC346418FE74B9007D540D /* SCInstanceStorage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78716C4518F6E8130092AA98;
+			remoteInfo = SCInstanceStorage;
+		};
+		7EAC346B18FE74B9007D540D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EAC346418FE74B9007D540D /* SCInstanceStorage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78716C5518F6E8140092AA98;
+			remoteInfo = SCInstanceStorageTests;
+		};
+		7EAC347118FE74BE007D540D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EAC346D18FE74BE007D540D /* iOSReachabilityFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B4E7DA7E1679301500C01DFA;
+			remoteInfo = iOSReachabilityFramework;
+		};
+		7EE3AAE818FE989200C68E85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E41A0A918FE97B900D601EF;
+			remoteInfo = MUAnalyticsTracker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7EAC342E18FE748B007D540D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				7EAC343918FE748B007D540D /* MUAllUploaderLibs.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MUAnalyticsTracker.xcodeproj; path = ../MUAnalyticsTracker/MUAnalyticsTracker.xcodeproj; sourceTree = "<group>"; };
+		7EAC343018FE748B007D540D /* libMUAllUploaderLibs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMUAllUploaderLibs.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EAC343318FE748B007D540D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7EAC343718FE748B007D540D /* MUAllUploaderLibs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MUAllUploaderLibs-Prefix.pch"; sourceTree = "<group>"; };
+		7EAC343818FE748B007D540D /* MUAllUploaderLibs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUAllUploaderLibs.h; sourceTree = "<group>"; };
+		7EAC343A18FE748B007D540D /* MUAllUploaderLibs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUAllUploaderLibs.m; sourceTree = "<group>"; };
+		7EAC344018FE748B007D540D /* MUAllUploaderLibsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MUAllUploaderLibsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EAC344118FE748B007D540D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7EAC344418FE748B007D540D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		7EAC344B18FE748B007D540D /* MUAllUploaderLibsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MUAllUploaderLibsTests-Info.plist"; sourceTree = "<group>"; };
+		7EAC344D18FE748B007D540D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7EAC344F18FE748B007D540D /* MUAllUploaderLibsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUAllUploaderLibsTests.m; sourceTree = "<group>"; };
+		7EAC346418FE74B9007D540D /* SCInstanceStorage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCInstanceStorage.xcodeproj; path = ../SCInstanceStorage/SCInstanceStorage.xcodeproj; sourceTree = "<group>"; };
+		7EAC346D18FE74BE007D540D /* iOSReachabilityFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSReachabilityFramework.xcodeproj; path = "../../lib-third-party/Reachability/iOSReachabilityFramework/iOSReachabilityFramework.xcodeproj"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7EAC342D18FE748B007D540D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E62FBE718FEA06100D88F70 /* libMUCrashlyticsWrapper.a in Frameworks */,
+				7E26869818FE9B7800033905 /* libMUFlurryWrapper.a in Frameworks */,
+				7EE3AAEE18FE989500C68E85 /* libMUAnalyticsTracker.a in Frameworks */,
+				7E46305218FE768D009E0F7F /* libiOSReachabilityFramework.a in Frameworks */,
+				7EAC343418FE748B007D540D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EAC343D18FE748B007D540D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EAC344218FE748B007D540D /* XCTest.framework in Frameworks */,
+				7EAC344818FE748B007D540D /* libMUAllUploaderLibs.a in Frameworks */,
+				7EAC344518FE748B007D540D /* UIKit.framework in Frameworks */,
+				7EAC344318FE748B007D540D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7E41A0D418FE986000D601EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E41A0D918FE986000D601EF /* libMUAnalyticsTracker.a */,
+				7E26868F18FE9B7100033905 /* libMUCrashlyticsWrapper.a */,
+				7E26869118FE9B7100033905 /* libMUFlurryWrapper.a */,
+				7E41A0DB18FE986000D601EF /* MUAnalyticsTrackerTests.xctest */,
+				7E26869318FE9B7100033905 /* MUCrashlyticsWrapperTests.xctest */,
+				7E26869518FE9B7100033905 /* MUFlurryWrapperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EAC342718FE748B007D540D = {
+			isa = PBXGroup;
+			children = (
+				7EAC346318FE74A8007D540D /* lib-third-party */,
+				7EAC346218FE749C007D540D /* lib  */,
+				7EAC343518FE748B007D540D /* MUAllUploaderLibs */,
+				7EAC344918FE748B007D540D /* MUAllUploaderLibsTests */,
+				7EAC343218FE748B007D540D /* Frameworks */,
+				7EAC343118FE748B007D540D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7EAC343118FE748B007D540D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7EAC343018FE748B007D540D /* libMUAllUploaderLibs.a */,
+				7EAC344018FE748B007D540D /* MUAllUploaderLibsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EAC343218FE748B007D540D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7EAC343318FE748B007D540D /* Foundation.framework */,
+				7EAC344118FE748B007D540D /* XCTest.framework */,
+				7EAC344418FE748B007D540D /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7EAC343518FE748B007D540D /* MUAllUploaderLibs */ = {
+			isa = PBXGroup;
+			children = (
+				7EAC343818FE748B007D540D /* MUAllUploaderLibs.h */,
+				7EAC343A18FE748B007D540D /* MUAllUploaderLibs.m */,
+				7EAC343618FE748B007D540D /* Supporting Files */,
+			);
+			path = MUAllUploaderLibs;
+			sourceTree = "<group>";
+		};
+		7EAC343618FE748B007D540D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7EAC343718FE748B007D540D /* MUAllUploaderLibs-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7EAC344918FE748B007D540D /* MUAllUploaderLibsTests */ = {
+			isa = PBXGroup;
+			children = (
+				7EAC344F18FE748B007D540D /* MUAllUploaderLibsTests.m */,
+				7EAC344A18FE748B007D540D /* Supporting Files */,
+			);
+			path = MUAllUploaderLibsTests;
+			sourceTree = "<group>";
+		};
+		7EAC344A18FE748B007D540D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7EAC344B18FE748B007D540D /* MUAllUploaderLibsTests-Info.plist */,
+				7EAC344C18FE748B007D540D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7EAC346218FE749C007D540D /* lib  */ = {
+			isa = PBXGroup;
+			children = (
+				7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */,
+				7EAC346418FE74B9007D540D /* SCInstanceStorage.xcodeproj */,
+			);
+			name = "lib ";
+			sourceTree = "<group>";
+		};
+		7EAC346318FE74A8007D540D /* lib-third-party */ = {
+			isa = PBXGroup;
+			children = (
+				7EAC346D18FE74BE007D540D /* iOSReachabilityFramework.xcodeproj */,
+			);
+			name = "lib-third-party";
+			sourceTree = "<group>";
+		};
+		7EAC346518FE74B9007D540D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7EAC346A18FE74B9007D540D /* libSCInstanceStorage.a */,
+				7EAC346C18FE74B9007D540D /* SCInstanceStorageTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EAC346E18FE74BE007D540D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7EAC347218FE74BE007D540D /* libiOSReachabilityFramework.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7EAC342F18FE748B007D540D /* MUAllUploaderLibs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EAC345318FE748B007D540D /* Build configuration list for PBXNativeTarget "MUAllUploaderLibs" */;
+			buildPhases = (
+				7EAC342C18FE748B007D540D /* Sources */,
+				7EAC342D18FE748B007D540D /* Frameworks */,
+				7EAC342E18FE748B007D540D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E26868618FE9B7100033905 /* PBXTargetDependency */,
+				7E26868818FE9B7100033905 /* PBXTargetDependency */,
+				7EE3AAE918FE989200C68E85 /* PBXTargetDependency */,
+				7E46304E18FE75F9009E0F7F /* PBXTargetDependency */,
+			);
+			name = MUAllUploaderLibs;
+			productName = MUAllUploaderLibs;
+			productReference = 7EAC343018FE748B007D540D /* libMUAllUploaderLibs.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7EAC343F18FE748B007D540D /* MUAllUploaderLibsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EAC345618FE748B007D540D /* Build configuration list for PBXNativeTarget "MUAllUploaderLibsTests" */;
+			buildPhases = (
+				7EAC343C18FE748B007D540D /* Sources */,
+				7EAC343D18FE748B007D540D /* Frameworks */,
+				7EAC343E18FE748B007D540D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7EAC344718FE748B007D540D /* PBXTargetDependency */,
+			);
+			name = MUAllUploaderLibsTests;
+			productName = MUAllUploaderLibsTests;
+			productReference = 7EAC344018FE748B007D540D /* MUAllUploaderLibsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7EAC342818FE748B007D540D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Sitecore;
+			};
+			buildConfigurationList = 7EAC342B18FE748B007D540D /* Build configuration list for PBXProject "MUAllUploaderLibs" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7EAC342718FE748B007D540D;
+			productRefGroup = 7EAC343118FE748B007D540D /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7EAC346E18FE74BE007D540D /* Products */;
+					ProjectRef = 7EAC346D18FE74BE007D540D /* iOSReachabilityFramework.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E41A0D418FE986000D601EF /* Products */;
+					ProjectRef = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
+				},
+				{
+					ProductGroup = 7EAC346518FE74B9007D540D /* Products */;
+					ProjectRef = 7EAC346418FE74B9007D540D /* SCInstanceStorage.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				7EAC342F18FE748B007D540D /* MUAllUploaderLibs */,
+				7EAC343F18FE748B007D540D /* MUAllUploaderLibsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		7E26868F18FE9B7100033905 /* libMUCrashlyticsWrapper.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMUCrashlyticsWrapper.a;
+			remoteRef = 7E26868E18FE9B7100033905 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E26869118FE9B7100033905 /* libMUFlurryWrapper.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMUFlurryWrapper.a;
+			remoteRef = 7E26869018FE9B7100033905 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E26869318FE9B7100033905 /* MUCrashlyticsWrapperTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MUCrashlyticsWrapperTests.xctest;
+			remoteRef = 7E26869218FE9B7100033905 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E26869518FE9B7100033905 /* MUFlurryWrapperTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MUFlurryWrapperTests.xctest;
+			remoteRef = 7E26869418FE9B7100033905 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E41A0D918FE986000D601EF /* libMUAnalyticsTracker.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMUAnalyticsTracker.a;
+			remoteRef = 7E41A0D818FE986000D601EF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E41A0DB18FE986000D601EF /* MUAnalyticsTrackerTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MUAnalyticsTrackerTests.xctest;
+			remoteRef = 7E41A0DA18FE986000D601EF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7EAC346A18FE74B9007D540D /* libSCInstanceStorage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSCInstanceStorage.a;
+			remoteRef = 7EAC346918FE74B9007D540D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7EAC346C18FE74B9007D540D /* SCInstanceStorageTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SCInstanceStorageTests.xctest;
+			remoteRef = 7EAC346B18FE74B9007D540D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7EAC347218FE74BE007D540D /* libiOSReachabilityFramework.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libiOSReachabilityFramework.a;
+			remoteRef = 7EAC347118FE74BE007D540D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7EAC343E18FE748B007D540D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EAC344E18FE748B007D540D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7EAC342C18FE748B007D540D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EAC343B18FE748B007D540D /* MUAllUploaderLibs.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EAC343C18FE748B007D540D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EAC345018FE748B007D540D /* MUAllUploaderLibsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7E26868618FE9B7100033905 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MUCrashlyticsWrapper;
+			targetProxy = 7E26868518FE9B7100033905 /* PBXContainerItemProxy */;
+		};
+		7E26868818FE9B7100033905 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MUFlurryWrapper;
+			targetProxy = 7E26868718FE9B7100033905 /* PBXContainerItemProxy */;
+		};
+		7E46304E18FE75F9009E0F7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = iOSReachabilityFramework;
+			targetProxy = 7E46304D18FE75F9009E0F7F /* PBXContainerItemProxy */;
+		};
+		7EAC344718FE748B007D540D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7EAC342F18FE748B007D540D /* MUAllUploaderLibs */;
+			targetProxy = 7EAC344618FE748B007D540D /* PBXContainerItemProxy */;
+		};
+		7EE3AAE918FE989200C68E85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MUAnalyticsTracker;
+			targetProxy = 7EE3AAE818FE989200C68E85 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7EAC344C18FE748B007D540D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7EAC344D18FE748B007D540D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7EAC345118FE748B007D540D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7EAC345218FE748B007D540D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7EAC345418FE748B007D540D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MUAllUploaderLibs.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MUAllUploaderLibs/MUAllUploaderLibs-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7EAC345518FE748B007D540D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MUAllUploaderLibs.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MUAllUploaderLibs/MUAllUploaderLibs-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		7EAC345718FE748B007D540D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MUAllUploaderLibs/MUAllUploaderLibs-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MUAllUploaderLibsTests/MUAllUploaderLibsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7EAC345818FE748B007D540D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MUAllUploaderLibs/MUAllUploaderLibs-Prefix.pch";
+				INFOPLIST_FILE = "MUAllUploaderLibsTests/MUAllUploaderLibsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7EAC342B18FE748B007D540D /* Build configuration list for PBXProject "MUAllUploaderLibs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EAC345118FE748B007D540D /* Debug */,
+				7EAC345218FE748B007D540D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7EAC345318FE748B007D540D /* Build configuration list for PBXNativeTarget "MUAllUploaderLibs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EAC345418FE748B007D540D /* Debug */,
+				7EAC345518FE748B007D540D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7EAC345618FE748B007D540D /* Build configuration list for PBXNativeTarget "MUAllUploaderLibsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EAC345718FE748B007D540D /* Debug */,
+				7EAC345818FE748B007D540D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7EAC342818FE748B007D540D /* Project object */;
+}

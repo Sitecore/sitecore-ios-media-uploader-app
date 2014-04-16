@@ -10,22 +10,25 @@
 
 @class SCSite;
 
+
 @interface sc_Media : NSObject
 
-@property  (nonatomic) NSString *index;
-@property  (nonatomic) UIImage *thumbnail;
-@property  (nonatomic) NSString *name;
-@property  (nonatomic) NSString *description;
-@property  (nonatomic) NSDate *dateTime;
-@property  (nonatomic) NSNumber *latitude;
-@property  (nonatomic) NSNumber *longitude;
-@property  (nonatomic) NSString *locationDescription;
-@property  (nonatomic) NSString *countryCode;
-@property  (nonatomic) NSString *cityCode;
-@property  (nonatomic) NSURL *videoUrl;
-@property  (nonatomic) NSURL *imageUrl;
+@property  (nonatomic) NSString* index;
+@property  (nonatomic) UIImage* thumbnail;
+@property  (nonatomic) NSString* name;
+@property  (nonatomic) NSString* description;
+@property  (nonatomic) NSDate* dateTime;
+@property  (nonatomic) NSNumber* latitude;
+@property  (nonatomic) NSNumber* longitude;
+@property  (nonatomic) NSString* locationDescription;
+@property  (nonatomic) NSString* countryCode;
+@property  (nonatomic) NSString* cityCode;
+@property  (nonatomic) NSURL* videoUrl;
+@property  (nonatomic) NSURL* imageUrl;
 @property  (nonatomic) NSInteger status;
-@property  (nonatomic) SCSite *siteForUploading;
+
+
+@property  (nonatomic) SCSite* siteForUploading;
 
 -(id)initWithObjectData:(NSString *)name
                dateTime:(NSDate   *) dateTime
@@ -37,7 +40,7 @@
                videoUrl:(NSURL *) videoUrl
                imageUrl:(NSURL *) imageUrl
                  status:(NSInteger)status
-              thumbnail:(UIImage *) thumbnail;
+              thumbnail:(UIImage *)thumbnail;
 
 -(BOOL)isImage;
 -(BOOL)isVideo;

@@ -9,7 +9,7 @@
 {
     NSInteger _removedVideosCount;
     NSInteger _removedImagesCount;
-    sc_GlobalDataObject *_appDataObject;
+    sc_GlobalDataObject* _appDataObject;
     
     BOOL _videoIsChecked;
     BOOL _imagesIsChecked;
@@ -47,11 +47,11 @@
 
 -(void)checkVideoAvailability
 {
-    for ( sc_Media *item in _appDataObject.uploadItemsManager.mediaUpload )
+    for ( sc_Media* item in _appDataObject.uploadItemsManager.mediaUpload )
     {
         if ( item.isVideo )
         {
-            NSError *err;
+            NSError* err;
             
             if ( [ item.videoUrl checkResourceIsReachableAndReturnError: &err ] == NO )
             {
@@ -69,7 +69,7 @@
 {
     __weak sc_ResourseCleaner *weakSelf = self;
     self->_imagesRequestsCount = 0;
-    for ( sc_Media *item in _appDataObject.uploadItemsManager.mediaUpload )
+    for ( sc_Media* item in _appDataObject.uploadItemsManager.mediaUpload )
     {
         if ( item.isImage )
         {
@@ -85,7 +85,7 @@
                 
                 [ weakSelf imageChecked ];
                 
-            } failureBlock:^(NSError *error)
+            } failureBlock:^(NSError* error)
              {
                  [ weakSelf imageChecked ];
              } ];

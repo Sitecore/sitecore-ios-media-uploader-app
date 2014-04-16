@@ -29,7 +29,7 @@
     return 0.6f;
 }
 
-+(UIImage *)resizeImageToSize:(UIImage *)image uploadImageSize:(int)uploadImageSize
++(UIImage*)resizeImageToSize:(UIImage*)image uploadImageSize:(int)uploadImageSize
 {
     if (uploadImageSize == UPLODIMAGESIZE_ACTUAL)
     {
@@ -45,7 +45,7 @@
         size = [ sc_Constants mediumImageSize ];
     }
     
-    UIImage *result =  [ sc_ImageScaling scaleImage: image
+    UIImage* result =  [ sc_ImageScaling scaleImage: image
                                              toSize: size ];
     
     return result;
@@ -65,35 +65,39 @@
     return [defaults integerForKey: @"UploadImageSize"];
 }
 
-+(UIImage *)getVideoThumbnail:(NSURL *) videoUrl
++(UIImage*)getVideoThumbnail:(NSURL*) videoUrl
 {
     AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:videoUrl options:nil];
     AVAssetImageGenerator *generate = [[AVAssetImageGenerator alloc] initWithAsset:asset];
     generate.appliesPreferredTrackTransform = YES;
-    NSError *err = NULL;
+    NSError* err = NULL;
     CMTime time = CMTimeMake(0,60);
     CGImageRef imgRef = [generate copyCGImageAtTime:time actualTime:NULL error:&err];
-    UIImage * thumbnail = [[UIImage alloc] initWithCGImage:imgRef];
+    UIImage*  thumbnail = [[UIImage alloc] initWithCGImage:imgRef];
     return thumbnail;
 }
 
-+(NSString *)getUUID
++(NSString*)getUUID
 {
     CFUUIDRef newUniqueId = CFUUIDCreate(kCFAllocatorDefault);
-    NSString * uuidString = (__bridge_transfer NSString*)CFUUIDCreateString(kCFAllocatorDefault, newUniqueId);
+    NSString*  uuidString = (__bridge_transfer NSString*)CFUUIDCreateString(kCFAllocatorDefault, newUniqueId);
     CFRelease(newUniqueId);
     
     return uuidString;
 }
 
-+(UIImage *)normalize: (UIImage *)image forOrientation:(UIImageOrientation)orientation
++(UIImage*)normalize:(UIImage*)image forOrientation:(UIImageOrientation)orientation
 {
-    if (orientation == UIImageOrientationUp || orientation == UIImageOrientationUpMirrored) return image;
+    if (orientation == UIImageOrientationUp || orientation == UIImageOrientationUpMirrored)
+    {
+        return image;
+    }
     
     //Translate and rotate
     CGAffineTransform transform = CGAffineTransformIdentity;
     
-    switch (orientation) {
+    switch (orientation)
+    {
         case UIImageOrientationDown: //1
         case UIImageOrientationDownMirrored:
             transform = CGAffineTransformTranslate(transform, image.size.width, image.size.height);
@@ -144,7 +148,7 @@
     
     // Create new image
     CGImageRef cgimg = CGBitmapContextCreateImage(ctx);
-    UIImage *img = [UIImage imageWithCGImage:cgimg];
+    UIImage* img = [UIImage imageWithCGImage: cgimg];
     CGContextRelease(ctx);
     CGImageRelease(cgimg);
     

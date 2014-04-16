@@ -18,8 +18,8 @@ typedef NS_ENUM(NSInteger, sc_UploadItemStatusType)
 
 @interface sc_UploadItemStatus : NSObject
 
-@property(nonatomic) sc_UploadItemStatusType statusId;
-@property(nonatomic) NSString *description;
-@property(nonatomic, readonly) NSString *localizedDescription;
+@property (nonatomic) sc_UploadItemStatusType statusId;
+@property (nonatomic) NSString* description;
+@property (nonatomic, readonly) NSString* localizedDescription;
 
 @end

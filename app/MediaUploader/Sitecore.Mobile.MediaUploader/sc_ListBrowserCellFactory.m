@@ -2,6 +2,7 @@
 #import "sc_LevelUpTableCell.h"
 #import "sc_FolderTableCell.h"
 
+
 @implementation sc_ListBrowserCellFactory
 
 
@@ -11,26 +12,26 @@ static NSString* const LEVEL_UP_CELL_ID = @"net.sitecore.MobileSdk.ItemsBrowser.
 static NSString* const FOLDER_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser.list.FolderCell"   ;
 
 
--(NSString*)itemsBrowser:( id )sender
-itemCellReuseIdentifierForItem:( SCItem* )item
+-(NSString*)itemsBrowser:(id)sender
+itemCellReuseIdentifierForItem:(SCItem*)item
 {
     return FOLDER_CELL_ID;
 }
 
--(NSString*)reuseIdentifierForLevelUpCellOfItemsBrowser:( id )sender
+-(NSString*)reuseIdentifierForLevelUpCellOfItemsBrowser:(id)sender
 {
     return LEVEL_UP_CELL_ID;
 }
 
--(UITableViewCell*)createLevelUpCellForListModeOfItemsBrowser:( id )sender
+-(UITableViewCell*)createLevelUpCellForListModeOfItemsBrowser:(id)sender
 {
     sc_LevelUpTableCell* cell = [ [ sc_LevelUpTableCell alloc ] initWithStyle: UITableViewCellStyleDefault
                                                               reuseIdentifier: LEVEL_UP_CELL_ID ];
     return cell;
 }
 
--(UITableViewCell<SCItemCell>*)itemsBrowser:( id )sender
-                  createListModeCellForItem:( SCItem* )item
+-(UITableViewCell<SCItemCell>*)itemsBrowser:(id)sender
+                  createListModeCellForItem:(SCItem*)item
 {
     NSString* cellId = [ self itemsBrowser: self->_itemsBrowserController
             itemCellReuseIdentifierForItem: item ];

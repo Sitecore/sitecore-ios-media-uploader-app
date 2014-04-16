@@ -10,15 +10,15 @@
 
 @implementation sc_UploadItemStatus
 
--(NSString *)description
+-(NSString*)description
 {
-    if( self.statusId == errorStatus )
+    if ( self.statusId == errorStatus )
         return self->_description;
     
     return nil;
 }
 
--(NSString *)localizedDescription
+-(NSString*)localizedDescription
 {
     return NSLocalizedString(self.description, nil);
 }

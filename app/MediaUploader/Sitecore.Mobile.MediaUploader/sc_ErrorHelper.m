@@ -10,9 +10,9 @@
 
 @implementation sc_ErrorHelper
 
-+(void) showError:(NSString*) message
++(void)showError:(NSString*)message
 {
-    UIAlertView *alert = [ [UIAlertView alloc] initWithTitle: @""
+    UIAlertView* alert = [ [UIAlertView alloc] initWithTitle: @""
                                                      message: message
                                                     delegate: nil
                                            cancelButtonTitle: NSLocalizedString(@"OK", nil)

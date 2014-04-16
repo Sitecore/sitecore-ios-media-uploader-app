@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>F54108AC-433B-4732-A463-5FFD2729B0BC</string>
+	<string>FB45763E-B7C3-43DC-8F1A-BD5D4ABF7D79</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Sitecore.Mobile.MediaUploader</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>3B7A222B-3AB2-4198-92CD-33CDA618D671</key>
-		<string>http://tfs4dk1.dk.sitecore.net/tfs/PD01/Product_Mobile/IOS%20Developers/_git/iOS_Media_Uploader</string>
+		<key>B905E225-1D78-4658-ACAD-E803DB281E6E</key>
+		<string>http://tfs4dk1.dk.sitecore.net/tfs/PD01/Product_Mobile/_git/iOS_Media_Uploader</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Sitecore.Mobile.MediaUploader.xcodeproj/project.xcworkspace</string>
+	<string>app/MediaUploader/Sitecore.Mobile.MediaUploader.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>3B7A222B-3AB2-4198-92CD-33CDA618D671</key>
-		<string>../..</string>
+		<key>B905E225-1D78-4658-ACAD-E803DB281E6E</key>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>http://tfs4dk1.dk.sitecore.net/tfs/PD01/Product_Mobile/IOS%20Developers/_git/iOS_Media_Uploader</string>
+	<string>http://tfs4dk1.dk.sitecore.net/tfs/PD01/Product_Mobile/_git/iOS_Media_Uploader</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>3B7A222B-3AB2-4198-92CD-33CDA618D671</string>
+	<string>B905E225-1D78-4658-ACAD-E803DB281E6E</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>3B7A222B-3AB2-4198-92CD-33CDA618D671</string>
+			<string>B905E225-1D78-4658-ACAD-E803DB281E6E</string>
 			<key>IDESourceControlWCCName</key>
 			<string>iOS_Media_Uploader</string>
 		</dict>

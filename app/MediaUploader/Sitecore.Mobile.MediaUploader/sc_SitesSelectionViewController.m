@@ -15,22 +15,26 @@
 #import "sc_ViewsHelper.h"
 #import "sc_ItemHelper.h"
 
+
 @interface sc_SitesSelectionViewController ()
+
 @property ( nonatomic ) NSIndexPath *selectedIndex;
-@property ( nonatomic ) SCSite *selectedSite;
+@property ( nonatomic ) SCSite* selectedSite;
+
 @end
+
 
 @implementation sc_SitesSelectionViewController
 
 @synthesize sitesTableView = _sitesTableView;
 @synthesize appDataObject = _appDataObject;
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+-(NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [ _appDataObject.sitesManager sitesCount ];
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
     UITableViewCell *newCell = [tableView cellForRowAtIndexPath:indexPath];
     if (newCell.accessoryType == UITableViewCellAccessoryNone)
@@ -55,12 +59,13 @@
     [self closeView];
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    static NSString *cellIdentifier = @"cellSiteUrl";
+    static NSString* cellIdentifier = @"cellSiteUrl";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    SCSite *currentSite = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
+
+    SCSite* currentSite = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
     [ [cell textLabel] setText: currentSite.siteUrl ];
     cell.detailTextLabel.text = [sc_ItemHelper formatUploadFolder: currentSite];
     
@@ -69,7 +74,7 @@
     _headerLabel.text = NSLocalizedString(@"Select the site you wish to browse.", nil);
     [ _sitesTableView setAllowsMultipleSelection: NO ];
     
-    if(currentSite.selectedForBrowse)
+    if (currentSite.selectedForBrowse)
     {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         cell.selected = YES;
@@ -90,7 +95,7 @@
     return cell;
 }
 
--(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+-(BOOL)tableView:(UITableView*)tableView canEditRowAtIndexPath:(NSIndexPath*)indexPath
 {
     return NO;
 }

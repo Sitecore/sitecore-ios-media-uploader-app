@@ -11,6 +11,6 @@
 
 @protocol sc_ReloadableViewProtocol
 
-- (void)reload;
+-(void)reload;
 
 @end

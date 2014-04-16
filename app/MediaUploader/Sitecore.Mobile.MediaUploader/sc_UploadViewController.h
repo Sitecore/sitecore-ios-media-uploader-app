@@ -15,22 +15,22 @@
 
 @interface sc_UploadViewController : UIViewController <UIImagePickerControllerDelegate, UITextFieldDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate, sc_ReloadableViewProtocol>
 
-@property (nonatomic) IBOutlet UIButton *dismissKeyboardButton;
-@property (nonatomic) IBOutlet UIButton *locationButton;
-@property (nonatomic) IBOutlet UIButton *uploadButton;
-@property (nonatomic) IBOutlet UIButton *saveButton;
-@property (nonatomic) IBOutlet UIImageView *imageView;
+@property (nonatomic) IBOutlet UIButton* dismissKeyboardButton;
+@property (nonatomic) IBOutlet UIButton* locationButton;
+@property (nonatomic) IBOutlet UIButton* uploadButton;
+@property (nonatomic) IBOutlet UIButton* saveButton;
+@property (nonatomic) IBOutlet UIImageView* imageView;
 @property (nonatomic) IBOutlet UITextField *name;
-@property (nonatomic) IBOutlet UILabel *locationDescription;
-@property (nonatomic) NSURL *videoUrl;
-@property (nonatomic) NSURL *imageUrl;
-@property (nonatomic) IBOutlet UIView *locationView;
-@property (nonatomic) IBOutlet UIBarButtonItem *settingsButton;
+@property (nonatomic) IBOutlet UILabel* locationDescription;
+@property (nonatomic) NSURL* videoUrl;
+@property (nonatomic) NSURL* imageUrl;
+@property (nonatomic) IBOutlet UIView* locationView;
+@property (nonatomic) IBOutlet UIBarButtonItem* settingsButton;
 
-@property ( nonatomic ) sc_GlobalDataObject *appDataObject;
+@property ( nonatomic ) sc_GlobalDataObject* appDataObject;
 
-- (IBAction)useCameraRoll: (id)sender;
-- (IBAction)dismissKeyboardOnTap:(id)sender;
+-(IBAction)useCameraRoll:(id)sender;
+-(IBAction)dismissKeyboardOnTap:(id)sender;
 
 -(void) reload;
 @end

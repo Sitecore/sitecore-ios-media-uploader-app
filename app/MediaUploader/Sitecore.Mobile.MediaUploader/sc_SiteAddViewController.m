@@ -1,12 +1,12 @@
 //
-//  sc_SiteEditViewController.m
+//  SCTrackableSiteEditViewController.m
 //  Sitecore.Mobile.MediaUploader
 //
 //  Created by andrea bellagamba on 7/26/13.
 //  Copyright (c) 2013 Sitecore. All rights reserved.
 //
 
-#import "sc_SiteAddViewController.h"
+#import "SCTrackableSiteAddViewController.h"
 #import "sc_ListBrowserViewController.h"
 #import "sc_GlobalDataObject.h"
 #import "sc_AppDelegateProtocol.h"
@@ -19,28 +19,33 @@
 #import "sc_ButtonsBuilder.h"
 #import "SCSite+Trackable.h"
 
-@interface sc_SiteAddViewController ()
+
+@interface SCTrackableSiteAddViewController ()
 
 @property (nonatomic) BOOL loggedIn;
 @property (nonatomic) UIView* loginFooterView;
-@property (nonatomic) sc_ActivityIndicator * activityIndicator;
+@property (nonatomic) sc_ActivityIndicator* activityIndicator;
 @property (nonatomic) UIView* footerView;
-@property (nonatomic) IBOutlet UISegmentedControl *protocolSelector;
+@property (nonatomic) IBOutlet UISegmentedControl* protocolSelector;
+
 @end
 
-static NSString *HTTPS_PROTOCOL_STRING = @"https://";
-static NSString *HTTP_PROTOCOL_STRING = @"http://";
 
-@implementation sc_SiteAddViewController
+static NSString* HTTPS_PROTOCOL_STRING = @"https://";
+static NSString* HTTP_PROTOCOL_STRING = @"http://";
+
+
+@implementation SCTrackableSiteAddViewController
 {
-    sc_GlobalDataObject *_appDataObject;
-    UIBarButtonItem *_saveButton;
+    sc_GlobalDataObject* _appDataObject;
+    UIBarButtonItem* _saveButton;
     
     SCSite *_siteForEdit;
+
     BOOL editModeEnabled;
     
     sc_ButtonsBuilder *buttonsBuilder;
-    sc_GradientButton *nextButton;
+    sc_GradientButton* nextButton;
 }
 
 -(void)viewDidLoad
@@ -71,13 +76,18 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
     [ self initializeActivityIndicator ];
 }
 
-- (void)initializeActivityIndicator
+-(void)initializeActivityIndicator
 {
-    _activityIndicator = [[sc_ActivityIndicator alloc] initWithFrame:self.view.frame];
+    _activityIndicator = [[sc_ActivityIndicator alloc] initWithFrame: self.view.frame];
     [self.view addSubview:_activityIndicator];
 }
 
+<<<<<<< HEAD
 -(void)setSiteForEdit:(SCSite *)site
+=======
+
+-(void)setSiteForEdit:(SCTrackableSite*)site
+>>>>>>> 5fd1a77cf543f87528a2be11984197976d8db056
 {
     self->_siteForEdit = site;
     
@@ -114,12 +124,12 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
     _passwordTextField.text = self->_siteForEdit.password;
 }
 
--(void)saveSiteWithUploadFolder:(NSString *)uploadFolder
+-(void)saveSiteWithUploadFolder:(NSString*)uploadFolder
 {
     [ self fillSiteWithData: self->_siteForEdit ];
     self->_siteForEdit.uploadFolderPathInsideMediaLibrary = uploadFolder;
     
-    NSError *error;
+    NSError* error;
     if ( editModeEnabled )
     {
         [ self->_appDataObject.sitesManager saveSites ];
@@ -152,14 +162,19 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
         return;
     }
     
-    UIViewController *vcToPop = self.navigationController.viewControllers[ vcCount-upStepsCount ];
+    UIViewController* vcToPop = self.navigationController.viewControllers[ vcCount-upStepsCount ];
     [ self.navigationController popToViewController: vcToPop
                                            animated: YES ];
 }
 
+<<<<<<< HEAD
 -(void)authenticateAndSaveSite:(SCSite *)site
+=======
+
+-(void)authenticateAndSaveSite:(SCTrackableSite*)site
+>>>>>>> 5fd1a77cf543f87528a2be11984197976d8db056
 {
-    __block SCSite *tmpSite = site;
+    __block SCTrackableSite* tmpSite = site;
     
     SCApiSession *session = [ sc_ItemHelper getContext: tmpSite ];
     
@@ -169,7 +184,7 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
     
     self->nextButton.enabled = NO;
     
-    asyncOp(^( id result, NSError *error )
+    asyncOp(^( id result, NSError* error )
     {
         id<MUSessionTracker> sessionTracker =
         [ MUEventsTrackerFactory sessionTrackerForMediaUploader ];
@@ -182,9 +197,9 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
 
 
             id rawSiteEditViewController = [self.storyboard instantiateViewControllerWithIdentifier: @"ListItemsBrowser" ];
-            sc_ListBrowserViewController * siteEditViewController = (sc_ListBrowserViewController *)rawSiteEditViewController;
+            sc_ListBrowserViewController * siteEditViewController = (sc_ListBrowserViewController*)rawSiteEditViewController;
             
-            SCUPloadFolderReceived didSelectUploadFolderCallback = ^void(NSString *folder)
+            SCUPloadFolderReceived didSelectUploadFolderCallback = ^void(NSString* folder)
             {
                 [ self saveSiteWithUploadFolder: folder ];
             };
@@ -224,7 +239,11 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
     
     if ( requiredFieldsFilled )
     {
+<<<<<<< HEAD
         SCSite *fakeSite = [ SCSite emptySite ];
+=======
+        SCTrackableSite* fakeSite = [ SCTrackableSite emptySite ];
+>>>>>>> 5fd1a77cf543f87528a2be11984197976d8db056
         [ self fillSiteWithData: fakeSite ];
         [ self authenticateAndSaveSite: fakeSite ];
     }
@@ -234,9 +253,9 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
     }
 }
 
--(void)fillSiteWithData:(SCSite *)siteToFill
+-(void)fillSiteWithData:(SCSite*)siteToFill
 {
-     NSString *protocol;
+     NSString* protocol;
     
     if ( self.protocolSelector.selectedSegmentIndex == 0 )
     {
@@ -265,13 +284,13 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
     [ self.navigationController popViewControllerAnimated: YES ];
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField
+-(BOOL)textFieldShouldReturn:(UITextField*)textField
 {
     [textField resignFirstResponder];
     return YES;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+-(CGFloat)tableView:(UITableView*)tableView heightForFooterInSection:(NSInteger)section
 {
     if (section == 0)
     {
@@ -280,11 +299,12 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
     return 0.f;
 }
 
--(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+-(UIView*)tableView:(UITableView*)tableView
+viewForFooterInSection:(NSInteger)section
 {
     if (section == 0)
     {
-        if(_footerView == nil)
+        if (_footerView == nil)
         {
             _footerView  = [[UIView alloc] init];
             
@@ -295,7 +315,7 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
             CGRect firstButtonFrame = CGRectMake(padding, padding, buttonWidth, buttonHeight);
             CGRect secondButtonFrame = CGRectMake(2*padding + buttonWidth, padding, buttonWidth, buttonHeight);
             
-            sc_GradientButton *secondButton = [ buttonsBuilder getButtonWithTitle: @"Next"
+            sc_GradientButton* secondButton = [ buttonsBuilder getButtonWithTitle: @"Next"
                                                                             style:CUSTOMBUTTONTYPE_IMPORTANT
                                                                            target: self
                                                                          selector: @selector(save:) ];
@@ -303,7 +323,7 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
             [ _footerView addSubview:secondButton ];
             self->nextButton = secondButton;
             
-            sc_GradientButton *firstButton = [ buttonsBuilder getButtonWithTitle: @"Delete"
+            sc_GradientButton* firstButton = [ buttonsBuilder getButtonWithTitle: @"Delete"
                                                                            style: CUSTOMBUTTONTYPE_DANGEROUS
                                                                           target: self
                                                                         selector: @selector(remove:) ];
@@ -315,7 +335,8 @@ static NSString *HTTP_PROTOCOL_STRING = @"http://";
     return _footerView;
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+-(NSString*)tableView:(UITableView*)tableView
+titleForHeaderInSection:(NSInteger)section
 {
     return NSLocalizedString(@"New site", nil);
 }

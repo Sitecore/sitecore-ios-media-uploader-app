@@ -9,20 +9,21 @@
 #import <Foundation/Foundation.h>
 #import "sc_Media.h"
 
+
 @interface sc_UploadItem : NSObject
 
-@property  (nonatomic) sc_Media *mediaItem;
+@property  (nonatomic) sc_Media* mediaItem;
 
-@property  (nonatomic) NSData *data;
+@property  (nonatomic) NSData* data;
 
--(id)initWithObjectData:(sc_Media *)mediaItem
-                   data:(NSData *) data;
+-(id)initWithObjectData:(sc_Media*)mediaItem
+                   data:(NSData*)data;
 
-@property(nonatomic, readonly) BOOL isImage;
-@property(nonatomic, readonly) BOOL isVideo;
-@property(nonatomic, readonly) NSString *fileName;
-@property(nonatomic, readonly) NSString *itemTemplate;
-@property(nonatomic, readonly) NSString *contentType;
-@property(nonatomic, readonly) NSURL *assetURL;
+@property (nonatomic, readonly) BOOL isImage;
+@property (nonatomic, readonly) BOOL isVideo;
+@property (nonatomic, readonly) NSString* fileName;
+@property (nonatomic, readonly) NSString* itemTemplate;
+@property (nonatomic, readonly) NSString* contentType;
+@property (nonatomic, readonly) NSURL* assetURL;
 
 @end

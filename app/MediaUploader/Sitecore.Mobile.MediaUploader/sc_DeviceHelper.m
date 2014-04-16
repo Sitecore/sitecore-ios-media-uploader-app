@@ -11,14 +11,14 @@
 
 @implementation sc_DeviceHelper
 
-+ (NSString *)getDeviceType
++(NSString*)getDeviceType
 {
     struct utsname systemInfo;
     uname( &systemInfo );
     
-    NSString *iOSDeviceModelsPath = [ [NSBundle mainBundle] pathForResource: @"iOSDeviceModelMapping"
+    NSString* iOSDeviceModelsPath = [ [NSBundle mainBundle] pathForResource: @"iOSDeviceModelMapping"
                                                                      ofType: @"plist" ];
-    NSDictionary *iOSDevices = [ NSDictionary dictionaryWithContentsOfFile: iOSDeviceModelsPath ];
+    NSDictionary* iOSDevices = [ NSDictionary dictionaryWithContentsOfFile: iOSDeviceModelsPath ];
     
     NSString* deviceModel = [ NSString stringWithCString: systemInfo.machine
                                                 encoding: NSUTF8StringEncoding ];

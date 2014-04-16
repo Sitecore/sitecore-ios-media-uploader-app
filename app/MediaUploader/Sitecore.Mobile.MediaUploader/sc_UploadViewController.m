@@ -28,17 +28,17 @@
 
 @interface sc_UploadViewController ()
 
-@property ( nonatomic ) UIImage *thumbnail;
+@property ( nonatomic ) UIImage* thumbnail;
 @property ( nonatomic ) bool autoImagePickerLoadExecuted;
 @property ( nonatomic ) sc_ActivityIndicator * activityIndicator;
 @property ( nonatomic ) BOOL isRaised;
-@property ( nonatomic ) NSDate * timeStamp;
+@property ( nonatomic ) NSDate*  timeStamp;
 
 @end
 
 @implementation sc_UploadViewController
 {
-    UIImageView *imageView;
+    UIImageView* imageView;
     BOOL newMedia;
     sc_LocationManager *_locationManager;
     
@@ -84,7 +84,7 @@
     
 
 
-    [_saveButton addTarget:self action:@selector(save:) forControlEvents:UIControlEventTouchUpInside];
+    [_saveButton addTarget: self action:@selector(save:) forControlEvents:UIControlEventTouchUpInside];
     _name.delegate = self;
     
     [(sc_GradientButton*) _saveButton setButtonWithStyle:CUSTOMBUTTONTYPE_NORMAL];
@@ -93,8 +93,8 @@
     
     [ _locationView setBackgroundColor: [ self->_theme labelBackgroundColor ] ];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver: self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver: self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
     _dismissKeyboardButton.hidden = YES;
     
@@ -137,7 +137,7 @@
     }
 }
 
--(IBAction)useCameraRoll: (id)sender
+-(IBAction)useCameraRoll:(id)sender
 {
     [ self showCameraRoll ];
 }
@@ -150,11 +150,11 @@
         self->_imagePicker = [[UIImagePickerController alloc] init];
         self->_imagePicker.delegate = self;
         self->_imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        NSArray *mediaTypesAllowed = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        NSArray* mediaTypesAllowed = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
         [self->_imagePicker setMediaTypes:mediaTypesAllowed];
         
         self->_imagePicker.allowsEditing = NO;
-        [self presentViewController:self->_imagePicker animated:YES completion:nil];
+        [self presentViewController: self->_imagePicker animated:YES completion:nil];
     }
         
     newMedia = NO;
@@ -168,17 +168,17 @@
 }
 
 
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+-(void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary*)info
 {
-    NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
+    NSString* mediaType = [info objectForKey:UIImagePickerControllerMediaType];
     
     [self hideUploadForm: NO];
     _uploadButton.enabled = NO;
     
     // IMAGE
-    if ([mediaType isEqualToString:(NSString *)kUTTypeImage])
+    if ([mediaType isEqualToString:(NSString*)kUTTypeImage])
     {
-        UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        UIImage* image = [info objectForKey:UIImagePickerControllerOriginalImage];
         [imageView setImage: image];
         
         _uploadButton.enabled = YES;
@@ -189,30 +189,30 @@
         {
             _timeStamp = [NSDate date];
             
-            NSString *mediaType = [info objectForKey: UIImagePickerControllerMediaType];
+            NSString* mediaType = [info objectForKey: UIImagePickerControllerMediaType];
             
             // Handle a still image capture
             if (CFStringCompare ((CFStringRef) mediaType, kUTTypeImage, 0)== kCFCompareEqualTo)
             {
                 
-                UIImage *imageToSave = (UIImage *) [info objectForKey:UIImagePickerControllerOriginalImage];
+                UIImage* imageToSave = (UIImage*) [info objectForKey:UIImagePickerControllerOriginalImage];
                 
                 // Set the image metadata
                 UIImagePickerControllerSourceType pickerType = picker.sourceType;
-                if(pickerType == UIImagePickerControllerSourceTypeCamera)
+                if (pickerType == UIImagePickerControllerSourceTypeCamera)
                 {
-                    NSMutableDictionary *imageMetadata = [info objectForKey: UIImagePickerControllerMediaMetadata];
+                    NSMutableDictionary* imageMetadata = [info objectForKey: UIImagePickerControllerMediaMetadata];
                     
-                    NSDictionary *imageInfo = [_locationManager gpsDictionaryForCurrentLocation];
+                    NSDictionary* imageInfo = [_locationManager gpsDictionaryForCurrentLocation];
                     [ imageMetadata setObject: imageInfo
-                                       forKey: (NSString*)kCGImagePropertyGPSDictionary ];
+                                       forKey:(NSString*)kCGImagePropertyGPSDictionary ];
                     
                     ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
                     ALAssetsLibraryWriteImageCompletionBlock imageWriteCompletionBlock;
                     
                     // Get the assets library
                     imageWriteCompletionBlock =
-                    ^(NSURL *newURL, NSError *error)
+                    ^(NSURL* newURL, NSError* error)
                     {
                         if (error)
                         {
@@ -232,13 +232,13 @@
                                 self->_thumbnail = [UIImage imageWithCGImage:iref];
                             }
                         };
-                        ALAssetsLibraryAccessFailureBlock failureblock = ^(NSError *myerror)
+                        ALAssetsLibraryAccessFailureBlock failureblock = ^(NSError* myerror)
                         {
                             NSLog(@"cant get image - %@", [myerror localizedDescription]);
                         };
                         
                         
-                        [library assetForURL:self->_imageUrl resultBlock:resultblock failureBlock:failureblock];
+                        [library assetForURL: self->_imageUrl resultBlock:resultblock failureBlock:failureblock];
                         
                         [self dismissViewControllerAnimated:YES completion:nil];
                     };
@@ -256,7 +256,7 @@
             // NOT NEW MEDIA
             
             //Extract metadata
-            NSURL *url = [info objectForKey:UIImagePickerControllerReferenceURL];
+            NSURL* url = [info objectForKey:UIImagePickerControllerReferenceURL];
             if (url)
             {
                 
@@ -268,7 +268,7 @@
                     self->_timeStamp = [myasset valueForProperty:ALAssetPropertyDate];
                     
                     //Get location data from asset
-//                    CLLocation *location = [myasset valueForProperty:ALAssetPropertyLocation];
+//                    CLLocation* location = [myasset valueForProperty:ALAssetPropertyLocation];
 //                    [ _locationManager setCurrentLocation: location ];
                     
                     CGImageRef iref = [myasset thumbnail];
@@ -277,7 +277,7 @@
                         self->_thumbnail = [UIImage imageWithCGImage:iref];
                     }
                 };
-                ALAssetsLibraryAccessFailureBlock failureblock = ^(NSError *myerror)
+                ALAssetsLibraryAccessFailureBlock failureblock = ^(NSError* myerror)
                 {
                     NSLog(@"cant get image - %@", [myerror localizedDescription]);
                 };
@@ -291,12 +291,12 @@
     }
     
     // VIDEO
-    if ([mediaType isEqualToString:(NSString *)kUTTypeMovie])
+    if ([mediaType isEqualToString:(NSString*)kUTTypeMovie])
     {
         
         _imageUrl = nil;
         _videoUrl = [info objectForKey:UIImagePickerControllerMediaURL];
-        NSString *moviePath = [_videoUrl path];
+        NSString* moviePath = [_videoUrl path];
         
         if (newMedia)
         {
@@ -305,7 +305,7 @@
                 UISaveVideoAtPathToSavedPhotosAlbum (moviePath, self, @selector(image:finishedSavingWithError:sessionInfo:), nil);
             }
             
-            if(_appDataObject.isOnline)
+            if (_appDataObject.isOnline)
             {
                 _timeStamp = [NSDate date];
             }
@@ -322,16 +322,16 @@
 
 
 
-- (void)moviePlayBackDidFinish:(NSNotification *)notification
+-(void)moviePlayBackDidFinish:(NSNotification*)notification
 {
     NSLog(@"Playback finished");
 }
 
--(void)image:(UIImage *)image finishedSavingWithError:(NSError *)error sessionInfo:(void *)sessionInfo
+-(void)image:(UIImage*)image finishedSavingWithError:(NSError*)error sessionInfo:(void*)sessionInfo
 {
     if (error)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: NSLocalizedString(@"Save failed", nil)
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle: NSLocalizedString(@"Save failed", nil)
                                                         message: NSLocalizedString(@"Failed to save media item", nil)
                                                        delegate: nil
                                               cancelButtonTitle: NSLocalizedString(@"OK", nil)
@@ -340,35 +340,35 @@
     }
 }
 
--(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+-(void)imagePickerControllerDidCancel:(UIImagePickerController*)picker
 {
     [ self cancel: nil ];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
+-(BOOL)textFieldShouldReturn:(UITextField*)textField
 {
     [textField resignFirstResponder];
     return YES;
 }
 
-- (IBAction)goBack:(id)sender
+-(IBAction)goBack:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)save:(id)sender
+-(IBAction)save:(id)sender
 {
     [self saveFileAsPending];
 }
 
-- (sc_Media *)getMedia
+-(sc_Media*)getMedia
 {
-    NSNumber *latitude = [ NSNumber numberWithFloat: [ _locationManager getLatitude ] ];
-    NSNumber *longitude = [ NSNumber numberWithFloat: [ _locationManager getLongitude ] ];
-    NSString *countryCode = [ _locationManager getCountryCode ];
-    NSString *cityCode = [ _locationManager getCityCode ];
+    NSNumber* latitude = [ NSNumber numberWithFloat: [ _locationManager getLatitude ] ];
+    NSNumber* longitude = [ NSNumber numberWithFloat: [ _locationManager getLongitude ] ];
+    NSString* countryCode = [ _locationManager getCountryCode ];
+    NSString* cityCode = [ _locationManager getCityCode ];
     
-    sc_Media *media = [ [sc_Media alloc] initWithObjectData: _name.text
+    sc_Media* media = [ [sc_Media alloc] initWithObjectData: _name.text
                                                    dateTime: _timeStamp
                                                    latitude: latitude
                                                   longitude: longitude
@@ -385,7 +385,7 @@
     return media;
 }
 
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+-(void) prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 {
     [ [self view] endEditing: YES ];
     
@@ -394,7 +394,7 @@
         [ self initializeActivityIndicator ];
         [ _activityIndicator showWithLabel: @"Preparing media" ];
         
-        sc_Media *media = [ self getMedia ];
+        sc_Media* media = [ self getMedia ];
         
         [ _activityIndicator hide ];
         
@@ -406,9 +406,9 @@
         
         [ self setMediaItemValidName: media ];
         
-        sc_Upload2ViewController * destinationController = ( sc_Upload2ViewController * ) segue.destinationViewController;
+        sc_Upload2ViewController * destinationController = ( sc_Upload2ViewController*) segue.destinationViewController;
         
-        NSArray *mediaItems = @[ media ];
+        NSArray* mediaItems = @[ media ];
         [ destinationController initWithMediaItems: mediaItems
                                              image: imageView.image
                             isPendingIemsUploading: NO ];
@@ -417,9 +417,9 @@
     }
 }
 
-- (void)saveFileAsPending
+-(void)saveFileAsPending
 {
-    sc_Media *media = [self getMedia];
+    sc_Media* media = [self getMedia];
     
     if ( media.siteForUploading == nil )
     {
@@ -433,9 +433,9 @@
     [self.navigationController popViewControllerAnimated:YES ];
 }
 
--(void)setMediaItemValidName: (sc_Media *) media
+-(void)setMediaItemValidName:(sc_Media*) media
 {
-    NSString *validName;
+    NSString* validName;
     
     if (media.videoUrl != nil)
     {
@@ -449,9 +449,9 @@
     media.name = [sc_Validator proposeValidItemName:media.name withDefault:[sc_ItemHelper generateItemName:validName]];
 }
 
--(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString*)identifier sender:(id)sender
 {
-    if([identifier isEqualToString:@"upload2"])
+    if ([identifier isEqualToString:@"upload2"])
     {
         if (!_appDataObject.isOnline)
         {
@@ -464,17 +464,17 @@
 }
 
 
--(void)navigationController: (UINavigationController *) navigationController  willShowViewController: (UIViewController *) viewController animated: (BOOL) animated
+-(void)navigationController:(UINavigationController*) navigationController  willShowViewController:(UIViewController* ) viewController animated:(BOOL) animated
 {
     BOOL isPhotoLibraryActive = ( _imagePicker.sourceType == UIImagePickerControllerSourceTypePhotoLibrary );
     BOOL isFirstScreenActive = [ navigationController.viewControllers count ] == 1;
     
-    if( isPhotoLibraryActive && isFirstScreenActive )
+    if ( isPhotoLibraryActive && isFirstScreenActive )
     {
-        UIBarButtonItem* button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(showCamera:)];
+        UIBarButtonItem* button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target: self action:@selector(showCamera:)];
         viewController.navigationItem.rightBarButtonItems = [NSArray arrayWithObject:button];
         
-        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
+        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target: self action:@selector(cancel:)];
     }
 }
 
@@ -497,7 +497,7 @@
     if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera])
     {
         self->_imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        NSArray *mediaTypesAllowed = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        NSArray* mediaTypesAllowed = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
         [self->_imagePicker setMediaTypes:mediaTypesAllowed];
         self->_imagePicker.allowsEditing = NO;
         self->_imagePicker.showsCameraControls = YES;
@@ -512,11 +512,11 @@
 
 -(void)initializeActivityIndicator
 {
-    _activityIndicator = [[sc_ActivityIndicator alloc] initWithFrame:self.view.frame];
+    _activityIndicator = [[sc_ActivityIndicator alloc] initWithFrame: self.view.frame];
     [self.view addSubview:_activityIndicator];
 }
 
--(void)keyboardWillShow:(NSNotification *)notification
+-(void)keyboardWillShow:(NSNotification*)notification
 {
     if ([self.view window])
     {
@@ -524,7 +524,7 @@
     }
 }
 
--(void)keyboardWillHide:(NSNotification *)notification
+-(void)keyboardWillHide:(NSNotification*)notification
 {
     if ([self.view window])
     {
@@ -532,9 +532,9 @@
     }
 }
 
--(void) showError:(NSString*) message
+-(void) showError:(NSString*)message
 {
-    UIAlertView *alert = [ [UIAlertView alloc] initWithTitle: @""
+    UIAlertView* alert = [ [UIAlertView alloc] initWithTitle: @""
                                                      message: message
                                                     delegate: nil
                                            cancelButtonTitle: @"OK"

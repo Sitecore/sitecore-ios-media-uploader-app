@@ -24,7 +24,7 @@
 /**
  A relative path in the content tree
  */
--(NSString *)uploadFolderPathInsideMediaLibrary;
+-(NSString*)uploadFolderPathInsideMediaLibrary;
 
 @optional
 -(NSString*)password;

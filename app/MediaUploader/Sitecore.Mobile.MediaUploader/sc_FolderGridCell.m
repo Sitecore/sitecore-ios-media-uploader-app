@@ -3,12 +3,12 @@
 @implementation sc_FolderGridCell
 
 {
-    UILabel* _label;
+    UILabel*  _label;
     NSString* _displayName;
-    UIImageView *_folderIconView;
+    UIImageView* _folderIconView;
 }
 
--(instancetype)initWithFrame:( CGRect )frame
+-(instancetype)initWithFrame:(CGRect )frame
 {
     self = [ super initWithFrame: frame ];
     if ( nil == self )
@@ -21,7 +21,7 @@
     return self;
 }
 
--(UIImage *)folderIconImage
+-(UIImage*)folderIconImage
 {
     return [UIImage imageNamed:@"folder"];
 }
@@ -48,7 +48,7 @@
     [ self.contentView addSubview: self->_label ];
 }
 
--(void)setModel:( SCItem* )item
+-(void)setModel:(SCItem*)item
 {
     self->_displayName = item.displayName;
 }

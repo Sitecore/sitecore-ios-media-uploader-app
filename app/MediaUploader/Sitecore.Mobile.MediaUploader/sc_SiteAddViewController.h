@@ -10,17 +10,20 @@
 #import "sc_GlobalDataObject.h"
 #import "sc_ReloadableViewProtocol.h"
 
+
 @interface sc_SiteAddViewController : UITableViewController <UITextFieldDelegate, UIAlertViewDelegate>
 
-@property (nonatomic) IBOutlet UIBarButtonItem *cancelButton;
-@property (nonatomic) IBOutlet UITextField *usernameTextField;
-@property (nonatomic) IBOutlet UITextField *passwordTextField;
-@property (nonatomic) IBOutlet UITextField *urlTextField;
-@property (nonatomic) IBOutlet UITextField *siteTextField;
-@property (nonatomic) IBOutlet UITableView *siteTableView;
+@property (nonatomic) IBOutlet UIBarButtonItem* cancelButton;
+@property (nonatomic) IBOutlet UITextField* usernameTextField;
+@property (nonatomic) IBOutlet UITextField* passwordTextField;
+@property (nonatomic) IBOutlet UITextField* urlTextField;
+@property (nonatomic) IBOutlet UITextField* siteTextField;
+@property (nonatomic) IBOutlet UITableView* siteTableView;
 
--(void)setSiteForEdit:(SCSite *)site;
+
+-(void)setSiteForEdit:(SCSite*)site;
 
 //TODO: @igk refactor this
--(void)saveSiteWithUploadFolder:(NSString *)uploadFolder;
+-(void)saveSiteWithUploadFolder:(NSString*)uploadFolder;
+
 @end

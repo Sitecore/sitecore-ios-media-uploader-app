@@ -7,14 +7,13 @@
 //
 
 #import "sc_ConnectivityHelper.h"
-#import <SystemConfiguration/SystemConfiguration.h>
-#import "Reachability.h"
+
 
 @implementation sc_ConnectivityHelper
 
-+ (BOOL)connectedToInternet
++(BOOL)connectedToInternet
 {
-    Reachability *curReach = [Reachability reachabilityForInternetConnection];
+    Reachability* curReach = [Reachability reachabilityForInternetConnection];
 
     return ( curReach.currentReachabilityStatus != NotReachable );
 }

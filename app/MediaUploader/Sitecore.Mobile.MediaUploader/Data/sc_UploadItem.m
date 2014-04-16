@@ -11,7 +11,7 @@
 
 @implementation sc_UploadItem
 
--(id)initWithObjectData:(sc_Media *)mediaItem data:(NSData *) data
+-(instancetype)initWithObjectData:(sc_Media*)mediaItem data:(NSData*)data
 {
     self = [super init];
     if (self)
@@ -33,7 +33,7 @@
     return [ self.mediaItem isVideo ];
 }
 
--(NSString *)fileName
+-(NSString*)fileName
 {
     if ( self.isVideo )
     {
@@ -48,7 +48,7 @@
     return @"";
 }
 
--(NSString *)itemTemplate
+-(NSString*)itemTemplate
 {
     if ( self.isVideo )
     {
@@ -63,7 +63,7 @@
     return @"";
 }
 
--(NSString *)contentType
+-(NSString*)contentType
 {
     //https://support.sitecore.net/client/ViewItem.aspx?type=defects&id=401301
     //QA and devs: please note that "Content-type = image/jpeg" is not acceptable. It needs to be "multipart/form-data" according to the spec.
@@ -81,7 +81,7 @@
     return @"multipart/form-data";
 }
 
--(NSURL *)assetURL
+-(NSURL*)assetURL
 {
     if ( self.isVideo )
     {

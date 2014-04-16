@@ -5,35 +5,37 @@
 #import "sc_ListBrowserCellFactory.h"
 #import "sc_GridBrowserRequestBuilder.h"
 
+
 @interface sc_ListBrowserViewController ()<SCItemsBrowserDelegate>
 
-@property (nonatomic, strong) IBOutlet sc_ListBrowserCellFactory *cellFactory;
+@property (nonatomic, strong) IBOutlet sc_ListBrowserCellFactory* cellFactory;
 
-@property (weak, nonatomic) IBOutlet UITextView *itemPathTextView;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingProgress;
+@property (weak, nonatomic) IBOutlet UITextView* itemPathTextView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView* loadingProgress;
 
 -(IBAction)cancelTouched:(id)sender;
 -(IBAction)useTouched:(id)sender;
 
 @end
 
+
 @implementation sc_ListBrowserViewController
 {
     SCApiSession* _legacyApiSession;
     SCExtendedApiSession* _apiSession;
     
-    sc_GridBrowserRequestBuilder *_requestBuilder;
-    SCSite *_siteForBrowse;
-    NSString *_currentPath;
+    sc_GridBrowserRequestBuilder* _requestBuilder;
+    SCSite* _siteForBrowse;
+    NSString* _currentPath;
     SCUPloadFolderReceived _callback;
 }
 
--(void)chooseUploaderFolderForSite:(SCSite *)site witCallback:(SCUPloadFolderReceived)callback
+-(void)chooseUploaderFolderForSite:(SCSite*)site witCallback:(SCUPloadFolderReceived)callback
 {
     self->_callback = callback;
     self->_siteForBrowse = site;
     
-    self->_legacyApiSession = [ sc_ItemHelper getContext:self->_siteForBrowse ];
+    self->_legacyApiSession = [ sc_ItemHelper getContext: self->_siteForBrowse ];
     self->_apiSession = self->_legacyApiSession.extendedApiSession;
     
     self.cellFactory.itemsBrowserController.apiSession = self->_apiSession;
@@ -44,7 +46,8 @@
     [ super viewDidAppear: animated ];
     self.cellFactory.itemsBrowserController.apiSession = self->_apiSession;
     
-    NSString *rootFolderPath = [ SCSite mediaLibraryDefaultPath ];
+
+    NSString* rootFolderPath = [ SCSite mediaLibraryDefaultPath ];
     
     SCExtendedAsyncOp rootItemLoader =
     [ self->_apiSession readItemOperationForItemPath: rootFolderPath
@@ -53,26 +56,26 @@
     [ self startLoading ];
     __weak sc_ListBrowserViewController* weakSelf = self;
     rootItemLoader( nil, nil, ^( SCItem* rootItem, NSError* blockError )
-                   {
-                       [ weakSelf endLoading ];
-                       
-                       if ( nil == rootItem )
-                       {
-                           [ weakSelf didFailLoadingRootItemWithError: blockError ];
-                       }
-                       else
-                       {
-                           [ weakSelf didLoadRootItem: rootItem ];
-                           self->_currentPath = rootItem.path;
-                       }
-                   } );
+    {
+       [ weakSelf endLoading ];
+       
+       if ( nil == rootItem )
+       {
+           [ weakSelf didFailLoadingRootItemWithError: blockError ];
+       }
+       else
+       {
+           [ weakSelf didLoadRootItem: rootItem ];
+           self->_currentPath = rootItem.path;
+       }
+    } );
 }
 
 -(void)viewDidLoad
 {
     [ super viewDidLoad ];
     
-    NSArray *templatesList = @[@"Media folder"];
+    NSArray* templatesList = @[@"Media folder"];
     self->_requestBuilder = [ [sc_GridBrowserRequestBuilder alloc] initWithTemplateNames: templatesList ];
     self.cellFactory.itemsBrowserController.nextLevelRequestBuilder = self->_requestBuilder;
     self.cellFactory.itemsBrowserController.nextLevelRequestBuilder = self->_requestBuilder;
@@ -80,14 +83,14 @@
     NSParameterAssert( nil != self.cellFactory.itemsBrowserController );
 }
 
--(void)didFailLoadingRootItemWithError:( NSError* )error
+-(void)didFailLoadingRootItemWithError:(NSError*)error
 {
     [ sc_ErrorHelper showError: error.localizedDescription ];
     [ self.navigationController popViewControllerAnimated: YES ];
     [ self endLoading ];
 }
 
--(void)didLoadRootItem:( SCItem* )rootItem
+-(void)didLoadRootItem:(SCItem*)rootItem
 {
     self.cellFactory.itemsBrowserController.rootItem = rootItem;
     [ self.cellFactory.itemsBrowserController reloadData ];
@@ -123,20 +126,20 @@
 
 #pragma mark -
 #pragma mark SCItemsBrowserDelegate
--(void)itemsBrowser:( id )sender
-didReceiveLevelProgressNotification:( id )progressInfo
+-(void)itemsBrowser:(id)sender
+didReceiveLevelProgressNotification:(id)progressInfo
 {
     [ self startLoading ];
 }
 
--(void)itemsBrowser:( id )sender
-levelLoadingFailedWithError:( NSError* )error
+-(void)itemsBrowser:(id)sender
+levelLoadingFailedWithError:(NSError*)error
 {
-    [ sc_ErrorHelper showError:error.localizedDescription ];
+    [ sc_ErrorHelper showError: error.localizedDescription ];
     [ self endLoading ];
 }
 
--(void)itemsBrowser:( id )sender didLoadLevelForItem:( SCItem* )levelParentItem
+-(void)itemsBrowser:(id)sender didLoadLevelForItem:(SCItem*)levelParentItem
 {
     NSParameterAssert( nil != levelParentItem );
     
@@ -145,7 +148,7 @@ levelLoadingFailedWithError:( NSError* )error
     self->_currentPath = levelParentItem.path;
 }
 
--(BOOL)itemsBrowser:( id )sender shouldLoadLevelForItem:( SCItem* )levelParentItem
+-(BOOL)itemsBrowser:(id)sender shouldLoadLevelForItem:(SCItem*)levelParentItem
 {
     return levelParentItem.isFolder || levelParentItem.hasChildren;
 }

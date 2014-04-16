@@ -11,6 +11,6 @@
 
 @protocol sc_AppDelegateProtocol
 
-- (sc_AppDataObject*) appDataObject;
+-(sc_AppDataObject*)appDataObject;
 
 @end

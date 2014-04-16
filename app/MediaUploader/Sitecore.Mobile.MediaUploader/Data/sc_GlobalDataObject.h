@@ -11,19 +11,20 @@
 #import "sc_media.h"
 #import "sc_ItemsForUploadManager.h"
 
+
 @interface sc_GlobalDataObject : sc_AppDataObject
 
 
-@property ( nonatomic ) CLPlacemark *selectedPlaceMark;
+@property ( nonatomic ) CLPlacemark* selectedPlaceMark;
 
 @property ( nonatomic ) bool isIpad;
 @property ( nonatomic, readonly ) BOOL isOnline;
 @property ( nonatomic ) int IOS;
 
 
-@property (nonatomic, readonly) SCSitesManager *sitesManager;
-@property (nonatomic, readonly) sc_ItemsForUploadManager *uploadItemsManager;
+@property (nonatomic, readonly) SCSitesManager* sitesManager;
+@property (nonatomic, readonly) sc_ItemsForUploadManager* uploadItemsManager;
 
-+ (sc_GlobalDataObject*)getAppDataObject;
++(sc_GlobalDataObject*)getAppDataObject;
 
 @end

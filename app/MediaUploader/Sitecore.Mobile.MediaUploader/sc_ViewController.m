@@ -14,7 +14,7 @@
 
 @interface sc_ViewController ()
 
-@property ( nonatomic ) sc_GlobalDataObject *appDataObject;
+@property ( nonatomic ) sc_GlobalDataObject* appDataObject;
 
 @end
 
@@ -75,7 +75,7 @@
     }
 }
 
-- (void)viewDidLoad
+-(void)viewDidLoad
 {
     [ super viewDidLoad ];
     
@@ -101,19 +101,19 @@
     }
 }
 
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+-(void) prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"uploadPendingMedia"])
     {
         // Obtain handles on the current and destination controllers
-        sc_Upload2ViewController * destinationController = (sc_Upload2ViewController * ) segue.destinationViewController;
+        sc_Upload2ViewController * destinationController = (sc_Upload2ViewController*) segue.destinationViewController;
         [ destinationController initWithMediaItems: _appDataObject.uploadItemsManager.mediaUpload
                                              image: nil
                             isPendingIemsUploading: YES ];
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated
+-(void)viewWillAppear:(BOOL)animated
 {
     [ self enableApplication ];
 }
