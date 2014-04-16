@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78622E5918FE736C00ADA6D1 /* MUUploadSettingsStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 78622E5818FE736C00ADA6D1 /* MUUploadSettingsStringFormatter.m */; };
 		78716C4918F6E8130092AA98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78716C4818F6E8130092AA98 /* Foundation.framework */; };
 		78716C5718F6E8140092AA98 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78716C5618F6E8140092AA98 /* XCTest.framework */; };
 		78716C5818F6E8140092AA98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78716C4818F6E8130092AA98 /* Foundation.framework */; };
@@ -47,6 +48,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		78622E5318FE736C00ADA6D1 /* MUUploadSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettings.h; sourceTree = "<group>"; };
+		78622E5418FE736C00ADA6D1 /* MUUploadSettings_Legacy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettings_Legacy.h; sourceTree = "<group>"; };
+		78622E5518FE736C00ADA6D1 /* MUUploadSettingsFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettingsFormatter.h; sourceTree = "<group>"; };
+		78622E5618FE736C00ADA6D1 /* MUUploadSettingsRecordState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettingsRecordState.h; sourceTree = "<group>"; };
+		78622E5718FE736C00ADA6D1 /* MUUploadSettingsStringFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUUploadSettingsStringFormatter.h; sourceTree = "<group>"; };
+		78622E5818FE736C00ADA6D1 /* MUUploadSettingsStringFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUUploadSettingsStringFormatter.m; sourceTree = "<group>"; };
 		78716C4518F6E8130092AA98 /* libSCInstanceStorage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSCInstanceStorage.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78716C4818F6E8130092AA98 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		78716C4C18F6E8130092AA98 /* SCInstanceStorage-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCInstanceStorage-Prefix.pch"; sourceTree = "<group>"; };
@@ -88,6 +95,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78622E5218FE736C00ADA6D1 /* SessionInfo */ = {
+			isa = PBXGroup;
+			children = (
+				78622E5318FE736C00ADA6D1 /* MUUploadSettings.h */,
+				78622E5418FE736C00ADA6D1 /* MUUploadSettings_Legacy.h */,
+				78622E5518FE736C00ADA6D1 /* MUUploadSettingsFormatter.h */,
+				78622E5618FE736C00ADA6D1 /* MUUploadSettingsRecordState.h */,
+				78622E5718FE736C00ADA6D1 /* MUUploadSettingsStringFormatter.h */,
+				78622E5818FE736C00ADA6D1 /* MUUploadSettingsStringFormatter.m */,
+			);
+			path = SessionInfo;
+			sourceTree = "<group>";
+		};
 		78716C3C18F6E8130092AA98 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +140,7 @@
 		78716C4A18F6E8130092AA98 /* SCInstanceStorage */ = {
 			isa = PBXGroup;
 			children = (
+				78622E5218FE736C00ADA6D1 /* SessionInfo */,
 				78D6669918FD6CAF00BFD6C7 /* SCSite.h */,
 				78D6669A18FD6CAF00BFD6C7 /* SCSite.m */,
 				78D6669B18FD6CAF00BFD6C7 /* SCSite+Private.h */,
@@ -240,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78D666A318FD6CAF00BFD6C7 /* SCSitesManager.m in Sources */,
+				78622E5918FE736C00ADA6D1 /* MUUploadSettingsStringFormatter.m in Sources */,
 				78D666A118FD6CAF00BFD6C7 /* SCSite+Private.m in Sources */,
 				78D6669F18FD6CAF00BFD6C7 /* SCSite.m in Sources */,
 			);

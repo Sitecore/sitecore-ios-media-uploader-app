@@ -1,5 +1,4 @@
 #import "sc_BrowseViewController.h"
-#import "sc_Site.h"
 #import "sc_GlobalDataObject.h"
 #import "sc_ItemHelper.h"
 #import "sc_GradientButton.h"
@@ -29,7 +28,8 @@
 {
     SCApiSession* _legacyApiSession;
     SCExtendedApiSession* _apiSession;
-    sc_Site* _siteForBrowse;
+    SCSite* _siteForBrowse;
+
     
     sc_GlobalDataObject* _appDataObject;
     sc_GridBrowserRequestBuilder* _requestBuilder;
@@ -71,7 +71,8 @@
     
     self.cellFactory.itemsBrowserController.apiSession = self->_apiSession;
     
-    NSString* rootFolderPath = [ sc_Site mediaLibraryDefaultPath ];
+    NSString *rootFolderPath = [ SCSite mediaLibraryDefaultPath ];
+
     
     SCExtendedAsyncOp rootItemLoader =
     [ self->_apiSession readItemOperationForItemPath: rootFolderPath
@@ -80,18 +81,18 @@
     [ self startLoading ];
     __weak sc_BrowseViewController* weakSelf = self;
     rootItemLoader( nil, nil, ^( SCItem* rootItem, NSError* blockError )
-                   {
-                       [ weakSelf endLoading ];
-                       
-                       if ( nil == rootItem )
-                       {
-                           [ weakSelf didFailLoadingRootItemWithError: blockError ];
-                       }
-                       else
-                       {
-                           [ weakSelf didLoadRootItem: rootItem ];
-                       }
-                   } );
+    {
+       [ weakSelf endLoading ];
+       
+       if ( nil == rootItem )
+       {
+           [ weakSelf didFailLoadingRootItemWithError: blockError ];
+       }
+       else
+       {
+           [ weakSelf didLoadRootItem: rootItem ];
+       }
+    } );
 }
 
 -(void)setupLayout

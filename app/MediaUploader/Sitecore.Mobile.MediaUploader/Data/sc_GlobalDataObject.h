@@ -8,9 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "sc_AppDataObject.h"
-#import "sc_Site.h"
 #import "sc_media.h"
-#import "sc_SitesManager.h"
 #import "sc_ItemsForUploadManager.h"
 
 
@@ -24,7 +22,7 @@
 @property ( nonatomic ) int IOS;
 
 
-@property (nonatomic, readonly) sc_SitesManager* sitesManager;
+@property (nonatomic, readonly) SCSitesManager* sitesManager;
 @property (nonatomic, readonly) sc_ItemsForUploadManager* uploadItemsManager;
 
 +(sc_GlobalDataObject*)getAppDataObject;

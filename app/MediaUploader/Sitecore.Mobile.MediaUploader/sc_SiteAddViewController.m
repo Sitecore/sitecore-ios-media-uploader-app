@@ -1,42 +1,47 @@
 //
-//  sc_SiteEditViewController.m
+//  SCTrackableSiteEditViewController.m
 //  Sitecore.Mobile.MediaUploader
 //
 //  Created by andrea bellagamba on 7/26/13.
 //  Copyright (c) 2013 Sitecore. All rights reserved.
 //
 
-#import "sc_SiteAddViewController.h"
+#import "SCTrackableSiteAddViewController.h"
 #import "sc_ListBrowserViewController.h"
 #import "sc_GlobalDataObject.h"
 #import "sc_AppDelegateProtocol.h"
 #import "sc_SettingsViewController.h"
-#import "sc_Site.h"
 #import "sc_GradientButton.h"
 #import "sc_Constants.h"
 #import "sc_ActivityIndicator.h"
 #import "sc_ErrorHelper.h"
 #import "sc_ItemHelper.h"
 #import "sc_ButtonsBuilder.h"
+#import "SCTrackableSite.h"
 
-@interface sc_SiteAddViewController ()
+
+@interface SCTrackableSiteAddViewController ()
 
 @property (nonatomic) BOOL loggedIn;
 @property (nonatomic) UIView* loginFooterView;
-@property (nonatomic) sc_ActivityIndicator * activityIndicator;
+@property (nonatomic) sc_ActivityIndicator* activityIndicator;
 @property (nonatomic) UIView* footerView;
-@property (nonatomic) IBOutlet UISegmentedControl *protocolSelector;
+@property (nonatomic) IBOutlet UISegmentedControl* protocolSelector;
+
 @end
+
 
 static NSString* HTTPS_PROTOCOL_STRING = @"https://";
 static NSString* HTTP_PROTOCOL_STRING = @"http://";
 
-@implementation sc_SiteAddViewController
+
+@implementation SCTrackableSiteAddViewController
 {
     sc_GlobalDataObject* _appDataObject;
     UIBarButtonItem* _saveButton;
     
-    sc_Site* _siteForEdit;
+    SCTrackableSite* _siteForEdit;
+
     BOOL editModeEnabled;
     
     sc_ButtonsBuilder *buttonsBuilder;
@@ -56,7 +61,7 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     
     buttonsBuilder = [ sc_ButtonsBuilder new ];
     
-    self->_siteForEdit = [ sc_Site emptySite ];
+    self->_siteForEdit = [ SCTrackableSite emptySite ];
     editModeEnabled = NO;
     
     [ self localizeUI ];
@@ -77,7 +82,8 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     [self.view addSubview:_activityIndicator];
 }
 
--(void)setSiteForEdit:(sc_Site*)site
+
+-(void)setSiteForEdit:(SCTrackableSite*)site
 {
     self->_siteForEdit = site;
     
@@ -157,9 +163,10 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
                                            animated: YES ];
 }
 
--(void)authenticateAndSaveSite:(sc_Site*)site
+
+-(void)authenticateAndSaveSite:(SCTrackableSite*)site
 {
-    __block sc_Site* tmpSite = site;
+    __block SCTrackableSite* tmpSite = site;
     
     SCApiSession *session = [ sc_ItemHelper getContext: tmpSite ];
     
@@ -224,7 +231,7 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     
     if ( requiredFieldsFilled )
     {
-        sc_Site* fakeSite = [ sc_Site emptySite ];
+        SCTrackableSite* fakeSite = [ SCTrackableSite emptySite ];
         [ self fillSiteWithData: fakeSite ];
         [ self authenticateAndSaveSite: fakeSite ];
     }
@@ -234,7 +241,7 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     }
 }
 
--(void)fillSiteWithData:(sc_Site*)siteToFill
+-(void)fillSiteWithData:(SCSite*)siteToFill
 {
      NSString* protocol;
     
@@ -280,7 +287,8 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     return 0.f;
 }
 
--(UIView* )tableView:(UITableView*)tableView viewForFooterInSection:(NSInteger)section
+-(UIView*)tableView:(UITableView*)tableView
+viewForFooterInSection:(NSInteger)section
 {
     if (section == 0)
     {
@@ -315,7 +323,8 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     return _footerView;
 }
 
--(NSString*)tableView:(UITableView*)tableView titleForHeaderInSection:(NSInteger)section
+-(NSString*)tableView:(UITableView*)tableView
+titleForHeaderInSection:(NSInteger)section
 {
     return NSLocalizedString(@"New site", nil);
 }

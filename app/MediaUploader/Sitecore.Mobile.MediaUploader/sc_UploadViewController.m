@@ -13,7 +13,6 @@
 #import "sc_UploadViewController.h"
 #import "sc_Upload2ViewController.h"
 #import "sc_SitesSelectionViewController.h"
-#import "sc_Site.h"
 #import "sc_Constants.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import "sc_Media.h"

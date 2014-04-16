@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class sc_Site;
+@class SCSite;
 
 
 @interface sc_Media : NSObject
@@ -26,17 +26,19 @@
 @property  (nonatomic) NSURL* videoUrl;
 @property  (nonatomic) NSURL* imageUrl;
 @property  (nonatomic) NSInteger status;
-@property  (nonatomic) sc_Site* siteForUploading;
 
--(id)initWithObjectData:(NSString*)name
-               dateTime:(NSDate  *)dateTime
-               latitude:(NSNumber*)latitude
-              longitude:(NSNumber*)longitude
-    locationDescription:(NSString*)locationDescription
-            countryCode:(NSString*)countryCode
-               cityCode:(NSString*)cityCode
-               videoUrl:(NSURL   *)videoUrl
-               imageUrl:(NSURL   *)imageUrl
+
+@property  (nonatomic) SCSite* siteForUploading;
+
+-(id)initWithObjectData:(NSString *)name
+               dateTime:(NSDate   *) dateTime
+               latitude:(NSNumber *) latitude
+              longitude:(NSNumber *) longitude
+    locationDescription:(NSString *) locationDescription
+            countryCode:(NSString *) countryCode
+               cityCode:(NSString *) cityCode
+               videoUrl:(NSURL *) videoUrl
+               imageUrl:(NSURL *) imageUrl
                  status:(NSInteger)status
               thumbnail:(UIImage *)thumbnail;
 

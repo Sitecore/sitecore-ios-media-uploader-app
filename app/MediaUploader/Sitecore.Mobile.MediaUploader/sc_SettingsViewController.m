@@ -9,15 +9,14 @@
 #import "sc_GlobalDataObject.h"
 #import "sc_AppDelegateProtocol.h"
 #import "sc_SettingsViewController.h"
-#import "sc_SiteAddViewController.h"
+#import "SCSiteAddViewController.h"
 #import "sc_UploadViewController.h"
-#import "sc_Site.h"
 #import "sc_ViewsHelper.h"
 #import "sc_Constants.h"
 #import "sc_ImageHelper.h"
 #import "sc_ItemHelper.h"
 #import "sc_BaseTheme.h"
-#import "sc_SiteAddViewController.h"
+#import "SCSiteAddViewController.h"
 
 @interface sc_SettingsViewController ()
 @end
@@ -70,7 +69,8 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        sc_Site* siteToDelete = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
+
+        SCSite* siteToDelete = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
         [ _appDataObject.sitesManager removeSite: siteToDelete ];
         [ self reload ];
     }
@@ -134,7 +134,8 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
         
         UITableViewCell *  cell =  [tableView dequeueReusableCellWithIdentifier:@"cellSiteUrl" forIndexPath:indexPath];
         
-        sc_Site* siteAtIndex = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
+
+        SCSite* siteAtIndex = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
 
         cell.textLabel.lineBreakMode = NSLineBreakByTruncatingHead;
         cell.detailTextLabel.lineBreakMode = NSLineBreakByTruncatingHead ;
@@ -185,14 +186,14 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
     {
         if ( indexPath.row == [ _appDataObject.sitesManager sitesCount ] )
         {
-            sc_SiteAddViewController *siteAddViewController = (sc_SiteAddViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"AddSite"];
+            SCSiteAddViewController *siteAddViewController = (SCSiteAddViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"AddSite"];
             [self.navigationController pushViewController:siteAddViewController animated:YES];
             [tableView deselectRowAtIndexPath:indexPath animated:YES];
             return;
         }
         else
         {
-            sc_Site* siteAtIndex = [ _appDataObject.sitesManager siteAtIndex: indexPath.row ];
+            SCSite* siteAtIndex = [ _appDataObject.sitesManager siteAtIndex: indexPath.row ];
             [ _appDataObject.sitesManager setSiteForUpload: siteAtIndex ];
             [ self.sitesTableView reloadData ];
         }
@@ -207,9 +208,9 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
 
 -(void)accessoryTapped:(UIButton*)sender
 {
-    sc_Site* siteAtIndex = [ _appDataObject.sitesManager siteAtIndex: sender.tag ];
+    SCSite* siteAtIndex = [ _appDataObject.sitesManager siteAtIndex: sender.tag ];
 
-    sc_SiteAddViewController *siteEditViewController = (sc_SiteAddViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"AddSite"];
+    SCSiteAddViewController *siteEditViewController = (SCSiteAddViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"AddSite"];
     [ siteEditViewController setSiteForEdit: siteAtIndex ];
     [self.navigationController pushViewController:siteEditViewController animated:YES];
 }

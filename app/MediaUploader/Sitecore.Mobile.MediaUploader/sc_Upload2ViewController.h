@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "sc_GlobalDataObject.h"
 
-@class sc_SiteDataController;
+@class SCSiteDataController;
 
 @interface sc_Upload2ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
