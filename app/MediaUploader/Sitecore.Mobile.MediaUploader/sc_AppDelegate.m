@@ -11,6 +11,8 @@
 #import "sc_GlobalDataObject.h"
 #import "sc_ConnectivityHelper.h"
 
+#define TEST_ANALYTICS 1
+
 
 @implementation sc_AppDelegate
 {
@@ -27,12 +29,21 @@
 {
     GAI* analytics = [ GAI sharedInstance ];
     analytics.trackUncaughtExceptions = YES;
-    analytics.dispatchInterval = -1;
+
+#if TEST_ANALYTICS
+    {
+        static const NSInteger HALF_MINUTE = 30;
+        analytics.dispatchInterval = HALF_MINUTE;
+    }
+#else
+    {
+        static const NSInteger ONE_HOUR = 60 * 60;
+        analytics.dispatchInterval = ONE_HOUR;
+    }
+#endif
     
     self->_sessionEventsTracker =  [ analytics trackerWithName: @"net.sitecore.medua-uploader.session-events"
                                                     trackingId: @"UA-50047147-1" ];
-    
-    
 }
 
 -(void)enableCrashlytics

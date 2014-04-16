@@ -14,8 +14,8 @@
 @class SCSitesManager;
 @class sc_ItemsForUploadManager;
 
-@interface sc_GlobalDataObject : sc_AppDataObject
 
+@interface sc_GlobalDataObject : sc_AppDataObject
 
 @property ( nonatomic ) CLPlacemark* selectedPlaceMark;
 
