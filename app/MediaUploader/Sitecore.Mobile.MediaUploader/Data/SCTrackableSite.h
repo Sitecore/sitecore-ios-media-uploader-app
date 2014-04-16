@@ -6,8 +6,20 @@
 //  Copyright (c) 2014 Sitecore. All rights reserved.
 //
 
-#import "SCSite.h"
+//#import "SCSite.h"
+
+
+
+
+#import <Sitecore.Mobile.MediaUploader/Tracking/MUTrackable.h>
 
 @interface SCTrackableSite : SCSite
+<
+MUTrackableObject,
+
+MUUploadSettings,
+MUUploadSettingsRecordState,
+MUUploadSettings_Legacy
+>
 
 @end
