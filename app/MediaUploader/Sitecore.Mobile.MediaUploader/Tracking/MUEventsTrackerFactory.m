@@ -8,10 +8,15 @@
     MUCrashlyticsSessionTracker* crashlyticSessionLogger = [ MUCrashlyticsSessionTracker new ];
     MUFlurrySessionTracker* flurryLogger = [ MUFlurrySessionTracker new ];
     
+    
+    id<GAITracker> googleTracker = [ [ GAI sharedInstance ] defaultTracker ];
+    MUGoogleSessionTracker* googleLogger = [ [ MUGoogleSessionTracker alloc ] initWithGoogleTracker: googleTracker ];
+    
     NSArray* sessionTrackers =
     @[
       crashlyticSessionLogger,
-      flurryLogger
+      flurryLogger,
+      googleLogger
       ];
     
     MUCompositeSessionTracker* compositeTracker =

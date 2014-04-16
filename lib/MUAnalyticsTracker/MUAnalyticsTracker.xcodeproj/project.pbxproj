@@ -11,21 +11,9 @@
 		7E26863418FE98C000033905 /* MUCompositeSessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E26862E18FE98C000033905 /* MUCompositeSessionTracker.m */; };
 		7E26863C18FE99EF00033905 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E41A0AD18FE97B900D601EF /* Foundation.framework */; };
 		7E26864118FE99EF00033905 /* MUCrashlyticsWrapper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E26864018FE99EF00033905 /* MUCrashlyticsWrapper.h */; };
-		7E26864918FE99EF00033905 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E41A0BB18FE97B900D601EF /* XCTest.framework */; };
-		7E26864A18FE99EF00033905 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E41A0AD18FE97B900D601EF /* Foundation.framework */; };
-		7E26864B18FE99EF00033905 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E41A0BE18FE97B900D601EF /* UIKit.framework */; };
-		7E26864E18FE99EF00033905 /* libMUCrashlyticsWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E26863B18FE99EF00033905 /* libMUCrashlyticsWrapper.a */; };
-		7E26865418FE99EF00033905 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E26865218FE99EF00033905 /* InfoPlist.strings */; };
-		7E26865618FE99EF00033905 /* MUCrashlyticsWrapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E26865518FE99EF00033905 /* MUCrashlyticsWrapperTests.m */; };
 		7E26865D18FE9A6800033905 /* MUCrashlyticsSessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E26863018FE98C000033905 /* MUCrashlyticsSessionTracker.m */; };
 		7E26866318FE9A8300033905 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E41A0AD18FE97B900D601EF /* Foundation.framework */; };
 		7E26866818FE9A8300033905 /* MUFlurryWrapper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E26866718FE9A8300033905 /* MUFlurryWrapper.h */; };
-		7E26867018FE9A8300033905 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E41A0BB18FE97B900D601EF /* XCTest.framework */; };
-		7E26867118FE9A8300033905 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E41A0AD18FE97B900D601EF /* Foundation.framework */; };
-		7E26867218FE9A8300033905 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E41A0BE18FE97B900D601EF /* UIKit.framework */; };
-		7E26867518FE9A8300033905 /* libMUFlurryWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E26866218FE9A8300033905 /* libMUFlurryWrapper.a */; };
-		7E26867B18FE9A8300033905 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E26867918FE9A8300033905 /* InfoPlist.strings */; };
-		7E26867D18FE9A8300033905 /* MUFlurryWrapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E26867C18FE9A8300033905 /* MUFlurryWrapperTests.m */; };
 		7E26868418FE9A8F00033905 /* MUFlurrySessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E26863218FE98C000033905 /* MUFlurrySessionTracker.m */; };
 		7E26869B18FE9FCC00033905 /* Flurry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E26869A18FE9FCC00033905 /* Flurry.framework */; };
 		7E26869D18FE9FDD00033905 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E26869C18FE9FDD00033905 /* Crashlytics.framework */; };
@@ -37,29 +25,33 @@
 		7E41A0C218FE97B900D601EF /* libMUAnalyticsTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E41A0AA18FE97B900D601EF /* libMUAnalyticsTracker.a */; };
 		7E41A0C818FE97B900D601EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E41A0C618FE97B900D601EF /* InfoPlist.strings */; };
 		7E41A0CA18FE97B900D601EF /* MUAnalyticsTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E41A0C918FE97B900D601EF /* MUAnalyticsTrackerTests.m */; };
+		7EFE972218FEC62C00FEB394 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E41A0AD18FE97B900D601EF /* Foundation.framework */; };
+		7EFE972718FEC62C00FEB394 /* MUGoogleAnalyticsWrapper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EFE972618FEC62C00FEB394 /* MUGoogleAnalyticsWrapper.h */; };
+		7EFE972F18FEC62C00FEB394 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E41A0BB18FE97B900D601EF /* XCTest.framework */; };
+		7EFE973018FEC62C00FEB394 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E41A0AD18FE97B900D601EF /* Foundation.framework */; };
+		7EFE973118FEC62C00FEB394 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E41A0BE18FE97B900D601EF /* UIKit.framework */; };
+		7EFE973418FEC62C00FEB394 /* libMUGoogleAnalyticsWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE972118FEC62C00FEB394 /* libMUGoogleAnalyticsWrapper.a */; };
+		7EFE973A18FEC62C00FEB394 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EFE973818FEC62C00FEB394 /* InfoPlist.strings */; };
+		7EFE973C18FEC62C00FEB394 /* MUGoogleAnalyticsWrapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFE973B18FEC62C00FEB394 /* MUGoogleAnalyticsWrapperTests.m */; };
+		7EFE974518FEC65100FEB394 /* MUGoogleSessionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFE974418FEC65100FEB394 /* MUGoogleSessionTracker.m */; };
+		7EFE974818FEC69000FEB394 /* GoogleAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE974618FEC69000FEB394 /* GoogleAnalytics.framework */; };
+		7EFE974918FEC69000FEB394 /* GoogleTagManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE974718FEC69000FEB394 /* GoogleTagManager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7E26864C18FE99EF00033905 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7E41A0A218FE97B900D601EF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E26863A18FE99EF00033905;
-			remoteInfo = MUCrashlyticsWrapper;
-		};
-		7E26867318FE9A8300033905 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7E41A0A218FE97B900D601EF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E26866118FE9A8300033905;
-			remoteInfo = MUFlurryWrapper;
-		};
 		7E41A0C018FE97B900D601EF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7E41A0A218FE97B900D601EF /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7E41A0A918FE97B900D601EF;
 			remoteInfo = MUAnalyticsTracker;
+		};
+		7EFE973218FEC62C00FEB394 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E41A0A218FE97B900D601EF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7EFE972018FEC62C00FEB394;
+			remoteInfo = MUGoogleAnalyticsWrapper;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -94,6 +86,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7EFE971F18FEC62C00FEB394 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				7EFE972718FEC62C00FEB394 /* MUGoogleAnalyticsWrapper.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -111,14 +113,12 @@
 		7E26863B18FE99EF00033905 /* libMUCrashlyticsWrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMUCrashlyticsWrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E26863F18FE99EF00033905 /* MUCrashlyticsWrapper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MUCrashlyticsWrapper-Prefix.pch"; sourceTree = "<group>"; };
 		7E26864018FE99EF00033905 /* MUCrashlyticsWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUCrashlyticsWrapper.h; sourceTree = "<group>"; };
-		7E26864818FE99EF00033905 /* MUCrashlyticsWrapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MUCrashlyticsWrapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E26865118FE99EF00033905 /* MUCrashlyticsWrapperTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MUCrashlyticsWrapperTests-Info.plist"; sourceTree = "<group>"; };
 		7E26865318FE99EF00033905 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7E26865518FE99EF00033905 /* MUCrashlyticsWrapperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUCrashlyticsWrapperTests.m; sourceTree = "<group>"; };
 		7E26866218FE9A8300033905 /* libMUFlurryWrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMUFlurryWrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E26866618FE9A8300033905 /* MUFlurryWrapper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MUFlurryWrapper-Prefix.pch"; sourceTree = "<group>"; };
 		7E26866718FE9A8300033905 /* MUFlurryWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUFlurryWrapper.h; sourceTree = "<group>"; };
-		7E26866F18FE9A8300033905 /* MUFlurryWrapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MUFlurryWrapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E26867818FE9A8300033905 /* MUFlurryWrapperTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MUFlurryWrapperTests-Info.plist"; sourceTree = "<group>"; };
 		7E26867A18FE9A8300033905 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7E26867C18FE9A8300033905 /* MUFlurryWrapperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUFlurryWrapperTests.m; sourceTree = "<group>"; };
@@ -134,6 +134,17 @@
 		7E41A0C518FE97B900D601EF /* MUAnalyticsTrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MUAnalyticsTrackerTests-Info.plist"; sourceTree = "<group>"; };
 		7E41A0C718FE97B900D601EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7E41A0C918FE97B900D601EF /* MUAnalyticsTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUAnalyticsTrackerTests.m; sourceTree = "<group>"; };
+		7EFE972118FEC62C00FEB394 /* libMUGoogleAnalyticsWrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMUGoogleAnalyticsWrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EFE972518FEC62C00FEB394 /* MUGoogleAnalyticsWrapper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MUGoogleAnalyticsWrapper-Prefix.pch"; sourceTree = "<group>"; };
+		7EFE972618FEC62C00FEB394 /* MUGoogleAnalyticsWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUGoogleAnalyticsWrapper.h; sourceTree = "<group>"; };
+		7EFE972E18FEC62C00FEB394 /* MUGoogleAnalyticsWrapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MUGoogleAnalyticsWrapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EFE973718FEC62C00FEB394 /* MUGoogleAnalyticsWrapperTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MUGoogleAnalyticsWrapperTests-Info.plist"; sourceTree = "<group>"; };
+		7EFE973918FEC62C00FEB394 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7EFE973B18FEC62C00FEB394 /* MUGoogleAnalyticsWrapperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUGoogleAnalyticsWrapperTests.m; sourceTree = "<group>"; };
+		7EFE974318FEC65100FEB394 /* MUGoogleSessionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUGoogleSessionTracker.h; sourceTree = "<group>"; };
+		7EFE974418FEC65100FEB394 /* MUGoogleSessionTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUGoogleSessionTracker.m; sourceTree = "<group>"; };
+		7EFE974618FEC69000FEB394 /* GoogleAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAnalytics.framework; path = ../../../frameworks/GoogleAnalytics.framework; sourceTree = "<group>"; };
+		7EFE974718FEC69000FEB394 /* GoogleTagManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleTagManager.framework; path = ../../../frameworks/GoogleTagManager.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,34 +157,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7E26864518FE99EF00033905 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7E26864918FE99EF00033905 /* XCTest.framework in Frameworks */,
-				7E26864B18FE99EF00033905 /* UIKit.framework in Frameworks */,
-				7E26864A18FE99EF00033905 /* Foundation.framework in Frameworks */,
-				7E26864E18FE99EF00033905 /* libMUCrashlyticsWrapper.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7E26865F18FE9A8300033905 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7E26869B18FE9FCC00033905 /* Flurry.framework in Frameworks */,
 				7E26866318FE9A8300033905 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E26866C18FE9A8300033905 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7E26867018FE9A8300033905 /* XCTest.framework in Frameworks */,
-				7E26867518FE9A8300033905 /* libMUFlurryWrapper.a in Frameworks */,
-				7E26867218FE9A8300033905 /* UIKit.framework in Frameworks */,
-				7E26867118FE9A8300033905 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +185,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7EFE971E18FEC62C00FEB394 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EFE974918FEC69000FEB394 /* GoogleTagManager.framework in Frameworks */,
+				7EFE974818FEC69000FEB394 /* GoogleAnalytics.framework in Frameworks */,
+				7EFE972218FEC62C00FEB394 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EFE972B18FEC62C00FEB394 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EFE972F18FEC62C00FEB394 /* XCTest.framework in Frameworks */,
+				7EFE973118FEC62C00FEB394 /* UIKit.framework in Frameworks */,
+				7EFE973018FEC62C00FEB394 /* Foundation.framework in Frameworks */,
+				7EFE973418FEC62C00FEB394 /* libMUGoogleAnalyticsWrapper.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -208,6 +218,8 @@
 				7E26863018FE98C000033905 /* MUCrashlyticsSessionTracker.m */,
 				7E26863118FE98C000033905 /* MUFlurrySessionTracker.h */,
 				7E26863218FE98C000033905 /* MUFlurrySessionTracker.m */,
+				7EFE974318FEC65100FEB394 /* MUGoogleSessionTracker.h */,
+				7EFE974418FEC65100FEB394 /* MUGoogleSessionTracker.m */,
 			);
 			path = SessionTrackers;
 			sourceTree = "<group>";
@@ -295,6 +307,8 @@
 				7E26864F18FE99EF00033905 /* MUCrashlyticsWrapperTests */,
 				7E26866418FE9A8300033905 /* MUFlurryWrapper */,
 				7E26867618FE9A8300033905 /* MUFlurryWrapperTests */,
+				7EFE972318FEC62C00FEB394 /* MUGoogleAnalyticsWrapper */,
+				7EFE973518FEC62C00FEB394 /* MUGoogleAnalyticsWrapperTests */,
 				7E41A0AC18FE97B900D601EF /* Frameworks */,
 				7E41A0AB18FE97B900D601EF /* Products */,
 			);
@@ -306,9 +320,9 @@
 				7E41A0AA18FE97B900D601EF /* libMUAnalyticsTracker.a */,
 				7E41A0BA18FE97B900D601EF /* MUAnalyticsTrackerTests.xctest */,
 				7E26863B18FE99EF00033905 /* libMUCrashlyticsWrapper.a */,
-				7E26864818FE99EF00033905 /* MUCrashlyticsWrapperTests.xctest */,
 				7E26866218FE9A8300033905 /* libMUFlurryWrapper.a */,
-				7E26866F18FE9A8300033905 /* MUFlurryWrapperTests.xctest */,
+				7EFE972118FEC62C00FEB394 /* libMUGoogleAnalyticsWrapper.a */,
+				7EFE972E18FEC62C00FEB394 /* MUGoogleAnalyticsWrapperTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -363,6 +377,43 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7EFE972318FEC62C00FEB394 /* MUGoogleAnalyticsWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				7EFE974618FEC69000FEB394 /* GoogleAnalytics.framework */,
+				7EFE974718FEC69000FEB394 /* GoogleTagManager.framework */,
+				7EFE972618FEC62C00FEB394 /* MUGoogleAnalyticsWrapper.h */,
+				7EFE972418FEC62C00FEB394 /* Supporting Files */,
+			);
+			path = MUGoogleAnalyticsWrapper;
+			sourceTree = "<group>";
+		};
+		7EFE972418FEC62C00FEB394 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7EFE972518FEC62C00FEB394 /* MUGoogleAnalyticsWrapper-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7EFE973518FEC62C00FEB394 /* MUGoogleAnalyticsWrapperTests */ = {
+			isa = PBXGroup;
+			children = (
+				7EFE973B18FEC62C00FEB394 /* MUGoogleAnalyticsWrapperTests.m */,
+				7EFE973618FEC62C00FEB394 /* Supporting Files */,
+			);
+			path = MUGoogleAnalyticsWrapperTests;
+			sourceTree = "<group>";
+		};
+		7EFE973618FEC62C00FEB394 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7EFE973718FEC62C00FEB394 /* MUGoogleAnalyticsWrapperTests-Info.plist */,
+				7EFE973818FEC62C00FEB394 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -383,24 +434,6 @@
 			productReference = 7E26863B18FE99EF00033905 /* libMUCrashlyticsWrapper.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		7E26864718FE99EF00033905 /* MUCrashlyticsWrapperTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7E26865A18FE99EF00033905 /* Build configuration list for PBXNativeTarget "MUCrashlyticsWrapperTests" */;
-			buildPhases = (
-				7E26864418FE99EF00033905 /* Sources */,
-				7E26864518FE99EF00033905 /* Frameworks */,
-				7E26864618FE99EF00033905 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7E26864D18FE99EF00033905 /* PBXTargetDependency */,
-			);
-			name = MUCrashlyticsWrapperTests;
-			productName = MUCrashlyticsWrapperTests;
-			productReference = 7E26864818FE99EF00033905 /* MUCrashlyticsWrapperTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		7E26866118FE9A8300033905 /* MUFlurryWrapper */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E26867E18FE9A8300033905 /* Build configuration list for PBXNativeTarget "MUFlurryWrapper" */;
@@ -417,24 +450,6 @@
 			productName = MUFlurryWrapper;
 			productReference = 7E26866218FE9A8300033905 /* libMUFlurryWrapper.a */;
 			productType = "com.apple.product-type.library.static";
-		};
-		7E26866E18FE9A8300033905 /* MUFlurryWrapperTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7E26868118FE9A8300033905 /* Build configuration list for PBXNativeTarget "MUFlurryWrapperTests" */;
-			buildPhases = (
-				7E26866B18FE9A8300033905 /* Sources */,
-				7E26866C18FE9A8300033905 /* Frameworks */,
-				7E26866D18FE9A8300033905 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7E26867418FE9A8300033905 /* PBXTargetDependency */,
-			);
-			name = MUFlurryWrapperTests;
-			productName = MUFlurryWrapperTests;
-			productReference = 7E26866F18FE9A8300033905 /* MUFlurryWrapperTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		7E41A0A918FE97B900D601EF /* MUAnalyticsTracker */ = {
 			isa = PBXNativeTarget;
@@ -471,6 +486,41 @@
 			productReference = 7E41A0BA18FE97B900D601EF /* MUAnalyticsTrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		7EFE972018FEC62C00FEB394 /* MUGoogleAnalyticsWrapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EFE973D18FEC62C00FEB394 /* Build configuration list for PBXNativeTarget "MUGoogleAnalyticsWrapper" */;
+			buildPhases = (
+				7EFE971D18FEC62C00FEB394 /* Sources */,
+				7EFE971E18FEC62C00FEB394 /* Frameworks */,
+				7EFE971F18FEC62C00FEB394 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MUGoogleAnalyticsWrapper;
+			productName = MUGoogleAnalyticsWrapper;
+			productReference = 7EFE972118FEC62C00FEB394 /* libMUGoogleAnalyticsWrapper.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7EFE972D18FEC62C00FEB394 /* MUGoogleAnalyticsWrapperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EFE974018FEC62C00FEB394 /* Build configuration list for PBXNativeTarget "MUGoogleAnalyticsWrapperTests" */;
+			buildPhases = (
+				7EFE972A18FEC62C00FEB394 /* Sources */,
+				7EFE972B18FEC62C00FEB394 /* Frameworks */,
+				7EFE972C18FEC62C00FEB394 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7EFE973318FEC62C00FEB394 /* PBXTargetDependency */,
+			);
+			name = MUGoogleAnalyticsWrapperTests;
+			productName = MUGoogleAnalyticsWrapperTests;
+			productReference = 7EFE972E18FEC62C00FEB394 /* MUGoogleAnalyticsWrapperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -496,34 +546,26 @@
 				7E26863A18FE99EF00033905 /* MUCrashlyticsWrapper */,
 				7E26866118FE9A8300033905 /* MUFlurryWrapper */,
 				7E41A0B918FE97B900D601EF /* MUAnalyticsTrackerTests */,
-				7E26864718FE99EF00033905 /* MUCrashlyticsWrapperTests */,
-				7E26866E18FE9A8300033905 /* MUFlurryWrapperTests */,
+				7EFE972018FEC62C00FEB394 /* MUGoogleAnalyticsWrapper */,
+				7EFE972D18FEC62C00FEB394 /* MUGoogleAnalyticsWrapperTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7E26864618FE99EF00033905 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7E26865418FE99EF00033905 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E26866D18FE9A8300033905 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7E26867B18FE9A8300033905 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7E41A0B818FE97B900D601EF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7E41A0C818FE97B900D601EF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EFE972C18FEC62C00FEB394 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EFE973A18FEC62C00FEB394 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,27 +580,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7E26864418FE99EF00033905 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7E26865618FE99EF00033905 /* MUCrashlyticsWrapperTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7E26865E18FE9A8300033905 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7E26868418FE9A8F00033905 /* MUFlurrySessionTracker.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E26866B18FE9A8300033905 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7E26867D18FE9A8300033905 /* MUFlurryWrapperTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,23 +605,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7EFE971D18FEC62C00FEB394 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EFE974518FEC65100FEB394 /* MUGoogleSessionTracker.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EFE972A18FEC62C00FEB394 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EFE973C18FEC62C00FEB394 /* MUGoogleAnalyticsWrapperTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7E26864D18FE99EF00033905 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7E26863A18FE99EF00033905 /* MUCrashlyticsWrapper */;
-			targetProxy = 7E26864C18FE99EF00033905 /* PBXContainerItemProxy */;
-		};
-		7E26867418FE9A8300033905 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7E26866118FE9A8300033905 /* MUFlurryWrapper */;
-			targetProxy = 7E26867318FE9A8300033905 /* PBXContainerItemProxy */;
-		};
 		7E41A0C118FE97B900D601EF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7E41A0A918FE97B900D601EF /* MUAnalyticsTracker */;
 			targetProxy = 7E41A0C018FE97B900D601EF /* PBXContainerItemProxy */;
+		};
+		7EFE973318FEC62C00FEB394 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7EFE972018FEC62C00FEB394 /* MUGoogleAnalyticsWrapper */;
+			targetProxy = 7EFE973218FEC62C00FEB394 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -620,6 +657,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				7E41A0C718FE97B900D601EF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7EFE973818FEC62C00FEB394 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7EFE973918FEC62C00FEB394 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -665,44 +710,6 @@
 			};
 			name = Release;
 		};
-		7E26865B18FE99EF00033905 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MUCrashlyticsWrapper/MUCrashlyticsWrapper-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "MUCrashlyticsWrapperTests/MUCrashlyticsWrapperTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		7E26865C18FE99EF00033905 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MUCrashlyticsWrapper/MUCrashlyticsWrapper-Prefix.pch";
-				INFOPLIST_FILE = "MUCrashlyticsWrapperTests/MUCrashlyticsWrapperTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 		7E26867F18FE9A8300033905 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -738,44 +745,6 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		7E26868218FE9A8300033905 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MUFlurryWrapper/MUFlurryWrapper-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "MUFlurryWrapperTests/MUFlurryWrapperTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		7E26868318FE9A8300033905 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MUFlurryWrapper/MUFlurryWrapper-Prefix.pch";
-				INFOPLIST_FILE = "MUFlurryWrapperTests/MUFlurryWrapperTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -922,6 +891,84 @@
 			};
 			name = Release;
 		};
+		7EFE973E18FEC62C00FEB394 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				DSTROOT = /tmp/MUGoogleAnalyticsWrapper.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/untitled/tfs/iOS_Media_Uploader/frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MUGoogleAnalyticsWrapper/MUGoogleAnalyticsWrapper-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7EFE973F18FEC62C00FEB394 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				DSTROOT = /tmp/MUGoogleAnalyticsWrapper.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/untitled/tfs/iOS_Media_Uploader/frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MUGoogleAnalyticsWrapper/MUGoogleAnalyticsWrapper-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		7EFE974118FEC62C00FEB394 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MUGoogleAnalyticsWrapper/MUGoogleAnalyticsWrapper-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MUGoogleAnalyticsWrapperTests/MUGoogleAnalyticsWrapperTests-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7EFE974218FEC62C00FEB394 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MUGoogleAnalyticsWrapper/MUGoogleAnalyticsWrapper-Prefix.pch";
+				INFOPLIST_FILE = "MUGoogleAnalyticsWrapperTests/MUGoogleAnalyticsWrapperTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -934,29 +981,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7E26865A18FE99EF00033905 /* Build configuration list for PBXNativeTarget "MUCrashlyticsWrapperTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7E26865B18FE99EF00033905 /* Debug */,
-				7E26865C18FE99EF00033905 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		7E26867E18FE9A8300033905 /* Build configuration list for PBXNativeTarget "MUFlurryWrapper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7E26867F18FE9A8300033905 /* Debug */,
 				7E26868018FE9A8300033905 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7E26868118FE9A8300033905 /* Build configuration list for PBXNativeTarget "MUFlurryWrapperTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7E26868218FE9A8300033905 /* Debug */,
-				7E26868318FE9A8300033905 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -987,6 +1016,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		7EFE973D18FEC62C00FEB394 /* Build configuration list for PBXNativeTarget "MUGoogleAnalyticsWrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EFE973E18FEC62C00FEB394 /* Debug */,
+				7EFE973F18FEC62C00FEB394 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7EFE974018FEC62C00FEB394 /* Build configuration list for PBXNativeTarget "MUGoogleAnalyticsWrapperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EFE974118FEC62C00FEB394 /* Debug */,
+				7EFE974218FEC62C00FEB394 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

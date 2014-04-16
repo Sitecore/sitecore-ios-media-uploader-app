@@ -28,6 +28,7 @@
     #import <MUAnalyticsTracker/MUAnalyticsTracker.h>
     #import <MUFlurryWrapper/MUFlurryWrapper.h>
     #import <MUCrashlyticsWrapper/MUCrashlyticsWrapper.h>
+    #import <MUGoogleAnalyticsWrapper/MUGoogleAnalyticsWrapper.h>
 
     #import <Flurry/Flurry.h>
     #import <Crashlytics/Crashlytics.h>

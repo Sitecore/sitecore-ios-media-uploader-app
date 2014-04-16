@@ -500,6 +500,14 @@
 		7E81AEF017D9C96D00E53330 /* calabash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E81AEEF17D9C96D00E53330 /* calabash.framework */; };
 		7E81AEF217D9C9BA00E53330 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E81AEF117D9C9B900E53330 /* Reveal.framework */; };
 		7ED3E376178E9BAE00E02EA5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E375178E9BAE00E02EA5 /* CFNetwork.framework */; };
+		7EFE974A18FECCEA00FEB394 /* GoogleTagManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947AA18FD751000923AB6 /* GoogleTagManager.framework */; };
+		7EFE974B18FECCEA00FEB394 /* GoogleAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947A618FD700900923AB6 /* GoogleAnalytics.framework */; };
+		7EFE974C18FECCF300FEB394 /* GoogleTagManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947AA18FD751000923AB6 /* GoogleTagManager.framework */; };
+		7EFE974D18FECCF300FEB394 /* GoogleAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947A618FD700900923AB6 /* GoogleAnalytics.framework */; };
+		7EFE974E18FECCF700FEB394 /* GoogleTagManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947AA18FD751000923AB6 /* GoogleTagManager.framework */; };
+		7EFE974F18FECCF700FEB394 /* GoogleAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947A618FD700900923AB6 /* GoogleAnalytics.framework */; };
+		7EFE975118FECD1700FEB394 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE975018FECD1700FEB394 /* CoreData.framework */; };
+		7EFE975318FECD3900FEB394 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE975218FECD3900FEB394 /* AdSupport.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -530,13 +538,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 7EAC343018FE748B007D540D;
 			remoteInfo = MUAllUploaderLibs;
-		};
-		7EAC346018FE7495007D540D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7EAC345918FE7495007D540D /* MUAllUploaderLibs.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7EAC344018FE748B007D540D;
-			remoteInfo = MUAllUploaderLibsTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -792,6 +793,8 @@
 		7ED3E380178E9C5700E02EA5 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		7ED3E382178E9C7A00E02EA5 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		7ED3E384178E9C8F00E02EA5 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		7EFE975018FECD1700FEB394 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7EFE975218FECD3900FEB394 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -799,11 +802,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EFE975318FECD3900FEB394 /* AdSupport.framework in Frameworks */,
+				7EFE975118FECD1700FEB394 /* CoreData.framework in Frameworks */,
 				7E46305918FE76A3009E0F7F /* libMUAllUploaderLibs.a in Frameworks */,
 				78C9E27718E5CF6F004C7A88 /* SitecoreItemsBrowser.framework in Frameworks */,
 				78C9E27118E5A059004C7A88 /* SitecoreMobileSDK.framework in Frameworks */,
 				7E01A1AD18FC1B770070D4EE /* Crashlytics.framework in Frameworks */,
 				7E6CE9C618FD3FB000C86ABA /* Flurry.framework in Frameworks */,
+				7EFE974A18FECCEA00FEB394 /* GoogleTagManager.framework in Frameworks */,
+				7EFE974B18FECCEA00FEB394 /* GoogleAnalytics.framework in Frameworks */,
 				4F7A466617BA39C20030BBDB /* SystemConfiguration.framework in Frameworks */,
 				6599A555175B9C730095775D /* MobileCoreServices.framework in Frameworks */,
 				7ED3E376178E9BAE00E02EA5 /* CFNetwork.framework in Frameworks */,
@@ -833,6 +840,8 @@
 				78C9E27218E5A059004C7A88 /* SitecoreMobileSDK.framework in Frameworks */,
 				7E01A1AF18FC1B770070D4EE /* Crashlytics.framework in Frameworks */,
 				7E6CE9C818FD3FB000C86ABA /* Flurry.framework in Frameworks */,
+				7EFE974E18FECCF700FEB394 /* GoogleTagManager.framework in Frameworks */,
+				7EFE974F18FECCF700FEB394 /* GoogleAnalytics.framework in Frameworks */,
 				7810814A189021E300E8EFD7 /* SystemConfiguration.framework in Frameworks */,
 				78108166189021E300E8EFD7 /* MobileCoreServices.framework in Frameworks */,
 				78108157189021E300E8EFD7 /* CFNetwork.framework in Frameworks */,
@@ -864,6 +873,8 @@
 				7E41A09F18FE7B1300D601EF /* SitecoreMobileSDK.framework in Frameworks */,
 				7E01A1AE18FC1B770070D4EE /* Crashlytics.framework in Frameworks */,
 				7E6CE9C718FD3FB000C86ABA /* Flurry.framework in Frameworks */,
+				7EFE974C18FECCF300FEB394 /* GoogleTagManager.framework in Frameworks */,
+				7EFE974D18FECCF300FEB394 /* GoogleAnalytics.framework in Frameworks */,
 				7E81AE7517D9C93600E53330 /* CFNetwork.framework in Frameworks */,
 				7E81AE6A17D9C93600E53330 /* SystemConfiguration.framework in Frameworks */,
 				7E81AE8417D9C93600E53330 /* MobileCoreServices.framework in Frameworks */,
@@ -995,6 +1006,8 @@
 		655829A8175B408900768197 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7EFE975218FECD3900FEB394 /* AdSupport.framework */,
+				7EFE975018FECD1700FEB394 /* CoreData.framework */,
 				7E6947AA18FD751000923AB6 /* GoogleTagManager.framework */,
 				7E6947A618FD700900923AB6 /* GoogleAnalytics.framework */,
 				7E6CE9C518FD3FB000C86ABA /* Flurry.framework */,
@@ -1366,7 +1379,6 @@
 			isa = PBXGroup;
 			children = (
 				7EAC345F18FE7495007D540D /* libMUAllUploaderLibs.a */,
-				7EAC346118FE7495007D540D /* MUAllUploaderLibsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1487,13 +1499,6 @@
 			fileType = archive.ar;
 			path = libMUAllUploaderLibs.a;
 			remoteRef = 7EAC345E18FE7495007D540D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7EAC346118FE7495007D540D /* MUAllUploaderLibsTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = MUAllUploaderLibsTests.xctest;
-			remoteRef = 7EAC346018FE7495007D540D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
