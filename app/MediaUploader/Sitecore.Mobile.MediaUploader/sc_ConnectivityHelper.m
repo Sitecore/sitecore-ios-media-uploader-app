@@ -7,8 +7,7 @@
 //
 
 #import "sc_ConnectivityHelper.h"
-#import <SystemConfiguration/SystemConfiguration.h>
-#import "Reachability.h"
+
 
 @implementation sc_ConnectivityHelper
 
