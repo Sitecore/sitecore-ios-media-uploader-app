@@ -5,5 +5,8 @@
 //
 
 #ifdef __OBJC__
+    #import <SitecoreMobileSDK/NSArray+SCBlocksAdditions.h>
+    #import <SitecoreMobileSDK/SitecoreMobileSDK.h>
+
     #import <Foundation/Foundation.h>
 #endif
