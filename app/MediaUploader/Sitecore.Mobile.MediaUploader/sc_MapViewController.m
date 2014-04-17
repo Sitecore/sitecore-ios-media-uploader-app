@@ -234,15 +234,15 @@ static CGFloat beautifulRegionCoef = 112.f;
 
 -(void)setMapViewMode:(MapViewMode)mapViewMode
 {
-    _mapViewMode = mapViewMode;
+    self->_mapViewMode = mapViewMode;
 }
 
 -(void)setPlacemark:(CLPlacemark*)placemark
 {
-    MKCoordinateRegion region;
-    CLCircularRegion *placemarkRegion;
+    MKCoordinateRegion region = { {0.f, 0.f}, {0.f, 0.f}  };
+    CLCircularRegion *placemarkRegion = nil;
 
-    if ( [ placemark.region isKindOfClass:[ CLCircularRegion class ] ] )
+    if ( [ placemark.region isKindOfClass: [ CLCircularRegion class ] ] )
     {
         placemarkRegion = (CLCircularRegion*)placemark.region;
     }
@@ -258,14 +258,15 @@ static CGFloat beautifulRegionCoef = 112.f;
     
     region.center.latitude  = placemarkCenter.latitude;
     region.center.longitude = placemarkCenter.longitude;
-    MKCoordinateSpan span;
+    MKCoordinateSpan span = { 0.f, 0.f };
     radius = placemarkRadius / metersToKilimetersCoef;
     
     span.latitudeDelta = radius / beautifulRegionCoef;
     
     region.span = span;
-    [self setSelectedPlaceMark:placemark];
-    [_mapView setRegion:region animated:YES];
+    [self setSelectedPlaceMark: placemark];
+    [self->_mapView setRegion: region
+                     animated: YES];
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar*)searchBar
