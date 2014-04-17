@@ -21,8 +21,10 @@
     return [ self->_sitesList count ];
 }
 
--(void)addSite:(SCSite*)site error:(NSError**)error
+-(BOOL)addSite:(SCSite*)site error:(NSError**)error
 {
+    NSParameterAssert( NULL != error );
+    
     if ( [ self sitesCount ] == 0 )
     {
         site.selectedForUpload = YES;
@@ -38,7 +40,7 @@
         *error = [[ NSError alloc ] initWithDomain: @"MU"
                                               code: 1
                                           userInfo: errorInfo ];
-        return;
+        return NO;
     }
     
     [ self->_sitesList addObject: site ];
@@ -50,8 +52,10 @@
         *error = [[ NSError alloc ] initWithDomain: @"MU"
                                               code: 1
                                           userInfo: errorInfo ];
-        return;
+        return NO;
     }
+    
+    return YES;
 }
 
 -(BOOL)isSameSiteExist:(SCSite*)site

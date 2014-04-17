@@ -125,26 +125,30 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     [ self fillSiteWithData: self->_siteForEdit ];
     self->_siteForEdit.uploadFolderPathInsideMediaLibrary = uploadFolder;
     
-    NSError* error;
+    
+    BOOL isOperationSuccessfull = NO;
+    NSError* error = nil;
     if ( editModeEnabled )
     {
         [ self->_appDataObject.sitesManager saveSites ];
+        isOperationSuccessfull = YES;
     }
     else
     {
-        [ self->_appDataObject.sitesManager addSite: self->_siteForEdit
-                                              error: &error ];
+        SCSitesManager* sitesManager = self->_appDataObject.sitesManager;
+
+        isOperationSuccessfull = [ sitesManager addSite: self->_siteForEdit
+                                                  error: &error ];
     }
 
-    if ( error )
-    {
-        [sc_ErrorHelper showError:NSLocalizedString(error.localizedDescription, nil)];
-    }
-    else
+    if ( isOperationSuccessfull )
     {
         [ self popToSettingsVC ];
     }
-
+    else
+    {
+        [sc_ErrorHelper showError: NSLocalizedString(error.localizedDescription, nil)];
+    }
 }
 
 -(void)popToSettingsVC
