@@ -5,6 +5,11 @@
 //
 
 #ifdef __OBJC__
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu"
     #import <Crashlytics/Crashlytics.h>
+#pragma clang diagnostic pop
+
     #import <Foundation/Foundation.h>
 #endif
