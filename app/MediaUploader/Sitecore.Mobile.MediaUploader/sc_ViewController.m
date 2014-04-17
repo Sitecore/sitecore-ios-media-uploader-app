@@ -33,6 +33,26 @@
     [self enableApplication];
 }
 
+-(NSNumberFormatter*)numberFormatterForUploadCount
+{
+    static NSNumberFormatter* result = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once( &onceToken, ^void()
+    {
+        NSNumberFormatter* uploadCountFormatter = [ NSNumberFormatter new ];
+        {
+            [ uploadCountFormatter setNumberStyle: NSNumberFormatterDecimalStyle ];
+            [ uploadCountFormatter setAllowsFloats: NO ];
+        }
+
+        result = uploadCountFormatter;
+    } );
+    
+    
+    return result;
+}
+
 -(void)enableApplication
 {
     _messageLabel.text = @"";
@@ -71,7 +91,12 @@
             //_pendingView.hidden = NO;
             _pendingButton.enabled = YES;
             _pendingView.hidden = NO;
-            _pendingCounterLabel.text = [ NSString stringWithFormat: @"%d", _appDataObject.uploadItemsManager.uploadCount ];
+            
+            NSNumberFormatter* uploadCountFormatter = [ self numberFormatterForUploadCount ];
+            NSUInteger rawUploadCount = self->_appDataObject.uploadItemsManager.uploadCount;
+
+            NSString* result = [ uploadCountFormatter stringFromNumber: @(rawUploadCount) ];
+            self->_pendingCounterLabel.text = [ NSString stringWithFormat: @"%@", result ];
         }
     }
 }

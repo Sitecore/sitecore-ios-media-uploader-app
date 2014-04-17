@@ -202,18 +202,15 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
 
 }
 
--(void)tableView:(UITableView*)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath*)indexPath
-{
-    NSLog(@"bla");
-}
-
 -(void)accessoryTapped:(UIButton*)sender
 {
     SCSite* siteAtIndex = [ _appDataObject.sitesManager siteAtIndex: sender.tag ];
 
-    sc_SiteAddViewController *siteEditViewController = (sc_SiteAddViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"AddSite"];
+    sc_SiteAddViewController *siteEditViewController = (sc_SiteAddViewController*)[self.storyboard instantiateViewControllerWithIdentifier: @"AddSite"];
     [ siteEditViewController setSiteForEdit: siteAtIndex ];
-    [self.navigationController pushViewController:siteEditViewController animated:YES];
+    
+    [self.navigationController pushViewController: siteEditViewController
+                                         animated: YES];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField*)textField
@@ -225,7 +222,9 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
 -(IBAction)segmentedControlChanged:(id)sender
 {
     UISegmentedControl *segmentedControl = ( UISegmentedControl*)sender;
-    [ sc_ImageHelper saveUploadImageSize: segmentedControl.selectedSegmentIndex ];
+    
+    int castedSegmentedIndex = static_cast<int>( segmentedControl.selectedSegmentIndex  );
+    [ sc_ImageHelper saveUploadImageSize: castedSegmentedIndex ];
 }
 
 @end

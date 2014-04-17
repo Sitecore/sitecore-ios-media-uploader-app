@@ -72,7 +72,8 @@
     NSCharacterSet *charSet = [NSCharacterSet characterSetWithCharactersInString:[self getInvalidItemItemNameChars]];
     NSRange range = [name rangeOfCharacterFromSet:charSet];
     
-    if (!range.location == NSNotFound)
+    BOOL isLocationNotFound = !(range.location == NSNotFound);
+    if ( isLocationNotFound )
     {
         NSString*  chars = [self getInvalidItemItemNameChars];
         return [NSString stringWithFormat:@"AN_ITEM_NAME_MAY_NOT_CONTAIN_ANY_OF_THE_FOLLOWING_CHARACTERS_%@_CONTROLLED_BY_THE_SETTING_INVALIDITEMNAMECHARS", chars];

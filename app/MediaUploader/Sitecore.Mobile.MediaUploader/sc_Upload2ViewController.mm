@@ -73,7 +73,9 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 
 -(IBAction)changeFilter:(UISegmentedControl*)sender
 {
-    [ self filterTableWithFilterValue: sender.selectedSegmentIndex ];
+    ItemsFilterMode selectedIndex = static_cast<ItemsFilterMode>( sender.selectedSegmentIndex );
+    
+    [ self filterTableWithFilterValue: selectedIndex ];
 }
 
 -(void)filterTableWithFilterValue:(ItemsFilterMode)value
@@ -82,9 +84,11 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     
     [ self->_filteredItems removeAllObjects ];
     
-    NSNumber* currentNumber;
+    NSNumber* currentNumber = nil;
     
-    for ( NSInteger index = 0; index < [ self.mediaItems count ]; ++index )
+    NSInteger mediaItemsCount = static_cast<NSInteger>( [ self.mediaItems count ] );
+    
+    for ( NSInteger index = 0; index < mediaItemsCount; ++index )
     {
         currentNumber = @(index);
         sc_UploadItemStatus *status = [ self->_statusManager statusForItemAtNumber: currentNumber ];
@@ -135,7 +139,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 {
     [super viewDidLoad];
     
-    self->_currentFilterValue = 0;
+    self->_currentFilterValue = ShowAllFilter;
     
     [ self localizeFilterButtons ];
     
@@ -292,7 +296,8 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 {
     __block NSData*data;
     
-    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^void()
+    {
         data = [ NSData dataWithContentsOfURL: media.videoUrl ];
     });
     sc_UploadItem * uploadItem = [ [sc_UploadItem alloc] initWithObjectData: media
@@ -301,26 +306,54 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     [ self sendUploadRequest: uploadItem ];
 }
 
+
+//typedef enum {
+//    ALAssetOrientationUp,
+//    ALAssetOrientationDown,
+//    ALAssetOrientationLeft,
+//    ALAssetOrientationRight,
+//    ALAssetOrientationUpMirrored,
+//    ALAssetOrientationDownMirrored,
+//    ALAssetOrientationLeftMirrored,
+//    ALAssetOrientationRightMirrored,
+//} ALAssetOrientation;
+
+
+//typedef NS_ENUM(NSInteger, UIImageOrientation) {
+//    UIImageOrientationUp,            // default orientation
+//    UIImageOrientationDown,          // 180 deg rotation
+//    UIImageOrientationLeft,          // 90 deg CCW
+//    UIImageOrientationRight,         // 90 deg CW
+//    UIImageOrientationUpMirrored,    // as above but image mirrored along other axis. horizontal flip
+//    UIImageOrientationDownMirrored,  // horizontal flip
+//    UIImageOrientationLeftMirrored,  // vertical flip
+//    UIImageOrientationRightMirrored, // vertical flip
+//};
+
 -(void)uploadImageWithMediaItem:(sc_Media*)media
 {
-    ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *myasset)
+    ALAssetsLibraryAssetForURLResultBlock resultblock = ^void(ALAsset *myasset)
     {
-        
         ALAssetRepresentation *rep = [myasset defaultRepresentation];
         
         UIImageOrientation orientation = UIImageOrientationUp;
         
-        NSNumber* orientationValue = [myasset valueForProperty:@"ALAssetPropertyOrientation"];
         
-        if (orientationValue != nil)
+        // @apple : NSNumber containing an asset's orientation as defined by ALAssetOrientation.
+        NSNumber* orientationValue = [ myasset valueForProperty: ALAssetPropertyOrientation ];
+        if ( nil != orientationValue )
         {
-            orientation = [orientationValue intValue];
+            NSParameterAssert( [ orientationValue isKindOfClass: [ NSNumber class ] ] );
+            ALAssetOrientation assetOrientation = static_cast<ALAssetOrientation>( [ orientationValue intValue ] );
+
+            orientation = static_cast<UIImageOrientation>( assetOrientation );
         }
         
         __block NSData*data;
-        dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^void()
+        {
             
-            UIImage* imageSource = [UIImage imageWithCGImage:[rep fullResolutionImage]];
+            UIImage* imageSource = [UIImage imageWithCGImage: [rep fullResolutionImage]];
             
             UIImage* image = [ sc_ImageHelper normalize: imageSource
                                          forOrientation: orientation ];
@@ -336,7 +369,8 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
         
     };
     
-    ALAssetsLibraryAccessFailureBlock failureblock  = ^(NSError* myerror){
+    ALAssetsLibraryAccessFailureBlock failureblock  = ^void(NSError* myerror)
+    {
         NSLog(@"Cannot get image - %@",[myerror localizedDescription]);
     };
     
@@ -502,7 +536,9 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 
 -(int)uploadingFilesCount
 {
-    return _mediaItems.count;
+    int result = static_cast<int>( self->_mediaItems.count );
+    
+    return result;
 }
 
 -(IBAction)abortButtonPressed:(id)sender

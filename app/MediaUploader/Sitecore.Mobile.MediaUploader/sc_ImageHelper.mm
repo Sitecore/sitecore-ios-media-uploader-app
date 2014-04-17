@@ -62,7 +62,9 @@
 +(int)loadUploadImageSize
 {
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    return [defaults integerForKey: @"UploadImageSize"];
+    NSInteger imageSizeFromArchive = [defaults integerForKey: @"UploadImageSize"];
+    
+    return static_cast<int>( imageSizeFromArchive );
 }
 
 +(UIImage*)getVideoThumbnail:(NSURL*) videoUrl
