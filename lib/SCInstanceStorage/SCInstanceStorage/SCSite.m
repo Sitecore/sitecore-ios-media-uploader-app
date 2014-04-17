@@ -40,7 +40,9 @@
     NSString* result = @"media library";
     
     if ( withSlash )
+    {
         result = [NSString stringWithFormat:@"%@/", result];
+    }
     
     return result;
 }
@@ -59,16 +61,16 @@ uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
    selectedForBrowse:(BOOL)selectedForBrowse
    selectedForUpload:(BOOL)selectedForUpload
 {
+    NSAssert(siteUrl, @"siteUrl must exist");
+    NSAssert(site, @"site must exist");
+    NSAssert(uploadFolderPathInsideMediaLibrary, @"uploadFolderPathInsideMediaLibrary must exist");
+    NSAssert(username, @"username must exist");
+    NSAssert(password, @"password must exist");
+
+    
     self = [super init];
-    if (self)
+    if ( nil != self )
     {
-        NSAssert(siteUrl, @"siteUrl must exist");
-        NSAssert(site, @"site must exist");
-        NSAssert(uploadFolderPathInsideMediaLibrary, @"uploadFolderPathInsideMediaLibrary must exist");
-        NSAssert(username, @"username must exist");
-        NSAssert(password, @"password must exist");
-        
-        
         self.siteUrl = siteUrl;
         self.site = site;
         self.uploadFolderPathInsideMediaLibrary = uploadFolderPathInsideMediaLibrary;
@@ -137,7 +139,7 @@ uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
 -(id)initWithCoder:(NSCoder*)decoder
 {
     self = [super init];
-    if (self)
+    if ( nil != self )
     {
         self.siteProtocol                       = [decoder decodeObjectForKey:@"siteProtocol"];
         self.siteUrl                            = [decoder decodeObjectForKey:@"siteUrl"];
@@ -161,7 +163,8 @@ uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
                                                               password: self.password
                                                      selectedForBrowse: self.selectedForBrowse
                                                      selectedForUpload: self.selectedForUpload ];
-    NSAssert( copy, @"bad copy");
+    NSParameterAssert( nil != copy );
+    
     return copy;
 }
 
