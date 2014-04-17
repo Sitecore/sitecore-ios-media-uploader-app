@@ -499,6 +499,10 @@
 		7E81AEE917D9C93600E53330 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCC21785943800730EC8 /* Default-568h@2x.png */; };
 		7E81AEF017D9C96D00E53330 /* calabash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E81AEEF17D9C96D00E53330 /* calabash.framework */; };
 		7E81AEF217D9C9BA00E53330 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E81AEF117D9C9B900E53330 /* Reveal.framework */; };
+		7E8C31A818FFC17E001CC464 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE975018FECD1700FEB394 /* CoreData.framework */; };
+		7E8C31A918FFC183001CC464 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE975218FECD3900FEB394 /* AdSupport.framework */; };
+		7E8C31AA18FFC193001CC464 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE975018FECD1700FEB394 /* CoreData.framework */; };
+		7E8C31AB18FFC198001CC464 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE975218FECD3900FEB394 /* AdSupport.framework */; };
 		7ED3E376178E9BAE00E02EA5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E375178E9BAE00E02EA5 /* CFNetwork.framework */; };
 		7EFE974A18FECCEA00FEB394 /* GoogleTagManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947AA18FD751000923AB6 /* GoogleTagManager.framework */; };
 		7EFE974B18FECCEA00FEB394 /* GoogleAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947A618FD700900923AB6 /* GoogleAnalytics.framework */; };
@@ -835,6 +839,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E8C31AB18FFC198001CC464 /* AdSupport.framework in Frameworks */,
+				7E8C31AA18FFC193001CC464 /* CoreData.framework in Frameworks */,
 				7E41A09D18FE7A4E00D601EF /* libMUAllUploaderLibs.a in Frameworks */,
 				78C9E27818E5CF6F004C7A88 /* SitecoreItemsBrowser.framework in Frameworks */,
 				78C9E27218E5A059004C7A88 /* SitecoreMobileSDK.framework in Frameworks */,
@@ -866,6 +872,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E8C31A918FFC183001CC464 /* AdSupport.framework in Frameworks */,
+				7E8C31A818FFC17E001CC464 /* CoreData.framework in Frameworks */,
 				7E81AEF217D9C9BA00E53330 /* Reveal.framework in Frameworks */,
 				7E81AEF017D9C96D00E53330 /* calabash.framework in Frameworks */,
 				7E46305C18FE76CB009E0F7F /* libMUAllUploaderLibs.a in Frameworks */,
