@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class SCImageView;
+
 @interface sc_QuickImageViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate>
 
 @property (nonatomic) IBOutlet SCImageView *imageView;

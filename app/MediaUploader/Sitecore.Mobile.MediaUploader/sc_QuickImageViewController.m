@@ -9,7 +9,14 @@
 #import "sc_QuickImageViewController.h"
 #import "sc_ItemHelper.h"
 
-@interface sc_QuickImageViewController () <UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+
+@interface sc_QuickImageViewController ()
+<
+    UITextFieldDelegate,
+    UICollectionViewDataSource,
+    UICollectionViewDelegateFlowLayout
+>
+
 @end
 
 @implementation sc_QuickImageViewController
@@ -28,7 +35,7 @@
     }
 }
 
--(void) setNavBarTitleForIndex:(int)index
+-(void)setNavBarTitleForIndex:(int)index
 {
     self.navigationItem.title = ( (SCItem*)[ _items objectAtIndex: index ] ).displayName;
 }
@@ -80,17 +87,17 @@
                                                                      imageParams: params ];
     
     imageReader(^( id result, NSError* error )
-                {
-                    if ( error == NULL )
-                    {
-                        cellActivityView.hidden = YES;
-                        [ imageView setImage: result ];
-                    }
-                    else
-                    {
-                        NSLog( @"%@", [ error localizedDescription ] );
-                    }
-                });
+    {
+        if ( error == NULL )
+        {
+            cellActivityView.hidden = YES;
+            [ imageView setImage: result ];
+        }
+        else
+        {
+            NSLog( @"%@", [ error localizedDescription ] );
+        }
+    });
 
     return cell;
 }
