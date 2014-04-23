@@ -14,7 +14,7 @@
 @property ( nonatomic ) NSString* siteProtocol;
 @property ( nonatomic ) NSString* siteUrl;
 @property ( nonatomic ) NSString* site;
-
+@property ( nonatomic, readonly ) NSString* siteId;
 
 @property ( nonatomic ) NSString* username;
 @property ( nonatomic ) NSString* password;

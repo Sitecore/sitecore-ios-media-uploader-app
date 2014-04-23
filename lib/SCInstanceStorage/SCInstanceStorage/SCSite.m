@@ -1,6 +1,6 @@
 #import "SCSite.h"
 #import "MUUploadSettingsStringFormatter.h"
-
+#import "SCSite+Private.h"
 
 @interface SCSite ()
 
@@ -71,6 +71,7 @@ uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
     self = [super init];
     if ( nil != self )
     {
+        [ self generateId ];
         self.siteUrl = siteUrl;
         self.site = site;
         self.uploadFolderPathInsideMediaLibrary = uploadFolderPathInsideMediaLibrary;
@@ -124,8 +125,14 @@ uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
     self->_urlStrorage = siteUrl;
 }
 
+-(void)setSiteId:(NSString *)siteId
+{
+    self->_siteId = siteId;
+}
+
 -(void)encodeWithCoder:(NSCoder*)encoder
 {
+    [encoder encodeObject: self.siteId forKey:@"siteId"];
     [encoder encodeObject: self.siteProtocol forKey:@"siteProtocol"];
     [encoder encodeObject: self.siteUrl forKey:@"siteUrl"];
     [encoder encodeObject: self.site forKey:@"site"];
@@ -141,6 +148,7 @@ uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
     self = [super init];
     if ( nil != self )
     {
+        self.siteId                             = [decoder decodeObjectForKey:@"siteId"];
         self.siteProtocol                       = [decoder decodeObjectForKey:@"siteProtocol"];
         self.siteUrl                            = [decoder decodeObjectForKey:@"siteUrl"];
         self.site                               = [decoder decodeObjectForKey:@"site"];
@@ -164,7 +172,7 @@ uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
                                                      selectedForBrowse: self.selectedForBrowse
                                                      selectedForUpload: self.selectedForUpload ];
     NSParameterAssert( nil != copy );
-    
+    copy.siteId = self.siteId;
     return copy;
 }
 
