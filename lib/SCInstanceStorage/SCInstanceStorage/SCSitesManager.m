@@ -1,8 +1,6 @@
 #import "SCSitesManager.h"
 #import "SCSite+Private.h"
-
-
-
+#import "SCSitesListSavingError.h"
 @implementation SCSitesManager
 {
     NSMutableArray* _sitesList;
@@ -51,14 +49,27 @@
     
     if ( !sitesWasSaved )
     {
-        NSDictionary* errorInfo = @{ NSLocalizedDescriptionKey: NSLocalizedString(@"SITE_SAVE_ERROR", nil) };
-        *error = [[ NSError alloc ] initWithDomain: @"MU"
-                                              code: 1
-                                          userInfo: errorInfo ];
+        *error = [ SCSitesListSavingError new ];
         return NO;
     }
     
     return YES;
+}
+
+-(void)makeSiteIdUnique:(SCSite *)site
+{
+    SCPredicateBlock siteIsEqualSearchPredicate = ^BOOL( SCSite* elem )
+    {
+        return [ elem.siteId isEqual: site.siteId ];
+    };
+    
+    NSUInteger result = [ self->_sitesList count: siteIsEqualSearchPredicate ];;
+    
+    while (result > 0)
+    {
+        [ site generateId ];
+        result = [ self->_sitesList count: siteIsEqualSearchPredicate ];
+    }
 }
 
 -(BOOL)isSameSiteExist:(SCSite*)site
@@ -82,16 +93,23 @@
     return result;
 }
 
--(void)removeSite:(SCSite*)site
+-(BOOL)removeSite:(SCSite*)site error:(NSError**)error
 {
-    [ self->_sitesList removeObject: site ];
-    [ self saveSites ];
+    SCSite* siteToRemove = [ self siteBySiteId:site.siteId ];
+    
+    if( siteToRemove != nil )
+    {
+        [ self->_sitesList removeObject: siteToRemove ];
+        return [ self saveSites ];
+    }
+    
+    return NO;
 }
 
--(void)removeSiteAtIndex:(NSUInteger)index
+-(BOOL)removeSiteAtIndex:(NSUInteger)index error:(NSError**)error
 {
     [ self->_sitesList removeObjectAtIndex: index ];
-    [ self saveSites ];
+    return [ self saveSites ];
 }
 
 -(NSUInteger)indexOfSite:(SCSite*)site
@@ -107,6 +125,32 @@
     }
     
     return nil;
+}
+
+-(SCSite*)siteBySiteId:(NSString*)siteId
+{
+    SCPredicateBlock siteIsEqualSearchPredicate = ^BOOL( SCSite* elem )
+    {
+        return [ elem.siteId isEqualToString:siteId ];
+    };
+    SCSite* result = [ self->_sitesList firstMatch: siteIsEqualSearchPredicate ];
+    
+    return result;
+}
+
+-(BOOL)saveSiteChanges:(SCSite*)site error:(NSError**)error
+{
+    SCSite* siteForEdit = [ self siteBySiteId:site.siteId ];
+    
+    siteForEdit.siteProtocol                        = site.siteProtocol;
+    siteForEdit.siteUrl                             = site.siteUrl;
+    siteForEdit.site                                = site.site;
+    siteForEdit.uploadFolderPathInsideMediaLibrary  = site.uploadFolderPathInsideMediaLibrary;
+    siteForEdit.username                            = site.username;
+    siteForEdit.password                            = site.password;
+    siteForEdit.selectedForBrowse                   = site.selectedForBrowse;
+    siteForEdit.selectedForUpload                   = site.selectedForUpload;
+    return [ self saveSites ];
 }
 
 -(BOOL)saveSites
@@ -151,9 +195,6 @@
 -(SCSite*)siteForBrowse
 {
     NSParameterAssert( [ self sitesCount ] > 0 );
-    // TODO : refactor
-    // different requirements on sites count
-    
     
     SCPredicateBlock selectedSitePredicate = ^BOOL( SCSite* site )
     {
@@ -183,8 +224,6 @@
         return foundSiteForUpload;
     }
     
-    
-    
     // TODO : refactor
     // different requirements on sites count
     if ( [ self sitesCount ] > 0 )
@@ -199,7 +238,7 @@
     return nil;
 }
 
--(void)setSiteForBrowse:(SCSite*)siteForBrowse
+-(BOOL)setSiteForBrowse:(SCSite*)siteForBrowse error:(NSError**)error
 {
     for ( SCSite *site in self->_sitesList )
     {
@@ -213,10 +252,10 @@
         }
     }
     
-    [ self saveSites ];
+    return [ self saveSites ];
 }
 
--(void)setSiteForUpload:(SCSite*)siteForUpload
+-(BOOL)setSiteForUpload:(SCSite*)siteForUpload error:(NSError**)error
 {
     for ( SCSite *site in self->_sitesList )
     {
@@ -230,7 +269,7 @@
         }
     }
     
-    [ self saveSites ];
+    return [ self saveSites ];
 }
 
 @end

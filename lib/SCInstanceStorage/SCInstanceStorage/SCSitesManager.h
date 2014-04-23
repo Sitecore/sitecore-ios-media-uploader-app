@@ -8,20 +8,22 @@
 -(BOOL)addSite:(SCSite*)site error:(NSError**)error;
 -(SCSite*)siteAtIndex:(NSUInteger)index;
 
--(void)removeSite:(SCSite*)site;
--(void)removeSiteAtIndex:(NSUInteger)index;
+-(BOOL)removeSite:(SCSite*)site error:(NSError**)error;
+-(BOOL)removeSiteAtIndex:(NSUInteger)index error:(NSError**)error;
 
 -(NSUInteger)sitesCount;
 -(NSUInteger)indexOfSite:(SCSite*)site;
-
--(BOOL)saveSites;
 
 -(BOOL)isSameSiteExist:(SCSite*)site;
 -(NSUInteger)sameSitesCount:(SCSite*)site;
 
 -(SCSite*)siteForBrowse;
--(void)setSiteForUpload:(SCSite*)siteForUpload;
--(void)setSiteForBrowse:(SCSite*)siteForBrowse;
+-(SCSite*)siteBySiteId:(NSString*)siteId;
+
+-(BOOL)saveSiteChanges:(SCSite*)site error:(NSError**)error;
+
+-(BOOL)setSiteForUpload:(SCSite*)siteForUpload error:(NSError**)error;
+-(BOOL)setSiteForBrowse:(SCSite*)siteForBrowse error:(NSError**)error;
 
 -(BOOL)atLeastOneSiteExists;
 
