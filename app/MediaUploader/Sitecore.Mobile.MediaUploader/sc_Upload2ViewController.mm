@@ -230,8 +230,11 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     }
 
     [ cell.cellImageView setImage: media.thumbnail ];
-    cell.siteLabel.text   = media.siteForUploading.siteUrl;
-    cell.folderLabel.text = [ sc_ItemHelper formatUploadFolder: media.siteForUploading ];
+    
+    SCSite *siteForUpload = [ _appDataObject.sitesManager siteBySiteId: media.siteForUploadingId ];
+    
+    cell.siteLabel.text   = siteForUpload.siteUrl;
+    cell.folderLabel.text = [ sc_ItemHelper formatUploadFolder: siteForUpload ];
     
     [ cell setCellStyleForUploadStatus: status
                              withTheme: self->_theme ];
@@ -377,7 +380,9 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 
 -(void)sendUploadRequest:(MUUploadItem*) uploadItem
 {
-    SCApiSession *session = [ sc_ItemHelper getContext: uploadItem.mediaItem.siteForUploading ];
+    SCSite *siteForUpload = [ _appDataObject.sitesManager siteBySiteId:  uploadItem.mediaItem.siteForUploadingId ];
+    
+    SCApiSession *session = [ sc_ItemHelper getContext: siteForUpload ];
     SCUploadMediaItemRequest *request = [SCUploadMediaItemRequest new];
     request.itemName =  uploadItem.mediaItem.name;
 
@@ -392,7 +397,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     request.mediaItemData = uploadItem.data;
     request.fieldNames = [NSSet new];
     request.contentType = uploadItem.contentType;
-    request.folder = uploadItem.mediaItem.siteForUploading.uploadFolderPathInsideMediaLibrary;
+    request.folder = siteForUpload.uploadFolderPathInsideMediaLibrary;
     
     SCDidFinishAsyncOperationHandler doneHandler = (^( SCItem* item, NSError* error )
     {

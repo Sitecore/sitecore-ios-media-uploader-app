@@ -377,7 +377,7 @@
                                                      status: MEDIASTATUS_PENDING
                                                   thumbnail: _thumbnail ];
     
-    media.siteForUploading = [self.appDataObject.sitesManager siteForUpload];
+    media.siteForUploadingId = [self.appDataObject.sitesManager siteForUpload].siteId;
     
     return media;
 }
@@ -395,7 +395,7 @@
         
         [ _activityIndicator hide ];
         
-        if ( media.siteForUploading == nil )
+        if ( media.siteForUploadingId == nil )
         {
             [ sc_ErrorHelper showError:NSLocalizedString(@"Please set up at least one upload site.", nil) ];
             return;
@@ -418,7 +418,7 @@
 {
     MUMedia* media = [self getMedia];
     
-    if ( media.siteForUploading == nil )
+    if ( media.siteForUploadingId == nil )
     {
         [ sc_ErrorHelper showError:NSLocalizedString(@"Please set up at least one upload site.", nil) ];
         return;
