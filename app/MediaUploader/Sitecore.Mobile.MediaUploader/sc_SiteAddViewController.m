@@ -12,7 +12,6 @@
 #import "sc_AppDelegateProtocol.h"
 #import "sc_SettingsViewController.h"
 #import "sc_GradientButton.h"
-#import "sc_Constants.h"
 #import "sc_ActivityIndicator.h"
 #import "sc_ErrorHelper.h"
 #import "sc_ItemHelper.h"
@@ -130,7 +129,7 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     NSError* error = nil;
     if ( editModeEnabled )
     {
-        [ self->_appDataObject.sitesManager saveSites ];
+        [ self->_appDataObject.sitesManager saveSiteChanges:self->_siteForEdit error: nil ];
         isOperationSuccessfull = YES;
     }
     else
@@ -272,8 +271,7 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     [ MUEventsTrackerFactory sessionTrackerForMediaUploader ];
     [ sessionTracker didLogoutFromSite: self->_siteForEdit ];
     
-    
-    [ self->_appDataObject.sitesManager removeSite: self->_siteForEdit ];
+    [ self->_appDataObject.sitesManager removeSite: self->_siteForEdit error: nil ];
     [ self.navigationController popViewControllerAnimated: YES ];
 }
 
@@ -309,7 +307,7 @@ viewForFooterInSection:(NSInteger)section
             CGRect secondButtonFrame = CGRectMake(2*padding + buttonWidth, padding, buttonWidth, buttonHeight);
             
             sc_GradientButton* secondButton = [ buttonsBuilder getButtonWithTitle: @"Next"
-                                                                            style:CUSTOMBUTTONTYPE_IMPORTANT
+                                                                            style: CUSTOMBUTTONTYPE_IMPORTANT
                                                                            target: self
                                                                          selector: @selector(save:) ];
             [ secondButton setFrame: secondButtonFrame ];
@@ -321,7 +319,7 @@ viewForFooterInSection:(NSInteger)section
                                                                           target: self
                                                                         selector: @selector(remove:) ];
             [ firstButton setFrame: firstButtonFrame ];
-            [ _footerView addSubview:firstButton ];
+            [ _footerView addSubview: firstButton ];
         }
     }
     

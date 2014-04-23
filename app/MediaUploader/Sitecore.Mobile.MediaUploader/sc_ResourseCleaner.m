@@ -1,8 +1,6 @@
 #import "sc_ResourseCleaner.h"
-#import "sc_Media.h"
 #import "sc_GlobalDataObject.h"
 #import "sc_CleaningProtocol.h"
-#import "sc_Constants.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 
 @implementation sc_ResourseCleaner

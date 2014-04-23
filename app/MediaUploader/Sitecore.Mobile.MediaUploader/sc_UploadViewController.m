@@ -13,13 +13,10 @@
 #import "sc_UploadViewController.h"
 #import "sc_Upload2ViewController.h"
 #import "sc_SitesSelectionViewController.h"
-#import "sc_Constants.h"
 #import <MediaPlayer/MediaPlayer.h>
-#import "sc_Media.h"
 #import "sc_GradientButton.h"
 #import "sc_ActivityIndicator.h"
 #import "sc_Validator.h"
-#import "sc_ImageHelper.h"
 #import "sc_ItemHelper.h"
 #import "sc_BaseTheme.h"
 #import "sc_LocationManager.h"

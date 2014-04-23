@@ -7,8 +7,6 @@
 //
 
 #import "sc_ItemHelper.h"
-#import "sc_Constants.h"
-
 
 @implementation sc_ItemHelper
 

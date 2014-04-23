@@ -7,14 +7,8 @@
 //
 
 #import "sc_GlobalDataObject.h"
-#import "sc_Media.h"
-#import "sc_Constants.h"
 #import "sc_ConnectivityHelper.h"
 #import "sc_AppDelegateProtocol.h"
-
-#import "sc_media.h"
-#import "sc_ItemsForUploadManager.h"
-
 
 @implementation sc_GlobalDataObject
 

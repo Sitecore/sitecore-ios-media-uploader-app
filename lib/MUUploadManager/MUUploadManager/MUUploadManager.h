@@ -1,14 +1,11 @@
-//
-//  MUUploadManager.h
-//  MUUploadManager
-//
-//  Created by Igor on 23/04/14.
-//  Copyright (c) 2014 Sitecore. All rights reserved.
-//
-
-#ifndef MUUploadManager_MUUploadManager_h
-#define MUUploadManager_MUUploadManager_h
 
 
 
-#endif
+#import <MUUploadManager/sc_Constants.h>
+#import <MUUploadManager/sc_ImageHelper.h>
+#import <MUUploadManager/sc_UploadItem.h>
+#import <MUUploadManager/sc_Media.h>
+#import <MUUploadManager/sc_ItemsForUploadManager.h>
+#import <MUUploadManager/sc_UploadItem.h>
+#import <MUUploadManager/sc_UploadItemManager.h>
+#import <MUUploadManager/sc_UploadItemStatus.h>

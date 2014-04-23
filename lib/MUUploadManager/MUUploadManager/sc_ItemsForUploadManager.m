@@ -1,4 +1,5 @@
 #import "sc_ItemsForUploadManager.h"
+#import "sc_Media.h"
 
 @implementation sc_ItemsForUploadManager
 

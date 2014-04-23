@@ -11,7 +11,6 @@
 #import "sc_AppDelegateProtocol.h"
 #import"sc_Upload2ViewController.h"
 #import "sc_GradientButton.h"
-#import "sc_ItemsForUploadManager.h"
 
 @interface sc_ViewController ()
 

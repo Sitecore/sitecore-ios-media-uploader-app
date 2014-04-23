@@ -10,6 +10,7 @@
 #define Sitecore_Mobile_MediaUploader_sc_Constants_h
 
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 enum
 {

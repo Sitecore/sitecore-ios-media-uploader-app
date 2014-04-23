@@ -14,7 +14,6 @@
 #import "sc_UploadViewController.h"
 #import "sc_GlobalDataObject.h"
 #import "sc_AppDelegateProtocol.h"
-#import "sc_ImageHelper.h"
 #import "sc_LocationManager.h"
 
 

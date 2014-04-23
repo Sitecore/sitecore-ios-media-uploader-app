@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78C8F8071907E02C00B78ABB /* libMUUploadManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C8F8011907DFF900B78ABB /* libMUUploadManager.a */; };
 		7E26869818FE9B7800033905 /* libMUFlurryWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E26869118FE9B7100033905 /* libMUFlurryWrapper.a */; };
 		7E46305218FE768D009E0F7F /* libiOSReachabilityFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC347218FE74BE007D540D /* libiOSReachabilityFramework.a */; };
 		7E62FBE718FEA06100D88F70 /* libMUCrashlyticsWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E26868F18FE9B7100033905 /* libMUCrashlyticsWrapper.a */; };
@@ -19,6 +20,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		78C8F8001907DFF900B78ABB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78C8F7F91907DFF800B78ABB /* MUUploadManager.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78C8F7D01907DFDA00B78ABB;
+			remoteInfo = MUUploadManager;
+		};
+		78C8F8021907DFF900B78ABB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78C8F7F91907DFF800B78ABB /* MUUploadManager.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78C8F7E01907DFDA00B78ABB;
+			remoteInfo = MUUploadManagerTests;
+		};
+		78C8F8051907E01F00B78ABB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78C8F7F91907DFF800B78ABB /* MUUploadManager.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 78C8F7CF1907DFDA00B78ABB;
+			remoteInfo = MUUploadManager;
+		};
 		7E26868518FE9B7100033905 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
@@ -140,6 +162,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		78C8F7F91907DFF800B78ABB /* MUUploadManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MUUploadManager.xcodeproj; path = ../MUUploadManager/MUUploadManager.xcodeproj; sourceTree = "<group>"; };
 		7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MUAnalyticsTracker.xcodeproj; path = ../MUAnalyticsTracker/MUAnalyticsTracker.xcodeproj; sourceTree = "<group>"; };
 		7EAC343018FE748B007D540D /* libMUAllUploaderLibs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMUAllUploaderLibs.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EAC343318FE748B007D540D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -160,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78C8F8071907E02C00B78ABB /* libMUUploadManager.a in Frameworks */,
 				7EFE975B18FECD7200FEB394 /* libMUGoogleAnalyticsWrapper.a in Frameworks */,
 				7EDFEB1018FEBFD200055891 /* libSCInstanceStorage.a in Frameworks */,
 				7E62FBE718FEA06100D88F70 /* libMUCrashlyticsWrapper.a in Frameworks */,
@@ -173,6 +197,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78C8F7FA1907DFF800B78ABB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78C8F8011907DFF900B78ABB /* libMUUploadManager.a */,
+				78C8F8031907DFF900B78ABB /* MUUploadManagerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7E41A0D418FE986000D601EF /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +290,7 @@
 			children = (
 				7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */,
 				7EAC346418FE74B9007D540D /* SCInstanceStorage.xcodeproj */,
+				78C8F7F91907DFF800B78ABB /* MUUploadManager.xcodeproj */,
 			);
 			name = "lib ";
 			sourceTree = "<group>";
@@ -300,6 +334,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				78C8F8061907E01F00B78ABB /* PBXTargetDependency */,
 				7EFE975E18FECD7600FEB394 /* PBXTargetDependency */,
 				7EDFEB0A18FEBFCE00055891 /* PBXTargetDependency */,
 				7E26868618FE9B7100033905 /* PBXTargetDependency */,
@@ -341,6 +376,10 @@
 					ProjectRef = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
 				},
 				{
+					ProductGroup = 78C8F7FA1907DFF800B78ABB /* Products */;
+					ProjectRef = 78C8F7F91907DFF800B78ABB /* MUUploadManager.xcodeproj */;
+				},
+				{
 					ProductGroup = 7EAC346518FE74B9007D540D /* Products */;
 					ProjectRef = 7EAC346418FE74B9007D540D /* SCInstanceStorage.xcodeproj */;
 				},
@@ -353,6 +392,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		78C8F8011907DFF900B78ABB /* libMUUploadManager.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMUUploadManager.a;
+			remoteRef = 78C8F8001907DFF900B78ABB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		78C8F8031907DFF900B78ABB /* MUUploadManagerTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MUUploadManagerTests.xctest;
+			remoteRef = 78C8F8021907DFF900B78ABB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		7E26868F18FE9B7100033905 /* libMUCrashlyticsWrapper.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -430,6 +483,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		78C8F8061907E01F00B78ABB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MUUploadManager;
+			targetProxy = 78C8F8051907E01F00B78ABB /* PBXContainerItemProxy */;
+		};
 		7E26868618FE9B7100033905 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MUCrashlyticsWrapper;

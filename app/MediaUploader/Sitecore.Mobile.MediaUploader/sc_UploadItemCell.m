@@ -1,6 +1,4 @@
 #import "sc_UploadItemCell.h"
-#import "sc_Constants.h"
-#import "sc_UploadItemStatus.h"
 #import "sc_BaseTheme.h"
 
 @implementation sc_UploadItemCell

@@ -12,8 +12,6 @@
 #import "sc_SiteAddViewController.h"
 #import "sc_UploadViewController.h"
 #import "sc_ViewsHelper.h"
-#import "sc_Constants.h"
-#import "sc_ImageHelper.h"
 #import "sc_ItemHelper.h"
 #import "sc_BaseTheme.h"
 
@@ -72,7 +70,7 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
     {
 
         SCSite* siteToDelete = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
-        [ _appDataObject.sitesManager removeSite: siteToDelete ];
+        [ _appDataObject.sitesManager removeSite: siteToDelete error:nil];
         [ self reload ];
     }
 }
@@ -195,7 +193,7 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
         else
         {
             SCSite* siteAtIndex = [ _appDataObject.sitesManager siteAtIndex: indexPath.row ];
-            [ _appDataObject.sitesManager setSiteForUpload: siteAtIndex ];
+            [ _appDataObject.sitesManager setSiteForUpload: siteAtIndex error: nil ];
             [ self.sitesTableView reloadData ];
         }
     }

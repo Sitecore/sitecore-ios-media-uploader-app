@@ -83,6 +83,15 @@ didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     _appDataObject = [[sc_GlobalDataObject alloc] init];
     
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    
+    NSDate *date = [NSDate date];
+    
+    
+    NSLog(@"Date for locale %@",
+       [dateFormatter stringFromDate:date]);
+    
 #if ANALYTICS_ENABLED
     {
         [ self enableGoogleAnalytics ];

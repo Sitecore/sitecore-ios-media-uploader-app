@@ -35,7 +35,7 @@
     }
 }
 
--(void)setNavBarTitleForIndex:(int)index
+-(void)setNavBarTitleForIndex:(NSUInteger)index
 {
     self.navigationItem.title = ( (SCItem*)[ _items objectAtIndex: index ] ).displayName;
 }

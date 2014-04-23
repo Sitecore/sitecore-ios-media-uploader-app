@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 
+@class sc_Media;
+
 enum
 {
     MEDIASTATUS_UNDEFINED = 0,

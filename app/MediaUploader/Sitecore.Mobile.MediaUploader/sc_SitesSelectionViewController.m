@@ -10,7 +10,6 @@
 #import "sc_GlobalDataObject.h"
 #import "sc_AppDelegateProtocol.h"
 #import "sc_UploadViewController.h"
-#import "sc_Constants.h"
 #import "sc_ReloadableViewProtocol.h"
 #import "sc_ViewsHelper.h"
 #import "sc_ItemHelper.h"
@@ -115,7 +114,7 @@
 
 -(IBAction)closeView
 {    
-    [ _appDataObject.sitesManager setSiteForBrowse: _selectedSite ];
+    [ _appDataObject.sitesManager setSiteForBrowse: _selectedSite error: nil ];
     
     [ sc_ViewsHelper reloadParentController: self.navigationController
                                      levels: 2 ];

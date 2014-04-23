@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-#import "sc_UploadItemManager.h"
+
 @class sc_BaseTheme;
 
 @interface sc_UploadItemCell : UITableViewCell

@@ -11,20 +11,14 @@
 #import "sc_GlobalDataObject.h"
 #import "sc_AppDelegateProtocol.h"
 #import "sc_ReloadableViewProtocol.h"
-#import "sc_Constants.h"
-#import "sc_Media.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import "sc_ViewsHelper.h"
 
 #import "sc_GradientButton.h"
-#import "sc_UploadItem.h"
-#import "sc_ImageHelper.h"
 #import "sc_ItemHelper.h"
 #import "sc_DeviceHelper.h"
 
 #import "sc_UploadItemCell.h"
-#import "sc_UploadItemManager.h"
-#import "sc_UploadItemStatus.h"
 #import "sc_BaseTheme.h"
 
 @interface sc_Upload2ViewController ()

@@ -7,7 +7,6 @@
 //
 
 #import "sc_NavigationController.h"
-#import "sc_Constants.h"
 #import "sc_BaseTheme.h"
 
 @interface sc_NavigationController ()
