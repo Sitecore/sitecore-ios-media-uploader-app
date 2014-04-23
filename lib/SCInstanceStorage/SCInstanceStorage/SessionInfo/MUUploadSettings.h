@@ -4,6 +4,12 @@
 
 
 @required
+
+/**
+ Id of the site object
+ */
+-(NSString*)siteId;
+
 /**
  URL of the sitecore instance
  */

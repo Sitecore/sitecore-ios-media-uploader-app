@@ -33,12 +33,13 @@
 -(NSString*)formatSettings:(id<MUUploadSettings, MUUploadSettings_Legacy> )uploadSettings
 {
     static NSString* SITE_FORMAT =
+        @"siteId        : %@ \n"
         @"Instance      : %@ \n"
         @"Site          : %@ \n"
         @"Login         : %@ \n"
         @"Upload Folder : %@ \n";
     
-    
+    NSString* siteId = [ uploadSettings siteId ];
     NSString* host = [ uploadSettings siteUrl ];
     NSString* urlScheme = [ uploadSettings siteProtocol ];
     NSString* instance = [ NSString stringWithFormat: @"%@%@", urlScheme, host ];
@@ -49,7 +50,7 @@
     NSString* absoluteMediaPath = [ self->_rootMediaPath stringByAppendingPathComponent: relativeMediaPath ];
     
     
-    NSString* result = [ NSString stringWithFormat: SITE_FORMAT, instance, site, login, absoluteMediaPath ];
+    NSString* result = [ NSString stringWithFormat: SITE_FORMAT, siteId, instance, site, login, absoluteMediaPath ];
     
     return result;
 }
