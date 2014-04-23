@@ -1,11 +1,3 @@
-//
-//  MUUploadItemStatus.m
-//  Sitecore.Mobile.MediaUploader
-//
-//  Created by Igor on 30/12/13.
-//  Copyright (c) 2013 Sitecore. All rights reserved.
-//
-
 #import "MUUploadItemStatus.h"
 
 @implementation MUUploadItemStatus

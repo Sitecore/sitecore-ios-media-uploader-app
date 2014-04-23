@@ -1,11 +1,3 @@
-//
-//  MUUploadItemStatus.h
-//  Sitecore.Mobile.MediaUploader
-//
-//  Created by Igor on 30/12/13.
-//  Copyright (c) 2013 Sitecore. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger, MUUploadItemStatusType)

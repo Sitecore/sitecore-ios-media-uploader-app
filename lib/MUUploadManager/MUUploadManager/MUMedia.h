@@ -8,10 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-
 @class SCSite;
 @class UIImage;
-
 
 @interface MUMedia : NSObject
 
@@ -29,20 +27,19 @@
 @property  (nonatomic) NSURL* imageUrl;
 @property  (nonatomic) NSInteger status;
 
-
 @property  (nonatomic) SCSite* siteForUploading;
 
--(id)initWithObjectData:(NSString *)name
-               dateTime:(NSDate   *) dateTime
-               latitude:(NSNumber *) latitude
-              longitude:(NSNumber *) longitude
-    locationDescription:(NSString *) locationDescription
-            countryCode:(NSString *) countryCode
-               cityCode:(NSString *) cityCode
-               videoUrl:(NSURL *) videoUrl
-               imageUrl:(NSURL *) imageUrl
+-(instancetype)initWithObjectData:(NSString*)name
+               dateTime:(NSDate*)dateTime
+               latitude:(NSNumber*)latitude
+              longitude:(NSNumber*)longitude
+    locationDescription:(NSString*)locationDescription
+            countryCode:(NSString*)countryCode
+               cityCode:(NSString*)cityCode
+               videoUrl:(NSURL*)videoUrl
+               imageUrl:(NSURL*)imageUrl
                  status:(NSInteger)status
-              thumbnail:(UIImage *)thumbnail;
+              thumbnail:(UIImage*)thumbnail;
 
 -(BOOL)isImage;
 -(BOOL)isVideo;
