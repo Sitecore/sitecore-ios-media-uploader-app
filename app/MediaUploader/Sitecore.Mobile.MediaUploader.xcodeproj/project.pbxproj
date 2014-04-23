@@ -635,7 +635,7 @@
 		655F69EB17C5D78D00C4AFF4 /* sc_Validator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_Validator.h; sourceTree = "<group>"; };
 		655F69EC17C5D78D00C4AFF4 /* sc_Validator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_Validator.m; sourceTree = "<group>"; };
 		6599A551175B9B410095775D /* sc_UploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_UploadViewController.h; sourceTree = "<group>"; };
-		6599A552175B9B410095775D /* sc_UploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_UploadViewController.m; sourceTree = "<group>"; };
+		6599A552175B9B410095775D /* sc_UploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = sc_UploadViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		6599A554175B9C730095775D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		6599A556175B9C810095775D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		659CE73117947B6700331B4B /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = error.png; path = Images/error.png; sourceTree = "<group>"; };
@@ -681,7 +681,7 @@
 		65FBC23317723928002437A5 /* select_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = select_small.png; path = Images/select_small.png; sourceTree = "<group>"; };
 		65FBC23517737CAA002437A5 /* geolocation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = geolocation.png; path = Images/geolocation.png; sourceTree = "<group>"; };
 		65FBC23A17739841002437A5 /* sc_Upload2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_Upload2ViewController.h; sourceTree = "<group>"; };
-		65FBC23B17739841002437A5 /* sc_Upload2ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = sc_Upload2ViewController.mm; sourceTree = "<group>"; };
+		65FBC23B17739841002437A5 /* sc_Upload2ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = sc_Upload2ViewController.mm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		65FBC23D1773C06A002437A5 /* upload_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = upload_small.png; path = Images/upload_small.png; sourceTree = "<group>"; };
 		65FBC24B1775C378002437A5 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		65FBC251177A33E4002437A5 /* whiteCheckmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whiteCheckmark.png; path = Images/whiteCheckmark.png; sourceTree = "<group>"; };
@@ -706,8 +706,8 @@
 		78C9E27618E5CF6F004C7A88 /* SitecoreItemsBrowser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SitecoreItemsBrowser.framework; sourceTree = "<group>"; };
 		78CA658118C8B8C800C27192 /* accessoryArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "accessoryArrow@2x.png"; sourceTree = "<group>"; };
 		78CA658218C8B8C800C27192 /* accessoryArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accessoryArrow.png; sourceTree = "<group>"; };
-		78CA819A185B00420001896D /* sc_UploadItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_UploadItemCell.h; sourceTree = "<group>"; };
-		78CA819B185B00420001896D /* sc_UploadItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_UploadItemCell.m; sourceTree = "<group>"; };
+		78CA819A185B00420001896D /* sc_UploadItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = sc_UploadItemCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		78CA819B185B00420001896D /* sc_UploadItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = sc_UploadItemCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		78CB2A9018F43DB500BDA6B0 /* sc_GridBrowserRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_GridBrowserRequestBuilder.h; sourceTree = "<group>"; };
 		78CB2A9118F43DB500BDA6B0 /* sc_GridBrowserRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_GridBrowserRequestBuilder.m; sourceTree = "<group>"; };
 		78CC1EF618EAA2E6003608CD /* sc_BrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_BrowseViewController.h; sourceTree = "<group>"; };
@@ -721,7 +721,7 @@
 		78CE93BE18ED626400B68327 /* sc_ListBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_ListBrowserViewController.h; sourceTree = "<group>"; };
 		78CE93BF18ED626400B68327 /* sc_ListBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_ListBrowserViewController.m; sourceTree = "<group>"; };
 		78D37098188563B5005A7470 /* sc_ResourseCleaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sc_ResourseCleaner.h; path = ../sc_ResourseCleaner.h; sourceTree = "<group>"; };
-		78D37099188563B5005A7470 /* sc_ResourseCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = sc_ResourseCleaner.m; path = ../sc_ResourseCleaner.m; sourceTree = "<group>"; };
+		78D37099188563B5005A7470 /* sc_ResourseCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = sc_ResourseCleaner.m; path = ../sc_ResourseCleaner.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		78D3709B18856478005A7470 /* sc_CleaningProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_CleaningProtocol.h; sourceTree = "<group>"; };
 		78D4A9B51886BE6D00CC44B4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		78D4AA091886D13900CC44B4 /* Sitecore.Mobile.MediaUploaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sitecore.Mobile.MediaUploaderTests-Info.plist"; sourceTree = "<group>"; };

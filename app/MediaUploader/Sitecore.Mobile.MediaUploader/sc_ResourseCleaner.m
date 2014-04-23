@@ -45,7 +45,7 @@
 
 -(void)checkVideoAvailability
 {
-    for ( sc_Media* item in _appDataObject.uploadItemsManager.mediaUpload )
+    for ( MUMedia* item in _appDataObject.uploadItemsManager.mediaUpload )
     {
         if ( item.isVideo )
         {
@@ -67,7 +67,7 @@
 {
     __weak sc_ResourseCleaner *weakSelf = self;
     self->_imagesRequestsCount = 0;
-    for ( sc_Media* item in _appDataObject.uploadItemsManager.mediaUpload )
+    for ( MUMedia* item in _appDataObject.uploadItemsManager.mediaUpload )
     {
         if ( item.isImage )
         {

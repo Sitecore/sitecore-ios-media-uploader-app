@@ -1,11 +1,8 @@
-
-
-
-#import <MUUploadManager/sc_Constants.h>
-#import <MUUploadManager/sc_ImageHelper.h>
-#import <MUUploadManager/sc_UploadItem.h>
-#import <MUUploadManager/sc_Media.h>
-#import <MUUploadManager/sc_ItemsForUploadManager.h>
-#import <MUUploadManager/sc_UploadItem.h>
-#import <MUUploadManager/sc_UploadItemManager.h>
-#import <MUUploadManager/sc_UploadItemStatus.h>
+#import <MUUploadManager/MUConstants.h>
+#import <MUUploadManager/MUImageHelper.h>
+#import <MUUploadManager/MUUploadItem.h>
+#import <MUUploadManager/MUMedia.h>
+#import <MUUploadManager/MUItemsForUploadManager.h>
+#import <MUUploadManager/MUUploadItem.h>
+#import <MUUploadManager/MUUploadItemManager.h>
+#import <MUUploadManager/MUUploadItemStatus.h>

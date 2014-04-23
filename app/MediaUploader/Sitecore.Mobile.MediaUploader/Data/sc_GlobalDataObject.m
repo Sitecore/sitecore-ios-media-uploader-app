@@ -25,7 +25,7 @@
     if ( self = [super init] )
     {
         self->_sitesManager = [ SCSitesManager new ];
-        self->_uploadItemsManager = [ sc_ItemsForUploadManager new ];
+        self->_uploadItemsManager = [ MUItemsForUploadManager new ];
     }
     
     return self;

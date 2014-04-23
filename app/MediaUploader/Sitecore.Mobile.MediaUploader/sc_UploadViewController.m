@@ -310,7 +310,7 @@
         
         [self dismissViewControllerAnimated:YES completion:nil];
         
-        _thumbnail = [sc_ImageHelper getVideoThumbnail:_videoUrl];
+        _thumbnail = [MUImageHelper getVideoThumbnail:_videoUrl];
         [imageView setImage: _thumbnail];
         
         _uploadButton.enabled = YES;
@@ -358,14 +358,14 @@
     [self saveFileAsPending];
 }
 
--(sc_Media*)getMedia
+-(MUMedia*)getMedia
 {
     NSNumber* latitude = [ NSNumber numberWithFloat: [ _locationManager getLatitude ] ];
     NSNumber* longitude = [ NSNumber numberWithFloat: [ _locationManager getLongitude ] ];
     NSString* countryCode = [ _locationManager getCountryCode ];
     NSString* cityCode = [ _locationManager getCityCode ];
     
-    sc_Media* media = [ [sc_Media alloc] initWithObjectData: _name.text
+    MUMedia* media = [ [MUMedia alloc] initWithObjectData: _name.text
                                                    dateTime: _timeStamp
                                                    latitude: latitude
                                                   longitude: longitude
@@ -391,7 +391,7 @@
         [ self initializeActivityIndicator ];
         [ _activityIndicator showWithLabel: @"Preparing media" ];
         
-        sc_Media* media = [ self getMedia ];
+        MUMedia* media = [ self getMedia ];
         
         [ _activityIndicator hide ];
         
@@ -416,7 +416,7 @@
 
 -(void)saveFileAsPending
 {
-    sc_Media* media = [self getMedia];
+    MUMedia* media = [self getMedia];
     
     if ( media.siteForUploading == nil )
     {
@@ -430,7 +430,7 @@
     [self.navigationController popViewControllerAnimated:YES ];
 }
 
--(void)setMediaItemValidName:(sc_Media*) media
+-(void)setMediaItemValidName:(MUMedia*) media
 {
     NSString* validName;
     

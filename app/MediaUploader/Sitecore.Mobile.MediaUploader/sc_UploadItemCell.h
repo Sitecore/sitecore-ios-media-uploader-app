@@ -9,6 +9,6 @@
 @property ( nonatomic ) IBOutlet UILabel* folderLabel;
 @property ( nonatomic ) IBOutlet UIActivityIndicatorView* activityView;
 
--(void)setCellStyleForUploadStatus:(sc_UploadItemStatus*)status withTheme:(sc_BaseTheme*)theme;
+-(void)setCellStyleForUploadStatus:(MUUploadItemStatus*)status withTheme:(sc_BaseTheme*)theme;
 
 @end

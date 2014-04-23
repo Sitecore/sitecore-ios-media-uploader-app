@@ -21,7 +21,7 @@
 }
 
 
--(void)setCellStyleForUploadStatus:(sc_UploadItemStatus*)status withTheme:(sc_BaseTheme*)theme
+-(void)setCellStyleForUploadStatus:(MUUploadItemStatus*)status withTheme:(sc_BaseTheme*)theme
 {
     UIColor* backgroundColor;
     UIImage* image;

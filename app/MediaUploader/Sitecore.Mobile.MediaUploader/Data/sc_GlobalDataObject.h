@@ -12,7 +12,7 @@
 #import "sc_AppDataObject.h"
 
 @class SCSitesManager;
-@class sc_ItemsForUploadManager;
+@class MUItemsForUploadManager;
 
 
 @interface sc_GlobalDataObject : sc_AppDataObject
@@ -25,7 +25,7 @@
 
 
 @property (nonatomic, readonly) SCSitesManager* sitesManager;
-@property (nonatomic, readonly) sc_ItemsForUploadManager* uploadItemsManager;
+@property (nonatomic, readonly) MUItemsForUploadManager* uploadItemsManager;
 
 +(sc_GlobalDataObject*)getAppDataObject;
 

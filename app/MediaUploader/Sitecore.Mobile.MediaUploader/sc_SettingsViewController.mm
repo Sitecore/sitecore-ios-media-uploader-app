@@ -108,7 +108,7 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
         UITableViewCell *  cell =  [tableView dequeueReusableCellWithIdentifier:@"ImageSize" forIndexPath:indexPath];
         cell.backgroundView = [UIView new];
         UISegmentedControl *segmentedControl = (UISegmentedControl*)[cell viewWithTag:100];
-        [segmentedControl setSelectedSegmentIndex:[sc_ImageHelper loadUploadImageSize]];
+        [segmentedControl setSelectedSegmentIndex:[MUImageHelper loadUploadImageSize]];
         [segmentedControl addTarget: self
                              action:@selector(segmentedControlChanged:)
                    forControlEvents:UIControlEventValueChanged];
@@ -222,7 +222,7 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
     UISegmentedControl *segmentedControl = ( UISegmentedControl*)sender;
     
     int castedSegmentedIndex = static_cast<int>( segmentedControl.selectedSegmentIndex  );
-    [ sc_ImageHelper saveUploadImageSize: castedSegmentedIndex ];
+    [ MUImageHelper saveUploadImageSize: castedSegmentedIndex ];
 }
 
 @end
