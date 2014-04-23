@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		78C8F7D41907DFDA00B78ABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C8F7D31907DFDA00B78ABB /* Foundation.framework */; };
+		78C8F7D91907DFDA00B78ABB /* MUUploadManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 78C8F7D81907DFDA00B78ABB /* MUUploadManager.h */; };
+		78C8F7DB1907DFDA00B78ABB /* MUUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C8F7DA1907DFDA00B78ABB /* MUUploadManager.m */; };
+		78C8F7E21907DFDA00B78ABB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C8F7E11907DFDA00B78ABB /* XCTest.framework */; };
+		78C8F7E31907DFDA00B78ABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C8F7D31907DFDA00B78ABB /* Foundation.framework */; };
+		78C8F7E51907DFDA00B78ABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C8F7E41907DFDA00B78ABB /* UIKit.framework */; };
+		78C8F7E81907DFDA00B78ABB /* libMUUploadManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C8F7D01907DFDA00B78ABB /* libMUUploadManager.a */; };
+		78C8F7EE1907DFDA00B78ABB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78C8F7EC1907DFDA00B78ABB /* InfoPlist.strings */; };
+		78C8F7F01907DFDA00B78ABB /* MUUploadManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C8F7EF1907DFDA00B78ABB /* MUUploadManagerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		78C8F7E61907DFDA00B78ABB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78C8F7C81907DFDA00B78ABB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78C8F7CF1907DFDA00B78ABB;
+			remoteInfo = MUUploadManager;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		78C8F7CE1907DFDA00B78ABB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				78C8F7D91907DFDA00B78ABB /* MUUploadManager.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		78C8F7D01907DFDA00B78ABB /* libMUUploadManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMUUploadManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		78C8F7D31907DFDA00B78ABB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		78C8F7D71907DFDA00B78ABB /* MUUploadManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MUUploadManager-Prefix.pch"; sourceTree = "<group>"; };
+		78C8F7D81907DFDA00B78ABB /* MUUploadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUUploadManager.h; sourceTree = "<group>"; };
+		78C8F7DA1907DFDA00B78ABB /* MUUploadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUUploadManager.m; sourceTree = "<group>"; };
+		78C8F7E01907DFDA00B78ABB /* MUUploadManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MUUploadManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		78C8F7E11907DFDA00B78ABB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		78C8F7E41907DFDA00B78ABB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		78C8F7EB1907DFDA00B78ABB /* MUUploadManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MUUploadManagerTests-Info.plist"; sourceTree = "<group>"; };
+		78C8F7ED1907DFDA00B78ABB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		78C8F7EF1907DFDA00B78ABB /* MUUploadManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUUploadManagerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		78C8F7CD1907DFDA00B78ABB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78C8F7D41907DFDA00B78ABB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78C8F7DD1907DFDA00B78ABB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78C8F7E81907DFDA00B78ABB /* libMUUploadManager.a in Frameworks */,
+				78C8F7E21907DFDA00B78ABB /* XCTest.framework in Frameworks */,
+				78C8F7E51907DFDA00B78ABB /* UIKit.framework in Frameworks */,
+				78C8F7E31907DFDA00B78ABB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		78C8F7C71907DFDA00B78ABB = {
+			isa = PBXGroup;
+			children = (
+				78C8F7D51907DFDA00B78ABB /* MUUploadManager */,
+				78C8F7E91907DFDA00B78ABB /* MUUploadManagerTests */,
+				78C8F7D21907DFDA00B78ABB /* Frameworks */,
+				78C8F7D11907DFDA00B78ABB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		78C8F7D11907DFDA00B78ABB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78C8F7D01907DFDA00B78ABB /* libMUUploadManager.a */,
+				78C8F7E01907DFDA00B78ABB /* MUUploadManagerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		78C8F7D21907DFDA00B78ABB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78C8F7D31907DFDA00B78ABB /* Foundation.framework */,
+				78C8F7E11907DFDA00B78ABB /* XCTest.framework */,
+				78C8F7E41907DFDA00B78ABB /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78C8F7D51907DFDA00B78ABB /* MUUploadManager */ = {
+			isa = PBXGroup;
+			children = (
+				78C8F7D81907DFDA00B78ABB /* MUUploadManager.h */,
+				78C8F7DA1907DFDA00B78ABB /* MUUploadManager.m */,
+				78C8F7D61907DFDA00B78ABB /* Supporting Files */,
+			);
+			path = MUUploadManager;
+			sourceTree = "<group>";
+		};
+		78C8F7D61907DFDA00B78ABB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				78C8F7D71907DFDA00B78ABB /* MUUploadManager-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		78C8F7E91907DFDA00B78ABB /* MUUploadManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				78C8F7EF1907DFDA00B78ABB /* MUUploadManagerTests.m */,
+				78C8F7EA1907DFDA00B78ABB /* Supporting Files */,
+			);
+			path = MUUploadManagerTests;
+			sourceTree = "<group>";
+		};
+		78C8F7EA1907DFDA00B78ABB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				78C8F7EB1907DFDA00B78ABB /* MUUploadManagerTests-Info.plist */,
+				78C8F7EC1907DFDA00B78ABB /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		78C8F7CF1907DFDA00B78ABB /* MUUploadManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78C8F7F31907DFDA00B78ABB /* Build configuration list for PBXNativeTarget "MUUploadManager" */;
+			buildPhases = (
+				78C8F7CC1907DFDA00B78ABB /* Sources */,
+				78C8F7CD1907DFDA00B78ABB /* Frameworks */,
+				78C8F7CE1907DFDA00B78ABB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MUUploadManager;
+			productName = MUUploadManager;
+			productReference = 78C8F7D01907DFDA00B78ABB /* libMUUploadManager.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		78C8F7DF1907DFDA00B78ABB /* MUUploadManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78C8F7F61907DFDA00B78ABB /* Build configuration list for PBXNativeTarget "MUUploadManagerTests" */;
+			buildPhases = (
+				78C8F7DC1907DFDA00B78ABB /* Sources */,
+				78C8F7DD1907DFDA00B78ABB /* Frameworks */,
+				78C8F7DE1907DFDA00B78ABB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78C8F7E71907DFDA00B78ABB /* PBXTargetDependency */,
+			);
+			name = MUUploadManagerTests;
+			productName = MUUploadManagerTests;
+			productReference = 78C8F7E01907DFDA00B78ABB /* MUUploadManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		78C8F7C81907DFDA00B78ABB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Sitecore;
+			};
+			buildConfigurationList = 78C8F7CB1907DFDA00B78ABB /* Build configuration list for PBXProject "MUUploadManager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 78C8F7C71907DFDA00B78ABB;
+			productRefGroup = 78C8F7D11907DFDA00B78ABB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				78C8F7CF1907DFDA00B78ABB /* MUUploadManager */,
+				78C8F7DF1907DFDA00B78ABB /* MUUploadManagerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		78C8F7DE1907DFDA00B78ABB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78C8F7EE1907DFDA00B78ABB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		78C8F7CC1907DFDA00B78ABB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78C8F7DB1907DFDA00B78ABB /* MUUploadManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78C8F7DC1907DFDA00B78ABB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78C8F7F01907DFDA00B78ABB /* MUUploadManagerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		78C8F7E71907DFDA00B78ABB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78C8F7CF1907DFDA00B78ABB /* MUUploadManager */;
+			targetProxy = 78C8F7E61907DFDA00B78ABB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		78C8F7EC1907DFDA00B78ABB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78C8F7ED1907DFDA00B78ABB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		78C8F7F11907DFDA00B78ABB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		78C8F7F21907DFDA00B78ABB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		78C8F7F41907DFDA00B78ABB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MUUploadManager.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MUUploadManager/MUUploadManager-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		78C8F7F51907DFDA00B78ABB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MUUploadManager.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MUUploadManager/MUUploadManager-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		78C8F7F71907DFDA00B78ABB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MUUploadManager/MUUploadManager-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MUUploadManagerTests/MUUploadManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		78C8F7F81907DFDA00B78ABB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MUUploadManager/MUUploadManager-Prefix.pch";
+				INFOPLIST_FILE = "MUUploadManagerTests/MUUploadManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		78C8F7CB1907DFDA00B78ABB /* Build configuration list for PBXProject "MUUploadManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78C8F7F11907DFDA00B78ABB /* Debug */,
+				78C8F7F21907DFDA00B78ABB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78C8F7F31907DFDA00B78ABB /* Build configuration list for PBXNativeTarget "MUUploadManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78C8F7F41907DFDA00B78ABB /* Debug */,
+				78C8F7F51907DFDA00B78ABB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		78C8F7F61907DFDA00B78ABB /* Build configuration list for PBXNativeTarget "MUUploadManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78C8F7F71907DFDA00B78ABB /* Debug */,
+				78C8F7F81907DFDA00B78ABB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 78C8F7C81907DFDA00B78ABB /* Project object */;
+}
