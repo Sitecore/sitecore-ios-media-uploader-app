@@ -18,16 +18,16 @@
 @implementation MUMedia
 
 -(instancetype)initWithObjectData:(NSString*)name
-               dateTime:(NSDate*)dateTime
-               latitude:(NSNumber*)latitude
-              longitude:(NSNumber*)longitude
-    locationDescription:(NSString*)locationDescription
-            countryCode:(NSString*)countryCode
-               cityCode:(NSString*)cityCode
-               videoUrl:(NSURL*)videoUrl
-               imageUrl:(NSURL*)imageUrl
-                 status:(NSInteger)status
-              thumbnail:(UIImage*)thumbnail
+                         dateTime:(NSDate*)dateTime
+                         latitude:(NSNumber*)latitude
+                        longitude:(NSNumber*)longitude
+              locationDescription:(NSString*)locationDescription
+                      countryCode:(NSString*)countryCode
+                         cityCode:(NSString*)cityCode
+                         videoUrl:(NSURL*)videoUrl
+                         imageUrl:(NSURL*)imageUrl
+                           status:(NSInteger)status
+                        thumbnail:(UIImage*)thumbnail
 {
     self = [super init];
     if (self)
@@ -44,7 +44,6 @@
         _imageUrl = imageUrl;
         _status = status;
         _thumbnail = thumbnail;
-        
     }
     
     return self;
@@ -64,7 +63,7 @@
     [encoder encodeObject:  _imageUrl            forKey: @"imageUrl"            ];
     [encoder encodeInteger: _status              forKey: @"status"              ];
     [encoder encodeObject:  _thumbnail           forKey: @"thumbnail"           ];
-    [encoder encodeObject:  _siteForUploading    forKey: @"siteForUploading"    ];
+    [encoder encodeObject:  _siteForUploadingId  forKey: @"siteForUploading"    ];
 }
 
 -(instancetype)initWithCoder:(NSCoder*)decoder
@@ -83,7 +82,7 @@
         self.videoUrl            = [decoder decodeObjectForKey:  @"videoUrl"            ];
         self.imageUrl            = [decoder decodeObjectForKey:  @"imageUrl"            ];
         self.thumbnail           = [decoder decodeObjectForKey:  @"thumbnail"           ];
-        self.siteForUploading    = [decoder decodeObjectForKey:  @"siteForUploading"    ];
+        self.siteForUploadingId  = [decoder decodeObjectForKey:  @"siteForUploading"    ];
         self.status              = [decoder decodeIntegerForKey: @"status"              ];
     }
     
