@@ -15,6 +15,7 @@
 		78716C5D18F6E8140092AA98 /* libSCInstanceStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78716C4518F6E8130092AA98 /* libSCInstanceStorage.a */; };
 		78716C6318F6E8140092AA98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78716C6118F6E8140092AA98 /* InfoPlist.strings */; };
 		78716C6518F6E8140092AA98 /* SCInstanceStorageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78716C6418F6E8140092AA98 /* SCInstanceStorageTests.m */; };
+		78C8F7951907BD6F00B78ABB /* SCSitesListSavingError.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C8F7941907BD6F00B78ABB /* SCSitesListSavingError.m */; };
 		78D6669F18FD6CAF00BFD6C7 /* SCSite.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D6669A18FD6CAF00BFD6C7 /* SCSite.m */; };
 		78D666A018FD6CAF00BFD6C7 /* SCSite.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D6669A18FD6CAF00BFD6C7 /* SCSite.m */; };
 		78D666A118FD6CAF00BFD6C7 /* SCSite+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D6669C18FD6CAF00BFD6C7 /* SCSite+Private.m */; };
@@ -64,6 +65,8 @@
 		78716C6018F6E8140092AA98 /* SCInstanceStorageTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SCInstanceStorageTests-Info.plist"; sourceTree = "<group>"; };
 		78716C6218F6E8140092AA98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		78716C6418F6E8140092AA98 /* SCInstanceStorageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCInstanceStorageTests.m; sourceTree = "<group>"; };
+		78C8F7931907BD6F00B78ABB /* SCSitesListSavingError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSitesListSavingError.h; sourceTree = "<group>"; };
+		78C8F7941907BD6F00B78ABB /* SCSitesListSavingError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSitesListSavingError.m; sourceTree = "<group>"; };
 		78D6669918FD6CAF00BFD6C7 /* SCSite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSite.h; sourceTree = "<group>"; };
 		78D6669A18FD6CAF00BFD6C7 /* SCSite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSite.m; sourceTree = "<group>"; };
 		78D6669B18FD6CAF00BFD6C7 /* SCSite+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCSite+Private.h"; sourceTree = "<group>"; };
@@ -151,6 +154,8 @@
 				78D6669C18FD6CAF00BFD6C7 /* SCSite+Private.m */,
 				78D6669D18FD6CAF00BFD6C7 /* SCSitesManager.h */,
 				78D6669E18FD6CAF00BFD6C7 /* SCSitesManager.m */,
+				78C8F7931907BD6F00B78ABB /* SCSitesListSavingError.h */,
+				78C8F7941907BD6F00B78ABB /* SCSitesListSavingError.m */,
 				78716C4B18F6E8130092AA98 /* Supporting Files */,
 				78D6675D18FD73D400BFD6C7 /* SCInstanceStorage.h */,
 			);
@@ -265,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78D666A318FD6CAF00BFD6C7 /* SCSitesManager.m in Sources */,
+				78C8F7951907BD6F00B78ABB /* SCSitesListSavingError.m in Sources */,
 				78622E5918FE736C00ADA6D1 /* MUUploadSettingsStringFormatter.m in Sources */,
 				78D666A118FD6CAF00BFD6C7 /* SCSite+Private.m in Sources */,
 				78D6669F18FD6CAF00BFD6C7 /* SCSite.m in Sources */,
