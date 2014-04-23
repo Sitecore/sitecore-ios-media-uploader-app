@@ -1,13 +1,28 @@
-//
-//  SCSitesListSavingError.m
-//  SCInstanceStorage
-//
-//  Created by Igor on 23/04/14.
-//  Copyright (c) 2014 Sitecore. All rights reserved.
-//
-
 #import "SCSitesListSavingError.h"
 
 @implementation SCSitesListSavingError
+
+- (instancetype)init
+{
+    NSDictionary* errorInfo = @{ NSLocalizedDescriptionKey: NSLocalizedString(@"SITE_SAVE_ERROR", nil) };
+    self = [ super initWithDomain: @"MU"
+                             code: 1
+                         userInfo: errorInfo ];
+    
+    if ( self != nil )
+    {
+    
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithDescription:(NSString *)description
+                             domain:(NSString *)domain
+                               code:(NSInteger)code
+{
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
 
 @end
