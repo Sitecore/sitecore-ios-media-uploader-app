@@ -26,7 +26,7 @@
 @interface sc_UploadViewController ()
 
 @property ( nonatomic ) UIImage* thumbnail;
-@property ( nonatomic ) bool autoImagePickerLoadExecuted;
+@property ( nonatomic ) BOOL autoImagePickerLoadExecuted;
 @property ( nonatomic ) sc_ActivityIndicator * activityIndicator;
 @property ( nonatomic ) BOOL isRaised;
 @property ( nonatomic ) NSDate*  timeStamp;

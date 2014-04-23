@@ -19,7 +19,7 @@
 
 @property ( nonatomic ) CLPlacemark* selectedPlaceMark;
 
-@property ( nonatomic ) bool isIpad;
+@property ( nonatomic ) BOOL isIpad;
 @property ( nonatomic, readonly ) BOOL isOnline;
 @property ( nonatomic ) int IOS;
 

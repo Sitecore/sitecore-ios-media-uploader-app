@@ -150,7 +150,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     [ _abortButton setTitle: NSLocalizedString(_abortButton.titleLabel.text, nil)
                    forState: UIControlStateNormal ];
     
-    _doneButton.enabled = false;
+    _doneButton.enabled = NO;
     self.navigationItem.hidesBackButton = YES;
     self->_uploadItemIndex = 0;
     _doneButton.target = self;

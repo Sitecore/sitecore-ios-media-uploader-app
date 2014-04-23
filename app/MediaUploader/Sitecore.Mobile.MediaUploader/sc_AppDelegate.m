@@ -115,7 +115,7 @@ didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName: @"MainStoryboard_iPhone"
                                                          bundle: nil];
-    _appDataObject.isIpad = false;
+    _appDataObject.isIpad = NO;
     
     UIViewController* initialViewController = [storyboard instantiateInitialViewController];
     self.window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
