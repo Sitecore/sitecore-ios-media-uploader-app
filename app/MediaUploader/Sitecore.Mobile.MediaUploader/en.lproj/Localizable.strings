@@ -93,6 +93,8 @@
 //sc_SiteAddViewController
 "New site" = "New site";
 "Add site" = "Add site";
+"Authenticating" = "Authenticating";
+"Please enter username and password." = "Please enter username and password.";
 
 "CANT_CREATE_ERROR_TEXT" = "Can't create item, please try later";
 "ERROR_ALERT_TITLE" = "Error";
@@ -102,6 +104,7 @@
 
 //ERRORS
 "The specified location not found." = "The specified location not found";
+"Authentication failure." = "Authentication failure.";
 
 //FILTERS
 "ALL_ITEMS_FILTER_TITLE" = "All";
