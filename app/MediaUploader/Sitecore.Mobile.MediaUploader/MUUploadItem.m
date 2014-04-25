@@ -7,7 +7,6 @@
 //
 
 #import "MUUploadItem.h"
-#import "MUConstants.h"
 
 @implementation MUUploadItem
 

@@ -7,8 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MUMedia.h"
-
 
 @interface MUUploadItem: NSObject
 
