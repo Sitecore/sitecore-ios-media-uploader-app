@@ -1,7 +1,7 @@
-
 #import "sc_GradientButton.h"
 
 #import "MUButtonTheme.h"
+
 
 @implementation sc_GradientButton
 {
@@ -121,24 +121,27 @@
     [ self.layer setBackgroundColor: [ self->_colorForNormalState CGColor ] ];
     
     
-    static const UIControlEvents BUTTON_TOUCH_DOWN =
-    UIControlEventTouchDown      |
-    UIControlEventTouchDownRepeat;
+    {
+        static const UIControlEvents BUTTON_TOUCH_DOWN =
+        UIControlEventTouchDown      |
+        UIControlEventTouchDownRepeat;
+        
+        [ self addTarget: self
+                  action: @selector( buttonDidTouchDown: )
+        forControlEvents: BUTTON_TOUCH_DOWN ];
+    }
     
-    [ self addTarget: self
-              action: @selector( buttonDidTouchDown: )
-    forControlEvents: BUTTON_TOUCH_DOWN ];
     
-    
-    
-    static const UIControlEvents BUTTON_TOUCH_UP =
-    UIControlEventTouchUpInside  |
-    UIControlEventTouchUpOutside |
-    UIControlEventTouchCancel    ;
-    
-    [ self addTarget: self
-              action: @selector( buttonDidTouchUp: )
-    forControlEvents: BUTTON_TOUCH_UP ];
+    {
+        static const UIControlEvents BUTTON_TOUCH_UP =
+        UIControlEventTouchUpInside  |
+        UIControlEventTouchUpOutside |
+        UIControlEventTouchCancel    ;
+        
+        [ self addTarget: self
+                  action: @selector( buttonDidTouchUp: )
+        forControlEvents: BUTTON_TOUCH_UP ];
+    }
 }
 
 -(void)buttonDidTouchDown:( id )sender
