@@ -300,7 +300,9 @@ didFinishPickingMediaWithInfo:(NSDictionary*)info
         _videoUrl = [info objectForKey:UIImagePickerControllerMediaURL];
         NSString* moviePath = [_videoUrl path];
         
-        if (newMedia)
+        
+        BOOL isNewMedia = self->newMedia;
+        if ( isNewMedia )
         {
             if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum (moviePath))
             {
@@ -331,14 +333,14 @@ didFinishPickingMediaWithInfo:(NSDictionary*)info
 
 -(void)image:(UIImage*)image finishedSavingWithError:(NSError*)error sessionInfo:(void*)sessionInfo
 {
-    if (error)
+    if ( nil != error)
     {
         UIAlertView* alert = [[UIAlertView alloc] initWithTitle: NSLocalizedString(@"Save failed", nil)
                                                         message: NSLocalizedString(@"Failed to save media item", nil)
                                                        delegate: nil
                                               cancelButtonTitle: NSLocalizedString(@"OK", nil)
                                               otherButtonTitles: nil];
-        [alert show];
+        [ alert show ];
     }
 }
 
