@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		78745EB81907EE08004353B2 /* MUUploadManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 78745EB71907EDB8004353B2 /* MUUploadManager.h */; };
-		78745EBB1907EF88004353B2 /* MUUploadItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78745EBA1907EF88004353B2 /* MUUploadItemManager.m */; };
-		78745EBC1907EF88004353B2 /* MUUploadItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78745EBA1907EF88004353B2 /* MUUploadItemManager.m */; };
-		78745EBF1907EFA8004353B2 /* MUUploadItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 78745EBE1907EFA8004353B2 /* MUUploadItem.m */; };
-		78745EC01907EFA8004353B2 /* MUUploadItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 78745EBE1907EFA8004353B2 /* MUUploadItem.m */; };
 		78745EC31907EFD2004353B2 /* MUUploadItemStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 78745EC21907EFD2004353B2 /* MUUploadItemStatus.m */; };
 		78745EC41907EFD2004353B2 /* MUUploadItemStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 78745EC21907EFD2004353B2 /* MUUploadItemStatus.m */; };
 		78745EC71907F001004353B2 /* MUMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 78745EC61907F001004353B2 /* MUMedia.m */; };
@@ -33,6 +29,7 @@
 		78C8F7E81907DFDA00B78ABB /* libMUUploadManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C8F7D01907DFDA00B78ABB /* libMUUploadManager.a */; };
 		78C8F7EE1907DFDA00B78ABB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78C8F7EC1907DFDA00B78ABB /* InfoPlist.strings */; };
 		78C8F7F01907DFDA00B78ABB /* MUUploadManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C8F7EF1907DFDA00B78ABB /* MUUploadManagerTests.m */; };
+		78CAF711190A7EB100201968 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78CAF710190A7EB100201968 /* AssetsLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,10 +57,6 @@
 
 /* Begin PBXFileReference section */
 		78745EB71907EDB8004353B2 /* MUUploadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MUUploadManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		78745EB91907EF88004353B2 /* MUUploadItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MUUploadItemManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		78745EBA1907EF88004353B2 /* MUUploadItemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MUUploadItemManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		78745EBD1907EFA8004353B2 /* MUUploadItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MUUploadItem.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		78745EBE1907EFA8004353B2 /* MUUploadItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MUUploadItem.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		78745EC11907EFD2004353B2 /* MUUploadItemStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MUUploadItemStatus.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		78745EC21907EFD2004353B2 /* MUUploadItemStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MUUploadItemStatus.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		78745EC51907F001004353B2 /* MUMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MUMedia.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -87,6 +80,7 @@
 		78C8F7EB1907DFDA00B78ABB /* MUUploadManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MUUploadManagerTests-Info.plist"; sourceTree = "<group>"; };
 		78C8F7ED1907DFDA00B78ABB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		78C8F7EF1907DFDA00B78ABB /* MUUploadManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUUploadManagerTests.m; sourceTree = "<group>"; };
+		78CAF710190A7EB100201968 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78CAF711190A7EB100201968 /* AssetsLibrary.framework in Frameworks */,
 				787F687E1907F131000383CC /* UIKit.framework in Frameworks */,
 				787F687C1907F0CF000383CC /* CoreGraphics.framework in Frameworks */,
 				78C8F7D41907DFDA00B78ABB /* Foundation.framework in Frameworks */,
@@ -136,6 +131,7 @@
 		78C8F7D21907DFDA00B78ABB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				78CAF710190A7EB100201968 /* AssetsLibrary.framework */,
 				787F687D1907F131000383CC /* UIKit.framework */,
 				787F687B1907F0CF000383CC /* CoreGraphics.framework */,
 				78C8F7D31907DFDA00B78ABB /* Foundation.framework */,
@@ -157,10 +153,6 @@
 				78745ECE1907F04F004353B2 /* MUImageHelper.mm */,
 				787F687F1907F1B0000383CC /* MUImageScaling.h */,
 				787F68801907F1B0000383CC /* MUImageScaling.m */,
-				78745EB91907EF88004353B2 /* MUUploadItemManager.h */,
-				78745EBA1907EF88004353B2 /* MUUploadItemManager.m */,
-				78745EBD1907EFA8004353B2 /* MUUploadItem.h */,
-				78745EBE1907EFA8004353B2 /* MUUploadItem.m */,
 				78745EC11907EFD2004353B2 /* MUUploadItemStatus.h */,
 				78745EC21907EFD2004353B2 /* MUUploadItemStatus.m */,
 				787F68831907F384000383CC /* MUItemsForUploadManager.h */,
@@ -279,10 +271,8 @@
 			files = (
 				78745EC31907EFD2004353B2 /* MUUploadItemStatus.m in Sources */,
 				78745EC71907F001004353B2 /* MUMedia.m in Sources */,
-				78745EBB1907EF88004353B2 /* MUUploadItemManager.m in Sources */,
 				787F68851907F384000383CC /* MUItemsForUploadManager.m in Sources */,
 				78745ECF1907F04F004353B2 /* MUImageHelper.mm in Sources */,
-				78745EBF1907EFA8004353B2 /* MUUploadItem.m in Sources */,
 				78745ECB1907F02A004353B2 /* MUConstants.m in Sources */,
 				787F68811907F1B0000383CC /* MUImageScaling.m in Sources */,
 			);
@@ -297,10 +287,8 @@
 				787F68861907F384000383CC /* MUItemsForUploadManager.m in Sources */,
 				78745ECC1907F02A004353B2 /* MUConstants.m in Sources */,
 				78745EC81907F001004353B2 /* MUMedia.m in Sources */,
-				78745EBC1907EF88004353B2 /* MUUploadItemManager.m in Sources */,
 				787F68821907F1B0000383CC /* MUImageScaling.m in Sources */,
 				78745ED01907F04F004353B2 /* MUImageHelper.mm in Sources */,
-				78745EC01907EFA8004353B2 /* MUUploadItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
