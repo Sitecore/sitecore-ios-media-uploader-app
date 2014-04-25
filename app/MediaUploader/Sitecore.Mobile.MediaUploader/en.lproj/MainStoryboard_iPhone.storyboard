@@ -827,7 +827,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0vw-pf-MdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1972" y="781"/>
+            <point key="canvasLocation" x="1538" y="1061"/>
         </scene>
         <!--Sc Browse View Controller - Media browser-->
         <scene sceneID="EvL-L2-ffi">
@@ -1024,7 +1024,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Yl5-Uf-9td"/>
-        <segue reference="kAA-QS-bIp"/>
+        <segue reference="dwe-Ci-vSw"/>
+        <segue reference="Yln-qg-wE4"/>
     </inferredMetricsTieBreakers>
 </document>

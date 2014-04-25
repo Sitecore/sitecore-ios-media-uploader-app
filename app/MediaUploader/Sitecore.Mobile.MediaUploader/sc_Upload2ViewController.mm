@@ -279,16 +279,15 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
         {
             [ self uploadVideoWithMediaItem: media ];
         }
+        else if ( [ media isImage ] )
+        {
+            [ self uploadImageWithMediaItem: media ];
+        }
         else
-            if ( [ media isImage ] )
-            {
-                [ self uploadImageWithMediaItem: media ];
-            }
-            else
-            {
-                [ self uploadNextItem ];
-                NSLog(@"Error: no media url found:");
-            }
+        {
+            [ self uploadNextItem ];
+            NSLog(@"Error: no media url found:");
+        }
     }
 }
 
@@ -306,29 +305,6 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     [ self sendUploadRequest: uploadItem ];
 }
 
-
-//typedef enum {
-//    ALAssetOrientationUp,
-//    ALAssetOrientationDown,
-//    ALAssetOrientationLeft,
-//    ALAssetOrientationRight,
-//    ALAssetOrientationUpMirrored,
-//    ALAssetOrientationDownMirrored,
-//    ALAssetOrientationLeftMirrored,
-//    ALAssetOrientationRightMirrored,
-//} ALAssetOrientation;
-
-
-//typedef NS_ENUM(NSInteger, UIImageOrientation) {
-//    UIImageOrientationUp,            // default orientation
-//    UIImageOrientationDown,          // 180 deg rotation
-//    UIImageOrientationLeft,          // 90 deg CCW
-//    UIImageOrientationRight,         // 90 deg CW
-//    UIImageOrientationUpMirrored,    // as above but image mirrored along other axis. horizontal flip
-//    UIImageOrientationDownMirrored,  // horizontal flip
-//    UIImageOrientationLeftMirrored,  // vertical flip
-//    UIImageOrientationRightMirrored, // vertical flip
-//};
 
 -(void)uploadImageWithMediaItem:(sc_Media*)media
 {
