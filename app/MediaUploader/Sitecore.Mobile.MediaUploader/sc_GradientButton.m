@@ -24,7 +24,7 @@
     return result;
 }
 
--(void)setButtonWithStyle:(CustomButtonType)customButtonType
+-(void)setButtonWithStyle:( CustomButtonType )customButtonType
 {
     NSParameterAssert( !self->_isInitialized );
     self->_isInitialized = YES;
