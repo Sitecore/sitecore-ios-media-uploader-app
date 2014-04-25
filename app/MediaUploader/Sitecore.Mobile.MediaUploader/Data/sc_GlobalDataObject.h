@@ -9,13 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-#import "sc_AppDataObject.h"
-
 @class SCSitesManager;
 @class MUItemsForUploadManager;
 
 
-@interface sc_GlobalDataObject : sc_AppDataObject
+@interface sc_GlobalDataObject : NSObject
 
 @property ( nonatomic ) CLPlacemark* selectedPlaceMark;
 
