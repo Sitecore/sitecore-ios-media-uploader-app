@@ -1,12 +1,13 @@
 #import <CoreGraphics/CoreGraphics.h>
 
-typedef enum _CustomButtonType
+
+typedef NS_ENUM( NSInteger, CustomButtonType )
 {
-    CUSTOMBUTTONTYPE_NORMAL = 0,
-    CUSTOMBUTTONTYPE_DANGEROUS = 1,
-    CUSTOMBUTTONTYPE_IMPORTANT = 2,
+    CUSTOMBUTTONTYPE_NORMAL      = 0,
+    CUSTOMBUTTONTYPE_DANGEROUS   = 1,
+    CUSTOMBUTTONTYPE_IMPORTANT   = 2,
     CUSTOMBUTTONTYPE_TRANSPARENT = 3
-} CustomButtonType;
+};
 
 
 @interface sc_GradientButton : UIButton
