@@ -167,16 +167,67 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
                                            animated: YES ];
 }
 
+-(void)hideKeyboard
+{
+    NSArray* textFieldsOnScreen =
+    @[
+      self.usernameTextField,
+      self.passwordTextField,
+      self.urlTextField,
+      self.siteTextField,
+      self.siteTableView
+    ];
+
+
+    for ( UITextField* textField in textFieldsOnScreen )
+    {
+        [ textField resignFirstResponder ];
+    }
+}
+
+
+-(BOOL)isRequiredValuesEntered
+{
+    BOOL isUserNameEntered     = ( self->_usernameTextField.text.length > 0 );
+    BOOL isPasswordNameEntered = ( self->_passwordTextField.text.length > 0 );
+    BOOL isUrlEntered          = ( self->_urlTextField     .text.length > 0 );
+    
+    BOOL requiredFieldsFilled =
+        isUserNameEntered     &&
+        isPasswordNameEntered &&
+        isUrlEntered;
+
+    return requiredFieldsFilled;
+}
+
+-(void)getSiteInfoFromGuiAndSave
+{
+    BOOL requiredFieldsFilled = [ self isRequiredValuesEntered ];
+
+    if ( requiredFieldsFilled )
+    {
+        SCSite* fakeSite = [ SCSite emptySite ];
+        [ self fillSiteWithData: fakeSite ];
+        [ self authenticateAndSaveSite: fakeSite ];
+    }
+    else
+    {
+        [ sc_ErrorHelper showError: NSLocalizedString(@"Please enter username and password.", nil) ];
+    }
+
+}
 
 -(void)authenticateAndSaveSite:(SCSite*)site
 {
     __block SCSite* tmpSite = site;
-    
+ 
     SCApiSession *session = [ sc_ItemHelper getContext: tmpSite ];
     
     SCAsyncOp asyncOp = [ session checkCredentialsOperationForSite: site.site ];
-    
+ 
+    [ self hideKeyboard ];
     [ _activityIndicator showWithLabel: NSLocalizedString(@"Authenticating", nil) ];
+    
     
     self->nextButton.enabled = NO;
     
@@ -210,7 +261,6 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
         }
         else
         {
-            
             [ sessionTracker didLoginFailedForSite: site
                                          withError: error ];
             
@@ -229,21 +279,7 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
 
 -(void)save:(id)sender
 {
-    BOOL requiredFieldsFilled =     _usernameTextField.text.length > 0
-    &&  _passwordTextField.text.length > 0
-    &&  _urlTextField.text.length > 0;
-    
-    if ( requiredFieldsFilled )
-    {
-
-        SCSite* fakeSite = [ SCSite emptySite ];
-        [ self fillSiteWithData: fakeSite ];
-        [ self authenticateAndSaveSite: fakeSite ];
-    }
-    else
-    {
-        [ sc_ErrorHelper showError: NSLocalizedString(@"Please enter username and password.", nil) ];
-    }
+    [ self getSiteInfoFromGuiAndSave ];
 }
 
 -(void)fillSiteWithData:(SCSite*)siteToFill
@@ -275,12 +311,6 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     
     [ self->_appDataObject.sitesManager removeSite: self->_siteForEdit ];
     [ self.navigationController popViewControllerAnimated: YES ];
-}
-
--(BOOL)textFieldShouldReturn:(UITextField*)textField
-{
-    [textField resignFirstResponder];
-    return YES;
 }
 
 -(CGFloat)tableView:(UITableView*)tableView heightForFooterInSection:(NSInteger)section
@@ -332,6 +362,17 @@ viewForFooterInSection:(NSInteger)section
 titleForHeaderInSection:(NSInteger)section
 {
     return NSLocalizedString(@"New site", nil);
+}
+
+
+#pragma mark -
+#pragma mark UITextFieldDelegate
+-(BOOL)textFieldShouldReturn:(UITextField*)textField
+{
+    [ textField resignFirstResponder ];
+    [ self getSiteInfoFromGuiAndSave ];
+
+    return YES;
 }
 
 @end
