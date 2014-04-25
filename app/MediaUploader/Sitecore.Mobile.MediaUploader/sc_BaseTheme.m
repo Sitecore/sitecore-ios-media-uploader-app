@@ -55,4 +55,24 @@
     return [ UIColor colorWithWhite:0.9f alpha:1.f ];
 }
 
+-(UIImage *)uploadDoneIconImage
+{
+    return [UIImage imageNamed:@"Green-Tick"];
+}
+
+-(UIImage *)uploadErrorIconImage
+{
+    return [UIImage imageNamed:@"Red-Warning"];
+}
+
+-(UIImage *)uploadCanceledIconImage
+{
+    return [UIImage imageNamed:@"Red-Warning"];
+}
+
+-(UIImage *)uploadReadyIconImage
+{
+    return nil;
+}
+
 @end

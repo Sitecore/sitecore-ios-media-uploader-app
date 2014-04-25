@@ -14,4 +14,9 @@
 -(UIColor*)transparentLabelBackgroundColor;
 -(UIColor*)disableSiteBackgroundColor;
 
+-(UIImage *)uploadDoneIconImage;
+-(UIImage *)uploadErrorIconImage;
+-(UIImage *)uploadCanceledIconImage;
+-(UIImage *)uploadReadyIconImage;
+
 @end
