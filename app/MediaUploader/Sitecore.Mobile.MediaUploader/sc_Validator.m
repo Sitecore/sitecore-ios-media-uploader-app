@@ -36,6 +36,7 @@
     NSMutableCharacterSet *whitelistedCharacters = [NSCharacterSet alphanumericCharacterSet];
     [whitelistedCharacters addCharactersInString:@" "];
     NSCharacterSet * charactersToRemove = [whitelistedCharacters invertedSet ] ;
+    
     proposedName = [[proposedName componentsSeparatedByCharactersInSet:charactersToRemove] componentsJoinedByString:@"_" ];
     
     

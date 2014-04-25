@@ -13,10 +13,12 @@
 
 +(NSString *)getUuid
 {
-    CFUUIDRef uuidRef = CFUUIDCreate(NULL);
-    CFStringRef uuidStringRef = CFUUIDCreateString(NULL, uuidRef);
-    CFRelease(uuidRef);
-    return (__bridge NSString *)uuidStringRef;
+    CFUUIDRef newUniqueId = CFUUIDCreate(kCFAllocatorDefault);
+    NSString*  uuidString = (__bridge_transfer NSString*)CFUUIDCreateString(kCFAllocatorDefault,
+                                                                            newUniqueId);
+    CFRelease(newUniqueId);
+    
+    return uuidString;
 }
 
 @end

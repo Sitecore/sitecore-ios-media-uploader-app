@@ -1,7 +1,14 @@
 #import "MUItemsForUploadManager.h"
 #import "MUMedia.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @implementation MUItemsForUploadManager
+{
+    NSMutableArray* _mediaUpload;
+    NSArray* _filteredArray;
+    
+    NSPredicate* _predicate;
+}
 
 -(instancetype)init
 {
@@ -13,9 +20,34 @@
     return self;
 }
 
+-(void)performFilterPredicate:(NSPredicate*)predicate
+{
+    self->_predicate = predicate;
+    
+    if ( self->_predicate == nil )
+    {
+        self->_filteredArray = nil;
+    }
+    else
+    {
+        self->_filteredArray = [ self->_mediaUpload filteredArrayUsingPredicate: predicate ];
+    }
+}
+
 -(NSUInteger)uploadCount
 {
-    return [ self->_mediaUpload count ];
+    NSUInteger count;
+    
+    if ( self->_filteredArray == nil )
+    {
+        count = [ self->_mediaUpload count ];
+    }
+    else
+    {
+        count = [ self->_filteredArray count ];
+    }
+    
+    return count;
 }
 
 -(void)addMediaUpload:(MUMedia*)media
@@ -24,6 +56,26 @@
 
     [ self->_mediaUpload addObject: media];
     [ self saveUploadData ];
+    
+    [ self performFilterPredicate: self->_predicate ];
+}
+
+-(MUMedia*)mediaUploadAtIndex:(NSInteger)index
+{
+    MUMedia* objectToReturn;
+    
+    if ( self->_filteredArray == nil )
+    {
+        objectToReturn = [ self->_mediaUpload objectAtIndex: index ];
+    }
+    else
+    {
+        objectToReturn = [ self->_filteredArray objectAtIndex: index ];
+    }
+    
+    [ self checkResourceAvailabilityForUploadItem: objectToReturn ];
+    
+    return objectToReturn;
 }
 
 -(void)loadMediaUpload
@@ -39,10 +91,11 @@
 
 -(void)removeMediaUpload:(MUMedia*)media
 {
-    media.status = MEDIASTATUS_REMOVED;
     [ self removeTmpVideoFileFromMediaItem: media ];
     [ self->_mediaUpload removeObject: media ];
     [ self saveUploadData ];
+    
+    [ self performFilterPredicate: self->_predicate ];
 }
 
 -(void)removeMediaUploadAtIndex:(NSInteger)index
@@ -51,35 +104,12 @@
     [ self removeMediaUpload: media ];
 }
 
--(void)saveMediaUpload
-{
-    NSMutableArray* mediaItemstoRemove = [ NSMutableArray arrayWithCapacity: self->_mediaUpload.count ];
-    for ( MUMedia* media in self->_mediaUpload )
-    {
-        if ( media.status == MEDIASTATUS_UPLOADED || media.status == MEDIASTATUS_REMOVED )
-        {
-            [ mediaItemstoRemove addObject: media ];
-            
-            [ self removeTmpVideoFileFromMediaItem: media ];
-        }
-    }
-    [ self->_mediaUpload removeObjectsInArray: mediaItemstoRemove ];
-    
-    [ self saveUploadData ];
-}
-
 -(void)saveUploadData
 {
     NSString* appFile = [ self getMediaUploadFile ];
     
     [ NSKeyedArchiver archiveRootObject: self->_mediaUpload
                                  toFile: appFile ];
-}
-
--(void)removeItem:(MUMedia*)media
-{
-    [ self->_mediaUpload removeObject: media ];
-    [ self saveUploadData ];
 }
 
 -(void)removeTmpVideoFileFromMediaItem:(MUMedia*)media
@@ -106,6 +136,51 @@
     NSString* appFile = [ documentsDirectory stringByAppendingPathComponent: fileName ];
     
     return appFile;
+}
+
+-(void)checkResourceAvailabilityForUploadItem:(MUMedia*)uploadItem
+{
+    if( uploadItem.isVideo )
+    {
+        [ self checkVideoAvailabilityForUploadItem: uploadItem ];
+    }
+    else
+    {
+        [ self checkImageAvailabilityForUploadItem: uploadItem ];
+    }
+}
+
+-(void)checkVideoAvailabilityForUploadItem:(MUMedia*)uploadItem
+{
+    if ( uploadItem.isVideo )
+    {
+        NSError* err;
+        
+        if ( [ uploadItem.videoUrl checkResourceIsReachableAndReturnError: &err ] == NO )
+        {
+            uploadItem.uploadStatus.statusId = DATA_IS_NOT_AVAILABLE;
+        }
+    }
+}
+
+-(void)checkImageAvailabilityForUploadItem:(MUMedia*)uploadItem
+{
+    if ( uploadItem.isImage )
+    {
+        ALAssetsLibrary *library = [ [ALAssetsLibrary alloc] init ];
+        [ library assetForURL: uploadItem.imageUrl resultBlock:^(ALAsset *asset)
+        {
+            if (!asset)
+            {
+                uploadItem.uploadStatus.statusId = DATA_IS_NOT_AVAILABLE;
+            }
+            
+        }
+        failureBlock:^(NSError* error)
+        {
+            NSLog(@"image checking error: %@", [error description]);
+        } ];
+    }
 }
 
 @end

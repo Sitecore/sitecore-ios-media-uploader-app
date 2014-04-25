@@ -38,58 +38,9 @@
     self->_removedImagesCount = 0;
     self->_videoIsChecked = NO;
     self->_imagesIsChecked = NO;
-    
-    [ self checkVideoAvailability ];
-    [ self checkImagesAvailability ];
 }
 
--(void)checkVideoAvailability
-{
-    for ( MUMedia* item in _appDataObject.uploadItemsManager.mediaUpload )
-    {
-        if ( item.isVideo )
-        {
-            NSError* err;
-            
-            if ( [ item.videoUrl checkResourceIsReachableAndReturnError: &err ] == NO )
-            {
-                ++self->_removedVideosCount;
-                item.status = MEDIASTATUS_REMOVED;
-            }
-        }
-    }
-    
-    self->_videoIsChecked = YES;
-    [ self checkingFinished ];
-}
 
--(void)checkImagesAvailability
-{
-    __weak sc_ResourseCleaner *weakSelf = self;
-    self->_imagesRequestsCount = 0;
-    for ( MUMedia* item in _appDataObject.uploadItemsManager.mediaUpload )
-    {
-        if ( item.isImage )
-        {
-            ++self->_imagesRequestsCount;
-            ALAssetsLibrary *library = [ [ALAssetsLibrary alloc] init ];
-            [ library assetForURL:item.imageUrl resultBlock:^(ALAsset *asset){
-                
-                if (!asset)
-                {
-                    ++self->_removedImagesCount;
-                    item.status = MEDIASTATUS_REMOVED;
-                }
-                
-                [ weakSelf imageChecked ];
-                
-            } failureBlock:^(NSError* error)
-             {
-                 [ weakSelf imageChecked ];
-             } ];
-        }
-    }
-}
 
 -(void)imageChecked
 {
@@ -105,7 +56,6 @@
 {
     if ( self->_imagesIsChecked && self->_videoIsChecked )
     {
-        [_appDataObject.uploadItemsManager saveMediaUpload];
         NSInteger removedCount = self->_removedImagesCount + self->_removedVideosCount;
         [ self.delegate cleaningComplete: removedCount ];
     }

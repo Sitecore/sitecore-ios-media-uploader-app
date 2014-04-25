@@ -132,7 +132,9 @@
     {
         // Obtain handles on the current and destination controllers
         sc_Upload2ViewController * destinationController = (sc_Upload2ViewController*) segue.destinationViewController;
-        [ destinationController initWithMediaItems: _appDataObject.uploadItemsManager.mediaUpload
+        //NSMutableArray *items = _appDataObject.uploadItemsManager.mediaUpload;
+        
+        [ destinationController initWithMediaItems: nil//items
                                              image: nil
                             isPendingIemsUploading: YES ];
     }

@@ -149,8 +149,8 @@
         self->_imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         NSArray* mediaTypesAllowed = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
         [self->_imagePicker setMediaTypes:mediaTypesAllowed];
-        
         self->_imagePicker.allowsEditing = NO;
+
         [self presentViewController: self->_imagePicker animated:YES completion:nil];
     }
         
@@ -290,7 +290,6 @@
     // VIDEO
     if ([mediaType isEqualToString:(NSString*)kUTTypeMovie])
     {
-        
         _imageUrl = nil;
         _videoUrl = [info objectForKey:UIImagePickerControllerMediaURL];
         NSString* moviePath = [_videoUrl path];
@@ -374,7 +373,6 @@
                                                    cityCode: cityCode
                                                    videoUrl: _videoUrl
                                                    imageUrl: _imageUrl
-                                                     status: MEDIASTATUS_PENDING
                                                   thumbnail: _thumbnail ];
     
     media.siteForUploadingId = [self.appDataObject.sitesManager siteForUpload].siteId;

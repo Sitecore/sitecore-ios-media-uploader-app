@@ -12,7 +12,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 
-enum
+typedef NS_ENUM (NSInteger, MUImageQuality)
 {
     UPLODIMAGESIZE_SMALL  = 0,
     UPLODIMAGESIZE_MEDIUM = 1,

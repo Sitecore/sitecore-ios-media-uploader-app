@@ -23,40 +23,38 @@
 
 -(void)setCellStyleForUploadStatus:(MUUploadItemStatus*)status withTheme:(sc_BaseTheme*)theme
 {
-    UIColor* backgroundColor;
     UIImage* image;
+    
+    self.siteLabel.textColor = [ UIColor blackColor ];
+    self.folderLabel.textColor = [ UIColor blackColor ];
+    
     switch ( status.statusId )
     {
-        case inProgressStatus:
+        case READY_FOR_UPLOAD:
+            [ self.activityView stopAnimating ];
+            image = [ theme uploadReadyIconImage ];
+            break;
+        case UPLOAD_IN_PROGRESS:
             [ self.activityView startAnimating ];
-            backgroundColor = [ theme normalRowBackgroundColor ];
-            self.siteLabel.textColor = [ UIColor blackColor ];
-            self.folderLabel.textColor = [ UIColor blackColor ];
             break;
-        case doneStatus:
-            image = [UIImage imageNamed:@"Green-Tick"];
+        case UPLOAD_DONE:
+            image = [ theme uploadDoneIconImage ];
             [ self.activityView stopAnimating ];
-            backgroundColor = [ theme uploadedRowBackgroundColor ];
             break;
-        case errorStatus:
-            image = [UIImage imageNamed:@"Red-Warning"];
+        case UPLOAD_ERROR:
+            image = [ theme uploadErrorIconImage ];
             [ self.activityView stopAnimating ];
-            backgroundColor = [ theme errorRowBackgroundColor ];
             break;
-        case canceledStatus:
-            self.siteLabel.textColor = [ UIColor whiteColor ];
-            self.folderLabel.textColor = [ UIColor whiteColor ];
+        case UPLOAD_CANCELED:
             self.folderLabel.text = NSLocalizedString(@"Cancelled", nil);
-            image = [UIImage imageNamed:@"Red-Warning"];
+            image = [ theme uploadCanceledIconImage ];
             [ self.activityView stopAnimating ];
-            backgroundColor = [ theme errorRowBackgroundColor ];
             break;
         default:
             break;
     }
     self.accessoryView = [ [UIImageView alloc] initWithImage: image ];
     self.accessoryView.contentMode = UIViewContentModeCenter;
-    self.backgroundView.backgroundColor = backgroundColor;
 }
 
 @end

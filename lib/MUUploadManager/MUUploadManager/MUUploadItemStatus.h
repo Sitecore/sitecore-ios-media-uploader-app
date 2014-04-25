@@ -2,10 +2,12 @@
 
 typedef NS_ENUM(NSInteger, MUUploadItemStatusType)
 {
-    inProgressStatus = 0,
-	errorStatus,
-	doneStatus,
-    canceledStatus
+    READY_FOR_UPLOAD = 0,
+    UPLOAD_IN_PROGRESS,
+	UPLOAD_ERROR,
+	UPLOAD_DONE,
+    UPLOAD_CANCELED,
+    DATA_IS_NOT_AVAILABLE
 };
 
 @interface MUUploadItemStatus : NSObject

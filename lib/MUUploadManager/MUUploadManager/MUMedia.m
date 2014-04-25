@@ -26,13 +26,11 @@
                          cityCode:(NSString*)cityCode
                          videoUrl:(NSURL*)videoUrl
                          imageUrl:(NSURL*)imageUrl
-                           status:(NSInteger)status
                         thumbnail:(UIImage*)thumbnail
 {
     self = [super init];
     if (self)
     {
-        _index = [MUImageHelper getUUID];
         _name = name;
         _dateTime = dateTime;
         _latitude = latitude;
@@ -42,16 +40,14 @@
         _cityCode = cityCode;
         _videoUrl = videoUrl;
         _imageUrl = imageUrl;
-        _status = status;
         _thumbnail = thumbnail;
-    }
+      }
     
     return self;
 }
 
 -(void)encodeWithCoder:(NSCoder*)encoder
 {
-    [encoder encodeObject:  _index               forKey: @"index"               ];
     [encoder encodeObject:  _name                forKey: @"name"                ];
     [encoder encodeObject:  _dateTime            forKey: @"dateTime"            ];
     [encoder encodeObject:  _latitude            forKey: @"latitude"            ];
@@ -61,7 +57,6 @@
     [encoder encodeObject:  _cityCode            forKey: @"cityCode"            ];
     [encoder encodeObject:  _videoUrl            forKey: @"videoUrl"            ];
     [encoder encodeObject:  _imageUrl            forKey: @"imageUrl"            ];
-    [encoder encodeInteger: _status              forKey: @"status"              ];
     [encoder encodeObject:  _thumbnail           forKey: @"thumbnail"           ];
     [encoder encodeObject:  _siteForUploadingId  forKey: @"siteForUploading"    ];
 }
@@ -71,7 +66,6 @@
     self = [super init];
     if (self)
     {
-        self.index               = [decoder decodeObjectForKey:  @"index"               ];
         self.name                = [decoder decodeObjectForKey:  @"name"                ];
         self.dateTime            = [decoder decodeObjectForKey:  @"dateTime"            ];
         self.latitude            = [decoder decodeObjectForKey:  @"latitude"            ];
@@ -83,7 +77,6 @@
         self.imageUrl            = [decoder decodeObjectForKey:  @"imageUrl"            ];
         self.thumbnail           = [decoder decodeObjectForKey:  @"thumbnail"           ];
         self.siteForUploadingId  = [decoder decodeObjectForKey:  @"siteForUploading"    ];
-        self.status              = [decoder decodeIntegerForKey: @"status"              ];
     }
     
     return self;
@@ -97,6 +90,35 @@
 -(BOOL)isVideo
 {
     return self.videoUrl != nil;
+}
+
+-(void)setImageUrl:(NSURL *)imageUrl
+{
+    if ( imageUrl != nil )
+    {
+        self->_videoUrl = nil;
+        self->_imageUrl = imageUrl;
+    }
+}
+
+-(void)setVideoUrl:(NSURL *)videoUrl
+{
+    if ( videoUrl != nil )
+    {
+        self->_imageUrl = nil;
+        self->_videoUrl = videoUrl;
+    }
+}
+
+-(MUUploadItemStatus *)uploadStatus
+{
+    if ( self->_uploadStatus == nil )
+    {
+        self->_uploadStatus = [ MUUploadItemStatus new ];
+        self->_uploadStatus.statusId = READY_FOR_UPLOAD;
+    }
+    
+    return self->_uploadStatus;
 }
 
 @end
