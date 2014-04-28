@@ -39,12 +39,12 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     sc_GlobalDataObject* _appDataObject;
     UIBarButtonItem* _saveButton;
     
-    SCSite *_siteForEdit;
+    SCSite* _siteForEdit;
 
-    BOOL editModeEnabled;
+    BOOL _editModeEnabled;
     
-    sc_ButtonsBuilder *buttonsBuilder;
-    sc_GradientButton* nextButton;
+    sc_ButtonsBuilder* _buttonsBuilder;
+    sc_GradientButton* _nextButton;
 }
 
 -(void)viewDidLoad
@@ -58,10 +58,10 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
 {
     [super awakeFromNib];
     
-    buttonsBuilder = [ sc_ButtonsBuilder new ];
+    _buttonsBuilder = [ sc_ButtonsBuilder new ];
     
     self->_siteForEdit = [ SCSite emptySite ];
-    editModeEnabled = NO;
+    _editModeEnabled = NO;
     
     [ self localizeUI ];
     
@@ -70,7 +70,7 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     self.navigationItem.hidesBackButton = YES;
     
     _cancelButton.target = self;
-    _cancelButton.action = @selector(cancel:);
+    _cancelButton.action = @selector( cancel: );
     
     [ self initializeActivityIndicator ];
 }
@@ -78,7 +78,7 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
 -(void)initializeActivityIndicator
 {
     _activityIndicator = [[sc_ActivityIndicator alloc] initWithFrame: self.view.frame];
-    [self.view addSubview:_activityIndicator];
+    [self.view addSubview: _activityIndicator];
 }
 
 
@@ -96,7 +96,7 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
         [ self.protocolSelector setSelectedSegmentIndex: 0 ];
     }
     
-    editModeEnabled = YES;
+    _editModeEnabled = YES;
     
     [ self configureView ];
 }
@@ -127,7 +127,7 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     
     BOOL isOperationSuccessfull = NO;
     NSError* error = nil;
-    if ( editModeEnabled )
+    if ( _editModeEnabled )
     {
         [ self->_appDataObject.sitesManager saveSiteChanges:self->_siteForEdit error: nil ];
         isOperationSuccessfull = YES;
@@ -161,7 +161,9 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
         return;
     }
     
-    UIViewController* vcToPop = self.navigationController.viewControllers[ vcCount-upStepsCount ];
+    NSUInteger viewControllerIndex = vcCount - upStepsCount;
+    
+    UIViewController* vcToPop = self.navigationController.viewControllers[ viewControllerIndex ];
     [ self.navigationController popToViewController: vcToPop
                                            animated: YES ];
 }
@@ -211,24 +213,27 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     }
     else
     {
-        [ sc_ErrorHelper showError: NSLocalizedString(@"Please enter username and password.", nil) ];
+        NSString* message = NSLocalizedString(@"Please enter username and password.", nil);
+        [ sc_ErrorHelper showError: message ];
     }
-
 }
 
 -(void)authenticateAndSaveSite:(SCSite*)site
 {
     __block SCSite* tmpSite = site;
  
-    SCApiSession *session = [ sc_ItemHelper getContext: tmpSite ];
+    SCApiSession* session = [ sc_ItemHelper getContext: tmpSite ];
     
     SCAsyncOp asyncOp = [ session checkCredentialsOperationForSite: site.site ];
  
     [ self hideKeyboard ];
-    [ _activityIndicator showWithLabel: NSLocalizedString(@"Authenticating", nil) ];
     
     
-    self->nextButton.enabled = NO;
+    NSString* progressViewMessage = NSLocalizedString(@"Authenticating", nil);
+    [ self->_activityIndicator showWithLabel: progressViewMessage ];
+    
+    
+    self->_nextButton.enabled = NO;
     
     asyncOp( ^void( id result, NSError* error )
     {
@@ -236,14 +241,18 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
         [ MUEventsTrackerFactory sessionTrackerForMediaUploader ];
 
         [ self->_activityIndicator hide ];
-        if ( !error )
+        
+        BOOL isAuthSuccessful = ( nil == error );
+        if ( isAuthSuccessful )
         {
+            NSParameterAssert( nil != result );
+            
             [ sessionTracker didLoginWithSite: site ];
             
 
 
             id rawSiteEditViewController = [self.storyboard instantiateViewControllerWithIdentifier: @"ListItemsBrowser" ];
-            sc_ListBrowserViewController * siteEditViewController = (sc_ListBrowserViewController*)rawSiteEditViewController;
+            sc_ListBrowserViewController* siteEditViewController = (sc_ListBrowserViewController*)rawSiteEditViewController;
             
             SCUPloadFolderReceived didSelectUploadFolderCallback = ^void(NSString* folder)
             {
@@ -260,13 +269,16 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
         }
         else
         {
+            NSParameterAssert( nil != error );
+            
             [ sessionTracker didLoginFailedForSite: site
                                          withError: error ];
             
-            [ sc_ErrorHelper showError: NSLocalizedString(@"Authentication failure.", nil) ];
+            NSString* userFriendlyErrorMessage = NSLocalizedString(@"Authentication failure.", nil);
+            [ sc_ErrorHelper showError: userFriendlyErrorMessage ];
         }
         
-        self->nextButton.enabled = YES;
+        self->_nextButton.enabled = YES;
     });
 }
 
@@ -330,21 +342,21 @@ viewForFooterInSection:(NSInteger)section
             _footerView  = [[UIView alloc] init];
             
             CGFloat padding = 20.f;
-            CGFloat buttonWidth = (tableView.frame.size.width - 3*padding)/2.f;
+            CGFloat buttonWidth = (tableView.frame.size.width - 3 * padding) / 2.f;
             CGFloat buttonHeight = 45.f;
             
             CGRect firstButtonFrame = CGRectMake(padding, padding, buttonWidth, buttonHeight);
-            CGRect secondButtonFrame = CGRectMake(2*padding + buttonWidth, padding, buttonWidth, buttonHeight);
+            CGRect secondButtonFrame = CGRectMake(2 * padding + buttonWidth, padding, buttonWidth, buttonHeight);
             
-            sc_GradientButton* secondButton = [ buttonsBuilder getButtonWithTitle: @"Next"
+            sc_GradientButton* secondButton = [ _buttonsBuilder getButtonWithTitle: @"Next"
                                                                             style: CUSTOMBUTTONTYPE_IMPORTANT
                                                                            target: self
                                                                          selector: @selector(save:) ];
             [ secondButton setFrame: secondButtonFrame ];
-            [ _footerView addSubview:secondButton ];
-            self->nextButton = secondButton;
+            [ _footerView addSubview: secondButton ];
+            self->_nextButton = secondButton;
             
-            sc_GradientButton* firstButton = [ buttonsBuilder getButtonWithTitle: @"Delete"
+            sc_GradientButton* firstButton = [ _buttonsBuilder getButtonWithTitle: @"Delete"
                                                                            style: CUSTOMBUTTONTYPE_DANGEROUS
                                                                           target: self
                                                                         selector: @selector(remove:) ];
