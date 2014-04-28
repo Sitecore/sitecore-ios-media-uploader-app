@@ -31,114 +31,52 @@
 
 @end
 
-typedef NS_ENUM(NSInteger, ItemsFilterMode)
-{
-    ShowAllFilter = 0,
-    ShowCompletedItemsOnly,
-    ShowNotCompletedOnly,
-};
-
 @implementation sc_Upload2ViewController
 {
     SCCancelAsyncOperation _currentCancelOp;
     NSUInteger _uploadItemIndex;
-    BOOL _uploadingInterrupted;
+    BOOL _uploadInProgress;
     
     sc_BaseTheme *_theme;
-    ItemsFilterMode _currentFilterValue;
-    
-    NSMutableArray* _filteredItems;
 }
+
 static NSString*  const CellIdentifier = @"cellSiteUrl";
-
--(void)setMediaItems:(NSArray*)mediaItems
-{
-    //self->_mediaItems = mediaItems;
-    self->_filteredItems = [ NSMutableArray arrayWithArray: mediaItems ];
-}
-
--(void) initWithMediaItems:(NSArray*)mediaItems
-                      image:(UIImage*)image
-     isPendingIemsUploading:(BOOL)isPendingIemsUploading
-{
-    self.mediaItems = [ mediaItems copy ];
-    _isPendingIemsUploading = isPendingIemsUploading;
-    _image = image;
-}
 
 -(IBAction)changeFilter:(UISegmentedControl*)sender
 {
-    ItemsFilterMode selectedIndex = static_cast<ItemsFilterMode>( sender.selectedSegmentIndex );
-    
-    [ self filterTableWithFilterValue: selectedIndex ];
-}
-
--(void)filterTableWithFilterValue:(ItemsFilterMode)value
-{
-//    self->_currentFilterValue = value;
-//    
-//    [ self->_filteredItems removeAllObjects ];
-//    
-//    NSNumber* currentNumber = nil;
-//    
-//    NSInteger mediaItemsCount = static_cast<NSInteger>( [ self.mediaItems count ] );
-//    
-//    for ( NSInteger index = 0; index < mediaItemsCount; ++index )
-//    {
-//        currentNumber = @(index);
-//        MUMedia* media = _mediaItems[index];
-//        MUUploadItemStatus *status = media.uploadStatus;
-//        
-//        if ( [ self isStatus: status matchesToFilter: self->_currentFilterValue ] )
-//        {
-//            [ self->_filteredItems addObject: [ self.mediaItems objectAtIndex:index ] ];
-//        }
-//    }
-
-    
-    [ self.sitesTableView reloadData ];
-}
-
--(void)reloadFilteredTableData
-{
-    [ self filterTableWithFilterValue: self->_currentFilterValue ];
-}
-
--(BOOL)isStatus:(MUUploadItemStatus*)status matchesToFilter:(ItemsFilterMode)filter
-{
-    switch ( filter ) {
-        case ShowAllFilter:
-            return YES;
+    switch ( sender.selectedSegmentIndex ) {
+        case 0:
+        {
+            [ self->_appDataObject.uploadItemsManager setFilterOption: SHOW_ALL_ITEMS ];
             break;
-        case ShowCompletedItemsOnly:
-            if ( status.statusId == UPLOAD_DONE )
-            {
-                return YES;
-            }
+        }
+        case 1:
+        {
+            [ self->_appDataObject.uploadItemsManager setFilterOption: SHOW_COMLETED_ITEMS ];
             break;
-        case ShowNotCompletedOnly:
-            if (   status.statusId == UPLOAD_ERROR
-                || status.statusId == UPLOAD_CANCELED
-                || status.statusId == UPLOAD_IN_PROGRESS )
-            {
-                return YES;
-            }
+        }
+        case 2:
+        {
+            [ self->_appDataObject.uploadItemsManager setFilterOption: SHOW_NOT_COMLETED_ITEMS ];
             break;
+        }
         default:
-            return NO;
+        {
+            [ self->_appDataObject.uploadItemsManager setFilterOption: SHOW_ALL_ITEMS ];
             break;
+        }
     }
     
-    return NO;
+    [ self.sitesTableView reloadData ];
 }
 
 -(void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self->_currentFilterValue = ShowAllFilter;
-    
     [ self localizeFilterButtons ];
+    
+    _uploadInProgress = NO;
     
     self->_theme = [ sc_BaseTheme new ];
     
@@ -152,7 +90,6 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     [ _abortButton setTitle: NSLocalizedString(_abortButton.titleLabel.text, nil)
                    forState: UIControlStateNormal ];
     
-    _doneButton.enabled = NO;
     self.navigationItem.hidesBackButton = YES;
     self->_uploadItemIndex = 0;
     _doneButton.target = self;
@@ -161,8 +98,6 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     [ _abortButton addTarget: self
                       action: @selector(abortButtonPressed:)
             forControlEvents: UIControlEventTouchUpInside ];
-    
-    _uploadingInterrupted = NO;
 
     [ (sc_GradientButton*) _abortButton setButtonWithStyle: CUSTOMBUTTONTYPE_DANGEROUS ];
     
@@ -205,13 +140,12 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 
 -(NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return  static_cast<NSInteger>( self->_filteredItems.count );
+    return  static_cast<NSInteger>( [ self->_appDataObject.uploadItemsManager uploadCount ] );
 }
 
 -(MUUploadItemStatus*)statusForItemForCurrentIndexPath:(NSIndexPath*)indexPath
 {
     MUMedia* media = [ _appDataObject.uploadItemsManager mediaUploadAtIndex: indexPath.row ];
-    
     return media.uploadStatus;
 }
 
@@ -222,11 +156,6 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     MUMedia* media = [ _appDataObject.uploadItemsManager mediaUploadAtIndex: indexPath.row ];
     
     MUUploadItemStatus *status = media.uploadStatus;
-    
-    if ( status.statusId == UPLOAD_IN_PROGRESS && self->_uploadingInterrupted  )
-    {
-        status.statusId = UPLOAD_CANCELED;
-    }
 
     [ cell.cellImageView setImage: media.thumbnail ];
     
@@ -252,6 +181,11 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
             [ self uploadItemAtIndex: indexPath.row ];
             break;
         }
+        case UPLOAD_CANCELED:
+        {
+            [ self uploadItemAtIndex: indexPath.row ];
+            break;
+        }
         case UPLOAD_ERROR:
         {
             NSString* description = status.localizedDescription;
@@ -264,7 +198,6 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
             break;
         }
     }
-    
 }
 
 -(void)uploadNextItem
@@ -288,32 +221,39 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 
 -(void)uploadItemAtIndex:(NSInteger)index
 {
-    MUMedia* media = [_appDataObject.uploadItemsManager mediaUploadAtIndex: index ];
-    
-    media.uploadStatus.statusId = UPLOAD_IN_PROGRESS;
-    
-    NSIndexPath *indexPath = [ NSIndexPath indexPathForItem: index
-                                                  inSection: 0 ];
-    
-    [ self.sitesTableView reloadRowsAtIndexPaths: @[indexPath]
-                                withRowAnimation: UITableViewRowAnimationNone ];
-    
-    if ( [ media isVideo ] )
-
+    //TODO: @igk make stack of itemf for upload
+    if ( !_uploadInProgress )
     {
-        [ self uploadVideoWithMediaItem: media ];
-    }
-    else
-        if ( [ media isImage ] )
+        MUMedia* media = [_appDataObject.uploadItemsManager mediaUploadAtIndex: index ];
+        
+        media.uploadStatus.statusId = UPLOAD_IN_PROGRESS;
+        
+        NSIndexPath *indexPath = [ NSIndexPath indexPathForItem: index
+                                                      inSection: 0 ];
+        
+        [ self.sitesTableView reloadRowsAtIndexPaths: @[indexPath]
+                                    withRowAnimation: UITableViewRowAnimationNone ];
+        
+        if ( [ media isVideo ] )
+
         {
-            [ self uploadImageWithMediaItem: media ];
+            [ self uploadVideoWithMediaItem: media ];
         }
         else
-        {
-            //[ self uploadNextItem ];
-            NSLog(@"Error: no media url found:");
-        }
-
+            if ( [ media isImage ] )
+            {
+                [ self uploadImageWithMediaItem: media ];
+            }
+            else
+            {
+                //[ self uploadNextItem ];
+                NSLog(@"Error: no media url found:");
+            }
+    }
+    else
+    {
+        [ sc_ErrorHelper showError:@"Upload is pending" ];
+    }
 }
 
 -(void)uploadVideoWithMediaItem:(MUMedia*)media
@@ -363,7 +303,9 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
             
             image = nil;
             
-            data = UIImageJPEGRepresentation(resizedImage,[MUImageHelper getCompressionFactor: self->_uploadImageSize]);
+            CGFloat resizeFactor = [ MUImageHelper getCompressionFactor: self->_uploadImageSize ];
+            
+            data = UIImageJPEGRepresentation( resizedImage, resizeFactor );
         });
         MUUploadItem * uploadItem = [ [MUUploadItem alloc] initWithObjectData: media
                                                                          data: data ];
@@ -385,59 +327,82 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 
 -(void)sendUploadRequest:(MUUploadItem*) uploadItem
 {
-    __block MUMedia* media = uploadItem.mediaItem;
-    
-    SCSite *siteForUpload = [ _appDataObject.sitesManager siteBySiteId:  media.siteForUploadingId ];
-    
-    SCApiSession *session = [ sc_ItemHelper getContext: siteForUpload ];
-    SCUploadMediaItemRequest *request = [SCUploadMediaItemRequest new];
-    request.itemName =  uploadItem.mediaItem.name;
-
-    if ( !uploadItem.isImage && !uploadItem.isVideo )
+    //TODO: @igk make stack of itemf for upload
+    if ( !_uploadInProgress )
     {
-        NSLog(@"Error: no media url found:");
-        return;
-    }
-    
-    request.fileName = uploadItem.fileName;
-    request.itemTemplate = uploadItem.itemTemplate;
-    request.mediaItemData = uploadItem.data;
-    request.fieldNames = [NSSet new];
-    request.contentType = uploadItem.contentType;
-    request.folder = siteForUpload.uploadFolderPathInsideMediaLibrary;
-    
-    SCDidFinishAsyncOperationHandler doneHandler = (^( SCItem* item, NSError* error )
-    {
-        MUUploadItemStatus *status = media.uploadStatus;
+        __block MUMedia* media = uploadItem.mediaItem;
         
-        if (error)
-        {
-            status.statusId = UPLOAD_ERROR;
-            status.description = error.localizedDescription;
-        }
-        else
-        {
-            [ self setFields: item
-                     Context: session
-                  uploadItem: uploadItem ];
+        SCSite *siteForUpload = [ _appDataObject.sitesManager siteBySiteId:  media.siteForUploadingId ];
+        
+        SCApiSession *session = [ sc_ItemHelper getContext: siteForUpload ];
+        SCUploadMediaItemRequest *request = [SCUploadMediaItemRequest new];
+        request.itemName =  uploadItem.mediaItem.name;
 
-            
-            [ [ sc_GlobalDataObject getAppDataObject ].uploadItemsManager removeTmpVideoFileFromMediaItem: uploadItem.mediaItem error: nil ];
-            
-            status.statusId = UPLOAD_DONE;
+        if ( !uploadItem.isImage && !uploadItem.isVideo )
+        {
+            NSLog(@"Error: no media url found:");
+            return;
         }
         
-        [ self uploadNextItem ];
-        [ self reloadFilteredTableData ];
+        request.fileName = uploadItem.fileName;
+        request.itemTemplate = uploadItem.itemTemplate;
+        request.mediaItemData = uploadItem.data;
+        request.fieldNames = [NSSet new];
+        request.contentType = uploadItem.contentType;
+        request.folder = siteForUpload.uploadFolderPathInsideMediaLibrary;
         
-    });
+        SCDidFinishAsyncOperationHandler doneHandler = (^( SCItem* item, NSError* error )
+        {
+            MUUploadItemStatus *status = media.uploadStatus;
+            
+            if (error)
+            {
+                status.statusId = UPLOAD_ERROR;
+                status.description = error.localizedDescription;
+            }
+            else
+            {
+                [ self setFields: item
+                         Context: session
+                      uploadItem: uploadItem ];
+
+                
+                [ [ sc_GlobalDataObject getAppDataObject ].uploadItemsManager removeTmpVideoFileFromMediaItem: uploadItem.mediaItem error: nil ];
+                
+                status.statusId = UPLOAD_DONE;
+            }
+            
+            [ self saveUploadItemsChanges ];
+            [ self.sitesTableView reloadData ];
+            
+            self->_uploadInProgress = NO;
+        });
+        
+        SCCancelAsyncOperationHandler cancelHandler = ^(BOOL cancelInfo)
+        {
+            MUUploadItemStatus *status = media.uploadStatus;
+            status.statusId = UPLOAD_CANCELED;
+            [ self saveUploadItemsChanges ];
+            [ self.sitesTableView reloadData ];
+            
+            self->_uploadInProgress = NO;
+        };
+        
+        SCExtendedAsyncOp loader = [session.extendedApiSession uploadMediaOperationWithRequest:request];
     
-    SCExtendedAsyncOp loader = [session.extendedApiSession uploadMediaOperationWithRequest:request];
     
-    if ( !_uploadingInterrupted )
-    {
-        self->_currentCancelOp = loader( nil, nil, doneHandler );
+        self->_uploadInProgress = YES;
+        self->_currentCancelOp = loader( nil, cancelHandler, doneHandler );
     }
+    else
+    {
+        [ sc_ErrorHelper showError:@"Upload is pending" ];
+    }
+}
+
+-(void)saveUploadItemsChanges
+{
+    [ self->_appDataObject.uploadItemsManager save ];
 }
 
 -(void)setFields:(SCItem*) item
@@ -531,7 +496,6 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 -(void)uploadTerminated
 {
     _doneButton.enabled = YES;
-    _abortButton.hidden = YES;
 }
 
 -(int)uploadingFilesCount
@@ -543,8 +507,6 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 
 -(IBAction)abortButtonPressed:(id)sender
 {
-    _uploadingInterrupted = YES;
-    
     if ( self->_currentCancelOp )
     {
         self->_currentCancelOp( YES );
@@ -553,8 +515,6 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     self.navigationItem.title = NSLocalizedString(@"Cancelled", nil);
     
     [ self uploadTerminated ];
-    
-    [ self reloadFilteredTableData ];
 }
 
 -(void)showUploadError

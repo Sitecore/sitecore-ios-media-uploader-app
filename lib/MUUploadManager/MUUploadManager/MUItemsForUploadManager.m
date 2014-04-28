@@ -5,9 +5,11 @@
 @implementation MUItemsForUploadManager
 {
     NSMutableArray* _mediaUpload;
-    NSArray* _filteredMediaUpload;
+    NSMutableArray* _filteredMediaUpload;
     
     NSPredicate* _predicate;
+    
+    MUFilteringOptions _currentFilterOption;
 }
 
 -(instancetype)init
@@ -15,24 +17,54 @@
     if ( self = [ super init ])
     {
         [ self loadMediaUpload ];
-        [ self performFilterPredicate: nil ];
+        [ self setFilterOption: SHOW_ALL_ITEMS ];
     }
     
     return self;
 }
 
--(void)performFilterPredicate:(NSPredicate*)predicate
+-(BOOL)isUploadItemComplete:(MUMedia*)uploadItem
 {
-    self->_predicate = predicate;
+    return      uploadItem.uploadStatus.statusId == UPLOAD_DONE
+    ||  uploadItem.uploadStatus.statusId == DATA_IS_NOT_AVAILABLE;
+}
+
+-(void)setFilterOption:(MUFilteringOptions)option
+{
+    switch (option)
+    {
+        case SHOW_ALL_ITEMS:
+        {
+            self->_filteredMediaUpload = self->_mediaUpload;
+            break;
+        }
+        case SHOW_COMLETED_ITEMS:
+        {
+            self->_filteredMediaUpload = [NSMutableArray new];
+            for ( MUMedia *elem in self->_mediaUpload )
+            {
+                if ( [ self isUploadItemComplete: elem ] )
+                {
+                    [ self->_filteredMediaUpload addObject:elem ];
+                }
+            }
+            break;
+        }
+        case SHOW_NOT_COMLETED_ITEMS:
+        {
+            self->_filteredMediaUpload = [NSMutableArray new];
+            for ( MUMedia *elem in self->_mediaUpload )
+            {
+                if ( ![ self isUploadItemComplete: elem ] )
+                {
+                    [ self->_filteredMediaUpload addObject:elem ];
+                }
+            }
+            break;
+        }
+    }
     
-    if ( self->_predicate == nil )
-    {
-        self->_filteredMediaUpload = self->_mediaUpload;
-    }
-    else
-    {
-        self->_filteredMediaUpload = [ self->_mediaUpload filteredArrayUsingPredicate: predicate ];
-    }
+    self->_currentFilterOption = option;
 }
 
 -(NSUInteger)uploadCount
@@ -47,7 +79,7 @@
     [ self->_mediaUpload addObject: media];
     [ self saveUploadData ];
     
-    [ self performFilterPredicate: self->_predicate ];
+    [ self setFilterOption: self->_currentFilterOption ];
 }
 
 -(MUMedia*)mediaUploadAtIndex:(NSInteger)index
@@ -79,7 +111,7 @@
     [ self->_mediaUpload removeObject: media ];
     [ self saveUploadData ];
     
-    [ self performFilterPredicate: self->_predicate ];
+    [ self setFilterOption: self->_currentFilterOption ];
 }
 
 -(void)removeMediaUploadAtIndex:(NSInteger)index error:(NSError**)error
@@ -87,6 +119,11 @@
     MUMedia* media = self->_mediaUpload[index];
     [ self removeMediaUpload: media
                        error: error ];
+}
+
+-(void)save
+{
+    [ self saveUploadData ];
 }
 
 -(void)saveUploadData
@@ -166,5 +203,7 @@
         } ];
     }
 }
+
+
 
 @end

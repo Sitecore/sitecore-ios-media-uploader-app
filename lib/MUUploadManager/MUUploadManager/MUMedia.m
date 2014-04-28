@@ -33,19 +33,21 @@
         self->_videoUrl = videoUrl;
         self->_imageUrl = imageUrl;
         self->_thumbnail = thumbnail;
-      }
+    }
     
     return self;
 }
 
 -(void)encodeWithCoder:(NSCoder*)encoder
 {
-    [encoder encodeObject:  _name                forKey: @"name"                ];
-    [encoder encodeObject:  _dateTime            forKey: @"dateTime"            ];
-    [encoder encodeObject:  _videoUrl            forKey: @"videoUrl"            ];
-    [encoder encodeObject:  _imageUrl            forKey: @"imageUrl"            ];
-    [encoder encodeObject:  _thumbnail           forKey: @"thumbnail"           ];
-    [encoder encodeObject:  _siteForUploadingId  forKey: @"siteForUploading"    ];
+    [encoder encodeObject:  _name                forKey: @"name"             ];
+    [encoder encodeObject:  _dateTime            forKey: @"dateTime"         ];
+    [encoder encodeObject:  _videoUrl            forKey: @"videoUrl"         ];
+    [encoder encodeObject:  _imageUrl            forKey: @"imageUrl"         ];
+    [encoder encodeObject:  _thumbnail           forKey: @"thumbnail"        ];
+    [encoder encodeObject:  _siteForUploadingId  forKey: @"siteForUploading" ];
+    [encoder encodeObject:  _uploadStatus        forKey: @"uploadStatus"     ];
+    [encoder encodeObject:  _locationInfo        forKey: @"locationInfo"     ];
 }
 
 -(instancetype)initWithCoder:(NSCoder*)decoder
@@ -53,12 +55,14 @@
     self = [super init];
     if (self)
     {
-        self.name                = [decoder decodeObjectForKey:  @"name"                ];
-        self.dateTime            = [decoder decodeObjectForKey:  @"dateTime"            ];
-        self.videoUrl            = [decoder decodeObjectForKey:  @"videoUrl"            ];
-        self.imageUrl            = [decoder decodeObjectForKey:  @"imageUrl"            ];
-        self.thumbnail           = [decoder decodeObjectForKey:  @"thumbnail"           ];
-        self.siteForUploadingId  = [decoder decodeObjectForKey:  @"siteForUploading"    ];
+        self.name                = [decoder decodeObjectForKey:  @"name"             ];
+        self.dateTime            = [decoder decodeObjectForKey:  @"dateTime"         ];
+        self.videoUrl            = [decoder decodeObjectForKey:  @"videoUrl"         ];
+        self.imageUrl            = [decoder decodeObjectForKey:  @"imageUrl"         ];
+        self.thumbnail           = [decoder decodeObjectForKey:  @"thumbnail"        ];
+        self.siteForUploadingId  = [decoder decodeObjectForKey:  @"siteForUploading" ];
+        self.uploadStatus        = [decoder decodeObjectForKey:  @"uploadStatus"     ];
+        self.locationInfo        = [decoder decodeObjectForKey:  @"locationInfo"     ];
     }
     
     return self;

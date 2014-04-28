@@ -126,20 +126,6 @@
     }
 }
 
--(void) prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"uploadPendingMedia"])
-    {
-        // Obtain handles on the current and destination controllers
-        sc_Upload2ViewController * destinationController = (sc_Upload2ViewController*) segue.destinationViewController;
-        //NSMutableArray *items = _appDataObject.uploadItemsManager.mediaUpload;
-        
-        [ destinationController initWithMediaItems: nil//items
-                                             image: nil
-                            isPendingIemsUploading: YES ];
-    }
-}
-
 -(void)viewWillAppear:(BOOL)animated
 {
     [ self enableApplication ];

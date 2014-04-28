@@ -26,10 +26,6 @@
 
 @property (nonatomic) sc_GlobalDataObject* appDataObject;
 
--(void)initWithMediaItems:(NSArray*)mediaItems
-                    image:(UIImage*)image
-   isPendingIemsUploading:(BOOL)isPendingIemsUploading;
-
 -(IBAction)changeFilter:(UISegmentedControl*)sender;
 
 @end

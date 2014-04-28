@@ -19,10 +19,11 @@
 @property (nonatomic) NSString* name;
 @property (nonatomic) NSString* description;
 @property (nonatomic) NSDate*   dateTime;
-@property (nonatomic) id<MULocationInfo> locationInfo;
 @property (nonatomic) NSURL*    videoUrl;
 @property (nonatomic) NSURL*    imageUrl;
 @property (nonatomic) NSString* siteForUploadingId;
+
+@property (nonatomic) id<MULocationInfo> locationInfo;
 @property (nonatomic) MUImageQuality imageQuality;
 @property (nonatomic) MUUploadItemStatus* uploadStatus;
 

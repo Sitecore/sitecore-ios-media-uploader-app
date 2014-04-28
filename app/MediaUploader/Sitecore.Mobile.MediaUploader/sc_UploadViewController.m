@@ -453,17 +453,11 @@ static NSString* const UPLOAD_HISTORY_VC_SEGUE = @"upload2";
         
         [ self setMediaItemValidName: media ];
         
-        sc_Upload2ViewController * destinationController = ( sc_Upload2ViewController*) segue.destinationViewController;
+//        sc_Upload2ViewController * destinationController = ( sc_Upload2ViewController*) segue.destinationViewController;
         
         //TODO: @igk will error in case of async adding
         [ self addUploadToMediaUploadManager ];
-        
-        NSArray* mediaItems = @[ media ];
-        [ destinationController initWithMediaItems: mediaItems
-                                             image: imageView.image
-                            isPendingIemsUploading: NO ];
-        
-        
+   
     }
 }
 
