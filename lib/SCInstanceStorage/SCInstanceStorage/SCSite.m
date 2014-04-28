@@ -62,11 +62,11 @@ uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
              selectedForBrowse:(BOOL)selectedForBrowse
              selectedForUpload:(BOOL)selectedForUpload
 {
-    NSAssert(siteUrl, @"siteUrl must exist");
-    NSAssert(site, @"site must exist");
-    NSAssert(uploadFolderPathInsideMediaLibrary, @"uploadFolderPathInsideMediaLibrary must exist");
-    NSAssert(username, @"username must exist");
-    NSAssert(password, @"password must exist");
+    NSParameterAssert( nil != siteUrl                            );
+    NSParameterAssert( nil != site                               );
+    NSParameterAssert( nil != uploadFolderPathInsideMediaLibrary );
+    NSParameterAssert( nil != username                           );
+    NSParameterAssert( nil != password                           );
 
     
     self = [super init];
