@@ -31,7 +31,6 @@
     }
     
     BOOL itemExists = ( currentCell < [ self->_items count ]  );
-    NSLog(@"%d", currentCell);
     
     if ( itemExists )
     {
