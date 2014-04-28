@@ -15,7 +15,7 @@
 +(sc_GlobalDataObject*)getAppDataObject
 {
     id<sc_AppDelegateProtocol> delegate = (id<sc_AppDelegateProtocol>) [UIApplication sharedApplication].delegate;
-    sc_GlobalDataObject* result = (sc_GlobalDataObject*)delegate.appDataObject;
+    sc_GlobalDataObject* result         = (sc_GlobalDataObject*)delegate.appDataObject;
     
     return result;
 }
@@ -24,7 +24,7 @@
 {
     if ( self = [super init] )
     {
-        self->_sitesManager = [ SCSitesManager new ];
+        self->_sitesManager       = [ SCSitesManager new ];
         self->_uploadItemsManager = [ MUItemsForUploadManager new ];
     }
     
