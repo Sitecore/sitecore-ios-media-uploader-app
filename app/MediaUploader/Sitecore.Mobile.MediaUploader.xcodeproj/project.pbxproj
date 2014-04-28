@@ -315,6 +315,10 @@
 		7E41A0A018FE7B1900D601EF /* SitecoreItemsBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C9E27618E5CF6F004C7A88 /* SitecoreItemsBrowser.framework */; };
 		7E46305918FE76A3009E0F7F /* libMUAllUploaderLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC345F18FE7495007D540D /* libMUAllUploaderLibs.a */; };
 		7E46305C18FE76CB009E0F7F /* libMUAllUploaderLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC345F18FE7495007D540D /* libMUAllUploaderLibs.a */; };
+		7E5F15A3190E9140002B1854 /* sc_SitesSelectionViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65FBC2221770D4EF002437A5 /* sc_SitesSelectionViewController.mm */; };
+		7E5F15A4190E9141002B1854 /* sc_SitesSelectionViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65FBC2221770D4EF002437A5 /* sc_SitesSelectionViewController.mm */; };
+		7E5F15A5190E9147002B1854 /* MUUploadItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CAF713190AA38600201968 /* MUUploadItem.m */; };
+		7E5F15A6190E9147002B1854 /* MUUploadItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CAF713190AA38600201968 /* MUUploadItem.m */; };
 		7E6CE9C618FD3FB000C86ABA /* Flurry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6CE9C518FD3FB000C86ABA /* Flurry.framework */; };
 		7E6CE9C718FD3FB000C86ABA /* Flurry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6CE9C518FD3FB000C86ABA /* Flurry.framework */; };
 		7E6CE9C818FD3FB000C86ABA /* Flurry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6CE9C518FD3FB000C86ABA /* Flurry.framework */; };
@@ -1617,6 +1621,7 @@
 				78C596A118EED3B4006A7FA3 /* sc_LevelUpTableCell.m in Sources */,
 				651B1A24177CB850006FF573 /* sc_MapViewController.m in Sources */,
 				65F5E850178A9D0F00059518 /* sc_GradientButton.m in Sources */,
+				7E5F15A3190E9140002B1854 /* sc_SitesSelectionViewController.mm in Sources */,
 				4FE40C39179FE7D600F9DDB9 /* sc_ActivityIndicator.m in Sources */,
 				78CAF714190AA38600201968 /* MUUploadItem.m in Sources */,
 				78DFD76318E4451600E0E4CD /* sc_LocationManager.m in Sources */,
@@ -1642,6 +1647,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E5F15A6190E9147002B1854 /* MUUploadItem.m in Sources */,
+				7E5F15A4190E9141002B1854 /* sc_SitesSelectionViewController.mm in Sources */,
 				7872A6F818EC049600581E03 /* sc_LevelUpGridCell.m in Sources */,
 				7E01A1C318FC325D0070D4EE /* MUEventsTrackerFactory.m in Sources */,
 				78108125189021E300E8EFD7 /* main.m in Sources */,
@@ -1701,6 +1708,7 @@
 				7E19AEAE190ACF28008C4E1E /* sc_SettingsViewController.mm in Sources */,
 				7E19AE92190ACF28008C4E1E /* sc_NavigationController.m in Sources */,
 				7E19AEB6190ACF28008C4E1E /* (null) in Sources */,
+				7E5F15A5190E9147002B1854 /* MUUploadItem.m in Sources */,
 				7E19AEA8190ACF28008C4E1E /* sc_ListBrowserViewController.m in Sources */,
 				7E19AE97190ACF28008C4E1E /* (null) in Sources */,
 				7E19AE98190ACF28008C4E1E /* sc_GlobalDataObject.m in Sources */,
