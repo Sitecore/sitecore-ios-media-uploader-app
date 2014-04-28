@@ -5,7 +5,7 @@
 @implementation MUItemsForUploadManager
 {
     NSMutableArray* _mediaUpload;
-    NSArray* _filteredArray;
+    NSArray* _filteredMediaUpload;
     
     NSPredicate* _predicate;
 }
@@ -26,28 +26,17 @@
     
     if ( self->_predicate == nil )
     {
-        self->_filteredArray = nil;
+        self->_filteredMediaUpload = self->_mediaUpload;
     }
     else
     {
-        self->_filteredArray = [ self->_mediaUpload filteredArrayUsingPredicate: predicate ];
+        self->_filteredMediaUpload = [ self->_mediaUpload filteredArrayUsingPredicate: predicate ];
     }
 }
 
 -(NSUInteger)uploadCount
 {
-    NSUInteger count;
-    
-    if ( self->_filteredArray == nil )
-    {
-        count = [ self->_mediaUpload count ];
-    }
-    else
-    {
-        count = [ self->_filteredArray count ];
-    }
-    
-    return count;
+    return [ self->_filteredMediaUpload count ];
 }
 
 -(void)addMediaUpload:(MUMedia*)media
@@ -64,14 +53,7 @@
 {
     MUMedia* objectToReturn;
     
-    if ( self->_filteredArray == nil )
-    {
-        objectToReturn = [ self->_mediaUpload objectAtIndex: index ];
-    }
-    else
-    {
-        objectToReturn = [ self->_filteredArray objectAtIndex: index ];
-    }
+    objectToReturn = [ self->_filteredMediaUpload objectAtIndex: index ];
     
     [ self checkResourceAvailabilityForUploadItem: objectToReturn ];
     
@@ -89,19 +71,21 @@
     }
 }
 
--(void)removeMediaUpload:(MUMedia*)media
+-(void)removeMediaUpload:(MUMedia*)media error:(NSError**)error
 {
-    [ self removeTmpVideoFileFromMediaItem: media ];
+    [ self removeTmpVideoFileFromMediaItem: media
+                                     error: error];
     [ self->_mediaUpload removeObject: media ];
     [ self saveUploadData ];
     
     [ self performFilterPredicate: self->_predicate ];
 }
 
--(void)removeMediaUploadAtIndex:(NSInteger)index
+-(void)removeMediaUploadAtIndex:(NSInteger)index error:(NSError**)error
 {
     MUMedia* media = self->_mediaUpload[index];
-    [ self removeMediaUpload: media ];
+    [ self removeMediaUpload: media
+                       error: error ];
 }
 
 -(void)saveUploadData
@@ -112,15 +96,14 @@
                                  toFile: appFile ];
 }
 
--(void)removeTmpVideoFileFromMediaItem:(MUMedia*)media
+-(void)removeTmpVideoFileFromMediaItem:(MUMedia*)media error:(NSError**)error
 {
     NSURL* videoUrl = [ media videoUrl ];
     if ( videoUrl != nil )
     {
-        NSError* error;
         NSFileManager* fileManager = [NSFileManager defaultManager];
         [ fileManager removeItemAtURL: videoUrl
-                                error: &error ];
+                                error: error ];
     }
 }
 

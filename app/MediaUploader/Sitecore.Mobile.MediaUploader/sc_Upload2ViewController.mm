@@ -417,8 +417,9 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
             [ self setFields: item
                      Context: session
                   uploadItem: uploadItem ];
+
             
-            [ [ sc_GlobalDataObject getAppDataObject ].uploadItemsManager removeTmpVideoFileFromMediaItem: uploadItem.mediaItem ];
+            [ [ sc_GlobalDataObject getAppDataObject ].uploadItemsManager removeTmpVideoFileFromMediaItem: uploadItem.mediaItem error: nil ];
             
             status.statusId = UPLOAD_DONE;
         }
@@ -477,19 +478,19 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
              fieldSoftware.rawValue = @"Sitecore Up";
              
              SCField *fieldLatitude = [fieldItem fieldWithName: @"Latitude"];
-             fieldLatitude.rawValue = [uploadItem.mediaItem.latitude stringValue];
+             fieldLatitude.rawValue = [uploadItem.mediaItem.locationInfo.latitude stringValue];
              
              SCField *fieldLongitude = [fieldItem fieldWithName: @"Longitude"];
-             fieldLongitude.rawValue = [uploadItem.mediaItem.longitude stringValue];
+             fieldLongitude.rawValue = [uploadItem.mediaItem.locationInfo.longitude stringValue];
              
              SCField *fieldLocationDescription = [fieldItem fieldWithName: @"LocationDescription"];
-             fieldLocationDescription.rawValue = uploadItem.mediaItem.locationDescription;
+             fieldLocationDescription.rawValue = uploadItem.mediaItem.locationInfo.locationDescription;
              
              SCField *fieldCountryCode = [fieldItem fieldWithName: @"CountryCode"];
-             fieldCountryCode.rawValue = uploadItem.mediaItem.countryCode;
+             fieldCountryCode.rawValue = uploadItem.mediaItem.locationInfo.countryCode;
              
              SCField *fieldCityCode = [fieldItem fieldWithName: @"ZipCode"];
-             fieldCityCode.rawValue = uploadItem.mediaItem.cityCode;
+             fieldCityCode.rawValue = uploadItem.mediaItem.locationInfo.cityCode;
              
              [fieldItem saveItemOperation] (^(SCItem*  editedItem, NSError*  fieldSaveError)
                {
