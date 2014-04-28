@@ -10,7 +10,8 @@
 
 @implementation MUUploadItem
 
--(instancetype)initWithObjectData:(MUMedia*)mediaItem data:(NSData*)data
+-(instancetype)initWithObjectData:(MUMedia*)mediaItem
+                             data:(NSData*)data
 {
     self = [super init];
     if (self)

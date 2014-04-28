@@ -8,13 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MUUploadItem: NSObject
+@class MUMedia;
+
+
+@interface MUUploadItem : NSObject
 
 @property (nonatomic) MUMedia* mediaItem;
 @property (nonatomic) NSData* data;
 
--(id)initWithObjectData:(MUMedia*)mediaItem
-                   data:(NSData*)data;
+-(instancetype)initWithObjectData:(MUMedia*)mediaItem
+                             data:(NSData*)data;
 
 @property (nonatomic, readonly) BOOL isImage;
 @property (nonatomic, readonly) BOOL isVideo;
