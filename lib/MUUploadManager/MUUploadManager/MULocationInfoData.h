@@ -1,13 +1,12 @@
-//
-//  MULocationInfo.h
-//  MUUploadManager
-//
-//  Created by Igor on 28/04/14.
-//  Copyright (c) 2014 Sitecore. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+#import <MUUploadManager/MULocationInfo.h>
 
-@interface MULocationInfo : NSObject
+@interface MULocationInfoData : NSObject<MULocationInfo>
+
+@property (nonatomic) NSNumber* latitude;
+@property (nonatomic) NSNumber* longitude;
+@property (nonatomic) NSString* locationDescription;
+@property (nonatomic) NSString* countryCode;
+@property (nonatomic) NSString* cityCode;
 
 @end
