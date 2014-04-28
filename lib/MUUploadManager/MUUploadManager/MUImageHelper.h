@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+//TODO @igk move image processing to the separate library
 @interface MUImageHelper : NSObject
 
 +(CGFloat)getCompressionFactor:(int)uploadImageSize;
