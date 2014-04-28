@@ -1,4 +1,9 @@
-#import "SCSite.h"
+#import <Foundation/Foundation.h>
+
+
+@class SCSite;
+@class NSError;
+
 
 @interface SCSitesManager : NSObject
 

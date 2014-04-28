@@ -41,7 +41,7 @@ typedef NS_ENUM(NSInteger, ItemsFilterMode)
 @implementation sc_Upload2ViewController
 {
     SCCancelAsyncOperation _currentCancelOp;
-    NSInteger _uploadItemIndex;
+    NSUInteger _uploadItemIndex;
     BOOL _uploadingInterrupted;
     
     sc_BaseTheme *_theme;
@@ -94,6 +94,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 //            [ self->_filteredItems addObject: [ self.mediaItems objectAtIndex:index ] ];
 //        }
 //    }
+
     
     [ self.sitesTableView reloadData ];
 }
@@ -204,7 +205,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 
 -(NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return  [ _appDataObject.uploadItemsManager uploadCount ];
+    return  static_cast<NSInteger>( self->_filteredItems.count );
 }
 
 -(MUUploadItemStatus*)statusForItemForCurrentIndexPath:(NSIndexPath*)indexPath
@@ -259,7 +260,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
             break;
         default:
         {
-            NSLog(@"item status: %d", status.statusId);
+            NSLog(@"item status: %ld", status.statusId);
         }
             break;
     }
@@ -298,6 +299,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
                                 withRowAnimation: UITableViewRowAnimationNone ];
     
     if ( [ media isVideo ] )
+
     {
         [ self uploadVideoWithMediaItem: media ];
     }
@@ -311,6 +313,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
             //[ self uploadNextItem ];
             NSLog(@"Error: no media url found:");
         }
+
 }
 
 -(void)uploadVideoWithMediaItem:(MUMedia*)media
@@ -513,7 +516,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 
 -(void)setHeader
 {
-    NSInteger uploadItemsCount = [ _appDataObject.uploadItemsManager uploadCount ];
+    NSInteger uploadItemsCount = static_cast<NSInteger>( [ _appDataObject.uploadItemsManager uploadCount ] );
     
     if ( uploadItemsCount > 1)
     {

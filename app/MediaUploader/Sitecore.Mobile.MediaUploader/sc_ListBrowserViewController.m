@@ -75,6 +75,8 @@
 {
     [ super viewDidLoad ];
     
+    self.itemPathTextView.text = @"";
+    
     NSArray* templatesList = @[@"Media folder"];
     self->_requestBuilder = [ [sc_GridBrowserRequestBuilder alloc] initWithTemplateNames: templatesList ];
     self.cellFactory.itemsBrowserController.nextLevelRequestBuilder = self->_requestBuilder;

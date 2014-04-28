@@ -14,6 +14,8 @@
     #import "sc_ErrorHelper.h"
     #import "sc_GlobalDataObject.h"
 
+    #import "sc_ReloadableViewProtocol.h"
+
 // own libs
     #import <SCInstanceStorage/SCInstanceStorage.h>
     #import <MUUploadManager/MUUploadManager.h>
@@ -39,6 +41,7 @@
     #import <Reachability/Reachability.h>
 
 // apple
+    #import <AVFoundation/AVFoundation.h>
     #import <SystemConfiguration/SystemConfiguration.h>
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
@@ -46,3 +49,8 @@
     #import <MobileCoreServices/MobileCoreServices.h>
     #import <QuartzCore/QuartzCore.h>
 #endif
+
+#ifdef __cplusplus
+    #import <cmath>
+#endif
+

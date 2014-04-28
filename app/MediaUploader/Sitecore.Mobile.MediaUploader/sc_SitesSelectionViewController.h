@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "sc_GlobalDataObject.h"
-#import "sc_ReloadableViewProtocol.h"
 
+@class sc_GlobalDataObject;
+
+@class UILabel;
+@class UITableView;
+@class NSString;
 
 @interface sc_SitesSelectionViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 

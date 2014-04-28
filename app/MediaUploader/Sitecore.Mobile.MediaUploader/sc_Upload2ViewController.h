@@ -7,21 +7,29 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "sc_GlobalDataObject.h"
 
+
+@class sc_GlobalDataObject;
 @class SCSiteDataController;
 
-@interface sc_Upload2ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@interface sc_Upload2ViewController : UIViewController
+<
+    UITableViewDelegate  ,
+    UITableViewDataSource
+>
 
 @property (nonatomic) IBOutlet UIBarButtonItem* doneButton;
-@property (nonatomic) IBOutlet UITableView *sitesTableView;
+@property (nonatomic) IBOutlet UITableView* sitesTableView;
 @property (nonatomic) IBOutlet UIButton* abortButton;
-@property (nonatomic) IBOutlet UISegmentedControl *filterControl;
+@property (nonatomic) IBOutlet UISegmentedControl* filterControl;
 
 @property (nonatomic) sc_GlobalDataObject* appDataObject;
 
--(void) initWithMediaItems:(NSArray*) mediaItems
-                      image:(UIImage*) image
-     isPendingIemsUploading:(BOOL) isPendingIemsUploading;
+-(void)initWithMediaItems:(NSArray*)mediaItems
+                    image:(UIImage*)image
+   isPendingIemsUploading:(BOOL)isPendingIemsUploading;
+
 -(IBAction)changeFilter:(UISegmentedControl*)sender;
+
 @end

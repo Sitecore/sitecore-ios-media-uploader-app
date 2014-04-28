@@ -1,76 +1,159 @@
-
 #import "sc_GradientButton.h"
 
-
-@interface sc_GradientButton()
-
-@end
+#import "MUButtonTheme.h"
 
 
 @implementation sc_GradientButton
-
--(void)setButtonWithStyle:(CustomButtonType)customButtonType
 {
-    NSString* normalImageName;
-    NSString* highlightedlImageName;
-    UIColor* nornalTitleColor;
-    UIColor* highlightedTitleColor;
+    BOOL _isInitialized;
     
-    NSString* iosVersionPostfix = [[[UIDevice currentDevice] systemVersion] intValue] >= 7 ? @"_7" : @"";
+    UIColor* _colorForNormalState;
+    UIColor* _colorForHighlightedState;
+}
+
+-(id<MUButtonThemeProtocol>)buttonTheme
+{
+    static MUButtonTheme* result = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^void()
+    {
+        result = [ MUButtonTheme new ];
+    } );
+
+    return result;
+}
+
+-(void)setButtonWithStyle:( CustomButtonType )customButtonType
+{
+    NSParameterAssert( !self->_isInitialized );
+    self->_isInitialized = YES;
+    
+    
+    UIColor* nornalTitleColor      = nil;
+    UIColor* highlightedTitleColor = nil;
+
     
     switch (customButtonType)
     {
         case (CUSTOMBUTTONTYPE_NORMAL):
-            normalImageName = [self formatImageName: @"greyButton" iosVersion: iosVersionPostfix];
-            highlightedlImageName = [self formatImageName: @"blueButtonHighlight" iosVersion: iosVersionPostfix];
-            nornalTitleColor = [UIColor blackColor];
-            highlightedTitleColor = [UIColor whiteColor];
+        {
+            self->_colorForHighlightedState =
+            [ [ self buttonTheme ] colorForHighlightedStateOfNormalButton ];
+            
+            self->_colorForNormalState =
+            [ [ self buttonTheme ] colorForNormalStateOfNormalButton ];
+            
+            nornalTitleColor      = [ UIColor blackColor ];
+            highlightedTitleColor = [ UIColor whiteColor ];
+            
             break;
+        }
         case (CUSTOMBUTTONTYPE_DANGEROUS):
-            normalImageName = [self formatImageName: @"orangeButton" iosVersion: iosVersionPostfix];
-            highlightedlImageName = [self formatImageName: @"orangeButtonHighlight" iosVersion: iosVersionPostfix];
-            nornalTitleColor = [UIColor whiteColor];
-            highlightedTitleColor = [UIColor whiteColor];
+        {
+            self->_colorForHighlightedState =
+            [ [ self buttonTheme ] colorForHighlightedStateOfDangerousButton ];
+            
+            self->_colorForNormalState =
+            [ [ self buttonTheme ] colorForNormalStateOfDangerousButton ];
+            
+            nornalTitleColor      = [ UIColor whiteColor ];
+            highlightedTitleColor = [ UIColor whiteColor ];
+            
             break;
+        }
         case (CUSTOMBUTTONTYPE_IMPORTANT):
-            normalImageName = [self formatImageName: @"blueButton" iosVersion: iosVersionPostfix];
-            highlightedlImageName = [self formatImageName: @"blueButtonHighlight" iosVersion: iosVersionPostfix];
-            nornalTitleColor = [UIColor whiteColor];
-            highlightedTitleColor = [UIColor whiteColor];
+        {
+            self->_colorForHighlightedState =
+            [ [ self buttonTheme ] colorForHighlightedStateOfImportantButton ];
+            
+            self->_colorForNormalState =
+            [ [ self buttonTheme ] colorForNormalStateOfImportantButton ];
+            
+            nornalTitleColor      = [ UIColor whiteColor ];
+            highlightedTitleColor = [ UIColor whiteColor ];
+            
             break;
+        }
         case (CUSTOMBUTTONTYPE_TRANSPARENT):
-            normalImageName = [self formatImageName: @"transparentButton." iosVersion: iosVersionPostfix];
-            highlightedlImageName = [self formatImageName: @"transparentButtonHighlight" iosVersion: iosVersionPostfix];
-            nornalTitleColor = [UIColor whiteColor];
-            highlightedTitleColor = [UIColor whiteColor];
+        {
+            self->_colorForNormalState =
+            [ [ self buttonTheme ] colorForNormalStateOfTransparentButton ];
+            
+            self->_colorForHighlightedState =
+            [ [ self buttonTheme ] colorForHighlightedStateOfTransparentButton ];
+            
+            nornalTitleColor      = [ UIColor whiteColor ];
+            highlightedTitleColor = [ UIColor whiteColor ];
+            
             break;
+        }
         default:
-            normalImageName = [self formatImageName: @"greyButton" iosVersion: iosVersionPostfix];
-            highlightedlImageName = [self formatImageName: @"greyButtonHighlight" iosVersion: iosVersionPostfix];
-            nornalTitleColor = [UIColor blackColor];
-            highlightedTitleColor = [UIColor blackColor];
+        {
+            self->_colorForNormalState = [ [ self buttonTheme ] colorForNormalStateOfButtonWithUndefinedType ];
+            
+            self->_colorForHighlightedState =
+            [ [ self buttonTheme ] colorForHighlightedStateOfButtonWithUndefinedType ];
+
+            nornalTitleColor      = [ UIColor blackColor ];
+            highlightedTitleColor = [ UIColor blackColor ];
+            
             break;
+        }
     }
     
-    [self setTitleColor: [UIColor lightGrayColor] forState: UIControlStateDisabled];
-    [self setTitleColor: nornalTitleColor         forState: UIControlStateNormal];
-    [self setTitleColor: highlightedTitleColor    forState: UIControlStateHighlighted];
     
-    UIImage* buttonImage = [[UIImage imageNamed: normalImageName]
-                            resizableImageWithCapInsets: UIEdgeInsetsMake(18, 18, 18, 18)];
-    UIImage* buttonImageHighlight = [[UIImage imageNamed: highlightedlImageName]
-                                     resizableImageWithCapInsets: UIEdgeInsetsMake(18, 18, 18, 18)];
+    [ self setTitleColor: [ UIColor lightGrayColor ]
+                forState: UIControlStateDisabled ];
+    
+    [ self setTitleColor: nornalTitleColor
+                forState: UIControlStateNormal ];
+    
+    [ self setTitleColor: highlightedTitleColor
+                forState: UIControlStateHighlighted ];
 
-    [self setBackgroundImage: buttonImage          forState: UIControlStateNormal];
-    [self setBackgroundImage: buttonImageHighlight forState: UIControlStateHighlighted];
+
+    [ self setupBackgroundColorEvents ];
 }
 
--(NSString*)formatImageName:(NSString*)imageName
-                 iosVersion:(NSString*)iosVersionPostfix
+-(void)setupBackgroundColorEvents
 {
-    NSString* result = [NSString stringWithFormat:@"%@%@.png", imageName,iosVersionPostfix];
+    [ self.layer setBackgroundColor: [ self->_colorForNormalState CGColor ] ];
     
-    return result;
+    
+    {
+        static const UIControlEvents BUTTON_TOUCH_DOWN =
+        UIControlEventTouchDown      |
+        UIControlEventTouchDownRepeat;
+        
+        [ self addTarget: self
+                  action: @selector( buttonDidTouchDown: )
+        forControlEvents: BUTTON_TOUCH_DOWN ];
+    }
+    
+    
+    {
+        static const UIControlEvents BUTTON_TOUCH_UP =
+        UIControlEventTouchUpInside  |
+        UIControlEventTouchUpOutside |
+        UIControlEventTouchCancel    ;
+        
+        [ self addTarget: self
+                  action: @selector( buttonDidTouchUp: )
+        forControlEvents: BUTTON_TOUCH_UP ];
+    }
+}
+
+-(void)buttonDidTouchDown:( id )sender
+{
+//    NSLog(@"%@", NSStringFromSelector( _cmd ) );
+    [ self.layer setBackgroundColor: [ self->_colorForHighlightedState CGColor ] ];
+}
+
+-(void)buttonDidTouchUp:( id )sender
+{
+//    NSLog(@"%@", NSStringFromSelector( _cmd ) );
+    [ self.layer setBackgroundColor: [ self->_colorForNormalState CGColor ] ];
 }
 
 @end

@@ -9,13 +9,25 @@
 #import <UIKit/UIKit.h>
 
 @class SCImageView;
+@class SCApiSession;
 
-@interface sc_QuickImageViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate>
+@class NSMutableArray;
+@class UICollectionView;
 
-@property (nonatomic) IBOutlet SCImageView *imageView;
+
+
+@interface sc_QuickImageViewController : UIViewController
+<
+    UICollectionViewDataSource,
+    UICollectionViewDelegate,
+    UISearchBarDelegate
+>
+
+@property (nonatomic) IBOutlet SCImageView* imageView;
 @property (nonatomic, retain) NSMutableArray*  items;
 @property (nonatomic) NSUInteger selectedImage;
 @property (nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) SCApiSession *session;
+
 
 @end

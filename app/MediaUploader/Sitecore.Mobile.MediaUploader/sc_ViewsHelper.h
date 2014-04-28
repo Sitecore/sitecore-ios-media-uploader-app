@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface sc_ViewsHelper : NSObject
-+(UIViewController* )reloadParentController:(UINavigationController*) navigationController levels:(int) levels;
+
++(UIViewController*)reloadParentController:(UINavigationController*)navigationController
+                                    levels:(NSUInteger)levels;
 
 @end

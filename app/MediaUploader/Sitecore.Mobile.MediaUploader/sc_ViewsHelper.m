@@ -11,10 +11,12 @@
 
 @implementation sc_ViewsHelper
 
-+(UIViewController* )reloadParentController:(UINavigationController*) navigationController levels:(int) levels
++(UIViewController*)reloadParentController:(UINavigationController*)navigationController
+                                    levels:(NSUInteger)levels
 {
     NSArray* viewControllers = [navigationController viewControllers];
-    UIViewController*  viewController = [viewControllers objectAtIndex:viewControllers.count - levels];
+    
+    UIViewController* viewController = [viewControllers objectAtIndex: viewControllers.count - levels];
     if ([viewController conformsToProtocol:@protocol(sc_ReloadableViewProtocol)])
     {
         UIViewController <sc_ReloadableViewProtocol> *reloadableController = (UIViewController <sc_ReloadableViewProtocol>*) viewController;

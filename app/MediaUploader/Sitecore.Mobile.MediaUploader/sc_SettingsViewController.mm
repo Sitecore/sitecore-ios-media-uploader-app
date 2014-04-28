@@ -17,6 +17,9 @@
 
 
 @interface sc_SettingsViewController ()
+
+@property ( nonatomic, readonly ) SCSitesManager* sitesManager;
+
 @end
 
 
@@ -25,9 +28,28 @@
     sc_BaseTheme *_theme;
 }
 
--(void) reload
+@dynamic sitesManager;
+
+-(SCSitesManager*)sitesManager
 {
-    [_sitesTableView reloadData];
+    return self->_appDataObject.sitesManager;
+}
+
+-(SCSite*)siteAtRow:(NSInteger)row
+{
+    NSUInteger siteIndex = static_cast<NSUInteger>( row );
+    return [ [ self sitesManager ] siteAtIndex: siteIndex ];
+}
+
+-(NSInteger)sitesCountForTableView
+{
+    NSUInteger result = [ [ self sitesManager ] sitesCount ];
+    return static_cast<NSInteger>(result);
+}
+
+-(void)reload
+{
+    [ self->_sitesTableView reloadData ];
 }
 
 -(void)viewDidLoad
@@ -66,11 +88,14 @@
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 forRowAtIndexPath:(NSIndexPath*)indexPath
 {
+    SCSitesManager* sitesManager = self.sitesManager;
+    
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-
-        SCSite* siteToDelete = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
-        [ _appDataObject.sitesManager removeSite: siteToDelete error:nil];
+        NSUInteger castedRow = static_cast<NSUInteger>( indexPath.row );
+        
+        SCSite* siteToDelete = [sitesManager siteAtIndex: castedRow];
+        [ sitesManager removeSite: siteToDelete error:nil ];
         [ self reload ];
     }
 }
@@ -89,7 +114,10 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
 {
     if (section == 1)
     {
-        return [_appDataObject.sitesManager sitesCount] + 1;
+        SCSitesManager* sitesManager = self.sitesManager;
+        NSUInteger result = [ sitesManager sitesCount ] + 1;
+        
+        return static_cast<NSInteger>( result );
     }
     
     return 1;
@@ -121,8 +149,9 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
     
     if (indexPath.section == 1)
     {
+        NSInteger sitesCount = [ self sitesCountForTableView ];
         
-        if (indexPath.row == [_appDataObject.sitesManager sitesCount])
+        if (indexPath.row == sitesCount)
         {
             UITableViewCell *  cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"AddNewSite"];
             cell.imageView.image = [UIImage imageNamed:@"empty_small.png"];
@@ -134,7 +163,7 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
         UITableViewCell *  cell =  [tableView dequeueReusableCellWithIdentifier:@"cellSiteUrl" forIndexPath:indexPath];
         
 
-        SCSite* siteAtIndex = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
+        SCSite* siteAtIndex = [ self siteAtRow: indexPath.row ];
 
         cell.textLabel.lineBreakMode = NSLineBreakByTruncatingHead;
         cell.detailTextLabel.lineBreakMode = NSLineBreakByTruncatingHead ;
@@ -183,7 +212,8 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
 {
     if ( indexPath.section == 1 )
     {
-        if ( indexPath.row == [ _appDataObject.sitesManager sitesCount ] )
+        NSInteger sitesCount = [ self sitesCountForTableView ];
+        if ( indexPath.row == sitesCount )
         {
             sc_SiteAddViewController *siteAddViewController = (sc_SiteAddViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"AddSite"];
             [self.navigationController pushViewController:siteAddViewController animated:YES];
@@ -192,7 +222,7 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
         }
         else
         {
-            SCSite* siteAtIndex = [ _appDataObject.sitesManager siteAtIndex: indexPath.row ];
+            SCSite* siteAtIndex = [ self siteAtRow: indexPath.row ];
             [ _appDataObject.sitesManager setSiteForUpload: siteAtIndex error: nil ];
             [ self.sitesTableView reloadData ];
         }
@@ -202,7 +232,7 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
 
 -(void)accessoryTapped:(UIButton*)sender
 {
-    SCSite* siteAtIndex = [ _appDataObject.sitesManager siteAtIndex: sender.tag ];
+    SCSite* siteAtIndex = [ self siteAtRow: sender.tag ];
 
     sc_SiteAddViewController *siteEditViewController = (sc_SiteAddViewController*)[self.storyboard instantiateViewControllerWithIdentifier: @"AddSite"];
     [ siteEditViewController setSiteForEdit: siteAtIndex ];

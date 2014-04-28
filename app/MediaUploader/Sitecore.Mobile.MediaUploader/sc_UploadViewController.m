@@ -165,26 +165,28 @@
 }
 
 
--(void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary*)info
+-(void)imagePickerController:(UIImagePickerController*)picker
+didFinishPickingMediaWithInfo:(NSDictionary*)info
 {
     NSString* mediaType = [info objectForKey:UIImagePickerControllerMediaType];
     
     [self hideUploadForm: NO];
-    _uploadButton.enabled = NO;
+    self->_uploadButton.enabled = NO;
     
     // IMAGE
     if ([mediaType isEqualToString:(NSString*)kUTTypeImage])
     {
-        UIImage* image = [info objectForKey:UIImagePickerControllerOriginalImage];
-        [imageView setImage: image];
+        UIImage* image = [info objectForKey: UIImagePickerControllerOriginalImage];
+        [ imageView setImage: image ];
         
-        _uploadButton.enabled = YES;
+        self->_uploadButton.enabled = YES;
         
-        _videoUrl = nil;
+        self->_videoUrl = nil;
         
-        if (self->newMedia)
+        BOOL isNewMedia = self->newMedia;
+        if ( isNewMedia )
         {
-            _timeStamp = [NSDate date];
+            self->_timeStamp = [NSDate date];
             
             NSString* mediaType = [info objectForKey: UIImagePickerControllerMediaType];
             
@@ -192,7 +194,7 @@
             if (CFStringCompare ((CFStringRef) mediaType, kUTTypeImage, 0)== kCFCompareEqualTo)
             {
                 
-                UIImage* imageToSave = (UIImage*) [info objectForKey:UIImagePickerControllerOriginalImage];
+                UIImage* imageToSave = (UIImage*)[info objectForKey: UIImagePickerControllerOriginalImage];
                 
                 // Set the image metadata
                 UIImagePickerControllerSourceType pickerType = picker.sourceType;
@@ -209,11 +211,15 @@
                     
                     // Get the assets library
                     imageWriteCompletionBlock =
-                    ^(NSURL* newURL, NSError* error)
+                    ^void(NSURL* newURL, NSError* error)
                     {
-                        if (error)
+                        [ self dismissViewControllerAnimated: YES
+                                                  completion: nil ];
+                        
+                        if ( nil != error )
                         {
                             NSLog( @"Error writing image with metadata to Photo Library: %@", error );
+                            return;
                         }
                         else
                         {
@@ -235,15 +241,15 @@
                         };
                         
                         
-                        [library assetForURL: self->_imageUrl resultBlock:resultblock failureBlock:failureblock];
-                        
-                        [self dismissViewControllerAnimated:YES completion:nil];
+                        [ library assetForURL: self->_imageUrl
+                                  resultBlock: resultblock
+                                 failureBlock: failureblock ];
                     };
                     
                     // Save the new image to the Camera Roll
-                    [library writeImageToSavedPhotosAlbum:[imageToSave CGImage]
-                                                 metadata:imageMetadata
-                                          completionBlock:imageWriteCompletionBlock];
+                    [ library writeImageToSavedPhotosAlbum: [imageToSave CGImage]
+                                                  metadata: imageMetadata
+                                           completionBlock: imageWriteCompletionBlock ];
                     
                 }
             }
@@ -263,10 +269,6 @@
                     
                     //Get timestamp from asset
                     self->_timeStamp = [myasset valueForProperty:ALAssetPropertyDate];
-                    
-                    //Get location data from asset
-//                    CLLocation* location = [myasset valueForProperty:ALAssetPropertyLocation];
-//                    [ _locationManager setCurrentLocation: location ];
                     
                     CGImageRef iref = [myasset thumbnail];
                     if (iref)
@@ -294,7 +296,9 @@
         _videoUrl = [info objectForKey:UIImagePickerControllerMediaURL];
         NSString* moviePath = [_videoUrl path];
         
-        if (newMedia)
+        
+        BOOL isNewMedia = self->newMedia;
+        if ( isNewMedia )
         {
             if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum (moviePath))
             {
@@ -325,14 +329,14 @@
 
 -(void)image:(UIImage*)image finishedSavingWithError:(NSError*)error sessionInfo:(void*)sessionInfo
 {
-    if (error)
+    if ( nil != error)
     {
         UIAlertView* alert = [[UIAlertView alloc] initWithTitle: NSLocalizedString(@"Save failed", nil)
                                                         message: NSLocalizedString(@"Failed to save media item", nil)
                                                        delegate: nil
                                               cancelButtonTitle: NSLocalizedString(@"OK", nil)
                                               otherButtonTitles: nil];
-        [alert show];
+        [ alert show ];
     }
 }
 
@@ -354,16 +358,18 @@
 
 -(IBAction)save:(id)sender
 {
-    [self saveFileAsPending];
+    if ( [ self checkCameraAccessAndShowError ] )
+    {
+        [ self saveFileAsPending ];
+    }
 }
 
 -(MUMedia*)getMedia
 {
-    
     MULocationInfoData* locationInfo = [ MULocationInfoData new ];
     
-    locationInfo.latitude = [ NSNumber numberWithFloat: [ _locationManager getLatitude ] ];
-    locationInfo.longitude = [ NSNumber numberWithFloat: [ _locationManager getLongitude ] ];
+    locationInfo.latitude = [ NSNumber numberWithDouble: [ _locationManager getLatitude ] ];
+    locationInfo.longitude = [ NSNumber numberWithDouble: [ _locationManager getLongitude ] ];
     locationInfo.countryCode = [ _locationManager getCountryCode ];
     locationInfo.cityCode = [ _locationManager getCityCode ];
     locationInfo.locationDescription = _locationDescription.text;
@@ -380,11 +386,57 @@
     return media;
 }
 
--(void) prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
+
+
+-(BOOL)isCameraAccessGranted
+{
+    // Error handling is not done by @anb.
+    // Applying a workaround
+    return ( nil != self->_thumbnail );
+}
+
+-(void)showCameraRestrictedError
+{
+    NSString* message = NSLocalizedString( @"ERROR_CAMERA_ACCESS_DENIED", nil );
+    [ self showError: message ];
+}
+
+-(BOOL)checkCameraAccessAndShowError
+{
+    BOOL result = [ self isCameraAccessGranted ];
+    if ( !result )
+    {
+        [ self showCameraRestrictedError ];
+    }
+    
+    return result;
+}
+
+
+static NSString* const UPLOAD_HISTORY_VC_SEGUE = @"upload2";
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier
+                                 sender:(id)sender
+{
+    if ( ![ UPLOAD_HISTORY_VC_SEGUE isEqualToString: identifier ] )
+    {
+        return NO;
+    }
+    
+    if ( !self->_appDataObject.isOnline )
+    {
+        [ self saveFileAsPending ];
+        return NO;
+    }
+
+    return [ self checkCameraAccessAndShowError ];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue*)segue
+                sender:(id)sender
 {
     [ [self view] endEditing: YES ];
     
-    if ([segue.identifier isEqualToString:@"upload2"])
+    if ([segue.identifier isEqualToString: UPLOAD_HISTORY_VC_SEGUE])
     {
         [ self initializeActivityIndicator ];
         [ _activityIndicator showWithLabel: @"Preparing media" ];
@@ -418,7 +470,7 @@
     
     if ( media.siteForUploadingId == nil )
     {
-        [ sc_ErrorHelper showError:NSLocalizedString(@"Please set up at least one upload site.", nil) ];
+        [ sc_ErrorHelper showError: NSLocalizedString(@"Please set up at least one upload site.", nil) ];
         return;
     }
     
@@ -443,21 +495,6 @@
     
     media.name = [sc_Validator proposeValidItemName:media.name withDefault:[sc_ItemHelper generateItemName:validName]];
 }
-
--(BOOL)shouldPerformSegueWithIdentifier:(NSString*)identifier sender:(id)sender
-{
-    if ([identifier isEqualToString:@"upload2"])
-    {
-        if (!_appDataObject.isOnline)
-        {
-            [self saveFileAsPending];
-            
-            return NO;
-        }
-    }
-    return YES;
-}
-
 
 -(void)navigationController:(UINavigationController*) navigationController  willShowViewController:(UIViewController* ) viewController animated:(BOOL) animated
 {

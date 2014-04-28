@@ -25,7 +25,7 @@
 <key>kElseIfFormatRule</key>
 <integer>2</integer>
 <key>kRequireSpaceAboveBreak</key>
-<false/>
+<true/>
 <key>kInterfaceColonSpacingRule</key>
 <integer>1</integer>
 <key>kRequireSpaceAfterCommas</key>
