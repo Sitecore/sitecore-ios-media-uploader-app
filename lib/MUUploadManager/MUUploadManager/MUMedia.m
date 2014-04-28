@@ -20,7 +20,6 @@
 -(instancetype)initWithObjectData:(NSString*)name
                          dateTime:(NSDate*)dateTime
                          locationInfo:(id<MULocationInfo>)locationInfo
-                         cityCode:(NSString*)cityCode
                          videoUrl:(NSURL*)videoUrl
                          imageUrl:(NSURL*)imageUrl
                         thumbnail:(UIImage*)thumbnail
