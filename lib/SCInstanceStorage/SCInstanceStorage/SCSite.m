@@ -47,19 +47,19 @@
     return result;
 }
 
--(id)init
+-(instancetype)init __attribute__((noreturn))
 {
     [ self doesNotRecognizeSelector: _cmd ];
     return nil;
 }
 
--(id)initWithSiteUrl:(NSString*)siteUrl
-                site:(NSString*)site
+-(instancetype)initWithSiteUrl:(NSString*)siteUrl
+                          site:(NSString*)site
 uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
-            username:(NSString*)username
-            password:(NSString*)password
-   selectedForBrowse:(BOOL)selectedForBrowse
-   selectedForUpload:(BOOL)selectedForUpload
+                      username:(NSString*)username
+                      password:(NSString*)password
+             selectedForBrowse:(BOOL)selectedForBrowse
+             selectedForUpload:(BOOL)selectedForUpload
 {
     NSAssert(siteUrl, @"siteUrl must exist");
     NSAssert(site, @"site must exist");
