@@ -30,8 +30,8 @@
         return 1.f;
     }
     
-    CGFloat targetWidth = MAX(resultSize.width, resultSize.height);
-	CGFloat targetHeight = MIN(resultSize.width, resultSize.height);
+    CGFloat targetWidth  = std::max(resultSize.width, resultSize.height);
+	CGFloat targetHeight = std::min(resultSize.width, resultSize.height);
     
     if ( originalSize.width < originalSize.height )
     {
@@ -53,7 +53,7 @@
     CGFloat widthFactor = targetWidth / width;
     CGFloat heightFactor = targetHeight / height;
     
-    scaleFactor = MIN(widthFactor, heightFactor);
+    scaleFactor = std::min(widthFactor, heightFactor);
     
     return scaleFactor;
 }
