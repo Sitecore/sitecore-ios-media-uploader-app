@@ -15,9 +15,9 @@ typedef NS_ENUM(NSInteger, MUFilteringOptions)
 
 -(void)addMediaUpload:(MUMedia* )media;
 -(MUMedia*)mediaUploadAtIndex:(NSInteger)index;
--(void)removeTmpVideoFileFromMediaItem:(MUMedia*)media error:(NSError**)error;
--(void)removeMediaUpload:(MUMedia*)media error:(NSError**)error;
--(void)removeMediaUploadAtIndex:(NSInteger)index error:(NSError**)error;
+-(BOOL)removeTmpVideoFileFromMediaItem:(MUMedia*)media error:(NSError**)error;
+-(BOOL)removeMediaUpload:(MUMedia*)media error:(NSError**)error;
+-(BOOL)removeMediaUploadAtIndex:(NSInteger)index error:(NSError**)error;
 
 //filtering
 -(void)setFilterOption:(MUFilteringOptions)option;

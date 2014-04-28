@@ -11,6 +11,7 @@
 #endif
 
 #ifdef __cplusplus
+    #include <stdexcept>
     #include <algorithm>
 #endif
 
