@@ -14,6 +14,8 @@
 @property ( nonatomic, readonly ) NSString* siteProtocol;
 @property ( nonatomic, readonly ) NSString* siteUrl;
 @property ( nonatomic, readonly ) NSString* site;
+@property ( nonatomic, readonly ) NSString* uploadFolderPathInsideMediaLibrary;
+
 @property ( nonatomic, readonly ) NSString* siteId;
 
 @property ( nonatomic, readonly ) NSString* username;
@@ -52,8 +54,5 @@ uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
 +(NSString*)siteDefaultValue;
 +(NSString*)mediaLibraryDefaultPath;
 +(NSString*)mediaLibraryDefaultNameWithSlash:(BOOL)withSlash;
-
--(NSString*)uploadFolderPathInsideMediaLibrary;
--(void)setUploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary;
 
 @end

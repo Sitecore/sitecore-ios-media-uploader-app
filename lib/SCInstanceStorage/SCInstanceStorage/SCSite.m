@@ -10,9 +10,11 @@
 @property ( nonatomic, readwrite ) NSString* siteProtocol;
 @property ( nonatomic, readwrite ) NSString* siteUrl;
 @property ( nonatomic, readwrite ) NSString* site;
+@property ( nonatomic, readwrite ) NSString* siteId;
 
 @property ( nonatomic, readwrite ) NSString* username;
 @property ( nonatomic, readwrite ) NSString* password;
+@property ( nonatomic, readwrite ) NSString* uploadFolderPathInsideMediaLibrary;
 
 @end
 
@@ -20,9 +22,9 @@
 {
     NSString* _siteStorage;
     NSString* _urlStrorage;
-    
-    NSString* _uploadFolderPathInsideMediaLibrary;
 }
+
+@synthesize uploadFolderPathInsideMediaLibrary = _uploadFolderPathInsideMediaLibrary;
 
 +(NSString*)siteDefaultValue
 {
@@ -183,12 +185,47 @@ uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
         return YES;
     }
     
-    return (
-               [self.siteUrl                            isEqualToString: object.siteUrl]
-            && [self.site                               isEqualToString: object.site]
-            && [self.uploadFolderPathInsideMediaLibrary isEqualToString: object.uploadFolderPathInsideMediaLibrary]
-            );
+    
+    NSParameterAssert( nil != self.siteUrl   );
+    NSParameterAssert( nil != object.siteUrl );
 
+    NSComparisonResult compareSiteUrl = [ self.siteUrl compare: object.siteUrl
+                                                       options: NSCaseInsensitiveSearch ];
+    BOOL instanceMarches = ( NSOrderedSame == compareSiteUrl );
+    
+    
+    
+    BOOL siteMatches = NO;
+    if ( nil == self.site && nil == object.site )
+    {
+        siteMatches = YES;
+    }
+    else
+    {
+        NSComparisonResult compareSitecoreSite = [ self.site compare: object.site
+                                                             options: NSCaseInsensitiveSearch ];
+        siteMatches = ( NSOrderedSame == compareSitecoreSite );
+    }
+    
+    
+
+    NSString* myMediaPath = self.uploadFolderPathInsideMediaLibrary;
+    NSString* otherMediaPath = object.uploadFolderPathInsideMediaLibrary;
+
+    NSParameterAssert( nil != myMediaPath    );
+    NSParameterAssert( nil != otherMediaPath );
+    NSComparisonResult compareMediaPath = [ myMediaPath compare: otherMediaPath
+                                                        options: NSCaseInsensitiveSearch ];
+    BOOL mediaPathMarches = ( NSOrderedSame == compareMediaPath );
+
+    
+    
+    BOOL result =
+        instanceMarches
+        && siteMatches
+        && mediaPathMarches;
+    
+    return result;
 }
 
 -(NSUInteger)hash
@@ -216,7 +253,14 @@ uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
 -(void)setUploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
 {
     NSString* mediaLibraryPath = [ [ self class ] mediaLibraryDefaultPath ];
-    if ( [ uploadFolderPathInsideMediaLibrary hasPrefix: mediaLibraryPath ] )
+    
+    
+    NSLocale* posixLocale = [ [ NSLocale alloc ] initWithLocaleIdentifier: @"en_US_POSIX" ];
+    NSString* capitalizedMediaLibraryPath = [ mediaLibraryPath uppercaseStringWithLocale: posixLocale ];
+    NSString* capitalizedUploadFolder = [ uploadFolderPathInsideMediaLibrary uppercaseStringWithLocale: posixLocale ];
+    
+    
+    if ( [ capitalizedUploadFolder hasPrefix: capitalizedMediaLibraryPath ] )
     {
         NSUInteger symbolsCountToTruncate = [ mediaLibraryPath length ] + 1;
         
