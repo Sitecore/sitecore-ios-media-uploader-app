@@ -29,9 +29,26 @@
 @synthesize sitesTableView = _sitesTableView;
 @synthesize appDataObject = _appDataObject;
 
+-(SCSitesManager*)sitesManager
+{
+    return self->_appDataObject.sitesManager;
+}
+
+-(NSInteger)sitesCountForTableView
+{
+    NSUInteger result =  [ self.sitesManager sitesCount ];
+    return static_cast<NSInteger>( result );
+}
+
+-(SCSite*)siteAtRow:(NSInteger)row
+{
+    NSUInteger siteIndex = static_cast<NSUInteger>( row );
+    return [ [ self sitesManager ] siteAtIndex: siteIndex ];
+}
+
 -(NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [ _appDataObject.sitesManager sitesCount ];
+    return [ self sitesCountForTableView ];
 }
 
 -(void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
@@ -53,8 +70,8 @@
         }
     }
 
-    _selectedIndex = indexPath;
-    _selectedSite = [ _appDataObject.sitesManager siteAtIndex: indexPath.row ];
+    self->_selectedIndex = indexPath;
+    self->_selectedSite = [ self siteAtRow: indexPath.row ];
     
     [self closeView];
 }
@@ -65,7 +82,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 
-    SCSite* currentSite = [_appDataObject.sitesManager siteAtIndex:indexPath.row];
+    SCSite* currentSite = [ self siteAtRow: indexPath.row ];
     [ [cell textLabel] setText: currentSite.siteUrl ];
     cell.detailTextLabel.text = [sc_ItemHelper formatUploadFolder: currentSite];
     

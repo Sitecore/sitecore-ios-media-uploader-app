@@ -23,10 +23,14 @@
 
 -(void)scrollViewDidScroll:(UIScrollView*)scrollView
 {
-    int currentCell = (int) ( scrollView.contentOffset.x / scrollView.frame.size.width + 0.5 );
-
-    BOOL itemExists = ( currentCell < [ _items count ]  );
+    NSUInteger currentCell = 0;
+    CGFloat rawCurrentCellNumber = scrollView.contentOffset.x / scrollView.frame.size.width + 0.5;
+    if ( rawCurrentCellNumber >= 0 )
+    {
+        currentCell = static_cast<NSUInteger>( rawCurrentCellNumber );
+    }
     
+    BOOL itemExists = ( currentCell < [ self->_items count ]  );
     NSLog(@"%d", currentCell);
     
     if ( itemExists )
@@ -35,23 +39,26 @@
     }
 }
 
--(void)setNavBarTitleForIndex:(int)index
+-(void)setNavBarTitleForIndex:(NSUInteger)index
 {
-    self.navigationItem.title = ( (SCItem*)[ _items objectAtIndex: index ] ).displayName;
+    SCItem* item = [ self->_items objectAtIndex: index ];
+    self.navigationItem.title = item.displayName;
 }
 
 -(NSInteger)collectionView:(UICollectionView*)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return _items.count;
+    return static_cast<NSInteger>( [ self->_items count ] );
 }
 
 -(void)viewDidLayoutSubviews
 {
-    [ self setNavBarTitleForIndex: _selectedImage ];
+    [ self setNavBarTitleForIndex: self->_selectedImage ];
     
     [ super viewDidLayoutSubviews ];
     
-    NSIndexPath *indexPath = [ NSIndexPath indexPathForRow: _selectedImage inSection: 0 ];
+    NSInteger selectedRow = static_cast<NSInteger>( self->_selectedImage );
+    NSIndexPath *indexPath = [ NSIndexPath indexPathForRow: selectedRow
+                                                 inSection: 0 ];
     
     [ self.collectionView scrollToItemAtIndexPath: indexPath
                                  atScrollPosition: UICollectionViewScrollPositionCenteredHorizontally
@@ -64,7 +71,8 @@
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)collectionView cellForItemAtIndexPath:(NSIndexPath*)indexPath
 {
-    SCItem*  cellObject = [ _items objectAtIndex: indexPath.row ];
+    NSUInteger selectedCellIndex = static_cast<NSUInteger>( indexPath.row );
+    SCItem*  cellObject = [ self->_items objectAtIndex: selectedCellIndex ];
     
     static NSString* identifier = @"Cell";
     UICollectionViewCell *cell = [ collectionView dequeueReusableCellWithReuseIdentifier: identifier

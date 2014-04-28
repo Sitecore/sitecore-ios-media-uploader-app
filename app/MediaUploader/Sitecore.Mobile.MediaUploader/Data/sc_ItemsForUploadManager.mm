@@ -46,7 +46,9 @@
 
 -(void)removeMediaUploadAtIndex:(NSInteger)index
 {
-    sc_Media* media = self->_mediaUpload[index];
+    NSUInteger castedIndex = static_cast<NSUInteger>(index);
+
+    sc_Media* media = self->_mediaUpload[castedIndex];
     [ self removeMediaUpload: media ];
 }
 

@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "sc_Media.h"
 
-enum
+typedef NS_ENUM( NSInteger, MUUploadRecordStatus )
 {
     MEDIASTATUS_UNDEFINED = 0,
     MEDIASTATUS_PENDING,

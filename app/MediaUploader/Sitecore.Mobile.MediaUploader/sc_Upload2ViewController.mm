@@ -45,7 +45,7 @@ typedef NS_ENUM(NSInteger, ItemsFilterMode)
 @implementation sc_Upload2ViewController
 {
     SCCancelAsyncOperation _currentCancelOp;
-    NSInteger _uploadItemIndex;
+    NSUInteger _uploadItemIndex;
     sc_UploadItemManager *_statusManager;
     BOOL _uploadingInterrupted;
     
@@ -88,7 +88,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     
     NSInteger mediaItemsCount = static_cast<NSInteger>( [ self.mediaItems count ] );
     
-    for ( NSInteger index = 0; index < mediaItemsCount; ++index )
+    for ( NSUInteger index = 0; index != mediaItemsCount; ++index )
     {
         currentNumber = @(index);
         sc_UploadItemStatus *status = [ self->_statusManager statusForItemAtNumber: currentNumber ];
@@ -210,12 +210,20 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 
 -(NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return  self->_filteredItems.count;
+    return  static_cast<NSInteger>( self->_filteredItems.count );
+}
+
+-(sc_Media*)filteredUploadRecordForRow:( NSInteger )row
+{
+    NSUInteger recordIndex = static_cast<NSUInteger>( row );
+    sc_Media* result = self->_filteredItems[recordIndex];
+
+    return result;
 }
 
 -(sc_UploadItemStatus*)statusForItemForCurrentIndexPath:(NSIndexPath*)indexPath
 {
-    sc_Media* media = self->_filteredItems[ indexPath.row ];
+    sc_Media* media = [ self filteredUploadRecordForRow: indexPath.row ];
     
     NSNumber* itemNumber = @([ self->_mediaItems indexOfObject: media ]);
     
@@ -228,7 +236,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     
     sc_UploadItemStatus *status = [ self statusForItemForCurrentIndexPath: indexPath ];
     
-    sc_Media* media = self->_filteredItems[ indexPath.row ];
+    sc_Media* media = [ self filteredUploadRecordForRow: indexPath.row ];
     
     if ( status.statusId == inProgressStatus && self->_uploadingInterrupted  )
     {
@@ -269,7 +277,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
         return;
     }
     
-    if ( !_uploadingInterrupted )
+    if ( !self->_uploadingInterrupted )
     {
         sc_Media* media = _mediaItems[self->_uploadItemIndex];
         ++self->_uploadItemIndex;
