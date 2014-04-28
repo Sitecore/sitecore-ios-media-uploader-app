@@ -84,14 +84,14 @@
     [_locationManager stopUpdatingLocation];
 }
 
--(CGFloat)getLatitude
+-(CLLocationDegrees)getLatitude
 {
-    return _currentLocation.coordinate.latitude;
+    return self->_currentLocation.coordinate.latitude;
 }
 
--(CGFloat)getLongitude
+-(CLLocationDegrees)getLongitude
 {
-    return _currentLocation.coordinate.longitude;
+    return self->_currentLocation.coordinate.longitude;
 }
 
 -(void)locationManager:(CLLocationManager*)manager didUpdateToLocation:(CLLocation*)newLocation fromLocation:(CLLocation*)oldLocation
@@ -105,8 +105,8 @@
     CLLocationDegrees exifLatitude  = _currentLocation.coordinate.latitude;
     CLLocationDegrees exifLongitude = _currentLocation.coordinate.longitude;
     
-    NSString*  latRef;
-    NSString*  longRef;
+    NSString*  latRef  = nil;
+    NSString*  longRef = nil;
     if (exifLatitude < 0.0)
     {
         exifLatitude = exifLatitude * -1.0f;
@@ -127,17 +127,32 @@
         longRef = @"E";
     }
     
-    NSMutableDictionary* locDict = [[NSMutableDictionary alloc] init];
     
-    [locDict setObject:[NSDate date] forKey:(NSString*)kCGImagePropertyGPSTimeStamp];
-    [locDict setObject:latRef forKey:(NSString*)kCGImagePropertyGPSLatitudeRef];
-    [locDict setObject:[NSNumber numberWithFloat:exifLatitude] forKey:(NSString*)kCGImagePropertyGPSLatitude];
-    [locDict setObject:longRef forKey:(NSString*)kCGImagePropertyGPSLongitudeRef];
-    [locDict setObject:[NSNumber numberWithFloat:exifLongitude] forKey:(NSString*)kCGImagePropertyGPSLongitude];
-    [locDict setObject:[NSNumber numberWithFloat:_currentLocation.horizontalAccuracy] forKey:(NSString*)kCGImagePropertyGPSDOP];
-    [locDict setObject:[NSNumber numberWithFloat:_currentLocation.altitude] forKey:(NSString*)kCGImagePropertyGPSAltitude];
+    NSDate* nowDate = [ self nowDate ];
+    NSNumber* exifLatitudeNumber  = [ NSNumber numberWithDouble: exifLatitude  ];
+    NSNumber* exifLongitudeNumber = [ NSNumber numberWithDouble: exifLongitude ];
+    
+    NSNumber* horizontalAccuracy = [NSNumber numberWithDouble: self->_currentLocation.horizontalAccuracy];
+    NSNumber* altitude = [NSNumber numberWithDouble:_currentLocation.altitude];
+    
+    NSDictionary* locDict =
+    @{
+      (NSString*)kCGImagePropertyGPSTimeStamp    : nowDate            ,
+      (NSString*)kCGImagePropertyGPSLatitudeRef  : latRef             ,
+      (NSString*)kCGImagePropertyGPSLongitudeRef : longRef            ,
+      (NSString*)kCGImagePropertyGPSLatitude     : exifLatitudeNumber ,
+      (NSString*)kCGImagePropertyGPSLongitude    : exifLongitudeNumber,
+      (NSString*)kCGImagePropertyGPSDOP          : horizontalAccuracy ,
+      (NSString*)kCGImagePropertyGPSAltitude     : altitude
+    };
     
     return locDict;
+}
+
+// @ADK : can be used for mocking
+-(NSDate*)nowDate
+{
+    return [ NSDate date ];
 }
 
 +(NSString*)getLocationDescriptionForPlacemark:(CLPlacemark*)placemark

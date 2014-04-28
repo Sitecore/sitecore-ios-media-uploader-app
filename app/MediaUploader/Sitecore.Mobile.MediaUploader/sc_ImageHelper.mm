@@ -8,9 +8,14 @@
 
 #import "sc_ImageHelper.h"
 #import "sc_Constants.h"
-#import <AVFoundation/AVAssetImageGenerator.h>
-#import <AVFoundation/AVAsset.h>
+
 #import "sc_ImageScaling.h"
+
+
+static const CGFloat F_M_PI             = static_cast<CGFloat>( M_PI   );
+static const CGFloat F_M_PI_DIV_2       = static_cast<CGFloat>( M_PI_2 );
+static const CGFloat F_MINUS_M_PI_DIV_2 = -F_M_PI_DIV_2                 ;
+
 
 @implementation sc_ImageHelper
 
@@ -103,19 +108,19 @@
         case UIImageOrientationDown: //1
         case UIImageOrientationDownMirrored:
             transform = CGAffineTransformTranslate(transform, image.size.width, image.size.height);
-            transform = CGAffineTransformRotate(transform, M_PI);
+            transform = CGAffineTransformRotate(transform, F_M_PI);
             break;
             
         case UIImageOrientationLeft: // 2
         case UIImageOrientationLeftMirrored:
             transform = CGAffineTransformTranslate(transform, image.size.height, 0);
-            transform = CGAffineTransformRotate(transform, M_PI_2);
+            transform = CGAffineTransformRotate(transform, F_M_PI_DIV_2);
             break;
             
         case UIImageOrientationRight:// 3
         case UIImageOrientationRightMirrored:
             transform = CGAffineTransformTranslate(transform, 0, image.size.width);
-            transform = CGAffineTransformRotate(transform, -M_PI_2);
+            transform = CGAffineTransformRotate(transform, F_MINUS_M_PI_DIV_2);
             break;
             
         case UIImageOrientationUp: // 0
@@ -124,26 +129,40 @@
     }
     
     CGContextRef ctx;
+
+    size_t imageWidth  = static_cast<size_t>( ::lround( image.size.width ) );
+    size_t imageHeight = static_cast<size_t>( ::lround( image.size.height ) );
+    
+    size_t contextWidth  = 0;
+    size_t contextHeigth = 0;
+    
     switch (orientation)
     {
         case UIImageOrientationRight:
         case UIImageOrientationLeft:
         case UIImageOrientationRightMirrored:
         case UIImageOrientationLeftMirrored:
+        {
+            contextWidth  = imageHeight;
+            contextHeigth = imageWidth ;
             
-            ctx = CGBitmapContextCreate(NULL, image.size.height, image.size.width,
-                                        CGImageGetBitsPerComponent(image.CGImage), 0,
-                                        CGImageGetColorSpace(image.CGImage),
-                                        CGImageGetBitmapInfo(image.CGImage));
             break;
+        }
             
         default:
-            ctx = CGBitmapContextCreate(NULL, image.size.width, image.size.height,
-                                        CGImageGetBitsPerComponent(image.CGImage), 0,
-                                        CGImageGetColorSpace(image.CGImage),
-                                        CGImageGetBitmapInfo(image.CGImage));
+        {
+            contextWidth  = imageWidth ;
+            contextHeigth = imageHeight;
+            
             break;
+        }
     }
+    
+    ctx = CGBitmapContextCreate(NULL, contextWidth, contextHeigth,
+                                CGImageGetBitsPerComponent(image.CGImage), 0,
+                                CGImageGetColorSpace(image.CGImage),
+                                CGImageGetBitmapInfo(image.CGImage));
+
     
     CGContextConcatCTM(ctx, transform);
     CGContextDrawImage(ctx, CGRectMake(0,0,image.size.width,image.size.height), image.CGImage);

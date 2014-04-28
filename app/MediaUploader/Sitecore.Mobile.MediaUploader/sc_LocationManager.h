@@ -13,7 +13,7 @@
 
 -(NSString*)getCountryCode;
 -(NSString*)getCityCode;
--(CGFloat)getLatitude;
--(CGFloat)getLongitude;
+-(CLLocationDegrees)getLatitude;
+-(CLLocationDegrees)getLongitude;
 
 @end

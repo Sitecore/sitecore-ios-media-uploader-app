@@ -370,8 +370,8 @@ didFinishPickingMediaWithInfo:(NSDictionary*)info
 
 -(sc_Media*)getMedia
 {
-    NSNumber* latitude = [ NSNumber numberWithFloat: [ _locationManager getLatitude ] ];
-    NSNumber* longitude = [ NSNumber numberWithFloat: [ _locationManager getLongitude ] ];
+    NSNumber* latitude = [ NSNumber numberWithDouble: [ _locationManager getLatitude ] ];
+    NSNumber* longitude = [ NSNumber numberWithDouble: [ _locationManager getLongitude ] ];
     NSString* countryCode = [ _locationManager getCountryCode ];
     NSString* cityCode = [ _locationManager getCityCode ];
     

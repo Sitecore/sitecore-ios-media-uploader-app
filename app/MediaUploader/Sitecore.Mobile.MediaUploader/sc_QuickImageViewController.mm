@@ -24,7 +24,7 @@
 -(void)scrollViewDidScroll:(UIScrollView*)scrollView
 {
     NSUInteger currentCell = 0;
-    CGFloat rawCurrentCellNumber = scrollView.contentOffset.x / scrollView.frame.size.width + 0.5;
+    CGFloat rawCurrentCellNumber = scrollView.contentOffset.x / scrollView.frame.size.width + 0.5f;
     if ( rawCurrentCellNumber >= 0 )
     {
         currentCell = static_cast<NSUInteger>( rawCurrentCellNumber );
@@ -82,8 +82,8 @@
     [ imageView setImage: NULL ];
     
     SCDownloadMediaOptions *params = [ SCDownloadMediaOptions new ];
-    params.width = cell.frame.size.width;
-    params.height = cell.frame.size.height;
+    params.width = static_cast<float>( cell.frame.size.width );
+    params.height = static_cast<float>( cell.frame.size.height );
     params.database = [ sc_ItemHelper getDefaultDatabase ];
     //TODO: @igk fix hardcode
     params.backgroundColor = @"white";
