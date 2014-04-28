@@ -86,7 +86,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     
     NSNumber* currentNumber = nil;
     
-    NSInteger mediaItemsCount = static_cast<NSInteger>( [ self.mediaItems count ] );
+    NSUInteger mediaItemsCount = [ self.mediaItems count ];
     
     for ( NSUInteger index = 0; index != mediaItemsCount; ++index )
     {

@@ -43,6 +43,11 @@
     return [ [ self sitesManager ] siteAtIndex: siteIndex ];
 }
 
+-(NSInteger)sitesCountForTableView
+{
+    NSUInteger result = [ [ self sitesManager ] sitesCount ];
+    return static_cast<NSInteger>(result);
+}
 
 -(void)reload
 {
@@ -146,8 +151,9 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
     
     if (indexPath.section == 1)
     {
+        NSInteger sitesCount = [ self sitesCountForTableView ];
         
-        if (indexPath.row == [_appDataObject.sitesManager sitesCount])
+        if (indexPath.row == sitesCount)
         {
             UITableViewCell *  cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"AddNewSite"];
             cell.imageView.image = [UIImage imageNamed:@"empty_small.png"];
@@ -208,7 +214,8 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
 {
     if ( indexPath.section == 1 )
     {
-        if ( indexPath.row == [ _appDataObject.sitesManager sitesCount ] )
+        NSInteger sitesCount = [ self sitesCountForTableView ];
+        if ( indexPath.row == sitesCount )
         {
             sc_SiteAddViewController *siteAddViewController = (sc_SiteAddViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"AddSite"];
             [self.navigationController pushViewController:siteAddViewController animated:YES];
