@@ -359,21 +359,21 @@
 
 -(MUMedia*)getMedia
 {
-    NSNumber* latitude = [ NSNumber numberWithFloat: [ _locationManager getLatitude ] ];
-    NSNumber* longitude = [ NSNumber numberWithFloat: [ _locationManager getLongitude ] ];
-    NSString* countryCode = [ _locationManager getCountryCode ];
-    NSString* cityCode = [ _locationManager getCityCode ];
+    
+    MULocationInfoData* locationInfo = [ MULocationInfoData new ];
+    
+    locationInfo.latitude = [ NSNumber numberWithFloat: [ _locationManager getLatitude ] ];
+    locationInfo.longitude = [ NSNumber numberWithFloat: [ _locationManager getLongitude ] ];
+    locationInfo.countryCode = [ _locationManager getCountryCode ];
+    locationInfo.cityCode = [ _locationManager getCityCode ];
+    locationInfo.locationDescription = _locationDescription.text;
     
     MUMedia* media = [ [MUMedia alloc] initWithObjectData: _name.text
-                                                   dateTime: _timeStamp
-                                                   latitude: latitude
-                                                  longitude: longitude
-                                        locationDescription: _locationDescription.text
-                                                countryCode: countryCode
-                                                   cityCode: cityCode
-                                                   videoUrl: _videoUrl
-                                                   imageUrl: _imageUrl
-                                                  thumbnail: _thumbnail ];
+                                                 dateTime: _timeStamp
+                                             locationInfo: locationInfo
+                                                 videoUrl: _videoUrl
+                                                 imageUrl: _imageUrl
+                                                thumbnail: _thumbnail ];
     
     media.siteForUploadingId = [self.appDataObject.sitesManager siteForUpload].siteId;
     
