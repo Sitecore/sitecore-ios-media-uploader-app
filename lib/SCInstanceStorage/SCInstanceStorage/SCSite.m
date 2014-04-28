@@ -17,14 +17,6 @@
     NSString* _uploadFolderPathInsideMediaLibrary;
 }
 
--(id)copy
-{
-    //FIXME: @igk legacy
-    NSLog(@"!!!!! SITE MUST NOT BE COPIED, LEGACY MANAGEMENT BUG");
-    [ self doesNotRecognizeSelector: _cmd ];
-    return nil;
-}
-
 +(NSString*)siteDefaultValue
 {
     return @"/sitecore/shell";
