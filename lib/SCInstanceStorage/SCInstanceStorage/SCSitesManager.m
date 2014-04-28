@@ -140,7 +140,7 @@
 
 -(BOOL)saveSiteChanges:(SCSite*)site error:(NSError**)error
 {
-    SCSite* siteForEdit = [ self siteBySiteId:site.siteId ];
+    SCSite* siteForEdit = [ self siteBySiteId: site.siteId ];
     
     siteForEdit.siteProtocol                        = site.siteProtocol;
     siteForEdit.siteUrl                             = site.siteUrl;
@@ -150,6 +150,7 @@
     siteForEdit.password                            = site.password;
     siteForEdit.selectedForBrowse                   = site.selectedForBrowse;
     siteForEdit.selectedForUpload                   = site.selectedForUpload;
+
     return [ self saveSites ];
 }
 

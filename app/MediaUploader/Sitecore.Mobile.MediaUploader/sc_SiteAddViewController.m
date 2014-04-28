@@ -127,9 +127,15 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     
     BOOL isOperationSuccessfull = NO;
     NSError* error = nil;
-    if ( _editModeEnabled )
+
+    
+    BOOL isEditModeEnabled = self->_editModeEnabled;
+    if ( isEditModeEnabled )
     {
-        [ self->_appDataObject.sitesManager saveSiteChanges:self->_siteForEdit error: nil ];
+        [ self->_appDataObject.sitesManager saveSiteChanges: self->_siteForEdit
+                                                      error: &error ];
+        
+        NSParameterAssert( nil == error );
         isOperationSuccessfull = YES;
     }
     else
@@ -251,7 +257,7 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
             
 
 
-            id rawSiteEditViewController = [self.storyboard instantiateViewControllerWithIdentifier: @"ListItemsBrowser" ];
+            id rawSiteEditViewController = [ self.storyboard instantiateViewControllerWithIdentifier: @"ListItemsBrowser" ];
             sc_ListBrowserViewController* siteEditViewController = (sc_ListBrowserViewController*)rawSiteEditViewController;
             
             SCUPloadFolderReceived didSelectUploadFolderCallback = ^void(NSString* folder)
