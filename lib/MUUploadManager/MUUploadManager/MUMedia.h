@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MUUploadManager/MUConstants.h>
 #import <MUUploadManager/MUUploadItemStatus.h>
+#import <MUUploadManager/MULocationInfo.h>
 
 @class UIImage;
 
@@ -18,11 +19,7 @@
 @property (nonatomic) NSString* name;
 @property (nonatomic) NSString* description;
 @property (nonatomic) NSDate*   dateTime;
-@property (nonatomic) NSNumber* latitude;
-@property (nonatomic) NSNumber* longitude;
-@property (nonatomic) NSString* locationDescription;
-@property (nonatomic) NSString* countryCode;
-@property (nonatomic) NSString* cityCode;
+@property (nonatomic) id<MULocationInfo> locationInfo;
 @property (nonatomic) NSURL*    videoUrl;
 @property (nonatomic) NSURL*    imageUrl;
 @property (nonatomic) NSString* siteForUploadingId;
@@ -31,11 +28,7 @@
 
 -(instancetype)initWithObjectData:(NSString*)name
                          dateTime:(NSDate*)dateTime
-                         latitude:(NSNumber*)latitude
-                        longitude:(NSNumber*)longitude
-              locationDescription:(NSString*)locationDescription
-                      countryCode:(NSString*)countryCode
-                         cityCode:(NSString*)cityCode
+                     locationInfo:(id<MULocationInfo>)locationInfo
                          videoUrl:(NSURL*)videoUrl
                          imageUrl:(NSURL*)imageUrl
                         thumbnail:(UIImage*)thumbnail;

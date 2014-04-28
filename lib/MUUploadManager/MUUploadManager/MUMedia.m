@@ -19,10 +19,7 @@
 
 -(instancetype)initWithObjectData:(NSString*)name
                          dateTime:(NSDate*)dateTime
-                         latitude:(NSNumber*)latitude
-                        longitude:(NSNumber*)longitude
-              locationDescription:(NSString*)locationDescription
-                      countryCode:(NSString*)countryCode
+                         locationInfo:(id<MULocationInfo>)locationInfo
                          cityCode:(NSString*)cityCode
                          videoUrl:(NSURL*)videoUrl
                          imageUrl:(NSURL*)imageUrl
@@ -31,16 +28,12 @@
     self = [super init];
     if (self)
     {
-        _name = name;
-        _dateTime = dateTime;
-        _latitude = latitude;
-        _longitude = longitude;
-        _locationDescription = locationDescription;
-        _countryCode = countryCode;
-        _cityCode = cityCode;
-        _videoUrl = videoUrl;
-        _imageUrl = imageUrl;
-        _thumbnail = thumbnail;
+        self->_name = name;
+        self->_dateTime = dateTime;
+        self->_locationInfo = locationInfo;
+        self->_videoUrl = videoUrl;
+        self->_imageUrl = imageUrl;
+        self->_thumbnail = thumbnail;
       }
     
     return self;
@@ -50,11 +43,6 @@
 {
     [encoder encodeObject:  _name                forKey: @"name"                ];
     [encoder encodeObject:  _dateTime            forKey: @"dateTime"            ];
-    [encoder encodeObject:  _latitude            forKey: @"latitude"            ];
-    [encoder encodeObject:  _longitude           forKey: @"longitude"           ];
-    [encoder encodeObject:  _locationDescription forKey: @"locationDescription" ];
-    [encoder encodeObject:  _countryCode         forKey: @"countryCode"         ];
-    [encoder encodeObject:  _cityCode            forKey: @"cityCode"            ];
     [encoder encodeObject:  _videoUrl            forKey: @"videoUrl"            ];
     [encoder encodeObject:  _imageUrl            forKey: @"imageUrl"            ];
     [encoder encodeObject:  _thumbnail           forKey: @"thumbnail"           ];
@@ -68,11 +56,6 @@
     {
         self.name                = [decoder decodeObjectForKey:  @"name"                ];
         self.dateTime            = [decoder decodeObjectForKey:  @"dateTime"            ];
-        self.latitude            = [decoder decodeObjectForKey:  @"latitude"            ];
-        self.longitude           = [decoder decodeObjectForKey:  @"longitude"           ];
-        self.locationDescription = [decoder decodeObjectForKey:  @"locationDescription" ];
-        self.countryCode         = [decoder decodeObjectForKey:  @"countryCode"         ];
-        self.cityCode            = [decoder decodeObjectForKey:  @"cityCode"            ];
         self.videoUrl            = [decoder decodeObjectForKey:  @"videoUrl"            ];
         self.imageUrl            = [decoder decodeObjectForKey:  @"imageUrl"            ];
         self.thumbnail           = [decoder decodeObjectForKey:  @"thumbnail"           ];
