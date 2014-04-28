@@ -6,14 +6,13 @@
 //  Copyright (c) 2013 Sitecore. All rights reserved.
 //
 
-#import <ImageIO/CGImageProperties.h>
-#import <AssetsLibrary/AssetsLibrary.h>
+
 #import "sc_GlobalDataObject.h"
 #import "sc_AppDelegateProtocol.h"
 #import "sc_UploadViewController.h"
 #import "sc_Upload2ViewController.h"
 #import "sc_SitesSelectionViewController.h"
-#import <MediaPlayer/MediaPlayer.h>
+
 #import "sc_GradientButton.h"
 #import "sc_ActivityIndicator.h"
 #import "sc_Validator.h"
@@ -21,7 +20,6 @@
 #import "sc_BaseTheme.h"
 #import "sc_LocationManager.h"
 
-#import <AddressBook/AddressBook.h>
 
 @interface sc_UploadViewController ()
 
