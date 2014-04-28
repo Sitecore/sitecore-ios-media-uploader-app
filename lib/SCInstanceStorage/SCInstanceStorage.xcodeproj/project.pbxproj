@@ -27,6 +27,7 @@
 		7E5F15D1190E9925002B1854 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5F15D0190E9925002B1854 /* libxml2.dylib */; };
 		7E5F15D3190E9929002B1854 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5F15D2190E9929002B1854 /* libz.dylib */; };
 		7E5F15D5190E9ADF002B1854 /* SCSiteEqualComparatorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F15D4190E9ADF002B1854 /* SCSiteEqualComparatorTest.m */; };
+		7E5F15D8190EA0B5002B1854 /* SCSite+Mutable.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F15D7190EA0B5002B1854 /* SCSite+Mutable.m */; };
 		7EDB02B71900013900912956 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EDB02B61900013900912956 /* SitecoreMobileSDK.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,8 @@
 		7E5F15D0190E9925002B1854 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		7E5F15D2190E9929002B1854 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		7E5F15D4190E9ADF002B1854 /* SCSiteEqualComparatorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSiteEqualComparatorTest.m; sourceTree = "<group>"; };
+		7E5F15D6190EA0B5002B1854 /* SCSite+Mutable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCSite+Mutable.h"; sourceTree = "<group>"; };
+		7E5F15D7190EA0B5002B1854 /* SCSite+Mutable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCSite+Mutable.m"; sourceTree = "<group>"; };
 		7EDB02B61900013900912956 /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileSDK.framework; path = ../../frameworks/SitecoreMobileSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +176,8 @@
 				78622E5218FE736C00ADA6D1 /* SessionInfo */,
 				78D6669918FD6CAF00BFD6C7 /* SCSite.h */,
 				78D6669A18FD6CAF00BFD6C7 /* SCSite.m */,
+				7E5F15D6190EA0B5002B1854 /* SCSite+Mutable.h */,
+				7E5F15D7190EA0B5002B1854 /* SCSite+Mutable.m */,
 				78D6669B18FD6CAF00BFD6C7 /* SCSite+Private.h */,
 				78D6669C18FD6CAF00BFD6C7 /* SCSite+Private.m */,
 				78D6669D18FD6CAF00BFD6C7 /* SCSitesManager.h */,
@@ -294,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78D666A318FD6CAF00BFD6C7 /* SCSitesManager.m in Sources */,
+				7E5F15D8190EA0B5002B1854 /* SCSite+Mutable.m in Sources */,
 				78C8F7951907BD6F00B78ABB /* SCSitesListSavingError.m in Sources */,
 				78622E5918FE736C00ADA6D1 /* MUUploadSettingsStringFormatter.m in Sources */,
 				78D666A118FD6CAF00BFD6C7 /* SCSite+Private.m in Sources */,

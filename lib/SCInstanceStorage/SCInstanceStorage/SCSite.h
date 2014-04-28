@@ -11,13 +11,13 @@
     MUUploadSettings_Legacy
 >
 
-@property ( nonatomic ) NSString* siteProtocol;
-@property ( nonatomic ) NSString* siteUrl;
-@property ( nonatomic ) NSString* site;
+@property ( nonatomic, readonly ) NSString* siteProtocol;
+@property ( nonatomic, readonly ) NSString* siteUrl;
+@property ( nonatomic, readonly ) NSString* site;
 @property ( nonatomic, readonly ) NSString* siteId;
 
-@property ( nonatomic ) NSString* username;
-@property ( nonatomic ) NSString* password;
+@property ( nonatomic, readonly ) NSString* username;
+@property ( nonatomic, readonly ) NSString* password;
 @property ( nonatomic, readonly ) BOOL selectedForBrowse;
 @property ( nonatomic, readonly ) BOOL selectedForUpload;
 

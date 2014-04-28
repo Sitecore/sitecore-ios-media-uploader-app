@@ -2,6 +2,7 @@
 #import "SCSite+Private.h"
 #import "SCSitesListSavingError.h"
 
+#import "SCSite+Mutable.h"
 
 @implementation SCSitesManager
 {
