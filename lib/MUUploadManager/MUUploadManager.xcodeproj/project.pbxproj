@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		785088A4190E56A600EBAD3C /* MULocationInfoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 785088A3190E56A600EBAD3C /* MULocationInfoData.m */; };
 		78745EB81907EE08004353B2 /* MUUploadManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 78745EB71907EDB8004353B2 /* MUUploadManager.h */; };
 		78745EC31907EFD2004353B2 /* MUUploadItemStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 78745EC21907EFD2004353B2 /* MUUploadItemStatus.m */; };
 		78745EC41907EFD2004353B2 /* MUUploadItemStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 78745EC21907EFD2004353B2 /* MUUploadItemStatus.m */; };
@@ -56,6 +57,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		785088A2190E56A600EBAD3C /* MULocationInfoData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MULocationInfoData.h; sourceTree = "<group>"; };
+		785088A3190E56A600EBAD3C /* MULocationInfoData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MULocationInfoData.m; sourceTree = "<group>"; };
+		785088A5190E576C00EBAD3C /* MULocationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MULocationInfo.h; sourceTree = "<group>"; };
 		78745EB71907EDB8004353B2 /* MUUploadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MUUploadManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		78745EC11907EFD2004353B2 /* MUUploadItemStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MUUploadItemStatus.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		78745EC21907EFD2004353B2 /* MUUploadItemStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MUUploadItemStatus.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -144,6 +148,9 @@
 		78C8F7D51907DFDA00B78ABB /* MUUploadManager */ = {
 			isa = PBXGroup;
 			children = (
+				785088A5190E576C00EBAD3C /* MULocationInfo.h */,
+				785088A2190E56A600EBAD3C /* MULocationInfoData.h */,
+				785088A3190E56A600EBAD3C /* MULocationInfoData.m */,
 				78C8F7D61907DFDA00B78ABB /* Supporting Files */,
 				78745EC51907F001004353B2 /* MUMedia.h */,
 				78745EC61907F001004353B2 /* MUMedia.m */,
@@ -269,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				785088A4190E56A600EBAD3C /* MULocationInfoData.m in Sources */,
 				78745EC31907EFD2004353B2 /* MUUploadItemStatus.m in Sources */,
 				78745EC71907F001004353B2 /* MUMedia.m in Sources */,
 				787F68851907F384000383CC /* MUItemsForUploadManager.m in Sources */,
