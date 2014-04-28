@@ -74,7 +74,7 @@
 
 -(void)addMediaUpload:(MUMedia*)media
 {
-    NSAssert([ media isMemberOfClass: [ MUMedia class ] ], @"object type must be MUMedia");
+    NSParameterAssert( [ media isMemberOfClass: [ MUMedia class ] ] );
 
     [ self->_mediaUpload addObject: media];
     [ self saveUploadData ];
