@@ -15,6 +15,7 @@
     if ( self = [ super init ])
     {
         [ self loadMediaUpload ];
+        [ self performFilterPredicate: nil ];
     }
     
     return self;
