@@ -1,6 +1,9 @@
 #import "SCSitesManager.h"
 #import "SCSite+Private.h"
 #import "SCSitesListSavingError.h"
+
+#import "SCSite+Mutable.h"
+
 @implementation SCSitesManager
 {
     NSMutableArray* _sitesList;
@@ -33,15 +36,6 @@
     else
     {
         site.selectedForUpload = NO;
-    }
-    
-    if ( [ self isSameSiteExist: site ] )
-    {
-        NSDictionary* errorInfo = @{ NSLocalizedDescriptionKey: NSLocalizedString(@"SITE_DUPLICATE", nil) };
-        *error = [[ NSError alloc ] initWithDomain: @"MU"
-                                              code: 1
-                                          userInfo: errorInfo ];
-        return NO;
     }
     
     [ self->_sitesList addObject: site ];

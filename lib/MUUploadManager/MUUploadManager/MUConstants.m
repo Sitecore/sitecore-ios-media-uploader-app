@@ -18,4 +18,5 @@ NSString* const ITEM_TEMPLATE_PATH       = @"System/Main section";
     return CGSizeMake( 800.f, 600.f );
 }
 
-@end;
+@end
+

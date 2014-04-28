@@ -19,6 +19,10 @@
 #import "SCSite+Trackable.h"
 
 
+// TODO : use immutable SCSite all over the place
+#import <SCInstanceStorage/SCSite+Mutable.h>
+
+
 @interface sc_SiteAddViewController ()
 
 @property (nonatomic) BOOL loggedIn;

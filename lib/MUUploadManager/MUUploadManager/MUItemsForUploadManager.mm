@@ -84,9 +84,10 @@
 
 -(MUMedia*)mediaUploadAtIndex:(NSInteger)index
 {
-    MUMedia* objectToReturn;
+    MUMedia* objectToReturn = nil;
     
-    objectToReturn = [ self->_filteredMediaUpload objectAtIndex: index ];
+    NSUInteger arrayIndex = static_cast<NSUInteger>(index);
+    objectToReturn = [ self->_filteredMediaUpload objectAtIndex: arrayIndex ];
     
     [ self checkResourceAvailabilityForUploadItem: objectToReturn ];
     
@@ -116,7 +117,8 @@
 
 -(void)removeMediaUploadAtIndex:(NSInteger)index error:(NSError**)error
 {
-    MUMedia* media = self->_mediaUpload[index];
+    NSUInteger arrayIndex = static_cast<NSUInteger>(index);
+    MUMedia* media = self->_mediaUpload[arrayIndex];
     [ self removeMediaUpload: media
                        error: error ];
 }
