@@ -21,17 +21,34 @@
 @property ( nonatomic, readonly ) BOOL selectedForBrowse;
 @property ( nonatomic, readonly ) BOOL selectedForUpload;
 
--(id)initWithSiteUrl:(NSString*)siteUrl
-                site:(NSString*)site
+
+/**
+ Unsupported initializer
+ */
+-(instancetype)init __attribute__((noreturn));
+
+/**
+ Construncts a site with empty fields for the "awakeFromNib:" method.
+
+ WARNING : Should be deprecated
+ */
++(instancetype)emptySite;
+
+
+/**
+ A designated initializer
+ */
+-(instancetype)initWithSiteUrl:(NSString*)siteUrl
+                          site:(NSString*)site
 uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
-            username:(NSString*)username
-            password:(NSString*)password
-   selectedForBrowse:(BOOL)selectedForBrowse
-   selectedForUpload:(BOOL)selectedForUpload;
+                      username:(NSString*)username
+                      password:(NSString*)password
+             selectedForBrowse:(BOOL)selectedForBrowse
+             selectedForUpload:(BOOL)selectedForUpload;
 
 -(NSString*)getFolderPathForUpload;
 
-+(instancetype)emptySite;
+
 +(NSString*)siteDefaultValue;
 +(NSString*)mediaLibraryDefaultPath;
 +(NSString*)mediaLibraryDefaultNameWithSlash:(BOOL)withSlash;
