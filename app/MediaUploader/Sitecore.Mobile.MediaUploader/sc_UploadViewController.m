@@ -455,6 +455,9 @@ static NSString* const UPLOAD_HISTORY_VC_SEGUE = @"upload2";
         
         sc_Upload2ViewController * destinationController = ( sc_Upload2ViewController*) segue.destinationViewController;
         
+        //TODO: @igk in case of asynch adding
+        [ self addUploadToMediaUploadManager ];
+        
         NSArray* mediaItems = @[ media ];
         [ destinationController initWithMediaItems: mediaItems
                                              image: imageView.image
@@ -464,7 +467,7 @@ static NSString* const UPLOAD_HISTORY_VC_SEGUE = @"upload2";
     }
 }
 
--(void)saveFileAsPending
+-(void)addUploadToMediaUploadManager
 {
     MUMedia* media = [self getMedia];
     
@@ -476,6 +479,11 @@ static NSString* const UPLOAD_HISTORY_VC_SEGUE = @"upload2";
     
     [self setMediaItemValidName:media];
     [_appDataObject.uploadItemsManager addMediaUpload:media];
+}
+
+-(void)saveFileAsPending
+{
+    [ self addUploadToMediaUploadManager ];
     
     [self.navigationController popViewControllerAnimated:YES ];
 }
