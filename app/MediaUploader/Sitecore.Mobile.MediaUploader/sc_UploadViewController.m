@@ -455,7 +455,7 @@ static NSString* const UPLOAD_HISTORY_VC_SEGUE = @"upload2";
         
         sc_Upload2ViewController * destinationController = ( sc_Upload2ViewController*) segue.destinationViewController;
         
-        //TODO: @igk in case of asynch adding
+        //TODO: @igk will error in case of async adding
         [ self addUploadToMediaUploadManager ];
         
         NSArray* mediaItems = @[ media ];
