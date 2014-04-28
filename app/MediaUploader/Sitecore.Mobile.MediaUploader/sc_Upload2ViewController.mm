@@ -250,19 +250,19 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
         case READY_FOR_UPLOAD:
         {
             [ self uploadItemAtIndex: indexPath.row ];
-        }
             break;
+        }
         case UPLOAD_ERROR:
         {
             NSString* description = status.localizedDescription;
             [ sc_ErrorHelper showError: description ];
-        }
             break;
+        }
         default:
         {
-            NSLog(@"item status: %ld", status.statusId);
-        }
+            NSLog(@"item status: %@", [ @(status.statusId) descriptionWithLocale: nil ]);
             break;
+        }
     }
     
 }
