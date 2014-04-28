@@ -5,7 +5,9 @@
 -(NSString*)description
 {
     if ( self.statusId == UPLOAD_ERROR )
+    {
         return self->_description;
+    }
     
     return nil;
 }
