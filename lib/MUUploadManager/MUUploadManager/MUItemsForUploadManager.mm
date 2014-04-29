@@ -1,6 +1,8 @@
 #import "MUItemsForUploadManager.h"
 #import "MUMedia.h"
-#import <AssetsLibrary/AssetsLibrary.h>
+#import <AssetsLibrary/ALAssetsLibrary.h>
+#import <AVFoundation/AVAssetImageGenerator.h>
+#import "MUMedia+Private.m"
 
 @implementation MUItemsForUploadManager
 {
@@ -25,8 +27,8 @@
 
 -(BOOL)isUploadItemComplete:(MUMedia*)uploadItem
 {
-    return      uploadItem.uploadStatus.statusId == UPLOAD_DONE
-    ||  uploadItem.uploadStatus.statusId == DATA_IS_NOT_AVAILABLE;
+    return      uploadItem.uploadStatusData.statusId == UPLOAD_DONE
+    ||  uploadItem.uploadStatusData.statusId == DATA_IS_NOT_AVAILABLE;
 }
 
 -(void)setFilterOption:(MUFilteringOptions)option
@@ -50,6 +52,7 @@
             }
             break;
         }
+            
         case SHOW_NOT_COMLETED_ITEMS:
         {
             self->_filteredMediaUpload = [NSMutableArray new];
@@ -74,6 +77,7 @@
 
 -(void)addMediaUpload:(MUMedia*)media
 {
+    NSAssert(media != nil, @"object type must not be nil");
     NSAssert([ media isMemberOfClass: [ MUMedia class ] ], @"object type must be MUMedia");
 
     [ self->_mediaUpload addObject: media];
@@ -82,15 +86,40 @@
     [ self setFilterOption: self->_currentFilterOption ];
 }
 
+-(void)setUploaStatus:(MUUploadItemStatusType)status
+      withDescription:(NSString *)description
+forMediaUploadAtIndex:(NSInteger)index
+{
+    MUMedia* media = [ self mediaUploadAtIndex: index ];
+    media.uploadStatusData.statusId = status;
+    media.uploadStatusData.statusDescription = description;
+    
+    BOOL videoShouldBeRemovedFromTempStorage = media.isVideo && status == UPLOAD_DONE;
+    if ( videoShouldBeRemovedFromTempStorage )
+    {
+        [ self removeTmpVideoFileFromMediaItem: media
+                                         error: NULL ];
+    }
+    
+    [ self saveUploadData ];
+}
+
 -(MUMedia*)mediaUploadAtIndex:(NSInteger)index
 {
     MUMedia* objectToReturn;
     
-    objectToReturn = [ self->_filteredMediaUpload objectAtIndex: index ];
+    NSUInteger castedIndex = static_cast<NSUInteger>( index );
+    
+    objectToReturn = [ self->_filteredMediaUpload objectAtIndex: castedIndex ];
     
     [ self checkResourceAvailabilityForUploadItem: objectToReturn ];
     
     return objectToReturn;
+}
+
+-(NSInteger)indexOfMediaUpload:(MUMedia* )media
+{
+    return static_cast<NSInteger>( [ self->_filteredMediaUpload indexOfObject: media ] );
 }
 
 -(void)loadMediaUpload
@@ -116,7 +145,9 @@
 
 -(void)removeMediaUploadAtIndex:(NSInteger)index error:(NSError**)error
 {
-    MUMedia* media = self->_mediaUpload[index];
+    NSUInteger castedIndex = static_cast<NSUInteger>( index );
+    
+    MUMedia* media = self->_mediaUpload[ castedIndex ];
     [ self removeMediaUpload: media
                        error: error ];
 }
@@ -179,7 +210,7 @@
         
         if ( [ uploadItem.videoUrl checkResourceIsReachableAndReturnError: &err ] == NO )
         {
-            uploadItem.uploadStatus.statusId = DATA_IS_NOT_AVAILABLE;
+            uploadItem.uploadStatusData.statusId = DATA_IS_NOT_AVAILABLE;
         }
     }
 }
@@ -193,7 +224,7 @@
         {
             if (!asset)
             {
-                uploadItem.uploadStatus.statusId = DATA_IS_NOT_AVAILABLE;
+                uploadItem.uploadStatusData.statusId = DATA_IS_NOT_AVAILABLE;
             }
             
         }
