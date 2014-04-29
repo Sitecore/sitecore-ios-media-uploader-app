@@ -1,14 +1,11 @@
-//
-//  MUTypes.h
-//  MUUploadManager
-//
-//  Created by Igor on 29/04/14.
-//  Copyright (c) 2014 Sitecore. All rights reserved.
-//
-
-#ifndef MUUploadManager_MUTypes_h
-#define MUUploadManager_MUTypes_h
 
 
-
-#endif
+typedef NS_ENUM(NSInteger, MUUploadItemStatusType)
+{
+    READY_FOR_UPLOAD = 0,
+    UPLOAD_IN_PROGRESS,
+	UPLOAD_ERROR,
+	UPLOAD_DONE,
+    UPLOAD_CANCELED,
+    DATA_IS_NOT_AVAILABLE
+};
