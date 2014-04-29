@@ -19,6 +19,8 @@
 		78D666A118FD6CAF00BFD6C7 /* SCSite+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D6669C18FD6CAF00BFD6C7 /* SCSite+Private.m */; };
 		78D666A318FD6CAF00BFD6C7 /* SCSitesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D6669E18FD6CAF00BFD6C7 /* SCSitesManager.m */; };
 		78D6675E18FD73E900BFD6C7 /* SCInstanceStorage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 78D6675D18FD73D400BFD6C7 /* SCInstanceStorage.h */; };
+		7E1D6548190FE89700F0F811 /* SelectForEditingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D6547190FE89700F0F811 /* SelectForEditingTest.m */; };
+		7E1D654B190FE97300F0F811 /* SiteIdGeneratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D654A190FE97300F0F811 /* SiteIdGeneratorTest.m */; };
 		7E5F15C7190E9680002B1854 /* AddDuplicateSitesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F15C6190E9680002B1854 /* AddDuplicateSitesTest.m */; };
 		7E5F15C9190E98E0002B1854 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5F15C8190E98E0002B1854 /* SitecoreMobileSDK.framework */; };
 		7E5F15CC190E9919002B1854 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5F15CA190E9919002B1854 /* libc++.dylib */; };
@@ -78,6 +80,9 @@
 		78D6669D18FD6CAF00BFD6C7 /* SCSitesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSitesManager.h; sourceTree = "<group>"; };
 		78D6669E18FD6CAF00BFD6C7 /* SCSitesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSitesManager.m; sourceTree = "<group>"; };
 		78D6675D18FD73D400BFD6C7 /* SCInstanceStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCInstanceStorage.h; sourceTree = "<group>"; };
+		7E1D6547190FE89700F0F811 /* SelectForEditingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectForEditingTest.m; sourceTree = "<group>"; };
+		7E1D6549190FE8D000F0F811 /* SCSitesManager+StoragePath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCSitesManager+StoragePath.h"; sourceTree = "<group>"; };
+		7E1D654A190FE97300F0F811 /* SiteIdGeneratorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteIdGeneratorTest.m; sourceTree = "<group>"; };
 		7E5F15C6190E9680002B1854 /* AddDuplicateSitesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDuplicateSitesTest.m; sourceTree = "<group>"; };
 		7E5F15C8190E98E0002B1854 /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileSDK.framework; path = ../../frameworks/SitecoreMobileSDK.framework; sourceTree = "<group>"; };
 		7E5F15CA190E9919002B1854 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
@@ -201,8 +206,11 @@
 		78716C5E18F6E8140092AA98 /* SCInstanceStorageTests */ = {
 			isa = PBXGroup;
 			children = (
+				7E1D6549190FE8D000F0F811 /* SCSitesManager+StoragePath.h */,
 				7E5F15C6190E9680002B1854 /* AddDuplicateSitesTest.m */,
+				7E1D6547190FE89700F0F811 /* SelectForEditingTest.m */,
 				7E5F15D4190E9ADF002B1854 /* SCSiteEqualComparatorTest.m */,
+				7E1D654A190FE97300F0F811 /* SiteIdGeneratorTest.m */,
 				78716C5F18F6E8140092AA98 /* Supporting Files */,
 			);
 			path = SCInstanceStorageTests;
@@ -312,6 +320,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E5F15C7190E9680002B1854 /* AddDuplicateSitesTest.m in Sources */,
+				7E1D654B190FE97300F0F811 /* SiteIdGeneratorTest.m in Sources */,
+				7E1D6548190FE89700F0F811 /* SelectForEditingTest.m in Sources */,
 				7E5F15D5190E9ADF002B1854 /* SCSiteEqualComparatorTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
