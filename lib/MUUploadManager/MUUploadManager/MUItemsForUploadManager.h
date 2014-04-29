@@ -19,9 +19,10 @@ typedef NS_ENUM(NSInteger, MUFilteringOptions)
 -(NSInteger)indexOfMediaUpload:(MUMedia* )media;
 -(MUMedia*)mediaUploadAtIndex:(NSInteger)index;
 -(BOOL)removeMediaUploadAtIndex:(NSInteger)index error:(NSError**)error;
--(void)setUploaStatus:(MUUploadItemStatusType)status
-      withDescription:(NSString *)description
-forMediaUploadAtIndex:(NSInteger)index;
+
+-(void)setUploadStatus:(MUUploadItemStatusType)status
+       withDescription:(NSString *)description
+ forMediaUploadAtIndex:(NSInteger)index;
 
 
 //filtering
@@ -29,4 +30,5 @@ forMediaUploadAtIndex:(NSInteger)index;
 
 //TODO: @igk implement items editing!!!
 -(void)save;
+
 @end

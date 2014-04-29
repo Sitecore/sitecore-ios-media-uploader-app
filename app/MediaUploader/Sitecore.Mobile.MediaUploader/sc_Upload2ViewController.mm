@@ -228,9 +228,9 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     //TODO: @igk make stack of itemf for upload
     if ( !_uploadInProgress )
     {
-        [ self->_uploadManager setUploaStatus: UPLOAD_IN_PROGRESS
-                       withDescription: nil
-                 forMediaUploadAtIndex: index ];
+        [ self->_uploadManager setUploadStatus: UPLOAD_IN_PROGRESS
+                               withDescription: nil
+                         forMediaUploadAtIndex: index ];
         
         MUMedia* media = [_appDataObject.uploadItemsManager mediaUploadAtIndex: index ];
         
@@ -361,9 +361,9 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
         {
             if (error)
             {
-                [ self->_uploadManager setUploaStatus: UPLOAD_ERROR
-                                      withDescription: error.description
-                                forMediaUploadAtIndex: itemIndex ];
+                [ self->_uploadManager setUploadStatus: UPLOAD_ERROR
+                                       withDescription: error.description
+                                 forMediaUploadAtIndex: itemIndex ];
             }
             else
             {
@@ -371,9 +371,9 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
                          Context: session
                       uploadItem: uploadItem ];
                 
-                [ self->_uploadManager setUploaStatus: UPLOAD_DONE
-                                      withDescription: nil
-                                forMediaUploadAtIndex: itemIndex ];
+                [ self->_uploadManager setUploadStatus: UPLOAD_DONE
+                                       withDescription: nil
+                                 forMediaUploadAtIndex: itemIndex ];
             }
             
             [ self saveUploadItemsChanges ];
@@ -384,9 +384,9 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
         
         SCCancelAsyncOperationHandler cancelHandler = ^(BOOL cancelInfo)
         {
-            [ self->_uploadManager setUploaStatus: UPLOAD_CANCELED
-                                  withDescription: nil
-                            forMediaUploadAtIndex: itemIndex ];
+            [ self->_uploadManager setUploadStatus: UPLOAD_CANCELED
+                                   withDescription: nil
+                             forMediaUploadAtIndex: itemIndex ];
             
             [ self saveUploadItemsChanges ];
             [ self.sitesTableView reloadData ];

@@ -86,10 +86,16 @@
     [ self setFilterOption: self->_currentFilterOption ];
 }
 
--(void)setUploaStatus:(MUUploadItemStatusType)status
-      withDescription:(NSString *)description
-forMediaUploadAtIndex:(NSInteger)index
+-(void)setUploadStatus:(MUUploadItemStatusType)status
+       withDescription:(NSString *)description
+ forMediaUploadAtIndex:(NSInteger)index
 {
+    NSUInteger castedIndex = static_cast<NSUInteger>( index );
+    if ([self isIndexOutOfRange:castedIndex])
+    {
+        throw std::runtime_error( "index is out of range" );
+    }
+    
     MUMedia* media = [ self mediaUploadAtIndex: index ];
     media.uploadStatusData.statusId = status;
     media.uploadStatusData.statusDescription = description;
@@ -106,9 +112,14 @@ forMediaUploadAtIndex:(NSInteger)index
 
 -(MUMedia*)mediaUploadAtIndex:(NSInteger)index
 {
-    MUMedia* objectToReturn = nil;
-    
     NSUInteger castedIndex = static_cast<NSUInteger>( index );
+
+    if ([self isIndexOutOfRange:castedIndex])
+    {
+        throw std::runtime_error( "index is out of range" );
+    }
+    
+    MUMedia* objectToReturn = nil;
     
     objectToReturn = [ self->_filteredMediaUpload objectAtIndex: castedIndex ];
     
@@ -120,6 +131,11 @@ forMediaUploadAtIndex:(NSInteger)index
 -(NSInteger)indexOfMediaUpload:(MUMedia* )media
 {
     return static_cast<NSInteger>( [ self->_filteredMediaUpload indexOfObject: media ] );
+}
+
+-(BOOL)isIndexOutOfRange:(NSUInteger)index
+{
+    return self.uploadCount <= index;
 }
 
 -(void)loadMediaUpload
@@ -154,6 +170,11 @@ forMediaUploadAtIndex:(NSInteger)index
 {
     NSUInteger castedIndex = static_cast<NSUInteger>( index );
     
+    if ( [self isIndexOutOfRange:castedIndex] )
+    {
+        throw std::runtime_error( "index is out of range" );
+    }
+    
     MUMedia* media = self->_mediaUpload[ castedIndex ];
     return [ self removeMediaUpload: media
                               error: error ];
@@ -183,7 +204,7 @@ forMediaUploadAtIndex:(NSInteger)index
     }
     else
     {
-        throw std::runtime_error( "media file is image" );
+        return YES;
     }
 }
 
