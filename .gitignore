@@ -2,6 +2,6 @@
 *xcuserdata*
 DerivedData
 build
-# *xcworkspace*
+*xcworkspace*
 
 lib/SCInstanceStorage/SCInstanceStorage.xcodeproj/*.xcworkspace
