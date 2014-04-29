@@ -14,13 +14,9 @@
 -(SCSite*)siteAtIndex:(NSUInteger)index;
 
 -(BOOL)removeSite:(SCSite*)site error:(NSError**)error;
--(BOOL)removeSiteAtIndex:(NSUInteger)index error:(NSError**)error;
-
 -(NSUInteger)sitesCount;
--(NSUInteger)indexOfSite:(SCSite*)site;
 
 -(BOOL)isSameSiteExist:(SCSite*)site;
--(NSUInteger)sameSitesCount:(SCSite*)site;
 
 -(SCSite*)siteForBrowse;
 -(SCSite*)siteBySiteId:(NSString*)siteId;
