@@ -288,7 +288,6 @@ uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
                                  password: @"b"
                         selectedForBrowse: NO
                         selectedForUpload: YES ];
-    
 #endif
     
     return [ [self alloc] initWithSiteUrl: @""

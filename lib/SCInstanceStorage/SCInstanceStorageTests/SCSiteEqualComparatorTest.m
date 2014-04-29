@@ -155,7 +155,6 @@
         XCTAssertEqualObjects( other, self->_site, @"modified object must NOT be equal" );
         XCTAssertTrue( self->_site != other, @"pointer of the copy must be different" );
     }
-    
 }
 
 

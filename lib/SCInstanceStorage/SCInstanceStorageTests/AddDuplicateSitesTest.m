@@ -5,6 +5,13 @@
 #import "SCSite.h"
 
 
+@interface SCSitesManager()
+
+-(NSString*)getSitesFilePath;
+
+@end
+
+
 @interface AddDuplicateSitesTest : XCTestCase
 
 @end
@@ -17,11 +24,19 @@
     SCSite* _siteWithCapitalizedInstanceUrl;
 }
 
+
+-(void)cleanupStorageFile
+{
+    NSString* filePath = [ self->_storage getSitesFilePath ];
+    [ [ NSFileManager defaultManager ] removeItemAtPath: filePath error: NULL ];
+}
+    
 -(void)setUp
 {
     [ super setUp ];
     
     self->_storage = [ SCSitesManager new ];
+    [ self cleanupStorageFile ];
     
     self->_site = [ [ SCSite alloc ] initWithSiteUrl: @"http://localhost"
                                                 site: @"/sitecore/shell"
@@ -43,6 +58,8 @@
 
 -(void)tearDown
 {
+    [ self cleanupStorageFile ];
+    
     self->_storage = nil;
     self->_site = nil;
     self->_siteWithCapitalizedInstanceUrl = nil;
@@ -65,6 +82,8 @@
         
         XCTAssertNil( error, @"Unexpected error" );
         XCTAssertTrue( operationResult, @"Unexpected error" );
+        
+        XCTAssertTrue( 1 == [ self->_storage sitesCount ], @"sitesCount mismatch" );
     }
     
 
@@ -77,6 +96,8 @@
         
         XCTAssertNil( error, @"Unexpected error" );
         XCTAssertTrue( operationResult, @"Unexpected error" );
+        
+        XCTAssertTrue( 2 == [ self->_storage sitesCount ], @"sitesCount mismatch" );
     }
 }
 
@@ -95,6 +116,8 @@
         
         XCTAssertNil( error, @"Unexpected error" );
         XCTAssertTrue( operationResult, @"Unexpected error" );
+        
+        XCTAssertTrue( 1 == [ self->_storage sitesCount ], @"sitesCount mismatch" );
     }
     
     
@@ -107,6 +130,8 @@
         
         XCTAssertNil( error, @"Unexpected error" );
         XCTAssertTrue( operationResult, @"Unexpected error" );
+        
+        XCTAssertTrue( 2 == [ self->_storage sitesCount ], @"sitesCount mismatch" );
     }
 }
 
