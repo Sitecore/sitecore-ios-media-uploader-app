@@ -27,6 +27,7 @@
     
     self.siteLabel.textColor = [ UIColor blackColor ];
     self.folderLabel.textColor = [ UIColor blackColor ];
+    self.nameLabel.textColor = [ UIColor blackColor ];
     
     switch ( status.statusId )
     {

@@ -55,8 +55,6 @@
 -(void)enableApplication
 {
     _messageLabel.text = @"";
-    _pendingButton.enabled = NO;
-    _pendingView.hidden = YES;
     
     if ( !_appDataObject.isOnline )
     {
@@ -85,18 +83,6 @@
         _browseButton.enabled = YES;
         _uploadButton.enabled = YES;
         
-        if ( _appDataObject.uploadItemsManager.uploadCount > 0 && _appDataObject.isOnline )
-        {
-            //_pendingView.hidden = NO;
-            _pendingButton.enabled = YES;
-            _pendingView.hidden = NO;
-            
-            NSNumberFormatter* uploadCountFormatter = [ self numberFormatterForUploadCount ];
-            NSUInteger rawUploadCount = self->_appDataObject.uploadItemsManager.uploadCount;
-
-            NSString* result = [ uploadCountFormatter stringFromNumber: @(rawUploadCount) ];
-            self->_pendingCounterLabel.text = [ NSString stringWithFormat: @"%@", result ];
-        }
     }
 }
 

@@ -74,6 +74,8 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 {
     [super viewDidLoad];
     
+    [ self->_appDataObject.uploadItemsManager setFilterOption: SHOW_ALL_ITEMS ];
+
     [ self localizeFilterButtons ];
     
     _uploadInProgress = NO;
@@ -163,6 +165,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     
     cell.siteLabel.text   = siteForUpload.siteUrl;
     cell.folderLabel.text = [ sc_ItemHelper formatUploadFolder: siteForUpload ];
+    cell.nameLabel.text = media.name;
     
     [ cell setCellStyleForUploadStatus: status
                              withTheme: self->_theme ];
