@@ -28,6 +28,16 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "78C8F7DF1907DFDA00B78ABB"
+               BuildableName = "MUUploadManagerTests.xctest"
+               BlueprintName = "MUUploadManagerTests"
+               ReferencedContainer = "container:../lib/MUUploadManager/MUUploadManager.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
