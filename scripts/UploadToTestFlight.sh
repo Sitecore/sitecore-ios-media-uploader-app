@@ -1,3 +1,5 @@
+#!/bin/bash
+
 LAUNCH_DIR=$PWD
 BUILT_PRODUCTS_DIR=$1
 
