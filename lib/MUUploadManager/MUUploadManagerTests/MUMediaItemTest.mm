@@ -51,7 +51,7 @@
                                          videoUrl:nil
                                          imageUrl:nil
                                         thumbnail:nil];
-    XCTAssertTrue(item.uploadStatus.statusId == READY_FOR_UPLOAD, @"item should be created");
+    XCTAssertTrue(item.uploadStatusData.statusId == READY_FOR_UPLOAD, @"item should be created");
 }
 
 -(void)testVideoItemDetected
