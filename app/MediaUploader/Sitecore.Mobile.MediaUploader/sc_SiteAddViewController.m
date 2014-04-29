@@ -330,7 +330,11 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     [ MUEventsTrackerFactory sessionTrackerForMediaUploader ];
     [ sessionTracker didLogoutFromSite: self->_siteForEdit ];
     
-    [ self->_appDataObject.sitesManager removeSite: self->_siteForEdit error: nil ];
+    NSError* error = nil;
+    [ self->_appDataObject.sitesManager removeSite: self->_siteForEdit
+                                             error: &error ];
+    NSParameterAssert( nil == error );
+    
     [ self.navigationController popViewControllerAnimated: YES ];
 }
 

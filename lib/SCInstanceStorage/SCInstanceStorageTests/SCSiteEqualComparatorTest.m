@@ -146,15 +146,13 @@
     }
 }
 
--(void)testSiteWithOtherIdIsStillEqual
+-(void)testSiteWithOtherIdIsNotEqual
 {
-    {
-        SCSite* other = [ self->_site copy ];
-        other.siteId = @"changed site id";
-        
-        XCTAssertEqualObjects( other, self->_site, @"modified object must NOT be equal" );
-        XCTAssertTrue( self->_site != other, @"pointer of the copy must be different" );
-    }
+    SCSite* other = [ self->_site copy ];
+    other.siteId = @"changed site id";
+    
+    XCTAssertNotEqualObjects( other, self->_site, @"modified object must NOT be equal" );
+    XCTAssertTrue( self->_site != other, @"pointer of the copy must be different" );
 }
 
 
