@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import <MUUploadManager/MUTypes.h>
 
 @class MUMedia;
 
@@ -14,14 +15,17 @@ typedef NS_ENUM(NSInteger, MUFilteringOptions)
 @property (nonatomic, readonly) NSUInteger uploadCount;
 
 -(void)addMediaUpload:(MUMedia* )media;
+
+-(NSInteger)indexOfMediaUpload:(MUMedia* )media;
 -(MUMedia*)mediaUploadAtIndex:(NSInteger)index;
--(void)removeTmpVideoFileFromMediaItem:(MUMedia*)media error:(NSError**)error;
--(void)removeMediaUpload:(MUMedia*)media error:(NSError**)error;
 -(void)removeMediaUploadAtIndex:(NSInteger)index error:(NSError**)error;
+-(void)setUploaStatus:(MUUploadItemStatusType)status
+      withDescription:(NSString *)description
+forMediaUploadAtIndex:(NSInteger)index;
 
 //filtering
 -(void)setFilterOption:(MUFilteringOptions)option;
 
-//TODO: @igk make items editing
+//TODO: @igk implement items editing!!!
 -(void)save;
 @end
