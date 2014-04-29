@@ -20,13 +20,19 @@
     return self;
 }
 
+-(NSArray*)sitesList
+{
+    return [ NSArray arrayWithArray: self->_sitesList ];
+}
+
 -(NSUInteger)sitesCount
 {
     return [ self->_sitesList count ];
 }
 
--(BOOL)addSite:(SCSite*)site error:(NSError**)error
+-(BOOL)addSite:(SCSite*)site error:(NSError**)error __attribute__((nonnull))
 {
+    NSParameterAssert( nil  != site  );
     NSParameterAssert( NULL != error );
     
     if ( [ self sitesCount ] == 0 )
@@ -50,8 +56,10 @@
     return YES;
 }
 
--(void)makeSiteIdUnique:(SCSite *)site
+-(void)makeSiteIdUnique:(SCSite *)site __attribute__((nonnull))
 {
+    NSParameterAssert( nil != site );
+    
     SCPredicateBlock siteIsEqualSearchPredicate = ^BOOL( SCSite* elem )
     {
         return [ elem.siteId isEqual: site.siteId ];
@@ -66,8 +74,10 @@
     }
 }
 
--(BOOL)isSameSiteExist:(SCSite*)site
+-(BOOL)isSameSiteExist:(SCSite*)site __attribute__((nonnull))
 {
+    NSParameterAssert( nil != site );
+    
     if ( 0 == [ self sameSitesCount: site ] )
     {
         return NO;
@@ -76,8 +86,10 @@
     return YES;
 }
 
--(NSUInteger)sameSitesCount:(SCSite*)site
+-(NSUInteger)sameSitesCount:(SCSite*)site __attribute__((nonnull))
 {
+    NSParameterAssert( nil  != site  );
+    
     SCPredicateBlock siteIsEqualSearchPredicate = ^BOOL( SCSite* elem )
     {
         return [ elem isEqual: site ];
@@ -87,8 +99,12 @@
     return result;
 }
 
--(BOOL)removeSite:(SCSite*)site error:(NSError**)error
+-(BOOL)removeSite:(SCSite*)site error:(NSError**)error __attribute__((nonnull))
 {
+    NSParameterAssert( nil  != site  );
+    NSParameterAssert( NULL != error );
+
+    
     SCSite* siteToRemove = [ self siteBySiteId:site.siteId ];
     
     if( siteToRemove != nil )
@@ -100,14 +116,19 @@
     return NO;
 }
 
--(BOOL)removeSiteAtIndex:(NSUInteger)index error:(NSError**)error
+-(BOOL)removeSiteAtIndex:(NSUInteger)index error:(NSError**)error __attribute__((nonnull))
 {
+    NSParameterAssert( NULL != error );
+
+    
     [ self->_sitesList removeObjectAtIndex: index ];
     return [ self saveSites ];
 }
 
--(NSUInteger)indexOfSite:(SCSite*)site
+-(NSUInteger)indexOfSite:(SCSite*)site __attribute__((nonnull))
 {
+    NSParameterAssert( nil  != site  );
+    
     return [ self->_sitesList indexOfObject: site ];
 }
 
@@ -121,8 +142,10 @@
     return nil;
 }
 
--(SCSite*)siteBySiteId:(NSString*)siteId
+-(SCSite*)siteBySiteId:(NSString*)siteId __attribute__((nonnull))
 {
+    NSParameterAssert( nil  != siteId );
+    
     SCPredicateBlock siteIsEqualSearchPredicate = ^BOOL( SCSite* elem )
     {
         return [ elem.siteId isEqualToString:siteId ];
@@ -132,8 +155,12 @@
     return result;
 }
 
--(BOOL)saveSiteChanges:(SCSite*)site error:(NSError**)error
+-(BOOL)saveSiteChanges:(SCSite*)site error:(NSError**)error __attribute__((nonnull))
 {
+    NSParameterAssert( nil  != site  );
+    NSParameterAssert( NULL != error );
+
+    
     SCSite* siteForEdit = [ self siteBySiteId: site.siteId ];
     
     siteForEdit.siteProtocol                        = site.siteProtocol;
@@ -171,8 +198,10 @@
     return [ self getFile: @"SCSitesStorage.dat" ];
 }
 
--(NSString*)getFile:(NSString*)fileName
+-(NSString*)getFile:(NSString*)fileName __attribute__((nonnull))
 {
+    NSParameterAssert( nil  != fileName );
+    
     NSArray* paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
     NSString* documentsDirectory = [ paths objectAtIndex: 0 ];
     NSString* appFile = [ documentsDirectory stringByAppendingPathComponent: fileName ];
@@ -233,8 +262,12 @@
     return nil;
 }
 
--(BOOL)setSiteForBrowse:(SCSite*)siteForBrowse error:(NSError**)error
+-(BOOL)setSiteForBrowse:(SCSite*)siteForBrowse error:(NSError**)error __attribute__((nonnull))
 {
+    NSParameterAssert( nil  != siteForBrowse  );
+    NSParameterAssert( NULL != error          );
+
+    
     for ( SCSite *site in self->_sitesList )
     {
         if ( [ site isEqual: siteForBrowse ] )
@@ -250,8 +283,12 @@
     return [ self saveSites ];
 }
 
--(BOOL)setSiteForUpload:(SCSite*)siteForUpload error:(NSError**)error
+-(BOOL)setSiteForUpload:(SCSite*)siteForUpload error:(NSError**)error __attribute__((nonnull))
 {
+    NSParameterAssert( nil  != siteForUpload );
+    NSParameterAssert( NULL != error         );
+
+    
     for ( SCSite *site in self->_sitesList )
     {
         if ( [ site isEqual: siteForUpload ] )
