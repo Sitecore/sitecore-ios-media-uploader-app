@@ -25,14 +25,14 @@
 
 @property (nonatomic) id<MULocationInfo> locationInfo;
 @property (nonatomic) MUImageQuality imageQuality;
-@property (nonatomic) MUUploadItemStatus* uploadStatus;
+@property (nonatomic, readonly) MUUploadItemStatus* uploadStatusData;
 
--(instancetype)initWithObjectData:(NSString*)name
-                         dateTime:(NSDate*)dateTime
-                     locationInfo:(id<MULocationInfo>)locationInfo
-                         videoUrl:(NSURL*)videoUrl
-                         imageUrl:(NSURL*)imageUrl
-                        thumbnail:(UIImage*)thumbnail;
+-(instancetype)initWithName:(NSString*)name
+                   dateTime:(NSDate*)dateTime
+               locationInfo:(id<MULocationInfo>)locationInfo
+                   videoUrl:(NSURL*)videoUrl
+                   imageUrl:(NSURL*)imageUrl
+                  thumbnail:(UIImage*)thumbnail;
 
 -(BOOL)isImage;
 -(BOOL)isVideo;

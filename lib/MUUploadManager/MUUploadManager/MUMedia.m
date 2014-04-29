@@ -9,20 +9,29 @@
 #import "MUMedia.h"
 #import "MUConstants.h"
 #import "MUImageHelper.h"
-
+#import "MUUploadItemStatus.h"
+#import "MUMedia+Private.h"
 
 @interface MUMedia ()
+
+@property (nonatomic) MUUploadItemStatus* uploadStatusData;
 
 @end
 
 @implementation MUMedia
 
--(instancetype)initWithObjectData:(NSString*)name
-                         dateTime:(NSDate*)dateTime
-                         locationInfo:(id<MULocationInfo>)locationInfo
-                         videoUrl:(NSURL*)videoUrl
-                         imageUrl:(NSURL*)imageUrl
-                        thumbnail:(UIImage*)thumbnail
+-(instancetype)init
+{
+    [ self doesNotRecognizeSelector: _cmd ];
+    return nil;
+}
+
+-(instancetype)initWithName:(NSString*)name
+                   dateTime:(NSDate*)dateTime
+               locationInfo:(id<MULocationInfo>)locationInfo
+                   videoUrl:(NSURL*)videoUrl
+                   imageUrl:(NSURL*)imageUrl
+                  thumbnail:(UIImage*)thumbnail
 {
     self = [super init];
     if (self)
@@ -40,14 +49,14 @@
 
 -(void)encodeWithCoder:(NSCoder*)encoder
 {
-    [encoder encodeObject:  _name                forKey: @"name"             ];
-    [encoder encodeObject:  _dateTime            forKey: @"dateTime"         ];
-    [encoder encodeObject:  _videoUrl            forKey: @"videoUrl"         ];
-    [encoder encodeObject:  _imageUrl            forKey: @"imageUrl"         ];
-    [encoder encodeObject:  _thumbnail           forKey: @"thumbnail"        ];
-    [encoder encodeObject:  _siteForUploadingId  forKey: @"siteForUploading" ];
-    [encoder encodeObject:  _uploadStatus        forKey: @"uploadStatus"     ];
-    [encoder encodeObject:  _locationInfo        forKey: @"locationInfo"     ];
+    [encoder encodeObject:  _name                 forKey: @"name"             ];
+    [encoder encodeObject:  _dateTime             forKey: @"dateTime"         ];
+    [encoder encodeObject:  _videoUrl             forKey: @"videoUrl"         ];
+    [encoder encodeObject:  _imageUrl             forKey: @"imageUrl"         ];
+    [encoder encodeObject:  _thumbnail            forKey: @"thumbnail"        ];
+    [encoder encodeObject:  _siteForUploadingId   forKey: @"siteForUploading" ];
+    [encoder encodeObject:  self.uploadStatusData forKey: @"uploadStatusData" ];
+    [encoder encodeObject:  _locationInfo         forKey: @"locationInfo"     ];
 }
 
 -(instancetype)initWithCoder:(NSCoder*)decoder
@@ -61,7 +70,7 @@
         self.imageUrl            = [decoder decodeObjectForKey:  @"imageUrl"         ];
         self.thumbnail           = [decoder decodeObjectForKey:  @"thumbnail"        ];
         self.siteForUploadingId  = [decoder decodeObjectForKey:  @"siteForUploading" ];
-        self.uploadStatus        = [decoder decodeObjectForKey:  @"uploadStatus"     ];
+        self.uploadStatusData    = [decoder decodeObjectForKey:  @"uploadStatusData" ];
         self.locationInfo        = [decoder decodeObjectForKey:  @"locationInfo"     ];
     }
     
@@ -96,15 +105,15 @@
     }
 }
 
--(MUUploadItemStatus *)uploadStatus
+-(MUUploadItemStatus *)uploadStatusData
 {
-    if ( self->_uploadStatus == nil )
+    if ( self->_uploadStatusData == nil )
     {
-        self->_uploadStatus = [ MUUploadItemStatus new ];
-        self->_uploadStatus.statusId = READY_FOR_UPLOAD;
+        self->_uploadStatusData = [ MUUploadItemStatus new ];
+        self->_uploadStatusData.statusId = READY_FOR_UPLOAD;
     }
     
-    return self->_uploadStatus;
+    return self->_uploadStatusData;
 }
 
 @end

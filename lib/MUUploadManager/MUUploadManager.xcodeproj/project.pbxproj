@@ -10,27 +10,25 @@
 		785088A4190E56A600EBAD3C /* MULocationInfoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 785088A3190E56A600EBAD3C /* MULocationInfoData.m */; };
 		78745EB81907EE08004353B2 /* MUUploadManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 78745EB71907EDB8004353B2 /* MUUploadManager.h */; };
 		78745EC31907EFD2004353B2 /* MUUploadItemStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 78745EC21907EFD2004353B2 /* MUUploadItemStatus.m */; };
-		78745EC41907EFD2004353B2 /* MUUploadItemStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 78745EC21907EFD2004353B2 /* MUUploadItemStatus.m */; };
 		78745EC71907F001004353B2 /* MUMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 78745EC61907F001004353B2 /* MUMedia.m */; };
-		78745EC81907F001004353B2 /* MUMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 78745EC61907F001004353B2 /* MUMedia.m */; };
 		78745ECB1907F02A004353B2 /* MUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 78745EC91907F02A004353B2 /* MUConstants.m */; };
-		78745ECC1907F02A004353B2 /* MUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 78745EC91907F02A004353B2 /* MUConstants.m */; };
 		78745ECF1907F04F004353B2 /* MUImageHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 78745ECE1907F04F004353B2 /* MUImageHelper.mm */; };
-		78745ED01907F04F004353B2 /* MUImageHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 78745ECE1907F04F004353B2 /* MUImageHelper.mm */; };
-		787F687C1907F0CF000383CC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787F687B1907F0CF000383CC /* CoreGraphics.framework */; };
-		787F687E1907F131000383CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787F687D1907F131000383CC /* UIKit.framework */; };
 		787F68811907F1B0000383CC /* MUImageScaling.m in Sources */ = {isa = PBXBuildFile; fileRef = 787F68801907F1B0000383CC /* MUImageScaling.m */; };
-		787F68821907F1B0000383CC /* MUImageScaling.m in Sources */ = {isa = PBXBuildFile; fileRef = 787F68801907F1B0000383CC /* MUImageScaling.m */; };
-		787F68851907F384000383CC /* MUItemsForUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 787F68841907F384000383CC /* MUItemsForUploadManager.m */; };
-		787F68861907F384000383CC /* MUItemsForUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 787F68841907F384000383CC /* MUItemsForUploadManager.m */; };
+		787F68851907F384000383CC /* MUItemsForUploadManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 787F68841907F384000383CC /* MUItemsForUploadManager.mm */; };
+		789863B5190F9AE500E38AEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787F687D1907F131000383CC /* UIKit.framework */; };
+		789863C3190FB4CB00E38AEA /* MUMedia+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 789863C2190FB4CB00E38AEA /* MUMedia+Private.m */; };
+		78C0C110190F8EEB00E6B9C7 /* MUMediaItemTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 78C0C10F190F8EEB00E6B9C7 /* MUMediaItemTest.mm */; };
+		78C0C11A190F996900E6B9C7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C0C118190F991600E6B9C7 /* AVFoundation.framework */; };
+		78C0C11B190F996D00E6B9C7 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78CAF710190A7EB100201968 /* AssetsLibrary.framework */; };
+		78C0C11C190F998200E6B9C7 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C0C111190F95B500E6B9C7 /* CoreMedia.framework */; };
+		78C0C11D190F998E00E6B9C7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787F687B1907F0CF000383CC /* CoreGraphics.framework */; };
 		78C8F7D41907DFDA00B78ABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C8F7D31907DFDA00B78ABB /* Foundation.framework */; };
 		78C8F7E21907DFDA00B78ABB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C8F7E11907DFDA00B78ABB /* XCTest.framework */; };
 		78C8F7E31907DFDA00B78ABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C8F7D31907DFDA00B78ABB /* Foundation.framework */; };
 		78C8F7E51907DFDA00B78ABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C8F7E41907DFDA00B78ABB /* UIKit.framework */; };
 		78C8F7E81907DFDA00B78ABB /* libMUUploadManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C8F7D01907DFDA00B78ABB /* libMUUploadManager.a */; };
 		78C8F7EE1907DFDA00B78ABB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78C8F7EC1907DFDA00B78ABB /* InfoPlist.strings */; };
-		78C8F7F01907DFDA00B78ABB /* MUUploadManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C8F7EF1907DFDA00B78ABB /* MUUploadManagerTests.m */; };
-		78CAF711190A7EB100201968 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78CAF710190A7EB100201968 /* AssetsLibrary.framework */; };
+		78C8F7F01907DFDA00B78ABB /* MUUploadManagerTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 78C8F7EF1907DFDA00B78ABB /* MUUploadManagerTests.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +72,13 @@
 		787F687F1907F1B0000383CC /* MUImageScaling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUImageScaling.h; sourceTree = "<group>"; };
 		787F68801907F1B0000383CC /* MUImageScaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUImageScaling.m; sourceTree = "<group>"; };
 		787F68831907F384000383CC /* MUItemsForUploadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MUItemsForUploadManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		787F68841907F384000383CC /* MUItemsForUploadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MUItemsForUploadManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		787F68841907F384000383CC /* MUItemsForUploadManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = MUItemsForUploadManager.mm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		789863C0190FB42E00E38AEA /* MUTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUTypes.h; sourceTree = "<group>"; };
+		789863C1190FB4CB00E38AEA /* MUMedia+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MUMedia+Private.h"; sourceTree = "<group>"; };
+		789863C2190FB4CB00E38AEA /* MUMedia+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MUMedia+Private.m"; sourceTree = "<group>"; };
+		78C0C10F190F8EEB00E6B9C7 /* MUMediaItemTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MUMediaItemTest.mm; sourceTree = "<group>"; };
+		78C0C111190F95B500E6B9C7 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		78C0C118190F991600E6B9C7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		78C8F7D01907DFDA00B78ABB /* libMUUploadManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMUUploadManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C8F7D31907DFDA00B78ABB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		78C8F7D71907DFDA00B78ABB /* MUUploadManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MUUploadManager-Prefix.pch"; sourceTree = "<group>"; };
@@ -83,7 +87,7 @@
 		78C8F7E41907DFDA00B78ABB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		78C8F7EB1907DFDA00B78ABB /* MUUploadManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MUUploadManagerTests-Info.plist"; sourceTree = "<group>"; };
 		78C8F7ED1907DFDA00B78ABB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		78C8F7EF1907DFDA00B78ABB /* MUUploadManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUUploadManagerTests.m; sourceTree = "<group>"; };
+		78C8F7EF1907DFDA00B78ABB /* MUUploadManagerTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MUUploadManagerTests.mm; sourceTree = "<group>"; };
 		78CAF710190A7EB100201968 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -92,9 +96,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78CAF711190A7EB100201968 /* AssetsLibrary.framework in Frameworks */,
-				787F687E1907F131000383CC /* UIKit.framework in Frameworks */,
-				787F687C1907F0CF000383CC /* CoreGraphics.framework in Frameworks */,
 				78C8F7D41907DFDA00B78ABB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,9 +105,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				78C8F7E81907DFDA00B78ABB /* libMUUploadManager.a in Frameworks */,
+				789863B5190F9AE500E38AEA /* UIKit.framework in Frameworks */,
 				78C8F7E21907DFDA00B78ABB /* XCTest.framework in Frameworks */,
+				78C0C11A190F996900E6B9C7 /* AVFoundation.framework in Frameworks */,
+				78C0C11B190F996D00E6B9C7 /* AssetsLibrary.framework in Frameworks */,
+				78C0C11D190F998E00E6B9C7 /* CoreGraphics.framework in Frameworks */,
 				78C8F7E51907DFDA00B78ABB /* UIKit.framework in Frameworks */,
 				78C8F7E31907DFDA00B78ABB /* Foundation.framework in Frameworks */,
+				78C0C11C190F998200E6B9C7 /* CoreMedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +141,8 @@
 		78C8F7D21907DFDA00B78ABB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				78C0C118190F991600E6B9C7 /* AVFoundation.framework */,
+				78C0C111190F95B500E6B9C7 /* CoreMedia.framework */,
 				78CAF710190A7EB100201968 /* AssetsLibrary.framework */,
 				787F687D1907F131000383CC /* UIKit.framework */,
 				787F687B1907F0CF000383CC /* CoreGraphics.framework */,
@@ -148,10 +156,13 @@
 		78C8F7D51907DFDA00B78ABB /* MUUploadManager */ = {
 			isa = PBXGroup;
 			children = (
+				789863C0190FB42E00E38AEA /* MUTypes.h */,
 				785088A5190E576C00EBAD3C /* MULocationInfo.h */,
 				785088A2190E56A600EBAD3C /* MULocationInfoData.h */,
 				785088A3190E56A600EBAD3C /* MULocationInfoData.m */,
 				78C8F7D61907DFDA00B78ABB /* Supporting Files */,
+				789863C1190FB4CB00E38AEA /* MUMedia+Private.h */,
+				789863C2190FB4CB00E38AEA /* MUMedia+Private.m */,
 				78745EC51907F001004353B2 /* MUMedia.h */,
 				78745EC61907F001004353B2 /* MUMedia.m */,
 				78745ECA1907F02A004353B2 /* MUConstants.h */,
@@ -163,7 +174,7 @@
 				78745EC11907EFD2004353B2 /* MUUploadItemStatus.h */,
 				78745EC21907EFD2004353B2 /* MUUploadItemStatus.m */,
 				787F68831907F384000383CC /* MUItemsForUploadManager.h */,
-				787F68841907F384000383CC /* MUItemsForUploadManager.m */,
+				787F68841907F384000383CC /* MUItemsForUploadManager.mm */,
 				78745EB71907EDB8004353B2 /* MUUploadManager.h */,
 			);
 			path = MUUploadManager;
@@ -180,7 +191,8 @@
 		78C8F7E91907DFDA00B78ABB /* MUUploadManagerTests */ = {
 			isa = PBXGroup;
 			children = (
-				78C8F7EF1907DFDA00B78ABB /* MUUploadManagerTests.m */,
+				78C0C10F190F8EEB00E6B9C7 /* MUMediaItemTest.mm */,
+				78C8F7EF1907DFDA00B78ABB /* MUUploadManagerTests.mm */,
 				78C8F7EA1907DFDA00B78ABB /* Supporting Files */,
 			);
 			path = MUUploadManagerTests;
@@ -279,8 +291,9 @@
 				785088A4190E56A600EBAD3C /* MULocationInfoData.m in Sources */,
 				78745EC31907EFD2004353B2 /* MUUploadItemStatus.m in Sources */,
 				78745EC71907F001004353B2 /* MUMedia.m in Sources */,
-				787F68851907F384000383CC /* MUItemsForUploadManager.m in Sources */,
+				787F68851907F384000383CC /* MUItemsForUploadManager.mm in Sources */,
 				78745ECF1907F04F004353B2 /* MUImageHelper.mm in Sources */,
+				789863C3190FB4CB00E38AEA /* MUMedia+Private.m in Sources */,
 				78745ECB1907F02A004353B2 /* MUConstants.m in Sources */,
 				787F68811907F1B0000383CC /* MUImageScaling.m in Sources */,
 			);
@@ -290,13 +303,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78C8F7F01907DFDA00B78ABB /* MUUploadManagerTests.m in Sources */,
-				78745EC41907EFD2004353B2 /* MUUploadItemStatus.m in Sources */,
-				787F68861907F384000383CC /* MUItemsForUploadManager.m in Sources */,
-				78745ECC1907F02A004353B2 /* MUConstants.m in Sources */,
-				78745EC81907F001004353B2 /* MUMedia.m in Sources */,
-				787F68821907F1B0000383CC /* MUImageScaling.m in Sources */,
-				78745ED01907F04F004353B2 /* MUImageHelper.mm in Sources */,
+				78C8F7F01907DFDA00B78ABB /* MUUploadManagerTests.mm in Sources */,
+				78C0C110190F8EEB00E6B9C7 /* MUMediaItemTest.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,10 +362,12 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_PEDANTIC = NO;
 				GCC_WARN_SIGN_COMPARE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
@@ -397,10 +407,12 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_PEDANTIC = NO;
 				GCC_WARN_SIGN_COMPARE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
