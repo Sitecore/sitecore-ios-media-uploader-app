@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="GaO-Yc-Wpv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="GaO-Yc-Wpv">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -53,7 +53,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="22B-7y-RxY" customClass="sc_GradientButton">
-                                        <rect key="frame" x="10" y="94" width="220" height="60"/>
+                                        <rect key="frame" x="10" y="88" width="220" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="tintColor" red="0.86350047829999999" green="0.86350047829999999" blue="0.86350047829999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -64,43 +64,19 @@
                                             <segue destination="Ved-5B-ULu" kind="push" id="RNt-1f-BmJ"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" id="IqL-7G-zCc" userLabel="PendingButtonView">
-                                        <rect key="frame" x="10" y="162" width="238" height="65"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OeI-yt-jKi" customClass="sc_GradientButton">
+                                        <rect key="frame" x="10" y="156" width="220" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OeI-yt-jKi" customClass="sc_GradientButton">
-                                                <rect key="frame" x="0.0" y="5" width="220" height="60"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                <color key="tintColor" red="0.86350047829999999" green="0.86350047829999999" blue="0.86350047829999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <inset key="contentEdgeInsets" minX="1" minY="1" maxX="1" maxY="1"/>
-                                                <state key="normal" title="Pending" image="pending.png">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="fUX-Dp-Kh2" kind="push" identifier="uploadPendingMedia" id="Yl5-Uf-9td"/>
-                                                </connections>
-                                            </button>
-                                            <view contentMode="scaleToFill" id="K8F-kF-ydE">
-                                                <rect key="frame" x="190" y="-7" width="40" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="counterBg.png" id="onB-r0-nms">
-                                                        <rect key="frame" x="5" y="6" width="30" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    </imageView>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="USq-O5-Zxx">
-                                                        <rect key="frame" x="5" y="6" width="30" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            </view>
-                                        </subviews>
-                                    </view>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="tintColor" red="0.86350047829999999" green="0.86350047829999999" blue="0.86350047829999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="1" minY="1" maxX="1" maxY="1"/>
+                                        <state key="normal" title="Pending" image="pending.png">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="fUX-Dp-Kh2" kind="push" identifier="uploadPendingMedia" id="Yl5-Uf-9td"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </view>
                         </subviews>
@@ -119,8 +95,6 @@
                         <outlet property="browseButton" destination="22B-7y-RxY" id="UzW-Pw-aKe"/>
                         <outlet property="messageLabel" destination="eox-oO-neY" id="RDN-ap-OoG"/>
                         <outlet property="pendingButton" destination="OeI-yt-jKi" id="dJb-5R-kLQ"/>
-                        <outlet property="pendingCounterLabel" destination="USq-O5-Zxx" id="kuI-RB-qsE"/>
-                        <outlet property="pendingView" destination="K8F-kF-ydE" id="fza-Qo-t9U"/>
                         <outlet property="settingsButton" destination="DAr-Rl-OqO" id="Hmy-9c-v7M"/>
                         <outlet property="uploadButton" destination="vEC-rA-xNE" id="OdV-Mc-7s1"/>
                     </connections>
@@ -400,7 +374,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1392" y="-183"/>
+            <point key="canvasLocation" x="1154" y="-223"/>
         </scene>
         <!--Sc Map View Controller - Map-->
         <scene sceneID="Xgz-X8-Fbs">
@@ -764,14 +738,21 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                                         </imageView>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="200" contentMode="left" text="site" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wC8-fi-MTc">
-                                                            <rect key="frame" x="91" y="11" width="185" height="24"/>
+                                                            <rect key="frame" x="88" y="27" width="185" height="24"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="200" contentMode="left" text="name" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xek-vT-t1s">
+                                                            <rect key="frame" x="88" y="0.0" width="185" height="24"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="300" contentMode="left" text="folder" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pLc-9d-9E8">
-                                                            <rect key="frame" x="91" y="43" width="185" height="24"/>
+                                                            <rect key="frame" x="88" y="55" width="185" height="24"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -787,6 +768,7 @@
                                                     <outlet property="activityView" destination="Qkf-DI-Q9t" id="7Ce-vH-HcF"/>
                                                     <outlet property="cellImageView" destination="ypA-HU-qEd" id="Me4-8h-jnm"/>
                                                     <outlet property="folderLabel" destination="pLc-9d-9E8" id="OJ6-66-JZx"/>
+                                                    <outlet property="nameLabel" destination="xek-vT-t1s" id="pim-io-4hR"/>
                                                     <outlet property="siteLabel" destination="wC8-fi-MTc" id="cZJ-D9-UTR"/>
                                                 </connections>
                                             </tableViewCell>
@@ -827,7 +809,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0vw-pf-MdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1538" y="1061"/>
+            <point key="canvasLocation" x="1506" y="587"/>
         </scene>
         <!--Sc Browse View Controller - Media browser-->
         <scene sceneID="EvL-L2-ffi">
@@ -1009,7 +991,6 @@
     <resources>
         <image name="bg.png" width="191" height="167"/>
         <image name="browse.png" width="60" height="48"/>
-        <image name="counterBg.png" width="50" height="50"/>
         <image name="currentLocation.png" width="48" height="48"/>
         <image name="geolocation_small.png" width="30" height="30"/>
         <image name="internet-normal.png" width="32" height="32"/>
@@ -1025,7 +1006,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="dwe-Ci-vSw"/>
-        <segue reference="Yln-qg-wE4"/>
+        <segue reference="kAA-QS-bIp"/>
+        <segue reference="Yl5-Uf-9td"/>
     </inferredMetricsTieBreakers>
 </document>
