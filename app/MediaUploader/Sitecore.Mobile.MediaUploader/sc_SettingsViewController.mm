@@ -95,7 +95,12 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
         NSUInteger castedRow = static_cast<NSUInteger>( indexPath.row );
         
         SCSite* siteToDelete = [sitesManager siteAtIndex: castedRow];
-        [ sitesManager removeSite: siteToDelete error:nil ];
+        
+        NSError* error = nil;
+        [ sitesManager removeSite: siteToDelete
+                            error: &error ];
+        NSParameterAssert( nil == error );
+        
         [ self reload ];
     }
 }
@@ -215,15 +220,21 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
         NSInteger sitesCount = [ self sitesCountForTableView ];
         if ( indexPath.row == sitesCount )
         {
-            sc_SiteAddViewController *siteAddViewController = (sc_SiteAddViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"AddSite"];
-            [self.navigationController pushViewController:siteAddViewController animated:YES];
-            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+            sc_SiteAddViewController *siteAddViewController = (sc_SiteAddViewController*)[self.storyboard instantiateViewControllerWithIdentifier: @"AddSite"];
+            [self.navigationController pushViewController: siteAddViewController animated: YES];
+            [tableView deselectRowAtIndexPath: indexPath animated: YES];
             return;
         }
         else
         {
+            NSError* error = nil;
+            
             SCSite* siteAtIndex = [ self siteAtRow: indexPath.row ];
-            [ _appDataObject.sitesManager setSiteForUpload: siteAtIndex error: nil ];
+
+            [ self->_appDataObject.sitesManager setSiteForUpload: siteAtIndex
+                                                           error: &error ];
+            NSParameterAssert( nil == error );
+            
             [ self.sitesTableView reloadData ];
         }
     }

@@ -20,12 +20,12 @@
     return self;
 }
 
--(NSArray*)sitesList
+-(NSArray*)sitesList __attribute__((const));
 {
     return [ NSArray arrayWithArray: self->_sitesList ];
 }
 
--(NSUInteger)sitesCount
+-(NSUInteger)sitesCount __attribute__((const));
 {
     return [ self->_sitesList count ];
 }

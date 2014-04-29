@@ -130,8 +130,11 @@
 }
 
 -(IBAction)closeView
-{    
-    [ _appDataObject.sitesManager setSiteForBrowse: _selectedSite error: nil ];
+{
+    NSError* error = nil;
+    [ _appDataObject.sitesManager setSiteForBrowse: _selectedSite
+                                             error: &error ];
+    NSParameterAssert( nil == error );
     
     [ sc_ViewsHelper reloadParentController: self.navigationController
                                      levels: 2 ];
