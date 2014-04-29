@@ -2,14 +2,9 @@
 
 
 #import "SCSitesManager.h"
+#import "SCSitesManager+StoragePath.h"
+
 #import "SCSite.h"
-
-
-@interface SCSitesManager()
-
--(NSString*)getSitesFilePath;
-
-@end
 
 
 @interface AddDuplicateSitesTest : XCTestCase

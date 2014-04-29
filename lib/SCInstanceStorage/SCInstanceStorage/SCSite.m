@@ -60,7 +60,7 @@ uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
                       username:(NSString*)username
                       password:(NSString*)password
              selectedForBrowse:(BOOL)selectedForBrowse
-             selectedForUpload:(BOOL)selectedForUpload
+             selectedForUpload:(BOOL)selectedForUpload __attribute__((nonnull))
 {
     NSParameterAssert( nil != siteUrl                            );
     NSParameterAssert( nil != site                               );
@@ -183,6 +183,12 @@ uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
     if ( self == object )
     {
         return YES;
+    }
+    
+    BOOL isSameId = [ self.siteId isEqualToString: object.siteId ];
+    if ( !isSameId )
+    {
+        return NO;
     }
     
     
