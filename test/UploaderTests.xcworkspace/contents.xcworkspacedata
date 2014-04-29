@@ -4,4 +4,7 @@
    <FileRef
       location = "group:../lib/SCInstanceStorage/SCInstanceStorage.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:../lib/MUUploadManager/MUUploadManager.xcodeproj">
+   </FileRef>
 </Workspace>
