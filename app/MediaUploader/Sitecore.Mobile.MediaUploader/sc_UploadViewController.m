@@ -372,12 +372,12 @@ didFinishPickingMediaWithInfo:(NSDictionary*)info
     locationInfo.cityCode = [ _locationManager getCityCode ];
     locationInfo.locationDescription = _locationDescription.text;
     
-    MUMedia* media = [ [MUMedia alloc] initWithObjectData: _name.text
-                                                 dateTime: _timeStamp
-                                             locationInfo: locationInfo
-                                                 videoUrl: _videoUrl
-                                                 imageUrl: _imageUrl
-                                                thumbnail: _thumbnail ];
+    MUMedia* media = [ [MUMedia alloc] initWithName: _name.text
+                                           dateTime: _timeStamp
+                                       locationInfo: locationInfo
+                                           videoUrl: _videoUrl
+                                           imageUrl: _imageUrl
+                                          thumbnail: _thumbnail ];
     
     media.siteForUploadingId = [self.appDataObject.sitesManager siteForUpload].siteId;
     
