@@ -38,6 +38,7 @@
     BOOL _uploadInProgress;
     
     sc_BaseTheme *_theme;
+    MUItemsForUploadManager *_uploadManager;
 }
 
 static NSString*  const CellIdentifier = @"cellSiteUrl";
@@ -74,15 +75,15 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 {
     [super viewDidLoad];
     
-    [ self->_appDataObject.uploadItemsManager setFilterOption: SHOW_ALL_ITEMS ];
-
     [ self localizeFilterButtons ];
     
     _uploadInProgress = NO;
     
     self->_theme = [ sc_BaseTheme new ];
     
-    _appDataObject = [sc_GlobalDataObject getAppDataObject];
+    self->_appDataObject = [sc_GlobalDataObject getAppDataObject];
+    [ self->_appDataObject.uploadItemsManager setFilterOption: SHOW_ALL_ITEMS ];
+    self->_uploadManager = self->_appDataObject.uploadItemsManager;
     
     self->_uploadImageSize = [MUImageHelper loadUploadImageSize];
     
@@ -148,7 +149,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 -(MUUploadItemStatus*)statusForItemForCurrentIndexPath:(NSIndexPath*)indexPath
 {
     MUMedia* media = [ _appDataObject.uploadItemsManager mediaUploadAtIndex: indexPath.row ];
-    return media.uploadStatus;
+    return media.uploadStatusData;
 }
 
 -(UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
@@ -157,7 +158,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     
     MUMedia* media = [ _appDataObject.uploadItemsManager mediaUploadAtIndex: indexPath.row ];
     
-    MUUploadItemStatus *status = media.uploadStatus;
+    MUUploadItemStatus *status = media.uploadStatusData;
 
     [ cell.cellImageView setImage: media.thumbnail ];
     
@@ -191,7 +192,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
         }
         case UPLOAD_ERROR:
         {
-            NSString* description = status.localizedDescription;
+            NSString* description = NSLocalizedString(status.description, nil);
             [ sc_ErrorHelper showError: description ];
             break;
         }
@@ -227,9 +228,11 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     //TODO: @igk make stack of itemf for upload
     if ( !_uploadInProgress )
     {
-        MUMedia* media = [_appDataObject.uploadItemsManager mediaUploadAtIndex: index ];
+        [ self->_uploadManager setUploaStatus: UPLOAD_IN_PROGRESS
+                       withDescription: nil
+                 forMediaUploadAtIndex: index ];
         
-        media.uploadStatus.statusId = UPLOAD_IN_PROGRESS;
+        MUMedia* media = [_appDataObject.uploadItemsManager mediaUploadAtIndex: index ];
         
         NSIndexPath *indexPath = [ NSIndexPath indexPathForItem: index
                                                       inSection: 0 ];
@@ -333,9 +336,9 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     //TODO: @igk make stack of itemf for upload
     if ( !_uploadInProgress )
     {
-        __block MUMedia* media = uploadItem.mediaItem;
-        
-        SCSite *siteForUpload = [ _appDataObject.sitesManager siteBySiteId:  media.siteForUploadingId ];
+        MUMedia* media = uploadItem.mediaItem;
+        __block NSInteger itemIndex = [ self->_uploadManager indexOfMediaUpload: media ];
+        SCSite *siteForUpload = [ _appDataObject.sitesManager siteBySiteId: media.siteForUploadingId ];
         
         SCApiSession *session = [ sc_ItemHelper getContext: siteForUpload ];
         SCUploadMediaItemRequest *request = [SCUploadMediaItemRequest new];
@@ -356,23 +359,21 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
         
         SCDidFinishAsyncOperationHandler doneHandler = (^( SCItem* item, NSError* error )
         {
-            MUUploadItemStatus *status = media.uploadStatus;
-            
             if (error)
             {
-                status.statusId = UPLOAD_ERROR;
-                status.description = error.localizedDescription;
+                [ self->_uploadManager setUploaStatus: UPLOAD_ERROR
+                                      withDescription: error.description
+                                forMediaUploadAtIndex: itemIndex ];
             }
             else
             {
                 [ self setFields: item
                          Context: session
                       uploadItem: uploadItem ];
-
                 
-                [ [ sc_GlobalDataObject getAppDataObject ].uploadItemsManager removeTmpVideoFileFromMediaItem: uploadItem.mediaItem error: nil ];
-                
-                status.statusId = UPLOAD_DONE;
+                [ self->_uploadManager setUploaStatus: UPLOAD_DONE
+                                      withDescription: nil
+                                forMediaUploadAtIndex: itemIndex ];
             }
             
             [ self saveUploadItemsChanges ];
@@ -383,8 +384,10 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
         
         SCCancelAsyncOperationHandler cancelHandler = ^(BOOL cancelInfo)
         {
-            MUUploadItemStatus *status = media.uploadStatus;
-            status.statusId = UPLOAD_CANCELED;
+            [ self->_uploadManager setUploaStatus: UPLOAD_CANCELED
+                                  withDescription: nil
+                            forMediaUploadAtIndex: itemIndex ];
+            
             [ self saveUploadItemsChanges ];
             [ self.sitesTableView reloadData ];
             
