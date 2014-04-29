@@ -70,7 +70,7 @@
 		787F687B1907F0CF000383CC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		787F687D1907F131000383CC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		787F687F1907F1B0000383CC /* MUImageScaling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUImageScaling.h; sourceTree = "<group>"; };
-		787F68801907F1B0000383CC /* MUImageScaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUImageScaling.m; sourceTree = "<group>"; };
+		787F68801907F1B0000383CC /* MUImageScaling.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MUImageScaling.mm; sourceTree = "<group>"; };
 		787F68831907F384000383CC /* MUItemsForUploadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MUItemsForUploadManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		787F68841907F384000383CC /* MUItemsForUploadManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = MUItemsForUploadManager.mm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		789863C0190FB42E00E38AEA /* MUTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUTypes.h; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		78C0C118190F991600E6B9C7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		78C8F7D01907DFDA00B78ABB /* libMUUploadManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMUUploadManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C8F7D31907DFDA00B78ABB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		78C8F7D71907DFDA00B78ABB /* MUUploadManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MUUploadManager-Prefix.pch"; sourceTree = "<group>"; };
+		78C8F7D71907DFDA00B78ABB /* MUUploadManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MUUploadManager-Prefix.pch"; path = "MUUploadManager/MUUploadManager-Prefix.pch"; sourceTree = "<group>"; };
 		78C8F7E01907DFDA00B78ABB /* MUUploadManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MUUploadManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C8F7E11907DFDA00B78ABB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		78C8F7E41907DFDA00B78ABB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -122,6 +122,7 @@
 		78C8F7C71907DFDA00B78ABB = {
 			isa = PBXGroup;
 			children = (
+				78C8F7D71907DFDA00B78ABB /* MUUploadManager-Prefix.pch */,
 				78C8F7D51907DFDA00B78ABB /* MUUploadManager */,
 				78C8F7E91907DFDA00B78ABB /* MUUploadManagerTests */,
 				78C8F7D21907DFDA00B78ABB /* Frameworks */,
@@ -170,7 +171,7 @@
 				78745ECD1907F04F004353B2 /* MUImageHelper.h */,
 				78745ECE1907F04F004353B2 /* MUImageHelper.mm */,
 				787F687F1907F1B0000383CC /* MUImageScaling.h */,
-				787F68801907F1B0000383CC /* MUImageScaling.m */,
+				787F68801907F1B0000383CC /* MUImageScaling.mm */,
 				78745EC11907EFD2004353B2 /* MUUploadItemStatus.h */,
 				78745EC21907EFD2004353B2 /* MUUploadItemStatus.m */,
 				787F68831907F384000383CC /* MUItemsForUploadManager.h */,
@@ -178,14 +179,6 @@
 				78745EB71907EDB8004353B2 /* MUUploadManager.h */,
 			);
 			path = MUUploadManager;
-			sourceTree = "<group>";
-		};
-		78C8F7D61907DFDA00B78ABB /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				78C8F7D71907DFDA00B78ABB /* MUUploadManager-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		78C8F7E91907DFDA00B78ABB /* MUUploadManagerTests */ = {
@@ -295,7 +288,7 @@
 				78745ECF1907F04F004353B2 /* MUImageHelper.mm in Sources */,
 				789863C3190FB4CB00E38AEA /* MUMedia+Private.m in Sources */,
 				78745ECB1907F02A004353B2 /* MUConstants.m in Sources */,
-				787F68811907F1B0000383CC /* MUImageScaling.m in Sources */,
+				787F68811907F1B0000383CC /* MUImageScaling.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +298,12 @@
 			files = (
 				78C8F7F01907DFDA00B78ABB /* MUUploadManagerTests.mm in Sources */,
 				78C0C110190F8EEB00E6B9C7 /* MUMediaItemTest.mm in Sources */,
+				78745EC41907EFD2004353B2 /* MUUploadItemStatus.m in Sources */,
+				787F68861907F384000383CC /* MUItemsForUploadManager.mm in Sources */,
+				78745ECC1907F02A004353B2 /* MUConstants.m in Sources */,
+				78745EC81907F001004353B2 /* MUMedia.m in Sources */,
+				787F68821907F1B0000383CC /* MUImageScaling.mm in Sources */,
+				78745ED01907F04F004353B2 /* MUImageHelper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

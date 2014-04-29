@@ -1,4 +1,7 @@
+*.xccheckout
 *xcuserdata*
 DerivedData
 build
 *xcworkspace*
+
+lib/SCInstanceStorage/SCInstanceStorage.xcodeproj/*.xcworkspace

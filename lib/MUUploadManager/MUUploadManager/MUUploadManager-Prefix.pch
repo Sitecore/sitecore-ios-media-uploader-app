@@ -9,3 +9,9 @@
     #import <CoreGraphics/CoreGraphics.h>
     #import <UIKit/UIKit.h>
 #endif
+
+#ifdef __cplusplus
+    #include <stdexcept>
+    #include <algorithm>
+#endif
+

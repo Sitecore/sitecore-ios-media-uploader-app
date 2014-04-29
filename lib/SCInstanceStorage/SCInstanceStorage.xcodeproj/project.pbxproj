@@ -14,15 +14,20 @@
 		78716C5A18F6E8140092AA98 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78716C5918F6E8140092AA98 /* UIKit.framework */; };
 		78716C5D18F6E8140092AA98 /* libSCInstanceStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78716C4518F6E8130092AA98 /* libSCInstanceStorage.a */; };
 		78716C6318F6E8140092AA98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78716C6118F6E8140092AA98 /* InfoPlist.strings */; };
-		78716C6518F6E8140092AA98 /* SCInstanceStorageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78716C6418F6E8140092AA98 /* SCInstanceStorageTests.m */; };
 		78C8F7951907BD6F00B78ABB /* SCSitesListSavingError.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C8F7941907BD6F00B78ABB /* SCSitesListSavingError.m */; };
 		78D6669F18FD6CAF00BFD6C7 /* SCSite.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D6669A18FD6CAF00BFD6C7 /* SCSite.m */; };
-		78D666A018FD6CAF00BFD6C7 /* SCSite.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D6669A18FD6CAF00BFD6C7 /* SCSite.m */; };
 		78D666A118FD6CAF00BFD6C7 /* SCSite+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D6669C18FD6CAF00BFD6C7 /* SCSite+Private.m */; };
-		78D666A218FD6CAF00BFD6C7 /* SCSite+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D6669C18FD6CAF00BFD6C7 /* SCSite+Private.m */; };
 		78D666A318FD6CAF00BFD6C7 /* SCSitesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D6669E18FD6CAF00BFD6C7 /* SCSitesManager.m */; };
-		78D666A418FD6CAF00BFD6C7 /* SCSitesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D6669E18FD6CAF00BFD6C7 /* SCSitesManager.m */; };
 		78D6675E18FD73E900BFD6C7 /* SCInstanceStorage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 78D6675D18FD73D400BFD6C7 /* SCInstanceStorage.h */; };
+		7E5F15C7190E9680002B1854 /* AddDuplicateSitesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F15C6190E9680002B1854 /* AddDuplicateSitesTest.m */; };
+		7E5F15C9190E98E0002B1854 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5F15C8190E98E0002B1854 /* SitecoreMobileSDK.framework */; };
+		7E5F15CC190E9919002B1854 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5F15CA190E9919002B1854 /* libc++.dylib */; };
+		7E5F15CD190E9919002B1854 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5F15CB190E9919002B1854 /* libstdc++.dylib */; };
+		7E5F15CF190E9920002B1854 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5F15CE190E9920002B1854 /* libsqlite3.dylib */; };
+		7E5F15D1190E9925002B1854 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5F15D0190E9925002B1854 /* libxml2.dylib */; };
+		7E5F15D3190E9929002B1854 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5F15D2190E9929002B1854 /* libz.dylib */; };
+		7E5F15D5190E9ADF002B1854 /* SCSiteEqualComparatorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F15D4190E9ADF002B1854 /* SCSiteEqualComparatorTest.m */; };
+		7E5F15D8190EA0B5002B1854 /* SCSite+Mutable.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F15D7190EA0B5002B1854 /* SCSite+Mutable.m */; };
 		7EDB02B71900013900912956 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EDB02B61900013900912956 /* SitecoreMobileSDK.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +69,6 @@
 		78716C5918F6E8140092AA98 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		78716C6018F6E8140092AA98 /* SCInstanceStorageTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SCInstanceStorageTests-Info.plist"; sourceTree = "<group>"; };
 		78716C6218F6E8140092AA98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		78716C6418F6E8140092AA98 /* SCInstanceStorageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCInstanceStorageTests.m; sourceTree = "<group>"; };
 		78C8F7931907BD6F00B78ABB /* SCSitesListSavingError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSitesListSavingError.h; sourceTree = "<group>"; };
 		78C8F7941907BD6F00B78ABB /* SCSitesListSavingError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSitesListSavingError.m; sourceTree = "<group>"; };
 		78D6669918FD6CAF00BFD6C7 /* SCSite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSite.h; sourceTree = "<group>"; };
@@ -74,6 +78,16 @@
 		78D6669D18FD6CAF00BFD6C7 /* SCSitesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSitesManager.h; sourceTree = "<group>"; };
 		78D6669E18FD6CAF00BFD6C7 /* SCSitesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSitesManager.m; sourceTree = "<group>"; };
 		78D6675D18FD73D400BFD6C7 /* SCInstanceStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCInstanceStorage.h; sourceTree = "<group>"; };
+		7E5F15C6190E9680002B1854 /* AddDuplicateSitesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDuplicateSitesTest.m; sourceTree = "<group>"; };
+		7E5F15C8190E98E0002B1854 /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileSDK.framework; path = ../../frameworks/SitecoreMobileSDK.framework; sourceTree = "<group>"; };
+		7E5F15CA190E9919002B1854 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		7E5F15CB190E9919002B1854 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		7E5F15CE190E9920002B1854 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		7E5F15D0190E9925002B1854 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		7E5F15D2190E9929002B1854 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		7E5F15D4190E9ADF002B1854 /* SCSiteEqualComparatorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSiteEqualComparatorTest.m; sourceTree = "<group>"; };
+		7E5F15D6190EA0B5002B1854 /* SCSite+Mutable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCSite+Mutable.h"; sourceTree = "<group>"; };
+		7E5F15D7190EA0B5002B1854 /* SCSite+Mutable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCSite+Mutable.m"; sourceTree = "<group>"; };
 		7EDB02B61900013900912956 /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileSDK.framework; path = ../../frameworks/SitecoreMobileSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,7 +105,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E5F15D3190E9929002B1854 /* libz.dylib in Frameworks */,
+				7E5F15D1190E9925002B1854 /* libxml2.dylib in Frameworks */,
+				7E5F15CF190E9920002B1854 /* libsqlite3.dylib in Frameworks */,
+				7E5F15CC190E9919002B1854 /* libc++.dylib in Frameworks */,
+				7E5F15CD190E9919002B1854 /* libstdc++.dylib in Frameworks */,
 				78716C5D18F6E8140092AA98 /* libSCInstanceStorage.a in Frameworks */,
+				7E5F15C9190E98E0002B1854 /* SitecoreMobileSDK.framework in Frameworks */,
 				78716C5718F6E8140092AA98 /* XCTest.framework in Frameworks */,
 				78716C5A18F6E8140092AA98 /* UIKit.framework in Frameworks */,
 				78716C5818F6E8140092AA98 /* Foundation.framework in Frameworks */,
@@ -136,6 +156,12 @@
 		78716C4718F6E8130092AA98 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E5F15D2190E9929002B1854 /* libz.dylib */,
+				7E5F15D0190E9925002B1854 /* libxml2.dylib */,
+				7E5F15CE190E9920002B1854 /* libsqlite3.dylib */,
+				7E5F15CA190E9919002B1854 /* libc++.dylib */,
+				7E5F15CB190E9919002B1854 /* libstdc++.dylib */,
+				7E5F15C8190E98E0002B1854 /* SitecoreMobileSDK.framework */,
 				7EDB02B61900013900912956 /* SitecoreMobileSDK.framework */,
 				78716C4818F6E8130092AA98 /* Foundation.framework */,
 				78716C5618F6E8140092AA98 /* XCTest.framework */,
@@ -150,6 +176,8 @@
 				78622E5218FE736C00ADA6D1 /* SessionInfo */,
 				78D6669918FD6CAF00BFD6C7 /* SCSite.h */,
 				78D6669A18FD6CAF00BFD6C7 /* SCSite.m */,
+				7E5F15D6190EA0B5002B1854 /* SCSite+Mutable.h */,
+				7E5F15D7190EA0B5002B1854 /* SCSite+Mutable.m */,
 				78D6669B18FD6CAF00BFD6C7 /* SCSite+Private.h */,
 				78D6669C18FD6CAF00BFD6C7 /* SCSite+Private.m */,
 				78D6669D18FD6CAF00BFD6C7 /* SCSitesManager.h */,
@@ -173,7 +201,8 @@
 		78716C5E18F6E8140092AA98 /* SCInstanceStorageTests */ = {
 			isa = PBXGroup;
 			children = (
-				78716C6418F6E8140092AA98 /* SCInstanceStorageTests.m */,
+				7E5F15C6190E9680002B1854 /* AddDuplicateSitesTest.m */,
+				7E5F15D4190E9ADF002B1854 /* SCSiteEqualComparatorTest.m */,
 				78716C5F18F6E8140092AA98 /* Supporting Files */,
 			);
 			path = SCInstanceStorageTests;
@@ -270,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78D666A318FD6CAF00BFD6C7 /* SCSitesManager.m in Sources */,
+				7E5F15D8190EA0B5002B1854 /* SCSite+Mutable.m in Sources */,
 				78C8F7951907BD6F00B78ABB /* SCSitesListSavingError.m in Sources */,
 				78622E5918FE736C00ADA6D1 /* MUUploadSettingsStringFormatter.m in Sources */,
 				78D666A118FD6CAF00BFD6C7 /* SCSite+Private.m in Sources */,
@@ -281,10 +311,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78D666A418FD6CAF00BFD6C7 /* SCSitesManager.m in Sources */,
-				78D666A218FD6CAF00BFD6C7 /* SCSite+Private.m in Sources */,
-				78D666A018FD6CAF00BFD6C7 /* SCSite.m in Sources */,
-				78716C6518F6E8140092AA98 /* SCInstanceStorageTests.m in Sources */,
+				7E5F15C7190E9680002B1854 /* AddDuplicateSitesTest.m in Sources */,
+				7E5F15D5190E9ADF002B1854 /* SCSiteEqualComparatorTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +480,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Volumes/untitled/tfs/iOS_Media_Uploader/frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCInstanceStorage/SCInstanceStorage-Prefix.pch";
@@ -459,7 +488,10 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_WARN_PEDANTIC = NO;
 				INFOPLIST_FILE = "SCInstanceStorageTests/SCInstanceStorageTests-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -472,14 +504,115 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Volumes/untitled/tfs/iOS_Media_Uploader/frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCInstanceStorage/SCInstanceStorage-Prefix.pch";
+				GCC_WARN_PEDANTIC = NO;
 				INFOPLIST_FILE = "SCInstanceStorageTests/SCInstanceStorageTests-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
+		};
+		7E46B59B190F9F990039DA51 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_CXX0X_EXTENSIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = ../../frameworks;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_PEDANTIC = YES;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_PROFILING_CODE = YES;
+				HEADER_SEARCH_PATHS = .;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+			};
+			name = Coverage;
+		};
+		7E46B59C190F9F990039DA51 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SCInstanceStorage.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/untitled/tfs/iOS_Media_Uploader/frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCInstanceStorage/SCInstanceStorage-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Coverage;
+		};
+		7E46B59D190F9F990039DA51 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Volumes/untitled/tfs/iOS_Media_Uploader/frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCInstanceStorage/SCInstanceStorage-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_PEDANTIC = NO;
+				INFOPLIST_FILE = "SCInstanceStorageTests/SCInstanceStorageTests-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Coverage;
 		};
 /* End XCBuildConfiguration section */
 
@@ -488,6 +621,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78716C6618F6E8140092AA98 /* Debug */,
+				7E46B59B190F9F990039DA51 /* Coverage */,
 				78716C6718F6E8140092AA98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -497,6 +631,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78716C6918F6E8140092AA98 /* Debug */,
+				7E46B59C190F9F990039DA51 /* Coverage */,
 				78716C6A18F6E8140092AA98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -506,6 +641,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78716C6C18F6E8140092AA98 /* Debug */,
+				7E46B59D190F9F990039DA51 /* Coverage */,
 				78716C6D18F6E8140092AA98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

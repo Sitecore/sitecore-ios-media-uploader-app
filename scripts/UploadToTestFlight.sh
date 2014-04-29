@@ -1,6 +1,8 @@
-LAUNCH_DIR=$PWD
+#!/bin/bash
 
+LAUNCH_DIR=$PWD
 BUILT_PRODUCTS_DIR=$1
+
 
 cd "$BUILT_PRODUCTS_DIR"
 pwd

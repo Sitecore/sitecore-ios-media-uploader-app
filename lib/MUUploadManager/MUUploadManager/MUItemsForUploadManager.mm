@@ -106,7 +106,7 @@ forMediaUploadAtIndex:(NSInteger)index
 
 -(MUMedia*)mediaUploadAtIndex:(NSInteger)index
 {
-    MUMedia* objectToReturn;
+    MUMedia* objectToReturn = nil;
     
     NSUInteger castedIndex = static_cast<NSUInteger>( index );
     
@@ -133,23 +133,30 @@ forMediaUploadAtIndex:(NSInteger)index
     }
 }
 
--(void)removeMediaUpload:(MUMedia*)media error:(NSError**)error
+-(BOOL)removeMediaUpload:(MUMedia*)media error:(NSError**)error
 {
-    [ self removeTmpVideoFileFromMediaItem: media
-                                     error: error];
+    BOOL removeTmpResult = [ self removeTmpVideoFileFromMediaItem: media
+                                                            error: error];
+    if ( !removeTmpResult )
+    {
+        return NO;
+    }
+    
     [ self->_mediaUpload removeObject: media ];
     [ self saveUploadData ];
     
     [ self setFilterOption: self->_currentFilterOption ];
+
+    return YES;
 }
 
--(void)removeMediaUploadAtIndex:(NSInteger)index error:(NSError**)error
+-(BOOL)removeMediaUploadAtIndex:(NSInteger)index error:(NSError**)error
 {
     NSUInteger castedIndex = static_cast<NSUInteger>( index );
     
     MUMedia* media = self->_mediaUpload[ castedIndex ];
-    [ self removeMediaUpload: media
-                       error: error ];
+    return [ self removeMediaUpload: media
+                              error: error ];
 }
 
 -(void)save
@@ -165,14 +172,18 @@ forMediaUploadAtIndex:(NSInteger)index
                                  toFile: appFile ];
 }
 
--(void)removeTmpVideoFileFromMediaItem:(MUMedia*)media error:(NSError**)error
+-(BOOL)removeTmpVideoFileFromMediaItem:(MUMedia*)media error:(NSError**)error
 {
     NSURL* videoUrl = [ media videoUrl ];
     if ( videoUrl != nil )
     {
         NSFileManager* fileManager = [NSFileManager defaultManager];
-        [ fileManager removeItemAtURL: videoUrl
-                                error: error ];
+        return [ fileManager removeItemAtURL: videoUrl
+                                       error: error ];
+    }
+    else
+    {
+        throw std::runtime_error( "media file is image" );
     }
 }
 
