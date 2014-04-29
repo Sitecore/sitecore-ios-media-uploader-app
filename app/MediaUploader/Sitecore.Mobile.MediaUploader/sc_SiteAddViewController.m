@@ -117,6 +117,7 @@ static NSString* HTTP_PROTOCOL_STRING = @"http://";
     _siteTextField.text     = self->_siteForEdit.site;
     _usernameTextField.text = self->_siteForEdit.username;
     _passwordTextField.text = self->_siteForEdit.password;
+    _selectedFolder.text    = [ sc_ItemHelper formatUploadFolder: _siteForEdit ];
 }
 
 -(void)saveSiteWithUploadFolder:(NSString*)uploadFolder

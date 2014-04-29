@@ -19,7 +19,7 @@
 @property (nonatomic) IBOutlet UITextField* urlTextField;
 @property (nonatomic) IBOutlet UITextField* siteTextField;
 @property (nonatomic) IBOutlet UITableView* siteTableView;
-
+@property (nonatomic) IBOutlet UITextField* selectedFolder;
 
 -(void)setSiteForEdit:(SCSite*)site;
 
