@@ -412,9 +412,15 @@ didFinishPickingMediaWithInfo:(NSDictionary*)info
 
 
 static NSString* const UPLOAD_HISTORY_VC_SEGUE = @"upload2";
+static NSString* const SHOW_MAP_SEGUE = @"ShowMapSegue";
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier
                                  sender:(id)sender
 {
+    if ( [ SHOW_MAP_SEGUE isEqualToString:identifier ] )
+    {
+        return YES;
+    }
+    
     if ( ![ UPLOAD_HISTORY_VC_SEGUE isEqualToString: identifier ] )
     {
         return NO;
