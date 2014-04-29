@@ -100,7 +100,7 @@ cd "$WORKSPACE_DIR"
 xcodebuild -list
 
 
-echo "========[BEGIN] iAsyncUrlSession-XCTest========"
+echo "========[BEGIN] SCInstanceStorage-XCTest========"
     INTERMEDIATES_DIR=${CUSTOM_DERIVED_DATA_DIR}/SCInstanceStorage
 
     /bin/bash "$KILL_SIMULATOR"
@@ -115,7 +115,7 @@ echo "========[BEGIN] iAsyncUrlSession-XCTest========"
     cd "$TMP_REPORT_DIR"
     cp *.xml "$REPORT_DIR"
     cd "$WORKSPACE_DIR"
-echo "========[END] iAsyncUrlSession-SenTest========"
+echo "========[END] SCInstanceStorage-XCTest========"
 
 
 echo "-----------------"
