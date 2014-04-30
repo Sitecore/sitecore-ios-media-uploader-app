@@ -73,7 +73,6 @@
 		787F68801907F1B0000383CC /* MUImageScaling.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MUImageScaling.mm; sourceTree = "<group>"; };
 		787F68831907F384000383CC /* MUItemsForUploadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MUItemsForUploadManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		787F68841907F384000383CC /* MUItemsForUploadManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = MUItemsForUploadManager.mm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		789863C0190FB42E00E38AEA /* MUTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUTypes.h; sourceTree = "<group>"; };
 		789863C1190FB4CB00E38AEA /* MUMedia+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MUMedia+Private.h"; sourceTree = "<group>"; };
 		789863C2190FB4CB00E38AEA /* MUMedia+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MUMedia+Private.m"; sourceTree = "<group>"; };
 		78C0C10F190F8EEB00E6B9C7 /* MUMediaItemTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MUMediaItemTest.mm; sourceTree = "<group>"; };
@@ -157,7 +156,6 @@
 		78C8F7D51907DFDA00B78ABB /* MUUploadManager */ = {
 			isa = PBXGroup;
 			children = (
-				789863C0190FB42E00E38AEA /* MUTypes.h */,
 				785088A5190E576C00EBAD3C /* MULocationInfo.h */,
 				785088A2190E56A600EBAD3C /* MULocationInfoData.h */,
 				785088A3190E56A600EBAD3C /* MULocationInfoData.m */,

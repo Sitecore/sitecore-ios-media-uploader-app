@@ -1,14 +1,7 @@
 #import <Foundation/Foundation.h>
-#import <MUUploadManager/MUTypes.h>
+#import <MUUploadManager/MUConstants.h>
 
 @class MUMedia;
-
-typedef NS_ENUM(NSInteger, MUFilteringOptions)
-{
-    SHOW_ALL_ITEMS = 0,
-    SHOW_COMLETED_ITEMS,
-	SHOW_NOT_COMLETED_ITEMS,
-};
 
 @interface MUItemsForUploadManager : NSObject
 

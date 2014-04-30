@@ -1,6 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <MUUploadManager/MUTypes.h>
-
+#import <MUUploadManager/MUConstants.h>
 
 @interface MUUploadItemStatus : NSObject
 
