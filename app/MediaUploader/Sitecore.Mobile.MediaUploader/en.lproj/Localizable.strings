@@ -9,7 +9,7 @@
 //sc_ViewController
 "Upload" = "Upload";
 "Browse" = "Browse";
-"Pending" = "Pending";
+"Pending" = "My Uploads";
 "Please check your internet connection." = "Please check your internet connection.";
 "Please set up at least one upload site." = "Please set up at least one upload site.";
 
@@ -63,7 +63,7 @@
 //sc_Upload2ViewController
 "Aborted" = "Aborted";
 "Uploading  %d of %lu" = "Uploading  %d of %lu";
-"Uploading" = "Uploading";
+"Uploading" = "My Uploads";
 "Uploaded" = "Uploaded";
 "Cancelled" = "Cancelled";
 "Cancel" = "Cancel";
@@ -71,7 +71,7 @@
 "Preparing media" = "Preparing media";
 
 //sc_PendingFilesManagerViewController
-"Pe0nding files" = "Pending files";
+"Pe0nding files" = "My Uploads";
 
 //sc_MapViewController
 "Permission Denied" = "Permission Denied";
@@ -92,7 +92,6 @@
 
 //sc_SiteAddViewController
 "New site" = "New site";
-"Add site" = "Add site";
 "Authenticating" = "Authenticating";
 "Please enter username and password." = "Please enter username and password.";
 
