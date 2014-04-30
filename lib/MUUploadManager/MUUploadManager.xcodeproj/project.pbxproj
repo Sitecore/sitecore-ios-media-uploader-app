@@ -13,7 +13,7 @@
 		78745EC71907F001004353B2 /* MUMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 78745EC61907F001004353B2 /* MUMedia.m */; };
 		78745ECB1907F02A004353B2 /* MUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 78745EC91907F02A004353B2 /* MUConstants.m */; };
 		78745ECF1907F04F004353B2 /* MUImageHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 78745ECE1907F04F004353B2 /* MUImageHelper.mm */; };
-		787F68811907F1B0000383CC /* MUImageScaling.m in Sources */ = {isa = PBXBuildFile; fileRef = 787F68801907F1B0000383CC /* MUImageScaling.m */; };
+		787F68811907F1B0000383CC /* MUImageScaling.mm in Sources */ = {isa = PBXBuildFile; fileRef = 787F68801907F1B0000383CC /* MUImageScaling.mm */; };
 		787F68851907F384000383CC /* MUItemsForUploadManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 787F68841907F384000383CC /* MUItemsForUploadManager.mm */; };
 		789863B5190F9AE500E38AEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787F687D1907F131000383CC /* UIKit.framework */; };
 		789863C3190FB4CB00E38AEA /* MUMedia+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 789863C2190FB4CB00E38AEA /* MUMedia+Private.m */; };
@@ -161,7 +161,6 @@
 				785088A5190E576C00EBAD3C /* MULocationInfo.h */,
 				785088A2190E56A600EBAD3C /* MULocationInfoData.h */,
 				785088A3190E56A600EBAD3C /* MULocationInfoData.m */,
-				78C8F7D61907DFDA00B78ABB /* Supporting Files */,
 				789863C1190FB4CB00E38AEA /* MUMedia+Private.h */,
 				789863C2190FB4CB00E38AEA /* MUMedia+Private.m */,
 				78745EC51907F001004353B2 /* MUMedia.h */,
@@ -298,12 +297,6 @@
 			files = (
 				78C8F7F01907DFDA00B78ABB /* MUUploadManagerTests.mm in Sources */,
 				78C0C110190F8EEB00E6B9C7 /* MUMediaItemTest.mm in Sources */,
-				78745EC41907EFD2004353B2 /* MUUploadItemStatus.m in Sources */,
-				787F68861907F384000383CC /* MUItemsForUploadManager.mm in Sources */,
-				78745ECC1907F02A004353B2 /* MUConstants.m in Sources */,
-				78745EC81907F001004353B2 /* MUMedia.m in Sources */,
-				787F68821907F1B0000383CC /* MUImageScaling.mm in Sources */,
-				78745ED01907F04F004353B2 /* MUImageHelper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +477,91 @@
 			};
 			name = Release;
 		};
+		7E58C1321910026D00798B04 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_CXX0X_EXTENSIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_PEDANTIC = NO;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_PROFILING_CODE = YES;
+				HEADER_SEARCH_PATHS = .;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+			};
+			name = Coverage;
+		};
+		7E58C1331910026D00798B04 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MUUploadManager.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MUUploadManager/MUUploadManager-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Coverage;
+		};
+		7E58C1341910026D00798B04 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MUUploadManager/MUUploadManager-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MUUploadManagerTests/MUUploadManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Coverage;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -491,6 +569,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78C8F7F11907DFDA00B78ABB /* Debug */,
+				7E58C1321910026D00798B04 /* Coverage */,
 				78C8F7F21907DFDA00B78ABB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -500,6 +579,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78C8F7F41907DFDA00B78ABB /* Debug */,
+				7E58C1331910026D00798B04 /* Coverage */,
 				78C8F7F51907DFDA00B78ABB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -509,6 +589,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78C8F7F71907DFDA00B78ABB /* Debug */,
+				7E58C1341910026D00798B04 /* Coverage */,
 				78C8F7F81907DFDA00B78ABB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
