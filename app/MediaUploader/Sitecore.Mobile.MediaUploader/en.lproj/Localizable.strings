@@ -70,9 +70,6 @@
 "Done" = "Done";
 "Preparing media" = "Preparing media";
 
-//sc_PendingFilesManagerViewController
-"Pe0nding files" = "My Uploads";
-
 //sc_MapViewController
 "Permission Denied" = "Permission Denied";
 "Please enable Map Services" = "Please enable Map Services";
