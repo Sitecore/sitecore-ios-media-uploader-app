@@ -182,12 +182,12 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
         
         if ( siteAtIndex.selectedForUpload )
         {
-            cell.imageView.image = [UIImage imageNamed:@"upload_small.png"];
+            cell.imageView.image = [UIImage imageNamed:@"btn_radio_on_holo_light"];
             [ cell setBackgroundColor: [ self->_theme disableSiteBackgroundColor ] ];
         }
         else
         {
-            cell.imageView.image = [UIImage imageNamed:@"empty_upload_small.png"];
+            cell.imageView.image = [UIImage imageNamed:@"btn_radio_off_holo_light"];
             [ cell setBackgroundColor: [ UIColor whiteColor ] ];
         }
         

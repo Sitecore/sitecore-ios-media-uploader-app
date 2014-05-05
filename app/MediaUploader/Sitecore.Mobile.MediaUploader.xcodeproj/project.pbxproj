@@ -219,6 +219,10 @@
 		78C9E27218E5A059004C7A88 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C9E26D18E5A059004C7A88 /* SitecoreMobileSDK.framework */; };
 		78C9E27718E5CF6F004C7A88 /* SitecoreItemsBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C9E27618E5CF6F004C7A88 /* SitecoreItemsBrowser.framework */; };
 		78C9E27818E5CF6F004C7A88 /* SitecoreItemsBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C9E27618E5CF6F004C7A88 /* SitecoreItemsBrowser.framework */; };
+		78CA368219178A6B000361A2 /* btn_radio_off_holo_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA367E19178A6B000361A2 /* btn_radio_off_holo_light.png */; };
+		78CA368319178A6B000361A2 /* btn_radio_off_holo_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA367F19178A6B000361A2 /* btn_radio_off_holo_light@2x.png */; };
+		78CA368419178A6B000361A2 /* btn_radio_on_holo_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA368019178A6B000361A2 /* btn_radio_on_holo_light.png */; };
+		78CA368519178A6B000361A2 /* btn_radio_on_holo_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA368119178A6B000361A2 /* btn_radio_on_holo_light@2x.png */; };
 		78CA658318C8B8C800C27192 /* accessoryArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA658118C8B8C800C27192 /* accessoryArrow@2x.png */; };
 		78CA658418C8B8C800C27192 /* accessoryArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA658118C8B8C800C27192 /* accessoryArrow@2x.png */; };
 		78CA658518C8B8C800C27192 /* accessoryArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA658118C8B8C800C27192 /* accessoryArrow@2x.png */; };
@@ -602,6 +606,10 @@
 		78C60A701889370500CB22E5 /* empty_upload_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty_upload_small.png; sourceTree = "<group>"; };
 		78C9E26D18E5A059004C7A88 /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SitecoreMobileSDK.framework; sourceTree = "<group>"; };
 		78C9E27618E5CF6F004C7A88 /* SitecoreItemsBrowser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SitecoreItemsBrowser.framework; sourceTree = "<group>"; };
+		78CA367E19178A6B000361A2 /* btn_radio_off_holo_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_radio_off_holo_light.png; sourceTree = "<group>"; };
+		78CA367F19178A6B000361A2 /* btn_radio_off_holo_light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_radio_off_holo_light@2x.png"; sourceTree = "<group>"; };
+		78CA368019178A6B000361A2 /* btn_radio_on_holo_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_radio_on_holo_light.png; sourceTree = "<group>"; };
+		78CA368119178A6B000361A2 /* btn_radio_on_holo_light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_radio_on_holo_light@2x.png"; sourceTree = "<group>"; };
 		78CA658118C8B8C800C27192 /* accessoryArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "accessoryArrow@2x.png"; sourceTree = "<group>"; };
 		78CA658218C8B8C800C27192 /* accessoryArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accessoryArrow.png; sourceTree = "<group>"; };
 		78CA819A185B00420001896D /* sc_UploadItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = sc_UploadItemCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -933,6 +941,7 @@
 		655829DF175B48DA00768197 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				78CA367D19178A6B000361A2 /* SiteSettings */,
 				78D6667018FD284000BFD6C7 /* UploadStatuses */,
 				65359FD317C868B0003B6442 /* navigationBarBg.png */,
 				65D6BDB81799BAF7002336C5 /* bg.png */,
@@ -1059,6 +1068,18 @@
 				78C596AA18EEFE75006A7FA3 /* sc_ButtonsBuilder.m */,
 			);
 			name = AddEditViewController;
+			sourceTree = "<group>";
+		};
+		78CA367D19178A6B000361A2 /* SiteSettings */ = {
+			isa = PBXGroup;
+			children = (
+				78CA367E19178A6B000361A2 /* btn_radio_off_holo_light.png */,
+				78CA367F19178A6B000361A2 /* btn_radio_off_holo_light@2x.png */,
+				78CA368019178A6B000361A2 /* btn_radio_on_holo_light.png */,
+				78CA368119178A6B000361A2 /* btn_radio_on_holo_light@2x.png */,
+			);
+			name = SiteSettings;
+			path = Images/SiteSettings;
 			sourceTree = "<group>";
 		};
 		78CC1F0218EAF997003608CD /* GridBrowser */ = {
@@ -1324,6 +1345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78CA368319178A6B000361A2 /* btn_radio_off_holo_light@2x.png in Resources */,
 				655829B4175B408900768197 /* InfoPlist.strings in Resources */,
 				65359FA617C7FA91003B6442 /* logo58.png in Resources */,
 				7E5F15B3190E94AE002B1854 /* internet-normal@2x.png in Resources */,
@@ -1356,6 +1378,7 @@
 				4F76DCC11785941500730EC8 /* appicon@2x.png in Resources */,
 				6599A55A175BFBF10095775D /* Default-Landscape~ipad.png in Resources */,
 				6599A55C175BFC1D0095775D /* Default-Portrait~ipad.png in Resources */,
+				78CA368519178A6B000361A2 /* btn_radio_on_holo_light@2x.png in Resources */,
 				4F76DCC51785944F00730EC8 /* Default-Landscape.png in Resources */,
 				4F76DCC71785946400730EC8 /* Default-Landscape@2x.png in Resources */,
 				4F76DCC91785947700730EC8 /* Default-Portrait.png in Resources */,
@@ -1391,9 +1414,11 @@
 				78D6668B18FD459800BFD6C7 /* Green-Tick.png in Resources */,
 				65359FA717C7FA91003B6442 /* logo72.png in Resources */,
 				653D5B3217A9A50000754C9C /* empty_small.png in Resources */,
+				78CA368419178A6B000361A2 /* btn_radio_on_holo_light.png in Resources */,
 				4F7A466817BE69C10030BBDB /* iOSDeviceModelMapping.plist in Resources */,
 				7E5F15B6190E94AE002B1854 /* internet-pressed.png in Resources */,
 				655F69EE17C5DAD100C4AFF4 /* Default.png in Resources */,
+				78CA368219178A6B000361A2 /* btn_radio_off_holo_light.png in Resources */,
 				655F69EF17C5DADB00C4AFF4 /* Default@2x.png in Resources */,
 				655F69F017C5DAEB00C4AFF4 /* Default-568h@2x.png in Resources */,
 			);
