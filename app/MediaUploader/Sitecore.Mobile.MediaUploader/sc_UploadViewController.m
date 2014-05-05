@@ -155,13 +155,26 @@
     newMedia = NO;
 }
 
-
-
 -(IBAction)dismissKeyboardOnTap:(id)sender
 {
     [[self view] endEditing:YES];
 }
 
+-(void)showImagePreview:(UIImage *)image
+{
+    BOOL imageShouldBeScaled =     image.size.height>imageView.bounds.size.height
+                                && image.size.width>imageView.bounds.size.width;
+    if ( imageShouldBeScaled )
+    {
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
+    }
+    else
+    {
+        imageView.contentMode = UIViewContentModeCenter;
+    }
+    
+    [ imageView setImage: image ];
+}
 
 -(void)imagePickerController:(UIImagePickerController*)picker
 didFinishPickingMediaWithInfo:(NSDictionary*)info
@@ -175,7 +188,7 @@ didFinishPickingMediaWithInfo:(NSDictionary*)info
     if ([mediaType isEqualToString:(NSString*)kUTTypeImage])
     {
         UIImage* image = [info objectForKey: UIImagePickerControllerOriginalImage];
-        [ imageView setImage: image ];
+        [ self showImagePreview: image ];
         
         self->_uploadButton.enabled = YES;
         
