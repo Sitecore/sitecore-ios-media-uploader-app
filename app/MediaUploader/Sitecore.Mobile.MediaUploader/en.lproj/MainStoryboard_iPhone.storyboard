@@ -351,7 +351,7 @@
                     <navigationItem key="navigationItem" title="Upload" id="2m7-d4-YYk">
                         <barButtonItem key="rightBarButtonItem" image="settings_small.png" id="5oW-2m-GRb">
                             <connections>
-                                <segue destination="Ehe-mx-1WF" kind="push" identifier="ShowSiteSettins" id="dwe-Ci-vSw"/>
+                                <segue destination="Ehe-mx-1WF" kind="push" id="dwe-Ci-vSw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -846,9 +846,15 @@
                                 <rect key="frame" x="10" y="0.0" width="300" height="40"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EoK-aZ-VHD" userLabel="SiteLabel">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u6T-nk-uh9">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EoK-aZ-VHD">
                                         <rect key="frame" x="0.0" y="0.0" width="257" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -914,6 +920,7 @@
                         <outlet property="itemsBrowserGridLayout" destination="aew-nV-fU7" id="Rrv-yJ-Qw4"/>
                         <outlet property="loadingProgress" destination="snx-J8-Hn2" id="fpu-iI-5iL"/>
                         <outlet property="singleSiteBgView" destination="Qlz-fi-5hJ" id="0JA-EN-Hgj"/>
+                        <outlet property="singleSiteLabel" destination="u6T-nk-uh9" id="j3H-BU-rHA"/>
                         <outlet property="siteButton" destination="Y0o-vN-ffx" id="XhR-1p-5Ch"/>
                         <outlet property="siteLabel" destination="EoK-aZ-VHD" id="pUg-Um-SFK"/>
                     </connections>

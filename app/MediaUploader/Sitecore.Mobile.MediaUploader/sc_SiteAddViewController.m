@@ -371,15 +371,12 @@ viewForFooterInSection:(NSInteger)section
             [ _footerView addSubview: secondButton ];
             self->_nextButton = secondButton;
             
-            if ( self->_editModeEnabled )
-            {
-                sc_GradientButton* firstButton = [ _buttonsBuilder getButtonWithTitle: @"Delete"
-                                                                               style: CUSTOMBUTTONTYPE_DANGEROUS
-                                                                              target: self
-                                                                            selector: @selector(remove:) ];
-                [ firstButton setFrame: firstButtonFrame ];
-                [ _footerView addSubview: firstButton ];
-            }
+            sc_GradientButton* firstButton = [ _buttonsBuilder getButtonWithTitle: @"Delete"
+                                                                           style: CUSTOMBUTTONTYPE_DANGEROUS
+                                                                          target: self
+                                                                        selector: @selector(remove:) ];
+            [ firstButton setFrame: firstButtonFrame ];
+            [ _footerView addSubview: firstButton ];
         }
     }
     
