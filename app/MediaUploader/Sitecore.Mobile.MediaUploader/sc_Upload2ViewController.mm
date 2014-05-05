@@ -148,7 +148,8 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 
 -(MUUploadItemStatus*)statusForItemForCurrentIndexPath:(NSIndexPath*)indexPath
 {
-    MUMedia* media = [ _appDataObject.uploadItemsManager mediaUploadAtIndex: indexPath.row ];
+    NSInteger reversedIndex = [ self reversedIndexForIndexPath:indexPath ];
+    MUMedia* media = [ _appDataObject.uploadItemsManager mediaUploadAtIndex: reversedIndex ];
     return media.uploadStatusData;
 }
 
@@ -156,7 +157,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 {
     sc_UploadItemCell *cell = [ _sitesTableView dequeueReusableCellWithIdentifier: CellIdentifier ];
     
-    NSInteger reversedIndex = static_cast<NSInteger>( _appDataObject.uploadItemsManager.uploadCount ) - static_cast<NSInteger>( indexPath.row + 1 );
+    NSInteger reversedIndex = [ self reversedIndexForIndexPath:indexPath ];
     
     MUMedia* media = [ _appDataObject.uploadItemsManager mediaUploadAtIndex: reversedIndex ];
     
@@ -176,25 +177,37 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     return cell;
 }
 
+-(NSInteger)reversedIndexForIndexPath:(NSIndexPath*)indexPath
+{
+    return static_cast<NSInteger>( _appDataObject.uploadItemsManager.uploadCount ) - static_cast<NSInteger>( indexPath.row + 1 );
+}
+
 -(void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
     MUUploadItemStatus *status = [ self statusForItemForCurrentIndexPath: indexPath ];
-
+    NSInteger reversedIndex = [ self reversedIndexForIndexPath:indexPath ];
+    
     switch ( status.statusId )
     {
         case READY_FOR_UPLOAD:
         {
-            [ self uploadItemAtIndex: indexPath.row ];
+            [ self uploadItemAtIndex: reversedIndex ];
             break;
         }
         case UPLOAD_CANCELED:
         {
-            [ self uploadItemAtIndex: indexPath.row ];
+            [ self uploadItemAtIndex: reversedIndex ];
             break;
         }
         case UPLOAD_ERROR:
         {
-            NSString* description = NSLocalizedString(status.description, nil);
+            NSString* description = NSLocalizedString(status.statusDescription, nil);
+            [ sc_ErrorHelper showError: description ];
+            break;
+        }
+        case DATA_IS_NOT_AVAILABLE:
+        {
+            NSString* description = NSLocalizedString(status.statusDescription, nil);
             [ sc_ErrorHelper showError: description ];
             break;
         }

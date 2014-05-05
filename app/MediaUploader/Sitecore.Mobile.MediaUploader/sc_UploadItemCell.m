@@ -46,6 +46,10 @@
             image = [ theme uploadErrorIconImage ];
             [ self.activityView stopAnimating ];
             break;
+        case DATA_IS_NOT_AVAILABLE:
+            image = [ theme uploadErrorIconImage ];
+            [ self.activityView stopAnimating ];
+            break;
         case UPLOAD_CANCELED:
             self.folderLabel.text = NSLocalizedString(@"Cancelled", nil);
             image = [ theme uploadCanceledIconImage ];

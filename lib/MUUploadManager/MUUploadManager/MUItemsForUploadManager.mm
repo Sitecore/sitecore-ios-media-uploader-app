@@ -239,31 +239,38 @@
     if ( uploadItem.isVideo )
     {
         NSError* err;
-        
-        if ( [ uploadItem.videoUrl checkResourceIsReachableAndReturnError: &err ] == NO )
+        if ( uploadItem.uploadStatusData.statusId != UPLOAD_DONE )
         {
-            uploadItem.uploadStatusData.statusId = DATA_IS_NOT_AVAILABLE;
+            if ( [ uploadItem.videoUrl checkResourceIsReachableAndReturnError: &err ] == NO )
+            {
+                uploadItem.uploadStatusData.statusId = DATA_IS_NOT_AVAILABLE;
+                uploadItem.uploadStatusData.statusDescription = @"VIDEO_NOT_EXISTS";
+            }
         }
     }
 }
 
 -(void)checkImageAvailabilityForUploadItem:(MUMedia*)uploadItem
 {
-    if ( uploadItem.isImage )
+    if ( uploadItem.uploadStatusData.statusId != UPLOAD_DONE )
     {
-        ALAssetsLibrary *library = [ [ALAssetsLibrary alloc] init ];
-        [ library assetForURL: uploadItem.imageUrl resultBlock:^(ALAsset *asset)
+        if ( uploadItem.isImage )
         {
-            if (!asset)
+            ALAssetsLibrary *library = [ [ALAssetsLibrary alloc] init ];
+            [ library assetForURL: uploadItem.imageUrl resultBlock:^(ALAsset *asset)
             {
-                uploadItem.uploadStatusData.statusId = DATA_IS_NOT_AVAILABLE;
+                if (!asset)
+                {
+                    uploadItem.uploadStatusData.statusId = DATA_IS_NOT_AVAILABLE;
+                    uploadItem.uploadStatusData.statusDescription = @"IMAGE_NOT_EXISTS";
+                }
+                
             }
-            
+            failureBlock:^(NSError* error)
+            {
+                NSLog(@"image checking error: %@", [error description]);
+            } ];
         }
-        failureBlock:^(NSError* error)
-        {
-            NSLog(@"image checking error: %@", [error description]);
-        } ];
     }
 }
 
