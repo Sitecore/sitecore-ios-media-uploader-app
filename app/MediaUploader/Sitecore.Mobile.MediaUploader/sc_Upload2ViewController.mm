@@ -156,7 +156,9 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 {
     sc_UploadItemCell *cell = [ _sitesTableView dequeueReusableCellWithIdentifier: CellIdentifier ];
     
-    MUMedia* media = [ _appDataObject.uploadItemsManager mediaUploadAtIndex: indexPath.row ];
+    NSInteger reversedIndex = static_cast<NSInteger>( _appDataObject.uploadItemsManager.uploadCount ) - static_cast<NSInteger>( indexPath.row + 1 );
+    
+    MUMedia* media = [ _appDataObject.uploadItemsManager mediaUploadAtIndex: reversedIndex ];
     
     MUUploadItemStatus *status = media.uploadStatusData;
 
