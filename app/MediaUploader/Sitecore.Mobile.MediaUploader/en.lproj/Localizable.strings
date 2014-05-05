@@ -112,5 +112,6 @@
 //list items browser
 "ALERT_RELOAD_LEVEL_ERROR_MESSAGE" = "Item is not available";
 "JNETWORK_GENERIC_ERROR" = "Connection error, please check network settings";
+"ITEM_WAS_NOT_FOUND" = "Item was not found";
 
 "Upload is pending" = "Upload is pending";
