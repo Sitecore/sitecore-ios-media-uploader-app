@@ -27,7 +27,7 @@
 
 @property (nonatomic) BOOL isPendingIemsUploading;
 @property (nonatomic) UIImage* image;
-@property (nonatomic) int uploadImageSize;
+@property (nonatomic) MUImageQuality uploadImageSize;
 
 @end
 

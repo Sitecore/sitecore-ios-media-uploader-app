@@ -63,12 +63,12 @@ static const CGFloat F_MINUS_M_PI_DIV_2 = -F_M_PI_DIV_2                 ;
     [defaults synchronize];
 }
 
-+(int)loadUploadImageSize
++(MUImageQuality)loadUploadImageSize
 {
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     NSInteger imageSizeFromArchive = [defaults integerForKey: @"UploadImageSize"];
     
-    return static_cast<int>( imageSizeFromArchive );
+    return static_cast<MUImageQuality>( imageSizeFromArchive );
 }
 
 +(UIImage*)getVideoThumbnail:(NSURL*) videoUrl

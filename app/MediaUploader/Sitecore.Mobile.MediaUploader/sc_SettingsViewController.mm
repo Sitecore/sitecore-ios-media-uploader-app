@@ -262,7 +262,7 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
 {
     UISegmentedControl *segmentedControl = ( UISegmentedControl*)sender;
     
-    int castedSegmentedIndex = static_cast<int>( segmentedControl.selectedSegmentIndex  );
+    MUImageQuality castedSegmentedIndex = static_cast<MUImageQuality>( segmentedControl.selectedSegmentIndex  );
     [ MUImageHelper saveUploadImageSize: castedSegmentedIndex ];
 }
 

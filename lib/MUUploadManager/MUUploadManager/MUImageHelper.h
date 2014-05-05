@@ -9,13 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#import <MUUploadManager/MUConstants.h>
+
 //TODO @igk move image processing to the separate library
 @interface MUImageHelper : NSObject
 
-+(CGFloat)getCompressionFactor:(int)uploadImageSize;
-+(UIImage*)resizeImageToSize:(UIImage*)image uploadImageSize:(int)uploadImageSize;
-+(void)saveUploadImageSize:(int)uplaodImageSize;
-+(int)loadUploadImageSize;
++(CGFloat)getCompressionFactor:(MUImageQuality)uploadImageSize;
++(UIImage*)resizeImageToSize:(UIImage*)image uploadImageSize:(MUImageQuality)uploadImageSize;
++(void)saveUploadImageSize:(MUImageQuality)uplaodImageSize;
++(MUImageQuality)loadUploadImageSize;
 +(UIImage*)getVideoThumbnail:(NSURL*)videoUrl;
 +(UIImage*)normalize:(UIImage*)image forOrientation:(UIImageOrientation)orientation;
 
