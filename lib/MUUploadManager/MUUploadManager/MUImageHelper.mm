@@ -8,8 +8,8 @@
 
 #import "MUImageHelper.h"
 #import "MUConstants.h"
-#import <AVFoundation/AVFoundation.h>
 #import "MUImageScaling.h"
+#import <AVFoundation/AVFoundation.h>
 #import <CoreMedia/CMTime.h>
 
 static const CGFloat F_M_PI             = static_cast<CGFloat>( M_PI   );
@@ -18,11 +18,11 @@ static const CGFloat F_MINUS_M_PI_DIV_2 = -F_M_PI_DIV_2                 ;
 
 @implementation MUImageHelper
 
-+(CGFloat)getCompressionFactor:(int) uploadImageSize
++(CGFloat)getCompressionFactor:(MUImageQuality) uploadImageSize
 {
     if (uploadImageSize == UPLODIMAGESIZE_ACTUAL)
     {
-        return 1;
+        return 1.f;
     }
     
     if (uploadImageSize == UPLODIMAGESIZE_MEDIUM)
@@ -33,7 +33,7 @@ static const CGFloat F_MINUS_M_PI_DIV_2 = -F_M_PI_DIV_2                 ;
     return 0.6f;
 }
 
-+(UIImage*)resizeImageToSize:(UIImage*)image uploadImageSize:(int)uploadImageSize
++(UIImage*)resizeImageToSize:(UIImage*)image uploadImageSize:(MUImageQuality)uploadImageSize
 {
     if (uploadImageSize == UPLODIMAGESIZE_ACTUAL)
     {
@@ -55,11 +55,11 @@ static const CGFloat F_MINUS_M_PI_DIV_2 = -F_M_PI_DIV_2                 ;
     return result;
 }
 
-+(void)saveUploadImageSize:(int) uplaodImageSize
++(void)saveUploadImageSize:(MUImageQuality)uploadImageSize
 {
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     
-    [defaults setInteger:uplaodImageSize forKey:@"UploadImageSize"];
+    [defaults setInteger:uploadImageSize forKey:@"UploadImageSize"];
     [defaults synchronize];
 }
 
