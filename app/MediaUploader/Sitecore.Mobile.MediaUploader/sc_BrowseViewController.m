@@ -15,10 +15,10 @@
 @property (weak, nonatomic) IBOutlet UITextView* itemPathTextView;
 @property (strong, nonatomic) IBOutlet UICollectionViewFlowLayout* itemsBrowserGridLayout;
 
-@property (nonatomic) IBOutlet UILabel* singleSiteLabel;
 @property (nonatomic) IBOutlet sc_GradientButton* siteButton;
 @property (nonatomic) IBOutlet UILabel* siteLabel;
 @property (nonatomic) IBOutlet UIView* singleSiteBgView;
+@property (nonatomic) IBOutlet UICollectionView* browserGrid;
 
 -(IBAction)forceRefresh:(id)selector;
 
@@ -41,13 +41,42 @@
 {
     [ super viewDidLoad ];
     self->_appDataObject = [ sc_GlobalDataObject getAppDataObject ];
+    [ self resetSiteForBrowse ];
     [ self setupLayout  ];
-    
+    [ self checkSitesAvailability ];
     NSArray* templatesList = @[@"Image", @"Jpeg", @"Media folder"];
     self->_requestBuilder = [ [ sc_GridBrowserRequestBuilder alloc ] initWithTemplateNames: templatesList ];
     self.cellFactory.itemsBrowserController.nextLevelRequestBuilder = self->_requestBuilder;
     browserMustBeReloaded = YES;
     
+}
+
+-(void)checkSitesAvailability
+{
+    BOOL oneSiteAvailable = self->_appDataObject.sitesManager.sitesCount <= 1;
+    if ( oneSiteAvailable )
+    {
+        [ self.singleSiteBgView removeFromSuperview ];
+        CGRect newFrame;
+        newFrame = self.itemPathTextView.frame;
+        newFrame.origin.y = 0;
+        self.itemPathTextView.frame = newFrame;
+        
+        CGFloat dY = newFrame.size.height;
+        newFrame = self.browserGrid.frame;
+        newFrame.origin.y = dY;
+        newFrame.size.height = self.view.bounds.size.height - dY;
+        self.browserGrid.frame = newFrame;
+    }
+}
+
+-(void)resetSiteForBrowse
+{
+    SCSite *defaultSiteForBrowse = self->_appDataObject.sitesManager.siteForUpload;
+    NSError *error;
+    [ self->_appDataObject.sitesManager setSiteForBrowse: defaultSiteForBrowse
+                                                   error: &error ];
+    NSLog( @"resetSiteForBrowse error: %@", error );
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -64,6 +93,8 @@
 -(void)reloadBrowserWithNewSite
 {
     self->_siteForBrowse = self->_appDataObject.sitesManager.siteForBrowse;
+    
+    [ self.siteLabel setText: self->_siteForBrowse.siteUrl ];
     
     self->_legacyApiSession = [ sc_ItemHelper getContext: self->_siteForBrowse ];
     
