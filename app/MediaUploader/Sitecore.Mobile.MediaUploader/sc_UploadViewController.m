@@ -431,9 +431,9 @@ static NSString* const SHOW_SETTINGS_SEGUE = @"ShowSiteSettins";
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier
                                  sender:(id)sender
 {
-    BOOL additianalControls = [ SHOW_MAP_SEGUE isEqualToString:identifier ] || [ SHOW_SETTINGS_SEGUE isEqualToString:identifier ];
+    BOOL additionalControls = [ SHOW_MAP_SEGUE isEqualToString:identifier ] || [ SHOW_SETTINGS_SEGUE isEqualToString:identifier ];
     
-    if ( additianalControls )
+    if ( additionalControls )
     {
         return YES;
     }
