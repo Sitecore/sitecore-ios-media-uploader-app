@@ -86,12 +86,12 @@
 
 -(CLLocationDegrees)getLatitude
 {
-    return self->_currentLocation.coordinate.latitude;
+    return _appDataObject.selectedPlaceMark.location.coordinate.latitude;
 }
 
 -(CLLocationDegrees)getLongitude
 {
-    return self->_currentLocation.coordinate.longitude;
+    return _appDataObject.selectedPlaceMark.location.coordinate.longitude;
 }
 
 -(void)locationManager:(CLLocationManager*)manager didUpdateToLocation:(CLLocation*)newLocation fromLocation:(CLLocation*)oldLocation
