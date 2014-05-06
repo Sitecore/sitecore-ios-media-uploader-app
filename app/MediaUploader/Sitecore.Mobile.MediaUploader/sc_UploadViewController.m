@@ -163,7 +163,7 @@
 -(void)showImagePreview:(UIImage *)image
 {
     BOOL imageShouldBeScaled =     image.size.height>imageView.bounds.size.height
-                                && image.size.width>imageView.bounds.size.width;
+                                || image.size.width>imageView.bounds.size.width;
     if ( imageShouldBeScaled )
     {
         imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -325,7 +325,7 @@ didFinishPickingMediaWithInfo:(NSDictionary*)info
         [self dismissViewControllerAnimated:YES completion:nil];
         
         _thumbnail = [MUImageHelper getVideoThumbnail:_videoUrl];
-        [imageView setImage: _thumbnail];
+        [ self showImagePreview: _thumbnail ];
         
         _uploadButton.enabled = YES;
     }
