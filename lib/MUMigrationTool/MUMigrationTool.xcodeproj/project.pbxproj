@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7E5100431919357400774470 /* MURemoveOldFilesMigrationStrategy.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E5100421919357400774470 /* MURemoveOldFilesMigrationStrategy.mm */; };
 		7E5100461919358500774470 /* MUMigrationStrategyFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E5100451919358500774470 /* MUMigrationStrategyFactory.mm */; };
+		7E51004F19193C9E00774470 /* MUApplicationMigrator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E51004E19193C9E00774470 /* MUApplicationMigrator.m */; };
 		7E560D0E191923E300070DEB /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E560D0D191923E300070DEB /* libxml2.dylib */; };
 		7E560D10191923E800070DEB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E560D0F191923E800070DEB /* libsqlite3.dylib */; };
 		7E560D12191923EC00070DEB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E560D11191923EC00070DEB /* CFNetwork.framework */; };
@@ -82,6 +83,8 @@
 		7E5100421919357400774470 /* MURemoveOldFilesMigrationStrategy.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MURemoveOldFilesMigrationStrategy.mm; sourceTree = "<group>"; };
 		7E5100441919358500774470 /* MUMigrationStrategyFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUMigrationStrategyFactory.h; sourceTree = "<group>"; };
 		7E5100451919358500774470 /* MUMigrationStrategyFactory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MUMigrationStrategyFactory.mm; sourceTree = "<group>"; };
+		7E51004D19193C9E00774470 /* MUApplicationMigrator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUApplicationMigrator.h; sourceTree = "<group>"; };
+		7E51004E19193C9E00774470 /* MUApplicationMigrator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUApplicationMigrator.m; sourceTree = "<group>"; };
 		7E560D0D191923E300070DEB /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		7E560D0F191923E800070DEB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		7E560D11191923EC00070DEB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -234,6 +237,8 @@
 				7E7071F51919036500C6AEEB /* MUApplicationVersion.h */,
 				7E7071D51918E48E00C6AEEB /* MUVersionDetector.h */,
 				7E7071D61918E48E00C6AEEB /* MUVersionDetector.mm */,
+				7E51004D19193C9E00774470 /* MUApplicationMigrator.h */,
+				7E51004E19193C9E00774470 /* MUApplicationMigrator.m */,
 				7E7071B21918E47000C6AEEB /* Supporting Files */,
 			);
 			path = MUMigrationTool;
@@ -463,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E5100461919358500774470 /* MUMigrationStrategyFactory.mm in Sources */,
+				7E51004F19193C9E00774470 /* MUApplicationMigrator.m in Sources */,
 				7E7071D71918E48E00C6AEEB /* MUVersionDetector.mm in Sources */,
 				7E5100431919357400774470 /* MURemoveOldFilesMigrationStrategy.mm in Sources */,
 			);
