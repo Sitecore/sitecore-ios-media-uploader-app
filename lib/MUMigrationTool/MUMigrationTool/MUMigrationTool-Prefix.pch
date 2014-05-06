@@ -1,5 +1,7 @@
 
 #ifdef __OBJC__
+    #import "MUMigrationStrategy.h"
+
     #import <SitecoreMobileSDK/SitecoreMobileSDK.h>
     #import <SitecoreMobileSDK/NSArray+SCBlocksAdditions.h>
 
