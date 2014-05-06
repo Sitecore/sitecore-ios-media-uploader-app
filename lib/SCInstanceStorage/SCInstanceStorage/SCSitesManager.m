@@ -110,6 +110,14 @@
     if( siteToRemove != nil )
     {
         [ self->_sitesList removeObject: siteToRemove ];
+        
+        BOOL newSiteForUploadNeeded = siteToRemove.selectedForUpload && [ self->_sitesList count ] > 0;
+        if ( newSiteForUploadNeeded )
+        {
+            SCSite *newSiteForUpload = self->_sitesList[0];
+            [ self setSiteForUpload: newSiteForUpload error: error ];
+        }
+        
         return [ self saveSites ];
     }
     
