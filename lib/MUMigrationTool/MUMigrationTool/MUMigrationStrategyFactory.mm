@@ -39,7 +39,8 @@
 
 -(id<MUMigrationStrategy>)removeOldDataStrategy
 {
-    return [ [ MURemoveOldFilesMigrationStrategy alloc ] init ];
+    return [ [ MURemoveOldFilesMigrationStrategy alloc ] initWithFileManager: self->_fileManager
+                                                          rootCacheDirectory: self->_rootDir ];
 }
 
 @end
