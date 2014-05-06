@@ -4,43 +4,16 @@
 
 
 @implementation MUMigrationStrategyFactory
-{
-    NSFileManager* _fileManager;
-    NSString     * _rootDir    ;
-}
 
--(instancetype)init __attribute__((noreturn))
++(id<MUMigrationStrategy>)removeOldDataStrategy
 {
-    throw std::runtime_error( "unsupported initializer" );
+    NSFileManager* fm = [ NSFileManager defaultManager ];
     
-    // unreachable code
-    // Stays here to make compiler happy
-    return [ self initWithFileManager: [ NSFileManager defaultManager ]
-                   rootCacheDirectory: @"" ];
-}
-
--(instancetype)initWithFileManager:( NSFileManager* )fileManager
-                rootCacheDirectory:( NSString* )rootDir
-{
-    NSParameterAssert( nil != fileManager );
-    NSParameterAssert( nil != rootDir     );
+    NSArray* paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
+    NSString* documentsDirectory = [ paths objectAtIndex: 0 ];
     
-    self = [ super init ];
-    if ( nil == self )
-    {
-        return nil;
-    }
-    
-    self->_fileManager = fileManager;
-    self->_rootDir     = rootDir    ;
-    
-    return self;
-}
-
--(id<MUMigrationStrategy>)removeOldDataStrategy
-{
-    return [ [ MURemoveOldFilesMigrationStrategy alloc ] initWithFileManager: self->_fileManager
-                                                          rootCacheDirectory: self->_rootDir ];
+    return [ [ MURemoveOldFilesMigrationStrategy alloc ] initWithFileManager: fm
+                                                          rootCacheDirectory: documentsDirectory ];
 }
 
 @end
