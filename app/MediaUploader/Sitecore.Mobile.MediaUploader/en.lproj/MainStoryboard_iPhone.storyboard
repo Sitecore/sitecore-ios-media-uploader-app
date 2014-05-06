@@ -44,7 +44,6 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="tintColor" red="0.86350047829999999" green="0.86350047829999999" blue="0.86350047829999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <inset key="contentEdgeInsets" minX="1" minY="1" maxX="1" maxY="1"/>
                                         <state key="normal" title="Upload" image="upload.png">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -57,6 +56,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="tintColor" red="0.86350047829999999" green="0.86350047829999999" blue="0.86350047829999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                         <state key="normal" title="Browse " image="browse.png">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -69,7 +69,6 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="tintColor" red="0.86350047829999999" green="0.86350047829999999" blue="0.86350047829999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <inset key="contentEdgeInsets" minX="1" minY="1" maxX="1" maxY="1"/>
                                         <state key="normal" title="Pending" image="pending.png">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -871,14 +870,13 @@
                                 </subviews>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="item path" id="32l-Up-a4A">
-                                <rect key="frame" x="0.0" y="41" width="320" height="37"/>
+                                <rect key="frame" x="0.0" y="48" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="r3s-wm-U4z">
-                                <rect key="frame" x="0.0" y="86" width="320" height="418"/>
+                                <rect key="frame" x="0.0" y="98" width="320" height="406"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aew-nV-fU7">
@@ -893,10 +891,6 @@
                                     <outlet property="delegate" destination="BXS-lQ-vdF" id="kH5-3y-Lkk"/>
                                 </connections>
                             </collectionView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="snx-J8-Hn2">
-                                <rect key="frame" x="0.0" y="43" width="320" height="418"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -912,7 +906,6 @@
                         <outlet property="cellFactory" destination="nOi-TX-s0f" id="RO9-wN-vSG"/>
                         <outlet property="itemPathTextView" destination="32l-Up-a4A" id="LDw-GR-iMF"/>
                         <outlet property="itemsBrowserGridLayout" destination="aew-nV-fU7" id="Rrv-yJ-Qw4"/>
-                        <outlet property="loadingProgress" destination="snx-J8-Hn2" id="fpu-iI-5iL"/>
                         <outlet property="singleSiteBgView" destination="Qlz-fi-5hJ" id="0JA-EN-Hgj"/>
                         <outlet property="siteButton" destination="Y0o-vN-ffx" id="XhR-1p-5Ch"/>
                         <outlet property="siteLabel" destination="EoK-aZ-VHD" id="pUg-Um-SFK"/>
@@ -1022,7 +1015,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Yln-qg-wE4"/>
-        <segue reference="dwe-Ci-vSw"/>
+        <segue reference="Yl5-Uf-9td"/>
+        <segue reference="kAA-QS-bIp"/>
     </inferredMetricsTieBreakers>
 </document>
