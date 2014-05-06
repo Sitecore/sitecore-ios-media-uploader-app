@@ -1,5 +1,8 @@
 
 #ifdef __OBJC__
+    #import <SitecoreMobileSDK/SitecoreMobileSDK.h>
+    #import <SitecoreMobileSDK/NSArray+SCBlocksAdditions.h>
+
     #import <Foundation/Foundation.h>
 #endif //__OBJC__
 
@@ -7,4 +10,7 @@
 
 #ifdef __cplusplus
     #include <stdexcept>
+    #include <map>
+    #include <string>
+    #include <utility>
 #endif //__cplusplus
