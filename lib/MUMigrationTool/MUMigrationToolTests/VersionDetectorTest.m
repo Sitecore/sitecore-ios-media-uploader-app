@@ -133,4 +133,57 @@ static NSString* const TMP_Version_1_1_DIRECOTRY = @"/tmp/Documents/v1.1";
     }
 }
 
+-(void)testLegacyVersionHasHigherPriority
+{
+    MUApplicationVersion result;
+    
+    NSError* fmError = nil;
+    BOOL fmResult = NO;
+    NSString* srcPath = nil;
+    
+    {
+        fmResult = [ self->_fm createDirectoryAtPath: TMP_Version_1_1_DIRECOTRY
+                         withIntermediateDirectories: YES
+                                          attributes: nil
+                                               error: &fmError ];
+        
+        XCTAssertNil( fmError, @"environment setup error" );
+        XCTAssertTrue( fmResult, @"environment setup error" );
+        
+        
+        
+        srcPath = [ self->_v1BundleRootPath stringByAppendingPathComponent: @"SCSitesStorage.dat" ];
+        fmResult = [ self->_fm copyItemAtPath: srcPath
+                                       toPath: @"/tmp/Documents/v1.1/SCSitesStorage.dat"
+                                        error: &fmError ];
+        XCTAssertNil( fmError, @"environment setup error" );
+        XCTAssertTrue( fmResult, @"environment setup error" );
+
+        
+        
+        srcPath = [ self->_legacyBundleRootPath stringByAppendingPathComponent: @"sites.txt" ];
+        fmResult = [ self->_fm copyItemAtPath: srcPath
+                                       toPath: @"/tmp/Documents/sites.txt"
+                                        error: &fmError ];
+        XCTAssertNil( fmError, @"environment setup error" );
+        XCTAssertTrue( fmResult, @"environment setup error" );
+
+        
+    }
+    
+    
+    MUVersionDetector* detector = [ [ MUVersionDetector alloc ] initWithFileManager: self->_fm
+                                                                 rootCacheDirectory: TMP_DIR_DOCUMENTS ];
+    result = [ detector applicationVersionBeforeCurrentLaunch ];
+    XCTAssertTrue( MUVVersion_1_0 == result, @"Wrong version detected" );
+    
+    
+    {
+        fmResult = [ self->_fm removeItemAtPath: TMP_DIR_DOCUMENTS
+                                          error: &fmError ];
+        XCTAssertNil( fmError, @"environment setup error" );
+        XCTAssertTrue( fmResult, @"environment setup error" );
+    }
+}
+
 @end
