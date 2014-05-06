@@ -11,6 +11,7 @@
 		7E26869818FE9B7800033905 /* libMUFlurryWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E26869118FE9B7100033905 /* libMUFlurryWrapper.a */; };
 		7E46305218FE768D009E0F7F /* libiOSReachabilityFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC347218FE74BE007D540D /* libiOSReachabilityFramework.a */; };
 		7E62FBE718FEA06100D88F70 /* libMUCrashlyticsWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E26868F18FE9B7100033905 /* libMUCrashlyticsWrapper.a */; };
+		7E7071F31918E55F00C6AEEB /* libMUMigrationTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7071E01918E54A00C6AEEB /* libMUMigrationTool.a */; };
 		7EAC343418FE748B007D540D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC343318FE748B007D540D /* Foundation.framework */; };
 		7EAC343918FE748B007D540D /* MUAllUploaderLibs.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EAC343818FE748B007D540D /* MUAllUploaderLibs.h */; };
 		7EAC343B18FE748B007D540D /* MUAllUploaderLibs.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC343A18FE748B007D540D /* MUAllUploaderLibs.m */; };
@@ -90,6 +91,27 @@
 			remoteGlobalIDString = B4E7DA7D1679301500C01DFA;
 			remoteInfo = iOSReachabilityFramework;
 		};
+		7E7071DF1918E54A00C6AEEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E7071D81918E54A00C6AEEB /* MUMigrationTool.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E7071AC1918E47000C6AEEB;
+			remoteInfo = MUMigrationTool;
+		};
+		7E7071E11918E54A00C6AEEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E7071D81918E54A00C6AEEB /* MUMigrationTool.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E7071BC1918E47000C6AEEB;
+			remoteInfo = MUMigrationToolTests;
+		};
+		7E7071EB1918E55B00C6AEEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E7071D81918E54A00C6AEEB /* MUMigrationTool.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E7071AB1918E47000C6AEEB;
+			remoteInfo = MUMigrationTool;
+		};
 		7EAC346918FE74B9007D540D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7EAC346418FE74B9007D540D /* SCInstanceStorage.xcodeproj */;
@@ -164,6 +186,7 @@
 /* Begin PBXFileReference section */
 		78C8F7F91907DFF800B78ABB /* MUUploadManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MUUploadManager.xcodeproj; path = ../MUUploadManager/MUUploadManager.xcodeproj; sourceTree = "<group>"; };
 		7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MUAnalyticsTracker.xcodeproj; path = ../MUAnalyticsTracker/MUAnalyticsTracker.xcodeproj; sourceTree = "<group>"; };
+		7E7071D81918E54A00C6AEEB /* MUMigrationTool.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MUMigrationTool.xcodeproj; path = ../MUMigrationTool/MUMigrationTool.xcodeproj; sourceTree = "<group>"; };
 		7EAC343018FE748B007D540D /* libMUAllUploaderLibs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMUAllUploaderLibs.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EAC343318FE748B007D540D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7EAC343718FE748B007D540D /* MUAllUploaderLibs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MUAllUploaderLibs-Prefix.pch"; sourceTree = "<group>"; };
@@ -183,6 +206,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E7071F31918E55F00C6AEEB /* libMUMigrationTool.a in Frameworks */,
 				78C8F8071907E02C00B78ABB /* libMUUploadManager.a in Frameworks */,
 				7EFE975B18FECD7200FEB394 /* libMUGoogleAnalyticsWrapper.a in Frameworks */,
 				7EDFEB1018FEBFD200055891 /* libSCInstanceStorage.a in Frameworks */,
@@ -215,6 +239,15 @@
 				7E41A0DB18FE986000D601EF /* MUAnalyticsTrackerTests.xctest */,
 				7EFE975818FECD7200FEB394 /* libMUGoogleAnalyticsWrapper.a */,
 				7EFE975A18FECD7200FEB394 /* MUGoogleAnalyticsWrapperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E7071D91918E54A00C6AEEB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E7071E01918E54A00C6AEEB /* libMUMigrationTool.a */,
+				7E7071E21918E54A00C6AEEB /* MUMigrationToolTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -288,6 +321,7 @@
 		7EAC346218FE749C007D540D /* lib  */ = {
 			isa = PBXGroup;
 			children = (
+				7E7071D81918E54A00C6AEEB /* MUMigrationTool.xcodeproj */,
 				7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */,
 				7EAC346418FE74B9007D540D /* SCInstanceStorage.xcodeproj */,
 				78C8F7F91907DFF800B78ABB /* MUUploadManager.xcodeproj */,
@@ -334,6 +368,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7E7071EC1918E55B00C6AEEB /* PBXTargetDependency */,
 				78C8F8061907E01F00B78ABB /* PBXTargetDependency */,
 				7EFE975E18FECD7600FEB394 /* PBXTargetDependency */,
 				7EDFEB0A18FEBFCE00055891 /* PBXTargetDependency */,
@@ -374,6 +409,10 @@
 				{
 					ProductGroup = 7E41A0D418FE986000D601EF /* Products */;
 					ProjectRef = 7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E7071D91918E54A00C6AEEB /* Products */;
+					ProjectRef = 7E7071D81918E54A00C6AEEB /* MUMigrationTool.xcodeproj */;
 				},
 				{
 					ProductGroup = 78C8F7FA1907DFF800B78ABB /* Products */;
@@ -432,6 +471,20 @@
 			fileType = wrapper.cfbundle;
 			path = MUAnalyticsTrackerTests.xctest;
 			remoteRef = 7E41A0DA18FE986000D601EF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E7071E01918E54A00C6AEEB /* libMUMigrationTool.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMUMigrationTool.a;
+			remoteRef = 7E7071DF1918E54A00C6AEEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E7071E21918E54A00C6AEEB /* MUMigrationToolTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MUMigrationToolTests.xctest;
+			remoteRef = 7E7071E11918E54A00C6AEEB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		7EAC346A18FE74B9007D540D /* libSCInstanceStorage.a */ = {
@@ -502,6 +555,11 @@
 			isa = PBXTargetDependency;
 			name = iOSReachabilityFramework;
 			targetProxy = 7E46304D18FE75F9009E0F7F /* PBXContainerItemProxy */;
+		};
+		7E7071EC1918E55B00C6AEEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MUMigrationTool;
+			targetProxy = 7E7071EB1918E55B00C6AEEB /* PBXContainerItemProxy */;
 		};
 		7EDFEB0A18FEBFCE00055891 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

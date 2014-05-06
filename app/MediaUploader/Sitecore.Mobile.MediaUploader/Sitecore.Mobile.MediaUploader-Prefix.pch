@@ -19,6 +19,7 @@
 // own libs
     #import <SCInstanceStorage/SCInstanceStorage.h>
     #import <MUUploadManager/MUUploadManager.h>
+    #import <MUMigrationTool/MUMigrationTool.h>
 
 // Sitecore
     #import <SitecoreItemsBrowser/SCItemsBrowser.h>
