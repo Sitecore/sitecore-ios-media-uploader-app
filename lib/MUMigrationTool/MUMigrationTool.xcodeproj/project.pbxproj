@@ -15,7 +15,7 @@
 		7E7071C41918E47000C6AEEB /* libMUMigrationTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7071AC1918E47000C6AEEB /* libMUMigrationTool.a */; };
 		7E7071CA1918E47000C6AEEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E7071C81918E47000C6AEEB /* InfoPlist.strings */; };
 		7E7071CC1918E47000C6AEEB /* MUMigrationToolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7071CB1918E47000C6AEEB /* MUMigrationToolTests.m */; };
-		7E7071D71918E48E00C6AEEB /* MUVersionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7071D61918E48E00C6AEEB /* MUVersionDetector.m */; };
+		7E7071D71918E48E00C6AEEB /* MUVersionDetector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E7071D61918E48E00C6AEEB /* MUVersionDetector.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +44,8 @@
 /* Begin PBXFileReference section */
 		7E7071AC1918E47000C6AEEB /* libMUMigrationTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMUMigrationTool.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E7071AF1918E47000C6AEEB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		7E7071B31918E47000C6AEEB /* MUMigrationTool-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MUMigrationTool-Prefix.pch"; sourceTree = "<group>"; };
-		7E7071B41918E47000C6AEEB /* MUMigrationTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUMigrationTool.h; sourceTree = "<group>"; };
+		7E7071B31918E47000C6AEEB /* MUMigrationTool-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MUMigrationTool-Prefix.pch"; path = "MUMigrationTool/MUMigrationTool-Prefix.pch"; sourceTree = "<group>"; };
+		7E7071B41918E47000C6AEEB /* MUMigrationTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MUMigrationTool.h; path = MUMigrationTool/MUMigrationTool.h; sourceTree = "<group>"; };
 		7E7071BC1918E47000C6AEEB /* MUMigrationToolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MUMigrationToolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E7071BD1918E47000C6AEEB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7E7071C01918E47000C6AEEB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -53,7 +53,7 @@
 		7E7071C91918E47000C6AEEB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7E7071CB1918E47000C6AEEB /* MUMigrationToolTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUMigrationToolTests.m; sourceTree = "<group>"; };
 		7E7071D51918E48E00C6AEEB /* MUVersionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUVersionDetector.h; sourceTree = "<group>"; };
-		7E7071D61918E48E00C6AEEB /* MUVersionDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUVersionDetector.m; sourceTree = "<group>"; };
+		7E7071D61918E48E00C6AEEB /* MUVersionDetector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MUVersionDetector.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +82,8 @@
 		7E7071A31918E47000C6AEEB = {
 			isa = PBXGroup;
 			children = (
+				7E7071B31918E47000C6AEEB /* MUMigrationTool-Prefix.pch */,
+				7E7071B41918E47000C6AEEB /* MUMigrationTool.h */,
 				7E7071B11918E47000C6AEEB /* MUMigrationTool */,
 				7E7071C51918E47000C6AEEB /* MUMigrationToolTests */,
 				7E7071AE1918E47000C6AEEB /* Frameworks */,
@@ -112,9 +114,8 @@
 		7E7071B11918E47000C6AEEB /* MUMigrationTool */ = {
 			isa = PBXGroup;
 			children = (
-				7E7071B41918E47000C6AEEB /* MUMigrationTool.h */,
 				7E7071D51918E48E00C6AEEB /* MUVersionDetector.h */,
-				7E7071D61918E48E00C6AEEB /* MUVersionDetector.m */,
+				7E7071D61918E48E00C6AEEB /* MUVersionDetector.mm */,
 				7E7071B21918E47000C6AEEB /* Supporting Files */,
 			);
 			path = MUMigrationTool;
@@ -123,7 +124,6 @@
 		7E7071B21918E47000C6AEEB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7E7071B31918E47000C6AEEB /* MUMigrationTool-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -234,7 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E7071D71918E48E00C6AEEB /* MUVersionDetector.m in Sources */,
+				7E7071D71918E48E00C6AEEB /* MUVersionDetector.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
