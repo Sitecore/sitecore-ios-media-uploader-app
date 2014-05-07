@@ -362,11 +362,6 @@ didFinishPickingMediaWithInfo:(NSDictionary*)info
     return YES;
 }
 
--(IBAction)goBack:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 -(IBAction)save:(id)sender
 {
     if ( [ self checkCameraAccessAndShowError ] )
