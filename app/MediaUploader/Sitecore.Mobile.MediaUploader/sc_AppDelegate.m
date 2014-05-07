@@ -78,19 +78,38 @@
               withOptions: launchOptions ];
 }
 
+-(void)runCacheFilesMigration
+{
+    BOOL isMigrationSuccessful = NO;
+    
+    NSFileManager* fm = [ NSFileManager defaultManager ];
+    NSArray* paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
+    NSString* documentsDirectory = [ paths objectAtIndex: 0 ];
+    
+    NSError* migrationError = nil;
+    MUApplicationMigrator* migrator = [ [ MUApplicationMigrator alloc ] initWithFileManager: fm
+                                                                         rootCacheDirectory: documentsDirectory ];
+    isMigrationSuccessful = [ migrator migrateUploaderAppWithError: &migrationError ];
+
+
+    if ( !isMigrationSuccessful )
+    {
+        UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: NSLocalizedString( @"ERROR_ALERT_TITLE", nil )
+                                                           message: @"ERROR_MIGRATION_FAILED"
+                                                          delegate: nil
+                                                 cancelButtonTitle: NSLocalizedString( @"OK", nil )
+                                                 otherButtonTitles: nil ];
+        [ alert show ];
+        
+        [ [ MUEventsTrackerFactory sessionTrackerForMediaUploader ] appMigrationFailedWithError: migrationError ];
+    }
+}
+
 -(BOOL)application:(UIApplication*)application
 didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
-    _appDataObject = [[sc_GlobalDataObject alloc] init];
+    self->_appDataObject = [ [ sc_GlobalDataObject alloc ] init ];
     
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    
-    NSDate *date = [NSDate date];
-    
-    
-    NSLog(@"Date for locale %@",
-       [dateFormatter stringFromDate:date]);
     
 #if ANALYTICS_ENABLED
     {
@@ -99,6 +118,8 @@ didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
         [ self enableFlurryUsingLaunchOptions: launchOptions ];
     }
 #endif
+
+    [ self runCacheFilesMigration ];
 
     
     [self getIOS];
