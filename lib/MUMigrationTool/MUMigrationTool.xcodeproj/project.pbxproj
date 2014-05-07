@@ -38,6 +38,7 @@
 		7E70723019190E7F00C6AEEB /* V1DocumentsDir.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7E70721319190DD000C6AEEB /* V1DocumentsDir.bundle */; };
 		7E70723519191D6100C6AEEB /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E70723319191D5700C6AEEB /* SitecoreMobileSDK.framework */; };
 		7E70723619191D6500C6AEEB /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E70723319191D5700C6AEEB /* SitecoreMobileSDK.framework */; };
+		7EDBDD89191A0E3300D19F90 /* RmRfMigratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDBDD88191A0E3300D19F90 /* RmRfMigratorTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		7E707231191911FA00C6AEEB /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		7E70723319191D5700C6AEEB /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileSDK.framework; path = ../../frameworks/SitecoreMobileSDK.framework; sourceTree = "<group>"; };
 		7E70723719191EDF00C6AEEB /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		7EDBDD88191A0E3300D19F90 /* RmRfMigratorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RmRfMigratorTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				7E7071CB1918E47000C6AEEB /* VersionDetectorTest.m */,
+				7EDBDD88191A0E3300D19F90 /* RmRfMigratorTest.m */,
 				7E7071C61918E47000C6AEEB /* Supporting Files */,
 			);
 			path = MUMigrationToolTests;
@@ -479,6 +482,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E7071CC1918E47000C6AEEB /* VersionDetectorTest.m in Sources */,
+				7EDBDD89191A0E3300D19F90 /* RmRfMigratorTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
