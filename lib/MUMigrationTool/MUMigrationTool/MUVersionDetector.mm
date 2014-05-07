@@ -1,11 +1,5 @@
 #import "MUVersionDetector.h"
-
-#define CPP_STRING_LINKER_ERRORS 0
-
-#if !CPP_STRING_LINKER_ERRORS
-typedef std::map<std::string, MUApplicationVersion> MUCacheFolderForVersionMap;
-typedef MUCacheFolderForVersionMap::const_iterator MUCacheFolderForVersionMap_ci;
-#endif
+#import "MUApplicationVersionHelper.h"
 
 
 @implementation MUVersionDetector
@@ -14,41 +8,6 @@ typedef MUCacheFolderForVersionMap::const_iterator MUCacheFolderForVersionMap_ci
     NSString     * _rootDir    ;
 }
 
-
-#if CPP_STRING_LINKER_ERRORS
-+(NSDictionary*)relativeFolderForVersions
-{
-    static NSDictionary* result;
-    
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^void()
-    {
-        result =
-        @{
-            @"v1.1" : @(MUVVersion_1_1)
-        };
-    });
-    
-    return result;
-}
-
-#else
-+(const MUCacheFolderForVersionMap&)relativeFolderForVersions
-{
-    static MUCacheFolderForVersionMap result;
-
-    MUCacheFolderForVersionMap* resultPtr = &result;
-    
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^void()
-    {
-        MUCacheFolderForVersionMap& resultRef = (*resultPtr);
-        resultRef["v1.1"] = MUVVersion_1_1;
-    });
-
-    return result;
-}
-#endif
 
 
 -(instancetype)initWithFileManager:( NSFileManager* )fileManager
@@ -84,10 +43,7 @@ typedef MUCacheFolderForVersionMap::const_iterator MUCacheFolderForVersionMap_ci
 -(MUApplicationVersion)versionedReleaseNumber
 {
     static NSString* const CONNECTION_INFO_LIST_FILENAME = @"SCSitesStorage.dat";
-    NSArray* relativeDirectories =
-    @[
-         @"v1.1"
-    ];
+    NSArray* relativeDirectories = [ MUApplicationVersionHelper subfoldersForKnownVersions ];
     
     NSFileManager* fm = self->_fileManager;
     
@@ -100,25 +56,7 @@ typedef MUCacheFolderForVersionMap::const_iterator MUCacheFolderForVersionMap_ci
     };
     
     NSString* relativeDir = [ relativeDirectories firstMatch: siteStorageFileExistsBlock ];
-    if ( nil == relativeDir )
-    {
-        return MUVUnknown;
-    }
-
-#if CPP_STRING_LINKER_ERRORS
-    NSDictionary* folderToEnumMap = [ [ self class ] relativeFolderForVersions ];
-    NSNumber* boxedResult = folderToEnumMap[relativeDir];
-    
-    NSInteger rawResult = [ boxedResult integerValue ];
-    MUApplicationVersion result = static_cast<MUApplicationVersion>( rawResult );
-#else
-    std::string cppRelativeDir = [ relativeDir cStringUsingEncoding: NSUTF8StringEncoding ];
-    const MUCacheFolderForVersionMap& folderToEnumMap = [ [ self class ] relativeFolderForVersions ];
-    
-
-    MUCacheFolderForVersionMap_ci resultIt = folderToEnumMap.find(cppRelativeDir);
-    MUApplicationVersion result = resultIt->second;
-#endif
+    MUApplicationVersion result = [ MUApplicationVersionHelper versionBySubfolder: relativeDir ];
     
     return result;
 }
