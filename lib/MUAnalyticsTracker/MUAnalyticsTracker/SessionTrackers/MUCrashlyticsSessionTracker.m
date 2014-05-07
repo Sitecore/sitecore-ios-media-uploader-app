@@ -3,6 +3,12 @@
 
 @implementation MUCrashlyticsSessionTracker
 
+-(void)appMigrationFailedWithError:( NSError* )error
+{
+    CLS_LOG( @"[Migration] Error: %@ \n", error );
+}
+
+
 -(void)didLoginWithSite:(id<MUTrackable> )site
 {
     CLS_LOG( @"[LOGIN] Success! New session info : \n"

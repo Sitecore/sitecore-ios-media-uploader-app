@@ -9,6 +9,13 @@
 
 
 /**
+ Tracks unsuccessful application update.
+ 
+  @param error A cache migration error.
+ */
+-(void)appMigrationFailedWithError:( NSError* )error;
+
+/**
  Tracks logout event.
  
  @param site An object that holds the infomation about current session.

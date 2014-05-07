@@ -25,6 +25,13 @@
     return result;
 }
 
+-(void)appMigrationFailedWithError:( NSError* )error
+{
+    [ Flurry logError: @"Migration Failed"
+              message: @"Migration Failed"
+                error: error ];
+}
+
 -(void)didLoginWithSite:(id<MUTrackable>)site
 {
     NSDictionary* sessionParams = [ self dictionaryFromSession: site ];

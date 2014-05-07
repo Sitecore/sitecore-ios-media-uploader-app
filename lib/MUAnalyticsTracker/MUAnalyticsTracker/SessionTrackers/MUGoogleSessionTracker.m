@@ -38,6 +38,20 @@ static NSString* const MU_SESSION_SETTINGS_KEY = @"Session Settings";
     return self;
 }
 
+-(void)appMigrationFailedWithError:( NSError* )error
+{
+    GAIDictionaryBuilder* event = [ GAIDictionaryBuilder createEventWithCategory: @"Cache Migration"
+                                                                          action: @"Cache Migration"
+                                                                           label: @"Failed"
+                                                                           value: @(0) ];
+    
+    [ event set: [ error description ]
+         forKey: @"Login Error" ];
+    
+    [ self->_googleTracker send: [ event build ] ];
+    [ self->_analytics dispatch ];
+}
+
 -(void)didLoginWithSite:(id<MUTrackable> )site
 {
     GAIDictionaryBuilder* event = [ GAIDictionaryBuilder createEventWithCategory: MU_AUTHENTICATION_CATEGORY
