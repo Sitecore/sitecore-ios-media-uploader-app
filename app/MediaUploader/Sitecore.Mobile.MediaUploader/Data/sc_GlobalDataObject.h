@@ -27,4 +27,6 @@
 
 +(sc_GlobalDataObject*)getAppDataObject;
 
++(NSString*)applicationDocumentsDir;
+
 @end

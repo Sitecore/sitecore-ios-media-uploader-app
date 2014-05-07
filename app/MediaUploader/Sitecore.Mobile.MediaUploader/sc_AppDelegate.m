@@ -83,8 +83,7 @@
     BOOL isMigrationSuccessful = NO;
     
     NSFileManager* fm = [ NSFileManager defaultManager ];
-    NSArray* paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
-    NSString* documentsDirectory = [ paths objectAtIndex: 0 ];
+    NSString* documentsDirectory = [ sc_GlobalDataObject applicationDocumentsDir ];
     
     NSError* migrationError = nil;
     MUApplicationMigrator* migrator = [ [ MUApplicationMigrator alloc ] initWithFileManager: fm
@@ -108,9 +107,6 @@
 -(BOOL)application:(UIApplication*)application
 didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
-    self->_appDataObject = [ [ sc_GlobalDataObject alloc ] init ];
-    
-    
 #if ANALYTICS_ENABLED
     {
         [ self enableGoogleAnalytics ];
@@ -120,7 +116,7 @@ didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 #endif
 
     [ self runCacheFilesMigration ];
-
+    self->_appDataObject = [ [ sc_GlobalDataObject alloc ] init ];
     
     [self getIOS];
     [self initializeStoryBoardBasedOnScreenSize];

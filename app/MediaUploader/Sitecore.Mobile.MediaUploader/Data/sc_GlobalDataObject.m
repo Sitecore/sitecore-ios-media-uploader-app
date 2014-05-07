@@ -12,6 +12,24 @@
 
 @implementation sc_GlobalDataObject
 
++(NSString*)applicationDocumentsDir
+{
+    NSArray* paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
+    NSString* documentsDirectory = [ paths objectAtIndex: 0 ];
+    
+    return documentsDirectory;
+}
+
++(NSString*)cacheFilesDirectory
+{
+    NSString* documents = [ self applicationDocumentsDir ];
+    
+    NSString* subDir = [ MUApplicationVersionHelper subFolderForLatestVersion ];
+    NSString* result = [ documents stringByAppendingPathComponent: subDir ];
+    
+    return result;
+}
+
 +(sc_GlobalDataObject*)getAppDataObject
 {
     id<sc_AppDelegateProtocol> delegate = (id<sc_AppDelegateProtocol>) [UIApplication sharedApplication].delegate;
@@ -22,12 +40,34 @@
 
 -(instancetype)init
 {
-    if ( self = [super init] )
+    self = [ super init ];
+    if ( nil == self )
     {
-        self->_sitesManager       = [ SCSitesManager new ];
-        self->_uploadItemsManager = [ MUItemsForUploadManager new ];
+        return nil;
     }
     
+    
+    NSString* rootDir = [ [ self class ] cacheFilesDirectory ];
+    {
+        NSFileManager* fm = [ NSFileManager defaultManager ];
+        
+        
+        NSError* error = nil;
+        BOOL isCacheDirCreated = NO;
+        isCacheDirCreated = [ fm createDirectoryAtPath: rootDir
+                           withIntermediateDirectories: YES
+                                            attributes: nil
+                                                 error: &error ];
+        if ( !isCacheDirCreated )
+        {
+            NSLog(@"[FATAL] Cached directory not created");
+            return nil;
+        }
+    }
+    
+    self->_sitesManager       = [ [ SCSitesManager          alloc ] initWithCacheFilesRootDirectory: rootDir ];
+    self->_uploadItemsManager = [ [ MUItemsForUploadManager alloc ] initWithCacheFilesRootDirectory: rootDir ];
+
     return self;
 }
 
