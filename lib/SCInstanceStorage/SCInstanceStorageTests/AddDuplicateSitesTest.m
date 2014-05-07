@@ -30,7 +30,7 @@
 {
     [ super setUp ];
     
-    self->_storage = [ SCSitesManager new ];
+    self->_storage = [ [ SCSitesManager alloc ] initWithCacheFilesRootDirectory: @"/tmp" ];
     [ self cleanupStorageFile ];
     
     self->_site = [ [ SCSite alloc ] initWithSiteUrl: @"http://localhost"

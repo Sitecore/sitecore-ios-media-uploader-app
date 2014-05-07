@@ -7,6 +7,19 @@
 
 @interface SCSitesManager : NSObject
 
++(instancetype)new  __attribute__(( unavailable("Unsupported initializer") ));
+-(instancetype)init __attribute__(( unavailable("Unsupported initializer") ));
+
+/**
+ 
+ @param rootDir A full path to the directory for storing list of connection records in.
+ For example, "/PATH/TO/MediaUploaderSandbox/Documents/v1.1"
+ 
+ @return A properly initialized object.
+ */
+-(instancetype)initWithCacheFilesRootDirectory:( NSString* )rootDir __attribute__((nonnull));
+
+
 @property (nonatomic, readonly) SCSite *siteForBrowse;
 @property (nonatomic, readonly) SCSite *siteForUpload;
 
