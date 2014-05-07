@@ -268,12 +268,27 @@
             }
             failureBlock:^(NSError* error)
             {
-                NSLog(@"image checking error: %@", [error description]);
+                uploadItem.uploadStatusData.statusId = DATA_IS_NOT_AVAILABLE;
+                uploadItem.uploadStatusData.statusDescription = error.localizedDescription;
             } ];
         }
     }
 }
 
-
+-(void)relaceStatus:(MUUploadItemStatusType)oldStatus
+         withStatus:(MUUploadItemStatusType)newStatus
+        withMessage:(NSString*)message
+{
+    for ( MUMedia* elem in self->_mediaUpload )
+    {
+        if ( elem.uploadStatusData.statusId == oldStatus )
+        {
+            elem.uploadStatusData.statusId = newStatus;
+            elem.uploadStatusData.statusDescription = message;
+        }
+    }
+    
+    [ self setFilterOption: self->_currentFilterOption ];
+}
 
 @end

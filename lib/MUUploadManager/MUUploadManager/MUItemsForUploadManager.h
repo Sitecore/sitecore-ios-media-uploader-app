@@ -24,4 +24,7 @@
 //TODO: @igk implement items editing!!!
 -(void)save;
 
+-(void)relaceStatus:(MUUploadItemStatusType)oldStatus
+         withStatus:(MUUploadItemStatusType)newStatus
+        withMessage:(NSString*)message;
 @end
