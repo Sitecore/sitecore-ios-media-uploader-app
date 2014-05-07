@@ -115,6 +115,6 @@
 "ITEM_WAS_NOT_FOUND" = "Item was not found";
 
 "Upload is pending" = "Upload is pending";
-
+"Upload was canceled" = "Upload was canceled";
 "VIDEO_NOT_EXISTS" = "This video file is not exist";
 "IMAGE_NOT_EXISTS" = "This image file is not exist";
