@@ -39,6 +39,8 @@
     
     sc_BaseTheme *_theme;
     MUItemsForUploadManager *_uploadManager;
+    
+    NSIndexPath *_processedIndexPath;
 }
 
 static NSString*  const CellIdentifier = @"cellSiteUrl";
@@ -83,29 +85,37 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     
     self->_appDataObject = [sc_GlobalDataObject getAppDataObject];
     [ self->_appDataObject.uploadItemsManager setFilterOption: SHOW_ALL_ITEMS ];
+    [ self->_appDataObject.uploadItemsManager relaceStatus: UPLOAD_IN_PROGRESS
+                                                withStatus: UPLOAD_CANCELED
+                                               withMessage: @"Upload was canceled"];
+    
     self->_uploadManager = self->_appDataObject.uploadItemsManager;
     
     self->_uploadImageSize = [MUImageHelper loadUploadImageSize];
     
     //Localize UI
     self.navigationItem.title = NSLocalizedString(self.navigationItem.title, nil);
-    _doneButton.title = NSLocalizedString(_doneButton.title, nil);
+
     [ _abortButton setTitle: NSLocalizedString(_abortButton.titleLabel.text, nil)
                    forState: UIControlStateNormal ];
     
-    self.navigationItem.hidesBackButton = YES;
     self->_uploadItemIndex = 0;
-    _doneButton.target = self;
-    _doneButton.action = @selector(doneButtonPushed:);
     
     [ _abortButton addTarget: self
                       action: @selector(abortButtonPressed:)
             forControlEvents: UIControlEventTouchUpInside ];
-
+    _abortButton.enabled = NO;
+    
     [ (sc_GradientButton*) _abortButton setButtonWithStyle: CUSTOMBUTTONTYPE_DANGEROUS ];
     
     self->_sitesTableView.delegate = self;
     self->_sitesTableView.dataSource = self;
+}
+
+-(IBAction)homePressed:(id)sender
+{
+    [ self abortButtonPressed: sender ];
+    [ self.navigationController popToRootViewControllerAnimated: YES ];
 }
 
 -(void)localizeFilterButtons
@@ -118,11 +128,6 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 -(void)viewDidAppear:(BOOL)animated
 {
     [ super viewDidAppear: animated ];
-}
-
--(IBAction)doneButtonPushed:(id)sender
-{
-    [ self.navigationController popToRootViewControllerAnimated: YES ];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -196,19 +201,23 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
         }
         case UPLOAD_CANCELED:
         {
-            [ self uploadItemAtIndex: reversedIndex ];
+            NSString* description = NSLocalizedString(status.statusDescription, nil);
+            [ self showErrorMessageWithRetryOption: description
+                                forItemAtIndexPath: indexPath ];
             break;
         }
         case UPLOAD_ERROR:
         {
             NSString* description = NSLocalizedString(status.statusDescription, nil);
-            [ sc_ErrorHelper showError: description ];
+            [ self showErrorMessageWithRetryOption: description
+                                forItemAtIndexPath: indexPath ];
             break;
         }
         case DATA_IS_NOT_AVAILABLE:
         {
             NSString* description = NSLocalizedString(status.statusDescription, nil);
             [ sc_ErrorHelper showError: description ];
+            [ self reloadVisibleCells ];
             break;
         }
         default:
@@ -217,6 +226,17 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
             break;
         }
     }
+}
+
+-(void)showErrorMessageWithRetryOption:(NSString*)message forItemAtIndexPath:(NSIndexPath*)indexPath
+{
+    self->_processedIndexPath = indexPath;
+    UIAlertView* alert = [ [UIAlertView alloc] initWithTitle: @""
+                                                     message: message
+                                                    delegate: self
+                                           cancelButtonTitle: NSLocalizedString(@"OK", nil)
+                                           otherButtonTitles: NSLocalizedString(@"Retry", nil), nil ];
+    [ alert show ];
 }
 
 -(void)uploadNextItem
@@ -372,12 +392,15 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
         request.contentType = uploadItem.contentType;
         request.folder = siteForUpload.uploadFolderPathInsideMediaLibrary;
         
+        __block sc_Upload2ViewController *weakSelf = self;
+        
         SCDidFinishAsyncOperationHandler doneHandler = (^( SCItem* item, NSError* error )
         {
+            weakSelf->_abortButton.enabled = NO;
             if (error)
             {
                 [ self->_uploadManager setUploadStatus: UPLOAD_ERROR
-                                       withDescription: error.description
+                                       withDescription: error.localizedDescription
                                  forMediaUploadAtIndex: itemIndex ];
             }
             else
@@ -399,6 +422,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
         
         SCCancelAsyncOperationHandler cancelHandler = ^(BOOL cancelInfo)
         {
+            weakSelf->_abortButton.enabled = NO;
             [ self->_uploadManager setUploadStatus: UPLOAD_CANCELED
                                    withDescription: nil
                              forMediaUploadAtIndex: itemIndex ];
@@ -411,14 +435,23 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
         
         SCExtendedAsyncOp loader = [session.extendedApiSession uploadMediaOperationWithRequest:request];
     
-    
         self->_uploadInProgress = YES;
         self->_currentCancelOp = loader( nil, cancelHandler, doneHandler );
+        [ self reloadVisibleCells ];
+        
+        weakSelf->_abortButton.enabled = YES;
     }
     else
     {
         [ sc_ErrorHelper showError:@"Upload is pending" ];
     }
+}
+
+-(void)reloadVisibleCells
+{
+    NSArray *visibleIndexPaths = self.sitesTableView.indexPathsForVisibleRows;
+    [ self.sitesTableView reloadRowsAtIndexPaths: visibleIndexPaths
+                                withRowAnimation: UITableViewRowAnimationAutomatic ];
 }
 
 -(void)saveUploadItemsChanges
@@ -514,11 +547,6 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     }
 }
 
--(void)uploadTerminated
-{
-    _doneButton.enabled = YES;
-}
-
 -(int)uploadingFilesCount
 {
     int result = static_cast<int>( [ _appDataObject.uploadItemsManager uploadCount ] );
@@ -534,8 +562,6 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     }
 
     self.navigationItem.title = NSLocalizedString(@"Cancelled", nil);
-    
-    [ self uploadTerminated ];
 }
 
 -(void)showUploadError
@@ -562,6 +588,17 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     }
     
     return 80.f;
+}
+
+#pragma mark AlertView Delegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    BOOL retryButtonPressed = (buttonIndex == 1);
+    if ( retryButtonPressed )
+    {
+        NSInteger reversedIndex = [ self reversedIndexForIndexPath: self->_processedIndexPath ];
+        [ self uploadItemAtIndex: reversedIndex ];
+    }
 }
 
 @end
