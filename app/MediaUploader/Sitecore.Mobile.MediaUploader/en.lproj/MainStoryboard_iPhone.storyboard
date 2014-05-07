@@ -820,11 +820,14 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Uploading" id="nT5-wQ-q4p">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="fZ2-98-tAC"/>
+                        <barButtonItem key="leftBarButtonItem" title="Home" id="gBK-db-YYL">
+                            <connections>
+                                <action selector="homePressed:" destination="fUX-Dp-Kh2" id="Ljs-nn-OJW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="abortButton" destination="l9g-Vw-R5k" id="KSq-nn-toT"/>
-                        <outlet property="doneButton" destination="fZ2-98-tAC" id="6Zs-FL-YzG"/>
                         <outlet property="filterControl" destination="EOw-TA-mCi" id="FIv-0Y-uaP"/>
                         <outlet property="sitesTableView" destination="oSb-Si-bgP" id="QLA-2w-2Cc"/>
                     </connections>
@@ -1015,7 +1018,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Yl5-Uf-9td"/>
+        <segue reference="Yln-qg-wE4"/>
         <segue reference="kAA-QS-bIp"/>
     </inferredMetricsTieBreakers>
 </document>
