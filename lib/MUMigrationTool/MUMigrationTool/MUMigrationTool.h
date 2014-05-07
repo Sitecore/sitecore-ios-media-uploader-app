@@ -5,4 +5,4 @@
 
 #import <MUMigrationTool/MUVersionDetector.h>
 #import <MUMigrationTool/MUApplicationVersion.h>
-
+#import <MUMigrationTool/MUApplicationVersionHelper.h>

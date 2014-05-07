@@ -1,7 +1,9 @@
 #import "MUApplicationMigrator.h"
 
+
 #import "MUVersionDetector.h"
 #import "MUMigrationStrategyFactory.h"
+
 
 @implementation MUApplicationMigrator
 {
@@ -39,10 +41,9 @@
                                                                         rootCacheDirectory: documentsDirectory ];
     
     MUApplicationVersion version = [ versionDetector applicationVersionBeforeCurrentLaunch ];
-    BOOL isUnknownVersion = ( MUVUnknown == version );
     BOOL isLatestVersion  = ( MUVLatestRelease == version );
     
-    BOOL shouldPerformMigration = !( isUnknownVersion || isLatestVersion );
+    BOOL shouldPerformMigration = !( isLatestVersion );
     if ( !shouldPerformMigration )
     {
         return YES;

@@ -39,6 +39,7 @@
 		7E70723519191D6100C6AEEB /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E70723319191D5700C6AEEB /* SitecoreMobileSDK.framework */; };
 		7E70723619191D6500C6AEEB /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E70723319191D5700C6AEEB /* SitecoreMobileSDK.framework */; };
 		7EDBDD89191A0E3300D19F90 /* RmRfMigratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDBDD88191A0E3300D19F90 /* RmRfMigratorTest.m */; };
+		7EDBDD92191A2F0800D19F90 /* MUApplicationVersionHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EDBDD91191A2F0800D19F90 /* MUApplicationVersionHelper.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,8 @@
 		7E70723319191D5700C6AEEB /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileSDK.framework; path = ../../frameworks/SitecoreMobileSDK.framework; sourceTree = "<group>"; };
 		7E70723719191EDF00C6AEEB /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		7EDBDD88191A0E3300D19F90 /* RmRfMigratorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RmRfMigratorTest.m; sourceTree = "<group>"; };
+		7EDBDD90191A2F0800D19F90 /* MUApplicationVersionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUApplicationVersionHelper.h; sourceTree = "<group>"; };
+		7EDBDD91191A2F0800D19F90 /* MUApplicationVersionHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MUApplicationVersionHelper.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +244,8 @@
 				7E7071D61918E48E00C6AEEB /* MUVersionDetector.mm */,
 				7E51004D19193C9E00774470 /* MUApplicationMigrator.h */,
 				7E51004E19193C9E00774470 /* MUApplicationMigrator.m */,
+				7EDBDD90191A2F0800D19F90 /* MUApplicationVersionHelper.h */,
+				7EDBDD91191A2F0800D19F90 /* MUApplicationVersionHelper.mm */,
 				7E7071B21918E47000C6AEEB /* Supporting Files */,
 			);
 			path = MUMigrationTool;
@@ -474,6 +479,7 @@
 				7E51004F19193C9E00774470 /* MUApplicationMigrator.m in Sources */,
 				7E7071D71918E48E00C6AEEB /* MUVersionDetector.mm in Sources */,
 				7E5100431919357400774470 /* MURemoveOldFilesMigrationStrategy.mm in Sources */,
+				7EDBDD92191A2F0800D19F90 /* MUApplicationVersionHelper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
