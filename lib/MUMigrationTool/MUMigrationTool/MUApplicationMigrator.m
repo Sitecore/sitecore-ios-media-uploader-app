@@ -5,7 +5,7 @@
 
 @implementation MUApplicationMigrator
 
-+(BOOL)migrateUploaderAppWithError:( NSError** )errorPtr __attribute__((nonnull))
++(BOOL)migrateUploaderAppWithError:( out NSError** )errorPtr __attribute__((nonnull))
 {
     NSParameterAssert( NULL != errorPtr );
     

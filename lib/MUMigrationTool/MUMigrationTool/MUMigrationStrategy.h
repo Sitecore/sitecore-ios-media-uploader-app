@@ -5,6 +5,6 @@
 
 -(BOOL)migrateMediaUploaderAppFromVersion:( MUApplicationVersion )fromVersion
                                 toVersion:( MUApplicationVersion )toVersion
-                                    error:( NSError** )errorPtr __attribute__((nonnull));
+                                    error:( out NSError** )errorPtr __attribute__((nonnull));
 
 @end

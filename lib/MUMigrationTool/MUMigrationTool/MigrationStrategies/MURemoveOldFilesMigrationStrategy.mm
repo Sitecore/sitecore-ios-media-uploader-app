@@ -6,16 +6,6 @@
     NSString     * _rootDir    ;
 }
 
--(instancetype)init __attribute__((noreturn))
-{
-    throw std::runtime_error( "unsupported initializer" );
-    
-    // unreachable code
-    // Stays here to make compiler happy
-    return [ self initWithFileManager: [ NSFileManager defaultManager ]
-                   rootCacheDirectory: @"" ];
-}
-
 -(instancetype)initWithFileManager:( NSFileManager* )fileManager
                 rootCacheDirectory:( NSString* )rootDir
 {
@@ -36,7 +26,7 @@
 
 -(BOOL)migrateMediaUploaderAppFromVersion:( MUApplicationVersion )__unused fromVersion
                                 toVersion:( MUApplicationVersion )__unused toVersion
-                                    error:( NSError** )errorPtr __attribute__((nonnull))
+                                    error:( out NSError** )errorPtr __attribute__((nonnull))
 {
     NSParameterAssert( NULL != errorPtr );
 

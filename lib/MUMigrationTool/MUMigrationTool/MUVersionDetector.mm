@@ -50,17 +50,6 @@ typedef MUCacheFolderForVersionMap::const_iterator MUCacheFolderForVersionMap_ci
 }
 #endif
 
--(instancetype)init __attribute__((noreturn))
-{
-
-    
-    throw std::runtime_error( "unsupported initializer" );
-
-    // unreachable code
-    // Stays here to make compiler happy
-    return [ self initWithFileManager: [ NSFileManager defaultManager ]
-                   rootCacheDirectory: @"" ];
-}
 
 -(instancetype)initWithFileManager:( NSFileManager* )fileManager
                 rootCacheDirectory:( NSString* )rootDir

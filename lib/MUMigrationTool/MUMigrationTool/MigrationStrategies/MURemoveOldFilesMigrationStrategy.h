@@ -6,9 +6,18 @@
 /**
  Unsupported initializer.
  
- @return Never happens. Throws ```std::runtime_error()```
+ @return Never happens.
+ */
++(instancetype)new __attribute__((noreturn, unavailable("Unsupported Initializer")));
+
+
+/**
+ Unsupported initializer.
+ 
+ @return Never happens.
  */
 -(instancetype)init __attribute__((noreturn, unavailable("Unsupported Initializer")));
+
 
 /**
  A designated initializer.
