@@ -23,7 +23,7 @@
 {
     [super setUp];
     [ self deleteFileStorage ];
-    manager = [MUItemsForUploadManager new];
+    manager = [ [ MUItemsForUploadManager alloc ] initWithCacheFilesRootDirectory: @"/tmp" ];
 }
 
 - (void)tearDown
@@ -34,11 +34,10 @@
 
 -(void)deleteFileStorage
 {
-    NSArray* paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
-    NSString* documentsDirectory = [ paths objectAtIndex: 0 ];
-    NSString* appFile = [ documentsDirectory stringByAppendingPathComponent: @"mediaUpload.dat" ];
+    NSString* appFile = @"/tmp/mediaUpload.dat";
     
-    [[NSFileManager defaultManager] removeItemAtPath:appFile error:nil];
+    [ [ NSFileManager defaultManager ] removeItemAtPath: appFile
+                                                  error: NULL ];
 }
 
 - (void)testOnlyMUMediaCanBeAdded
@@ -76,7 +75,7 @@
                                         thumbnail:nil];
     [manager addMediaUpload:elem];
     
-    MUItemsForUploadManager *newmanager = [MUItemsForUploadManager new];
+    MUItemsForUploadManager *newmanager = [ [ MUItemsForUploadManager alloc ] initWithCacheFilesRootDirectory: @"/tmp" ];
     
     XCTAssertTrue([newmanager uploadCount] == 1, @"element should be added");
     XCTAssertTrue([[newmanager mediaUploadAtIndex:0].name isEqualToString:@"test"], @"element should be the same");
@@ -174,7 +173,7 @@
                                         thumbnail:nil];
     [manager addMediaUpload:elem];
     
-    MUItemsForUploadManager *newmanager = [MUItemsForUploadManager new];
+    MUItemsForUploadManager *newmanager = [ [ MUItemsForUploadManager alloc ] initWithCacheFilesRootDirectory: @"/tmp" ];
     
     [newmanager setUploadStatus: UPLOAD_CANCELED
                 withDescription: @"upload was canceled"

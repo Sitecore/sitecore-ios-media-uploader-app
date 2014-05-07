@@ -12,15 +12,26 @@
     NSPredicate* _predicate;
     
     MUFilteringOptions _currentFilterOption;
+    
+    NSString* _rootDir;
 }
 
--(instancetype)init
+-(instancetype)initWithCacheFilesRootDirectory:( NSString* )rootDir __attribute__((nonnull))
 {
-    if ( self = [ super init ])
+    NSParameterAssert( nil != rootDir );
+    
+    self = [ super init ];
+    if ( nil == self )
     {
-        [ self loadMediaUpload ];
-        [ self setFilterOption: SHOW_ALL_ITEMS ];
+        return nil;
     }
+    
+    
+    // @adk : order matters
+    self->_rootDir = rootDir;
+    [ self loadMediaUpload ];
+    [ self setFilterOption: SHOW_ALL_ITEMS ];
+    
     
     return self;
 }
@@ -215,8 +226,7 @@
 
 -(NSString*)getFile:(NSString*)fileName
 {
-    NSArray* paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
-    NSString* documentsDirectory = [ paths objectAtIndex: 0 ];
+    NSString* documentsDirectory = self->_rootDir;
     NSString* appFile = [ documentsDirectory stringByAppendingPathComponent: fileName ];
     
     return appFile;
