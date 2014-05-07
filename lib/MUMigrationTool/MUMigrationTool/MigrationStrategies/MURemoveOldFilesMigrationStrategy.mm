@@ -40,7 +40,9 @@
     
     for ( NSString* subdir in cacheDirectoryContents )
     {
-        BOOL removeResult = [ self->_fileManager removeItemAtPath: subdir
+        NSString* fullPathOfSubdir = [ self->_rootDir stringByAppendingPathComponent: subdir ];
+        
+        BOOL removeResult = [ self->_fileManager removeItemAtPath: fullPathOfSubdir
                                                             error: errorPtr ];
         if ( !removeResult )
         {

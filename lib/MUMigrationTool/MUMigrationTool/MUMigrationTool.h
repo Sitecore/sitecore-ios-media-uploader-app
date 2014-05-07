@@ -1,4 +1,5 @@
 
+#import <MUMigrationTool/MUApplicationMigrator.h>
 #import <MUMigrationTool/MUMigrationStrategy.h>
 #import <MUMigrationTool/MUMigrationStrategyFactory.h>
 
