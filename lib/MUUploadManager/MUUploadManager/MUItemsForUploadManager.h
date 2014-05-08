@@ -17,6 +17,7 @@
        withDescription:(NSString *)description
  forMediaUploadAtIndex:(NSInteger)index;
 
+-(MUMedia*)mediaUploadWithUploadStatus:(MUUploadItemStatusType)status;
 
 //filtering
 -(void)setFilterOption:(MUFilteringOptions)option;

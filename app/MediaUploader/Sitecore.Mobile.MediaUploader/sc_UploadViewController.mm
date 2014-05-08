@@ -215,7 +215,7 @@ didFinishPickingMediaWithInfo:(NSDictionary*)info
                     
                     NSDictionary* imageInfo = [_locationManager gpsDictionaryForCurrentLocation];
                     [ imageMetadata setObject: imageInfo
-                                       forKey:(NSString*)kCGImagePropertyGPSDictionary ];
+                                       forKey:(__bridge NSString*)kCGImagePropertyGPSDictionary ];
                     
                     ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
                     ALAssetsLibraryWriteImageCompletionBlock imageWriteCompletionBlock;
@@ -469,11 +469,13 @@ static NSString* const SHOW_SETTINGS_SEGUE = @"ShowSiteSettins";
         
         [ self setMediaItemValidName: media ];
         
-//        sc_Upload2ViewController * destinationController = ( sc_Upload2ViewController*) segue.destinationViewController;
-        
         //TODO: @igk will error in case of async adding
         [ self addUploadToMediaUploadManager ];
-   
+        
+        NSInteger lastUploadItemIndex = static_cast<NSInteger>([ _appDataObject.uploadItemsManager uploadCount ] - 1);
+        [ self.appDataObject.uploadItemsManager setUploadStatus: UPLOAD_IN_PROGRESS
+                                                withDescription: nil
+                                          forMediaUploadAtIndex: lastUploadItemIndex ];
     }
 }
 
@@ -487,8 +489,8 @@ static NSString* const SHOW_SETTINGS_SEGUE = @"ShowSiteSettins";
         return;
     }
     
-    [self setMediaItemValidName:media];
-    [_appDataObject.uploadItemsManager addMediaUpload:media];
+    [ self setMediaItemValidName: media ];
+    [ _appDataObject.uploadItemsManager addMediaUpload: media ];
 }
 
 -(void)saveFileAsPending
@@ -514,7 +516,9 @@ static NSString* const SHOW_SETTINGS_SEGUE = @"ShowSiteSettins";
     media.name = [sc_Validator proposeValidItemName:media.name withDefault:[sc_ItemHelper generateItemName:validName]];
 }
 
--(void)navigationController:(UINavigationController*) navigationController  willShowViewController:(UIViewController* ) viewController animated:(BOOL) animated
+-(void)navigationController:(UINavigationController*) navigationController
+     willShowViewController:(UIViewController* ) viewController
+                   animated:(BOOL) animated
 {
     BOOL isPhotoLibraryActive = ( _imagePicker.sourceType == UIImagePickerControllerSourceTypePhotoLibrary );
     BOOL isFirstScreenActive = [ navigationController.viewControllers count ] == 1;

@@ -128,6 +128,25 @@
     return objectToReturn;
 }
 
+-(MUMedia*)mediaUploadWithUploadStatus:(MUUploadItemStatusType)status
+{
+    NSUInteger barIndex = [self->_mediaUpload indexOfObjectPassingTest:^BOOL(MUMedia* obj, NSUInteger idx, BOOL *stop)
+    {
+        if ( obj.uploadStatusData.statusId == status )
+        {
+            return YES;
+        }
+        return NO;
+    }];
+    
+    if ( barIndex != NSNotFound )
+    {
+        return self->_mediaUpload[ barIndex ];
+    }
+    
+    return nil;
+}
+
 -(NSInteger)indexOfMediaUpload:(MUMedia* )media
 {
     return static_cast<NSInteger>( [ self->_filteredMediaUpload indexOfObject: media ] );

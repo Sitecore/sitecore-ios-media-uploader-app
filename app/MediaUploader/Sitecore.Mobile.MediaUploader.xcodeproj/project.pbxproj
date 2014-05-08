@@ -76,7 +76,7 @@
 		655F69EE17C5DAD100C4AFF4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCCC1785949900730EC8 /* Default.png */; };
 		655F69EF17C5DADB00C4AFF4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCCE178594AD00730EC8 /* Default@2x.png */; };
 		655F69F017C5DAEB00C4AFF4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCC21785943800730EC8 /* Default-568h@2x.png */; };
-		6599A553175B9B410095775D /* sc_UploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6599A552175B9B410095775D /* sc_UploadViewController.m */; };
+		6599A553175B9B410095775D /* sc_UploadViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6599A552175B9B410095775D /* sc_UploadViewController.mm */; };
 		6599A555175B9C730095775D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6599A554175B9C730095775D /* MobileCoreServices.framework */; };
 		6599A557175B9C810095775D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6599A556175B9C810095775D /* CoreLocation.framework */; };
 		6599A55A175BFBF10095775D /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 65582A02175B4A8C00768197 /* Default-Landscape~ipad.png */; };
@@ -105,7 +105,7 @@
 		78108126189021E300E8EFD7 /* sc_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 655829B9175B408900768197 /* sc_AppDelegate.m */; };
 		78108127189021E300E8EFD7 /* sc_BaseTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B01F59187EF261006D48C9 /* sc_BaseTheme.m */; };
 		78108128189021E300E8EFD7 /* sc_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655829C8175B408900768197 /* sc_ViewController.m */; };
-		78108129189021E300E8EFD7 /* sc_UploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6599A552175B9B410095775D /* sc_UploadViewController.m */; };
+		78108129189021E300E8EFD7 /* sc_UploadViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6599A552175B9B410095775D /* sc_UploadViewController.mm */; };
 		7810812B189021E300E8EFD7 /* sc_SettingsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 654ECE4A175E71B300509490 /* sc_SettingsViewController.mm */; };
 		7810812D189021E300E8EFD7 /* sc_ResourseCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D37099188563B5005A7470 /* sc_ResourseCleaner.m */; };
 		7810812F189021E300E8EFD7 /* sc_GlobalDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 65569B321763B8B400A16A0A /* sc_GlobalDataObject.m */; };
@@ -297,7 +297,7 @@
 		7E19AEAF190ACF28008C4E1E /* sc_SitesSelectionViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65FBC2221770D4EF002437A5 /* sc_SitesSelectionViewController.mm */; };
 		7E19AEB0190ACF28008C4E1E /* sc_MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 651B1A23177CB850006FF573 /* sc_MapViewController.m */; };
 		7E19AEB1190ACF28008C4E1E /* sc_LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DFD76218E4451600E0E4CD /* sc_LocationManager.m */; };
-		7E19AEB2190ACF28008C4E1E /* sc_UploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6599A552175B9B410095775D /* sc_UploadViewController.m */; };
+		7E19AEB2190ACF28008C4E1E /* sc_UploadViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6599A552175B9B410095775D /* sc_UploadViewController.mm */; };
 		7E19AEB3190ACF28008C4E1E /* sc_Upload2ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65FBC23B17739841002437A5 /* sc_Upload2ViewController.mm */; };
 		7E19AEB4190ACF28008C4E1E /* sc_UploadItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CA819B185B00420001896D /* sc_UploadItemCell.m */; };
 		7E19AEB5190ACF28008C4E1E /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -555,7 +555,7 @@
 		655F69EB17C5D78D00C4AFF4 /* sc_Validator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_Validator.h; sourceTree = "<group>"; };
 		655F69EC17C5D78D00C4AFF4 /* sc_Validator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_Validator.m; sourceTree = "<group>"; };
 		6599A551175B9B410095775D /* sc_UploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_UploadViewController.h; sourceTree = "<group>"; };
-		6599A552175B9B410095775D /* sc_UploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = sc_UploadViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		6599A552175B9B410095775D /* sc_UploadViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = sc_UploadViewController.mm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		6599A554175B9C730095775D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		6599A556175B9C810095775D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		659CE73117947B6700331B4B /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = error.png; path = Images/error.png; sourceTree = "<group>"; };
@@ -987,7 +987,7 @@
 				78DFD76118E4451600E0E4CD /* sc_LocationManager.h */,
 				78DFD76218E4451600E0E4CD /* sc_LocationManager.m */,
 				6599A551175B9B410095775D /* sc_UploadViewController.h */,
-				6599A552175B9B410095775D /* sc_UploadViewController.m */,
+				6599A552175B9B410095775D /* sc_UploadViewController.mm */,
 				65FBC23A17739841002437A5 /* sc_Upload2ViewController.h */,
 				65FBC23B17739841002437A5 /* sc_Upload2ViewController.mm */,
 				78D3709B18856478005A7470 /* sc_CleaningProtocol.h */,
@@ -1651,7 +1651,7 @@
 				655829C9175B408900768197 /* sc_ViewController.m in Sources */,
 				78C596AB18EEFE75006A7FA3 /* sc_ButtonsBuilder.m in Sources */,
 				78CB2A9218F43DB500BDA6B0 /* sc_GridBrowserRequestBuilder.m in Sources */,
-				6599A553175B9B410095775D /* sc_UploadViewController.m in Sources */,
+				6599A553175B9B410095775D /* sc_UploadViewController.mm in Sources */,
 				654ECE4B175E71B300509490 /* sc_SettingsViewController.mm in Sources */,
 				78D3709A188563B5005A7470 /* sc_ResourseCleaner.m in Sources */,
 				65569B331763B8B400A16A0A /* sc_GlobalDataObject.m in Sources */,
@@ -1699,7 +1699,7 @@
 				78108128189021E300E8EFD7 /* sc_ViewController.m in Sources */,
 				78C596AC18EEFE75006A7FA3 /* sc_ButtonsBuilder.m in Sources */,
 				78CB2A9318F43DB500BDA6B0 /* sc_GridBrowserRequestBuilder.m in Sources */,
-				78108129189021E300E8EFD7 /* sc_UploadViewController.m in Sources */,
+				78108129189021E300E8EFD7 /* sc_UploadViewController.mm in Sources */,
 				7810812B189021E300E8EFD7 /* sc_SettingsViewController.mm in Sources */,
 				7810812D189021E300E8EFD7 /* sc_ResourseCleaner.m in Sources */,
 				7810812F189021E300E8EFD7 /* sc_GlobalDataObject.m in Sources */,
@@ -1768,7 +1768,7 @@
 				7E19AEA1190ACF28008C4E1E /* sc_Validator.m in Sources */,
 				7E19AEBD190ACF28008C4E1E /* sc_QuickImageViewController.mm in Sources */,
 				7E19AEBC190ACF28008C4E1E /* sc_GridBrowserRequestBuilder.m in Sources */,
-				7E19AEB2190ACF28008C4E1E /* sc_UploadViewController.m in Sources */,
+				7E19AEB2190ACF28008C4E1E /* sc_UploadViewController.mm in Sources */,
 				7E19AEA5190ACF28008C4E1E /* sc_AppDelegate.m in Sources */,
 				7E19AEB0190ACF28008C4E1E /* sc_MapViewController.m in Sources */,
 				7E19AE96190ACF28008C4E1E /* sc_ResourseCleaner.m in Sources */,
