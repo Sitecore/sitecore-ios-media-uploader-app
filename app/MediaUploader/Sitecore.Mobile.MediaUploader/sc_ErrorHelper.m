@@ -13,9 +13,9 @@
 +(void)showError:(NSString*)message
 {
     UIAlertView* alert = [ [UIAlertView alloc] initWithTitle: @""
-                                                     message: message
+                                                     message: NSLocalizedString( message, nil )
                                                     delegate: nil
-                                           cancelButtonTitle: NSLocalizedString(@"OK", nil)
+                                           cancelButtonTitle: NSLocalizedString( @"OK", nil )
                                            otherButtonTitles: nil ];
     [ alert show ];
 }
