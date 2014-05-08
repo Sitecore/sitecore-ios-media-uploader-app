@@ -210,6 +210,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
                                                     withDescription: nil
                                               forMediaUploadAtIndex: index ];
             [ self uploadNextItem ];
+            [ self.sitesTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic ];
             break;
         }
         case UPLOAD_CANCELED:
