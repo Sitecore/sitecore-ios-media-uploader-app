@@ -72,7 +72,12 @@
 
 -(UIImage *)uploadReadyIconImage
 {
-    return nil;
+    return [UIImage imageNamed:@"Upload_icon"];
+}
+
+-(UIImage *)uploadInProgressIconImage
+{
+    return [UIImage imageNamed:@"Empty-Tick"];
 }
 
 @end

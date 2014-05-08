@@ -37,6 +37,7 @@
             break;
         case UPLOAD_IN_PROGRESS:
             [ self.activityView startAnimating ];
+            image = [ theme uploadInProgressIconImage ];
             break;
         case UPLOAD_DONE:
             image = [ theme uploadDoneIconImage ];

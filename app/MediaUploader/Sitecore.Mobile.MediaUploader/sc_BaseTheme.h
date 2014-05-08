@@ -18,5 +18,6 @@
 -(UIImage *)uploadErrorIconImage;
 -(UIImage *)uploadCanceledIconImage;
 -(UIImage *)uploadReadyIconImage;
+-(UIImage *)uploadInProgressIconImage;
 
 @end
