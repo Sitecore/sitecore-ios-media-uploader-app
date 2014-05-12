@@ -21,7 +21,7 @@
 -(instancetype)initWithCoder:(NSCoder*)decoder
 {
     self = [ super init ];
-    if ( self )
+    if ( nil != self )
     {
         self.statusDescription  = [ decoder decodeObjectForKey:  @"statusDescription" ];
         self.statusId           = [ decoder decodeIntegerForKey: @"statusId"    ];
