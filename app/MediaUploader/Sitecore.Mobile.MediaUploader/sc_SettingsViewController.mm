@@ -136,23 +136,28 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
 
 -(UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    if (indexPath.section == 0)
+    if ( 0 == indexPath.section )
     {
-        UITableViewCell *  cell =  [tableView dequeueReusableCellWithIdentifier:@"ImageSize" forIndexPath:indexPath];
+        UITableViewCell *  cell =  [tableView dequeueReusableCellWithIdentifier: @"ImageSize"
+                                                                   forIndexPath: indexPath];
         cell.backgroundView = [UIView new];
-        UISegmentedControl *segmentedControl = (UISegmentedControl*)[cell viewWithTag:100];
-        [segmentedControl setSelectedSegmentIndex:[MUImageHelper loadUploadImageSize]];
-        [segmentedControl addTarget: self
-                             action:@selector(segmentedControlChanged:)
-                   forControlEvents:UIControlEventValueChanged];
-        [segmentedControl setTitle:NSLocalizedString(@"Small", nil) forSegmentAtIndex:0];
-        [segmentedControl setTitle:NSLocalizedString(@"Medium", nil) forSegmentAtIndex:1];
-        [segmentedControl setTitle:NSLocalizedString(@"Actual", nil) forSegmentAtIndex:2];
+        UISegmentedControl *segmentedControl = (UISegmentedControl*)[cell viewWithTag: 100];
+        
+        MUImageQuality defaultImageQuality = [ MUImageHelper loadUploadImageSize ];
+        [ segmentedControl setSelectedSegmentIndex: defaultImageQuality];
+        
+        [ segmentedControl addTarget: self
+                              action: @selector(segmentedControlChanged:)
+                    forControlEvents: UIControlEventValueChanged ];
+        
+        [ segmentedControl setTitle: NSLocalizedString(@"Small" , nil) forSegmentAtIndex: 0 ];
+        [ segmentedControl setTitle: NSLocalizedString(@"Medium", nil) forSegmentAtIndex: 1 ];
+        [ segmentedControl setTitle: NSLocalizedString(@"Actual", nil) forSegmentAtIndex: 2 ];
 
         return cell;
     }
     
-    if (indexPath.section == 1)
+    if ( 1 == indexPath.section )
     {
         NSInteger sitesCount = [ self sitesCountForTableView ];
         
@@ -165,7 +170,8 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
             return cell;
         }
         
-        UITableViewCell *  cell =  [tableView dequeueReusableCellWithIdentifier:@"cellSiteUrl" forIndexPath:indexPath];
+        UITableViewCell *  cell =  [tableView dequeueReusableCellWithIdentifier: @"cellSiteUrl"
+                                                                   forIndexPath: indexPath];
         
 
         SCSite* siteAtIndex = [ self siteAtRow: indexPath.row ];
@@ -175,7 +181,7 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
         cell.textLabel.text = siteAtIndex.siteUrl;
         cell.detailTextLabel.text = [sc_ItemHelper formatUploadFolder: siteAtIndex];
         
-        cell.accessoryView = [ self viewForAccessoryForIndexPath:indexPath ];
+        cell.accessoryView = [ self viewForAccessoryForIndexPath: indexPath ];
         
         //refactor
         cell.imageView.tag = indexPath.row;
@@ -194,6 +200,8 @@ forRowAtIndexPath:(NSIndexPath*)indexPath
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         return cell;
     }
+    
+    
     return nil;
 }
 

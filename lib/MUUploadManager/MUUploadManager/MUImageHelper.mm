@@ -55,20 +55,39 @@ static const CGFloat F_MINUS_M_PI_DIV_2 = -F_M_PI_DIV_2                 ;
     return result;
 }
 
+
+static NSString* const IMAGE_QUALITY_KEY = @"UploadImageSize";
 +(void)saveUploadImageSize:(MUImageQuality)uploadImageSize
 {
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     
-    [defaults setInteger:uploadImageSize forKey:@"UploadImageSize"];
-    [defaults synchronize];
+    [defaults setInteger: uploadImageSize
+                  forKey: IMAGE_QUALITY_KEY];
+    [ defaults synchronize ];
 }
 
 +(MUImageQuality)loadUploadImageSize
 {
-    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    NSInteger imageSizeFromArchive = [defaults integerForKey: @"UploadImageSize"];
+    NSUserDefaults* defaults = [ NSUserDefaults standardUserDefaults ];
+    BOOL isQualityStoredInDefaults = NO;
     
-    return static_cast<MUImageQuality>( imageSizeFromArchive );
+    @autoreleasepool
+    {
+        NSDictionary* dictDefaults = [ defaults dictionaryRepresentation ];
+        NSLog( @"%@", dictDefaults );
+
+        isQualityStoredInDefaults = ( nil != [ dictDefaults objectForKey: IMAGE_QUALITY_KEY ] );
+    }
+    
+    if ( isQualityStoredInDefaults )
+    {
+        NSInteger imageSizeFromArchive = [ defaults integerForKey: IMAGE_QUALITY_KEY ];
+        return static_cast<MUImageQuality>( imageSizeFromArchive );
+    }
+    else
+    {
+        return UPLODIMAGESIZE_ACTUAL;
+    }
 }
 
 +(UIImage*)getVideoThumbnail:(NSURL*) videoUrl
