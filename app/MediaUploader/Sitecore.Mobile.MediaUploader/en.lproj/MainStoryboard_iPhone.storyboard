@@ -40,11 +40,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vEC-rA-xNE" customClass="sc_GradientButton">
-                                        <rect key="frame" x="10" y="20" width="220" height="60"/>
+                                        <rect key="frame" x="10" y="10" width="220" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="tintColor" red="0.86350047829999999" green="0.86350047829999999" blue="0.86350047829999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Upload" image="upload.png">
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="16" maxY="0.0"/>
+                                        <state key="normal" title="Upload" image="Upload_icon_main.png">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -56,20 +57,21 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="tintColor" red="0.86350047829999999" green="0.86350047829999999" blue="0.86350047829999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
-                                        <state key="normal" title="Browse " image="browse.png">
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <state key="normal" title=" Browse " image="Browse_icon_main.png">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <segue destination="Ved-5B-ULu" kind="push" id="RNt-1f-BmJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OeI-yt-jKi" customClass="sc_GradientButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="headTruncation" id="OeI-yt-jKi" customClass="sc_GradientButton">
                                         <rect key="frame" x="10" y="156" width="220" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="tintColor" red="0.86350047829999999" green="0.86350047829999999" blue="0.86350047829999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Pending" image="pending.png">
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="17" maxY="0.0"/>
+                                        <state key="normal" title="Pending" image="Pending_icon_main.png">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -1001,16 +1003,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Browse_icon_main.png" width="32" height="32"/>
+        <image name="Pending_icon_main.png" width="32" height="32"/>
+        <image name="Upload_icon_main.png" width="32" height="32"/>
         <image name="bg.png" width="191" height="167"/>
-        <image name="browse.png" width="60" height="48"/>
         <image name="currentLocation.png" width="48" height="48"/>
         <image name="geolocation_small.png" width="30" height="30"/>
         <image name="internet-normal.png" width="32" height="32"/>
         <image name="internet-pressed.png" width="32" height="32"/>
-        <image name="pending.png" width="60" height="50"/>
         <image name="settings_small.png" width="24" height="24"/>
         <image name="sitecore.png" width="364" height="94"/>
-        <image name="upload.png" width="60" height="50"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
