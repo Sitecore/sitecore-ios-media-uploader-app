@@ -264,7 +264,10 @@ shouldLoadLevelForItem:(SCItem*)levelParentItem
             return NSOrderedDescending;
         }
         
-        return [ obj1.displayName compare: obj2.displayName ];
+        NSString* name1 = [ obj1.displayName uppercaseString ];
+        NSString* name2 = [ obj2.displayName uppercaseString ];
+        
+        return [ name1 compare: name2 ];
         
     };
     
