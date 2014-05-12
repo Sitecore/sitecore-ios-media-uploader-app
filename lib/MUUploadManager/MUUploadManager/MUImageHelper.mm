@@ -74,7 +74,6 @@ static NSString* const IMAGE_QUALITY_KEY = @"UploadImageSize";
     @autoreleasepool
     {
         NSDictionary* dictDefaults = [ defaults dictionaryRepresentation ];
-        NSLog( @"%@", dictDefaults );
 
         isQualityStoredInDefaults = ( nil != [ dictDefaults objectForKey: IMAGE_QUALITY_KEY ] );
     }
