@@ -250,6 +250,12 @@
 		78CC1F0618EAFEDF003608CD /* sc_FolderGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CC1F0418EAFEDF003608CD /* sc_FolderGridCell.m */; };
 		78CE93C018ED626400B68327 /* sc_ListBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CE93BF18ED626400B68327 /* sc_ListBrowserViewController.m */; };
 		78CE93C118ED626400B68327 /* sc_ListBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CE93BF18ED626400B68327 /* sc_ListBrowserViewController.m */; };
+		78D08F66192100A40000CBDA /* Browse_icon_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F63192100A40000CBDA /* Browse_icon_main.png */; };
+		78D08F67192100A40000CBDA /* Pending_icon_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F64192100A40000CBDA /* Pending_icon_main.png */; };
+		78D08F68192100A40000CBDA /* Upload_icon_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F65192100A40000CBDA /* Upload_icon_main.png */; };
+		78D08F6C1921019B0000CBDA /* Browse_icon_main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F691921019B0000CBDA /* Browse_icon_main@2x.png */; };
+		78D08F6D1921019B0000CBDA /* Pending_icon_main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F6A1921019B0000CBDA /* Pending_icon_main@2x.png */; };
+		78D08F6E1921019B0000CBDA /* Upload_icon_main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F6B1921019B0000CBDA /* Upload_icon_main@2x.png */; };
 		78D3709A188563B5005A7470 /* sc_ResourseCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D37099188563B5005A7470 /* sc_ResourseCleaner.m */; };
 		78D5E14718F28F9D009F647C /* sc_ListBrowserCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D5E14618F28F9D009F647C /* sc_ListBrowserCellFactory.m */; };
 		78D5E14818F28F9D009F647C /* sc_ListBrowserCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D5E14618F28F9D009F647C /* sc_ListBrowserCellFactory.m */; };
@@ -635,6 +641,12 @@
 		78CC1F0418EAFEDF003608CD /* sc_FolderGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_FolderGridCell.m; sourceTree = "<group>"; };
 		78CE93BE18ED626400B68327 /* sc_ListBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_ListBrowserViewController.h; sourceTree = "<group>"; };
 		78CE93BF18ED626400B68327 /* sc_ListBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_ListBrowserViewController.m; sourceTree = "<group>"; };
+		78D08F63192100A40000CBDA /* Browse_icon_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Browse_icon_main.png; sourceTree = "<group>"; };
+		78D08F64192100A40000CBDA /* Pending_icon_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pending_icon_main.png; sourceTree = "<group>"; };
+		78D08F65192100A40000CBDA /* Upload_icon_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Upload_icon_main.png; sourceTree = "<group>"; };
+		78D08F691921019B0000CBDA /* Browse_icon_main@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Browse_icon_main@2x.png"; sourceTree = "<group>"; };
+		78D08F6A1921019B0000CBDA /* Pending_icon_main@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pending_icon_main@2x.png"; sourceTree = "<group>"; };
+		78D08F6B1921019B0000CBDA /* Upload_icon_main@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Upload_icon_main@2x.png"; sourceTree = "<group>"; };
 		78D37098188563B5005A7470 /* sc_ResourseCleaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sc_ResourseCleaner.h; path = ../sc_ResourseCleaner.h; sourceTree = "<group>"; };
 		78D37099188563B5005A7470 /* sc_ResourseCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = sc_ResourseCleaner.m; path = ../sc_ResourseCleaner.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		78D3709B18856478005A7470 /* sc_CleaningProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_CleaningProtocol.h; sourceTree = "<group>"; };
@@ -944,6 +956,7 @@
 		655829DF175B48DA00768197 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				78D08F561920F1780000CBDA /* MainScreenIcons */,
 				78CA367D19178A6B000361A2 /* SiteSettings */,
 				7807F947191BCFD900470CA3 /* UploadStatuses */,
 				65359FD317C868B0003B6442 /* navigationBarBg.png */,
@@ -1141,6 +1154,20 @@
 				78C596A418EEDBDB006A7FA3 /* sc_FolderTableCell.m */,
 			);
 			name = ListBrowser;
+			sourceTree = "<group>";
+		};
+		78D08F561920F1780000CBDA /* MainScreenIcons */ = {
+			isa = PBXGroup;
+			children = (
+				78D08F691921019B0000CBDA /* Browse_icon_main@2x.png */,
+				78D08F6A1921019B0000CBDA /* Pending_icon_main@2x.png */,
+				78D08F6B1921019B0000CBDA /* Upload_icon_main@2x.png */,
+				78D08F63192100A40000CBDA /* Browse_icon_main.png */,
+				78D08F64192100A40000CBDA /* Pending_icon_main.png */,
+				78D08F65192100A40000CBDA /* Upload_icon_main.png */,
+			);
+			name = MainScreenIcons;
+			path = Images/MainScreenIcons;
 			sourceTree = "<group>";
 		};
 		78D4AA071886D13900CC44B4 /* Sitecore.Mobile.MediaUploaderTests */ = {
@@ -1361,6 +1388,7 @@
 				655829F5175B49FF00768197 /* upload.png in Resources */,
 				65569B1B176256C900A16A0A /* browse.png in Resources */,
 				7807F958191BD0B200470CA3 /* Empty-Tick.png in Resources */,
+				78D08F6E1921019B0000CBDA /* Upload_icon_main@2x.png in Resources */,
 				65359FAA17C7FA91003B6442 /* logo100.png in Resources */,
 				65569B2D1763A75600A16A0A /* up.png in Resources */,
 				65FBC23217723818002437A5 /* select.png in Resources */,
@@ -1373,6 +1401,7 @@
 				651353F4177F1E8500108071 /* currentLocation.png in Resources */,
 				4F76DCB5178593E100730EC8 /* appicon-72@2x.png in Resources */,
 				7E5F15B0190E94AE002B1854 /* internet-normal.png in Resources */,
+				78D08F6D1921019B0000CBDA /* Pending_icon_main@2x.png in Resources */,
 				7807F954191BCFD900470CA3 /* Upload_icon.png in Resources */,
 				78CA658318C8B8C800C27192 /* accessoryArrow@2x.png in Resources */,
 				65359FAD17C7FA91003B6442 /* logo144.png in Resources */,
@@ -1390,12 +1419,14 @@
 				6599A55C175BFC1D0095775D /* Default-Portrait~ipad.png in Resources */,
 				78CA368519178A6B000361A2 /* btn_radio_on_holo_light@2x.png in Resources */,
 				4F76DCC51785944F00730EC8 /* Default-Landscape.png in Resources */,
+				78D08F6C1921019B0000CBDA /* Browse_icon_main@2x.png in Resources */,
 				4F76DCC71785946400730EC8 /* Default-Landscape@2x.png in Resources */,
 				4F76DCC91785947700730EC8 /* Default-Portrait.png in Resources */,
 				4F76DCCB1785948500730EC8 /* Default-Portrait@2x.png in Resources */,
 				65F5E846178976B900059518 /* pending.png in Resources */,
 				65359FAE17C7FA91003B6442 /* logo152.png in Resources */,
 				65F5E848178976C700059518 /* counterBg.png in Resources */,
+				78D08F67192100A40000CBDA /* Pending_icon_main.png in Resources */,
 				65F5E862178CE20000059518 /* delete.png in Resources */,
 				78716C3A18F6BA0A0092AA98 /* bg@2x.png in Resources */,
 				65596737178DF239009C96CD /* Default-Portrait@2x~ipad.png in Resources */,
@@ -1409,6 +1440,7 @@
 				4FC97F9B17A01BBF008DAE4C /* Localizable.strings in Resources */,
 				65D6BDC817A063FD002336C5 /* geolocation_small.png in Resources */,
 				65359FD617CBCFBA003B6442 /* settings_small.png in Resources */,
+				78D08F68192100A40000CBDA /* Upload_icon_main.png in Resources */,
 				78CA658618C8B8C800C27192 /* accessoryArrow.png in Resources */,
 				7807F950191BCFD900470CA3 /* Green-Tick.png in Resources */,
 				65D6BDCE17A0754B002336C5 /* folder_small.png in Resources */,
@@ -1426,6 +1458,7 @@
 				653D5B3217A9A50000754C9C /* empty_small.png in Resources */,
 				78CA368419178A6B000361A2 /* btn_radio_on_holo_light.png in Resources */,
 				4F7A466817BE69C10030BBDB /* iOSDeviceModelMapping.plist in Resources */,
+				78D08F66192100A40000CBDA /* Browse_icon_main.png in Resources */,
 				7E5F15B6190E94AE002B1854 /* internet-pressed.png in Resources */,
 				655F69EE17C5DAD100C4AFF4 /* Default.png in Resources */,
 				78CA368219178A6B000361A2 /* btn_radio_off_holo_light.png in Resources */,
