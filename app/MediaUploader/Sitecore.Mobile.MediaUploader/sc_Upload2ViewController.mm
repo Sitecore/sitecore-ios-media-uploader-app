@@ -381,10 +381,10 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 -(void)sendUploadRequest:(MUUploadItem*) uploadItem
 {
     //TODO: @igk make stack of itemf for upload
-    if ( !_uploadInProgress )
+    if ( !self->_uploadInProgress )
     {
         MUMedia* media = uploadItem.mediaItem;
-        __block NSInteger itemIndex = [ self.appDataObject.uploadItemsManager indexOfMediaUpload: media ];
+        
         SCSite *siteForUpload = [ self.appDataObject.sitesManager siteBySiteId: media.siteForUploadingId ];
         
         SCApiSession *session = [ sc_ItemHelper getContext: siteForUpload ];
@@ -400,16 +400,22 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
         request.fileName = uploadItem.fileName;
         request.itemTemplate = uploadItem.itemTemplate;
         request.mediaItemData = uploadItem.data;
-        request.fieldNames = [NSSet new];
+        request.fieldNames = [ NSSet new ];
         request.contentType = uploadItem.contentType;
         request.folder = siteForUpload.uploadFolderPathInsideMediaLibrary;
         
-        __block sc_Upload2ViewController *weakSelf = self;
+        __weak sc_Upload2ViewController *weakSelf = self;
+        UIButton* abortButton = self->_abortButton;
+        MUItemsForUploadManager* uploadItemsManager = self.appDataObject.uploadItemsManager;
         
-        SCDidFinishAsyncOperationHandler doneHandler = (^( SCItem* item, NSError* error )
+        SCDidFinishAsyncOperationHandler doneHandler = ( ^void( SCItem* item, NSError* error )
         {
-            weakSelf->_abortButton.enabled = NO;
-            if (error)
+            // @adk : do not extract outside the block since it may be invalidated
+            // Hot fix.
+            NSInteger itemIndex = [ uploadItemsManager indexOfMediaUpload: media ];
+            
+            abortButton.enabled = NO;
+            if ( nil != error)
             {
                 [ self.appDataObject.uploadItemsManager setUploadStatus: UPLOAD_ERROR
                                                         withDescription: error.localizedDescription
@@ -431,7 +437,11 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
         
         SCCancelAsyncOperationHandler cancelHandler = ^(BOOL cancelInfo)
         {
-            weakSelf->_abortButton.enabled = NO;
+            // @adk : do not extract outside the block since it may be invalidated
+            // Hot fix.
+            NSInteger itemIndex = [ uploadItemsManager indexOfMediaUpload: media ];
+            
+            abortButton.enabled = NO;
             [ self.appDataObject.uploadItemsManager setUploadStatus: UPLOAD_CANCELED
                                                     withDescription: @"Upload was canceled"
                                               forMediaUploadAtIndex: itemIndex ];
@@ -439,13 +449,13 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
             [ weakSelf itemUploadFinished ];
         };
         
-        SCExtendedAsyncOp loader = [session.extendedApiSession uploadMediaOperationWithRequest:request];
+        SCExtendedAsyncOp loader = [ session.extendedApiSession uploadMediaOperationWithRequest: request ];
     
         self->_uploadInProgress = YES;
         self->_currentCancelOp = loader( nil, cancelHandler, doneHandler );
         [ self reloadVisibleCells ];
         
-        weakSelf->_abortButton.enabled = YES;
+        abortButton.enabled = YES;
     }
     else
     {
