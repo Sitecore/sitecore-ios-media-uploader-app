@@ -73,7 +73,6 @@
         }
         case UPLOAD_CANCELED:
         {
-            self.folderLabel.text = NSLocalizedString(@"Cancelled", nil);
             image = [ theme uploadCanceledIconImage ];
             [ self.activityView stopAnimating ];
          
