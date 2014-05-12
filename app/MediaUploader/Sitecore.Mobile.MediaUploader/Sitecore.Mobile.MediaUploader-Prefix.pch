@@ -23,7 +23,6 @@
 // Sitecore
     #import <SitecoreItemsBrowser/SCItemsBrowser.h>
     #import <SitecoreMobileSDK/SitecoreMobileSDK.h>
-    #import <SitecoreMobileUI/SitecoreMobileUI.h>
 
 // analytics
     #import "MUEventsTrackerFactory.h"

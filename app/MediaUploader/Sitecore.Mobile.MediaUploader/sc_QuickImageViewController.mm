@@ -76,7 +76,7 @@
     static NSString* identifier = @"Cell";
     UICollectionViewCell *cell = [ collectionView dequeueReusableCellWithReuseIdentifier: identifier
                                                                             forIndexPath: indexPath ];
-    SCImageView *imageView = (SCImageView*)[ cell viewWithTag: 100 ];
+    UIImageView *imageView = (UIImageView*)[ cell viewWithTag: 100 ];
     UIActivityIndicatorView*  cellActivityView = ( UIActivityIndicatorView* )[ cell viewWithTag: 33 ];
     cellActivityView.hidden = NO;
     [ imageView setImage: NULL ];
