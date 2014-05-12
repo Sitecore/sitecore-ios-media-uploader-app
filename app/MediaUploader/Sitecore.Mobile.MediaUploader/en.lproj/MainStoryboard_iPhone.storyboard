@@ -481,7 +481,7 @@
                                                     <subviews>
                                                         <segmentedControl opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="h2R-xc-vFB">
                                                             <rect key="frame" x="10" y="8" width="300" height="29"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                             <inset key="insetFor6xAndEarlier" minX="10" minY="8" maxX="-10" maxY="-8"/>
                                                             <segments>
                                                                 <segment title="Small"/>
