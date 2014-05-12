@@ -135,6 +135,25 @@ echo "========[BEGIN] MUUploadManager-XCTest========"
     cd "$WORKSPACE_DIR"
 echo "========[END] MUUploadManager-XCTest========"
 
+
+
+echo "========[BEGIN] MUMigrationTool-XCTest========"
+    INTERMEDIATES_DIR=${CUSTOM_DERIVED_DATA_DIR}/MUUploadManager
+
+    /bin/bash "$KILL_SIMULATOR"
+    xcodebuild test \
+        -scheme MUMigrationTool-XCTest \
+        -workspace $TEST_WORKSPACE \
+        -configuration $CONFIGURATION \
+        -destination OS=$IOS_VERSION,name=$DEVICE \
+        OBJROOT="$INTERMEDIATES_DIR" \
+        | $TEST_CONVERTER
+
+    cd "$TMP_REPORT_DIR"
+    cp *.xml "$REPORT_DIR"
+    cd "$WORKSPACE_DIR"
+echo "========[END] MUMigrationTool-XCTest========"
+
 echo "-----------------"
 
 

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../lib/MUMigrationTool/MUMigrationTool.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:../lib/SCInstanceStorage/SCInstanceStorage.xcodeproj">
    </FileRef>
    <FileRef

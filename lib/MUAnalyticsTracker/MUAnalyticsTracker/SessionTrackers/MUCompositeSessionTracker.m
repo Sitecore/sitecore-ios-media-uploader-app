@@ -25,6 +25,13 @@
     return self;
 }
 
+-(void)appMigrationFailedWithError:( NSError* )error
+{
+    for ( id<MUSessionTracker> tracker in self->_primitiveTrackers )
+    {
+        [ tracker appMigrationFailedWithError: error ];
+    }
+}
 
 -(void)didLoginWithSite:(id<MUTrackable> )site
 {

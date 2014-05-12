@@ -7,15 +7,23 @@
 @implementation SCSitesManager
 {
     NSMutableArray* _sitesList;
+    NSString      * _rootDir  ;
 }
 
--(instancetype)init
+-(instancetype)initWithCacheFilesRootDirectory:( NSString* )rootDir __attribute__((nonnull))
 {
+    NSParameterAssert( nil != rootDir );
+    
     self = [ super init ];
-    if ( nil != self )
+    if ( nil == self )
     {
-        [ self loadSites ];
+        return nil;
     }
+    
+    
+    // @adk : order matters
+    self->_rootDir = rootDir;
+    [ self loadSites ];
     
     return self;
 }
@@ -209,9 +217,8 @@
 -(NSString*)getFile:(NSString*)fileName __attribute__((nonnull))
 {
     NSParameterAssert( nil  != fileName );
-    
-    NSArray* paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
-    NSString* documentsDirectory = [ paths objectAtIndex: 0 ];
+
+    NSString* documentsDirectory = self->_rootDir;
     NSString* appFile = [ documentsDirectory stringByAppendingPathComponent: fileName ];
     
     return appFile;
