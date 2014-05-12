@@ -37,16 +37,17 @@
     NSUInteger _uploadItemIndex;
     BOOL _uploadInProgress;
     
-    sc_BaseTheme *_theme;
+    sc_BaseTheme* _theme;
     
-    NSIndexPath *_processedIndexPath;
+    NSIndexPath* _processedIndexPath;
 }
 
 static NSString*  const CellIdentifier = @"cellSiteUrl";
 
 -(IBAction)changeFilter:(UISegmentedControl*)sender
 {
-    switch ( sender.selectedSegmentIndex ) {
+    switch ( sender.selectedSegmentIndex )
+    {
         case 0:
         {
             [ self.appDataObject.uploadItemsManager setFilterOption: SHOW_ALL_ITEMS ];
@@ -76,7 +77,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 {
     if ( self->_appDataObject == nil )
     {
-        self->_appDataObject = [sc_GlobalDataObject getAppDataObject];
+        self->_appDataObject = [ sc_GlobalDataObject getAppDataObject ];
     }
     
     return self->_appDataObject;
@@ -88,7 +89,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     
     [ self localizeFilterButtons ];
     
-    _uploadInProgress = NO;
+    self->_uploadInProgress = NO;
     
     self->_theme = [ sc_BaseTheme new ];
     
@@ -160,14 +161,16 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 {
     NSInteger reversedIndex = [ self reversedIndexForIndexPath:indexPath ];
     MUMedia* media = [ self.appDataObject.uploadItemsManager mediaUploadAtIndex: reversedIndex ];
+    
     return media.uploadStatusData;
 }
 
--(UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
+-(UITableViewCell*)tableView:(UITableView*)tableView
+       cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    sc_UploadItemCell *cell = [ _sitesTableView dequeueReusableCellWithIdentifier: CellIdentifier ];
+    sc_UploadItemCell *cell = [ self->_sitesTableView dequeueReusableCellWithIdentifier: CellIdentifier ];
     
-    NSInteger reversedIndex = [ self reversedIndexForIndexPath:indexPath ];
+    NSInteger reversedIndex = [ self reversedIndexForIndexPath: indexPath ];
     
     MUMedia* media = [ self.appDataObject.uploadItemsManager mediaUploadAtIndex: reversedIndex ];
     
@@ -175,7 +178,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 
     [ cell.cellImageView setImage: media.thumbnail ];
     
-    SCSite *siteForUpload = [ self.appDataObject.sitesManager siteBySiteId: media.siteForUploadingId ];
+    SCSite* siteForUpload = [ self.appDataObject.sitesManager siteBySiteId: media.siteForUploadingId ];
     
     cell.siteLabel.text   = siteForUpload.siteUrl;
     cell.folderLabel.text = [ sc_ItemHelper formatUploadFolder: siteForUpload ];
@@ -239,7 +242,8 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     }
 }
 
--(void)showErrorMessageWithRetryOption:(NSString*)message forItemAtIndexPath:(NSIndexPath*)indexPath
+-(void)showErrorMessageWithRetryOption:(NSString*)message
+                    forItemAtIndexPath:(NSIndexPath*)indexPath
 {
     self->_processedIndexPath = indexPath;
     UIAlertView* alert = [ [UIAlertView alloc] initWithTitle: @""
@@ -606,6 +610,22 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     BOOL retryButtonPressed = (buttonIndex == 1);
     if ( retryButtonPressed )
     {
+#define HOTFIX_SHOW_INDICATION_IMMEDIATELY 1
+#if HOTFIX_SHOW_INDICATION_IMMEDIATELY
+        {
+            sc_UploadItemCell* cell = (sc_UploadItemCell*)[ self.sitesTableView cellForRowAtIndexPath: self->_processedIndexPath ];
+            if ( nil != cell )
+            {
+                NSParameterAssert( [ cell isMemberOfClass: [ sc_UploadItemCell class ] ] );
+                
+                MUUploadItemStatus* inProgressStatus = [ MUUploadItemStatus new ];
+                inProgressStatus.statusId = UPLOAD_IN_PROGRESS;
+                
+                 [ cell setCellStyleForUploadStatus: inProgressStatus
+                                         withTheme: self->_theme ];
+            }
+        }
+#endif
         
         NSInteger index = [ self reversedIndexForIndexPath: self->_processedIndexPath ];
         [ self.appDataObject.uploadItemsManager setUploadStatus: UPLOAD_IN_PROGRESS
