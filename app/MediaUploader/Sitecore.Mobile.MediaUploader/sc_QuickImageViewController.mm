@@ -1,11 +1,3 @@
-//
-//  sc_QuickImageViewController.m
-//  Sitecore.Mobile.MediaUploader
-//
-//  Created by Steve Jennings on 6/9/13.
-//  Copyright (c) 2013 Sitecore. All rights reserved.
-//
-
 #import "sc_QuickImageViewController.h"
 #import "sc_ItemHelper.h"
 
@@ -64,11 +56,15 @@
                                          animated: NO ];
 }
 
--(CGSize)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath*)indexPath {
+-(CGSize)collectionView:(UICollectionView*)collectionView
+                 layout:(UICollectionViewLayout*)collectionViewLayout
+ sizeForItemAtIndexPath:(NSIndexPath*)indexPath
+{
     return self.view.frame.size;
 }
 
--(UICollectionViewCell*)collectionView:(UICollectionView*)collectionView cellForItemAtIndexPath:(NSIndexPath*)indexPath
+-(UICollectionViewCell*)collectionView:(UICollectionView*)collectionView
+                cellForItemAtIndexPath:(NSIndexPath*)indexPath
 {
     NSUInteger selectedCellIndex = static_cast<NSUInteger>( indexPath.row );
     SCItem*  cellObject = [ self->_items objectAtIndex: selectedCellIndex ];
@@ -79,32 +75,47 @@
     UIImageView *imageView = (UIImageView*)[ cell viewWithTag: 100 ];
     UIActivityIndicatorView*  cellActivityView = ( UIActivityIndicatorView* )[ cell viewWithTag: 33 ];
     cellActivityView.hidden = NO;
-    [ imageView setImage: NULL ];
+    [ imageView setImage: nil ];
     
     SCDownloadMediaOptions *params = [ SCDownloadMediaOptions new ];
     params.width = static_cast<float>( cell.frame.size.width );
     params.height = static_cast<float>( cell.frame.size.height );
     params.database = [ sc_ItemHelper getDefaultDatabase ];
+    
     //TODO: @igk fix hardcode
     params.backgroundColor = @"white";
-    
     NSString* itemPath = [ sc_ItemHelper getPath: cellObject.itemId ];
     
-    SCAsyncOp imageReader = [ self.session downloadResourceOperationForMediaPath: itemPath
-                                                                     imageParams: params ];
+    SCExtendedAsyncOp imageReader = [ self.session.extendedApiSession downloadResourceOperationForMediaPath: itemPath
+                                                                                                imageParams: params ];
     
-    imageReader(^( id result, NSError* error )
+    
+    
+    SCDidFinishAsyncOperationHandler onImageLoadFinished = ^void( UIImage* result, NSError* error )
     {
-        if ( error == NULL )
+        cellActivityView.hidden = YES;
+        
+        if ( nil == error  )
         {
-            cellActivityView.hidden = YES;
+            NSParameterAssert( nil != result );
+            NSParameterAssert( [ result isKindOfClass: [ UIImage class ] ] );
+
+            [ imageView setContentMode: UIViewContentModeScaleToFill ];
             [ imageView setImage: result ];
         }
         else
         {
-            NSLog( @"%@", [ error localizedDescription ] );
+            NSParameterAssert( nil != error );
+            
+            sc_BaseTheme* theme = [ [ sc_BaseTheme alloc ] init ];
+            UIImage* errorPlaceholder = [ theme uploadErrorIconImage ];
+
+            [ imageView setContentMode: UIViewContentModeCenter ];
+            [ imageView setImage: errorPlaceholder ];
         }
-    });
+    };
+    
+    imageReader( nil, nil, onImageLoadFinished );
 
     return cell;
 }
@@ -125,11 +136,6 @@
     }
 
     [ _items removeObjectsInArray: discardedItems ];
-}
-
--(void)collectionView:(UICollectionView*)collectionView didEndDisplayingCell:(UICollectionViewCell*)cell forItemAtIndexPath:(NSIndexPath*)indexPath
-{
-    cell = NULL;
 }
 
 -(void)viewDidLoad
