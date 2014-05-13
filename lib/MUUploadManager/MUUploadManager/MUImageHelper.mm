@@ -9,8 +9,7 @@
 #import "MUImageHelper.h"
 #import "MUConstants.h"
 #import "MUImageScaling.h"
-#import <AVFoundation/AVFoundation.h>
-#import <CoreMedia/CMTime.h>
+
 
 static const CGFloat F_M_PI             = static_cast<CGFloat>( M_PI   );
 static const CGFloat F_M_PI_DIV_2       = static_cast<CGFloat>( M_PI_2 );
