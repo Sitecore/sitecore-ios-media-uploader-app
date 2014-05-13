@@ -41,6 +41,8 @@
     sc_BaseTheme *_theme;
     
     UIImagePickerController *_imagePicker;
+    
+    CGFloat _originalImagePlaceholderYOrigin;
 }
 @synthesize imageView;
 
@@ -57,6 +59,7 @@
 -(void)viewDidLoad
 {
     isFirstAppear = YES;
+    self->_originalImagePlaceholderYOrigin = self.imagePlaceholder.frame.origin.y;
     
     [super viewDidLoad];
     self->_theme = [ sc_BaseTheme new ];
@@ -356,12 +359,6 @@ didFinishPickingMediaWithInfo:(NSDictionary*)info
     [ self cancel: nil ];
 }
 
--(BOOL)textFieldShouldReturn:(UITextField*)textField
-{
-    [textField resignFirstResponder];
-    return YES;
-}
-
 -(IBAction)save:(id)sender
 {
     if ( [ self checkCameraAccessAndShowError ] )
@@ -617,6 +614,56 @@ static NSString* const SHOW_SETTINGS_SEGUE = @"ShowSiteSettins";
     {
         self->_uploadButton.hidden = YES;
         self->_locationButton.hidden = YES;
+    }
+}
+
+#pragma mark UITextField delegate
+#pragma mark --------------------
+
+-(BOOL)textFieldShouldReturn:(UITextField*)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [ self moveUpImagePlaceholderIfNeeded ];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [ self moveDownImagePlaceholderIfNeeded ];
+}
+
+#define SCREEN_HEIGHT_TO_MOVE_IMAGE_PLACEHOLDER 500.f
+#define IMAGE_PLACEHOLDER_OFFSET 40.f
+#define IMAGE_PLACEHOLDER_ANIMATION_DELAY .3f
+-(void)moveUpImagePlaceholderIfNeeded
+{
+    CGFloat screenHeigh = self.view.bounds.size.height;
+    if ( screenHeigh < SCREEN_HEIGHT_TO_MOVE_IMAGE_PLACEHOLDER ) //3.5" screen
+    {
+        CGRect frame = self.imagePlaceholder.frame;
+        frame.origin.y = self->_originalImagePlaceholderYOrigin - IMAGE_PLACEHOLDER_OFFSET;
+        [UIView animateWithDuration: IMAGE_PLACEHOLDER_ANIMATION_DELAY animations:^
+        {
+            self.imagePlaceholder.frame = frame;
+        }];
+    }
+}
+
+-(void)moveDownImagePlaceholderIfNeeded
+{
+    CGFloat screenHeigh = self.view.bounds.size.height;
+    if ( screenHeigh < SCREEN_HEIGHT_TO_MOVE_IMAGE_PLACEHOLDER ) //3.5" screen
+    {
+        CGRect frame = self.imagePlaceholder.frame;
+        frame.origin.y = self->_originalImagePlaceholderYOrigin;
+        [UIView animateWithDuration: IMAGE_PLACEHOLDER_ANIMATION_DELAY animations:^
+         {
+             self.imagePlaceholder.frame = frame;
+         }];
     }
 }
 

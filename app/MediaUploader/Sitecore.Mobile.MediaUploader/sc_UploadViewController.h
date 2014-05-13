@@ -13,7 +13,14 @@
 #import "sc_ReloadableViewProtocol.h"
 #import <MediaPlayer/MediaPlayer.h>
 
-@interface sc_UploadViewController : UIViewController <UIImagePickerControllerDelegate, UITextFieldDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate, sc_ReloadableViewProtocol>
+@interface sc_UploadViewController : UIViewController
+<
+    UIImagePickerControllerDelegate,
+    UITextFieldDelegate,
+    UINavigationControllerDelegate,
+    CLLocationManagerDelegate,
+    sc_ReloadableViewProtocol
+>
 
 @property (nonatomic) IBOutlet UIButton* dismissKeyboardButton;
 @property (nonatomic) IBOutlet UIButton* locationButton;
@@ -28,6 +35,7 @@
 @property (nonatomic) IBOutlet UIBarButtonItem* settingsButton;
 
 @property ( nonatomic ) sc_GlobalDataObject* appDataObject;
+@property ( nonatomic ) IBOutlet UIView *imagePlaceholder;
 
 -(IBAction)useCameraRoll:(id)sender;
 -(IBAction)dismissKeyboardOnTap:(id)sender;
