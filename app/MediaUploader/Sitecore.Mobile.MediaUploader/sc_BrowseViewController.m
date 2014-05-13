@@ -10,15 +10,19 @@
 
 @interface sc_BrowseViewController ()<SCItemsBrowserDelegate>
 
-@property (nonatomic, strong) IBOutlet sc_BrowseViewCellFactory* cellFactory;
+// ???
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView* loadingProgress;
-@property (weak, nonatomic) IBOutlet UITextView* itemPathTextView;
-@property (strong, nonatomic) IBOutlet UICollectionViewFlowLayout* itemsBrowserGridLayout;
 
-@property (nonatomic) IBOutlet sc_GradientButton* siteButton;
-@property (nonatomic) IBOutlet UILabel* siteLabel;
-@property (nonatomic) IBOutlet UIView* singleSiteBgView;
-@property (nonatomic) IBOutlet UICollectionView* browserGrid;
+@property (nonatomic, strong) IBOutlet sc_BrowseViewCellFactory* cellFactory;
+@property (nonatomic, weak  ) IBOutlet UITextView* itemPathTextView;
+@property (nonatomic, strong) IBOutlet UICollectionViewFlowLayout* itemsBrowserGridLayout;
+
+@property (nonatomic, weak) IBOutlet sc_GradientButton* siteButton;
+@property (nonatomic, weak) IBOutlet UILabel* siteLabel;
+@property (nonatomic, weak) IBOutlet UIView* singleSiteBgView;
+@property (nonatomic, weak) IBOutlet UICollectionView* browserGrid;
+
+@property (nonatomic, strong) IBOutlet SCItemGridBrowser* gridBrowser;
 
 -(IBAction)forceRefresh:(id)selector;
 
@@ -72,8 +76,8 @@
 
 -(void)resetSiteForBrowse
 {
-    SCSite *defaultSiteForBrowse = self->_appDataObject.sitesManager.siteForUpload;
-    NSError *error;
+    SCSite* defaultSiteForBrowse = self->_appDataObject.sitesManager.siteForUpload;
+    NSError* error;
     [ self->_appDataObject.sitesManager setSiteForBrowse: defaultSiteForBrowse
                                                    error: &error ];
     NSLog( @"resetSiteForBrowse error: %@", error );
@@ -102,7 +106,7 @@
     
     self.cellFactory.itemsBrowserController.apiSession = self->_apiSession;
     
-    NSString *rootFolderPath = [ SCSite mediaLibraryDefaultPath ];
+    NSString* rootFolderPath = [ SCSite mediaLibraryDefaultPath ];
 
     
     SCExtendedAsyncOp rootItemLoader =
@@ -232,10 +236,46 @@ shouldLoadLevelForItem:(SCItem*)levelParentItem
     return NO;
 }
 
+-(NSArray*)itemsForBrowsingOnCurrentLevel
+{
+    NSArray* result = nil;
+    
+#define INTROSPECT_ITEMS_BROWSER_WITH_RUNTIME 1
+#if INTROSPECT_ITEMS_BROWSER_WITH_RUNTIME
+    {
+        // @adk : breaking incapsulation to avoid cache related errors
+        // TODO : fix caching in Mobile SDK if possible
+        NSArray* levelItems = [ [ self.gridBrowser performSelector: @selector(loadedLevel) ] performSelector: @selector( levelContentItems ) ];
+        
+        id levelUpItem = [ levelItems firstMatch: ^BOOL(id singleItem)
+        {
+            Class SCLevelUpItemClass = NSClassFromString( @"SCLevelUpItem" );
+            NSParameterAssert( Nil != SCLevelUpItemClass );
+            
+            return [ singleItem isMemberOfClass: SCLevelUpItemClass ];
+        } ];
+        
+        NSMutableArray* levelItemsWithoutPlaceholders = [ levelItems mutableCopy ];
+        [ levelItemsWithoutPlaceholders removeObject: levelUpItem ];
+        
+        result = [ NSArray arrayWithArray: levelItemsWithoutPlaceholders ];
+    }
+#else
+    {
+        result = levelItem.parent.readChildren;
+    }
+#endif
+
+    return result;
+}
+
 -(NSMutableArray*)itemsForQuickViewControllerForLevelItem:(SCItem*)levelItem
 {
-    NSArray*  items = [ levelItem.parent.readChildren mutableCopy ];
-    items = [ items sortedArrayUsingComparator: [ self sortResultComparatorForItemsBrowser:nil ] ];
+    NSArray* allLevelItems = [ self itemsForBrowsingOnCurrentLevel ];
+
+    NSComparator sotrByTypeAndAlphabet = [ self sortResultComparatorForItemsBrowser: nil ];
+    NSArray*  items = [ allLevelItems sortedArrayUsingComparator: sotrByTypeAndAlphabet ];
+
     return [ items mutableCopy ];
 }
 

@@ -908,7 +908,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="browserGrid" destination="r3s-wm-U4z" id="fMU-HH-gmZ"/>
                         <outlet property="cellFactory" destination="nOi-TX-s0f" id="RO9-wN-vSG"/>
+                        <outlet property="gridBrowser" destination="BXS-lQ-vdF" id="Jm8-VE-e6H"/>
                         <outlet property="itemPathTextView" destination="32l-Up-a4A" id="LDw-GR-iMF"/>
                         <outlet property="itemsBrowserGridLayout" destination="aew-nV-fU7" id="Rrv-yJ-Qw4"/>
                         <outlet property="singleSiteBgView" destination="Qlz-fi-5hJ" id="0JA-EN-Hgj"/>

@@ -112,6 +112,8 @@
 
             [ imageView setContentMode: UIViewContentModeCenter ];
             [ imageView setImage: errorPlaceholder ];
+            
+            NSLog( @"[ERROR] Image download failed : %@", error );
         }
     };
     
@@ -123,19 +125,19 @@
 -(void)excludeFoldersFromItemsList
 {
     NSMutableArray* discardedItems = [ NSMutableArray array ];
-  
-    SCItem* item;
-    for ( item in _items )
+    SCItem* item = nil;
+    
+    for ( item in self->_items )
     {
         NSString*  itemType = [ sc_ItemHelper itemType: item ];
         if ( [ itemType isEqualToString: @"folder" ] )
         {
             [ discardedItems addObject: item ];
-            _selectedImage--;
+            --self->_selectedImage;
         }
     }
 
-    [ _items removeObjectsInArray: discardedItems ];
+    [ self->_items removeObjectsInArray: discardedItems ];
 }
 
 -(void)viewDidLoad
