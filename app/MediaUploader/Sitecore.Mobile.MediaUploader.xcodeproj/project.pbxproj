@@ -1335,6 +1335,14 @@
 							};
 						};
 					};
+					78108120189021E300E8EFD7 = {
+						DevelopmentTeam = AJ2XRRY985;
+						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = 655829A1175B408800768197 /* Build configuration list for PBXProject "Sitecore.Mobile.MediaUploader" */;
@@ -2036,7 +2044,8 @@
 		781081CD189021E300E8EFD7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Sitecore Corporation A/S (AJ2XRRY985)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2049,7 +2058,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Sitecore.Mobile.MediaUploader;
-				PROVISIONING_PROFILE = "1363F447-BE29-4089-A95D-09E99431F4B4";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2057,7 +2066,8 @@
 		781081CE189021E300E8EFD7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Sitecore Corporation A/S (AJ2XRRY985)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2070,7 +2080,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Sitecore.Mobile.MediaUploader;
-				PROVISIONING_PROFILE = "1363F447-BE29-4089-A95D-09E99431F4B4";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
