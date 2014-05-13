@@ -14,17 +14,9 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>logo80</string>
-				<string>logo58</string>
-				<string>logo29</string>
-				<string>logo120</string>
-				<string>logo57</string>
-				<string>logo57.png</string>
-				<string>logo114.png</string>
-				<string>logo144.png</string>
-				<string>logo72.png</string>
-				<string>logo72.png</string>
-				<string>logo72.png</string>
+				<string>Launch_iOS_58x58</string>
+				<string>Launch_iOS_80x80</string>
+				<string>Launch_iOS_120x120</string>
 			</array>
 		</dict>
 	</dict>
@@ -34,22 +26,12 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>logo40</string>
-				<string>logo58</string>
-				<string>logo29</string>
-				<string>logo80</string>
-				<string>logo100</string>
-				<string>logo50</string>
-				<string>logo152</string>
-				<string>logo76</string>
-				<string>logo120</string>
-				<string>logo57</string>
-				<string>logo57.png</string>
-				<string>logo114.png</string>
-				<string>logo144.png</string>
-				<string>logo72.png</string>
-				<string>logo72.png</string>
-				<string>logo72.png</string>
+				<string>Launch_iOS_58x58</string>
+				<string>Launch_iOS_29x29</string>
+				<string>Launch_iOS_40x40</string>
+				<string>Launch_iOS_80x80</string>
+				<string>Launch_iOS_152x152</string>
+				<string>Launch_iOS_76x76</string>
 			</array>
 		</dict>
 	</dict>
