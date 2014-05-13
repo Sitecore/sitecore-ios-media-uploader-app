@@ -25,6 +25,7 @@
 }
 
 @synthesize uploadFolderPathInsideMediaLibrary = _uploadFolderPathInsideMediaLibrary;
+@dynamic password;
 
 
 +(NSString*)siteDefaultValue
