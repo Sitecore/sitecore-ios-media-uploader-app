@@ -135,7 +135,7 @@ uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
     [encoder encodeObject: self.site forKey:@"site"];
     [encoder encodeObject: self.uploadFolderPathInsideMediaLibrary forKey:@"uploadFolderPathInsideMediaLibrary"];
     [encoder encodeObject: self.username forKey:@"username"];
-    [encoder encodeObject: self.password forKey:@"password"];
+//    [encoder encodeObject: self.password forKey:@"password"];
     [encoder encodeBool: self->_selectedForBrowse forKey:@"selectedForBrowse"];
     [encoder encodeBool: self->_selectedForUpload forKey:@"selectedForUpdate"];
 }
@@ -151,7 +151,7 @@ uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
         self.site                               = [decoder decodeObjectForKey:@"site"];
         self.uploadFolderPathInsideMediaLibrary = [decoder decodeObjectForKey:@"uploadFolderPathInsideMediaLibrary"];
         self.username                           = [decoder decodeObjectForKey:@"username"];
-        self.password                           = [decoder decodeObjectForKey:@"password"];
+//        self.password                           = [decoder decodeObjectForKey:@"password"];
         self->_selectedForBrowse                = [decoder decodeBoolForKey:@"selectedForBrowse"];
         self->_selectedForUpload                = [decoder decodeBoolForKey:@"selectedForUpdate"];
     }

@@ -4,6 +4,11 @@
 
 -(NSString*)password
 {
+    NSDictionary* keychainAttributes =
+    @{
+        (__bridge id)kSecClass : (__bridge id)kSecClassInternetPassword
+    };
+    
     return nil;
 }
 
