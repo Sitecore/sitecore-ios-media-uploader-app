@@ -55,29 +55,29 @@
     return [ UIColor colorWithWhite:0.9f alpha:1.f ];
 }
 
--(UIImage *)uploadDoneIconImage
+-(UIImage*)uploadDoneIconImage
 {
-    return [UIImage imageNamed:@"Green-Tick"];
+    return [ UIImage imageNamed: @"Green-Tick" ];
 }
 
--(UIImage *)uploadErrorIconImage
+-(UIImage*)uploadErrorIconImage
 {
-    return [UIImage imageNamed:@"Red-Warning"];
+    return [ UIImage imageNamed: @"Red-Warning" ];
 }
 
--(UIImage *)uploadCanceledIconImage
+-(UIImage*)uploadCanceledIconImage
 {
-    return [UIImage imageNamed:@"Red-Warning"];
+    return [ UIImage imageNamed: @"Red-Warning" ];
 }
 
--(UIImage *)uploadReadyIconImage
+-(UIImage*)uploadReadyIconImage
 {
-    return [UIImage imageNamed:@"Upload_icon"];
+    return [ UIImage imageNamed: @"Upload_icon" ];
 }
 
--(UIImage *)uploadInProgressIconImage
+-(UIImage*)uploadInProgressIconImage
 {
-    return [UIImage imageNamed:@"Empty-Tick"];
+    return [ UIImage imageNamed: @"Empty-Tick" ];
 }
 
 @end

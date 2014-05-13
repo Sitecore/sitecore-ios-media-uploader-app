@@ -14,10 +14,10 @@
 -(UIColor*)transparentLabelBackgroundColor;
 -(UIColor*)disableSiteBackgroundColor;
 
--(UIImage *)uploadDoneIconImage;
--(UIImage *)uploadErrorIconImage;
--(UIImage *)uploadCanceledIconImage;
--(UIImage *)uploadReadyIconImage;
--(UIImage *)uploadInProgressIconImage;
+-(UIImage*)uploadDoneIconImage;
+-(UIImage*)uploadErrorIconImage;
+-(UIImage*)uploadCanceledIconImage;
+-(UIImage*)uploadReadyIconImage;
+-(UIImage*)uploadInProgressIconImage;
 
 @end
