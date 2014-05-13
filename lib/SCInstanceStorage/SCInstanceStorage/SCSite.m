@@ -26,6 +26,7 @@
 
 @synthesize uploadFolderPathInsideMediaLibrary = _uploadFolderPathInsideMediaLibrary;
 
+
 +(NSString*)siteDefaultValue
 {
     return @"/sitecore/shell";
@@ -46,12 +47,6 @@
     }
     
     return result;
-}
-
--(instancetype)init __attribute__((noreturn))
-{
-    [ self doesNotRecognizeSelector: _cmd ];
-    return nil;
 }
 
 -(instancetype)initWithSiteUrl:(NSString*)siteUrl

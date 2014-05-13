@@ -27,7 +27,7 @@
 /**
  Unsupported initializer
  */
--(instancetype)init __attribute__((noreturn));
+-(instancetype)init __attribute__((noreturn, unavailable("initializer not supported")));
 
 /**
  Construncts a site with empty fields for the "awakeFromNib:" method.
