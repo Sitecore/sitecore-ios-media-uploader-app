@@ -142,12 +142,12 @@
     
     [manager setUploadStatus: UPLOAD_CANCELED
              withDescription: @"upload was canceled"
-       forMediaUploadAtIndex: 0];
+              forMediaUpload: elem ];
     
      XCTAssertTrue(elem.uploadStatusData.statusId == UPLOAD_CANCELED, @"status should be 'canceled'");
 }
 
-- (void)testSetUploadItemStatusShouldCrashIfIndexIsOutOfRange
+- (void)testSetUploadItemStatusShouldCrashIfElemIsNotPresentInStorage
 {
     MUMedia *elem = [[MUMedia alloc] initWithName:@"test"
                                          dateTime:nil
@@ -155,12 +155,10 @@
                                          videoUrl:nil
                                          imageUrl:nil
                                         thumbnail:nil];
-    [manager addMediaUpload:elem];
-    
     
     XCTAssertThrows([manager setUploadStatus: UPLOAD_CANCELED
                              withDescription: @"upload was canceled"
-                       forMediaUploadAtIndex: 1], @"index is out of range");
+                              forMediaUpload: elem ], @"elem is not present");
 }
 
 - (void)testSetUploadItemStatusWorksWithPersistentStorage
@@ -175,38 +173,39 @@
     
     MUItemsForUploadManager *newmanager = [ [ MUItemsForUploadManager alloc ] initWithCacheFilesRootDirectory: @"/tmp" ];
     
+    MUMedia *newElem = [ newmanager mediaUploadAtIndex: 0 ];
     [newmanager setUploadStatus: UPLOAD_CANCELED
                 withDescription: @"upload was canceled"
-          forMediaUploadAtIndex: 0];
-    MUMedia *newElem = [ newmanager mediaUploadAtIndex: 0 ];
+                 forMediaUpload: newElem];
+    
     XCTAssertTrue(newElem.uploadStatusData.statusId == UPLOAD_CANCELED, @"status should be 'canceled'");
 }
 
 - (void)testFilteringTesting
 {
-    MUMedia *elem = [[MUMedia alloc] initWithName:@"test"
+    MUMedia *elem1 = [[MUMedia alloc] initWithName:@"test"
                                          dateTime:nil
                                      locationInfo:nil
                                          videoUrl:nil
                                          imageUrl:nil
                                         thumbnail:nil];
-    [manager addMediaUpload:elem];
+    [manager addMediaUpload:elem1];
     
-    elem = [[MUMedia alloc] initWithName:@"test"
+    MUMedia *elem2 = [[MUMedia alloc] initWithName:@"test"
                                 dateTime:nil
                             locationInfo:nil
                                 videoUrl:nil
                                 imageUrl:nil
                                thumbnail:nil];
-    [manager addMediaUpload:elem];
+    [manager addMediaUpload:elem2];
     
     [manager setUploadStatus: UPLOAD_ERROR
              withDescription: @"some error"
-       forMediaUploadAtIndex: 0];
+              forMediaUpload: elem1];
     
     [manager setUploadStatus: UPLOAD_DONE
              withDescription: @"some error"
-       forMediaUploadAtIndex: 1];
+              forMediaUpload:elem2];
     
     [manager setFilterOption:SHOW_ALL_ITEMS];
     XCTAssertTrue(manager.uploadCount == 2, @"all - 2 items");
