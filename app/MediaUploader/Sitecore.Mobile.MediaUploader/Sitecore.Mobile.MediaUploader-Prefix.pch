@@ -11,6 +11,7 @@
 #ifdef __OBJC__
 
 // this app
+    #import "sc_BaseTheme.h"
     #import "sc_ErrorHelper.h"
     #import "sc_GlobalDataObject.h"
 
