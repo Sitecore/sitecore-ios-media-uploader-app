@@ -3,8 +3,13 @@
 
 @interface MUUploadItemStatus : NSObject
 
-//TODO: @igk make readonly
-@property (nonatomic) MUUploadItemStatusType statusId;
-@property (nonatomic) NSString* statusDescription;
+-(instancetype)init __attribute__(( unavailable("unsupported initializer") ));
++(instancetype)new  __attribute__(( unavailable("unsupported initializer") ));
+
+-(instancetype)initWithStatusId:( MUUploadItemStatusType )statusId;
+-(instancetype)initWithErrorDescription:(NSString*)statusDescription;
+
+@property (nonatomic, readonly) MUUploadItemStatusType statusId;
+@property (nonatomic, readonly) NSString* statusDescription;
 
 @end
