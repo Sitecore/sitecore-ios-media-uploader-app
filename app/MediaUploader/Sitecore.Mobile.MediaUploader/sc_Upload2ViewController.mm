@@ -6,13 +6,11 @@
 //  Copyright (c) 2013 Sitecore. All rights reserved.
 //
 
-#import <ImageIO/CGImageProperties.h>
-#import <AssetsLibrary/AssetsLibrary.h>
+
 #import "sc_Upload2ViewController.h"
 #import "sc_GlobalDataObject.h"
 #import "sc_AppDelegateProtocol.h"
 #import "sc_ReloadableViewProtocol.h"
-#import <MediaPlayer/MediaPlayer.h>
 #import "sc_ViewsHelper.h"
 
 #import "sc_GradientButton.h"
@@ -621,8 +619,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
             {
                 NSParameterAssert( [ cell isMemberOfClass: [ sc_UploadItemCell class ] ] );
                 
-                MUUploadItemStatus* inProgressStatus = [ MUUploadItemStatus new ];
-                inProgressStatus.statusId = UPLOAD_IN_PROGRESS;
+                MUUploadItemStatus* inProgressStatus = [ [ MUUploadItemStatus alloc ] initWithStatusId: UPLOAD_IN_PROGRESS ];
                 
                  [ cell setCellStyleForUploadStatus: inProgressStatus
                                          withTheme: self->_theme ];

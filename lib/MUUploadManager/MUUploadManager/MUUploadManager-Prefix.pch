@@ -3,6 +3,7 @@
 
 
 #ifdef __OBJC__
+    #import <AssetsLibrary/AssetsLibrary.h>
     #import <AVFoundation/AVFoundation.h>
     #import <CoreMedia/CoreMedia.h>
 
