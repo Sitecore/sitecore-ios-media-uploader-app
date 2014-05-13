@@ -1,6 +1,41 @@
 #import "MUUploadItemStatus.h"
 
+@interface MUUploadItemStatus()
+
+@property (nonatomic, readwrite) MUUploadItemStatusType statusId;
+@property (nonatomic, readwrite) NSString* statusDescription;
+
+@end
+
+
 @implementation MUUploadItemStatus
+
+-(instancetype)initWithStatusId:( MUUploadItemStatusType )statusId
+{
+    self = [ super init ];
+    if ( nil == self )
+    {
+        return nil;
+    }
+    
+    self.statusId = statusId;
+    
+    return self;
+}
+
+-(instancetype)initWithErrorDescription:(NSString*)statusDescription
+{
+    self = [ super init ];
+    if ( nil == self )
+    {
+        return nil;
+    }
+    
+    self.statusId = UPLOAD_ERROR;
+    self->_statusDescription = statusDescription;
+    
+    return self;
+}
 
 -(NSString*)description
 {
@@ -9,7 +44,7 @@
         return self->_statusDescription;
     }
     
-    return nil;
+    return [ super description ];
 }
 
 -(void)encodeWithCoder:(NSCoder*)encoder
@@ -21,11 +56,14 @@
 -(instancetype)initWithCoder:(NSCoder*)decoder
 {
     self = [ super init ];
-    if ( nil != self )
+    if ( nil == self )
     {
-        self.statusDescription  = [ decoder decodeObjectForKey:  @"statusDescription" ];
-        self.statusId           = [ decoder decodeIntegerForKey: @"statusId"    ];
+        return nil;
     }
+
+    self.statusDescription  = [ decoder decodeObjectForKey:  @"statusDescription" ];
+    self.statusId           = [ decoder decodeIntegerForKey: @"statusId"    ];
+
     
     return self;
 }
