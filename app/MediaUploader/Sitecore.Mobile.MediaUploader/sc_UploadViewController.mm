@@ -636,17 +636,25 @@ static NSString* const SHOW_SETTINGS_SEGUE = @"ShowSiteSettins";
     [ self moveDownImagePlaceholderIfNeeded ];
 }
 
-#define SCREEN_HEIGHT_TO_MOVE_IMAGE_PLACEHOLDER 500.f
-#define IMAGE_PLACEHOLDER_OFFSET 40.f
-#define IMAGE_PLACEHOLDER_ANIMATION_DELAY .3f
--(void)moveUpImagePlaceholderIfNeeded
+
+static const CGFloat SCREEN_HEIGHT_TO_MOVE_IMAGE_PLACEHOLDER = 500.f;
+static const CGFloat IMAGE_PLACEHOLDER_OFFSET                =  40.f;
+static const CGFloat IMAGE_PLACEHOLDER_ANIMATION_DELAY       =  0.3f;
+
+-(BOOL)isScreenSize_3_5_Inch
 {
     CGFloat screenHeigh = self.view.bounds.size.height;
-    if ( screenHeigh < SCREEN_HEIGHT_TO_MOVE_IMAGE_PLACEHOLDER ) //3.5" screen
+    return ( screenHeigh < SCREEN_HEIGHT_TO_MOVE_IMAGE_PLACEHOLDER );
+}
+
+-(void)moveUpImagePlaceholderIfNeeded
+{
+    if ( [ self isScreenSize_3_5_Inch ] )
     {
         CGRect frame = self.imagePlaceholder.frame;
         frame.origin.y = self->_originalImagePlaceholderYOrigin - IMAGE_PLACEHOLDER_OFFSET;
-        [UIView animateWithDuration: IMAGE_PLACEHOLDER_ANIMATION_DELAY animations:^
+        [UIView animateWithDuration: IMAGE_PLACEHOLDER_ANIMATION_DELAY
+                         animations: ^void()
         {
             self.imagePlaceholder.frame = frame;
         }];
@@ -655,15 +663,15 @@ static NSString* const SHOW_SETTINGS_SEGUE = @"ShowSiteSettins";
 
 -(void)moveDownImagePlaceholderIfNeeded
 {
-    CGFloat screenHeigh = self.view.bounds.size.height;
-    if ( screenHeigh < SCREEN_HEIGHT_TO_MOVE_IMAGE_PLACEHOLDER ) //3.5" screen
+    if ( [ self isScreenSize_3_5_Inch ] )
     {
         CGRect frame = self.imagePlaceholder.frame;
         frame.origin.y = self->_originalImagePlaceholderYOrigin;
-        [UIView animateWithDuration: IMAGE_PLACEHOLDER_ANIMATION_DELAY animations:^
-         {
+        [ UIView animateWithDuration: IMAGE_PLACEHOLDER_ANIMATION_DELAY
+                          animations: ^void()
+        {
              self.imagePlaceholder.frame = frame;
-         }];
+        } ];
     }
 }
 
