@@ -126,8 +126,8 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 
 -(void)localizeFilterButtons
 {
-    [ self.filterControl setTitle: NSLocalizedString(@"ALL_ITEMS_FILTER_TITLE", nil) forSegmentAtIndex: 0 ];
-    [ self.filterControl setTitle: NSLocalizedString(@"COMPLETED_ITEMS_FILTER_TITLE", nil) forSegmentAtIndex: 1 ];
+    [ self.filterControl setTitle: NSLocalizedString(@"ALL_ITEMS_FILTER_TITLE"          , nil) forSegmentAtIndex: 0 ];
+    [ self.filterControl setTitle: NSLocalizedString(@"COMPLETED_ITEMS_FILTER_TITLE"    , nil) forSegmentAtIndex: 1 ];
     [ self.filterControl setTitle: NSLocalizedString(@"NOT_COMPLETED_ITEMS_FILTER_TITLE", nil) forSegmentAtIndex: 2 ];
 }
 
@@ -427,6 +427,11 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
                          Context: session
                       uploadItem: uploadItem ];
                 
+                if ( NSNotFound == itemIndex )
+                {
+                    return;
+                }
+                
                 [ self.appDataObject.uploadItemsManager setUploadStatus: UPLOAD_DONE
                                                         withDescription: nil
                                                   forMediaUploadAtIndex: itemIndex ];
@@ -435,11 +440,15 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
             [ weakSelf itemUploadFinished ];
         });
         
-        SCCancelAsyncOperationHandler cancelHandler = ^(BOOL cancelInfo)
+        SCCancelAsyncOperationHandler cancelHandler = ^void( BOOL cancelInfo )
         {
             // @adk : do not extract outside the block since it may be invalidated
             // Hot fix.
             NSInteger itemIndex = [ uploadItemsManager indexOfMediaUpload: media ];
+            if ( NSNotFound == itemIndex )
+            {
+                return;
+            }
             
             abortButton.enabled = NO;
             [ self.appDataObject.uploadItemsManager setUploadStatus: UPLOAD_CANCELED
@@ -538,7 +547,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
              SCField *fieldCityCode = [fieldItem fieldWithName: @"ZipCode"];
              fieldCityCode.rawValue = uploadItem.mediaItem.locationInfo.cityCode;
              
-             [fieldItem saveItemOperation] (^(SCItem*  editedItem, NSError*  fieldSaveError)
+             [fieldItem saveItemOperation] (^void(SCItem*  editedItem, NSError*  fieldSaveError)
                {
                    NSLog(@"readFieldsByName: %@", editedItem.allFields);
                });
@@ -617,7 +626,7 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 #pragma mark AlertView Delegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    BOOL retryButtonPressed = (buttonIndex == 1);
+    BOOL retryButtonPressed = ( buttonIndex == 1 );
     if ( retryButtonPressed )
     {
 #define HOTFIX_SHOW_INDICATION_IMMEDIATELY 1
