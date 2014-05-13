@@ -202,16 +202,17 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 
 -(void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    MUUploadItemStatus *status = [ self statusForItemForCurrentIndexPath: indexPath ];
+    MUUploadItemStatus* status = [ self statusForItemForCurrentIndexPath: indexPath ];
+    NSInteger index = [ self reversedIndexForIndexPath: indexPath ];
+    MUMedia* media = [ self.appDataObject.uploadItemsManager mediaUploadAtIndex: index ];
     
     switch ( status.statusId )
     {
         case READY_FOR_UPLOAD:
         {
-            NSInteger index = [ self reversedIndexForIndexPath: indexPath ];
             [ self.appDataObject.uploadItemsManager setUploadStatus: UPLOAD_IN_PROGRESS
                                                     withDescription: nil
-                                              forMediaUploadAtIndex: index ];
+                                                     forMediaUpload: media ];
             [ self uploadNextItem ];
             [ self.sitesTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic ];
             break;
@@ -410,31 +411,22 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
         
         SCDidFinishAsyncOperationHandler doneHandler = ( ^void( SCItem* item, NSError* error )
         {
-            // @adk : do not extract outside the block since it may be invalidated
-            // Hot fix.
-            NSInteger itemIndex = [ uploadItemsManager indexOfMediaUpload: media ];
-            
             abortButton.enabled = NO;
             if ( nil != error)
             {
-                [ self.appDataObject.uploadItemsManager setUploadStatus: UPLOAD_ERROR
-                                                        withDescription: error.localizedDescription
-                                                  forMediaUploadAtIndex: itemIndex ];
+                [ uploadItemsManager setUploadStatus: UPLOAD_ERROR
+                                     withDescription: error.localizedDescription
+                                      forMediaUpload: media ];
             }
             else
             {
-                [ self setFields: item
+                [ weakSelf setFields: item
                          Context: session
                       uploadItem: uploadItem ];
                 
-                if ( NSNotFound == itemIndex )
-                {
-                    return;
-                }
-                
-                [ self.appDataObject.uploadItemsManager setUploadStatus: UPLOAD_DONE
-                                                        withDescription: nil
-                                                  forMediaUploadAtIndex: itemIndex ];
+                [ uploadItemsManager setUploadStatus: UPLOAD_DONE
+                                     withDescription: nil
+                                      forMediaUpload: media ];
             }
 
             [ weakSelf itemUploadFinished ];
@@ -442,18 +434,10 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
         
         SCCancelAsyncOperationHandler cancelHandler = ^void( BOOL cancelInfo )
         {
-            // @adk : do not extract outside the block since it may be invalidated
-            // Hot fix.
-            NSInteger itemIndex = [ uploadItemsManager indexOfMediaUpload: media ];
-            if ( NSNotFound == itemIndex )
-            {
-                return;
-            }
-            
             abortButton.enabled = NO;
-            [ self.appDataObject.uploadItemsManager setUploadStatus: UPLOAD_CANCELED
-                                                    withDescription: @"Upload was canceled"
-                                              forMediaUploadAtIndex: itemIndex ];
+            [ uploadItemsManager setUploadStatus: UPLOAD_CANCELED
+                                 withDescription: @"Upload was canceled"
+                                  forMediaUpload: media ];
             
             [ weakSelf itemUploadFinished ];
         };
@@ -647,9 +631,10 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
 #endif
         
         NSInteger index = [ self reversedIndexForIndexPath: self->_processedIndexPath ];
+        MUMedia* media = [ self.appDataObject.uploadItemsManager mediaUploadAtIndex: index ];
         [ self.appDataObject.uploadItemsManager setUploadStatus: UPLOAD_IN_PROGRESS
                                                 withDescription: nil
-                                          forMediaUploadAtIndex: index ];
+                                                 forMediaUpload: media ];
         [ self uploadNextItem ];
     }
 }

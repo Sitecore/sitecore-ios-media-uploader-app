@@ -98,16 +98,11 @@
 }
 
 -(void)setUploadStatus:(MUUploadItemStatusType)status
-       withDescription:(NSString *)description
- forMediaUploadAtIndex:(NSInteger)index
+       withDescription:(NSString*)description
+        forMediaUpload:(MUMedia*)media
 {
-    NSUInteger castedIndex = static_cast<NSUInteger>( index );
-    if ([self isIndexOutOfRange:castedIndex])
-    {
-        throw std::runtime_error( "index is out of range" );
-    }
-    
-    MUMedia* media = [ self mediaUploadAtIndex: index ];
+    NSParameterAssert( [ self->_mediaUpload containsObject: media ] );
+       
     media.uploadStatusData.statusId = status;
     media.uploadStatusData.statusDescription = description;
     

@@ -28,7 +28,7 @@
 
 -(void)setUploadStatus:(MUUploadItemStatusType)status
        withDescription:(NSString *)description
- forMediaUploadAtIndex:(NSInteger)index;
+        forMediaUpload:(MUMedia* )media;
 
 -(MUMedia*)mediaUploadWithUploadStatus:(MUUploadItemStatusType)status;
 

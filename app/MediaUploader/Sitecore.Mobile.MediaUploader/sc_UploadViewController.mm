@@ -467,19 +467,17 @@ static NSString* const SHOW_SETTINGS_SEGUE = @"ShowSiteSettins";
         [ self setMediaItemValidName: media ];
         
         //TODO: @igk will error in case of async adding
-        [ self addUploadToMediaUploadManager ];
+        [ self addUploadToMediaUploadManager: media ];
         
-        NSInteger lastUploadItemIndex = static_cast<NSInteger>([ _appDataObject.uploadItemsManager uploadCount ] - 1);
         [ self.appDataObject.uploadItemsManager setUploadStatus: UPLOAD_IN_PROGRESS
                                                 withDescription: nil
-                                          forMediaUploadAtIndex: lastUploadItemIndex ];
+                                                 forMediaUpload: media ];
     }
 }
 
--(void)addUploadToMediaUploadManager
+-(void)addUploadToMediaUploadManager:(MUMedia*)media
 {
-    MUMedia* media = [self getMedia];
-    
+
     if ( media.siteForUploadingId == nil )
     {
         [ sc_ErrorHelper showError: NSLocalizedString(@"Please set up at least one upload site.", nil) ];
@@ -492,7 +490,8 @@ static NSString* const SHOW_SETTINGS_SEGUE = @"ShowSiteSettins";
 
 -(void)saveFileAsPending
 {
-    [ self addUploadToMediaUploadManager ];
+    MUMedia* media = [ self getMedia ];
+    [ self addUploadToMediaUploadManager: media ];
     
     [self.navigationController popViewControllerAnimated:YES ];
 }
