@@ -1,8 +1,9 @@
 #import "MUItemsForUploadManager.h"
+
 #import "MUMedia.h"
-#import <AssetsLibrary/ALAssetsLibrary.h>
-#import <AVFoundation/AVAssetImageGenerator.h>
 #import "MUMedia+Private.m"
+#import "MUUploadItemStatus+Mutable.h"
+
 
 @implementation MUItemsForUploadManager
 {

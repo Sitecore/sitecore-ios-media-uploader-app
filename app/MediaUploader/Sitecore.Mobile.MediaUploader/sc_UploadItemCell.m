@@ -26,7 +26,8 @@
 }
 
 
--(void)setCellStyleForUploadStatus:(MUUploadItemStatus*)status withTheme:(sc_BaseTheme*)theme
+-(void)setCellStyleForUploadStatus:(MUUploadItemStatus*)status
+                         withTheme:(sc_BaseTheme*)theme
 {
     UIImage* image = nil;
     

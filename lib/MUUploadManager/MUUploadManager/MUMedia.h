@@ -27,6 +27,10 @@
 @property (nonatomic) MUImageQuality imageQuality;
 @property (nonatomic, readonly) MUUploadItemStatus* uploadStatusData;
 
+-(instancetype)init __attribute__(( unavailable("unsupported initializer") ));
++(instancetype)new  __attribute__(( unavailable("unsupported initializer") ));
+
+
 -(instancetype)initWithName:(NSString*)name
                    dateTime:(NSDate*)dateTime
                locationInfo:(id<MULocationInfo>)locationInfo

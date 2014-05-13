@@ -29,6 +29,7 @@
 		78C8F7E81907DFDA00B78ABB /* libMUUploadManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C8F7D01907DFDA00B78ABB /* libMUUploadManager.a */; };
 		78C8F7EE1907DFDA00B78ABB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78C8F7EC1907DFDA00B78ABB /* InfoPlist.strings */; };
 		78C8F7F01907DFDA00B78ABB /* MUUploadManagerTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 78C8F7EF1907DFDA00B78ABB /* MUUploadManagerTests.mm */; };
+		7E70DEE1192266110054930E /* MUUploadItemStatus+Mutable.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E70DEE0192266110054930E /* MUUploadItemStatus+Mutable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,9 @@
 		78C8F7ED1907DFDA00B78ABB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		78C8F7EF1907DFDA00B78ABB /* MUUploadManagerTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MUUploadManagerTests.mm; sourceTree = "<group>"; };
 		78CAF710190A7EB100201968 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		7E70DEDE192260D30054930E /* MUMutableLocationInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUMutableLocationInfo.h; sourceTree = "<group>"; };
+		7E70DEDF192266110054930E /* MUUploadItemStatus+Mutable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MUUploadItemStatus+Mutable.h"; sourceTree = "<group>"; };
+		7E70DEE0192266110054930E /* MUUploadItemStatus+Mutable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MUUploadItemStatus+Mutable.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				785088A5190E576C00EBAD3C /* MULocationInfo.h */,
+				7E70DEDE192260D30054930E /* MUMutableLocationInfo.h */,
 				785088A2190E56A600EBAD3C /* MULocationInfoData.h */,
 				785088A3190E56A600EBAD3C /* MULocationInfoData.m */,
 				789863C1190FB4CB00E38AEA /* MUMedia+Private.h */,
@@ -171,6 +176,8 @@
 				787F68801907F1B0000383CC /* MUImageScaling.mm */,
 				78745EC11907EFD2004353B2 /* MUUploadItemStatus.h */,
 				78745EC21907EFD2004353B2 /* MUUploadItemStatus.m */,
+				7E70DEDF192266110054930E /* MUUploadItemStatus+Mutable.h */,
+				7E70DEE0192266110054930E /* MUUploadItemStatus+Mutable.m */,
 				787F68831907F384000383CC /* MUItemsForUploadManager.h */,
 				787F68841907F384000383CC /* MUItemsForUploadManager.mm */,
 				78745EB71907EDB8004353B2 /* MUUploadManager.h */,
@@ -278,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E70DEE1192266110054930E /* MUUploadItemStatus+Mutable.m in Sources */,
 				785088A4190E56A600EBAD3C /* MULocationInfoData.m in Sources */,
 				78745EC31907EFD2004353B2 /* MUUploadItemStatus.m in Sources */,
 				78745EC71907F001004353B2 /* MUMedia.m in Sources */,
