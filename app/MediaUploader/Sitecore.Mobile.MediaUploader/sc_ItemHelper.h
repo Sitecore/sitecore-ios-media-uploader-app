@@ -23,7 +23,6 @@ typedef NS_ENUM(NSInteger, sc_CellType)
 +(NSString*)getDefaultDatabase;
 +(NSString*)formatUploadFolder:(SCSite*)site;
 +(NSString*)getPath:(NSString*)itemId;
-+(NSString*)itemType:(SCItem*)item;
 +(sc_CellType)scItemType:(SCItem*)item;
 +(NSString*)generateItemName:(NSString*)fileName;
 

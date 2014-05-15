@@ -125,12 +125,10 @@
 -(void)excludeFoldersFromItemsList
 {
     NSMutableArray* discardedItems = [ NSMutableArray array ];
-    SCItem* item = nil;
     
-    for ( item in self->_items )
+    for ( SCItem* item in self->_items )
     {
-        NSString*  itemType = [ sc_ItemHelper itemType: item ];
-        if ( [ itemType isEqualToString: @"folder" ] )
+        if ( !item.isImage )
         {
             [ discardedItems addObject: item ];
             --self->_selectedImage;

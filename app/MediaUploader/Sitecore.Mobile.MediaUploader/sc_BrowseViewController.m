@@ -3,7 +3,6 @@
 #import "sc_ItemHelper.h"
 #import "sc_GradientButton.h"
 #import "sc_BrowseViewCellFactory.h"
-#import "sc_LevelUpGridCell.h"
 #import "sc_QuickImageViewController.h"
 #import "sc_GridBrowserRequestBuilder.h"
 
@@ -14,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView* loadingProgress;
 
 @property (nonatomic, strong) IBOutlet sc_BrowseViewCellFactory* cellFactory;
-@property (nonatomic, weak  ) IBOutlet UITextView* itemPathTextView;
+@property (nonatomic, weak  ) IBOutlet UILabel* itemPathLabel;
 @property (nonatomic, strong) IBOutlet UICollectionViewFlowLayout* itemsBrowserGridLayout;
 
 @property (nonatomic, weak) IBOutlet sc_GradientButton* siteButton;
@@ -48,7 +47,7 @@
     [ self resetSiteForBrowse ];
     [ self setupLayout  ];
     [ self checkSitesAvailability ];
-    NSArray* templatesList = @[@"Image", @"Jpeg", @"Media folder"];
+    NSArray* templatesList = @[@"Image", @"Jpeg", @"Media folder", @"File"];
     self->_requestBuilder = [ [ sc_GridBrowserRequestBuilder alloc ] initWithTemplateNames: templatesList ];
     self.cellFactory.itemsBrowserController.nextLevelRequestBuilder = self->_requestBuilder;
     browserMustBeReloaded = YES;
@@ -62,9 +61,9 @@
     {
         [ self.singleSiteBgView removeFromSuperview ];
         CGRect newFrame;
-        newFrame = self.itemPathTextView.frame;
+        newFrame = self.itemPathLabel.frame;
         newFrame.origin.y = 0;
-        self.itemPathTextView.frame = newFrame;
+        self.itemPathLabel.frame = newFrame;
         
         CGFloat dY = newFrame.size.height;
         newFrame = self.browserGrid.frame;
@@ -203,7 +202,7 @@ didLoadLevelForItem:(SCItem*)levelParentItem
     NSParameterAssert( nil != levelParentItem );
     
     [ self endLoading ];
-    self.itemPathTextView.text = levelParentItem.path;
+    self.itemPathLabel.text = levelParentItem.path;
     
     
     // leaving this on the user's behalf
@@ -225,12 +224,14 @@ shouldLoadLevelForItem:(SCItem*)levelParentItem
     }
     else
     {
-        sc_QuickImageViewController* quickImageViewController = (sc_QuickImageViewController*)[self.storyboard instantiateViewControllerWithIdentifier: @"sc_QuickImageViewController"];
-        quickImageViewController.items = [ self itemsForQuickViewControllerForLevelItem: levelParentItem ];
-        quickImageViewController.selectedImage = [ quickImageViewController.items indexOfObject: levelParentItem ];
-        quickImageViewController.session = self->_legacyApiSession;
-        [self.navigationController pushViewController: quickImageViewController animated: YES];
-
+        if ( levelParentItem.isImage )
+        {
+            sc_QuickImageViewController* quickImageViewController = (sc_QuickImageViewController*)[self.storyboard instantiateViewControllerWithIdentifier: @"sc_QuickImageViewController"];
+            quickImageViewController.items = [ self itemsForQuickViewControllerForLevelItem: levelParentItem ];
+            quickImageViewController.selectedImage = [ quickImageViewController.items indexOfObject: levelParentItem ];
+            quickImageViewController.session = self->_legacyApiSession;
+            [self.navigationController pushViewController: quickImageViewController animated: YES];
+        }
     }
     
     return NO;
