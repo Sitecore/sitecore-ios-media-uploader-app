@@ -41,6 +41,20 @@
 			remoteGlobalIDString = 78716C4418F6E8130092AA98;
 			remoteInfo = SCInstanceStorage;
 		};
+		78B016121925014B00920310 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78B0160D1925014A00920310 /* iOSKeychainItemWrapper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78B014631924EE5500920310;
+			remoteInfo = iOSKeychainItemWrapper;
+		};
+		78B016141925014B00920310 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78B0160D1925014A00920310 /* iOSKeychainItemWrapper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78B014731924EE5500920310;
+			remoteInfo = iOSKeychainItemWrapperTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,6 +85,7 @@
 		78716C5918F6E8140092AA98 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		78716C6018F6E8140092AA98 /* SCInstanceStorageTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SCInstanceStorageTests-Info.plist"; sourceTree = "<group>"; };
 		78716C6218F6E8140092AA98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		78B0160D1925014A00920310 /* iOSKeychainItemWrapper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSKeychainItemWrapper.xcodeproj; path = "../../lib-third-party/iOSKeychainItemWrapper/iOSKeychainItemWrapper.xcodeproj"; sourceTree = "<group>"; };
 		78C8F7931907BD6F00B78ABB /* SCSitesListSavingError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSitesListSavingError.h; sourceTree = "<group>"; };
 		78C8F7941907BD6F00B78ABB /* SCSitesListSavingError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSitesListSavingError.m; sourceTree = "<group>"; };
 		78D6669918FD6CAF00BFD6C7 /* SCSite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSite.h; sourceTree = "<group>"; };
@@ -161,6 +176,7 @@
 		78716C4718F6E8130092AA98 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				78B015721924F72200920310 /* third-party */,
 				7E5F15D2190E9929002B1854 /* libz.dylib */,
 				7E5F15D0190E9925002B1854 /* libxml2.dylib */,
 				7E5F15CE190E9920002B1854 /* libsqlite3.dylib */,
@@ -225,6 +241,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		78B015721924F72200920310 /* third-party */ = {
+			isa = PBXGroup;
+			children = (
+				78B0160D1925014A00920310 /* iOSKeychainItemWrapper.xcodeproj */,
+			);
+			name = "third-party";
+			sourceTree = "<group>";
+		};
+		78B0160E1925014A00920310 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78B016131925014B00920310 /* libiOSKeychainItemWrapper.a */,
+				78B016151925014B00920310 /* iOSKeychainItemWrapperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -282,6 +315,12 @@
 			mainGroup = 78716C3C18F6E8130092AA98;
 			productRefGroup = 78716C4618F6E8130092AA98 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 78B0160E1925014A00920310 /* Products */;
+					ProjectRef = 78B0160D1925014A00920310 /* iOSKeychainItemWrapper.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				78716C4418F6E8130092AA98 /* SCInstanceStorage */,
@@ -289,6 +328,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		78B016131925014B00920310 /* libiOSKeychainItemWrapper.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libiOSKeychainItemWrapper.a;
+			remoteRef = 78B016121925014B00920310 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		78B016151925014B00920310 /* iOSKeychainItemWrapperTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = iOSKeychainItemWrapperTests.xctest;
+			remoteRef = 78B016141925014B00920310 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		78716C5318F6E8140092AA98 /* Resources */ = {
@@ -396,8 +452,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = .;
+				HEADER_SEARCH_PATHS = (
+					.,
+					"../../lib-third-party/iOSKeychainItemWrapper",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -444,8 +504,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = .;
+				HEADER_SEARCH_PATHS = (
+					.,
+					"../../lib-third-party/iOSKeychainItemWrapper",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -461,6 +525,11 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCInstanceStorage/SCInstanceStorage-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"/Users/Igor/Desktop/iOSKeychainItemWrapper/build/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -477,6 +546,11 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCInstanceStorage/SCInstanceStorage-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"/Users/Igor/Desktop/iOSKeychainItemWrapper/build/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -578,8 +652,12 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_PROFILING_CODE = YES;
-				HEADER_SEARCH_PATHS = .;
+				HEADER_SEARCH_PATHS = (
+					.,
+					"../../lib-third-party/iOSKeychainItemWrapper",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "";
 				SDKROOT = iphoneos;
 			};
 			name = Coverage;
@@ -594,6 +672,11 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCInstanceStorage/SCInstanceStorage-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"/Users/Igor/Desktop/iOSKeychainItemWrapper/build/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
