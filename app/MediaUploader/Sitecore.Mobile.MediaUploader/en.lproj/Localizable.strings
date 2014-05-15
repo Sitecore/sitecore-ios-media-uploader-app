@@ -101,7 +101,7 @@
 //ERRORS
 "The specified location not found." = "The specified location not found";
 "Authentication failure." = "Authentication failure.";
-"ERROR_CAMERA_ACCESS_DENIED" = "Access to the Photo Album has been deined. Please enable it in the Settings.app";
+"ERROR_CAMERA_ACCESS_DENIED" = "Access to the Photo Album has been denied. Please enable it in the Settings.app";
 "ERROR_MIGRATION_FAILED" = "Application Update failed. Please remove the application and reinstall it from the App Store. Sorry for inconvenience.";
 
 
