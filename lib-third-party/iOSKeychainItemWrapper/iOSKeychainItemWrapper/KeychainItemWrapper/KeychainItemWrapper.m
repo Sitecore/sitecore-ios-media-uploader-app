@@ -3,7 +3,7 @@
  Abstract: 
  Objective-C wrapper for accessing a single keychain item.
   
-  Version: 1.2 - ARCified
+  Version: 1.2 
   
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple 
  Inc. ("Apple") in consideration of your agreement to the following 
@@ -55,34 +55,34 @@
 #endif
 
 /*
-
-These are the default constants and their respective types,
-available for the kSecClassGenericPassword Keychain Item class:
-
-kSecAttrAccessGroup			-		CFStringRef
-kSecAttrCreationDate		-		CFDateRef
-kSecAttrModificationDate    -		CFDateRef
-kSecAttrDescription			-		CFStringRef
-kSecAttrComment				-		CFStringRef
-kSecAttrCreator				-		CFNumberRef
-kSecAttrType                -		CFNumberRef
-kSecAttrLabel				-		CFStringRef
-kSecAttrIsInvisible			-		CFBooleanRef
-kSecAttrIsNegative			-		CFBooleanRef
-kSecAttrAccount				-		CFStringRef
-kSecAttrService				-		CFStringRef
-kSecAttrGeneric				-		CFDataRef
  
-See the header file Security/SecItem.h for more details.
-
-*/
+ These are the default constants and their respective types,
+ available for the kSecClassGenericPassword Keychain Item class:
+ 
+ kSecAttrAccessGroup			-		CFStringRef
+ kSecAttrCreationDate		-		CFDateRef
+ kSecAttrModificationDate    -		CFDateRef
+ kSecAttrDescription			-		CFStringRef
+ kSecAttrComment				-		CFStringRef
+ kSecAttrCreator				-		CFNumberRef
+ kSecAttrType                -		CFNumberRef
+ kSecAttrLabel				-		CFStringRef
+ kSecAttrIsInvisible			-		CFBooleanRef
+ kSecAttrIsNegative			-		CFBooleanRef
+ kSecAttrAccount				-		CFStringRef
+ kSecAttrService				-		CFStringRef
+ kSecAttrGeneric				-		CFDataRef
+ 
+ See the header file Security/SecItem.h for more details.
+ 
+ */
 
 @interface KeychainItemWrapper (PrivateMethods)
 /*
-The decision behind the following two methods (secItemFormatToDictionary and dictionaryToSecItemFormat) was
-to encapsulate the transition between what the detail view controller was expecting (NSString *) and what the
-Keychain API expects as a validly constructed container class.
-*/
+ The decision behind the following two methods (secItemFormatToDictionary and dictionaryToSecItemFormat) was
+ to encapsulate the transition between what the detail view controller was expecting (NSString *) and what the
+ Keychain API expects as a validly constructed container class.
+ */
 - (NSMutableDictionary *)secItemFormatToDictionary:(NSDictionary *)dictionaryToConvert;
 - (NSMutableDictionary *)dictionaryToSecItemFormat:(NSDictionary *)dictionaryToConvert;
 
@@ -115,14 +115,14 @@ Keychain API expects as a validly constructed container class.
 		{
 #if TARGET_IPHONE_SIMULATOR
 			// Ignore the access group if running on the iPhone simulator.
-			// 
+			//
 			// Apps that are built for the simulator aren't signed, so there's no keychain access group
 			// for the simulator to check. This means that all apps can see all keychain items when run
 			// on the simulator.
 			//
 			// If a SecItem contains an access group attribute, SecItemAdd and SecItemUpdate on the
 			// simulator will return -25243 (errSecNoAccessForItem).
-#else			
+#else
 			[genericPasswordQuery setObject:accessGroup forKey:(__bridge id)kSecAttrAccessGroup];
 #endif
 		}
@@ -146,14 +146,14 @@ Keychain API expects as a validly constructed container class.
 			{
 #if TARGET_IPHONE_SIMULATOR
 				// Ignore the access group if running on the iPhone simulator.
-				// 
+				//
 				// Apps that are built for the simulator aren't signed, so there's no keychain access group
 				// for the simulator to check. This means that all apps can see all keychain items when run
 				// on the simulator.
 				//
 				// If a SecItem contains an access group attribute, SecItemAdd and SecItemUpdate on the
 				// simulator will return -25243 (errSecNoAccessForItem).
-#else			
+#else
 				[keychainItemData setObject:accessGroup forKey:(__bridge id)kSecAttrAccessGroup];
 #endif
 			}
@@ -169,7 +169,7 @@ Keychain API expects as a validly constructed container class.
 	return self;
 }
 
-- (void)setObject:(id)inObject forKey:(id)key 
+- (void)setObject:(id)inObject forKey:(id)key
 {
     if (inObject == nil) return;
     id currentObject = [keychainItemData objectForKey:key];
@@ -188,7 +188,7 @@ Keychain API expects as a validly constructed container class.
 - (void)resetKeychainItem
 {
 	OSStatus junk = noErr;
-    if (!keychainItemData) 
+    if (!keychainItemData)
     {
         keychainItemData = [[NSMutableDictionary alloc] init];
     }
@@ -247,8 +247,8 @@ Keychain API expects as a validly constructed container class.
         [returnDictionary removeObjectForKey:(__bridge id)kSecReturnData];
         
         // Add the password to the dictionary, converting from NSData to NSString.
-        NSString *password = [[NSString alloc] initWithBytes:[(__bridge NSData *)passwordData bytes] length:[(__bridge NSData *)passwordData length] 
-                                                     encoding:NSUTF8StringEncoding];
+        NSString *password = [[NSString alloc] initWithBytes:[(__bridge NSData *)passwordData bytes] length:[(__bridge NSData *)passwordData length]
+                                                    encoding:NSUTF8StringEncoding];
         [returnDictionary setObject:password forKey:(__bridge id)kSecValueData];
     }
     else
@@ -257,7 +257,7 @@ Keychain API expects as a validly constructed container class.
         NSAssert(NO, @"Serious error, no matching item found in the keychain.\n");
     }
 	if(passwordData) CFRelease(passwordData);
-
+    
 	return returnDictionary;
 }
 
@@ -280,7 +280,7 @@ Keychain API expects as a validly constructed container class.
 		
 #if TARGET_IPHONE_SIMULATOR
 		// Remove the access group if running on the iPhone simulator.
-		// 
+		//
 		// Apps that are built for the simulator aren't signed, so there's no keychain access group
 		// for the simulator to check. This means that all apps can see all keychain items when run
 		// on the simulator.

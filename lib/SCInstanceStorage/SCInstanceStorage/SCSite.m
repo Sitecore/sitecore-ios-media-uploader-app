@@ -117,13 +117,6 @@ uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
     
 }
 
-//-(NSString*)password
-//{
-//    KeychainItemWrapper* keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"KeychainTest" accessGroup:nil];
-//    
-//    return [keychain objectForKey:@"kSecAttrAccessible"];
-//}
-
 -(void)setSiteUrl:(NSString*)siteUrl
 {
     self->_urlStrorage = siteUrl;

@@ -181,6 +181,7 @@
 		781081C9189021E300E8EFD7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCCC1785949900730EC8 /* Default.png */; };
 		781081CA189021E300E8EFD7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCCE178594AD00730EC8 /* Default@2x.png */; };
 		781081CB189021E300E8EFD7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCC21785943800730EC8 /* Default-568h@2x.png */; };
+		782F7F391925FBE500C6B11A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782F7F381925FBE500C6B11A /* Security.framework */; };
 		783FDD33192269330037780B /* Launch_iOS_29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 783FDD2C192269330037780B /* Launch_iOS_29x29.png */; };
 		783FDD34192269330037780B /* Launch_iOS_29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 783FDD2C192269330037780B /* Launch_iOS_29x29.png */; };
 		783FDD35192269330037780B /* Launch_iOS_40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 783FDD2D192269330037780B /* Launch_iOS_40x40.png */; };
@@ -570,6 +571,8 @@
 		781081CF189021E300E8EFD7 /* Sitecore.Mobile.MediaUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sitecore.Mobile.MediaUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		781081D0189021E300E8EFD7 /* Sitecore.Mobile.MediaUploader copy2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Sitecore.Mobile.MediaUploader copy2-Info.plist"; path = "/Volumes/Sitecore/Sources/src/app/MediaUploader/Sitecore.Mobile.MediaUploader copy2-Info.plist"; sourceTree = "<absolute>"; };
 		781081D11890224100E8EFD7 /* Sitecore.Mobile.MediaUploader-Info_AppStore.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sitecore.Mobile.MediaUploader-Info_AppStore.plist"; sourceTree = "<group>"; };
+		782F7F381925FBE500C6B11A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		782F7F3A1926069C00C6B11A /* Sitecore.Mobile.MediaUploader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Sitecore.Mobile.MediaUploader.entitlements; sourceTree = "<group>"; };
 		783FDD2C192269330037780B /* Launch_iOS_29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch_iOS_29x29.png; sourceTree = "<group>"; };
 		783FDD2D192269330037780B /* Launch_iOS_40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch_iOS_40x40.png; sourceTree = "<group>"; };
 		783FDD2E192269330037780B /* Launch_iOS_58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch_iOS_58x58.png; sourceTree = "<group>"; };
@@ -675,6 +678,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				782F7F391925FBE500C6B11A /* Security.framework in Frameworks */,
 				7EFE975318FECD3900FEB394 /* AdSupport.framework in Frameworks */,
 				7EFE975118FECD1700FEB394 /* CoreData.framework in Frameworks */,
 				7E46305918FE76A3009E0F7F /* libMUAllUploaderLibs.a in Frameworks */,
@@ -853,6 +857,7 @@
 		655829A8175B408900768197 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				782F7F381925FBE500C6B11A /* Security.framework */,
 				7E17DB72190AC1D900E5A34D /* Reveal.framework */,
 				7EFE975218FECD3900FEB394 /* AdSupport.framework */,
 				7EFE975018FECD1700FEB394 /* CoreData.framework */,
@@ -903,6 +908,7 @@
 		655829AF175B408900768197 /* Sitecore.Mobile.MediaUploader */ = {
 			isa = PBXGroup;
 			children = (
+				782F7F3A1926069C00C6B11A /* Sitecore.Mobile.MediaUploader.entitlements */,
 				7E01A1B018FC2E2F0070D4EE /* Tracking */,
 				65D6BDF617A1A074002336C5 /* MainView */,
 				65569B2217627B6600A16A0A /* Data */,
@@ -1323,6 +1329,9 @@
 					655829A5175B408800768197 = {
 						DevelopmentTeam = AJ2XRRY985;
 						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
 							com.apple.iCloud = {
 								enabled = 0;
 							};
@@ -1976,6 +1985,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1997,6 +2007,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
