@@ -249,6 +249,26 @@
 		78D5E14818F28F9D009F647C /* sc_ListBrowserCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D5E14618F28F9D009F647C /* sc_ListBrowserCellFactory.m */; };
 		78DFD76318E4451600E0E4CD /* sc_LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DFD76218E4451600E0E4CD /* sc_LocationManager.m */; };
 		78DFD76418E4459E00E0E4CD /* sc_LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DFD76218E4451600E0E4CD /* sc_LocationManager.m */; };
+		78FD1DE81929FCFF00F45775 /* empty_upload_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F948191BCFD900470CA3 /* empty_upload_small.png */; };
+		78FD1DE91929FCFF00F45775 /* Empty-Tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F956191BD0B200470CA3 /* Empty-Tick.png */; };
+		78FD1DEA1929FCFF00F45775 /* Empty-Tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F957191BD0B200470CA3 /* Empty-Tick@2x.png */; };
+		78FD1DEB1929FCFF00F45775 /* Green-Tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F949191BCFD900470CA3 /* Green-Tick.png */; };
+		78FD1DEC1929FCFF00F45775 /* Green-Tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F94A191BCFD900470CA3 /* Green-Tick@2x.png */; };
+		78FD1DED1929FCFF00F45775 /* Red-Warning.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F94B191BCFD900470CA3 /* Red-Warning.png */; };
+		78FD1DEE1929FCFF00F45775 /* Red-Warning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F94C191BCFD900470CA3 /* Red-Warning@2x.png */; };
+		78FD1DEF1929FCFF00F45775 /* Upload_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F94D191BCFD900470CA3 /* Upload_icon.png */; };
+		78FD1DF01929FCFF00F45775 /* Upload_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F94E191BCFD900470CA3 /* Upload_icon@2x.png */; };
+		78FD1DF11929FD0500F45775 /* btn_radio_off_holo_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA367E19178A6B000361A2 /* btn_radio_off_holo_light.png */; };
+		78FD1DF21929FD0500F45775 /* btn_radio_off_holo_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA367F19178A6B000361A2 /* btn_radio_off_holo_light@2x.png */; };
+		78FD1DF31929FD0500F45775 /* btn_radio_on_holo_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA368019178A6B000361A2 /* btn_radio_on_holo_light.png */; };
+		78FD1DF41929FD0500F45775 /* btn_radio_on_holo_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA368119178A6B000361A2 /* btn_radio_on_holo_light@2x.png */; };
+		78FD1DF51929FD0800F45775 /* Browse_icon_main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F691921019B0000CBDA /* Browse_icon_main@2x.png */; };
+		78FD1DF61929FD0800F45775 /* Pending_icon_main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F6A1921019B0000CBDA /* Pending_icon_main@2x.png */; };
+		78FD1DF71929FD0800F45775 /* Upload_icon_main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F6B1921019B0000CBDA /* Upload_icon_main@2x.png */; };
+		78FD1DF81929FD0800F45775 /* Browse_icon_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F63192100A40000CBDA /* Browse_icon_main.png */; };
+		78FD1DF91929FD0800F45775 /* Pending_icon_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F64192100A40000CBDA /* Pending_icon_main.png */; };
+		78FD1DFA1929FD0800F45775 /* Upload_icon_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F65192100A40000CBDA /* Upload_icon_main.png */; };
+		78FD1DFB192A051B00F45775 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE975218FECD3900FEB394 /* AdSupport.framework */; };
 		7E01A1AD18FC1B770070D4EE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */; };
 		7E01A1AE18FC1B770070D4EE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */; };
 		7E01A1AF18FC1B770070D4EE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */; };
@@ -406,7 +426,6 @@
 		7EFE974E18FECCF700FEB394 /* GoogleTagManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947AA18FD751000923AB6 /* GoogleTagManager.framework */; };
 		7EFE974F18FECCF700FEB394 /* GoogleAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947A618FD700900923AB6 /* GoogleAnalytics.framework */; };
 		7EFE975118FECD1700FEB394 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE975018FECD1700FEB394 /* CoreData.framework */; };
-		7EFE975318FECD3900FEB394 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE975218FECD3900FEB394 /* AdSupport.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -666,7 +685,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EFE975318FECD3900FEB394 /* AdSupport.framework in Frameworks */,
 				7EFE975118FECD1700FEB394 /* CoreData.framework in Frameworks */,
 				7E46305918FE76A3009E0F7F /* libMUAllUploaderLibs.a in Frameworks */,
 				78C9E27718E5CF6F004C7A88 /* SitecoreItemsBrowser.framework in Frameworks */,
@@ -686,6 +704,7 @@
 				655967C3178E152E009C96CD /* libxml2.2.dylib in Frameworks */,
 				7E41A09E18FE7AAE00D601EF /* ImageIO.framework in Frameworks */,
 				4F24F36F1777AC6300C21E8F /* AssetsLibrary.framework in Frameworks */,
+				78FD1DFB192A051B00F45775 /* AdSupport.framework in Frameworks */,
 				651B1A29177CBA0C006FF573 /* MapKit.framework in Frameworks */,
 				6599A557175B9C810095775D /* CoreLocation.framework in Frameworks */,
 				655829AA175B408900768197 /* UIKit.framework in Frameworks */,
@@ -1447,28 +1466,38 @@
 			files = (
 				7810816B189021E300E8EFD7 /* InfoPlist.strings in Resources */,
 				7E5F15B5190E94AE002B1854 /* internet-normal@2x.png in Resources */,
+				78FD1DF31929FD0500F45775 /* btn_radio_on_holo_light.png in Resources */,
 				7810816E189021E300E8EFD7 /* MainStoryboard_iPhone.storyboard in Resources */,
 				7E5F15BB190E94AE002B1854 /* internet-pressed@2x.png in Resources */,
 				78CA658818C8B8C800C27192 /* accessoryArrow.png in Resources */,
 				78108170189021E300E8EFD7 /* upload.png in Resources */,
 				78108171189021E300E8EFD7 /* browse.png in Resources */,
 				78108173189021E300E8EFD7 /* up.png in Resources */,
+				78FD1DF41929FD0500F45775 /* btn_radio_on_holo_light@2x.png in Resources */,
 				78108175189021E300E8EFD7 /* select.png in Resources */,
 				78108176189021E300E8EFD7 /* select_small.png in Resources */,
+				78FD1DF01929FCFF00F45775 /* Upload_icon@2x.png in Resources */,
 				78108177189021E300E8EFD7 /* geolocation.png in Resources */,
 				783FDD38192269330037780B /* Launch_iOS_58x58.png in Resources */,
+				78FD1DE81929FCFF00F45775 /* empty_upload_small.png in Resources */,
 				78108178189021E300E8EFD7 /* upload_small.png in Resources */,
 				78108179189021E300E8EFD7 /* whiteCheckmark.png in Resources */,
+				78FD1DF21929FD0500F45775 /* btn_radio_off_holo_light@2x.png in Resources */,
 				7810817B189021E300E8EFD7 /* right.png in Resources */,
 				783FDD40192269330037780B /* Launch_iOS_152x152.png in Resources */,
 				7810817C189021E300E8EFD7 /* currentLocation.png in Resources */,
 				7E5F15B2190E94AE002B1854 /* internet-normal.png in Resources */,
+				78FD1DF81929FD0800F45775 /* Browse_icon_main.png in Resources */,
 				783FDD3C192269330037780B /* Launch_iOS_80x80.png in Resources */,
 				7810817D189021E300E8EFD7 /* appicon-72@2x.png in Resources */,
+				78FD1DEC1929FCFF00F45775 /* Green-Tick@2x.png in Resources */,
+				78FD1DF71929FD0800F45775 /* Upload_icon_main@2x.png in Resources */,
+				78FD1DF61929FD0800F45775 /* Pending_icon_main@2x.png in Resources */,
 				7810817F189021E300E8EFD7 /* appicon-Small-50.png in Resources */,
 				78108180189021E300E8EFD7 /* appicon-Small-50@2x.png in Resources */,
 				78108181189021E300E8EFD7 /* appicon-Small.png in Resources */,
 				78108182189021E300E8EFD7 /* appicon-Small@2x.png in Resources */,
+				78FD1DE91929FCFF00F45775 /* Empty-Tick.png in Resources */,
 				78108186189021E300E8EFD7 /* settings.png in Resources */,
 				783FDD3A192269330037780B /* Launch_iOS_76x76.png in Resources */,
 				783FDD34192269330037780B /* Launch_iOS_29x29.png in Resources */,
@@ -1479,6 +1508,8 @@
 				78108190189021E300E8EFD7 /* Default-Landscape.png in Resources */,
 				78108191189021E300E8EFD7 /* Default-Landscape@2x.png in Resources */,
 				78108193189021E300E8EFD7 /* Default-Portrait.png in Resources */,
+				78FD1DF91929FD0800F45775 /* Pending_icon_main.png in Resources */,
+				78FD1DF51929FD0800F45775 /* Browse_icon_main@2x.png in Resources */,
 				78108194189021E300E8EFD7 /* Default-Portrait@2x.png in Resources */,
 				78108195189021E300E8EFD7 /* pending.png in Resources */,
 				78108197189021E300E8EFD7 /* counterBg.png in Resources */,
@@ -1486,21 +1517,28 @@
 				783FDD3E192269330037780B /* Launch_iOS_120x120.png in Resources */,
 				78716C3B18F6BA0A0092AA98 /* bg@2x.png in Resources */,
 				78108199189021E300E8EFD7 /* Default-Portrait@2x~ipad.png in Resources */,
+				78FD1DED1929FCFF00F45775 /* Red-Warning.png in Resources */,
 				7810819A189021E300E8EFD7 /* error.png in Resources */,
 				7810819C189021E300E8EFD7 /* bg.png in Resources */,
+				78FD1DFA1929FD0800F45775 /* Upload_icon_main.png in Resources */,
 				783FDD36192269330037780B /* Launch_iOS_40x40.png in Resources */,
 				78CA658518C8B8C800C27192 /* accessoryArrow@2x.png in Resources */,
 				7810819F189021E300E8EFD7 /* sitecore.png in Resources */,
 				781081A1189021E300E8EFD7 /* pixelFrame.png in Resources */,
 				781081A2189021E300E8EFD7 /* pixelFrame2.png in Resources */,
+				78FD1DEF1929FCFF00F45775 /* Upload_icon.png in Resources */,
+				78FD1DEB1929FCFF00F45775 /* Green-Tick.png in Resources */,
+				78FD1DEE1929FCFF00F45775 /* Red-Warning@2x.png in Resources */,
 				781081A4189021E300E8EFD7 /* Localizable.strings in Resources */,
 				781081A5189021E300E8EFD7 /* geolocation_small.png in Resources */,
 				781081A6189021E300E8EFD7 /* settings_small.png in Resources */,
+				78FD1DEA1929FCFF00F45775 /* Empty-Tick@2x.png in Resources */,
 				781081A7189021E300E8EFD7 /* folder_small.png in Resources */,
 				781081AA189021E300E8EFD7 /* folder.png in Resources */,
 				781081AC189021E300E8EFD7 /* up_small.png in Resources */,
 				781081BD189021E300E8EFD7 /* navigationBarBg.png in Resources */,
 				781081C7189021E300E8EFD7 /* empty_small.png in Resources */,
+				78FD1DF11929FD0500F45775 /* btn_radio_off_holo_light.png in Resources */,
 				781081C8189021E300E8EFD7 /* iOSDeviceModelMapping.plist in Resources */,
 				7E5F15B8190E94AE002B1854 /* internet-pressed.png in Resources */,
 				781081C9189021E300E8EFD7 /* Default.png in Resources */,
@@ -1958,6 +1996,7 @@
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
 				INFOPLIST_FILE = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1979,6 +2018,7 @@
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
 				INFOPLIST_FILE = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
