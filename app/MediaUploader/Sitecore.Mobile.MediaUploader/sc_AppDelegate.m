@@ -12,7 +12,7 @@
 #import "sc_ConnectivityHelper.h"
 
 #define TEST_ANALYTICS 1
-#define ANALYTICS_ENABLED 1
+#define ANALYTICS_ENABLED 0
 
 
 @implementation sc_AppDelegate
