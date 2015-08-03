@@ -10,7 +10,6 @@
 #import "sc_GlobalDataObject.h"
 #import "sc_ReloadableViewProtocol.h"
 
-
 @interface sc_SiteAddViewController : UITableViewController <UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (nonatomic) IBOutlet UIBarButtonItem* cancelButton;

@@ -214,7 +214,7 @@ didFinishPickingMediaWithInfo:(NSDictionary*)info
                 UIImagePickerControllerSourceType pickerType = picker.sourceType;
                 if (pickerType == UIImagePickerControllerSourceTypeCamera)
                 {
-                    NSMutableDictionary* imageMetadata = [info objectForKey: UIImagePickerControllerMediaMetadata];
+                    NSMutableDictionary* imageMetadata = [[info objectForKey: UIImagePickerControllerMediaMetadata] mutableCopy];
                     
                     NSDictionary* imageInfo = [_locationManager gpsDictionaryForCurrentLocation];
                     [ imageMetadata setObject: imageInfo

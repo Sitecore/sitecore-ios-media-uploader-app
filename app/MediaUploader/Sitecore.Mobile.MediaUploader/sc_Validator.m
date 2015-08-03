@@ -33,7 +33,7 @@
     proposedName = [[proposedName componentsSeparatedByCharactersInSet: InvalidItemNameChars] componentsJoinedByString: @""];
 
     //Replace remaining non alphanumeric characters with underscore
-    NSMutableCharacterSet *whitelistedCharacters = [NSCharacterSet alphanumericCharacterSet];
+    NSMutableCharacterSet *whitelistedCharacters = [[NSCharacterSet alphanumericCharacterSet] mutableCopy];
     [whitelistedCharacters addCharactersInString:@" "];
     NSCharacterSet * charactersToRemove = [whitelistedCharacters invertedSet ] ;
     
