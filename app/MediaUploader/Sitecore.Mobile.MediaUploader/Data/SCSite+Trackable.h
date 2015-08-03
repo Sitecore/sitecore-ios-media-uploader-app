@@ -1,5 +1,5 @@
 @interface SCSite (Trackable)<MUTrackableObject>
 
-@property ( nonatomic, readonly ) NSString* description;
+@property ( readonly, copy ) NSString* description;
 
 @end

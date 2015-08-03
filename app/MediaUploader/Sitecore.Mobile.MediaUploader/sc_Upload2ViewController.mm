@@ -575,8 +575,6 @@ static NSString*  const CellIdentifier = @"cellSiteUrl";
     {
         self->_currentCancelOp( YES );
     }
-
-    self.navigationItem.title = NSLocalizedString(@"Cancelled", nil);
 }
 
 -(void)showUploadError

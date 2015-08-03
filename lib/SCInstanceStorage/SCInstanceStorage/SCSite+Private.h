@@ -7,5 +7,6 @@
 @property ( nonatomic ) NSString* siteId;
 
 -(void)generateId;
+-(void)resetPasswordStorage;
 
 @end

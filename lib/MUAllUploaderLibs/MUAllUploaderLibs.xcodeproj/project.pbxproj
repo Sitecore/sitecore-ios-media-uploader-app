@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		782F7F371925FA4300C6B11A /* libiOSKeychainItemWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 782F7F271925FA3300C6B11A /* libiOSKeychainItemWrapper.a */; };
 		78C8F8071907E02C00B78ABB /* libMUUploadManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C8F8011907DFF900B78ABB /* libMUUploadManager.a */; };
 		7E26869818FE9B7800033905 /* libMUFlurryWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E26869118FE9B7100033905 /* libMUFlurryWrapper.a */; };
 		7E46305218FE768D009E0F7F /* libiOSReachabilityFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC347218FE74BE007D540D /* libiOSReachabilityFramework.a */; };
@@ -21,6 +22,41 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		782F7F261925FA3300C6B11A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 782F7F211925FA3300C6B11A /* iOSKeychainItemWrapper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78B014631924EE5500920310;
+			remoteInfo = iOSKeychainItemWrapper;
+		};
+		782F7F281925FA3300C6B11A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 782F7F211925FA3300C6B11A /* iOSKeychainItemWrapper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78B014731924EE5500920310;
+			remoteInfo = iOSKeychainItemWrapperTests;
+		};
+		782F7F2F1925FA3300C6B11A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E7071D81918E54A00C6AEEB /* MUMigrationTool.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E7071FA19190D8800C6AEEB;
+			remoteInfo = LegacyDocumentsDir;
+		};
+		782F7F311925FA3300C6B11A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E7071D81918E54A00C6AEEB /* MUMigrationTool.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E70721319190DD000C6AEEB;
+			remoteInfo = V1DocumentsDir;
+		};
+		782F7F351925FA3F00C6B11A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 782F7F211925FA3300C6B11A /* iOSKeychainItemWrapper.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 78B014621924EE5500920310;
+			remoteInfo = iOSKeychainItemWrapper;
+		};
 		78C8F8001907DFF900B78ABB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C8F7F91907DFF800B78ABB /* MUUploadManager.xcodeproj */;
@@ -41,20 +77,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 78C8F7CF1907DFDA00B78ABB;
 			remoteInfo = MUUploadManager;
-		};
-		78FD1DE21929FBA900F45775 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7E7071D81918E54A00C6AEEB /* MUMigrationTool.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7E7071FA19190D8800C6AEEB;
-			remoteInfo = LegacyDocumentsDir;
-		};
-		78FD1DE41929FBA900F45775 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7E7071D81918E54A00C6AEEB /* MUMigrationTool.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7E70721319190DD000C6AEEB;
-			remoteInfo = V1DocumentsDir;
 		};
 		7E26868518FE9B7100033905 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -198,6 +220,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		782F7F211925FA3300C6B11A /* iOSKeychainItemWrapper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSKeychainItemWrapper.xcodeproj; path = "../../lib-third-party/iOSKeychainItemWrapper/iOSKeychainItemWrapper.xcodeproj"; sourceTree = "<group>"; };
 		78C8F7F91907DFF800B78ABB /* MUUploadManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MUUploadManager.xcodeproj; path = ../MUUploadManager/MUUploadManager.xcodeproj; sourceTree = "<group>"; };
 		7E41A0D318FE986000D601EF /* MUAnalyticsTracker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MUAnalyticsTracker.xcodeproj; path = ../MUAnalyticsTracker/MUAnalyticsTracker.xcodeproj; sourceTree = "<group>"; };
 		7E7071D81918E54A00C6AEEB /* MUMigrationTool.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MUMigrationTool.xcodeproj; path = ../MUMigrationTool/MUMigrationTool.xcodeproj; sourceTree = "<group>"; };
@@ -220,6 +243,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				782F7F371925FA4300C6B11A /* libiOSKeychainItemWrapper.a in Frameworks */,
 				7E7071F31918E55F00C6AEEB /* libMUMigrationTool.a in Frameworks */,
 				78C8F8071907E02C00B78ABB /* libMUUploadManager.a in Frameworks */,
 				7EFE975B18FECD7200FEB394 /* libMUGoogleAnalyticsWrapper.a in Frameworks */,
@@ -235,6 +259,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		782F7F221925FA3300C6B11A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				782F7F271925FA3300C6B11A /* libiOSKeychainItemWrapper.a */,
+				782F7F291925FA3300C6B11A /* iOSKeychainItemWrapperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		78C8F7FA1907DFF800B78ABB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,8 +295,8 @@
 			children = (
 				7E7071E01918E54A00C6AEEB /* libMUMigrationTool.a */,
 				7E7071E21918E54A00C6AEEB /* MUMigrationToolTests.xctest */,
-				78FD1DE31929FBA900F45775 /* LegacyDocumentsDir.bundle */,
-				78FD1DE51929FBA900F45775 /* V1DocumentsDir.bundle */,
+				782F7F301925FA3300C6B11A /* LegacyDocumentsDir.bundle */,
+				782F7F321925FA3300C6B11A /* V1DocumentsDir.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -348,6 +381,7 @@
 		7EAC346318FE74A8007D540D /* lib-third-party */ = {
 			isa = PBXGroup;
 			children = (
+				782F7F211925FA3300C6B11A /* iOSKeychainItemWrapper.xcodeproj */,
 				7EAC346D18FE74BE007D540D /* iOSReachabilityFramework.xcodeproj */,
 			);
 			name = "lib-third-party";
@@ -384,6 +418,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				782F7F361925FA3F00C6B11A /* PBXTargetDependency */,
 				7E7071EC1918E55B00C6AEEB /* PBXTargetDependency */,
 				78C8F8061907E01F00B78ABB /* PBXTargetDependency */,
 				7EFE975E18FECD7600FEB394 /* PBXTargetDependency */,
@@ -419,6 +454,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 782F7F221925FA3300C6B11A /* Products */;
+					ProjectRef = 782F7F211925FA3300C6B11A /* iOSKeychainItemWrapper.xcodeproj */;
+				},
+				{
 					ProductGroup = 7EAC346E18FE74BE007D540D /* Products */;
 					ProjectRef = 7EAC346D18FE74BE007D540D /* iOSReachabilityFramework.xcodeproj */;
 				},
@@ -447,6 +486,34 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		782F7F271925FA3300C6B11A /* libiOSKeychainItemWrapper.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libiOSKeychainItemWrapper.a;
+			remoteRef = 782F7F261925FA3300C6B11A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		782F7F291925FA3300C6B11A /* iOSKeychainItemWrapperTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = iOSKeychainItemWrapperTests.xctest;
+			remoteRef = 782F7F281925FA3300C6B11A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		782F7F301925FA3300C6B11A /* LegacyDocumentsDir.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = LegacyDocumentsDir.bundle;
+			remoteRef = 782F7F2F1925FA3300C6B11A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		782F7F321925FA3300C6B11A /* V1DocumentsDir.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = V1DocumentsDir.bundle;
+			remoteRef = 782F7F311925FA3300C6B11A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		78C8F8011907DFF900B78ABB /* libMUUploadManager.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -459,20 +526,6 @@
 			fileType = wrapper.cfbundle;
 			path = MUUploadManagerTests.xctest;
 			remoteRef = 78C8F8021907DFF900B78ABB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		78FD1DE31929FBA900F45775 /* LegacyDocumentsDir.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = LegacyDocumentsDir.bundle;
-			remoteRef = 78FD1DE21929FBA900F45775 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		78FD1DE51929FBA900F45775 /* V1DocumentsDir.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = V1DocumentsDir.bundle;
-			remoteRef = 78FD1DE41929FBA900F45775 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		7E26868F18FE9B7100033905 /* libMUCrashlyticsWrapper.a */ = {
@@ -566,6 +619,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		782F7F361925FA3F00C6B11A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = iOSKeychainItemWrapper;
+			targetProxy = 782F7F351925FA3F00C6B11A /* PBXContainerItemProxy */;
+		};
 		78C8F8061907E01F00B78ABB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MUUploadManager;
@@ -653,7 +711,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -685,7 +743,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

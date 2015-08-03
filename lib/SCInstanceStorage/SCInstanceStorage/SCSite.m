@@ -82,6 +82,7 @@ uploadFolderPathInsideMediaLibrary:(NSString*)uploadFolderPathInsideMediaLibrary
 
 -(NSString*)getFolderPathForUpload
 {
+    
     NSString* startingFolderPath = self.uploadFolderPathInsideMediaLibrary;
     
     NSString* rootFolderPath = [ [self class] mediaLibraryDefaultPath ];

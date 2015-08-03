@@ -18,7 +18,9 @@
 
 @end
 
+
 @implementation MUMedia
+@dynamic description;
 
 -(instancetype)init
 {

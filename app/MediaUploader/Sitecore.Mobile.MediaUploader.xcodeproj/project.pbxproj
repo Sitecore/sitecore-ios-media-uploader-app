@@ -75,7 +75,6 @@
 		65D6BDC6179F416A002336C5 /* pixelFrame2.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D6BDC4179F4167002336C5 /* pixelFrame2.png */; };
 		65D6BDC817A063FD002336C5 /* geolocation_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D6BDC717A063FD002336C5 /* geolocation_small.png */; };
 		65D6BDCE17A0754B002336C5 /* folder_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D6BDCD17A0754B002336C5 /* folder_small.png */; };
-		65D6BDD217A07892002336C5 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D6BDD117A07891002336C5 /* folder.png */; };
 		65D6BE0B17A2AA0D002336C5 /* sc_SiteAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D6BE0A17A2AA0B002336C5 /* sc_SiteAddViewController.m */; };
 		65D6BE0D17A30FAD002336C5 /* up_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D6BE0C17A30FAC002336C5 /* up_small.png */; };
 		65F5E846178976B900059518 /* pending.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F5E845178976B900059518 /* pending.png */; };
@@ -175,7 +174,6 @@
 		781081A5189021E300E8EFD7 /* geolocation_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D6BDC717A063FD002336C5 /* geolocation_small.png */; };
 		781081A6189021E300E8EFD7 /* settings_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 65359FD517CBCFB9003B6442 /* settings_small.png */; };
 		781081A7189021E300E8EFD7 /* folder_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D6BDCD17A0754B002336C5 /* folder_small.png */; };
-		781081AA189021E300E8EFD7 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D6BDD117A07891002336C5 /* folder.png */; };
 		781081AC189021E300E8EFD7 /* up_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D6BE0C17A30FAC002336C5 /* up_small.png */; };
 		781081BD189021E300E8EFD7 /* navigationBarBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 65359FD317C868B0003B6442 /* navigationBarBg.png */; };
 		781081C7189021E300E8EFD7 /* empty_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 653D5B3117A9A50000754C9C /* empty_small.png */; };
@@ -183,6 +181,7 @@
 		781081C9189021E300E8EFD7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCCC1785949900730EC8 /* Default.png */; };
 		781081CA189021E300E8EFD7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCCE178594AD00730EC8 /* Default@2x.png */; };
 		781081CB189021E300E8EFD7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCC21785943800730EC8 /* Default-568h@2x.png */; };
+		782F7F391925FBE500C6B11A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782F7F381925FBE500C6B11A /* Security.framework */; };
 		783FDD33192269330037780B /* Launch_iOS_29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 783FDD2C192269330037780B /* Launch_iOS_29x29.png */; };
 		783FDD34192269330037780B /* Launch_iOS_29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 783FDD2C192269330037780B /* Launch_iOS_29x29.png */; };
 		783FDD35192269330037780B /* Launch_iOS_40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 783FDD2D192269330037780B /* Launch_iOS_40x40.png */; };
@@ -197,10 +196,191 @@
 		783FDD3E192269330037780B /* Launch_iOS_120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 783FDD31192269330037780B /* Launch_iOS_120x120.png */; };
 		783FDD3F192269330037780B /* Launch_iOS_152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = 783FDD32192269330037780B /* Launch_iOS_152x152.png */; };
 		783FDD40192269330037780B /* Launch_iOS_152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = 783FDD32192269330037780B /* Launch_iOS_152x152.png */; };
+		784007201B6B6A8700A7307A /* empty_upload_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F948191BCFD900470CA3 /* empty_upload_small.png */; };
+		784007211B6B6A8700A7307A /* Empty-Tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F956191BD0B200470CA3 /* Empty-Tick.png */; };
+		784007221B6B6A8700A7307A /* Empty-Tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F957191BD0B200470CA3 /* Empty-Tick@2x.png */; };
+		784007231B6B6A8700A7307A /* Green-Tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F949191BCFD900470CA3 /* Green-Tick.png */; };
+		784007241B6B6A8700A7307A /* Green-Tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F94A191BCFD900470CA3 /* Green-Tick@2x.png */; };
+		784007251B6B6A8700A7307A /* Red-Warning.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F94B191BCFD900470CA3 /* Red-Warning.png */; };
+		784007261B6B6A8700A7307A /* Red-Warning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F94C191BCFD900470CA3 /* Red-Warning@2x.png */; };
+		784007271B6B6A8700A7307A /* Upload_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F94D191BCFD900470CA3 /* Upload_icon.png */; };
+		784007281B6B6A8700A7307A /* Upload_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F94E191BCFD900470CA3 /* Upload_icon@2x.png */; };
+		784007291B6B6A9700A7307A /* btn_radio_off_holo_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA367E19178A6B000361A2 /* btn_radio_off_holo_light.png */; };
+		7840072A1B6B6A9700A7307A /* btn_radio_off_holo_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA367F19178A6B000361A2 /* btn_radio_off_holo_light@2x.png */; };
+		7840072B1B6B6A9700A7307A /* btn_radio_on_holo_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA368019178A6B000361A2 /* btn_radio_on_holo_light.png */; };
+		7840072C1B6B6A9700A7307A /* btn_radio_on_holo_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA368119178A6B000361A2 /* btn_radio_on_holo_light@2x.png */; };
+		7840072D1B6B6A9C00A7307A /* Browse_icon_main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F691921019B0000CBDA /* Browse_icon_main@2x.png */; };
+		7840072E1B6B6A9C00A7307A /* Pending_icon_main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F6A1921019B0000CBDA /* Pending_icon_main@2x.png */; };
+		7840072F1B6B6A9C00A7307A /* Upload_icon_main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F6B1921019B0000CBDA /* Upload_icon_main@2x.png */; };
+		784007301B6B6A9C00A7307A /* Browse_icon_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F63192100A40000CBDA /* Browse_icon_main.png */; };
+		784007311B6B6A9C00A7307A /* Pending_icon_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F64192100A40000CBDA /* Pending_icon_main.png */; };
+		784007321B6B6A9C00A7307A /* Upload_icon_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F65192100A40000CBDA /* Upload_icon_main.png */; };
+		785D34851B6F942E0010FA76 /* accessoryArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA658118C8B8C800C27192 /* accessoryArrow@2x.png */; };
+		785D34861B6F942E0010FA76 /* accessoryArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA658218C8B8C800C27192 /* accessoryArrow.png */; };
+		785D34871B6F942E0010FA76 /* appicon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCB4178593E100730EC8 /* appicon-72@2x.png */; };
+		785D34881B6F942E0010FA76 /* appicon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCB6178593EA00730EC8 /* appicon-Small-50.png */; };
+		785D34891B6F942E0010FA76 /* appicon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCB8178593F200730EC8 /* appicon-Small-50@2x.png */; };
+		785D348A1B6F942E0010FA76 /* appicon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCBA178593FB00730EC8 /* appicon-Small.png */; };
+		785D348B1B6F942E0010FA76 /* appicon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCBC1785940300730EC8 /* appicon-Small@2x.png */; };
+		785D348C1B6F942E0010FA76 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCBE1785940B00730EC8 /* appicon.png */; };
+		785D348D1B6F942E0010FA76 /* appicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCC01785941500730EC8 /* appicon@2x.png */; };
+		785D348E1B6F942E0010FA76 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCC21785943800730EC8 /* Default-568h@2x.png */; };
+		785D348F1B6F942E0010FA76 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCC41785944F00730EC8 /* Default-Landscape.png */; };
+		785D34901B6F942E0010FA76 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCC61785946400730EC8 /* Default-Landscape@2x.png */; };
+		785D34911B6F942E0010FA76 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 65582A04175B4A9400768197 /* Default-Landscape@2x~ipad.png */; };
+		785D34921B6F942E0010FA76 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 65582A02175B4A8C00768197 /* Default-Landscape~ipad.png */; };
+		785D34931B6F942E0010FA76 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCC81785947700730EC8 /* Default-Portrait.png */; };
+		785D34941B6F942E0010FA76 /* Default-Portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCCA1785948500730EC8 /* Default-Portrait@2x.png */; };
+		785D34951B6F942E0010FA76 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 65582A00175B4A8200768197 /* Default-Portrait@2x~ipad.png */; };
+		785D34961B6F942E0010FA76 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 655829FE175B4A7A00768197 /* Default-Portrait~ipad.png */; };
+		785D34971B6F942E0010FA76 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCCC1785949900730EC8 /* Default.png */; };
+		785D34981B6F942E0010FA76 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76DCCE178594AD00730EC8 /* Default@2x.png */; };
+		785D34991B6F94390010FA76 /* Launch_iOS_29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 783FDD2C192269330037780B /* Launch_iOS_29x29.png */; };
+		785D349A1B6F94390010FA76 /* Launch_iOS_40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 783FDD2D192269330037780B /* Launch_iOS_40x40.png */; };
+		785D349B1B6F94390010FA76 /* Launch_iOS_58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 783FDD2E192269330037780B /* Launch_iOS_58x58.png */; };
+		785D349C1B6F94390010FA76 /* Launch_iOS_76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 783FDD2F192269330037780B /* Launch_iOS_76x76.png */; };
+		785D349D1B6F94390010FA76 /* Launch_iOS_80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 783FDD30192269330037780B /* Launch_iOS_80x80.png */; };
+		785D349E1B6F94390010FA76 /* Launch_iOS_120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 783FDD31192269330037780B /* Launch_iOS_120x120.png */; };
+		785D349F1B6F94390010FA76 /* Launch_iOS_152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = 783FDD32192269330037780B /* Launch_iOS_152x152.png */; };
+		785D34A01B6F94410010FA76 /* navigationBarBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 65359FD317C868B0003B6442 /* navigationBarBg.png */; };
+		785D34A11B6F94410010FA76 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D6BDB81799BAF7002336C5 /* bg.png */; };
+		785D34A21B6F94410010FA76 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78716C3918F6BA0A0092AA98 /* bg@2x.png */; };
+		785D34A31B6F94410010FA76 /* internet-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E5F15AC190E94AE002B1854 /* internet-normal.png */; };
+		785D34A41B6F94410010FA76 /* internet-normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E5F15AD190E94AE002B1854 /* internet-normal@2x.png */; };
+		785D34A51B6F94410010FA76 /* internet-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E5F15AE190E94AE002B1854 /* internet-pressed.png */; };
+		785D34A61B6F94410010FA76 /* internet-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E5F15AF190E94AE002B1854 /* internet-pressed@2x.png */; };
+		785D34A71B6F94410010FA76 /* sitecore.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D6BDBA179A7677002336C5 /* sitecore.png */; };
+		785D34A81B6F94410010FA76 /* empty_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 653D5B3117A9A50000754C9C /* empty_small.png */; };
+		785D34A91B6F94410010FA76 /* geolocation.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FBC23517737CAA002437A5 /* geolocation.png */; };
+		785D34AA1B6F94410010FA76 /* geolocation_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D6BDC717A063FD002336C5 /* geolocation_small.png */; };
+		785D34AB1B6F94410010FA76 /* folder_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D6BDCD17A0754B002336C5 /* folder_small.png */; };
+		785D34AC1B6F94410010FA76 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = 659CE73117947B6700331B4B /* error.png */; };
+		785D34AD1B6F94410010FA76 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 65359FD717CC087B003B6442 /* settings.png */; };
+		785D34AE1B6F94410010FA76 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F5E861178CE20000059518 /* delete.png */; };
+		785D34AF1B6F94410010FA76 /* currentLocation.png in Resources */ = {isa = PBXBuildFile; fileRef = 651353F3177F1E8500108071 /* currentLocation.png */; };
+		785D34B01B6F94410010FA76 /* pixelFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D6BDC3179F4166002336C5 /* pixelFrame.png */; };
+		785D34B11B6F94410010FA76 /* pixelFrame2.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D6BDC4179F4167002336C5 /* pixelFrame2.png */; };
+		785D34B21B6F94410010FA76 /* whiteCheckmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FBC251177A33E4002437A5 /* whiteCheckmark.png */; };
+		785D34B31B6F94410010FA76 /* upload_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FBC23D1773C06A002437A5 /* upload_small.png */; };
+		785D34B41B6F94410010FA76 /* settings_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 65359FD517CBCFB9003B6442 /* settings_small.png */; };
+		785D34B51B6F94410010FA76 /* select_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FBC23317723928002437A5 /* select_small.png */; };
+		785D34B61B6F94410010FA76 /* select.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FBC23117723817002437A5 /* select.png */; };
+		785D34B71B6F94410010FA76 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 65569B2C1763A75600A16A0A /* up.png */; };
+		785D34B81B6F94410010FA76 /* up_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D6BE0C17A30FAC002336C5 /* up_small.png */; };
+		785D34B91B6F94410010FA76 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 651B1A20177C9AA4006FF573 /* right.png */; };
+		785D34BA1B6F94410010FA76 /* browse.png in Resources */ = {isa = PBXBuildFile; fileRef = 65569B1A176256C900A16A0A /* browse.png */; };
+		785D34BB1B6F94410010FA76 /* upload.png in Resources */ = {isa = PBXBuildFile; fileRef = 655829EA175B49FF00768197 /* upload.png */; };
+		785D34BC1B6F94410010FA76 /* counterBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F5E847178976C700059518 /* counterBg.png */; };
+		785D34BD1B6F94410010FA76 /* pending.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F5E845178976B900059518 /* pending.png */; };
+		785D34BE1B6F94480010FA76 /* empty_upload_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F948191BCFD900470CA3 /* empty_upload_small.png */; };
+		785D34BF1B6F94480010FA76 /* Empty-Tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F956191BD0B200470CA3 /* Empty-Tick.png */; };
+		785D34C01B6F94480010FA76 /* Empty-Tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F957191BD0B200470CA3 /* Empty-Tick@2x.png */; };
+		785D34C11B6F94480010FA76 /* Green-Tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F949191BCFD900470CA3 /* Green-Tick.png */; };
+		785D34C21B6F94480010FA76 /* Green-Tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F94A191BCFD900470CA3 /* Green-Tick@2x.png */; };
+		785D34C31B6F94480010FA76 /* Red-Warning.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F94B191BCFD900470CA3 /* Red-Warning.png */; };
+		785D34C41B6F94480010FA76 /* Red-Warning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F94C191BCFD900470CA3 /* Red-Warning@2x.png */; };
+		785D34C51B6F94480010FA76 /* Upload_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F94D191BCFD900470CA3 /* Upload_icon.png */; };
+		785D34C61B6F94480010FA76 /* Upload_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F94E191BCFD900470CA3 /* Upload_icon@2x.png */; };
+		785D34C71B6F944C0010FA76 /* btn_radio_off_holo_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA367E19178A6B000361A2 /* btn_radio_off_holo_light.png */; };
+		785D34C81B6F944C0010FA76 /* btn_radio_off_holo_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA367F19178A6B000361A2 /* btn_radio_off_holo_light@2x.png */; };
+		785D34C91B6F944C0010FA76 /* btn_radio_on_holo_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA368019178A6B000361A2 /* btn_radio_on_holo_light.png */; };
+		785D34CA1B6F944C0010FA76 /* btn_radio_on_holo_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA368119178A6B000361A2 /* btn_radio_on_holo_light@2x.png */; };
+		785D34CB1B6F94500010FA76 /* Browse_icon_main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F691921019B0000CBDA /* Browse_icon_main@2x.png */; };
+		785D34CC1B6F94500010FA76 /* Pending_icon_main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F6A1921019B0000CBDA /* Pending_icon_main@2x.png */; };
+		785D34CD1B6F94500010FA76 /* Upload_icon_main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F6B1921019B0000CBDA /* Upload_icon_main@2x.png */; };
+		785D34CE1B6F94500010FA76 /* Browse_icon_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F63192100A40000CBDA /* Browse_icon_main.png */; };
+		785D34CF1B6F94500010FA76 /* Pending_icon_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F64192100A40000CBDA /* Pending_icon_main.png */; };
+		785D34D01B6F94500010FA76 /* Upload_icon_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F65192100A40000CBDA /* Upload_icon_main.png */; };
+		785D34D11B6F94540010FA76 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C952F81923ABDD001A3CC1 /* folder.png */; };
+		785D34D21B6F94540010FA76 /* ic_browser_file.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C952F91923ABDD001A3CC1 /* ic_browser_file.png */; };
+		785D34D31B6F94540010FA76 /* ic_browser_file@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C952FE1923AC03001A3CC1 /* ic_browser_file@2x.png */; };
+		785D34D41B6F94900010FA76 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FC97F9D17A01BBF008DAE4C /* Localizable.strings */; };
+		785D34FD1B6F94C40010FA76 /* MUEventsTrackerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E01A1C018FC325D0070D4EE /* MUEventsTrackerFactory.m */; };
+		785D34FE1B6F94C40010FA76 /* sc_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655829C8175B408900768197 /* sc_ViewController.m */; };
+		785D34FF1B6F94C40010FA76 /* sc_NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65359FD117C8600B003B6442 /* sc_NavigationController.m */; };
+		785D35001B6F94C40010FA76 /* SCSite+Trackable.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B435AD18FEBC730053BEFA /* SCSite+Trackable.m */; };
+		785D35011B6F94C40010FA76 /* sc_ResourseCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D37099188563B5005A7470 /* sc_ResourseCleaner.m */; };
+		785D35021B6F94C40010FA76 /* sc_GlobalDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 65569B321763B8B400A16A0A /* sc_GlobalDataObject.m */; };
+		785D35031B6F94C40010FA76 /* sc_ConnectivityHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6504584317AE3B0400A04E25 /* sc_ConnectivityHelper.m */; };
+		785D35041B6F94C40010FA76 /* sc_ErrorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6504584917AE3B8200A04E25 /* sc_ErrorHelper.m */; };
+		785D35051B6F94C40010FA76 /* sc_ViewsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6504584C17AE440200A04E25 /* sc_ViewsHelper.m */; };
+		785D35061B6F94C40010FA76 /* sc_ItemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6504584F17AF7E3700A04E25 /* sc_ItemHelper.m */; };
+		785D35071B6F94C40010FA76 /* sc_DeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7A466A17BE6BC90030BBDB /* sc_DeviceHelper.m */; };
+		785D35081B6F94C40010FA76 /* sc_Validator.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F69EC17C5D78D00C4AFF4 /* sc_Validator.m */; };
+		785D35091B6F94C40010FA76 /* sc_GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F5E84F178A9D0F00059518 /* sc_GradientButton.m */; };
+		785D350A1B6F94C40010FA76 /* sc_ActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE40C38179FE7D600F9DDB9 /* sc_ActivityIndicator.m */; };
+		785D350B1B6F94C40010FA76 /* sc_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 655829B9175B408900768197 /* sc_AppDelegate.m */; };
+		785D350C1B6F94C40010FA76 /* sc_BaseTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B01F59187EF261006D48C9 /* sc_BaseTheme.m */; };
+		785D350D1B6F94C40010FA76 /* MUButtonTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E17DA27190A872100E5A34D /* MUButtonTheme.m */; };
+		785D350E1B6F94C40010FA76 /* sc_ListBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CE93BF18ED626400B68327 /* sc_ListBrowserViewController.m */; };
+		785D350F1B6F94C40010FA76 /* sc_ListBrowserCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D5E14618F28F9D009F647C /* sc_ListBrowserCellFactory.m */; };
+		785D35101B6F94C40010FA76 /* sc_LevelUpTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C596A018EED3B4006A7FA3 /* sc_LevelUpTableCell.m */; };
+		785D35111B6F94C40010FA76 /* sc_FolderTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C596A418EEDBDB006A7FA3 /* sc_FolderTableCell.m */; };
+		785D35121B6F94C40010FA76 /* sc_SiteAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D6BE0A17A2AA0B002336C5 /* sc_SiteAddViewController.m */; };
+		785D35131B6F94C40010FA76 /* sc_ButtonsBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C596AA18EEFE75006A7FA3 /* sc_ButtonsBuilder.m */; };
+		785D35141B6F94C40010FA76 /* sc_SettingsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 654ECE4A175E71B300509490 /* sc_SettingsViewController.mm */; };
+		785D35151B6F94C40010FA76 /* sc_SitesSelectionViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65FBC2221770D4EF002437A5 /* sc_SitesSelectionViewController.mm */; };
+		785D35161B6F94C40010FA76 /* sc_MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 651B1A23177CB850006FF573 /* sc_MapViewController.m */; };
+		785D35171B6F94C40010FA76 /* MUUploadItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CAF713190AA38600201968 /* MUUploadItem.m */; };
+		785D35181B6F94C40010FA76 /* sc_LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DFD76218E4451600E0E4CD /* sc_LocationManager.m */; };
+		785D35191B6F94C40010FA76 /* sc_UploadViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6599A552175B9B410095775D /* sc_UploadViewController.mm */; };
+		785D351A1B6F94C40010FA76 /* sc_Upload2ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65FBC23B17739841002437A5 /* sc_Upload2ViewController.mm */; };
+		785D351B1B6F94C40010FA76 /* sc_UploadItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CA819B185B00420001896D /* sc_UploadItemCell.m */; };
+		785D351C1B6F94C40010FA76 /* sc_BrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CC1EF718EAA2E6003608CD /* sc_BrowseViewController.m */; };
+		785D351D1B6F94C40010FA76 /* sc_BrowseViewAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CC1EFB18EAF57F003608CD /* sc_BrowseViewAppearance.m */; };
+		785D351E1B6F94C40010FA76 /* sc_BrowseViewCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CC1EFF18EAF6FC003608CD /* sc_BrowseViewCellFactory.m */; };
+		785D351F1B6F94C40010FA76 /* sc_FolderGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CC1F0418EAFEDF003608CD /* sc_FolderGridCell.m */; };
+		785D35201B6F94C40010FA76 /* sc_VideoGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C952EE1923A2D8001A3CC1 /* sc_VideoGridCell.m */; };
+		785D35211B6F94C40010FA76 /* sc_LevelUpGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872A6F618EC049600581E03 /* sc_LevelUpGridCell.m */; };
+		785D35221B6F94C40010FA76 /* sc_GridBrowserRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CB2A9118F43DB500BDA6B0 /* sc_GridBrowserRequestBuilder.m */; };
+		785D35231B6F94C40010FA76 /* sc_QuickImageViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4F6B71A31763E20800CE3094 /* sc_QuickImageViewController.mm */; };
+		785D35241B6F94C40010FA76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 655829B5175B408900768197 /* main.m */; };
+		785D35251B6F95630010FA76 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7885D9F01B6F5BD900E1449A /* SitecoreMobileSDK.framework */; };
+		785D35261B6F95630010FA76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782F7F381925FBE500C6B11A /* Security.framework */; };
+		785D35271B6F95630010FA76 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E17DB72190AC1D900E5A34D /* Reveal.framework */; };
+		785D35281B6F95630010FA76 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE975218FECD3900FEB394 /* AdSupport.framework */; };
+		785D35291B6F95630010FA76 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE975018FECD1700FEB394 /* CoreData.framework */; };
+		785D352A1B6F95710010FA76 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7A466517BA39C20030BBDB /* SystemConfiguration.framework */; };
+		785D352B1B6F95710010FA76 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655967C0178E13F0009C96CD /* Social.framework */; };
+		785D352C1B6F95710010FA76 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F5E85F178C98C000059518 /* AVFoundation.framework */; };
+		785D352D1B6F95710010FA76 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F5E85D178C98B700059518 /* CoreMedia.framework */; };
+		785D352E1B6F95710010FA76 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E384178E9C8F00E02EA5 /* CoreMotion.framework */; };
+		785D352F1B6F95710010FA76 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E382178E9C7A00E02EA5 /* CoreVideo.framework */; };
+		785D35301B6F95710010FA76 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E380178E9C5700E02EA5 /* Twitter.framework */; };
+		785D35311B6F95710010FA76 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E37E178E9C4900E02EA5 /* AudioToolbox.framework */; };
+		785D35321B6F95710010FA76 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E37C178E9C2500E02EA5 /* MessageUI.framework */; };
+		785D35331B6F95710010FA76 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E379178E9C0B00E02EA5 /* CoreAudio.framework */; };
+		785D35341B6F95710010FA76 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E377178E9BD100E02EA5 /* AddressBookUI.framework */; };
+		785D35351B6F95710010FA76 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E375178E9BAE00E02EA5 /* CFNetwork.framework */; };
+		785D35361B6F95710010FA76 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC27C7F177EF37E008C578D /* ImageIO.framework */; };
+		785D35371B6F95710010FA76 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651B1A2A177CBA1A006FF573 /* AddressBook.framework */; };
+		785D35381B6F95710010FA76 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651B1A28177CBA0C006FF573 /* MapKit.framework */; };
+		785D35391B6F95710010FA76 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3903DD177B3F9400E8F508 /* QuartzCore.framework */; };
+		785D353A1B6F95710010FA76 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F24F36E1777AC6300C21E8F /* AssetsLibrary.framework */; };
+		785D353B1B6F95710010FA76 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6599A554175B9C730095775D /* MobileCoreServices.framework */; };
+		785D353C1B6F95710010FA76 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6599A556175B9C810095775D /* CoreLocation.framework */; };
+		785D353D1B6F95710010FA76 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FBC24B1775C378002437A5 /* MediaPlayer.framework */; };
+		785D353E1B6F95710010FA76 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655829A9175B408900768197 /* UIKit.framework */; };
+		785D353F1B6F95710010FA76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655829AB175B408900768197 /* Foundation.framework */; };
+		785D35401B6F95710010FA76 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655829AD175B408900768197 /* CoreGraphics.framework */; };
+		785D35411B6F95750010FA76 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 655967CC178E1584009C96CD /* libc++.dylib */; };
+		785D35421B6F95750010FA76 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 655967CA178E1577009C96CD /* libiconv.dylib */; };
+		785D35431B6F95750010FA76 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 655967C8178E1567009C96CD /* libstdc++.dylib */; };
+		785D35441B6F95750010FA76 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 655967C6178E1554009C96CD /* libsqlite3.dylib */; };
+		785D35451B6F95750010FA76 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 655967C4178E1544009C96CD /* libz.dylib */; };
+		785D35461B6F95750010FA76 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 655967C2178E152E009C96CD /* libxml2.2.dylib */; };
+		785D35471B6F957E0010FA76 /* SitecoreItemsBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C9E27618E5CF6F004C7A88 /* SitecoreItemsBrowser.framework */; };
+		785D35481B6F95810010FA76 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */; };
+		785D35491B6F95830010FA76 /* Flurry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6CE9C518FD3FB000C86ABA /* Flurry.framework */; };
+		785D354A1B6F95860010FA76 /* GoogleAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947A618FD700900923AB6 /* GoogleAnalytics.framework */; };
+		785D354B1B6F95880010FA76 /* GoogleTagManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947AA18FD751000923AB6 /* GoogleTagManager.framework */; };
 		78716C3A18F6BA0A0092AA98 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78716C3918F6BA0A0092AA98 /* bg@2x.png */; };
 		78716C3B18F6BA0A0092AA98 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78716C3918F6BA0A0092AA98 /* bg@2x.png */; };
 		7872A6F718EC049600581E03 /* sc_LevelUpGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872A6F618EC049600581E03 /* sc_LevelUpGridCell.m */; };
 		7872A6F818EC049600581E03 /* sc_LevelUpGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872A6F618EC049600581E03 /* sc_LevelUpGridCell.m */; };
+		7885D9F11B6F5BD900E1449A /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7885D9F01B6F5BD900E1449A /* SitecoreMobileSDK.framework */; };
+		7885D9F21B6F5BD900E1449A /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7885D9F01B6F5BD900E1449A /* SitecoreMobileSDK.framework */; };
+		7885D9F31B6F5BD900E1449A /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7885D9F01B6F5BD900E1449A /* SitecoreMobileSDK.framework */; };
 		78B01F5A187EF261006D48C9 /* sc_BaseTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B01F59187EF261006D48C9 /* sc_BaseTheme.m */; };
 		78B435AE18FEBC730053BEFA /* SCSite+Trackable.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B435AD18FEBC730053BEFA /* SCSite+Trackable.m */; };
 		78B435B018FEBC730053BEFA /* SCSite+Trackable.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B435AD18FEBC730053BEFA /* SCSite+Trackable.m */; };
@@ -210,8 +390,14 @@
 		78C596A618EEDBDB006A7FA3 /* sc_FolderTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C596A418EEDBDB006A7FA3 /* sc_FolderTableCell.m */; };
 		78C596AB18EEFE75006A7FA3 /* sc_ButtonsBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C596AA18EEFE75006A7FA3 /* sc_ButtonsBuilder.m */; };
 		78C596AC18EEFE75006A7FA3 /* sc_ButtonsBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C596AA18EEFE75006A7FA3 /* sc_ButtonsBuilder.m */; };
-		78C9E27118E5A059004C7A88 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C9E26D18E5A059004C7A88 /* SitecoreMobileSDK.framework */; };
-		78C9E27218E5A059004C7A88 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C9E26D18E5A059004C7A88 /* SitecoreMobileSDK.framework */; };
+		78C952EF1923A2D8001A3CC1 /* sc_VideoGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C952EE1923A2D8001A3CC1 /* sc_VideoGridCell.m */; };
+		78C952F01923A2D8001A3CC1 /* sc_VideoGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C952EE1923A2D8001A3CC1 /* sc_VideoGridCell.m */; };
+		78C952FA1923ABDD001A3CC1 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C952F81923ABDD001A3CC1 /* folder.png */; };
+		78C952FB1923ABDD001A3CC1 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C952F81923ABDD001A3CC1 /* folder.png */; };
+		78C952FC1923ABDD001A3CC1 /* ic_browser_file.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C952F91923ABDD001A3CC1 /* ic_browser_file.png */; };
+		78C952FD1923ABDD001A3CC1 /* ic_browser_file.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C952F91923ABDD001A3CC1 /* ic_browser_file.png */; };
+		78C952FF1923AC03001A3CC1 /* ic_browser_file@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C952FE1923AC03001A3CC1 /* ic_browser_file@2x.png */; };
+		78C953001923AC03001A3CC1 /* ic_browser_file@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C952FE1923AC03001A3CC1 /* ic_browser_file@2x.png */; };
 		78C9E27718E5CF6F004C7A88 /* SitecoreItemsBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C9E27618E5CF6F004C7A88 /* SitecoreItemsBrowser.framework */; };
 		78C9E27818E5CF6F004C7A88 /* SitecoreItemsBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C9E27618E5CF6F004C7A88 /* SitecoreItemsBrowser.framework */; };
 		78CA368219178A6B000361A2 /* btn_radio_off_holo_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA367E19178A6B000361A2 /* btn_radio_off_holo_light.png */; };
@@ -249,26 +435,6 @@
 		78D5E14818F28F9D009F647C /* sc_ListBrowserCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D5E14618F28F9D009F647C /* sc_ListBrowserCellFactory.m */; };
 		78DFD76318E4451600E0E4CD /* sc_LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DFD76218E4451600E0E4CD /* sc_LocationManager.m */; };
 		78DFD76418E4459E00E0E4CD /* sc_LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DFD76218E4451600E0E4CD /* sc_LocationManager.m */; };
-		78FD1DE81929FCFF00F45775 /* empty_upload_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F948191BCFD900470CA3 /* empty_upload_small.png */; };
-		78FD1DE91929FCFF00F45775 /* Empty-Tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F956191BD0B200470CA3 /* Empty-Tick.png */; };
-		78FD1DEA1929FCFF00F45775 /* Empty-Tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F957191BD0B200470CA3 /* Empty-Tick@2x.png */; };
-		78FD1DEB1929FCFF00F45775 /* Green-Tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F949191BCFD900470CA3 /* Green-Tick.png */; };
-		78FD1DEC1929FCFF00F45775 /* Green-Tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F94A191BCFD900470CA3 /* Green-Tick@2x.png */; };
-		78FD1DED1929FCFF00F45775 /* Red-Warning.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F94B191BCFD900470CA3 /* Red-Warning.png */; };
-		78FD1DEE1929FCFF00F45775 /* Red-Warning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F94C191BCFD900470CA3 /* Red-Warning@2x.png */; };
-		78FD1DEF1929FCFF00F45775 /* Upload_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F94D191BCFD900470CA3 /* Upload_icon.png */; };
-		78FD1DF01929FCFF00F45775 /* Upload_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7807F94E191BCFD900470CA3 /* Upload_icon@2x.png */; };
-		78FD1DF11929FD0500F45775 /* btn_radio_off_holo_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA367E19178A6B000361A2 /* btn_radio_off_holo_light.png */; };
-		78FD1DF21929FD0500F45775 /* btn_radio_off_holo_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA367F19178A6B000361A2 /* btn_radio_off_holo_light@2x.png */; };
-		78FD1DF31929FD0500F45775 /* btn_radio_on_holo_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA368019178A6B000361A2 /* btn_radio_on_holo_light.png */; };
-		78FD1DF41929FD0500F45775 /* btn_radio_on_holo_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CA368119178A6B000361A2 /* btn_radio_on_holo_light@2x.png */; };
-		78FD1DF51929FD0800F45775 /* Browse_icon_main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F691921019B0000CBDA /* Browse_icon_main@2x.png */; };
-		78FD1DF61929FD0800F45775 /* Pending_icon_main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F6A1921019B0000CBDA /* Pending_icon_main@2x.png */; };
-		78FD1DF71929FD0800F45775 /* Upload_icon_main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F6B1921019B0000CBDA /* Upload_icon_main@2x.png */; };
-		78FD1DF81929FD0800F45775 /* Browse_icon_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F63192100A40000CBDA /* Browse_icon_main.png */; };
-		78FD1DF91929FD0800F45775 /* Pending_icon_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F64192100A40000CBDA /* Pending_icon_main.png */; };
-		78FD1DFA1929FD0800F45775 /* Upload_icon_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D08F65192100A40000CBDA /* Upload_icon_main.png */; };
-		78FD1DFB192A051B00F45775 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE975218FECD3900FEB394 /* AdSupport.framework */; };
 		7E01A1AD18FC1B770070D4EE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */; };
 		7E01A1AE18FC1B770070D4EE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */; };
 		7E01A1AF18FC1B770070D4EE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */; };
@@ -324,7 +490,6 @@
 		7E19AEBD190ACF28008C4E1E /* sc_QuickImageViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4F6B71A31763E20800CE3094 /* sc_QuickImageViewController.mm */; };
 		7E41A09D18FE7A4E00D601EF /* libMUAllUploaderLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC345F18FE7495007D540D /* libMUAllUploaderLibs.a */; };
 		7E41A09E18FE7AAE00D601EF /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC27C7F177EF37E008C578D /* ImageIO.framework */; };
-		7E41A09F18FE7B1300D601EF /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C9E26D18E5A059004C7A88 /* SitecoreMobileSDK.framework */; };
 		7E41A0A018FE7B1900D601EF /* SitecoreItemsBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C9E27618E5CF6F004C7A88 /* SitecoreItemsBrowser.framework */; };
 		7E46305918FE76A3009E0F7F /* libMUAllUploaderLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC345F18FE7495007D540D /* libMUAllUploaderLibs.a */; };
 		7E46305C18FE76CB009E0F7F /* libMUAllUploaderLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAC345F18FE7495007D540D /* libMUAllUploaderLibs.a */; };
@@ -405,7 +570,6 @@
 		7E81AEC317D9C93600E53330 /* geolocation_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D6BDC717A063FD002336C5 /* geolocation_small.png */; };
 		7E81AEC417D9C93600E53330 /* settings_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 65359FD517CBCFB9003B6442 /* settings_small.png */; };
 		7E81AEC517D9C93600E53330 /* folder_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D6BDCD17A0754B002336C5 /* folder_small.png */; };
-		7E81AEC817D9C93600E53330 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D6BDD117A07891002336C5 /* folder.png */; };
 		7E81AECA17D9C93600E53330 /* up_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D6BE0C17A30FAC002336C5 /* up_small.png */; };
 		7E81AEDB17D9C93600E53330 /* navigationBarBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 65359FD317C868B0003B6442 /* navigationBarBg.png */; };
 		7E81AEE517D9C93600E53330 /* empty_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 653D5B3117A9A50000754C9C /* empty_small.png */; };
@@ -426,9 +590,17 @@
 		7EFE974E18FECCF700FEB394 /* GoogleTagManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947AA18FD751000923AB6 /* GoogleTagManager.framework */; };
 		7EFE974F18FECCF700FEB394 /* GoogleAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6947A618FD700900923AB6 /* GoogleAnalytics.framework */; };
 		7EFE975118FECD1700FEB394 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE975018FECD1700FEB394 /* CoreData.framework */; };
+		7EFE975318FECD3900FEB394 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE975218FECD3900FEB394 /* AdSupport.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		785D34781B6F94120010FA76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6558299E175B408800768197 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 785D345E1B6F94110010FA76;
+			remoteInfo = SitecoreMediaUploader;
+		};
 		7E41A09A18FE7A4900D601EF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7EAC345918FE7495007D540D /* MUAllUploaderLibs.xcodeproj */;
@@ -551,7 +723,6 @@
 		65D6BDC4179F4167002336C5 /* pixelFrame2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pixelFrame2.png; path = Images/pixelFrame2.png; sourceTree = "<group>"; };
 		65D6BDC717A063FD002336C5 /* geolocation_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = geolocation_small.png; path = Images/geolocation_small.png; sourceTree = "<group>"; };
 		65D6BDCD17A0754B002336C5 /* folder_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = folder_small.png; path = Images/folder_small.png; sourceTree = "<group>"; };
-		65D6BDD117A07891002336C5 /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = folder.png; path = Images/folder.png; sourceTree = "<group>"; };
 		65D6BE0917A2AA0B002336C5 /* sc_SiteAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_SiteAddViewController.h; sourceTree = "<group>"; };
 		65D6BE0A17A2AA0B002336C5 /* sc_SiteAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_SiteAddViewController.m; sourceTree = "<group>"; };
 		65D6BE0C17A30FAC002336C5 /* up_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up_small.png; path = Images/up_small.png; sourceTree = "<group>"; };
@@ -582,9 +753,11 @@
 		7807F94E191BCFD900470CA3 /* Upload_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Upload_icon@2x.png"; sourceTree = "<group>"; };
 		7807F956191BD0B200470CA3 /* Empty-Tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty-Tick.png"; sourceTree = "<group>"; };
 		7807F957191BD0B200470CA3 /* Empty-Tick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty-Tick@2x.png"; sourceTree = "<group>"; };
-		781081CF189021E300E8EFD7 /* Sitecore.Mobile.MediaUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sitecore.Mobile.MediaUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		781081CF189021E300E8EFD7 /* Sitecore Media Uploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sitecore Media Uploader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		781081D0189021E300E8EFD7 /* Sitecore.Mobile.MediaUploader copy2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Sitecore.Mobile.MediaUploader copy2-Info.plist"; path = "/Volumes/Sitecore/Sources/src/app/MediaUploader/Sitecore.Mobile.MediaUploader copy2-Info.plist"; sourceTree = "<absolute>"; };
 		781081D11890224100E8EFD7 /* Sitecore.Mobile.MediaUploader-Info_AppStore.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sitecore.Mobile.MediaUploader-Info_AppStore.plist"; sourceTree = "<group>"; };
+		782F7F381925FBE500C6B11A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		782F7F3A1926069C00C6B11A /* Sitecore.Mobile.MediaUploader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Sitecore.Mobile.MediaUploader.entitlements; sourceTree = "<group>"; };
 		783FDD2C192269330037780B /* Launch_iOS_29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch_iOS_29x29.png; sourceTree = "<group>"; };
 		783FDD2D192269330037780B /* Launch_iOS_40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch_iOS_40x40.png; sourceTree = "<group>"; };
 		783FDD2E192269330037780B /* Launch_iOS_58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch_iOS_58x58.png; sourceTree = "<group>"; };
@@ -592,9 +765,12 @@
 		783FDD30192269330037780B /* Launch_iOS_80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch_iOS_80x80.png; sourceTree = "<group>"; };
 		783FDD31192269330037780B /* Launch_iOS_120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch_iOS_120x120.png; sourceTree = "<group>"; };
 		783FDD32192269330037780B /* Launch_iOS_152x152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch_iOS_152x152.png; sourceTree = "<group>"; };
+		785D345F1B6F94120010FA76 /* SitecoreMediaUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SitecoreMediaUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		785D34771B6F94120010FA76 /* SitecoreMediaUploaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SitecoreMediaUploaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78716C3918F6BA0A0092AA98 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg@2x.png"; path = "Images/bg@2x.png"; sourceTree = "<group>"; };
 		7872A6F518EC049600581E03 /* sc_LevelUpGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_LevelUpGridCell.h; sourceTree = "<group>"; };
 		7872A6F618EC049600581E03 /* sc_LevelUpGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_LevelUpGridCell.m; sourceTree = "<group>"; };
+		7885D9F01B6F5BD900E1449A /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileSDK.framework; path = ../../frameworks/SitecoreMobileSDK.framework; sourceTree = "<group>"; };
 		78B01F58187EF261006D48C9 /* sc_BaseTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_BaseTheme.h; sourceTree = "<group>"; };
 		78B01F59187EF261006D48C9 /* sc_BaseTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_BaseTheme.m; sourceTree = "<group>"; };
 		78B435AC18FEBC730053BEFA /* SCSite+Trackable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCSite+Trackable.h"; sourceTree = "<group>"; };
@@ -605,7 +781,11 @@
 		78C596A418EEDBDB006A7FA3 /* sc_FolderTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_FolderTableCell.m; sourceTree = "<group>"; };
 		78C596A918EEFE75006A7FA3 /* sc_ButtonsBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_ButtonsBuilder.h; sourceTree = "<group>"; };
 		78C596AA18EEFE75006A7FA3 /* sc_ButtonsBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_ButtonsBuilder.m; sourceTree = "<group>"; };
-		78C9E26D18E5A059004C7A88 /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SitecoreMobileSDK.framework; sourceTree = "<group>"; };
+		78C952ED1923A2D8001A3CC1 /* sc_VideoGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_VideoGridCell.h; sourceTree = "<group>"; };
+		78C952EE1923A2D8001A3CC1 /* sc_VideoGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sc_VideoGridCell.m; sourceTree = "<group>"; };
+		78C952F81923ABDD001A3CC1 /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder.png; sourceTree = "<group>"; };
+		78C952F91923ABDD001A3CC1 /* ic_browser_file.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_browser_file.png; sourceTree = "<group>"; };
+		78C952FE1923AC03001A3CC1 /* ic_browser_file@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_browser_file@2x.png"; sourceTree = "<group>"; };
 		78C9E27618E5CF6F004C7A88 /* SitecoreItemsBrowser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SitecoreItemsBrowser.framework; sourceTree = "<group>"; };
 		78CA367E19178A6B000361A2 /* btn_radio_off_holo_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_radio_off_holo_light.png; sourceTree = "<group>"; };
 		78CA367F19178A6B000361A2 /* btn_radio_off_holo_light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_radio_off_holo_light@2x.png"; sourceTree = "<group>"; };
@@ -685,10 +865,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				782F7F391925FBE500C6B11A /* Security.framework in Frameworks */,
+				7EFE975318FECD3900FEB394 /* AdSupport.framework in Frameworks */,
 				7EFE975118FECD1700FEB394 /* CoreData.framework in Frameworks */,
 				7E46305918FE76A3009E0F7F /* libMUAllUploaderLibs.a in Frameworks */,
 				78C9E27718E5CF6F004C7A88 /* SitecoreItemsBrowser.framework in Frameworks */,
-				78C9E27118E5A059004C7A88 /* SitecoreMobileSDK.framework in Frameworks */,
 				7E01A1AD18FC1B770070D4EE /* Crashlytics.framework in Frameworks */,
 				7E6CE9C618FD3FB000C86ABA /* Flurry.framework in Frameworks */,
 				7EFE974A18FECCEA00FEB394 /* GoogleTagManager.framework in Frameworks */,
@@ -696,6 +877,7 @@
 				4F7A466617BA39C20030BBDB /* SystemConfiguration.framework in Frameworks */,
 				6599A555175B9C730095775D /* MobileCoreServices.framework in Frameworks */,
 				7ED3E376178E9BAE00E02EA5 /* CFNetwork.framework in Frameworks */,
+				7885D9F11B6F5BD900E1449A /* SitecoreMobileSDK.framework in Frameworks */,
 				655967CD178E1584009C96CD /* libc++.dylib in Frameworks */,
 				655967CB178E1577009C96CD /* libiconv.dylib in Frameworks */,
 				655967C9178E1567009C96CD /* libstdc++.dylib in Frameworks */,
@@ -704,7 +886,6 @@
 				655967C3178E152E009C96CD /* libxml2.2.dylib in Frameworks */,
 				7E41A09E18FE7AAE00D601EF /* ImageIO.framework in Frameworks */,
 				4F24F36F1777AC6300C21E8F /* AssetsLibrary.framework in Frameworks */,
-				78FD1DFB192A051B00F45775 /* AdSupport.framework in Frameworks */,
 				651B1A29177CBA0C006FF573 /* MapKit.framework in Frameworks */,
 				6599A557175B9C810095775D /* CoreLocation.framework in Frameworks */,
 				655829AA175B408900768197 /* UIKit.framework in Frameworks */,
@@ -722,7 +903,6 @@
 				7E8C31AA18FFC193001CC464 /* CoreData.framework in Frameworks */,
 				7E41A09D18FE7A4E00D601EF /* libMUAllUploaderLibs.a in Frameworks */,
 				78C9E27818E5CF6F004C7A88 /* SitecoreItemsBrowser.framework in Frameworks */,
-				78C9E27218E5A059004C7A88 /* SitecoreMobileSDK.framework in Frameworks */,
 				7E01A1AF18FC1B770070D4EE /* Crashlytics.framework in Frameworks */,
 				7E6CE9C818FD3FB000C86ABA /* Flurry.framework in Frameworks */,
 				7EFE974E18FECCF700FEB394 /* GoogleTagManager.framework in Frameworks */,
@@ -738,12 +918,66 @@
 				7810815D189021E300E8EFD7 /* libxml2.2.dylib in Frameworks */,
 				7810815F189021E300E8EFD7 /* ImageIO.framework in Frameworks */,
 				78108160189021E300E8EFD7 /* MapKit.framework in Frameworks */,
+				7885D9F31B6F5BD900E1449A /* SitecoreMobileSDK.framework in Frameworks */,
 				78108162189021E300E8EFD7 /* QuartzCore.framework in Frameworks */,
 				78108163189021E300E8EFD7 /* AssetsLibrary.framework in Frameworks */,
 				78108165189021E300E8EFD7 /* CoreLocation.framework in Frameworks */,
 				78108167189021E300E8EFD7 /* UIKit.framework in Frameworks */,
 				78108168189021E300E8EFD7 /* Foundation.framework in Frameworks */,
 				78108169189021E300E8EFD7 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		785D345C1B6F94110010FA76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				785D35321B6F95710010FA76 /* MessageUI.framework in Frameworks */,
+				785D352C1B6F95710010FA76 /* AVFoundation.framework in Frameworks */,
+				785D35391B6F95710010FA76 /* QuartzCore.framework in Frameworks */,
+				785D35381B6F95710010FA76 /* MapKit.framework in Frameworks */,
+				785D35361B6F95710010FA76 /* ImageIO.framework in Frameworks */,
+				785D35341B6F95710010FA76 /* AddressBookUI.framework in Frameworks */,
+				785D35351B6F95710010FA76 /* CFNetwork.framework in Frameworks */,
+				785D35271B6F95630010FA76 /* Reveal.framework in Frameworks */,
+				785D35331B6F95710010FA76 /* CoreAudio.framework in Frameworks */,
+				785D35281B6F95630010FA76 /* AdSupport.framework in Frameworks */,
+				785D35481B6F95810010FA76 /* Crashlytics.framework in Frameworks */,
+				785D353F1B6F95710010FA76 /* Foundation.framework in Frameworks */,
+				785D35461B6F95750010FA76 /* libxml2.2.dylib in Frameworks */,
+				785D35451B6F95750010FA76 /* libz.dylib in Frameworks */,
+				785D352E1B6F95710010FA76 /* CoreMotion.framework in Frameworks */,
+				785D35471B6F957E0010FA76 /* SitecoreItemsBrowser.framework in Frameworks */,
+				785D35431B6F95750010FA76 /* libstdc++.dylib in Frameworks */,
+				785D35411B6F95750010FA76 /* libc++.dylib in Frameworks */,
+				785D35441B6F95750010FA76 /* libsqlite3.dylib in Frameworks */,
+				785D352D1B6F95710010FA76 /* CoreMedia.framework in Frameworks */,
+				785D353C1B6F95710010FA76 /* CoreLocation.framework in Frameworks */,
+				785D35491B6F95830010FA76 /* Flurry.framework in Frameworks */,
+				785D35311B6F95710010FA76 /* AudioToolbox.framework in Frameworks */,
+				785D352B1B6F95710010FA76 /* Social.framework in Frameworks */,
+				785D35371B6F95710010FA76 /* AddressBook.framework in Frameworks */,
+				785D353D1B6F95710010FA76 /* MediaPlayer.framework in Frameworks */,
+				785D35291B6F95630010FA76 /* CoreData.framework in Frameworks */,
+				785D35261B6F95630010FA76 /* Security.framework in Frameworks */,
+				785D35301B6F95710010FA76 /* Twitter.framework in Frameworks */,
+				785D352A1B6F95710010FA76 /* SystemConfiguration.framework in Frameworks */,
+				785D353E1B6F95710010FA76 /* UIKit.framework in Frameworks */,
+				785D35421B6F95750010FA76 /* libiconv.dylib in Frameworks */,
+				785D354A1B6F95860010FA76 /* GoogleAnalytics.framework in Frameworks */,
+				785D354B1B6F95880010FA76 /* GoogleTagManager.framework in Frameworks */,
+				785D353A1B6F95710010FA76 /* AssetsLibrary.framework in Frameworks */,
+				785D35401B6F95710010FA76 /* CoreGraphics.framework in Frameworks */,
+				785D353B1B6F95710010FA76 /* MobileCoreServices.framework in Frameworks */,
+				785D352F1B6F95710010FA76 /* CoreVideo.framework in Frameworks */,
+				785D35251B6F95630010FA76 /* SitecoreMobileSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		785D34741B6F94120010FA76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -754,9 +988,9 @@
 				7E8C31A918FFC183001CC464 /* AdSupport.framework in Frameworks */,
 				7E8C31A818FFC17E001CC464 /* CoreData.framework in Frameworks */,
 				7E81AEF017D9C96D00E53330 /* calabash.framework in Frameworks */,
+				7885D9F21B6F5BD900E1449A /* SitecoreMobileSDK.framework in Frameworks */,
 				7E46305C18FE76CB009E0F7F /* libMUAllUploaderLibs.a in Frameworks */,
 				7E41A0A018FE7B1900D601EF /* SitecoreItemsBrowser.framework in Frameworks */,
-				7E41A09F18FE7B1300D601EF /* SitecoreMobileSDK.framework in Frameworks */,
 				7E01A1AE18FC1B770070D4EE /* Crashlytics.framework in Frameworks */,
 				7E6CE9C718FD3FB000C86ABA /* Flurry.framework in Frameworks */,
 				7EFE974C18FECCF300FEB394 /* GoogleTagManager.framework in Frameworks */,
@@ -855,7 +1089,9 @@
 			children = (
 				655829A6175B408900768197 /* Sitecore.Mobile.MediaUploader.app */,
 				7E81AEED17D9C93600E53330 /* Sitecore.Mobile.MediaUploader-AutoTest.app */,
-				781081CF189021E300E8EFD7 /* Sitecore.Mobile.MediaUploader.app */,
+				781081CF189021E300E8EFD7 /* Sitecore Media Uploader.app */,
+				785D345F1B6F94120010FA76 /* SitecoreMediaUploader.app */,
+				785D34771B6F94120010FA76 /* SitecoreMediaUploaderTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -863,6 +1099,8 @@
 		655829A8175B408900768197 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7885D9F01B6F5BD900E1449A /* SitecoreMobileSDK.framework */,
+				782F7F381925FBE500C6B11A /* Security.framework */,
 				7E17DB72190AC1D900E5A34D /* Reveal.framework */,
 				7EFE975218FECD3900FEB394 /* AdSupport.framework */,
 				7EFE975018FECD1700FEB394 /* CoreData.framework */,
@@ -871,7 +1109,6 @@
 				7E6CE9C518FD3FB000C86ABA /* Flurry.framework */,
 				7E01A1AC18FC1B770070D4EE /* Crashlytics.framework */,
 				78C9E27618E5CF6F004C7A88 /* SitecoreItemsBrowser.framework */,
-				78C9E26D18E5A059004C7A88 /* SitecoreMobileSDK.framework */,
 				78D4A9B51886BE6D00CC44B4 /* XCTest.framework */,
 				78E72458184E040700E9C1FC /* EventKit.framework */,
 				78E72459184E040700E9C1FC /* EventKitUI.framework */,
@@ -913,6 +1150,7 @@
 		655829AF175B408900768197 /* Sitecore.Mobile.MediaUploader */ = {
 			isa = PBXGroup;
 			children = (
+				782F7F3A1926069C00C6B11A /* Sitecore.Mobile.MediaUploader.entitlements */,
 				7E01A1B018FC2E2F0070D4EE /* Tracking */,
 				65D6BDF617A1A074002336C5 /* MainView */,
 				65569B2217627B6600A16A0A /* Data */,
@@ -945,6 +1183,7 @@
 		655829DF175B48DA00768197 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				78C952F71923ABDD001A3CC1 /* MediaBrowserCells */,
 				78D08F561920F1780000CBDA /* MainScreenIcons */,
 				78CA367D19178A6B000361A2 /* SiteSettings */,
 				7807F947191BCFD900470CA3 /* UploadStatuses */,
@@ -975,7 +1214,6 @@
 				65D6BE0C17A30FAC002336C5 /* up_small.png */,
 				651B1A20177C9AA4006FF573 /* right.png */,
 				65569B1A176256C900A16A0A /* browse.png */,
-				65D6BDD117A07891002336C5 /* folder.png */,
 				655829EA175B49FF00768197 /* upload.png */,
 				65F5E847178976C700059518 /* counterBg.png */,
 				65F5E845178976B900059518 /* pending.png */,
@@ -1104,6 +1342,17 @@
 			name = AddEditViewController;
 			sourceTree = "<group>";
 		};
+		78C952F71923ABDD001A3CC1 /* MediaBrowserCells */ = {
+			isa = PBXGroup;
+			children = (
+				78C952F81923ABDD001A3CC1 /* folder.png */,
+				78C952F91923ABDD001A3CC1 /* ic_browser_file.png */,
+				78C952FE1923AC03001A3CC1 /* ic_browser_file@2x.png */,
+			);
+			name = MediaBrowserCells;
+			path = Images/MediaBrowserCells;
+			sourceTree = "<group>";
+		};
 		78CA367D19178A6B000361A2 /* SiteSettings */ = {
 			isa = PBXGroup;
 			children = (
@@ -1127,6 +1376,8 @@
 				78CC1EFF18EAF6FC003608CD /* sc_BrowseViewCellFactory.m */,
 				78CC1F0318EAFEDF003608CD /* sc_FolderGridCell.h */,
 				78CC1F0418EAFEDF003608CD /* sc_FolderGridCell.m */,
+				78C952ED1923A2D8001A3CC1 /* sc_VideoGridCell.h */,
+				78C952EE1923A2D8001A3CC1 /* sc_VideoGridCell.m */,
 				7872A6F518EC049600581E03 /* sc_LevelUpGridCell.h */,
 				7872A6F618EC049600581E03 /* sc_LevelUpGridCell.m */,
 				78CB2A9018F43DB500BDA6B0 /* sc_GridBrowserRequestBuilder.h */,
@@ -1284,8 +1535,43 @@
 			);
 			name = Sitecore.Mobile.MediaUploader_AppStore;
 			productName = Sitecore.Mobile.MediaUploader;
-			productReference = 781081CF189021E300E8EFD7 /* Sitecore.Mobile.MediaUploader.app */;
+			productReference = 781081CF189021E300E8EFD7 /* Sitecore Media Uploader.app */;
 			productType = "com.apple.product-type.application";
+		};
+		785D345E1B6F94110010FA76 /* SitecoreMediaUploader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 785D347F1B6F94120010FA76 /* Build configuration list for PBXNativeTarget "SitecoreMediaUploader" */;
+			buildPhases = (
+				785D345B1B6F94110010FA76 /* Sources */,
+				785D345C1B6F94110010FA76 /* Frameworks */,
+				785D345D1B6F94110010FA76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SitecoreMediaUploader;
+			productName = SitecoreMediaUploader;
+			productReference = 785D345F1B6F94120010FA76 /* SitecoreMediaUploader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		785D34761B6F94120010FA76 /* SitecoreMediaUploaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 785D34821B6F94120010FA76 /* Build configuration list for PBXNativeTarget "SitecoreMediaUploaderTests" */;
+			buildPhases = (
+				785D34731B6F94120010FA76 /* Sources */,
+				785D34741B6F94120010FA76 /* Frameworks */,
+				785D34751B6F94120010FA76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				785D34791B6F94120010FA76 /* PBXTargetDependency */,
+			);
+			name = SitecoreMediaUploaderTests;
+			productName = SitecoreMediaUploaderTests;
+			productReference = 785D34771B6F94120010FA76 /* SitecoreMediaUploaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		7E81AE3A17D9C93600E53330 /* Sitecore.Mobile.MediaUploader-AutoTest */ = {
 			isa = PBXNativeTarget;
@@ -1314,12 +1600,14 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = sc_;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Sitecore;
 				TargetAttributes = {
 					655829A5175B408800768197 = {
-						DevelopmentTeam = AJ2XRRY985;
 						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
 							com.apple.iCloud = {
 								enabled = 0;
 							};
@@ -1333,6 +1621,14 @@
 							};
 						};
 					};
+					785D345E1B6F94110010FA76 = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = AJ2XRRY985;
+					};
+					785D34761B6F94120010FA76 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 785D345E1B6F94110010FA76;
+					};
 				};
 			};
 			buildConfigurationList = 655829A1175B408800768197 /* Build configuration list for PBXProject "Sitecore.Mobile.MediaUploader" */;
@@ -1343,6 +1639,7 @@
 				en,
 				es,
 				ru,
+				Base,
 			);
 			mainGroup = 6558299D175B408800768197;
 			productRefGroup = 655829A7175B408900768197 /* Products */;
@@ -1358,6 +1655,8 @@
 				655829A5175B408800768197 /* Sitecore.Mobile.MediaUploader */,
 				7E81AE3A17D9C93600E53330 /* Sitecore.Mobile.MediaUploader-AutoTest */,
 				78108120189021E300E8EFD7 /* Sitecore.Mobile.MediaUploader_AppStore */,
+				785D345E1B6F94110010FA76 /* SitecoreMediaUploader */,
+				785D34761B6F94120010FA76 /* SitecoreMediaUploaderTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1397,6 +1696,7 @@
 				651B1A21177C9AA4006FF573 /* right.png in Resources */,
 				651353F4177F1E8500108071 /* currentLocation.png in Resources */,
 				4F76DCB5178593E100730EC8 /* appicon-72@2x.png in Resources */,
+				78C952FA1923ABDD001A3CC1 /* folder.png in Resources */,
 				7E5F15B0190E94AE002B1854 /* internet-normal.png in Resources */,
 				78D08F6D1921019B0000CBDA /* Pending_icon_main@2x.png in Resources */,
 				7807F954191BCFD900470CA3 /* Upload_icon.png in Resources */,
@@ -1407,6 +1707,7 @@
 				4F76DCB9178593F200730EC8 /* appicon-Small-50@2x.png in Resources */,
 				4F76DCBB178593FB00730EC8 /* appicon-Small.png in Resources */,
 				4F76DCBD1785940300730EC8 /* appicon-Small@2x.png in Resources */,
+				78C952FF1923AC03001A3CC1 /* ic_browser_file@2x.png in Resources */,
 				65359FD817CC087B003B6442 /* settings.png in Resources */,
 				4F76DCBF1785940B00730EC8 /* appicon.png in Resources */,
 				4F76DCC11785941500730EC8 /* appicon@2x.png in Resources */,
@@ -1442,7 +1743,7 @@
 				65D6BDCE17A0754B002336C5 /* folder_small.png in Resources */,
 				7807F953191BCFD900470CA3 /* Red-Warning@2x.png in Resources */,
 				7807F951191BCFD900470CA3 /* Green-Tick@2x.png in Resources */,
-				65D6BDD217A07892002336C5 /* folder.png in Resources */,
+				78C952FC1923ABDD001A3CC1 /* ic_browser_file.png in Resources */,
 				65D6BE0D17A30FAD002336C5 /* up_small.png in Resources */,
 				783FDD3D192269330037780B /* Launch_iOS_120x120.png in Resources */,
 				65359FD417C868B0003B6442 /* navigationBarBg.png in Resources */,
@@ -1464,42 +1765,46 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7840072A1B6B6A9700A7307A /* btn_radio_off_holo_light@2x.png in Resources */,
 				7810816B189021E300E8EFD7 /* InfoPlist.strings in Resources */,
+				78C953001923AC03001A3CC1 /* ic_browser_file@2x.png in Resources */,
 				7E5F15B5190E94AE002B1854 /* internet-normal@2x.png in Resources */,
-				78FD1DF31929FD0500F45775 /* btn_radio_on_holo_light.png in Resources */,
 				7810816E189021E300E8EFD7 /* MainStoryboard_iPhone.storyboard in Resources */,
+				784007301B6B6A9C00A7307A /* Browse_icon_main.png in Resources */,
 				7E5F15BB190E94AE002B1854 /* internet-pressed@2x.png in Resources */,
 				78CA658818C8B8C800C27192 /* accessoryArrow.png in Resources */,
 				78108170189021E300E8EFD7 /* upload.png in Resources */,
 				78108171189021E300E8EFD7 /* browse.png in Resources */,
+				784007211B6B6A8700A7307A /* Empty-Tick.png in Resources */,
+				7840072F1B6B6A9C00A7307A /* Upload_icon_main@2x.png in Resources */,
 				78108173189021E300E8EFD7 /* up.png in Resources */,
-				78FD1DF41929FD0500F45775 /* btn_radio_on_holo_light@2x.png in Resources */,
 				78108175189021E300E8EFD7 /* select.png in Resources */,
 				78108176189021E300E8EFD7 /* select_small.png in Resources */,
-				78FD1DF01929FCFF00F45775 /* Upload_icon@2x.png in Resources */,
 				78108177189021E300E8EFD7 /* geolocation.png in Resources */,
 				783FDD38192269330037780B /* Launch_iOS_58x58.png in Resources */,
-				78FD1DE81929FCFF00F45775 /* empty_upload_small.png in Resources */,
 				78108178189021E300E8EFD7 /* upload_small.png in Resources */,
 				78108179189021E300E8EFD7 /* whiteCheckmark.png in Resources */,
-				78FD1DF21929FD0500F45775 /* btn_radio_off_holo_light@2x.png in Resources */,
+				78C952FD1923ABDD001A3CC1 /* ic_browser_file.png in Resources */,
 				7810817B189021E300E8EFD7 /* right.png in Resources */,
 				783FDD40192269330037780B /* Launch_iOS_152x152.png in Resources */,
 				7810817C189021E300E8EFD7 /* currentLocation.png in Resources */,
 				7E5F15B2190E94AE002B1854 /* internet-normal.png in Resources */,
-				78FD1DF81929FD0800F45775 /* Browse_icon_main.png in Resources */,
+				784007201B6B6A8700A7307A /* empty_upload_small.png in Resources */,
 				783FDD3C192269330037780B /* Launch_iOS_80x80.png in Resources */,
 				7810817D189021E300E8EFD7 /* appicon-72@2x.png in Resources */,
-				78FD1DEC1929FCFF00F45775 /* Green-Tick@2x.png in Resources */,
-				78FD1DF71929FD0800F45775 /* Upload_icon_main@2x.png in Resources */,
-				78FD1DF61929FD0800F45775 /* Pending_icon_main@2x.png in Resources */,
+				784007231B6B6A8700A7307A /* Green-Tick.png in Resources */,
 				7810817F189021E300E8EFD7 /* appicon-Small-50.png in Resources */,
 				78108180189021E300E8EFD7 /* appicon-Small-50@2x.png in Resources */,
+				784007241B6B6A8700A7307A /* Green-Tick@2x.png in Resources */,
 				78108181189021E300E8EFD7 /* appicon-Small.png in Resources */,
+				78C952FB1923ABDD001A3CC1 /* folder.png in Resources */,
 				78108182189021E300E8EFD7 /* appicon-Small@2x.png in Resources */,
-				78FD1DE91929FCFF00F45775 /* Empty-Tick.png in Resources */,
 				78108186189021E300E8EFD7 /* settings.png in Resources */,
+				7840072C1B6B6A9700A7307A /* btn_radio_on_holo_light@2x.png in Resources */,
 				783FDD3A192269330037780B /* Launch_iOS_76x76.png in Resources */,
+				784007251B6B6A8700A7307A /* Red-Warning.png in Resources */,
+				784007311B6B6A9C00A7307A /* Pending_icon_main.png in Resources */,
+				784007221B6B6A8700A7307A /* Empty-Tick@2x.png in Resources */,
 				783FDD34192269330037780B /* Launch_iOS_29x29.png in Resources */,
 				78108188189021E300E8EFD7 /* appicon.png in Resources */,
 				7810818C189021E300E8EFD7 /* appicon@2x.png in Resources */,
@@ -1508,8 +1813,6 @@
 				78108190189021E300E8EFD7 /* Default-Landscape.png in Resources */,
 				78108191189021E300E8EFD7 /* Default-Landscape@2x.png in Resources */,
 				78108193189021E300E8EFD7 /* Default-Portrait.png in Resources */,
-				78FD1DF91929FD0800F45775 /* Pending_icon_main.png in Resources */,
-				78FD1DF51929FD0800F45775 /* Browse_icon_main@2x.png in Resources */,
 				78108194189021E300E8EFD7 /* Default-Portrait@2x.png in Resources */,
 				78108195189021E300E8EFD7 /* pending.png in Resources */,
 				78108197189021E300E8EFD7 /* counterBg.png in Resources */,
@@ -1517,33 +1820,127 @@
 				783FDD3E192269330037780B /* Launch_iOS_120x120.png in Resources */,
 				78716C3B18F6BA0A0092AA98 /* bg@2x.png in Resources */,
 				78108199189021E300E8EFD7 /* Default-Portrait@2x~ipad.png in Resources */,
-				78FD1DED1929FCFF00F45775 /* Red-Warning.png in Resources */,
 				7810819A189021E300E8EFD7 /* error.png in Resources */,
+				784007261B6B6A8700A7307A /* Red-Warning@2x.png in Resources */,
 				7810819C189021E300E8EFD7 /* bg.png in Resources */,
-				78FD1DFA1929FD0800F45775 /* Upload_icon_main.png in Resources */,
 				783FDD36192269330037780B /* Launch_iOS_40x40.png in Resources */,
 				78CA658518C8B8C800C27192 /* accessoryArrow@2x.png in Resources */,
 				7810819F189021E300E8EFD7 /* sitecore.png in Resources */,
 				781081A1189021E300E8EFD7 /* pixelFrame.png in Resources */,
 				781081A2189021E300E8EFD7 /* pixelFrame2.png in Resources */,
-				78FD1DEF1929FCFF00F45775 /* Upload_icon.png in Resources */,
-				78FD1DEB1929FCFF00F45775 /* Green-Tick.png in Resources */,
-				78FD1DEE1929FCFF00F45775 /* Red-Warning@2x.png in Resources */,
 				781081A4189021E300E8EFD7 /* Localizable.strings in Resources */,
 				781081A5189021E300E8EFD7 /* geolocation_small.png in Resources */,
+				784007281B6B6A8700A7307A /* Upload_icon@2x.png in Resources */,
+				784007321B6B6A9C00A7307A /* Upload_icon_main.png in Resources */,
 				781081A6189021E300E8EFD7 /* settings_small.png in Resources */,
-				78FD1DEA1929FCFF00F45775 /* Empty-Tick@2x.png in Resources */,
+				7840072E1B6B6A9C00A7307A /* Pending_icon_main@2x.png in Resources */,
 				781081A7189021E300E8EFD7 /* folder_small.png in Resources */,
-				781081AA189021E300E8EFD7 /* folder.png in Resources */,
 				781081AC189021E300E8EFD7 /* up_small.png in Resources */,
+				7840072D1B6B6A9C00A7307A /* Browse_icon_main@2x.png in Resources */,
 				781081BD189021E300E8EFD7 /* navigationBarBg.png in Resources */,
 				781081C7189021E300E8EFD7 /* empty_small.png in Resources */,
-				78FD1DF11929FD0500F45775 /* btn_radio_off_holo_light.png in Resources */,
 				781081C8189021E300E8EFD7 /* iOSDeviceModelMapping.plist in Resources */,
+				7840072B1B6B6A9700A7307A /* btn_radio_on_holo_light.png in Resources */,
 				7E5F15B8190E94AE002B1854 /* internet-pressed.png in Resources */,
 				781081C9189021E300E8EFD7 /* Default.png in Resources */,
 				781081CA189021E300E8EFD7 /* Default@2x.png in Resources */,
+				784007291B6B6A9700A7307A /* btn_radio_off_holo_light.png in Resources */,
 				781081CB189021E300E8EFD7 /* Default-568h@2x.png in Resources */,
+				784007271B6B6A8700A7307A /* Upload_icon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		785D345D1B6F94110010FA76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				785D34C61B6F94480010FA76 /* Upload_icon@2x.png in Resources */,
+				785D34871B6F942E0010FA76 /* appicon-72@2x.png in Resources */,
+				785D348D1B6F942E0010FA76 /* appicon@2x.png in Resources */,
+				785D34C21B6F94480010FA76 /* Green-Tick@2x.png in Resources */,
+				785D34A11B6F94410010FA76 /* bg.png in Resources */,
+				785D34BA1B6F94410010FA76 /* browse.png in Resources */,
+				785D34AE1B6F94410010FA76 /* delete.png in Resources */,
+				785D34B21B6F94410010FA76 /* whiteCheckmark.png in Resources */,
+				785D34AB1B6F94410010FA76 /* folder_small.png in Resources */,
+				785D34D11B6F94540010FA76 /* folder.png in Resources */,
+				785D34A61B6F94410010FA76 /* internet-pressed@2x.png in Resources */,
+				785D34A71B6F94410010FA76 /* sitecore.png in Resources */,
+				785D34911B6F942E0010FA76 /* Default-Landscape@2x~ipad.png in Resources */,
+				785D34851B6F942E0010FA76 /* accessoryArrow@2x.png in Resources */,
+				785D34A01B6F94410010FA76 /* navigationBarBg.png in Resources */,
+				785D34A51B6F94410010FA76 /* internet-pressed.png in Resources */,
+				785D348B1B6F942E0010FA76 /* appicon-Small@2x.png in Resources */,
+				785D34BC1B6F94410010FA76 /* counterBg.png in Resources */,
+				785D34981B6F942E0010FA76 /* Default@2x.png in Resources */,
+				785D34A81B6F94410010FA76 /* empty_small.png in Resources */,
+				785D34C41B6F94480010FA76 /* Red-Warning@2x.png in Resources */,
+				785D34D01B6F94500010FA76 /* Upload_icon_main.png in Resources */,
+				785D34B31B6F94410010FA76 /* upload_small.png in Resources */,
+				785D34BD1B6F94410010FA76 /* pending.png in Resources */,
+				785D349B1B6F94390010FA76 /* Launch_iOS_58x58.png in Resources */,
+				785D34AF1B6F94410010FA76 /* currentLocation.png in Resources */,
+				785D34B51B6F94410010FA76 /* select_small.png in Resources */,
+				785D349A1B6F94390010FA76 /* Launch_iOS_40x40.png in Resources */,
+				785D34881B6F942E0010FA76 /* appicon-Small-50.png in Resources */,
+				785D34D31B6F94540010FA76 /* ic_browser_file@2x.png in Resources */,
+				785D34BE1B6F94480010FA76 /* empty_upload_small.png in Resources */,
+				785D34991B6F94390010FA76 /* Launch_iOS_29x29.png in Resources */,
+				785D34C81B6F944C0010FA76 /* btn_radio_off_holo_light@2x.png in Resources */,
+				785D34921B6F942E0010FA76 /* Default-Landscape~ipad.png in Resources */,
+				785D34B81B6F94410010FA76 /* up_small.png in Resources */,
+				785D34A21B6F94410010FA76 /* bg@2x.png in Resources */,
+				785D34CA1B6F944C0010FA76 /* btn_radio_on_holo_light@2x.png in Resources */,
+				785D349C1B6F94390010FA76 /* Launch_iOS_76x76.png in Resources */,
+				785D34B41B6F94410010FA76 /* settings_small.png in Resources */,
+				785D348C1B6F942E0010FA76 /* appicon.png in Resources */,
+				785D34A91B6F94410010FA76 /* geolocation.png in Resources */,
+				785D34BF1B6F94480010FA76 /* Empty-Tick.png in Resources */,
+				785D34C51B6F94480010FA76 /* Upload_icon.png in Resources */,
+				785D348E1B6F942E0010FA76 /* Default-568h@2x.png in Resources */,
+				785D34931B6F942E0010FA76 /* Default-Portrait.png in Resources */,
+				785D34D41B6F94900010FA76 /* Localizable.strings in Resources */,
+				785D34C91B6F944C0010FA76 /* btn_radio_on_holo_light.png in Resources */,
+				785D34B91B6F94410010FA76 /* right.png in Resources */,
+				785D34CF1B6F94500010FA76 /* Pending_icon_main.png in Resources */,
+				785D34B01B6F94410010FA76 /* pixelFrame.png in Resources */,
+				785D34A41B6F94410010FA76 /* internet-normal@2x.png in Resources */,
+				785D34C11B6F94480010FA76 /* Green-Tick.png in Resources */,
+				785D34C71B6F944C0010FA76 /* btn_radio_off_holo_light.png in Resources */,
+				785D34A31B6F94410010FA76 /* internet-normal.png in Resources */,
+				785D34CB1B6F94500010FA76 /* Browse_icon_main@2x.png in Resources */,
+				785D34891B6F942E0010FA76 /* appicon-Small-50@2x.png in Resources */,
+				785D34B11B6F94410010FA76 /* pixelFrame2.png in Resources */,
+				785D34AA1B6F94410010FA76 /* geolocation_small.png in Resources */,
+				785D34C31B6F94480010FA76 /* Red-Warning.png in Resources */,
+				785D34941B6F942E0010FA76 /* Default-Portrait@2x.png in Resources */,
+				785D348A1B6F942E0010FA76 /* appicon-Small.png in Resources */,
+				785D34951B6F942E0010FA76 /* Default-Portrait@2x~ipad.png in Resources */,
+				785D34B71B6F94410010FA76 /* up.png in Resources */,
+				785D34CD1B6F94500010FA76 /* Upload_icon_main@2x.png in Resources */,
+				785D34CC1B6F94500010FA76 /* Pending_icon_main@2x.png in Resources */,
+				785D34961B6F942E0010FA76 /* Default-Portrait~ipad.png in Resources */,
+				785D34861B6F942E0010FA76 /* accessoryArrow.png in Resources */,
+				785D34D21B6F94540010FA76 /* ic_browser_file.png in Resources */,
+				785D34C01B6F94480010FA76 /* Empty-Tick@2x.png in Resources */,
+				785D34AD1B6F94410010FA76 /* settings.png in Resources */,
+				785D34901B6F942E0010FA76 /* Default-Landscape@2x.png in Resources */,
+				785D34BB1B6F94410010FA76 /* upload.png in Resources */,
+				785D349F1B6F94390010FA76 /* Launch_iOS_152x152.png in Resources */,
+				785D348F1B6F942E0010FA76 /* Default-Landscape.png in Resources */,
+				785D349E1B6F94390010FA76 /* Launch_iOS_120x120.png in Resources */,
+				785D34971B6F942E0010FA76 /* Default.png in Resources */,
+				785D34CE1B6F94500010FA76 /* Browse_icon_main.png in Resources */,
+				785D349D1B6F94390010FA76 /* Launch_iOS_80x80.png in Resources */,
+				785D34AC1B6F94410010FA76 /* error.png in Resources */,
+				785D34B61B6F94410010FA76 /* select.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		785D34751B6F94120010FA76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1596,7 +1993,6 @@
 				7E81AEC517D9C93600E53330 /* folder_small.png in Resources */,
 				7E5F15B4190E94AE002B1854 /* internet-normal@2x.png in Resources */,
 				7E5F15B1190E94AE002B1854 /* internet-normal.png in Resources */,
-				7E81AEC817D9C93600E53330 /* folder.png in Resources */,
 				7E81AECA17D9C93600E53330 /* up_small.png in Resources */,
 				7E81AEDB17D9C93600E53330 /* navigationBarBg.png in Resources */,
 				7E81AEE517D9C93600E53330 /* empty_small.png in Resources */,
@@ -1622,7 +2018,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "../../frameworks/Crashlytics.framework/run 4c24cc2513a38654d20f77a8fcd8b67e09e0bbfa 655d9c49d4b093effc20b840ab6fa216a1a6de34326839a0bf439341e134a4cd";
+			shellScript = "";
 		};
 		7E01A1AA18FC1AE10070D4EE /* Crashlytics Setup */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1664,7 +2060,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "if [[ -z ${SKIP_OBJCLEAN} || ${SKIP_OBJCLEAN} != 1 ]]; then\nif [[ -d \"${LOCAL_APPS_DIR}/Objective-Clean.app\" ]]; then \n\"${LOCAL_APPS_DIR}\"/Objective-Clean.app/Contents/Resources/ObjClean.app/Contents/MacOS/ObjClean \"${SRCROOT}\"?!../../frameworks,!../../lib-third-party \nelse\necho \"warning: You have to install and set up Objective-Clean to use its features!\" \nfi\nfi";
+			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1710,6 +2106,7 @@
 				4F7A466B17BE6BC90030BBDB /* sc_DeviceHelper.m in Sources */,
 				78CE93C018ED626400B68327 /* sc_ListBrowserViewController.m in Sources */,
 				78CC1EFC18EAF57F003608CD /* sc_BrowseViewAppearance.m in Sources */,
+				78C952EF1923A2D8001A3CC1 /* sc_VideoGridCell.m in Sources */,
 				78C596A518EEDBDB006A7FA3 /* sc_FolderTableCell.m in Sources */,
 				655F69ED17C5D78D00C4AFF4 /* sc_Validator.m in Sources */,
 			);
@@ -1756,8 +2153,63 @@
 				78108145189021E300E8EFD7 /* sc_DeviceHelper.m in Sources */,
 				78CE93C118ED626400B68327 /* sc_ListBrowserViewController.m in Sources */,
 				78CC1EFD18EAF57F003608CD /* sc_BrowseViewAppearance.m in Sources */,
+				78C952F01923A2D8001A3CC1 /* sc_VideoGridCell.m in Sources */,
 				78C596A618EEDBDB006A7FA3 /* sc_FolderTableCell.m in Sources */,
 				78108146189021E300E8EFD7 /* sc_Validator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		785D345B1B6F94110010FA76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				785D35081B6F94C40010FA76 /* sc_Validator.m in Sources */,
+				785D35141B6F94C40010FA76 /* sc_SettingsViewController.mm in Sources */,
+				785D35011B6F94C40010FA76 /* sc_ResourseCleaner.m in Sources */,
+				785D35171B6F94C40010FA76 /* MUUploadItem.m in Sources */,
+				785D350F1B6F94C40010FA76 /* sc_ListBrowserCellFactory.m in Sources */,
+				785D350A1B6F94C40010FA76 /* sc_ActivityIndicator.m in Sources */,
+				785D35001B6F94C40010FA76 /* SCSite+Trackable.m in Sources */,
+				785D35041B6F94C40010FA76 /* sc_ErrorHelper.m in Sources */,
+				785D35161B6F94C40010FA76 /* sc_MapViewController.m in Sources */,
+				785D35191B6F94C40010FA76 /* sc_UploadViewController.mm in Sources */,
+				785D350E1B6F94C40010FA76 /* sc_ListBrowserViewController.m in Sources */,
+				785D35131B6F94C40010FA76 /* sc_ButtonsBuilder.m in Sources */,
+				785D350B1B6F94C40010FA76 /* sc_AppDelegate.m in Sources */,
+				785D351D1B6F94C40010FA76 /* sc_BrowseViewAppearance.m in Sources */,
+				785D35221B6F94C40010FA76 /* sc_GridBrowserRequestBuilder.m in Sources */,
+				785D35181B6F94C40010FA76 /* sc_LocationManager.m in Sources */,
+				785D351F1B6F94C40010FA76 /* sc_FolderGridCell.m in Sources */,
+				785D34FF1B6F94C40010FA76 /* sc_NavigationController.m in Sources */,
+				785D35231B6F94C40010FA76 /* sc_QuickImageViewController.mm in Sources */,
+				785D35071B6F94C40010FA76 /* sc_DeviceHelper.m in Sources */,
+				785D351E1B6F94C40010FA76 /* sc_BrowseViewCellFactory.m in Sources */,
+				785D35201B6F94C40010FA76 /* sc_VideoGridCell.m in Sources */,
+				785D35091B6F94C40010FA76 /* sc_GradientButton.m in Sources */,
+				785D35061B6F94C40010FA76 /* sc_ItemHelper.m in Sources */,
+				785D351A1B6F94C40010FA76 /* sc_Upload2ViewController.mm in Sources */,
+				785D35211B6F94C40010FA76 /* sc_LevelUpGridCell.m in Sources */,
+				785D34FE1B6F94C40010FA76 /* sc_ViewController.m in Sources */,
+				785D34FD1B6F94C40010FA76 /* MUEventsTrackerFactory.m in Sources */,
+				785D35101B6F94C40010FA76 /* sc_LevelUpTableCell.m in Sources */,
+				785D35121B6F94C40010FA76 /* sc_SiteAddViewController.m in Sources */,
+				785D35241B6F94C40010FA76 /* main.m in Sources */,
+				785D35111B6F94C40010FA76 /* sc_FolderTableCell.m in Sources */,
+				785D350C1B6F94C40010FA76 /* sc_BaseTheme.m in Sources */,
+				785D350D1B6F94C40010FA76 /* MUButtonTheme.m in Sources */,
+				785D351C1B6F94C40010FA76 /* sc_BrowseViewController.m in Sources */,
+				785D351B1B6F94C40010FA76 /* sc_UploadItemCell.m in Sources */,
+				785D35151B6F94C40010FA76 /* sc_SitesSelectionViewController.mm in Sources */,
+				785D35031B6F94C40010FA76 /* sc_ConnectivityHelper.m in Sources */,
+				785D35021B6F94C40010FA76 /* sc_GlobalDataObject.m in Sources */,
+				785D35051B6F94C40010FA76 /* sc_ViewsHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		785D34731B6F94120010FA76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1818,6 +2270,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		785D34791B6F94120010FA76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 785D345E1B6F94110010FA76 /* SitecoreMediaUploader */;
+			targetProxy = 785D34781B6F94120010FA76 /* PBXContainerItemProxy */;
+		};
 		7E41A09B18FE7A4900D601EF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MUAllUploaderLibs;
@@ -1875,7 +2332,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
@@ -1894,8 +2350,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
-				COPY_PHASE_STRIP = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = ../../frameworks;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1904,7 +2359,6 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1923,8 +2377,7 @@
 					../../lib/MUMigrationTool,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "69baa227-0853-4d84-85ee-42caf6b3f81c";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1934,7 +2387,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
@@ -1953,8 +2405,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
-				COPY_PHASE_STRIP = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = ../../frameworks;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -1976,7 +2427,7 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "69baa227-0853-4d84-85ee-42caf6b3f81c";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1987,10 +2438,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Volumes/Sitecore/GitHub/Mobile.Apps.iOS.MediaUploader/frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
@@ -2000,8 +2453,6 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
@@ -2009,42 +2460,42 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Volumes/Sitecore/GitHub/Mobile.Apps.iOS.MediaUploader/frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
 				INFOPLIST_FILE = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
 		781081CD189021E300E8EFD7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Sitecore Corporation A/S (AJ2XRRY985)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Volumes/untitled/tfs/iOS_Media_Uploader/app/MediaUploader,
+					../../frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Info_AppStore.plist";
-				ONLY_ACTIVE_ARCH = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = Sitecore.Mobile.MediaUploader;
-				PROVISIONING_PROFILE = "";
+				PRODUCT_NAME = "Sitecore Media Uploader";
+				PROVISIONING_PROFILE = "c1994bf4-fca6-47fa-a98c-efb5607afcef";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2052,22 +2503,163 @@
 		781081CE189021E300E8EFD7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Sitecore Corporation A/S (AJ2XRRY985)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Volumes/untitled/tfs/iOS_Media_Uploader/app/MediaUploader,
+					../../frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Info_AppStore.plist";
-				ONLY_ACTIVE_ARCH = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = Sitecore.Mobile.MediaUploader;
-				PROVISIONING_PROFILE = "";
+				PRODUCT_NAME = "Sitecore Media Uploader";
+				PROVISIONING_PROFILE = "c1994bf4-fca6-47fa-a98c-efb5607afcef";
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		785D34801B6F94120010FA76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/Sitecore/GitHub/Mobile.Apps.iOS.MediaUploader/frameworks,
+					"$(PROJECT_DIR)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		785D34811B6F94120010FA76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/Sitecore/GitHub/Mobile.Apps.iOS.MediaUploader/frameworks,
+					"$(PROJECT_DIR)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		785D34831B6F94120010FA76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = SitecoreMediaUploaderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SitecoreMediaUploader.app/SitecoreMediaUploader";
+			};
+			name = Debug;
+		};
+		785D34841B6F94120010FA76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = SitecoreMediaUploaderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SitecoreMediaUploader.app/SitecoreMediaUploader";
 			};
 			name = Release;
 		};
@@ -2080,6 +2672,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					/Volumes/untitled/tfs/iOS_Media_Uploader/app/MediaUploader,
 					/Volumes/untitled/tfs/iOS_Media_Uploader/frameworks,
+					/Volumes/Sitecore/GitHub/Mobile.Apps.iOS.MediaUploader/frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
@@ -2103,6 +2696,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					/Volumes/untitled/tfs/iOS_Media_Uploader/app/MediaUploader,
 					/Volumes/untitled/tfs/iOS_Media_Uploader/frameworks,
+					/Volumes/Sitecore/GitHub/Mobile.Apps.iOS.MediaUploader/frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sitecore.Mobile.MediaUploader/Sitecore.Mobile.MediaUploader-Prefix.pch";
@@ -2143,6 +2737,24 @@
 			buildConfigurations = (
 				781081CD189021E300E8EFD7 /* Debug */,
 				781081CE189021E300E8EFD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		785D347F1B6F94120010FA76 /* Build configuration list for PBXNativeTarget "SitecoreMediaUploader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				785D34801B6F94120010FA76 /* Debug */,
+				785D34811B6F94120010FA76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		785D34821B6F94120010FA76 /* Build configuration list for PBXNativeTarget "SitecoreMediaUploaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				785D34831B6F94120010FA76 /* Debug */,
+				785D34841B6F94120010FA76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

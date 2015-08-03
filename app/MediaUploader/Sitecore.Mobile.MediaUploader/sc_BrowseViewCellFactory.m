@@ -2,6 +2,7 @@
 #import <SitecoreItemsBrowser/Grid/Animation/SCHighlightableBackgroundGridCell.h>
 #import "sc_FolderGridCell.h"
 #import "sc_LevelUpGridCell.h"
+#import "sc_VideoGridCell.h"
 
 @implementation sc_BrowseViewCellFactory
 
@@ -10,6 +11,10 @@
 static NSString* const LEVEL_UP_CELL_ID  = @"net.sitecore.MobileSdk.ItemsBrowser.list.LevelUpCell"   ;
 static NSString* const ITEM_CELL_ID      = @"net.sitecore.MobileSdk.ItemsBrowser.list.ItemCell"      ;
 static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser.list.ItemCell.image";
+static NSString* const VIDEO_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser.list.ItemCell.video";
+
+
+static NSString* const VIDEO_TEMPLATE_NAME = @"System/Media/Unversioned/File";
 
 -(NSString*)levelUpCellReuseId
 {
@@ -24,8 +29,18 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     }
     else
     {
+        if ( [ self itemIsVideo: item ] )
+        {
+            return VIDEO_CELL_ID;
+        }
+        
         return ITEM_CELL_ID;
     }
+}
+
+-(BOOL)itemIsVideo:(SCItem*)item
+{
+    return [ item.itemTemplate isEqualToString: VIDEO_TEMPLATE_NAME ];
 }
 
 -(Class)levelUpCellClass
@@ -41,6 +56,10 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     }
     else
     {
+        if ( [ self itemIsVideo: item ] )
+        {
+            return [ sc_VideoGridCell class ];
+        }
         return [ sc_FolderGridCell class ];
     }
 }

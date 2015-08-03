@@ -57,22 +57,6 @@
     return UnknownCellType;
 }
 
-+(NSString*)itemType:(SCItem*)item
-{
-        
-    if ([ item.itemTemplate isEqualToString: MEDIA_FOLDER_PATH ] || [ item.itemTemplate isEqualToString: ITEM_TEMPLATE_PATH ])
-    {
-        return @"folder";
-    }
-    
-    if ([item.itemTemplate isEqualToString: IMAGE_JPEG_TEMPLATE_PATH ] || [item.itemTemplate isEqualToString:IMAGE_TEMPLATE_PATH ])
-    {
-        return @"image";
-    }
-    
-    return @"unknown item type";
-}
-
 +(NSString*)getPath:(NSString*)itemId
 {
     //remove { - } and add / to start
