@@ -201,28 +201,28 @@ Where can I found out more about the Media Uploader application?
 
 For more information about the Media Uploader application, please refer to the [Media Uploader iOS app] section on the SDN.
 
-  []:  resources-readme/image1.jpg{width="2.164281496062992in" height="0.5999989063867016in"}
-  [1]: resources-readme/image2.png{width="2.4in" height="3.2in"}
-  [2]: resources-readme/image3.png{width="3.2in" height="0.505in"}
-  [3]: resources-readme/image4.png{width="3.2in" height="1.94in"}
-  [4]: resources-readme/image5.png{width="0.2in" height="0.2in"}
-  [5]: resources-readme/image6.png{width="0.2in" height="0.2in"}
-  [6]: resources-readme/image7.png{width="3.2in" height="1.88in"}
-  [7]: resources-readme/image8.png{width="3.2in" height="1.93in"}
-  [8]: resources-readme/image9.PNG{width="3.2in" height="1.85in"}
-  [9]: resources-readme/image10.png{width="3.19in" height="0.5233595800524934in"}
-  [10]: resources-readme/image11.png{width="3.189583333333333in" height="0.8020833333333334in"}
-  [11]: resources-readme/image12.png{width="2.3999989063867018in" height="3.2in"}
-  [12]: resources-readme/image13.png{width="0.25in" height="0.18in"}
-  [13]: resources-readme/image14.png{width="2.4in" height="3.2in"}
-  [14]: resources-readme/image15.png{width="2.4in" height="3.2in"}
-  [15]: resources-readme/image16.png{width="2.4in" height="3.2in"}
-  [16]: resources-readme/image17.png{width="0.2in" height="0.2in"}
-  [17]: resources-readme/image18.png{width="2.4in" height="3.2in"}
-  [18]: resources-readme/image19.png{width="2.4in" height="3.2in"}
-  [19]: resources-readme/image20.png{width="2.4in" height="3.2in"}
-  [20]: resources-readme/image21.png{width="2.4in" height="3.2in"}
-  [21]: resources-readme/image22.png{width="0.2in" height="0.2in"}
-  [22]: resources-readme/image23.png{width="0.19791666666666666in" height="0.19791666666666666in"}
-  [23]: resources-readme/image24.jpeg{width="2.4in" height="3.2in"}
+  []: resources-readme/image1.jpg
+  [1]: resources-readme/image2.png
+  [2]: resources-readme/image3.png
+  [3]: resources-readme/image4.png
+  [4]: resources-readme/image5.png
+  [5]: resources-readme/image6.png
+  [6]: resources-readme/image7.png
+  [7]: resources-readme/image8.png
+  [8]: resources-readme/image9.PNG
+  [9]: resources-readme/image10.png
+  [10]: resources-readme/image11.png
+  [11]: resources-readme/image12.png
+  [12]: resources-readme/image13.png
+  [13]: resources-readme/image14.png
+  [14]: resources-readme/image15.png
+  [15]: resources-readme/image16.png
+  [16]: resources-readme/image17.png
+  [17]: resources-readme/image18.png
+  [18]: resources-readme/image19.png
+  [19]: resources-readme/image20.png
+  [20]: resources-readme/image21.png
+  [21]: resources-readme/image22.png
+  [22]: resources-readme/image23.png
+  [23]: resources-readme/image24.jpeg
   [Media Uploader iOS app]: http://sdn.sitecore.net/Products/Sitecore%20Mobile%20Apps/Apple%20iOS%20Apps/Media%20Uploader%20iOS%20app.aspx
