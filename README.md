@@ -13,3 +13,5 @@ Features include:
 - Tag pictures (with the taken location)
 - Add description and details to the photo or video file
 - Queue media files for uploading at a later date
+
+![Screenshots](https://github.com/Sitecore/sitecore-ios-media-uploader-app/blob/master/resources-readme/iOS_Screen_Flow.png)
